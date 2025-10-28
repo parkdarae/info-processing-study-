@@ -6,25 +6,36 @@ __pycache__/
 .Python
 env/
 venv/
-ENV/
+.venv
 
-# IDE
-.vscode/
-.idea/
+# 개발 파일
+*.pdf
+*.txt
+*.pyc
+.env
+.env.local
+
+# 임시 파일
+*.tmp
+*.bak
 *.swp
-*.swo
+*~
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Logs
-*.log
+# IDE
+.vscode/
+.idea/
+*.sublime-*
 
-# Environment
-.env
+# 이전 버전
+info_ver2 - 복사본/
 
-# Temporary files
-*.tmp
-*.bak
-
+# Python 스크립트 (개발용, 배포 불필요)
+extract.py
+parse_code_control_manual.py
+fix_*.py
+update_*.py

@@ -379,7 +379,6 @@
             font-size: 1.2em;
             line-height: 1.8;
             margin-bottom: 25px;
-            white-space: pre-line;
         }
 
         .choices {
@@ -439,6 +438,10 @@
             margin-top: 20px;
         }
 
+        .action-buttons .btn {
+            white-space: nowrap;
+        }
+
         .btn {
             padding: 15px 30px;
             border: none;
@@ -467,6 +470,15 @@
 
         .btn-secondary:hover {
             background: #5a6268;
+        }
+
+        .btn-video {
+            background: #ff0000;
+            color: white;
+        }
+
+        .btn-video:hover {
+            background: #cc0000;
         }
 
         .result-section {
@@ -730,10 +742,112 @@
             border-radius: 5px;
             white-space: pre-line;
             display: none;
+            line-height: 1.8;
         }
 
         .explanation.show {
             display: block;
+        }
+        
+        /* 해설 내 숫자 번호 크기 */
+        .explanation code {
+            font-size: 1em !important;
+        }
+        
+        .explanation .code-box {
+            font-size: 1.15em;
+        }
+        
+        /* 해설의 pre.code-box만 크게 */
+        .explanation pre.code-box {
+            font-size: 1.3em;
+            line-height: 2.0;
+        }
+        
+        /* 해설 내 테이블 스타일 */
+        .explanation table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .explanation th,
+        .explanation td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .explanation th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        /* 해설 내 원형 숫자 스타일 */
+        .explanation .circle-number {
+            font-size: 1em;
+            font-weight: normal;
+            display: inline;
+        }
+
+        /* 코드 박스 스타일 */
+        .code-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        /* 기본 코드 블록은 원래 크기 유지 */
+
+        .code-box pre {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+        }
+
+        .code-box code {
+            color: #333;
+            background: transparent;
+            padding: 0;
+            border: none;
+            white-space: pre;
+            font-size: inherit;
+        }
+
+        /* 키워드 강조 */
+        .code-box code .keyword {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .code-box code .string {
+            color: #008000;
+        }
+
+        .code-box code .comment {
+            color: #808080;
+            font-style: italic;
+        }
+
+        /* 설명의 코드 박스 */
+        .explanation .code-box {
+            background: #fff;
+            border: 1px solid #ffc107;
+            margin: 10px 0;
+        }
+
+        /* 정답의 코드 박스 */
+        .result-section .code-box {
+            background: #f0f0f0;
+            margin: 10px 0;
         }
 
         /* 스크롤바 스타일 */
@@ -1118,6 +1232,15 @@
         </div>
         <div class="menu-content">
             <div class="menu-section">
+                <h3><i class="fas fa-book"></i> 문제집 선택</h3>
+                <div class="menu-item" onclick="switchModule('keyword130')" id="menu_keyword130">
+                    <i class="fas fa-check"></i> 📚 핵심 키워드130
+                </div>
+                <div class="menu-item" onclick="switchModule('code_control')" id="menu_code_control">
+                    <i class="fas fa-code"></i> 💻 코드-제어문14문제
+                </div>
+            </div>
+            <div class="menu-section">
                 <h3><i class="fas fa-chart-line"></i> 학습 통계</h3>
                 <div class="menu-item" onclick="toggleStats()">
                     <i class="fas fa-eye"></i> 학습 통계 보기
@@ -1239,6 +1362,7 @@
 
     <script>
         // 전역 변수
+        let currentModule = 'keyword130'; // 기본 모듈
         let allQuestions = [];
         let allTables = {};
         let currentQuestions = [];
@@ -1249,6 +1373,22 @@
             correct: 0,
             wrong: 0,
             wrongQuestions: []
+        };
+        
+        // 모듈 설정
+        const moduleConfig = {
+            'keyword130': {
+                title: '정보처리기사 실기 핵심 키워드130 문제은행',
+                itemsFile: 'items.jsonl',
+                tablesFile: 'tables.jsonl',
+                maxRange: 130
+            },
+            'code_control': {
+                title: '코드-제어문14문제',
+                itemsFile: 'items_code_control.jsonl',
+                tablesFile: 'tables_code_control.jsonl',
+                maxRange: 14
+            }
         };
 
         // 동의어 사전
@@ -1390,14 +1530,16 @@
         // 문제 로드
         async function loadQuestions(mode) {
             try {
+                const config = moduleConfig[currentModule];
+                
                 // items.jsonl 로드
-                const response = await fetch('items.jsonl');
+                const response = await fetch(config.itemsFile);
                 const text = await response.text();
                 allQuestions = text.trim().split('\n').map(line => JSON.parse(line));
                 
                 // tables.jsonl 로드
                 try {
-                    const tablesResponse = await fetch('tables.jsonl');
+                    const tablesResponse = await fetch(config.tablesFile);
                     const tablesText = await tablesResponse.text();
                     const tables = tablesText.trim().split('\n').map(line => JSON.parse(line));
                     
@@ -1458,6 +1600,57 @@
             }
         }
 
+        // 모듈 전환
+        function switchModule(moduleName) {
+            closeMenu();
+            
+            if (!moduleConfig[moduleName]) {
+                showMessage('알 수 없는 모듈입니다.');
+                return;
+            }
+            
+            currentModule = moduleName;
+            const config = moduleConfig[moduleName];
+            
+            // 제목 업데이트
+            document.querySelector('.header h1').innerHTML = `<i class="fas fa-book-reader"></i> ${config.title}`;
+            
+            // 메뉴 활성화 상태 업데이트
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.style.background = 'white';
+                item.style.color = '';
+            });
+            const menuItem = document.getElementById(`menu_${moduleName}`);
+            if (menuItem) {
+                menuItem.style.background = '#667eea';
+                menuItem.style.color = 'white';
+            }
+            
+            // 범위 모달 max 값 업데이트
+            document.getElementById('rangeStart').max = config.maxRange;
+            document.getElementById('rangeEnd').max = config.maxRange;
+            document.getElementById('rangeEnd').value = config.maxRange;
+            
+            // 문제 로드
+            if (currentMode) {
+                loadQuestions(currentMode);
+            } else {
+                currentQuestions = [];
+                currentIndex = 0;
+                document.getElementById('questionContainer').innerHTML = `
+                    <div class="question-card">
+                        <div style="text-align: center; padding: 50px;">
+                            <i class="fas fa-book" style="font-size: 4em; color: #667eea; margin-bottom: 20px;"></i>
+                            <h2>학습 모드를 선택해주세요</h2>
+                            <p style="color: #6c757d; margin-top: 10px;">위 버튼 중 하나를 클릭하여 시작하세요</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            updateStats();
+        }
+        
         // 배열 섞기
         function shuffleArray(array) {
             const shuffled = [...array];
@@ -1491,12 +1684,13 @@
 
         // 범위 미리보기 업데이트
         function updateRangePreview() {
+            const config = moduleConfig[currentModule];
             const start = parseInt(document.getElementById('rangeStart').value) || 1;
-            const end = parseInt(document.getElementById('rangeEnd').value) || 130;
+            const end = parseInt(document.getElementById('rangeEnd').value) || config.maxRange;
             
             // 유효성 검사
-            const validStart = Math.max(1, Math.min(start, 130));
-            const validEnd = Math.max(validStart, Math.min(end, 130));
+            const validStart = Math.max(1, Math.min(start, config.maxRange));
+            const validEnd = Math.max(validStart, Math.min(end, config.maxRange));
             
             const count = validEnd - validStart + 1;
             const preview = document.getElementById('rangePreview');
@@ -1505,27 +1699,30 @@
 
         // 범위 필터 적용
         async function applyRangeFilter() {
+            const config = moduleConfig[currentModule];
             const start = parseInt(document.getElementById('rangeStart').value) || 1;
-            const end = parseInt(document.getElementById('rangeEnd').value) || 130;
+            const end = parseInt(document.getElementById('rangeEnd').value) || config.maxRange;
             const order = document.querySelector('input[name="rangeOrder"]:checked').value;
             
             // 유효성 검사
-            const validStart = Math.max(1, Math.min(start, 130));
-            const validEnd = Math.max(validStart, Math.min(end, 130));
+            const validStart = Math.max(1, Math.min(start, config.maxRange));
+            const validEnd = Math.max(validStart, Math.min(end, config.maxRange));
             
             // 모달 닫기
             closeRangeModal();
             
             // 문제 로드
             try {
+                const config = moduleConfig[currentModule];
+                
                 // items.jsonl 로드
-                const response = await fetch('items.jsonl');
+                const response = await fetch(config.itemsFile);
                 const text = await response.text();
                 allQuestions = text.trim().split('\n').map(line => JSON.parse(line));
                 
                 // tables.jsonl 로드
                 try {
-                    const tablesResponse = await fetch('tables.jsonl');
+                    const tablesResponse = await fetch(config.tablesFile);
                     const tablesText = await tablesResponse.text();
                     const tables = tablesText.trim().split('\n').map(line => JSON.parse(line));
                     
@@ -1539,9 +1736,9 @@
                     console.log('표 데이터 없음:', e);
                 }
                 
-                // 범위 필터링
+                // 범위 필터링 (Q 또는 C 접두사 처리)
                 currentQuestions = allQuestions.filter(q => {
-                    const num = parseInt(q.q_no.replace('Q', '').replace(/^0+/, '') || '0');
+                    const num = parseInt(q.q_no.replace(/^[QC]/, '').replace(/^0+/, '') || '0');
                     return num >= validStart && num <= validEnd;
                 });
                 
@@ -1578,7 +1775,7 @@
                             <i class="fas fa-star"></i> 체크
                         </button>
                     </div>
-                    <div class="question-text">${escapeHtml(question.question_text)}</div>
+                    <div class="question-text">${formatCodeBlocks(question.question_text)}</div>
             `;
             
             // 이미지 표시
@@ -1798,6 +1995,9 @@
                         <button class="btn btn-secondary" onclick="showExplanation()">
                             <i class="fas fa-lightbulb"></i> 해설 보기
                         </button>
+                        <button class="btn btn-video" onclick="openVideo()" id="videoBtn" style="display: none;">
+                            <i class="fab fa-youtube"></i> 동영상 설명
+                        </button>
                     </div>
                     <div class="result-section" id="resultSection" style="display: none;"></div>
                     <div class="explanation" id="explanationDiv"></div>
@@ -1805,6 +2005,11 @@
             `;
             
             container.innerHTML = html;
+            
+            // 동영상 버튼 표시 업데이트
+            setTimeout(() => {
+                updateVideoButton();
+            }, 0);
         }
 
         // 이미 답변한 문제 추적
@@ -1870,7 +2075,7 @@
                 
                 resultSection.innerHTML = `
                     <i class="fas fa-times-circle"></i> <strong>오답입니다.</strong><br>
-                    <strong>정답:</strong> ${escapeHtml(answerText)}
+                    <strong>정답:</strong> ${formatCodeBlocks(answerText)}
                 `;
                 stats.wrong++;
                 addWrongQuestion(question.q_no);
@@ -2111,11 +2316,30 @@
             const question = currentQuestions[currentIndex];
             
             if (question.explanation) {
-                explanationDiv.textContent = question.explanation;
+                explanationDiv.innerHTML = formatCodeBlocks(question.explanation);
                 explanationDiv.classList.toggle('show');
             } else {
-                explanationDiv.textContent = '해설이 없습니다.';
+                explanationDiv.innerHTML = '해설이 없습니다.';
                 explanationDiv.classList.add('show');
+            }
+        }
+
+        // 동영상 열기
+        function openVideo() {
+            const question = currentQuestions[currentIndex];
+            if (question.video_url) {
+                window.open(question.video_url, '_blank');
+            }
+        }
+
+        // 문제가 바뀔 때 동영상 버튼 표시/숨김
+        function updateVideoButton() {
+            const videoBtn = document.getElementById('videoBtn');
+            const question = currentQuestions[currentIndex];
+            if (question && question.video_url) {
+                videoBtn.style.display = 'inline-block';
+            } else {
+                videoBtn.style.display = 'none';
             }
         }
 
@@ -2141,7 +2365,7 @@
             resultSection.style.border = '2px solid #0c5460';
             resultSection.style.color = '#0c5460';
             resultSection.innerHTML = `
-                <i class="fas fa-eye"></i> <strong>정답:</strong> ${escapeHtml(answerText)}
+                <i class="fas fa-eye"></i> <strong>정답:</strong> ${formatCodeBlocks(answerText)}
             `;
         }
 
@@ -2193,6 +2417,96 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+
+        // 코드 블록 감지 및 박스로 변환
+        function formatCodeBlocks(text) {
+            if (!text) return '';
+            
+            // <pre> 태그가 이미 있으면 그대로 반환 (들여쓰기 보존)
+            if (text.includes('<pre')) {
+                return text;
+            }
+            
+            // HTML 태그가 포함되어 있으면 일반 텍스트로 처리
+            if (text.includes('<img') || text.includes('<table') || text.includes('<div')) {
+                const lines = text.split('\n');
+                let result = '';
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i];
+                    // HTML 태그가 있으면 그대로 유지
+                    if (line.includes('<img') || line.includes('<table') || line.includes('</table>') || line.includes('<div') || line.includes('</div>')) {
+                        result += line + '\n';
+                    } else {
+                        // 원형 숫자가 문장 시작에 있을 때만 줄바꿈 추가
+                        let escapedLine = escapeHtml(line);
+                        // 원형 숫자가 줄 맨 앞에 있는 경우에만 줄바꿈
+                        if (/^([❶❷❸❹❺❻❼❽❾➊➋➌➍➎➏➐➑➒➓])/.test(line.trim())) {
+                            escapedLine = escapedLine.replace(/^([❶❷❸❹❺❻❼❽❾➊➋➌➍➎➏➐➑➒➓])/, '<br>$1');
+                        }
+                        result += escapedLine + '\n';
+                    }
+                }
+                return result;
+            }
+            
+            // 코드 블록 패턴: 빈 줄 이후에 나타나는 코드 블록을 감지
+            const lines = text.split('\n');
+            let result = '';
+            let inCodeBlock = false;
+            let codeBuffer = '';
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const prevLine = i > 0 ? lines[i - 1] : '';
+                
+                // 빈 줄 이후에 나오는 것을 코드로 간주
+                const isEmpty = line.trim() === '';
+                const prevIsEmpty = prevLine.trim() === '';
+                
+                // 코드 블록 시작 감지: 빈 줄 이후 + 코드 키워드 또는 들여쓰기가 있는 경우
+                const isCodeLine = /^(\s*)(#include|#|int main|public class|for\s*\(|while\s*\(|if\s*\(|switch\s*\(|import|package|from|import|def |class |String|int |float |void |char |boolean |➊|❶|❷|❸|❹|❺|❻|❼|❽|❾|➊|➋|➌|➍|➎|➏|➐|➑|➒|➓)/.test(line);
+                
+                // 이전 줄이 빈 줄이면서 현재 줄이 코드로 보이는 경우
+                if (prevIsEmpty && isCodeLine) {
+                    if (codeBuffer.trim() !== '' && inCodeBlock) {
+                        // 이전 코드 블록 닫기
+                        result += '<div class="code-box"><pre><code>' + escapeHtml(codeBuffer.trim()) + '</code></pre></div>';
+                    }
+                    inCodeBlock = true;
+                    codeBuffer = line + '\n';
+                } else if (inCodeBlock) {
+                    // 코드 블록 내부
+                    // 빈 줄이 2개 이상 연속되면 코드 블록 종료
+                    if (line.trim() === '' && lines[i + 1] && lines[i + 1].trim() === '') {
+                        result += '<div class="code-box"><pre><code>' + escapeHtml(codeBuffer.trim()) + '</code></pre></div>';
+                        codeBuffer = '';
+                        inCodeBlock = false;
+                    } else if (line.trim() === '') {
+                        codeBuffer += '\n';
+                    } else {
+                        codeBuffer += line + '\n';
+                    }
+                } else {
+                    // 일반 텍스트 - HTML 태그가 있으면 그대로 유지, 없으면 escape
+                    if (line.includes('<img') || line.includes('<table') || line.includes('</table>') || line.includes('<div') || line.includes('</div>')) {
+                        result += line + '\n';
+                    } else {
+                        // 원형 숫자 뒤에 자동 줄바꿈 추가
+                        let escapedLine = escapeHtml(line);
+                        // 원형 숫자 패턴: ❶❷❸❹❺❻❼❽❾➊➋➌➍➎➏➐➑➒➓
+                        escapedLine = escapedLine.replace(/([❶❷❸❹❺❻❼❽❾➊➋➌➍➎➏➐➑➒➓])/g, '$1<br>');
+                        result += escapedLine + '\n';
+                    }
+                }
+            }
+            
+            // 마지막에 코드 블록이 남아있으면 추가
+            if (codeBuffer.trim() !== '') {
+                result += '<div class="code-box"><pre><code>' + escapeHtml(codeBuffer.trim()) + '</code></pre></div>';
+            }
+            
+            return result;
         }
 
         // 폰트 크기 설정
@@ -2365,6 +2679,13 @@
             loadProgress();
             loadFontSize();
             updateStats();
+            
+            // 기본 모듈 활성화
+            const menuItem = document.getElementById(`menu_${currentModule}`);
+            if (menuItem) {
+                menuItem.style.background = '#667eea';
+                menuItem.style.color = 'white';
+            }
             
             // 환영 팝업 표시 (첫 방문 시)
             if (!localStorage.getItem('welcomeShown')) {
