@@ -59,19 +59,38 @@
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 5px;
-            padding: 5px 10px;
+            padding: 8px 12px;
             cursor: pointer;
-            font-size: 0.8em;
+            font-size: 0.9em;
+            font-weight: bold;
             transition: all 0.3s;
+            min-width: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .font-btn:hover {
             background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .font-btn.active {
-            background: rgba(255, 255, 255, 0.4);
+            background: white;
+            color: #667eea;
             border-color: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .font-size-controls {
+                position: relative;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                margin-top: 10px;
+            }
         }
 
         .header h1 {
@@ -115,10 +134,30 @@
             background: white;
             border-radius: 10px;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: center;
             font-size: 1.1em;
             font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mode-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .mode-btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .mode-btn:hover {
@@ -126,12 +165,23 @@
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            border-color: #5568d3;
         }
 
         .mode-btn.active {
             background: #667eea;
             color: white;
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            }
+            50% {
+                box-shadow: 0 5px 20px rgba(102, 126, 234, 0.6);
+            }
         }
 
         .question-container {
@@ -190,9 +240,18 @@
             transition: all 0.3s;
         }
 
+        .choice-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .choice-item:hover {
             background: #e9ecef;
             transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .choice-item:active {
+            transform: translateX(5px) scale(0.98);
         }
 
         .choice-key {
@@ -258,18 +317,60 @@
             padding: 20px;
             border-radius: 10px;
             display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .result-section.show {
+            display: block;
         }
 
         .result-correct {
-            background: #d4edda;
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
             border: 2px solid #28a745;
             color: #155724;
+            animation: correctPulse 0.5s ease-out;
         }
 
         .result-incorrect {
-            background: #f8d7da;
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
             border: 2px solid #dc3545;
             color: #721c24;
+            animation: shake 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes correctPulse {
+            0% {
+                transform: scale(0.9);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            75% {
+                transform: translateX(10px);
+            }
         }
 
         .stats {
@@ -302,6 +403,22 @@
         
         .stats-item span:last-child {
             font-weight: bold;
+            color: #667eea;
+            transition: all 0.3s;
+        }
+        
+        .stats-item span:last-child.updating {
+            animation: numberBounce 0.5s ease-out;
+        }
+
+        @keyframes numberBounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+                color: #5568d3;
+            }
         }
         
         .stats .btn {
@@ -309,6 +426,12 @@
             margin: 5px 0 0 0;
             font-size: 0.8em;
             width: 100%;
+            transition: all 0.3s;
+        }
+
+        .stats .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         .image-placeholder {
@@ -790,10 +913,10 @@
     <div class="container">
         <div class="header">
             <div class="font-size-controls">
-                <button class="font-btn" onclick="setFontSize('smallest')">A</button>
-                <button class="font-btn" onclick="setFontSize('small')">A</button>
-                <button class="font-btn active" onclick="setFontSize('normal')">A</button>
-                <button class="font-btn" onclick="setFontSize('large')">A</button>
+                <button class="font-btn" onclick="setFontSize('smallest')" title="제일 작게">A</button>
+                <button class="font-btn" onclick="setFontSize('small')" title="작게">AA</button>
+                <button class="font-btn active" onclick="setFontSize('normal')" title="보통">AA<i class="fas fa-check"></i></button>
+                <button class="font-btn" onclick="setFontSize('large')" title="크게">AAA</button>
             </div>
             <h1><i class="fas fa-book-reader"></i> 정보처리기사 실기 핵심 키워드130 문제은행</h1>
             <p>실시간 학습 현황 및 진도 관리</p>
@@ -1822,10 +1945,23 @@
             const progress = ((stats.correct + stats.wrong) / stats.total * 100).toFixed(1);
             const accuracy = stats.correct > 0 ? (stats.correct / (stats.correct + stats.wrong) * 100).toFixed(1) : 0;
             
-            document.getElementById('progress').textContent = progress + '%';
-            document.getElementById('accuracy').textContent = accuracy + '%';
-            document.getElementById('remaining').textContent = allQuestions.length - (stats.correct + stats.wrong);
-            document.getElementById('wrongCount').textContent = stats.wrong;
+            // 애니메이션과 함께 업데이트
+            updateStatWithAnimation('progress', progress + '%');
+            updateStatWithAnimation('accuracy', accuracy + '%');
+            updateStatWithAnimation('remaining', allQuestions.length - (stats.correct + stats.wrong));
+            updateStatWithAnimation('wrongCount', stats.wrong);
+        }
+
+        // 애니메이션과 함께 통계 업데이트
+        function updateStatWithAnimation(id, newValue) {
+            const element = document.getElementById(id);
+            if (element && element.textContent !== newValue.toString()) {
+                element.classList.add('updating');
+                setTimeout(() => {
+                    element.textContent = newValue;
+                    element.classList.remove('updating');
+                }, 100);
+            }
         }
 
         // 메시지 표시
