@@ -24,6 +24,11 @@
             font-size: 16px;
         }
 
+        body.font-smallest { font-size: 12px; }
+        body.font-small { font-size: 14px; }
+        body.font-normal { font-size: 16px; }
+        body.font-large { font-size: 18px; }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -38,6 +43,35 @@
             color: white;
             padding: 20px;
             text-align: center;
+            position: relative;
+        }
+
+        .font-size-controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .font-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: all 0.3s;
+        }
+
+        .font-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .font-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: white;
         }
 
         .header h1 {
@@ -58,8 +92,21 @@
 
         .mode-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .mode-buttons-container {
+            display: grid;
+            grid-template-columns: 1fr auto;
             gap: 15px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .mode-buttons-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         .mode-btn {
@@ -227,48 +274,41 @@
 
         .stats {
             background: white;
-            padding: 10px 15px;
+            padding: 12px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin: 10px 0;
-        }
-
-        .stats-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
+            min-width: 200px;
         }
 
         .stats h3 {
-            margin: 0;
+            margin: 0 0 8px 0;
             color: #667eea;
-            font-size: 1.1em;
+            font-size: 1em;
+            text-align: center;
         }
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            margin-bottom: 8px;
+            grid-template-columns: 1fr;
+            gap: 5px;
         }
 
         .stats-item {
             display: flex;
             justify-content: space-between;
-            font-size: 0.9em;
-            padding: 5px 0;
+            font-size: 0.85em;
+            padding: 3px 0;
         }
         
         .stats-item span:last-child {
             font-weight: bold;
-            font-size: 1em;
         }
         
         .stats .btn {
-            padding: 8px;
-            margin: 0;
-            font-size: 0.85em;
+            padding: 6px 12px;
+            margin: 5px 0 0 0;
+            font-size: 0.8em;
+            width: 100%;
         }
 
         .image-placeholder {
@@ -749,37 +789,19 @@
 
     <div class="container">
         <div class="header">
+            <div class="font-size-controls">
+                <button class="font-btn" onclick="setFontSize('smallest')">A</button>
+                <button class="font-btn" onclick="setFontSize('small')">A</button>
+                <button class="font-btn active" onclick="setFontSize('normal')">A</button>
+                <button class="font-btn" onclick="setFontSize('large')">A</button>
+            </div>
             <h1><i class="fas fa-book-reader"></i> 정보처리기사 실기 핵심 키워드130 문제은행</h1>
             <p>실시간 학습 현황 및 진도 관리</p>
         </div>
 
-        <div class="stats">
-            <div class="stats-header">
-                <h3>학습 통계</h3>
-                <button class="btn btn-secondary" onclick="resetProgress()" style="padding: 5px 10px; font-size: 0.8em;">초기화</button>
-            </div>
-            <div class="stats-grid">
-                <div class="stats-item">
-                    <span>진행률:</span>
-                    <span id="progress">0%</span>
-                </div>
-                <div class="stats-item">
-                    <span>정답률:</span>
-                    <span id="accuracy">0%</span>
-                </div>
-                <div class="stats-item">
-                    <span>남은 문제:</span>
-                    <span id="remaining">0</span>
-                </div>
-                <div class="stats-item">
-                    <span>오답 수:</span>
-                    <span id="wrongCount">0</span>
-                </div>
-            </div>
-        </div>
-
         <div class="mode-selector">
-            <div class="mode-buttons">
+            <div class="mode-buttons-container">
+                <div class="mode-buttons">
                 <button class="mode-btn" onclick="setMode('sequential')">
                     <i class="fas fa-forward"></i> 순차 풀기
                 </button>
@@ -795,6 +817,29 @@
                 <button class="mode-btn" onclick="setMode('marked')">
                     <i class="fas fa-star"></i> 체크한 문제
                 </button>
+            </div>
+            
+            <div class="stats">
+                <h3>학습 통계</h3>
+                <div class="stats-grid">
+                    <div class="stats-item">
+                        <span>진행률:</span>
+                        <span id="progress">0%</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>정답률:</span>
+                        <span id="accuracy">0%</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>남은 문제:</span>
+                        <span id="remaining">0</span>
+                    </div>
+                    <div class="stats-item">
+                        <span>오답 수:</span>
+                        <span id="wrongCount">0</span>
+                    </div>
+                </div>
+                <button class="btn btn-secondary" onclick="resetProgress()">초기화</button>
             </div>
         </div>
 
@@ -1795,6 +1840,27 @@
             return div.innerHTML;
         }
 
+        // 폰트 크기 설정
+        function setFontSize(size) {
+            // body의 폰트 클래스 제거
+            document.body.classList.remove('font-smallest', 'font-small', 'font-normal', 'font-large');
+            // 새 폰트 크기 클래스 추가
+            document.body.classList.add('font-' + size);
+            
+            // active 클래스 업데이트
+            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // localStorage에 저장
+            localStorage.setItem('fontSize', size);
+        }
+
+        // 저장된 폰트 크기 로드
+        function loadFontSize() {
+            const savedSize = localStorage.getItem('fontSize') || 'normal';
+            setFontSize(savedSize);
+        }
+
         // 진행 상황 저장
         function saveProgress() {
             localStorage.setItem('progress', JSON.stringify({
@@ -1867,6 +1933,7 @@
         // 초기화
         document.addEventListener('DOMContentLoaded', function() {
             loadProgress();
+            loadFontSize();
             updateStats();
             
             // 환영 팝업 표시 (첫 방문 시)
