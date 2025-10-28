@@ -1,0 +1,13 @@
+{
+  "headers": [
+    {
+      "source": "/(.*\\.jsonl)",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/jsonlines"
+        }
+      ]
+    }
+  ]
+}
