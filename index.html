@@ -165,7 +165,8 @@
 
         .action-buttons {
             display: flex;
-            gap: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
             margin-top: 20px;
         }
 
@@ -1293,6 +1294,9 @@
                         <button class="btn btn-primary" onclick="checkCurrentAnswer()">
                             <i class="fas fa-check"></i> 정답 확인
                         </button>
+                        <button class="btn" onclick="showAnswerOnly()" style="background: #17a2b8; color: white;">
+                            <i class="fas fa-eye"></i> 답 보기
+                        </button>
                         <button class="btn btn-secondary" onclick="prevQuestion()">
                             <i class="fas fa-arrow-left"></i> 이전 문제
                         </button>
@@ -1621,6 +1625,32 @@
                 explanationDiv.textContent = '해설이 없습니다.';
                 explanationDiv.classList.add('show');
             }
+        }
+
+        // 답 보기 (학습 모드 - 통계 반영 안 함)
+        function showAnswerOnly() {
+            const question = currentQuestions[currentIndex];
+            const resultSection = document.getElementById('resultSection');
+            
+            // 정답 텍스트 처리 (괄호 제거)
+            let answerText = question.answer.raw_text || '정답 없음';
+            
+            // 괄호 안 내용 제거
+            answerText = answerText.replace(/\([^)]*\)/g, '');
+            // • 제거
+            answerText = answerText.replace(/[•]/g, '');
+            // 여러 공백을 하나로
+            answerText = answerText.replace(/\s+/g, ' ').trim();
+            
+            // 결과 영역 표시 (정보성 스타일)
+            resultSection.style.display = 'block';
+            resultSection.className = 'result-section';
+            resultSection.style.background = '#d1ecf1';
+            resultSection.style.border = '2px solid #0c5460';
+            resultSection.style.color = '#0c5460';
+            resultSection.innerHTML = `
+                <i class="fas fa-eye"></i> <strong>정답:</strong> ${escapeHtml(answerText)}
+            `;
         }
 
         // 선택지 선택
