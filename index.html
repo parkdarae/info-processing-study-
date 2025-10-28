@@ -44,53 +44,210 @@
             padding: 20px;
             text-align: center;
             position: relative;
-        }
-
-        .font-size-controls {
-            position: absolute;
-            top: 10px;
-            right: 10px;
             display: flex;
-            gap: 5px;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .font-btn {
+        .header-content {
+            flex: 1;
+        }
+
+        .hamburger-btn {
             background: rgba(255, 255, 255, 0.2);
+            border: none;
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 5px;
-            padding: 8px 12px;
             cursor: pointer;
-            font-size: 0.9em;
-            font-weight: bold;
-            transition: all 0.3s;
-            min-width: 35px;
+            padding: 10px;
+            border-radius: 8px;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            transition: all 0.3s;
+            font-size: 1.5em;
+        }
+
+        .hamburger-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            animation: fadeIn 0.3s;
+        }
+
+        .menu-overlay.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 300px;
+            height: 100%;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            z-index: 10001;
+            transition: right 0.3s ease-out;
+            overflow-y: auto;
+        }
+
+        .sidebar-menu.show {
+            right: 0;
+        }
+
+        .menu-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-menu {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: all 0.3s;
+        }
+
+        .close-menu:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .menu-content {
+            padding: 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+        }
+
+        .menu-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .menu-item {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+            background: white;
+        }
+
+        .menu-item:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+            transform: translateX(5px);
+        }
+
+        .font-size-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10002;
             align-items: center;
             justify-content: center;
         }
 
-        .font-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        .font-size-modal.show {
+            display: flex;
         }
 
-        .font-btn.active {
+        .font-modal-content {
             background: white;
-            color: #667eea;
-            border-color: white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+            animation: slideUp 0.3s ease-out;
         }
 
-        @media (max-width: 768px) {
-            .font-size-controls {
-                position: relative;
-                top: 0;
-                right: 0;
-                justify-content: center;
-                margin-top: 10px;
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
             }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .font-size-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .font-size-option {
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .font-size-option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .font-size-option.active {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+
+        .stats-toggle {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .stats-toggle:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
         }
 
         .header h1 {
@@ -912,19 +1069,17 @@
 
     <div class="container">
         <div class="header">
-            <div class="font-size-controls">
-                <button class="font-btn" onclick="setFontSize('smallest')" title="제일 작게">A</button>
-                <button class="font-btn" onclick="setFontSize('small')" title="작게">AA</button>
-                <button class="font-btn active" onclick="setFontSize('normal')" title="보통">AA<i class="fas fa-check"></i></button>
-                <button class="font-btn" onclick="setFontSize('large')" title="크게">AAA</button>
+            <div class="header-content">
+                <h1><i class="fas fa-book-reader"></i> 정보처리기사 실기 핵심 키워드130 문제은행</h1>
+                <p>실시간 학습 현황 및 진도 관리</p>
             </div>
-            <h1><i class="fas fa-book-reader"></i> 정보처리기사 실기 핵심 키워드130 문제은행</h1>
-            <p>실시간 학습 현황 및 진도 관리</p>
+            <button class="hamburger-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
 
         <div class="mode-selector">
-            <div class="mode-buttons-container">
-                <div class="mode-buttons">
+            <div class="mode-buttons">
                 <button class="mode-btn" onclick="setMode('sequential')">
                     <i class="fas fa-forward"></i> 순차 풀기
                 </button>
@@ -941,29 +1096,6 @@
                     <i class="fas fa-star"></i> 체크한 문제
                 </button>
             </div>
-            
-            <div class="stats">
-                <h3>학습 통계</h3>
-                <div class="stats-grid">
-                    <div class="stats-item">
-                        <span>진행률:</span>
-                        <span id="progress">0%</span>
-                    </div>
-                    <div class="stats-item">
-                        <span>정답률:</span>
-                        <span id="accuracy">0%</span>
-                    </div>
-                    <div class="stats-item">
-                        <span>남은 문제:</span>
-                        <span id="remaining">0</span>
-                    </div>
-                    <div class="stats-item">
-                        <span>오답 수:</span>
-                        <span id="wrongCount">0</span>
-                    </div>
-                </div>
-                <button class="btn btn-secondary" onclick="resetProgress()">초기화</button>
-            </div>
         </div>
 
         <div class="question-container" id="questionContainer">
@@ -974,6 +1106,93 @@
                     <p style="color: #6c757d; margin-top: 10px;">위 버튼 중 하나를 클릭하여 시작하세요</p>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- 햄버거 메뉴 -->
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+    <div class="sidebar-menu" id="sidebarMenu">
+        <div class="menu-header">
+            <h3><i class="fas fa-cog"></i> 메뉴</h3>
+            <button class="close-menu" onclick="closeMenu()">×</button>
+        </div>
+        <div class="menu-content">
+            <div class="menu-section">
+                <h3><i class="fas fa-chart-line"></i> 학습 통계</h3>
+                <div class="menu-item" onclick="toggleStats()">
+                    <i class="fas fa-eye"></i> 학습 통계 보기
+                </div>
+                <div class="menu-item" onclick="resetProgress()">
+                    <i class="fas fa-redo"></i> 통계 초기화
+                </div>
+            </div>
+            <div class="menu-section">
+                <h3><i class="fas fa-font"></i> 폰트 크기</h3>
+                <div class="menu-item" onclick="openFontModal()">
+                    <i class="fas fa-text-height"></i> 폰트 크기 변경
+                </div>
+            </div>
+            <div class="menu-section">
+                <h3><i class="fas fa-info-circle"></i> 정보</h3>
+                <div class="menu-item" onclick="showWelcome()">
+                    <i class="fas fa-question-circle"></i> 사용 방법
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 폰트 크기 모달 -->
+    <div class="font-size-modal" id="fontSizeModal">
+        <div class="font-modal-content">
+            <h2><i class="fas fa-text-height"></i> 폰트 크기 선택</h2>
+            <div class="font-size-grid">
+                <div class="font-size-option" onclick="selectFontSize('smallest')">
+                    <div style="font-size: 0.7em;">A</div>
+                    <small>제일 작게</small>
+                </div>
+                <div class="font-size-option" onclick="selectFontSize('small')">
+                    <div style="font-size: 0.85em;">A</div>
+                    <small>작게</small>
+                </div>
+                <div class="font-size-option" onclick="selectFontSize('normal')">
+                    <div style="font-size: 1em;">A</div>
+                    <small>보통</small>
+                </div>
+                <div class="font-size-option" onclick="selectFontSize('large')">
+                    <div style="font-size: 1.15em;">A</div>
+                    <small>크게</small>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="closeFontModal()" style="width: 100%;">확인</button>
+        </div>
+    </div>
+
+    <!-- 학습 통계 모달 -->
+    <div class="range-modal" id="statsModal">
+        <div class="range-modal-content">
+            <div class="range-modal-header">
+                <h3><i class="fas fa-chart-line"></i> 학습 통계</h3>
+                <button class="close-modal" onclick="closeStats()">×</button>
+            </div>
+            <div class="stats-grid" style="margin-top: 20px;">
+                <div class="stats-item" style="padding: 15px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px;">
+                    <span>진행률:</span>
+                    <span id="modalProgress" style="font-size: 1.2em;">0%</span>
+                </div>
+                <div class="stats-item" style="padding: 15px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px;">
+                    <span>정답률:</span>
+                    <span id="modalAccuracy" style="font-size: 1.2em;">0%</span>
+                </div>
+                <div class="stats-item" style="padding: 15px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px;">
+                    <span>남은 문제:</span>
+                    <span id="modalRemaining" style="font-size: 1.2em;">0</span>
+                </div>
+                <div class="stats-item" style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <span>오답 수:</span>
+                    <span id="modalWrongCount" style="font-size: 1.2em;">0</span>
+                </div>
+            </div>
+            <button class="btn btn-secondary" onclick="resetProgress()" style="width: 100%; margin-top: 20px;">초기화</button>
         </div>
     </div>
 
@@ -1995,6 +2214,81 @@
         function loadFontSize() {
             const savedSize = localStorage.getItem('fontSize') || 'normal';
             setFontSize(savedSize);
+        }
+
+        // 햄버거 메뉴 토글
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const overlay = document.getElementById('menuOverlay');
+            
+            sidebar.classList.toggle('show');
+            overlay.classList.toggle('show');
+        }
+
+        // 메뉴 닫기
+        function closeMenu() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const overlay = document.getElementById('menuOverlay');
+            
+            sidebar.classList.remove('show');
+            overlay.classList.remove('show');
+        }
+
+        // 통계 모달 토글
+        function toggleStats() {
+            closeMenu();
+            const modal = document.getElementById('statsModal');
+            modal.style.display = 'flex';
+            
+            // 모달에 통계 업데이트
+            document.getElementById('modalProgress').textContent = document.getElementById('progress').textContent;
+            document.getElementById('modalAccuracy').textContent = document.getElementById('accuracy').textContent;
+            document.getElementById('modalRemaining').textContent = document.getElementById('remaining').textContent;
+            document.getElementById('modalWrongCount').textContent = document.getElementById('wrongCount').textContent;
+        }
+
+        // 통계 모달 닫기
+        function closeStats() {
+            const modal = document.getElementById('statsModal');
+            modal.style.display = 'none';
+        }
+
+        // 폰트 크기 모달 열기
+        function openFontModal() {
+            closeMenu();
+            const modal = document.getElementById('fontSizeModal');
+            modal.classList.add('show');
+            
+            // 현재 선택된 폰트 크기 표시
+            const currentSize = localStorage.getItem('fontSize') || 'normal';
+            document.querySelectorAll('.font-size-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelectorAll('.font-size-option').forEach(opt => {
+                if (opt.onclick.toString().includes(currentSize)) {
+                    opt.classList.add('active');
+                }
+            });
+        }
+
+        // 폰트 크기 모달 닫기
+        function closeFontModal() {
+            const modal = document.getElementById('fontSizeModal');
+            modal.classList.remove('show');
+        }
+
+        // 폰트 크기 선택
+        function selectFontSize(size) {
+            const currentSize = localStorage.getItem('fontSize') || 'normal';
+            setFontSize(size);
+            
+            // active 클래스 업데이트
+            document.querySelectorAll('.font-size-option').forEach(opt => opt.classList.remove('active'));
+            event.target.closest('.font-size-option').classList.add('active');
+        }
+
+        // 사용 방법 보기
+        function showWelcome() {
+            closeMenu();
+            document.getElementById('welcomePopup').classList.add('show');
         }
 
         // 진행 상황 저장
