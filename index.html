@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>정보처리기사 실기 핵심 키워드130 문제은행</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=20251103210000">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <style>
         * {
             margin: 0;
@@ -168,6 +171,44 @@
             border-color: #667eea;
             background: #f8f9ff;
             transform: translateX(5px);
+        }
+
+        .past-exam-selector {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background: white;
+        }
+
+        .past-exam-selector select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .past-exam-selector select:hover {
+            border-color: #667eea;
+        }
+
+        .past-exam-selector select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+        }
+
+        .past-exam-info {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
         }
 
         .font-size-modal {
@@ -1239,6 +1280,54 @@
                 <div class="menu-item" onclick="switchModule('code_control')" id="menu_code_control">
                     <i class="fas fa-code"></i> 💻 코드-제어문14문제
                 </div>
+                <div class="past-exam-selector">
+                    <div style="font-weight: 500; margin-bottom: 10px;">
+                        <i class="fas fa-graduation-cap"></i> 📝 정보처리기사 실기 기출문제
+                    </div>
+                    <select id="pastExamSelector" onchange="switchPastExam()">
+                        <option value="">회차를 선택하세요</option>
+                        <option value="2025_round1">2025년 1회</option>
+                        <option value="2025_round2">2025년 2회</option>
+                        <option value="2024_round3">2024년 3회</option>
+                        <option value="2024_round2">2024년 2회</option>
+                        <option value="2024_round1">2024년 1회</option>
+                        <option value="2023_round3">2023년 3회</option>
+                        <option value="2023_round2">2023년 2회</option>
+                        <option value="2023_round1">2023년 1회</option>
+                        <option value="2022_round3">2022년 3회</option>
+                        <option value="2022_round2">2022년 2회</option>
+                        <option value="2022_round1">2022년 1회</option>
+                        <option value="2021_round1">2021년 1회</option>
+                    </select>
+                    <div class="past-exam-info" id="pastExamInfo">
+                        기출문제를 선택하면 해당 회차의 문제를 풀어볼 수 있습니다.
+                    </div>
+                </div>
+                <div class="past-exam-selector" style="margin-top: 20px;">
+                    <div style="font-weight: 500; margin-bottom: 10px;">
+                        <i class="fas fa-tags"></i> 📂 문제패턴별 기출문제
+                    </div>
+                    <select id="categorySelector" onchange="switchCategory()">
+                        <option value="">카테고리를 선택하세요</option>
+                        <optgroup label="💻 프로그래밍">
+                            <option value="category_programming">전체 (108문제)</option>
+                            <option value="category_programming_java">☕ Java (37문제)</option>
+                            <option value="category_programming_c">🔧 C언어 (34문제)</option>
+                            <option value="category_programming_python">🐍 Python (13문제)</option>
+                        </optgroup>
+                        <option value="category_network">🌐 네트워크 (32문제)</option>
+                        <option value="category_database">🗄️ 데이터베이스 (29문제)</option>
+                        <option value="category_software">⚙️ 소프트웨어공학 (19문제)</option>
+                        <option value="category_sql">📊 SQL (15문제)</option>
+                        <option value="category_security">🔒 정보보안 (14문제)</option>
+                        <option value="category_os">🖥️ 운영체제 (9문제)</option>
+                        <option value="category_datastructure">📚 자료구조 (4문제)</option>
+                        <option value="category_algorithm">🧮 알고리즘 (1문제)</option>
+                    </select>
+                    <div class="past-exam-info" id="categoryInfo">
+                        문제 패턴별로 분류된 기출문제를 학습할 수 있습니다.
+                    </div>
+                </div>
             </div>
             <div class="menu-section">
                 <h3><i class="fas fa-chart-line"></i> 학습 통계</h3>
@@ -1388,6 +1477,170 @@
                 itemsFile: 'items_code_control.jsonl',
                 tablesFile: 'tables_code_control.jsonl',
                 maxRange: 14
+            },
+            // 기출문제 모듈들 (실제 크롤링된 문제 수)
+            '2025_round1': {
+                title: '정보처리기사 실기 2025년 1회 기출문제',
+                itemsFile: 'data/items_2025_round1.jsonl',
+                tablesFile: 'data/tables_2025_round1.jsonl',
+                maxRange: 19,
+                isPastExam: true
+            },
+            '2025_round2': {
+                title: '정보처리기사 실기 2025년 2회 기출문제',
+                itemsFile: 'data/items_2025_round2.jsonl',
+                tablesFile: 'data/tables_2025_round2.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2024_round3': {
+                title: '정보처리기사 실기 2024년 3회 기출문제',
+                itemsFile: 'data/items_2024_round3.jsonl',
+                tablesFile: 'data/tables_2024_round3.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2024_round2': {
+                title: '정보처리기사 실기 2024년 2회 기출문제',
+                itemsFile: 'data/items_2024_round2.jsonl',
+                tablesFile: 'data/tables_2024_round2.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2024_round1': {
+                title: '정보처리기사 실기 2024년 1회 기출문제',
+                itemsFile: 'data/items_2024_round1.jsonl',
+                tablesFile: 'data/tables_2024_round1.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2023_round2': {
+                title: '정보처리기사 실기 2023년 2회 기출문제',
+                itemsFile: 'data/items_2023_round2.jsonl',
+                tablesFile: 'data/tables_2023_round2.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2022_round3': {
+                title: '정보처리기사 실기 2022년 3회 기출문제',
+                itemsFile: 'data/items_2022_round3.jsonl',
+                tablesFile: 'data/tables_2022_round3.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2022_round2': {
+                title: '정보처리기사 실기 2022년 2회 기출문제',
+                itemsFile: 'data/items_2022_round2.jsonl',
+                tablesFile: 'data/tables_2022_round2.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2021_round1': {
+                title: '정보처리기사 실기 2021년 1회 기출문제',
+                itemsFile: 'data/items_2021_round1.jsonl',
+                tablesFile: 'data/tables_2021_round1.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            // 문제패턴별 카테고리
+            'category_programming': {
+                title: '💻 프로그래밍 (108문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '프로그래밍',
+                isCategoryMode: true,
+                maxRange: 108
+            },
+            'category_programming_java': {
+                title: '☕ Java 프로그래밍 (37문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '프로그래밍',
+                subcategory: 'java',
+                isCategoryMode: true,
+                maxRange: 37
+            },
+            'category_programming_c': {
+                title: '🔧 C언어 프로그래밍 (34문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '프로그래밍',
+                subcategory: 'c',
+                isCategoryMode: true,
+                maxRange: 34
+            },
+            'category_programming_python': {
+                title: '🐍 Python 프로그래밍 (13문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '프로그래밍',
+                subcategory: 'python',
+                isCategoryMode: true,
+                maxRange: 13
+            },
+            'category_network': {
+                title: '🌐 네트워크 (32문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '네트워크',
+                isCategoryMode: true,
+                maxRange: 32
+            },
+            'category_database': {
+                title: '🗄️ 데이터베이스 (29문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '데이터베이스',
+                isCategoryMode: true,
+                maxRange: 29
+            },
+            'category_software': {
+                title: '⚙️ 소프트웨어공학 (19문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '소프트웨어공학',
+                isCategoryMode: true,
+                maxRange: 19
+            },
+            'category_sql': {
+                title: '📊 SQL (15문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: 'SQL',
+                isCategoryMode: true,
+                maxRange: 15
+            },
+            'category_security': {
+                title: '🔒 정보보안 (14문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '정보보안',
+                isCategoryMode: true,
+                maxRange: 14
+            },
+            'category_os': {
+                title: '🖥️ 운영체제 (9문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '운영체제',
+                isCategoryMode: true,
+                maxRange: 9
+            },
+            'category_datastructure': {
+                title: '📚 자료구조 (4문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '자료구조',
+                isCategoryMode: true,
+                maxRange: 4
+            },
+            'category_algorithm': {
+                title: '🧮 알고리즘 (1문제)',
+                itemsFile: 'data/items_all.jsonl',
+                tablesFile: '',
+                category: '알고리즘',
+                isCategoryMode: true,
+                maxRange: 1
             }
         };
 
@@ -1535,22 +1788,50 @@
                 // items.jsonl 로드
                 const response = await fetch(config.itemsFile);
                 const text = await response.text();
-                allQuestions = text.trim().split('\n').map(line => JSON.parse(line));
+                let questions = text.trim().split('\n').map(line => JSON.parse(line));
+                
+                // 카테고리 모드인 경우 필터링
+                if (config.isCategoryMode && config.category) {
+                    questions = questions.filter(q => {
+                        // 1차: 카테고리 매칭
+                        const matchCategory = q.primary_category === config.category;
+                        
+                        // 2차: 서브카테고리 매칭 (설정된 경우에만)
+                        if (config.subcategory) {
+                            const matchSubcategory = 
+                                // tags에 언어가 포함되어 있는지 확인
+                                (q.tags && q.tags.includes(config.subcategory)) ||
+                                // 또는 code_blocks의 language와 매칭
+                                (q.code_blocks && q.code_blocks.some(cb => cb.language === config.subcategory));
+                            return matchCategory && matchSubcategory;
+                        }
+                        
+                        return matchCategory;
+                    });
+                    const filterDesc = config.subcategory ? 
+                        `${config.category} > ${config.subcategory}` : 
+                        config.category;
+                    console.log(`카테고리 필터링: ${filterDesc} - ${questions.length}개 문제`);
+                }
+                
+                allQuestions = questions;
                 
                 // tables.jsonl 로드
-                try {
-                    const tablesResponse = await fetch(config.tablesFile);
-                    const tablesText = await tablesResponse.text();
-                    const tables = tablesText.trim().split('\n').map(line => JSON.parse(line));
-                    
-                    // 표를 ID로 인덱싱
-                    allTables = {};
-                    for (const table of tables) {
-                        allTables[table.table_id] = table;
+                if (config.tablesFile) {
+                    try {
+                        const tablesResponse = await fetch(config.tablesFile);
+                        const tablesText = await tablesResponse.text();
+                        const tables = tablesText.trim().split('\n').map(line => JSON.parse(line));
+                        
+                        // 표를 ID로 인덱싱
+                        allTables = {};
+                        for (const table of tables) {
+                            allTables[table.table_id] = table;
+                        }
+                        console.log(`${tables.length}개 표 로드 완료`);
+                    } catch (e) {
+                        console.log('표 데이터 없음:', e);
                     }
-                    console.log(`${tables.length}개 표 로드 완료`);
-                } catch (e) {
-                    console.log('표 데이터 없음:', e);
                 }
                 
                 // 모드별 필터링
@@ -1650,6 +1931,63 @@
             
             updateStats();
         }
+
+        // 기출문제 회차 선택
+        function switchPastExam() {
+            const selector = document.getElementById('pastExamSelector');
+            const examId = selector.value;
+            
+            if (!examId) {
+                return;
+            }
+            
+            // switchModule 호출
+            switchModule(examId);
+            
+            // 정보 업데이트
+            const config = moduleConfig[examId];
+            const infoDiv = document.getElementById('pastExamInfo');
+            infoDiv.innerHTML = `
+                <i class="fas fa-check-circle" style="color: #667eea;"></i> 
+                선택됨: ${config.maxRange}개 문제
+            `;
+            
+            // 기존 메뉴 아이템 비활성화
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.style.background = 'white';
+                item.style.color = '';
+            });
+        }
+        
+        // 카테고리별 문제 선택
+        function switchCategory() {
+            const selector = document.getElementById('categorySelector');
+            const categoryId = selector.value;
+            
+            if (!categoryId) {
+                return;
+            }
+            
+            closeMenu();
+            
+            // switchModule 호출
+            switchModule(categoryId);
+            
+            // 정보 업데이트
+            const config = moduleConfig[categoryId];
+            const infoDiv = document.getElementById('categoryInfo');
+            infoDiv.innerHTML = `
+                <i class="fas fa-check-circle" style="color: #667eea;"></i> 
+                선택됨: ${config.title}
+            `;
+            
+            // 기존 메뉴 아이템 및 기출문제 선택 초기화
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.style.background = 'white';
+                item.style.color = '';
+            });
+            document.getElementById('pastExamSelector').value = '';
+        }
         
         // 배열 섞기
         function shuffleArray(array) {
@@ -1721,19 +2059,21 @@
                 allQuestions = text.trim().split('\n').map(line => JSON.parse(line));
                 
                 // tables.jsonl 로드
-                try {
-                    const tablesResponse = await fetch(config.tablesFile);
-                    const tablesText = await tablesResponse.text();
-                    const tables = tablesText.trim().split('\n').map(line => JSON.parse(line));
-                    
-                    // 표를 ID로 인덱싱
-                    allTables = {};
-                    for (const table of tables) {
-                        allTables[table.table_id] = table;
+                if (config.tablesFile) {
+                    try {
+                        const tablesResponse = await fetch(config.tablesFile);
+                        const tablesText = await tablesResponse.text();
+                        const tables = tablesText.trim().split('\n').map(line => JSON.parse(line));
+                        
+                        // 표를 ID로 인덱싱
+                        allTables = {};
+                        for (const table of tables) {
+                            allTables[table.table_id] = table;
+                        }
+                        console.log(`${tables.length}개 표 로드 완료`);
+                    } catch (e) {
+                        console.log('표 데이터 없음:', e);
                     }
-                    console.log(`${tables.length}개 표 로드 완료`);
-                } catch (e) {
-                    console.log('표 데이터 없음:', e);
                 }
                 
                 // 범위 필터링 (Q 또는 C 접두사 처리)
@@ -1781,7 +2121,8 @@
             // 이미지 표시
             if (question.image_refs && question.image_refs.length > 0) {
                 for (let img of question.image_refs) {
-                    html += `<img src="images/${img}" class="image-preview" alt="문제 이미지">`;
+                    // img에 이미 images/ 경로가 포함되어 있으므로 그대로 사용
+                    html += `<img src="${img}" class="image-preview" alt="문제 이미지">`;
                 }
             }
             
@@ -1953,16 +2294,17 @@
                 }
             } else {
                 // 단일 답안 입력창
-                const placeholder = (question.q_no === 'Q016' || question.q_no === 'Q017') ? '특수문자 버튼을 클릭하여 입력하세요' : '정답을 입력하세요 (예: 1, 2, a, b, ㄱ, ①)';
-                const isReadonly = question.q_no === 'Q016' || question.q_no === 'Q017';
+                const needsSymbols = needsSymbolInput(question);
+                const placeholder = needsSymbols ? '특수문자 버튼을 클릭하여 입력하세요' : '정답을 입력하세요 (예: 1, 2, a, b, ㄱ, ①)';
+                const isReadonly = needsSymbols;
                 html += `
                     <input type="text" class="answer-input" id="answerInput_0" 
                            placeholder="${placeholder}" ${isReadonly ? 'readonly' : ''}>
                 `;
             }
             
-            // 16번, 17번은 특수문자 버튼 표시
-            if (question.q_no === 'Q016' || question.q_no === 'Q017') {
+            // 답안에 특수문자가 포함된 경우만 버튼 표시
+            if (needsSymbolInput(question)) {
                 html += `
                     <div class="symbol-buttons">
                         <strong>기호를 순서대로 클릭하세요 (다시 클릭하면 제거):</strong>
@@ -2164,6 +2506,43 @@
             return text.trim();
         }
         
+        // 답안에 특수문자가 포함되어 있는지 확인
+        function hasSpecialSymbols(question) {
+            const specialSymbols = ['∪', '―', '×', 'π', '▷◁', '∩', '÷', 'Δ'];
+            
+            if (!question.answer || !question.answer.keys) {
+                return false;
+            }
+            
+            // 모든 답안 키를 확인
+            for (const key of question.answer.keys) {
+                const keyStr = String(key);
+                for (const symbol of specialSymbols) {
+                    if (keyStr.includes(symbol)) {
+                        return true;
+                    }
+                }
+            }
+            
+            return false;
+        }
+
+        // 특수문자 입력이 필요한 문제인지 확인
+        function needsSymbolInput(question) {
+            // 1. 답안에 특수문자가 포함되어 있으면 true
+            if (hasSpecialSymbols(question)) {
+                return true;
+            }
+            
+            // 2. choices가 있고 여러 답안이면 일반 입력
+            if (question.choices && question.choices.length > 0) {
+                return false;
+            }
+            
+            // 3. 특수문자가 없으면 일반 입력
+            return false;
+        }
+
         // 답안 매칭 체크 (스마트 매칭)
         function checkAnswerMatch(user, correct) {
             // 정확 일치
@@ -2215,8 +2594,8 @@
         function insertSymbol(symbol) {
             const question = currentQuestions[currentIndex];
             
-            // 16번, 17번: 순차 입력 모드
-            if (question.q_no === 'Q016' || question.q_no === 'Q017') {
+            // 특수문자 입력이 필요한 문제만: 순차 입력 모드
+            if (needsSymbolInput(question)) {
                 const input = document.getElementById('answerInput_0');
                 if (!input) return;
                 
