@@ -1,0 +1,80 @@
+<div class="menu-header">
+    <h3><i class="fas fa-cog"></i> 메뉴</h3>
+    <button class="close-menu" onclick="closeMenu()">×</button>
+</div>
+<div class="menu-content">
+    <div class="menu-section">
+        <h3><i class="fas fa-book"></i> 문제집 선택</h3>
+        <div class="menu-item" onclick="switchModule('keyword130')" id="menu_keyword130">
+            <i class="fas fa-check"></i> 📚 핵심 키워드130
+        </div>
+        <div class="menu-item" onclick="switchModule('code_control')" id="menu_code_control">
+            <i class="fas fa-code"></i> 💻 코드-제어문14문제
+        </div>
+        <div class="past-exam-selector">
+            <div style="font-weight: 500; margin-bottom: 10px;">
+                <i class="fas fa-graduation-cap"></i> 📝 정보처리기사 실기 기출문제
+            </div>
+            <select id="pastExamSelector" onchange="switchPastExam()">
+                <option value="">회차를 선택하세요</option>
+                <option value="2025_round1">2025년 1회</option>
+                <option value="2025_round2">2025년 2회</option>
+                <option value="2024_round3">2024년 3회</option>
+                <option value="2024_round2">2024년 2회</option>
+                <option value="2024_round1">2024년 1회</option>
+                <option value="2023_round3">2023년 3회</option>
+                <option value="2023_round2">2023년 2회</option>
+                <option value="2023_round1">2023년 1회</option>
+                <option value="2022_round3">2022년 3회</option>
+                <option value="2022_round2">2022년 2회</option>
+                <option value="2022_round1">2022년 1회</option>
+                <option value="2021_round1">2021년 1회</option>
+            </select>
+            <div class="past-exam-info" id="pastExamInfo">
+                기출문제를 선택하면 해당 회차의 문제를 풀어볼 수 있습니다.
+            </div>
+        </div>
+        <div class="past-exam-selector" style="margin-top: 20px;">
+            <div style="font-weight: 500; margin-bottom: 10px;">
+                <i class="fas fa-tags"></i> 📂 문제패턴별 기출문제
+            </div>
+            <select id="categorySelector" onchange="switchCategory()">
+                <option value="">카테고리를 선택하세요</option>
+                <option value="category_programming">💻 프로그래밍 (108문제)</option>
+                <option value="category_network">🌐 네트워크 (32문제)</option>
+                <option value="category_database">🗄️ 데이터베이스 (29문제)</option>
+                <option value="category_software">⚙️ 소프트웨어공학 (19문제)</option>
+                <option value="category_sql">📊 SQL (15문제)</option>
+                <option value="category_security">🔒 정보보안 (14문제)</option>
+                <option value="category_os">🖥️ 운영체제 (9문제)</option>
+                <option value="category_datastructure">📚 자료구조 (4문제)</option>
+                <option value="category_algorithm">🧮 알고리즘 (1문제)</option>
+            </select>
+            <div class="past-exam-info" id="categoryInfo">
+                문제 패턴별로 분류된 기출문제를 학습할 수 있습니다.
+            </div>
+        </div>
+    </div>
+    <div class="menu-section">
+        <h3><i class="fas fa-chart-line"></i> 학습 통계</h3>
+        <div class="menu-item" onclick="toggleStats()">
+            <i class="fas fa-eye"></i> 학습 통계 보기
+        </div>
+        <div class="menu-item" onclick="resetProgress()">
+            <i class="fas fa-redo"></i> 통계 초기화
+        </div>
+    </div>
+    <div class="menu-section">
+        <h3><i class="fas fa-font"></i> 폰트 크기</h3>
+        <div class="menu-item" onclick="openFontModal()">
+            <i class="fas fa-text-height"></i> 폰트 크기 변경
+        </div>
+    </div>
+    <div class="menu-section">
+        <h3><i class="fas fa-info-circle"></i> 정보</h3>
+        <div class="menu-item" onclick="showWelcome()">
+            <i class="fas fa-question-circle"></i> 사용 방법
+        </div>
+    </div>
+</div>
+
