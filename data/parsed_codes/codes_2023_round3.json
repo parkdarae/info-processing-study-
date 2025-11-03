@@ -1,0 +1,122 @@
+[
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q001",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "public class main{\n    public static void main(String[] args) {\n        A b = new B();\n        b.paint();\n        b.draw();\n    }\n}\nclass A {\n    public void paint() {\n        System.out.print(\"A\");\n        draw();\n    }\n    public void draw() {\n        System.out.print(\"B\");\n        draw();\n    }\n}\nclass B extends A {\n    public void paint() {\n        super.draw();\n        System.out.print(\"C\");\n        this.draw();\n    }\n    public void draw() {\n        System.out.print(\"D\");\n    }\n}",
+        "line_numbers": [
+          1,
+          27
+        ],
+        "file": "data/codes/2023_round3/Q001_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q004",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\nint test(int n) {\n    int i, sum = 0;\n    for (i = 1; i <= n / 2; i++){\n        if (n % i == 0)\n        sum += i;\n    }\n    if (n == sum) \n        return 1;\n    ​\n    return 0;\n}\nint main(){\n    int i, sum=0;\n    for (i = 2; i <= 100; i++){ \n        if (test(i))\n        sum += i;\n    }\n    printf(\"%d \", sum); \n    return 0;\n}",
+        "line_numbers": [
+          1,
+          21
+        ],
+        "file": "data/codes/2023_round3/Q004_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q005",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct Data{\n    char c;\n    int *numPtr; \n} Data;\nint main(){\n    int num = 10;\n    Data d1;    \n    Data *d2 = malloc(sizeof(struct Data));\n    d1.numPtr = &num;  \n   d2 ( ) numPtr = &num; \n    printf(\"%d\\n\", *d1.numPtr); \n    printf(\"%d\\n\", *d2 ( ) numPtr);\n    free(d2); \n    return 0;\n}",
+        "line_numbers": [
+          1,
+          17
+        ],
+        "file": "data/codes/2023_round3/Q005_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q008",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include\nint f(int n) {\n    if(n<=1) return 1;\n    else return n*f(n-1);\n}\nint main() {\n    printf(\"%d\", f(7));\n}",
+        "line_numbers": [
+          1,
+          8
+        ],
+        "file": "data/codes/2023_round3/Q008_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q010",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include\nint main() {\n    char* p = \"KOREA\";\n    printf(\"%s\\n\", p);\n    printf(\"%s\\n\", p+1);\n    printf(\"%c\\n\", *p);\n    printf(\"%c\\n\", *(p+3));\n    printf(\"%c\\n\", *p+4);\n}",
+        "line_numbers": [
+          1,
+          9
+        ],
+        "file": "data/codes/2023_round3/Q010_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q011",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "class Parent {\n    int compute(int num) {\n        if(num <= 1)\n            return num;\n        return compute(num-1) + compute(num-2);\n    }\n}\nclass Child extends Parent {\n    int compute(int num) {\n        if(num <= 1)\n            return num;\n        return compute(num-1) + compute(num-3);\n    }\n}\npublic class main {\n    public static void main(String args[]) {\n        Parent obj = new Child();\n        System.out.print(obj.compute(7));\n    }\n}",
+        "line_numbers": [
+          1,
+          20
+        ],
+        "file": "data/codes/2023_round3/Q011_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q013",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "class Person {\n    private String name;\n    public Person(String val) {\n        name = val;\n    }\n    public static String get() {\n    return name;\n    }\n    public void print() {\n        System.out.println(name);\n    }\n}\npublic class main {\n    public static void main(String[] args) {\n        Person obj = new Person(\"Kim\");\n        obj.print();\n    }\n}",
+        "line_numbers": [
+          1,
+          18
+        ],
+        "file": "data/codes/2023_round3/Q013_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q014",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "print(\"파이썬 입출력에 대한 문제입니다.\")\nnum1, num2 = input()._____()\nnum1 = int(num1)\nnum2 = int(num2)\nprint(num1,num2)\nnum3 = num1 + num2\nprint(num1 + \" + \"  + num2 + \" = \" + num3)",
+        "line_numbers": [
+          1,
+          7
+        ],
+        "file": "data/codes/2023_round3/Q014_code.txt"
+      }
+    ]
+  }
+]

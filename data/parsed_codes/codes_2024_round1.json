@@ -1,0 +1,152 @@
+[
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q001",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "class Connection {\n    private static Connection _inst = null;\n    private int count = 0;\n    static public Connection get() {\n        if(_inst == null) {\n            _inst = new Connection();\n            return _inst;\n        }\n        return _inst;\n    }\n    public void count() {\n         count++; \n    }\n    public int getCount() {\n         return count; \n    }\n}\npublic class main {  \n    public static void main(String[] args) {\n        Connection conn1 = Connection.get();\n        conn1.count();\n        Connection conn2 = Connection.get();\n        conn2.count();\n        Connection conn3 = Connection.get();\n        conn3.count();\n        conn1.count();\n        System.out.print(conn1.getCount());\n    }\n}",
+        "line_numbers": [
+          1,
+          29
+        ],
+        "file": "data/codes/2024_round1/Q001_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q002",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\nint main() {\n    int v1 = 0, v2 = 35, v3 = 29;\n    if(v1 > v2 ? v2 : v1) {\n        v2 = v2 << 2;\n    }else{\n        v3 = v3 << 2;\n    }\n    printf(\"%d\", v2+v3);\n}",
+        "line_numbers": [
+          1,
+          10
+        ],
+        "file": "data/codes/2024_round1/Q002_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q004",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n#include <string.h>\nvoid reverse(char* str){\n    int len = strlen(str);\n    char temp;\n    char*p1 = str;\n    char*p2 = str + len - 1;\n    while(p1<p2){\n        temp = *p1;\n        *p1 = *p2;\n        *p2 = temp;\n        p1++;\n        p2--;\n    }\n}\nint main(int argc, char* argv[]){\n    char str[100] = \"ABCDEFGH\";\n    reverse(str);\n    int len = strlen(str);\n    for(int i=1; i<len; i+=2){\n        printf(\"%c\",str[i]);\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+        "line_numbers": [
+          1,
+          25
+        ],
+        "file": "data/codes/2024_round1/Q004_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q010",
+    "code_blocks": [
+      {
+        "language": "unknown",
+        "code": "class Parent {\n    int x, y;\n    Parent(int x, int y) { ①\n        this.x=x;\n        this y=y;\n    }\n    int getT() { ②\n        return x*y;\n    }\n}\n​class Child extend Parent {\n    int x;\n    Child (int x) { ③\n        super(x+1, x);\n        this.x=x;\n    }\n    int getT(int n){ ④\n        return super.getT()+n;\n    }\n}\nclass Main {\n    public static void main(String[] args) { ⑤\n        Parent parent = new Child(3); ⑥\n        System.out.println(parent.getT()); ⑦\n    }\n}",
+        "line_numbers": [
+          1,
+          26
+        ],
+        "file": "data/codes/2024_round1/Q010_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q011",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\ntypedef struct{\n    int accNum;\n    double bal;\n}BankAcc;\ndouble sim_pow(double base, int year){\n    int i;\n    double r = 1.0;\n    for(i=0; i<year; i++){\n        r = r*base;\n    }\n    return r;\n} \nvoid initAcc(BankAcc *acc, int x, double y){\n    acc -> accNum = x;\n    acc -> bal = y;\n}\nvoid xxx(BankAcc *acc, double *en){\n    if (*en > 0 && *en < acc -> bal) {\n        acc -> bal = acc -> bal-*en;\n    }else{\n        acc -> bal = acc -> bal+*en;\n    }\n}\nvoid yyy(BankAcc *acc){\n    acc -> bal = acc -> bal * sim_pow((1+0.1),3);\n}\nint main(){\n    BankAcc myAcc;\n    initAcc(&myAcc, 9981, 2200.0);\n    double amount = 100.0;\n    xxx(&myAcc, &amount);\n    yyy(&myAcc);\n    printf(\"%d and %.2f\", myAcc.accNum, myAcc.bal);\n    return 0;\n}",
+        "line_numbers": [
+          1,
+          36
+        ],
+        "file": "data/codes/2024_round1/Q011_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q012",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "a = [\"Seoul\", \"Kyeonggi\", \"Incheon\", \"Daejun\", \"Daegu\", \"Pusan\"] \nstr = \"S\"\nfor i in a:\n    str = str + i[1]\nprint(str)",
+        "line_numbers": [
+          1,
+          5
+        ],
+        "file": "data/codes/2024_round1/Q012_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q013",
+    "code_blocks": [
+      {
+        "language": "unknown",
+        "code": "SELECT\n    B\nFROM\n    R1\nWHERE\n    C IN (SELECT C FROM R2 WHERE D=\"k\");",
+        "line_numbers": [
+          1,
+          6
+        ],
+        "file": "data/codes/2024_round1/Q013_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q016",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "class classOne {\n    int a, b;\n    public classOne(int a, int b) {\n        this.a = a;\n        this.b = b;\n    }\n    public void print() {\n        System.out.println(a + b);\n    }\n}\nclass classTwo extends classOne {\n    int po = 3;\n    public classTwo(int i) {\n        super(i, i+1);\n    }\n    public void print() {\n        System.out.println(po*po);\n    }\n}\npublic class main {  \n    public static void main(String[] args) {\n        classOne one = new classTwo(10);\n        one.print();\n    }\n}",
+        "line_numbers": [
+          1,
+          25
+        ],
+        "file": "data/codes/2024_round1/Q016_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q018",
+    "code_blocks": [
+      {
+        "language": "unknown",
+        "code": "SELECT \n    COUNT(*) \nFROM \n    TABLE \nWHERE \n    EMPNO > 100 \nAND \n    SAL >= 3000 OR EMPNO = 200",
+        "line_numbers": [
+          1,
+          8
+        ],
+        "file": "data/codes/2024_round1/Q018_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2024_round1",
+    "q_no": "Q019",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include<stdio.h>\n#include<ctype.h>\nint main(){\n    char*p = \"It is 8\";\n    char result[100];\n    int i;\n    for(i=0; p[i]!='\\0'; i++){\n        if(isupper(p[i]))\n            result[i] = (p[i]-'A'+5)% 25 + 'A';\n        else if(islower(p[i]))\n            result[i] = (p[i]-'a'+10)% 26 + 'a';\n        else if(isdigit(p[i]))\n            result[i] = (p[i]-'0'+3)% 10 + '0';\n        else if(!(isupper(p[i]) || islower(p[i]) || isdigit(p[i])))    \n            result[i] = p[i];\n    }\n    result[i] = '\\0';\n    printf(\"%s\\n\",result);\n    return 0;\n}",
+        "line_numbers": [
+          1,
+          20
+        ],
+        "file": "data/codes/2024_round1/Q019_code.txt"
+      }
+    ]
+  }
+]

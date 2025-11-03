@@ -1,0 +1,98 @@
+[
+  {
+    "doc_id": "2021_round1",
+    "q_no": "Q005",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "class good :\n\tli = [\"seoul\", \"kyeonggi\",\"inchon\",\"daejeon\",\"daegu\",\"pusan\"]\ng = good()\nstr01 = ''\nfor i in g.li:\n\tstr01 = str01 + i[0]\nprint(str01)",
+        "line_numbers": [
+          1,
+          7
+        ],
+        "file": "data/codes/2021_round1/Q005_code.txt"
+      },
+      {
+        "language": "python",
+        "code": "class good :\n\tli = [\"seoul\", \"kyeonggi\",\"inchon\",\"daejeon\",\"daegu\",\"pusan\"]\ng = good()\nstr01 = ''\nfor i in g.li:\n\tstr01 = str01 + i[0]\nprint(str01)",
+        "line_numbers": [
+          1,
+          7
+        ],
+        "file": "data/codes/2021_round1/Q005_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2021_round1",
+    "q_no": "Q007",
+    "code_blocks": [
+      {
+        "language": "java",
+        "code": "public class good{\n\tpublic static void main(String[] args){\n    \tint[][]arr = new int[][]{{45,50,75},{89}};\n        System.out.println(arr[0].length);\n        System.out.println(arr[1].length);\n        System.out.println(arr[0][0]);\n        System.out.println(arr[0][1]);\n        System.out.println(arr[1][0]);",
+        "line_numbers": [
+          1,
+          8
+        ],
+        "file": "data/codes/2021_round1/Q007_code.txt"
+      },
+      {
+        "language": "java",
+        "code": "public class good{\n\tpublic static void main(String[] args){\n    \tint[][]arr = new int[][]{{45,50,75},{89}};\n        System.out.println(arr[0].length);\n        System.out.println(arr[1].length);\n        System.out.println(arr[0][0]);\n        System.out.println(arr[0][1]);\n        System.out.println(arr[1][0]);",
+        "line_numbers": [
+          1,
+          8
+        ],
+        "file": "data/codes/2021_round1/Q007_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2021_round1",
+    "q_no": "Q015",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\nstruct good {\n\tchar name[10];\n    int age;\n };\n void main(){\n \tstruct good s[] = {\"Kim\",28,\"Lee\",38,\"Seo\",50,\"Park\",35};\n    struct good *p;\n    p = s;\n    p++;\n    printf(\"%s\\n\", p-> name);\n    printf(\"%d\\n\", p-> age);",
+        "line_numbers": [
+          1,
+          12
+        ],
+        "file": "data/codes/2021_round1/Q015_code.txt"
+      },
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\nstruct good {\n\tchar name[10];\n    int age;\n };\n void main(){\n \tstruct good s[] = {\"Kim\",28,\"Lee\",38,\"Seo\",50,\"Park\",35};\n    struct good *p;\n    p = s;\n    p++;\n    printf(\"%s\\n\", p-> name);\n    printf(\"%d\\n\", p-> age);",
+        "line_numbers": [
+          1,
+          12
+        ],
+        "file": "data/codes/2021_round1/Q015_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2021_round1",
+    "q_no": "Q017",
+    "code_blocks": [
+      {
+        "language": "java",
+        "code": "public class good {\n\tpublic static void main(String[] args){\n    int i, j;\n    for(j=0, i=0; i<=5; i++){\n    j+=i;\n    System.out.print(i);\n    if(i==5){\n    System.out.print(\"=\");\n    System.out.print(j);\n   }else{\n   \tSystem.out.print(\"+\");\n\t}\n   }\n  }\n }",
+        "line_numbers": [
+          1,
+          15
+        ],
+        "file": "data/codes/2021_round1/Q017_code.txt"
+      },
+      {
+        "language": "java",
+        "code": "public class good {\n\tpublic static void main(String[] args){\n    int i, j;\n    for(j=0, i=0; i<=5; i++){\n    j+=i;\n    System.out.print(i);\n    if(i==5){\n    System.out.print(\"=\");\n    System.out.print(j);\n   }else{\n   \tSystem.out.print(\"+\");\n\t}\n   }\n  }\n }",
+        "line_numbers": [
+          1,
+          15
+        ],
+        "file": "data/codes/2021_round1/Q017_code.txt"
+      }
+    ]
+  }
+]

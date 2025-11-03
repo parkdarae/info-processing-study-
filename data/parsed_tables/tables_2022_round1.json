@@ -1,0 +1,14 @@
+[
+  {
+    "doc_id": "2022_round1",
+    "q_no": "Q004",
+    "table_refs": [
+      {
+        "id": "table1",
+        "json": "data/tables/2022_round1/Q004_table1.json",
+        "rows": 18,
+        "cols": 1
+      }
+    ]
+  }
+]

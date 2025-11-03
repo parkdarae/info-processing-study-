@@ -1,0 +1,22 @@
+[
+  {
+    "doc_id": "2023_round2",
+    "q_no": "Q010",
+    "image_refs": [
+      {
+        "path": "images/2023_round2/Q010_1.png",
+        "source_url": "https://blog.kakaocdn.net/dna/IiEWY/btsC4tQ9MMP/AAAAAAAAAAAAAAAAAAAAAO23cQIkL-Fx7knyFogaMP7YJ-Srme1lV66jaMcWyWAp/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1764514799&allow_ip=&allow_referer=&signature=jSaRAMv8V5ksEyes7Il7gY4b6Ag%3D"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round2",
+    "q_no": "Q002",
+    "image_refs": [
+      {
+        "path": "images/2023_round2/Q002_1.png",
+        "source_url": "https://blog.kakaocdn.net/dna/bijwzQ/btsETSOS90A/AAAAAAAAAAAAAAAAAAAAAOSisPW_Z_BEegdlHuhFXSiDQ00dhWD_dq8KA9tIpOw3/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1764514799&allow_ip=&allow_referer=&signature=FlcQlqS25dxZCyEP5Htwq3FyEbw%3D"
+      }
+    ]
+  }
+]

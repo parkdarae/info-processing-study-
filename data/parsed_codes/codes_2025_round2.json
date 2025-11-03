@@ -1,0 +1,137 @@
+[
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q005",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "public class Main {\n    public static void change(String[] data, String s){\n        data[0] = s;\n        s = \"Z\";\n    }\n    public static void main(String[] args) {\n        String data[] = { \"A\" };\n        String s = \"B\";\n        change(data, s);\n        System.out.print(data[0] + s);\n    }\n}",
+        "line_numbers": [
+          1,
+          12
+        ],
+        "file": "data/codes/2025_round2/Q005_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q009",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "public class Main {\n    static interface F {\n        int apply(int x) throws Exception;\n    }\n    public static int run(F f) {\n        try {\n            return f.apply(3);\n        } catch (Exception e) {\n            return 7;\n        }\n    }\n    public static void main(String[] args) {\n        F f = (x) -> {\n            if (x > 2) {\n                throw new Exception();\n            }\n            return x * 2;\n        };\n        System.out.print(run(f) + run((int n) -> n + 9));\n    }\n}",
+        "line_numbers": [
+          1,
+          21
+        ],
+        "file": "data/codes/2025_round2/Q009_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q010",
+    "code_blocks": [
+      {
+        "language": "unknown",
+        "code": "public class Main{\n    public static class Parent {\n        public int x(int i) { return i + 2; }\n        public static String id() { return \"P\";}\n    }\n    public static class Child extends Parent {\n        public int x(int i) { return i + 3; }\n        public String x(String s) { return s + \"R\"; }\n        public static String id() { return \"C\"; }\n    }\n    public static void main(String[] args) {\n        Parent ref = new Child();\n        System.out.println(ref.x(2) + ref.id());\n    }\n}",
+        "line_numbers": [
+          1,
+          15
+        ],
+        "file": "data/codes/2025_round2/Q010_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q012",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n#define SIZE 3\ntypedef struct {\n    int a[SIZE];\n    int front;\n    int rear;\n} Queue;\nvoid enq(Queue* q, int val){\n    q->a[q->rear] = val; \n    q->rear = (q->rear + 1) % SIZE;\n}\nint deq(Queue* q) {\n    int val = q->a[q->front];\n    q->front = (q->front + 1) % SIZE;\n    return val;\n}\nint main() {\n    Queue q = {{0}, 0, 0};\n    enq(&q,1); enq(&q,2); deq(&q); enq(&q, 3);\n    int first = deq(&q);\n    int second = deq(&q);\n    printf(\"%d 그리고 %d\", first, second);\n    return 0;\n}",
+        "line_numbers": [
+          1,
+          24
+        ],
+        "file": "data/codes/2025_round2/Q012_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q014",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\nstruct dat {\n    int x;\n    int y;\n};\nint main() {\n    struct dat a[] = {{1, 2}, {3, 4}, {5, 6}};\n    struct dat* ptr = a;\n    struct dat** pptr = &ptr;\n    (*pptr)[1] = (*pptr)[2];\n    printf(\"%d 그리고 %d\", a[1].x, a[1].y);\n    return 0;\n}",
+        "line_numbers": [
+          1,
+          13
+        ],
+        "file": "data/codes/2025_round2/Q014_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q015",
+    "code_blocks": [
+      {
+        "language": "unknown",
+        "code": "public class Main{\n    public static class BO {\n        public int v;\n        public BO(int v) {\n            this.v = v;\n        }\n    }\n    public static void main(String[] args) {\n        BO a = new BO(1);\n        BO b = new BO(2);\n        BO c = new BO(3);\n        BO[] arr = {a, b, c};\n        BO t = arr[0];\n        arr[0] = arr[2];\n        arr[2] = t;\n        arr[1].v = arr[0].v;\n        System.out.println(a.v + \"a\" + b.v + \"b\" + c.v);\n    }\n}",
+        "line_numbers": [
+          1,
+          19
+        ],
+        "file": "data/codes/2025_round2/Q015_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q016",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n#include <stdlib.h>\nstruct node {\n    int p;\n    struct node* n;\n};\nint main() {\n    struct node a = {1, NULL};\n    struct node b = {2, NULL};\n    struct node c = {3, NULL};\n    a.n = &b; b.n = &c; c.n = NULL;\n    c.n = &a; a.n = &b; b.n = NULL;\n    struct node* head = &c;\n    printf(\"%d %d %d\", head->p, head->n->p, head->n->n->p);\n    return 0;\n}",
+        "line_numbers": [
+          1,
+          16
+        ],
+        "file": "data/codes/2025_round2/Q016_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q017",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "lst = [1,2,3]\ndst = {i : i* 2 for i in lst}\ns = set(dst.values())\nlst[0] = 99 \ndst[2]=7\ns.add(99)\nprint(len(s & set(dst.values())))",
+        "line_numbers": [
+          1,
+          7
+        ],
+        "file": "data/codes/2025_round2/Q017_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q018",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n#include <stdlib.h>\nstruct node {\n    char c;\n    struct node* p;\n};\nstruct node* func(char* s) {\n    struct node* h = NULL, *n;\n    while(*s) {\n        n = malloc(sizeof(struct node));\n        n->c = *s++;\n        n->p = h;\n        h = n;\n    }\n    return h;\n}\nint main() {\n    struct node* n = func(\"BEST\");\n    while(n) {\n        putchar(n->c);\n        struct node* t = n;\n        n = n->p;\n        free(t);\n    }\n    return 0;\n}",
+        "line_numbers": [
+          1,
+          26
+        ],
+        "file": "data/codes/2025_round2/Q018_code.txt"
+      }
+    ]
+  }
+]

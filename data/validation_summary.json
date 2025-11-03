@@ -1,0 +1,119 @@
+{
+  "version": "1.0",
+  "validated_at": "2025-11-02T22:46:40.252102",
+  "total_files": 9,
+  "total_questions": 179,
+  "total_with_answers": 179,
+  "total_with_explanation": 0,
+  "overall_success_rate": "100.0%",
+  "files": [
+    {
+      "filename": "items_2021_round1.jsonl",
+      "total_questions": 20,
+      "with_answers": 20,
+      "with_explanation": 0,
+      "with_choices": 0,
+      "success_rate": "100.0%",
+      "avg_confidence": "1.00",
+      "duplicates": 7,
+      "warnings": 0,
+      "status": "OK"
+    },
+    {
+      "filename": "items_2022_round2.jsonl",
+      "total_questions": 20,
+      "with_answers": 20,
+      "with_explanation": 0,
+      "with_choices": 0,
+      "success_rate": "100.0%",
+      "avg_confidence": "1.00",
+      "duplicates": 3,
+      "warnings": 0,
+      "status": "OK"
+    },
+    {
+      "filename": "items_2022_round3.jsonl",
+      "total_questions": 20,
+      "with_answers": 20,
+      "with_explanation": 0,
+      "with_choices": 0,
+      "success_rate": "100.0%",
+      "avg_confidence": "1.00",
+      "duplicates": 5,
+      "warnings": 0,
+      "status": "OK"
+    },
+    {
+      "filename": "items_2023_round2.jsonl",
+      "total_questions": 20,
+      "with_answers": 20,
+      "with_explanation": 0,
+      "with_choices": 0,
+      "success_rate": "100.0%",
+      "avg_confidence": "1.00",
+      "duplicates": 3,
+      "warnings": 0,
+      "status": "OK"
+    },
+    {
+      "filename": "items_2024_round1.jsonl",
+      "total_questions": 20,
+      "with_answers": 20,
+      "with_explanation": 0,
+      "with_choices": 0,
+      "success_rate": "100.0%",
+      "avg_confidence": "1.00",
+      "duplicates": 0,
+      "warnings": 0,
+      "status": "OK"
+    },
+    {
+      "filename": "items_2024_round2.jsonl",
+      "total_questions": 20,
+      "with_answers": 20,
+      "with_explanation": 0,
+      "with_choices": 0,
+      "success_rate": "100.0%",
+      "avg_confidence": "1.00",
+      "duplicates": 0,
+      "warnings": 0,
+      "status": "OK"
+    },
+    {
+      "filename": "items_2024_round3.jsonl",
+      "total_questions": 20,
+      "with_answers": 20,
+      "with_explanation": 0,
+      "with_choices": 0,
+      "success_rate": "100.0%",
+      "avg_confidence": "1.00",
+      "duplicates": 1,
+      "warnings": 0,
+      "status": "OK"
+    },
+    {
+      "filename": "items_2025_round1.jsonl",
+      "total_questions": 19,
+      "with_answers": 19,
+      "with_explanation": 0,
+      "with_choices": 0,
+      "success_rate": "100.0%",
+      "avg_confidence": "1.00",
+      "duplicates": 0,
+      "warnings": 0,
+      "status": "OK"
+    },
+    {
+      "filename": "items_2025_round2.jsonl",
+      "total_questions": 20,
+      "with_answers": 20,
+      "with_explanation": 0,
+      "with_choices": 0,
+      "success_rate": "100.0%",
+      "avg_confidence": "1.00",
+      "duplicates": 0,
+      "warnings": 0,
+      "status": "OK"
+    }
+  ]
+}

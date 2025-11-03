@@ -1,0 +1,22 @@
+[
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q020",
+    "image_refs": [
+      {
+        "path": "images/2025_round2/Q020_1.png",
+        "source_url": "https://blog.kakaocdn.net/dna/yRw19/btsPrsmwocC/AAAAAAAAAAAAAAAAAAAAAGj9fscjC-kGGNZajz0zMo_o1cfYQ2xxHnU3YH5rGA9p/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1764514799&allow_ip=&allow_referer=&signature=41z1rIoDcKXx8TE%2FDOMS%2BzbbKeE%3D"
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q005",
+    "image_refs": [
+      {
+        "path": "images/2025_round2/Q005_1.png",
+        "source_url": "https://blog.kakaocdn.net/dna/vN8ay/btsHpb01XEZ/AAAAAAAAAAAAAAAAAAAAAJFP0Wa9YnFVqxiu_BnZIC5j2t14JMFBOgbXscpDm-jz/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1764514799&allow_ip=&allow_referer=&signature=9VMFTm%2F7TgHRNHpCVSWvPTxmRwU%3D"
+      }
+    ]
+  }
+]

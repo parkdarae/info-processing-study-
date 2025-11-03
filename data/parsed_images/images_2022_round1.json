@@ -1,0 +1,16 @@
+[
+  {
+    "doc_id": "2022_round1",
+    "q_no": "Q004",
+    "image_refs": [
+      {
+        "path": "images/2022_round1/Q004_1.png",
+        "source_url": "https://blog.kakaocdn.net/dna/uEqo5/btrCITDzsQ5/AAAAAAAAAAAAAAAAAAAAAGpz6sul64daWvkKDeHLmkGeeTlmJGv8rtI27qb1-rRW/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1764514799&allow_ip=&allow_referer=&signature=ZCQwq7G%2FXGe4ZZLAqt1NVaT68k8%3D"
+      },
+      {
+        "path": "images/2022_round1/Q004_2.png",
+        "source_url": "https://blog.kakaocdn.net/dna/uJ5NF/btrCMcvzSkr/AAAAAAAAAAAAAAAAAAAAAOdp28VSW1vdAq_d7k6tSV0uAIgJx0vojE0sovpygZ3l/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1764514799&allow_ip=&allow_referer=&signature=GY1ipm%2F3OdFfHtP7MuzJ7cksHoQ%3D"
+      }
+    ]
+  }
+]

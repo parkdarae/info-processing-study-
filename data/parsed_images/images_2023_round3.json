@@ -1,0 +1,32 @@
+[
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q015",
+    "image_refs": [
+      {
+        "path": "images/2023_round3/Q015_1.png",
+        "source_url": "https://blog.kakaocdn.net/dna/G17fg/btsDs2rLh1k/AAAAAAAAAAAAAAAAAAAAAEzsNevCGXIAmmZEVFohw79sXzdlfZnUxEWidCJMTCRJ/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1764514799&allow_ip=&allow_referer=&signature=4rqV0XZEfWAw70LrvH8%2FLBlO3v4%3D"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q017",
+    "image_refs": [
+      {
+        "path": "images/2023_round3/Q017_1.png",
+        "source_url": "https://blog.kakaocdn.net/dna/bgV3Dv/btsDxjzXlXL/AAAAAAAAAAAAAAAAAAAAAO1vPFE8OwX5WjtRdf3rKwQojSeV57tJwEDkKca4r2_i/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1764514799&allow_ip=&allow_referer=&signature=cK4Iygs3smzKLzCDMsKo9fQFRCg%3D"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q020",
+    "image_refs": [
+      {
+        "path": "images/2023_round3/Q020_1.png",
+        "source_url": "https://blog.kakaocdn.net/dna/bbv3Zi/btsDrFwNgqM/AAAAAAAAAAAAAAAAAAAAAH0Uddu_31mvIQQ_Dch8IlDGkBSh56j7dYFOW449zn-O/img.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1764514799&allow_ip=&allow_referer=&signature=6pP9d6Mx5n0wVUpYhL0IUNBe43I%3D"
+      }
+    ]
+  }
+]

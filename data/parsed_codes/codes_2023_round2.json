@@ -1,0 +1,32 @@
+[
+  {
+    "doc_id": "2023_round2",
+    "q_no": "Q005",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\nvoid main(){\n    int n[3] = {73, 95, 82};\n    int sum = 0;\n    for(int i=0;i<3;i++){\n        sum += n[i];\n    }\n    switch(sum/30){\n        case 10:\n        case 9: printf(\"A\");\n        case 8: printf(\"B\");\n        case 7:\n        case 6: printf(\"C\");\n        default: printf(\"D\");\n    }\n}",
+        "line_numbers": [
+          1,
+          16
+        ],
+        "file": "data/codes/2023_round2/Q005_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round2",
+    "q_no": "Q009",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\n#define MAX_SIZE 10\nint isWhat[MAX_SIZE];\nint point= -1;\nint isEmpty() {\n    if (point == -1) return 1;\n    return 0;\n}\nint isFull() {\n    if (point == 10) return 1;\n    return 0;\n}\nvoid into(int num) {\n    if (point >= 10) printf(\"Full\");\n    else isWhat[++point] = num;\n}\nint take() {\n    if (isEmpty() == 1) printf(\"Empty\");\n    else return isWhat[point--];\n    return 0;\n}\nint main(int argc, char const *argv[]){\n    int e;\n    into(5); into(2);\n    while(!isEmpty()){\n        printf(\"%d\", take());\n        into(4); into(1); printf(\"%d\", take());\n        into(3); printf(\"%d\", take()); printf(\"%d\", take());\n        into(6); printf(\"%d\", take()); printf(\"%d\", take());\n    }\n    return 0;\n}",
+        "line_numbers": [
+          1,
+          32
+        ],
+        "file": "data/codes/2023_round2/Q009_code.txt"
+      }
+    ]
+  }
+]

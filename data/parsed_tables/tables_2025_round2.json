@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q013",
+    "table_refs": [
+      {
+        "id": "table1",
+        "json": "data/tables/2025_round2/Q013_table1.json",
+        "rows": 4,
+        "cols": 3
+      }
+    ]
+  },
+  {
+    "doc_id": "2025_round2",
+    "q_no": "Q005",
+    "table_refs": [
+      {
+        "id": "table1",
+        "json": "data/tables/2025_round2/Q005_table1.json",
+        "rows": 18,
+        "cols": 1
+      }
+    ]
+  }
+]

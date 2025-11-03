@@ -1,0 +1,62 @@
+[
+  {
+    "doc_id": "2023_round1",
+    "q_no": "Q001",
+    "code_blocks": [
+      {
+        "language": "python",
+        "code": "class Static{\n    public int a = 20;\n    static int b = 0;\n}\npublic class Main{\n    public static void main(String[] args) {\n        int a;\n        a = 10;\n        Static.b = a;\n        Static st = new Static();\n        System.out.println(Static.b++);\n        System.out.println(st.b);\n        System.out.println(a);\n        System.out.print(st.a);\n    }\n}",
+        "line_numbers": [
+          1,
+          16
+        ],
+        "file": "data/codes/2023_round1/Q001_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round1",
+    "q_no": "Q002",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\nint main(){\n    char a[] = \"Art\";\n    char* p = NULL;\n    p = a;\n    printf(\"%s\\n\", a);\n    printf(\"%c\\n\", *p);\n    printf(\"%c\\n\", *a);\n    printf(\"%s\\n\", p);\n    for(int i = 0; a[i] != '\\0'; i++)\n    printf(\"%c\", a[i]);\n}",
+        "line_numbers": [
+          1,
+          12
+        ],
+        "file": "data/codes/2023_round1/Q002_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round1",
+    "q_no": "Q003",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\nint main(){\n    char* a = \"qwer\";\n    char* b = \"qwtety\";\n    for(int i = 0; a[i] != '\\0' ; i++){\n        for(int j = 0; b[j] != '\\0'; j++){\n            if(a[i] == b[j]) printf(\"%c\", a[i]);\n        }\n    }\n}",
+        "line_numbers": [
+          1,
+          10
+        ],
+        "file": "data/codes/2023_round1/Q003_code.txt"
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round1",
+    "q_no": "Q009",
+    "code_blocks": [
+      {
+        "language": "c",
+        "code": "#include <stdio.h>\nint main() {\n    int input = 101110;\n    int di = 1;\n    int sum = 0;\n    while (1) {\n        if (input == 0) break\n        else {\n          sum = sum + (input (a)(b)) * di;\n             di = di * 2;\n             input = input / 10;\n        }\n    }\n    printf(\"%d\", sum);\n    return 0;\n}",
+        "line_numbers": [
+          1,
+          16
+        ],
+        "file": "data/codes/2023_round1/Q009_code.txt"
+      }
+    ]
+  }
+]

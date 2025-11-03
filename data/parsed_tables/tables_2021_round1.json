@@ -1,0 +1,38 @@
+[
+  {
+    "doc_id": "2021_round1",
+    "q_no": "Q006",
+    "table_refs": [
+      {
+        "id": "table1",
+        "json": "data/tables/2021_round1/Q006_table1.json",
+        "rows": 3,
+        "cols": 2
+      }
+    ]
+  },
+  {
+    "doc_id": "2021_round1",
+    "q_no": "Q014",
+    "table_refs": [
+      {
+        "id": "table1",
+        "json": "data/tables/2021_round1/Q014_table1.json",
+        "rows": 5,
+        "cols": 4
+      }
+    ]
+  },
+  {
+    "doc_id": "2021_round1",
+    "q_no": "Q020",
+    "table_refs": [
+      {
+        "id": "table1",
+        "json": "data/tables/2021_round1/Q020_table1.json",
+        "rows": 18,
+        "cols": 1
+      }
+    ]
+  }
+]

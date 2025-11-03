@@ -1,0 +1,26 @@
+{
+  "headers": [
+    "생성패턴",
+    "구조패턴",
+    "행위패턴"
+  ],
+  "rows": [
+    [
+      "Singleton",
+      "Adapter",
+      "Iterator"
+    ],
+    [
+      "Factory Method",
+      "Bridge",
+      "Visitor"
+    ],
+    [
+      "Abstract Factory",
+      "Composite",
+      "Observer"
+    ]
+  ],
+  "row_count": 3,
+  "col_count": 3
+}

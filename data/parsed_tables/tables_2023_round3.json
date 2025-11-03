@@ -1,0 +1,32 @@
+[
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q006",
+    "table_refs": [
+      {
+        "id": "table1",
+        "json": "data/tables/2023_round3/Q006_table1.json",
+        "rows": 2,
+        "cols": 1
+      },
+      {
+        "id": "table2",
+        "json": "data/tables/2023_round3/Q006_table2.json",
+        "rows": 2,
+        "cols": 1
+      }
+    ]
+  },
+  {
+    "doc_id": "2023_round3",
+    "q_no": "Q020",
+    "table_refs": [
+      {
+        "id": "table1",
+        "json": "data/tables/2023_round3/Q020_table1.json",
+        "rows": 18,
+        "cols": 1
+      }
+    ]
+  }
+]
