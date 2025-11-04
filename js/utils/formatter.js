@@ -17,6 +17,18 @@ function convertMarkdownToHtml(text) {
     // [섹션 제목] → <div class="section-title">섹션 제목</div>
     text = text.replace(/\[([^\]]+)\]/g, '<div class="section-title">$1</div>');
     
+    // • 뒤에 나오는 키워드: 패턴 (콜론 앞까지) → <strong>키워드:</strong>
+    text = text.replace(/•\s*([^:]+):/g, '• <strong>$1:</strong>');
+    
+    // 숫자. 패턴도 동일하게 처리 (1. 키워드: → 1. <strong>키워드:</strong>)
+    text = text.replace(/(\d+)\.\s*([^:]+):/g, '$1. <strong>$2:</strong>');
+    
+    // 한글 번호 패턴 (ㄱ. 키워드: → ㄱ. <strong>키워드:</strong>)
+    text = text.replace(/([ㄱ-ㅎ])\.\s*([^:]+):/g, '$1. <strong>$2:</strong>');
+    
+    // 원형 숫자 패턴 (① 키워드: → ① <strong>키워드:</strong>)
+    text = text.replace(/([①-⑳])\s*([^:]+):/g, '$1 <strong>$2:</strong>');
+    
     return text;
 }
 
