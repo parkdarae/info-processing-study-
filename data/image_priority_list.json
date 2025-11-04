@@ -1,0 +1,1153 @@
+{
+  "total": 81,
+  "items": [
+    {
+      "file": "items_2023_round3.jsonl",
+      "q_no": "Q013",
+      "doc_id": "2023_round3",
+      "question_text": "다음 자바 코드를 실행할 경우 에러가 발생이 된다. 에러가 발생하는 라인명을 작성하시오.",
+      "question_full": "다음 자바 코드를 실행할 경우 에러가 발생이 된다. 에러가 발생하는 라인명을 작성하시오.",
+      "explanation_current": "**Java 컴파일 에러 탐지 문제입니다.**\n\n**문제의 코드:**\n\n```java\nclass Person {\n    private String name;                    // 2번 라인: 인스턴스 변수\n    public Person(String val) {            // 3번 라인: 생성자\n        name = val;                        // 4번 라인\n    }\n    public static String get() {          // 6번 라인: static 메서드\n    return name;                          // 7번 라인: 에러 발생! ❌\n    }\n    public void print() {                  // 9번 라인\n        System.out.println(name);         // 10번 라인\n    }\n}\n```\n\n**에러 원인:**\n\n**7번 라인 (`return name;`)에서 에러 발생:**\n\n- **문제**: `static` 메서드에서 **인스턴스 변수(`name`)**에 접근하려고 함\n- **Java 규칙**:\n  - `static` 메서드는 **인스턴스 변수에 직접 접근 불가**\n  - `static` 메서드는 **인스턴스 생성 없이 호출 가능**\n  - 인스턴스 변수는 **인스턴스 생성 후에만 존재**\n\n**에러 메시지:**\n```\nNon-static field 'name' cannot be referenced from a static context\n```\n\n**해결 방법:**\n\n1. **`name`을 `static` 변수로 변경:**\n   ```java\n   private static String name;\n   ```\n\n2. **`get()` 메서드를 `static`이 아닌 인스턴스 메서드로 변경:**\n   ```java\n   public String get() {\n       return name;\n   }\n   ```\n\n3. **인스턴스를 통해 접근:**\n   ```java\n   public static String get(Person p) {\n       return p.name;\n   }\n   ```\n\n**Java static vs instance:**\n\n| 구분 | static | instance |\n|------|--------|----------|\n| **메서드** | 클래스 이름으로 호출 | 객체로 호출 |\n| **변수** | 클래스 변수 (공유) | 인스턴스 변수 (개별) |\n| **접근** | static 멤버만 접근 가능 | 인스턴스 멤버 접근 가능 |\n\n**답:** **7번 라인**",
+      "explanation_preview": "**Java 컴파일 에러 탐지 문제입니다.**\n\n**문제의 코드:**\n\n```java\nclass Person {\n    private String name;                    // 2번 라인: 인스턴스 변수\n    public Person(String val) {            // 3번 라인: 생성자\n        name = val",
+      "image_refs": [
+        "images/2023_round3/13.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "class Person {\n    private String name;\n    public Person(String val) {\n        name = val;\n    }\n    public static String get() {\n    return name;\n    }\n    public void print() {\n        System.out.println(name);\n    }\n}\npublic class main {\n    public static void main(String[] args) {\n        Person obj = new Person(\"Kim\");\n        obj.print();\n    }\n}",
+          "line_numbers": [
+            1,
+            18
+          ],
+          "file": "data/codes/2023_round3/Q013_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "7"
+        ],
+        "raw_text": "7"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족",
+          "구체적인 설명 부족"
+        ],
+        "is_poor": true,
+        "length": 1345
+      }
+    },
+    {
+      "file": "items_2023_round3.jsonl",
+      "q_no": "Q019",
+      "doc_id": "2023_round3",
+      "question_text": "다음은 관계 대수에 대한 내용이다.\n보기에 알맞는 기호를 작성하시오.\n\n1. join :\n\n(1)\n\n2. project : ( 2 )\n\n3. select : ( 3 )\n\n4. division : ( 4 )",
+      "question_full": "다음은 관계 대수에 대한 내용이다.\n보기에 알맞는 기호를 작성하시오.\n\n1. join :\n\n(1)\n\n2. project : ( 2 )\n\n3. select : ( 3 )\n\n4. division : ( 4 )",
+      "explanation_current": "이 문제는 **관계 대수(Relational Algebra)의 연산 기호**를 묻는 문제입니다.\n\n**관계 대수 연산 기호:**\n\n1. **JOIN (조인) - (1) ㄷ**:\n   - 기호: `⋈` (보울 기호)\n   - 두 릴레이션을 조건에 따라 결합\n   - **Theta JOIN (θ-JOIN)**: `R ⋈_θ S`\n   - **EQUI JOIN**: `R ⋈_A=B S` (등호 조건)\n   - **NATURAL JOIN**: `R ⋈ S` (같은 속성명으로 자동 결합)\n\n2. **PROJECT (투영) - (2) ㄴ**:\n   - 기호: `π` (파이)\n   - 특정 속성(컬럼)만 선택\n   - `π_속성1,속성2(R)`: R 릴레이션에서 속성1, 속성2만 선택\n   - 중복 튜플 제거\n\n3. **SELECT (선택) - (3) ㄱ**:\n   - 기호: `σ` (시그마)\n   - 조건에 맞는 행(튜플)만 선택\n   - `σ_조건(R)`: R 릴레이션에서 조건에 맞는 행만 선택\n   - WHERE 절과 유사\n\n4. **DIVISION (나눗셈) - (4) ㄹ**:\n   - 기호: `÷` (나눗셈 기호)\n   - 한 릴레이션을 다른 릴레이션으로 나눔\n   - `R ÷ S`: R에 있으면서 S에 있는 모든 조합을 포함하는 튜플 선택\n   - 복잡한 쿼리 표현에 사용\n\n**관계 대수 연산 기호 정리:**\n\n| 연산 | 기호 | 설명 |\n|------|------|------|\n| **SELECT (선택)** | `σ` (시그마) | 조건에 맞는 행 선택 |\n| **PROJECT (투영)** | `π` (파이) | 특정 속성만 선택 |\n| **JOIN (조인)** | `⋈` (보울) | 두 릴레이션 결합 |\n| **UNION (합집합)** | `∪` | 합집합 |\n| **INTERSECTION (교집합)** | `∩` | 교집합 |\n| **DIFFERENCE (차집합)** | `-` | 차집합 |\n| **CARTESIAN PRODUCT (곱집합)** | `×` | 카티시안 곱 |\n| **DIVISION (나눗셈)** | `÷` | 나눗셈 |\n\n**SQL과의 대응:**\n\n| 관계 대수 | SQL |\n|-----------|-----|\n| `σ_조건(R)` | `SELECT * FROM R WHERE 조건` |\n| `π_속성(R)` | `SELECT 속성 FROM R` |\n| `R ⋈ S` | `SELECT * FROM R JOIN S` |\n| `R ÷ S` | 복잡한 서브쿼리로 표현 |\n\n**답:**\n- **(1) ㄷ (JOIN: ⋈)**\n- **(2) ㄴ (PROJECT: π)**\n- **(3) ㄱ (SELECT: σ)**\n- **(4) ㄹ (DIVISION: ÷)**",
+      "explanation_preview": "이 문제는 **관계 대수(Relational Algebra)의 연산 기호**를 묻는 문제입니다.\n\n**관계 대수 연산 기호:**\n\n1. **JOIN (조인) - (1) ㄷ**:\n   - 기호: `⋈` (보울 기호)\n   - 두 릴레이션을 조건에 따라 결합\n   - **Theta JOIN (θ-JOIN)**: `R ⋈_θ S`\n   - **EQUI JOIN*",
+      "image_refs": [
+        "images/2023_round3/19.png"
+      ],
+      "code_blocks": [],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "(1) ㄷ",
+          "(2) ㄴ",
+          "(3) ㄱ"
+        ],
+        "raw_text": "(1) ㄷ\n(2) ㄴ\n(3) ㄱ"
+      },
+      "primary_category": "SQL",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족",
+          "구체적인 설명 부족"
+        ],
+        "is_poor": true,
+        "length": 1348
+      }
+    },
+    {
+      "file": "items_2024_round1.jsonl",
+      "q_no": "Q016",
+      "doc_id": "2024_round1",
+      "question_text": "다음 Java 코드를 보고\n\n알맞는 출력 값을 작성하시오.",
+      "question_full": "다음 Java 코드를 보고\n\n알맞는 출력 값을 작성하시오.",
+      "explanation_current": "이 문제는 **Java 상속과 메서드 오버라이딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nclass classOne {\n    int a, b;\n    public classOne(int a, int b) {\n        this.a = a;\n        this.b = b;\n    }\n    public void print() {\n        System.out.println(a + b);  // a + b 출력\n    }\n}\n\nclass classTwo extends classOne {\n    int po = 3;\n    public classTwo(int i) {\n        super(i, i+1);  // classOne(10, 11) 호출\n    }\n    public void print() {  // 오버라이딩!\n        System.out.println(po * po);  // 3 * 3 = 9 출력\n    }\n}\n\npublic class main {\n    public static void main(String[] args) {\n        classOne one = new classTwo(10);\n        one.print();\n    }\n}\n```\n\n**실행 과정:**\n\n1. **`new classTwo(10)` 호출:**\n   - `classTwo` 생성자 호출\n   - `super(10, 11)` → `classOne(10, 11)` 호출\n   - `classOne` 생성자 실행: `a = 10`, `b = 11`\n   - `classTwo` 생성자 실행: `po = 3` (초기화)\n\n2. **`one.print()` 호출:**\n   - `one`은 `classOne` 타입이지만 실제 객체는 `classTwo`\n   - **동적 바인딩**: 실제 객체 타입(`classTwo`)의 `print()` 메서드 호출\n   - `classTwo.print()` 실행: `po * po = 3 * 3 = 9`\n\n**핵심 개념:**\n\n- **메서드 오버라이딩**: 자식 클래스가 부모 클래스의 메서드를 재정의\n- **동적 바인딩**: 참조 타입이 아닌 실제 객체 타입에 따라 메서드 호출\n- **생성자 호출 순서**: 자식 생성자 → 부모 생성자 (`super()`)\n\n**답:** **\"9\"**",
+      "explanation_preview": "이 문제는 **Java 상속과 메서드 오버라이딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nclass classOne {\n    int a, b;\n    public classOne(int a, int b) {\n        this.a = a;\n        this.b = b;\n    }\n    public void print() ",
+      "image_refs": [
+        "images/2024_round1/Q016.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "class classOne {\n    int a, b;\n    public classOne(int a, int b) {\n        this.a = a;\n        this.b = b;\n    }\n    public void print() {\n        System.out.println(a + b);\n    }\n}\nclass classTwo extends classOne {\n    int po = 3;\n    public classTwo(int i) {\n        super(i, i+1);\n    }\n    public void print() {\n        System.out.println(po*po);\n    }\n}\npublic class main {  \n    public static void main(String[] args) {\n        classOne one = new classTwo(10);\n        one.print();\n    }\n}",
+          "line_numbers": [
+            1,
+            25
+          ],
+          "file": "data/codes/2024_round1/Q016_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "9"
+        ],
+        "raw_text": "9"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1161
+      }
+    },
+    {
+      "file": "items_2024_round3.jsonl",
+      "q_no": "Q011",
+      "doc_id": "2024_round3",
+      "question_text": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 문제는 **Java 상속, 필드 숨김(Field Hiding), 메서드 오버라이딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nBase a = new Derivate();\nDerivate b = new Derivate();\nSystem.out.print(a.getX() + a.x + b.getX() + b.x);\n\nclass Base {\n    int x = 3;\n    int getX() {\n        return x * 2;  // Base의 x 사용\n    }\n}\n\nclass Derivate extends Base {\n    int x = 7;  // 필드 숨김 (Base의 x를 숨김)\n    int getX() {\n        return x * 3;  // Derivate의 x 사용 (7 * 3 = 21)\n    }\n}\n```\n\n**핵심 개념:**\n\n1. **필드 숨김 (Field Hiding):**\n   - 자식 클래스에서 부모 클래스의 필드와 같은 이름의 필드를 선언하면 부모의 필드가 **숨겨집니다**.\n   - `Base.x = 3`, `Derivate.x = 7` (서로 다른 필드)\n\n2. **메서드 오버라이딩 (Method Overriding):**\n   - 자식 클래스에서 부모 클래스의 메서드를 재정의하면 **항상 자식의 메서드가 호출**됩니다.\n   - 객체의 실제 타입(`Derivate`)에 따라 메서드가 결정됩니다.\n\n3. **필드 접근 vs 메서드 호출:**\n   - **필드 접근 (`a.x`)**: 참조 변수의 타입(`Base`)에 따라 결정 → `Base.x = 3`\n   - **메서드 호출 (`a.getX()`)**: 객체의 실제 타입(`Derivate`)에 따라 결정 → `Derivate.getX()` 호출\n\n**실행 과정:**\n\n1. **`a.getX()` 계산:**\n   - `a`는 `Base` 타입으로 선언되었지만 실제 객체는 `Derivate`입니다.\n   - 메서드는 **실제 타입**에 따라 결정되므로 `Derivate.getX()` 호출됩니다.\n   - `Derivate.getX()`는 `Derivate.x`를 사용: `7 * 3 = 21`\n   - **결과: 21**\n\n2. **`a.x` 계산:**\n   - 필드는 **참조 변수의 타입**에 따라 결정됩니다.\n   - `a`는 `Base` 타입이므로 `Base.x = 3`\n   - **결과: 3**\n\n3. **`b.getX()` 계산:**\n   - `b`는 `Derivate` 타입으로 선언되었고 실제 객체도 `Derivate`입니다.\n   - `Derivate.getX()` 호출: `7 * 3 = 21`\n   - **결과: 21**\n\n4. **`b.x` 계산:**\n   - `b`는 `Derivate` 타입이므로 `Derivate.x = 7`\n   - **결과: 7**\n\n5. **최종 출력:**\n```java\nSystem.out.print(21 + 3 + 21 + 7);\n// 출력: \"52\"\n```\n\n**정리:**\n- 필드: 참조 변수 타입에 따라 결정 (`a.x` → `Base.x`, `b.x` → `Derivate.x`)\n- 메서드: 실제 객체 타입에 따라 결정 (`a.getX()`, `b.getX()` → 모두 `Derivate.getX()`)\n\n**답:** \"52\"",
+      "explanation_preview": "이 문제는 **Java 상속, 필드 숨김(Field Hiding), 메서드 오버라이딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nBase a = new Derivate();\nDerivate b = new Derivate();\nSystem.out.print(a.getX() + a.x + b.getX() + b.x);\n\nclass Base",
+      "image_refs": [
+        "images/2024_round3/Q011.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "public class Main{\n  public static void main(String[] args){\n    Base a =  new Derivate();\n    Derivate b = new Derivate();\n    System.out.print(a.getX() + a.x + b.getX() + b.x);\n  }\n}\nclass Base{\n  int x = 3;\n  int getX(){\n     return x * 2; \n  }\n}\nclass Derivate extends Base{\n  int x = 7;\n  int getX(){\n     return x * 3;\n  }\n}",
+          "line_numbers": [
+            1,
+            19
+          ],
+          "file": "data/codes/2024_round3/Q011_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "52"
+        ],
+        "raw_text": "52"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1646
+      }
+    },
+    {
+      "file": "items_2024_round3.jsonl",
+      "q_no": "Q019",
+      "doc_id": "2024_round3",
+      "question_text": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 문제는 **Java 제네릭 타입 소거(Type Erasure)와 메서드 오버로딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nnew Collection<>(0).print();\n\nclass Collection<T> {\n    T value;\n    public Collection(T t) {\n        value = t;\n    }\n    public void print() {\n        new Printer().print(value);\n    }\n    \n    class Printer {\n        void print(Integer a) {\n            System.out.print(\"A\" + a);\n        }\n        void print(Object a) {\n            System.out.print(\"B\" + a);\n        }\n        void print(Number a) {\n            System.out.print(\"C\" + a);\n        }\n    }\n}\n```\n\n**핵심 개념:**\n\n1. **제네릭 타입 소거 (Type Erasure):**\n   - 컴파일 시 제네릭 타입 정보가 **삭제**됩니다.\n   - `Collection<Integer>` → `Collection` (타입 정보 제거)\n   - 런타임에는 `T`가 `Object`로 취급됩니다.\n\n2. **메서드 오버로딩 해석:**\n   - 컴파일 타임에 타입을 결정합니다.\n   - `value`는 `T` 타입이지만, 컴파일 시 `Object`로 취급됩니다.\n   - `0`은 `int` 리터럴이지만, `Integer`로 오토박싱됩니다.\n   - 하지만 `value`는 `Object` 타입이므로 `print(Object)`가 호출됩니다.\n\n**실행 과정:**\n\n1. **객체 생성:**\n   - `new Collection<>(0)` → `Collection<Integer>` 생성\n   - `value = 0` (Integer로 오토박싱)\n\n2. **`print()` 호출:**\n   - `new Printer().print(value)` 실행\n   - `value`는 컴파일 타임에 `Object` 타입으로 취급됩니다.\n\n3. **메서드 오버로딩 해석:**\n   - `print(Integer a)`: `Integer` 타입 매칭\n   - `print(Number a)`: `Number` 타입 매칭 (Integer는 Number의 자식)\n   - `print(Object a)`: `Object` 타입 매칭\n   - 컴파일러는 **가장 구체적인 타입**을 찾지만, `value`는 `Object` 타입이므로 `print(Object)`가 호출됩니다.\n\n4. **출력:**\n   - `print(Object a)` 실행 → `\"B\" + 0` → **\"B0\" 출력**\n\n**참고:**\n- 제네릭 타입 소거로 인해 런타임에는 타입 정보가 없습니다.\n- `print(Integer)`와 `print(Number)`는 `value`가 `Object` 타입이므로 매칭되지 않습니다.\n- `print(Object)`가 가장 넓은 범위를 가지므로 선택됩니다.\n\n**답:** \"B0\"",
+      "explanation_preview": "이 문제는 **Java 제네릭 타입 소거(Type Erasure)와 메서드 오버로딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nnew Collection<>(0).print();\n\nclass Collection<T> {\n    T value;\n    public Collection(T t) {\n        value = t;\n    ",
+      "image_refs": [
+        "images/2024_round3/Q019.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "class Main {\n  public static class Collection<T>{\n    T value;\n    public Collection(T t){\n        value = t;\n    }\n    public void print(){\n       new Printer().print(value);\n    }\n   class Printer{\n      void print(Integer a){\n        System.out.print(\"A\" + a);\n      }\n      void print(Object a){\n        System.out.print(\"B\" + a);\n      } \n      void print(Number a){\n        System.out.print(\"C\" + a);\n      }\n   }\n }\n  public static void main(String[] args) {\n      new Collection<>(0).print();\n  }\n}",
+          "line_numbers": [
+            1,
+            25
+          ],
+          "file": "data/codes/2024_round3/Q019_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "B0"
+        ],
+        "raw_text": "B0"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1598
+      }
+    },
+    {
+      "file": "items_2025_round1.jsonl",
+      "q_no": "Q011",
+      "doc_id": "2025_round1",
+      "question_text": "다음은 C언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 C언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 C언어 코드는 2차원 배열을 동적으로 할당하고 데이터를 배치한 후 합을 계산하는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **2차원 배열 동적 할당:**\n```c int rows = 3, cols = 3;\nint data[] = {5, 2, 7, 4, 1, 8, 3, 6, 9};\n```\n- 3×3 배열을 동적으로 할당합니다.\n- data 배열: {5, 2, 7, 4, 1, 8, 3, 6, 9}\n\n2. **set() 함수 분석:**\n```c void set(int** arr, int* data, int rows, int cols) {\nfor (int i = 0; i < rows * cols; ++i) {\narr[((i + 1) / rows) % rows][(i + 1) % cols] = data[i];\n}\n}\n```\n- i=0: arr[(1/3)%3][1%3] = arr[0][1] = data[0] = 5\n- i=1: arr[(2/3)%3][2%3] = arr[0][2] = data[1] = 2\n- i=2: arr[(3/3)%3][3%3] = arr[1][0] = data[2] = 7\n- i=3: arr[(4/3)%3][4%3] = arr[1][1] = data[3] = 4\n- i=4: arr[(5/3)%3][5%3] = arr[1][2] = data[4] = 1\n- i=5: arr[(6/3)%3][6%3] = arr[2][0] = data[5] = 8\n- i=6: arr[(7/3)%3][7%3] = arr[2][1] = data[6] = 3\n- i=7: arr[(8/3)%3][8%3] = arr[2][2] = data[7] = 6\n- i=8: arr[(9/3)%3][9%3] = arr[0][0] = data[8] = 9\n\n**배열 상태:**\n```\n[9][5][2]\n[7][4][1]\n[8][3][6]\n```\n\n3. **합 계산:**\n```c for (int i = 0; i < rows * cols; i++) {\nsum += arr[i / rows][i % cols] * (i % 2 == 0 ? 1 : -1);\n}\n```\n- i가 짝수면 +, 홀수면 - 부호를 적용합니다.\n- i=0: arr[0][0]=9 × 1 = 9\n- i=1: arr[0][1]=5 × (-1) = -5\n- i=2: arr[0][2]=2 × 1 = 2\n- i=3: arr[1][0]=7 × (-1) = -7\n- i=4: arr[1][1]=4 × 1 = 4\n- i=5: arr[1][2]=1 × (-1) = -1\n- i=6: arr[2][0]=8 × 1 = 8\n- i=7: arr[2][1]=3 × (-1) = -3\n- i=8: arr[2][2]=6 × 1 = 6\n\n**합:** 9 - 5 + 2 - 7 + 4 - 1 + 8 - 3 + 6 = **13**답:** 13",
+      "explanation_preview": "이 C언어 코드는 2차원 배열을 동적으로 할당하고 데이터를 배치한 후 합을 계산하는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **2차원 배열 동적 할당:**\n```c int rows = 3, cols = 3;\nint data[] = {5, 2, 7, 4, 1, 8, 3, 6, 9};\n```\n- 3×3 배열을 동적으로 할당합니다.\n- data 배열: {",
+      "image_refs": [
+        "images/2025_round1/Q011.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "c",
+          "code": "#include <stdio.h>\n#include <stdlib.h>\nvoid set(int** arr, int* data, int rows, int cols) {\n    for (int i = 0; i < rows * cols; ++i) {\n        arr[((i + 1) / rows) % rows][(i + 1) % cols] = data[i];\n    }\n}\nint main() {\n    int rows = 3, cols = 3, sum = 0;\n    int data[] = {5, 2, 7, 4, 1, 8, 3, 6, 9}; \n    int** arr;\n    arr = (int**) malloc(sizeof(int*) * rows);\n    for (int i = 0; i < cols; i++) {\n        arr[i] = (int*) malloc(sizeof(int) * cols);\n    }\n    set(arr, data, rows, cols);\n    for (int i = 0; i < rows * cols; i++) {\n        sum += arr[i / rows][i % cols] * (i % 2 == 0 ? 1 : -1);\n    }\n    for(int i=0; i<rows; i++) {\n        free(arr[i]);\n    }\n    free(arr);\n    printf(\"%d\", sum);\n}",
+          "line_numbers": [
+            1,
+            25
+          ],
+          "file": "data/codes/2025_round1/Q011_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "13"
+        ],
+        "raw_text": "13"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1385
+      }
+    },
+    {
+      "file": "items_2025_round1.jsonl",
+      "q_no": "Q013",
+      "doc_id": "2025_round1",
+      "question_text": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 문제는 **Java 상속, 정적 변수, 메서드 오버라이딩, 생성자 호출 순서**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nnew Child();\nSystem.out.println(Parent.total);\n\nclass Parent {\n    static int total = 0;  // 정적 변수 (클래스 변수)\n    int v = 1;             // 인스턴스 변수\n    public Parent() {\n        total += (++v);    // v를 1 증가시킨 후 total에 더함\n        show();            // 메서드 호출\n    }\n    public void show() {\n        total += total;    // total을 2배로 만듦\n    }\n}\n\nclass Child extends Parent {\n    int v = 10;            // 필드 숨김 (Parent의 v와 별개)\n    public Child() {\n        v += 2;            // Child의 v를 12로 만듦\n        total += v++;      // total에 v(12)를 더하고 v를 13으로 증가\n        show();            // 오버라이딩된 메서드 호출\n    }\n    @Override\n    public void show() {\n        total += total * 2; // total을 3배로 만듦 (total + total*2)\n    }\n}\n```\n\n**실행 과정:**\n\n**핵심 개념:**\n- Java에서 메서드 오버라이딩은 **객체의 실제 타입**에 따라 결정됩니다.\n- 부모 생성자에서 오버라이딩된 메서드를 호출하면, **자식 클래스의 메서드가 호출**됩니다.\n\n1. **`new Child()` 호출:**\n   - 자식 클래스 생성자는 부모 클래스 생성자를 먼저 호출합니다.\n   - **`Parent()` 생성자 실행:**\n     - `total = 0` (초기값)\n     - `++v` → Parent의 `v`가 1에서 2로 증가\n     - `total += 2` → `total = 2`\n     - `show()` 호출 → **Child의 오버라이딩된 `show()` 메서드 실행** (실제 객체가 Child이므로)\n       - `total += total * 2` → `total = 2 + 2*2 = 2 + 4 = 6`\n     - **현재: `total = 6`**\n\n2. **`Child()` 생성자 실행:**\n   - `v += 2` → Child의 `v`가 10에서 12로 증가 (Parent의 v와 별개)\n   - `total += v++` → `total += 12`, 그 다음 `v = 13`\n     - `total = 6 + 12 = 18`\n   - `show()` 호출 → Child의 `show()` 메서드 실행\n     - `total += total * 2` → `total = 18 + 18*2 = 18 + 36 = 54`\n     - **현재: `total = 54`**\n\n**최종 출력:**\n- `System.out.println(Parent.total)` → **출력: 54**\n\n**정리:**\n- Parent 생성자에서 `show()` 호출 시, 실제 객체가 `Child`이므로 Child의 `show()`가 호출됩니다.\n- 이는 Java의 **동적 메서드 디스패치(Dynamic Method Dispatch)** 때문입니다.\n\n**답:** \"54\"",
+      "explanation_preview": "이 문제는 **Java 상속, 정적 변수, 메서드 오버라이딩, 생성자 호출 순서**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nnew Child();\nSystem.out.println(Parent.total);\n\nclass Parent {\n    static int total = 0;  // 정적 변수 (클래스 변수)\n    int v =",
+      "image_refs": [
+        "images/2025_round1/Q013.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "public class Main {\n    public static void main(String[] args) {\n        new Child();\n        System.out.println(Parent.total);\n    }\n}\nclass Parent {\n    static int total = 0;\n    int v = 1;\n    public Parent() {\n        total += (++v);\n        show();    \n    }\n    public void show() {\n        total += total;\n    }\n}\nclass Child extends Parent {\n    int v = 10;\n    public Child() {\n        v += 2;\n        total += v++;\n        show();\n    }\n    @Override\n    public void show() {\n        total += total * 2;\n    }\n}",
+          "line_numbers": [
+            1,
+            29
+          ],
+          "file": "data/codes/2025_round1/Q013_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "54"
+        ],
+        "raw_text": "54"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1779
+      }
+    },
+    {
+      "file": "items_2025_round1.jsonl",
+      "q_no": "Q016",
+      "doc_id": "2025_round1",
+      "question_text": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 문제는 **Java 재귀 함수와 분할 정복**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nint[] data = {3, 5, 8, 12, 17};\nSystem.out.println(func(data, 0, data.length - 1));\n\nstatic int func(int[] a, int st, int end) {\n    if (st >= end) return 0;\n    int mid = (st + end) / 2;\n    return a[mid] + Math.max(func(a, st, mid), func(a, mid + 1, end));\n}\n```\n\n**재귀 호출 추적:**\n\n**func(data, 0, 4) 호출:**\n- `st = 0`, `end = 4`\n- `mid = (0 + 4) / 2 = 2`\n- `a[2] = 8`\n- `return 8 + Math.max(func(data, 0, 2), func(data, 3, 4))`\n\n**왼쪽 재귀: func(data, 0, 2)**\n- `st = 0`, `end = 2`\n- `mid = 1`\n- `a[1] = 5`\n- `return 5 + Math.max(func(data, 0, 1), func(data, 2, 2))`\n\n  - **func(data, 0, 1):**\n    - `st = 0`, `end = 1`\n    - `mid = 0`\n    - `a[0] = 3`\n    - `return 3 + Math.max(func(data, 0, 0), func(data, 1, 1))`\n      - `func(data, 0, 0)`: `st >= end` → **0 반환**\n      - `func(data, 1, 1)`: `st >= end` → **0 반환**\n    - `return 3 + Math.max(0, 0) = 3`\n\n  - **func(data, 2, 2):**\n    - `st >= end` → **0 반환**\n\n  - `return 5 + Math.max(3, 0) = 5 + 3 = 8`\n\n**오른쪽 재귀: func(data, 3, 4)**\n- `st = 3`, `end = 4`\n- `mid = 3`\n- `a[3] = 12`\n- `return 12 + Math.max(func(data, 3, 3), func(data, 4, 4))`\n  - `func(data, 3, 3)`: `st >= end` → **0 반환**\n  - `func(data, 4, 4)`: `st >= end` → **0 반환**\n- `return 12 + Math.max(0, 0) = 12`\n\n**최종 계산:**\n- `func(data, 0, 4) = 8 + Math.max(8, 12) = 8 + 12 = 20`\n\n**답:** \"20\"",
+      "explanation_preview": "이 문제는 **Java 재귀 함수와 분할 정복**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nint[] data = {3, 5, 8, 12, 17};\nSystem.out.println(func(data, 0, data.length - 1));\n\nstatic int func(int[] a, int st, int end) {\n    if (s",
+      "image_refs": [
+        "images/2025_round1/Q016.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "public class Main {\n    public static void main(String[] args) {\n        int[] data = {3, 5, 8, 12, 17};\n        System.out.println(func(data, 0, data.length - 1));\n    }\n    static int func(int[] a, int st, int end) {\n        if (st >= end) return 0;\n        int mid = (st + end) / 2;\n        return a[mid] + Math.max(func(a, st, mid), func(a, mid + 1, end));\n    } \n}",
+          "line_numbers": [
+            1,
+            11
+          ],
+          "file": "data/codes/2025_round1/Q016_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "20"
+        ],
+        "raw_text": "20"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1366
+      }
+    },
+    {
+      "file": "items_2025_round2.jsonl",
+      "q_no": "Q005",
+      "doc_id": "2025_round2",
+      "question_text": "다음은 Java의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 Java의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 문제는 **Java 참조 타입과 메서드 파라미터 전달**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nString data[] = { \"A\" };\nString s = \"B\";\nchange(data, s);\nSystem.out.print(data[0] + s);\n\npublic static void change(String[] data, String s) {\n    data[0] = s;\n    s = \"Z\";\n}\n```\n\n**핵심 개념:**\n- Java는 **참조 타입(reference type)**과 **기본 타입(primitive type)**을 다르게 처리합니다.\n- 배열은 참조 타입이므로, 배열 참조가 전달되면 같은 배열 객체를 가리킵니다.\n- String도 참조 타입이지만, 메서드 내부에서 파라미터에 새로운 값을 할당하면 원본 변수에는 영향이 없습니다.\n\n**실행 과정:**\n\n1. **초기 상태:**\n   - `data[] = { \"A\" }` (배열 참조)\n   - `s = \"B\"` (String 참조)\n\n2. **`change(data, s)` 호출:**\n   - `data` 파라미터: 배열 참조가 전달됨 (같은 배열 객체를 가리킴)\n   - `s` 파라미터: String 참조 \"B\"가 전달됨\n\n3. **메서드 내부 실행:**\n   - `data[0] = s;` → `data[0] = \"B\"` (배열의 첫 번째 요소가 \"B\"로 변경됨)\n     - **원본 배열이 변경됨** (참조 타입이므로)\n   - `s = \"Z\";` → 메서드 내부의 파라미터 `s`만 \"Z\"로 변경됨\n     - **원본 변수 `s`는 변경되지 않음** (새로운 참조를 할당했을 뿐)\n\n4. **메서드 종료 후:**\n   - `data[0] = \"B\"` (메서드에서 변경된 값 유지)\n   - `s = \"B\"` (원본 변수는 변경되지 않음)\n\n5. **출력:**\n   - `data[0] + s = \"B\" + \"B\" = \"BB\"`\n\n**정리:**\n- 배열은 참조 타입이므로 메서드에서 배열 요소를 수정하면 원본 배열이 변경됩니다.\n- String도 참조 타입이지만, 메서드 내부에서 파라미터에 새로운 값을 할당하면 그 값은 메서드 내부에서만 유효하고 원본 변수에는 영향이 없습니다.\n\n**답:** \"BB\"",
+      "explanation_preview": "이 문제는 **Java 참조 타입과 메서드 파라미터 전달**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nString data[] = { \"A\" };\nString s = \"B\";\nchange(data, s);\nSystem.out.print(data[0] + s);\n\npublic static void change(String[] data, S",
+      "image_refs": [
+        "images/2025_round2/Q005.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "public class Main {\n    public static void change(String[] data, String s){\n        data[0] = s;\n        s = \"Z\";\n    }\n    public static void main(String[] args) {\n        String data[] = { \"A\" };\n        String s = \"B\";\n        change(data, s);\n        System.out.print(data[0] + s);\n    }\n}",
+          "line_numbers": [
+            1,
+            12
+          ],
+          "file": "data/codes/2025_round2/Q005_code.txt"
+        }
+      ],
+      "table_refs": [
+        {
+          "id": "table1",
+          "json": "data/tables/2025_round2/Q005_table1.json",
+          "rows": 18,
+          "cols": 1
+        }
+      ],
+      "answer": {
+        "keys": [
+          "BB"
+        ],
+        "raw_text": "BB"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1134
+      }
+    },
+    {
+      "file": "items_2025_round2.jsonl",
+      "q_no": "Q009",
+      "doc_id": "2025_round2",
+      "question_text": "다음은 Java언어의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 Java언어의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 문제는 **Java 람다 표현식과 예외 처리**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nstatic interface F {\n    int apply(int x) throws Exception;\n}\n\npublic static int run(F f) {\n    try {\n        return f.apply(3);\n    } catch (Exception e) {\n        return 7;\n    }\n}\n\nF f = (x) -> {\n    if (x > 2) {\n        throw new Exception();\n    }\n    return x * 2;\n};\n\nSystem.out.print(run(f) + run((int n) -> n + 9));\n```\n\n**핵심 개념:**\n- `F` 인터페이스는 `apply(int x)` 메서드를 정의하며, 예외를 던질 수 있습니다.\n- `run` 메서드는 `F` 타입의 함수를 받아 실행하고, 예외가 발생하면 7을 반환합니다.\n- 람다 표현식 `(x) -> { ... }`는 함수형 인터페이스 `F`를 구현합니다.\n\n**실행 과정:**\n\n1. **`F f` 람다 함수 정의:**\n   - `f = (x) -> { if (x > 2) throw new Exception(); return x * 2; }`\n   - x가 2보다 크면 예외를 발생시키고, 그렇지 않으면 `x * 2`를 반환합니다.\n\n2. **첫 번째 `run(f)` 호출:**\n   - `run` 메서드 내부에서 `f.apply(3)` 실행\n   - `x = 3`이므로 `x > 2` 조건이 **참**입니다.\n   - `throw new Exception()`이 실행되어 예외가 발생합니다.\n   - `run` 메서드의 `catch (Exception e)` 블록이 예외를 잡아서 **7을 반환**합니다.\n   - **결과: `run(f) = 7`**\n\n3. **두 번째 `run((int n) -> n + 9)` 호출:**\n   - 새로운 람다 함수 `(int n) -> n + 9`가 전달됩니다.\n   - 이 함수는 예외를 발생시키지 않는 일반적인 함수입니다.\n   - `run` 메서드 내부에서 `f.apply(3)` 실행 (여기서 `f`는 전달된 람다 함수)\n   - `n = 3`이므로 `3 + 9 = 12`를 반환합니다.\n   - 예외가 발생하지 않으므로 `try` 블록이 정상적으로 실행됩니다.\n   - **결과: `run((int n) -> n + 9) = 12`**\n\n4. **최종 출력:**\n   - `run(f) + run((int n) -> n + 9) = 7 + 12 = 19`\n   - `System.out.print(19)` 실행\n\n**정리:**\n- 람다 표현식에서 조건에 따라 예외를 발생시킬 수 있습니다.\n- `run` 메서드는 try-catch 블록으로 예외를 처리하고, 예외 발생 시 7을 반환합니다.\n- 두 개의 서로 다른 람다 함수가 각각 다른 결과를 반환합니다.\n\n**답:** 19",
+      "explanation_preview": "이 문제는 **Java 람다 표현식과 예외 처리**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nstatic interface F {\n    int apply(int x) throws Exception;\n}\n\npublic static int run(F f) {\n    try {\n        return f.apply(3);\n    } ca",
+      "image_refs": [
+        "images/2025_round2/Q009.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "public class Main {\n    static interface F {\n        int apply(int x) throws Exception;\n    }\n    public static int run(F f) {\n        try {\n            return f.apply(3);\n        } catch (Exception e) {\n            return 7;\n        }\n    }\n    public static void main(String[] args) {\n        F f = (x) -> {\n            if (x > 2) {\n                throw new Exception();\n            }\n            return x * 2;\n        };\n        System.out.print(run(f) + run((int n) -> n + 9));\n    }\n}",
+          "line_numbers": [
+            1,
+            21
+          ],
+          "file": "data/codes/2025_round2/Q009_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "19"
+        ],
+        "raw_text": "19"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1494
+      }
+    },
+    {
+      "file": "items_2025_round2.jsonl",
+      "q_no": "Q010",
+      "doc_id": "2025_round2",
+      "question_text": "다음은 Java언어의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 Java언어의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 문제는 **Java 메서드 오버라이딩, 오버로딩, 정적 메서드**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nParent ref = new Child();\nSystem.out.println(ref.x(2) + ref.id());\n\nclass Parent {\n    public int x(int i) { return i + 2; }        // 인스턴스 메서드\n    public static String id() { return \"P\"; }   // 정적 메서드\n}\n\nclass Child extends Parent {\n    public int x(int i) { return i + 3; }        // 오버라이딩\n    public String x(String s) { return s + \"R\"; } // 오버로딩\n    public static String id() { return \"C\"; }   // 정적 메서드 숨김\n}\n```\n\n**핵심 개념:**\n\n1. **메서드 오버라이딩 (Method Overriding):**\n   - `Parent.x(int)`와 `Child.x(int)`는 오버라이딩 관계입니다.\n   - **실제 객체 타입**에 따라 메서드가 호출됩니다.\n   - `ref`는 `Child` 객체이므로 `Child.x(int)`가 호출됩니다.\n\n2. **정적 메서드 (Static Method):**\n   - `Parent.id()`와 `Child.id()`는 정적 메서드입니다.\n   - 정적 메서드는 **참조 변수의 타입**에 따라 호출됩니다 (오버라이딩되지 않음).\n   - `ref`의 타입이 `Parent`이므로 `Parent.id()`가 호출됩니다.\n\n**실행 과정:**\n\n1. **`ref.x(2)` 호출:**\n   - `ref`의 실제 타입은 `Child`이므로 `Child.x(int)` 메서드가 호출됩니다.\n   - `Child.x(2) = 2 + 3 = 5`\n   - 반환값: **5**\n\n2. **`ref.id()` 호출:**\n   - `ref`의 선언 타입은 `Parent`이므로 `Parent.id()` 정적 메서드가 호출됩니다.\n   - 정적 메서드는 오버라이딩되지 않고, 참조 변수의 타입에 따라 결정됩니다.\n   - 반환값: **\"P\"**\n\n3. **출력:**\n   - `5 + \"P\" = \"5P\"`\n\n**정리:**\n- 인스턴스 메서드는 **실제 객체 타입**에 따라 호출됩니다 (동적 바인딩).\n- 정적 메서드는 **참조 변수의 타입**에 따라 호출됩니다 (정적 바인딩).\n\n**답:** \"5P\"",
+      "explanation_preview": "이 문제는 **Java 메서드 오버라이딩, 오버로딩, 정적 메서드**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nParent ref = new Child();\nSystem.out.println(ref.x(2) + ref.id());\n\nclass Parent {\n    public int x(int i) { return i + 2; }   ",
+      "image_refs": [
+        "images/2025_round2/Q010.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "public class Main{\n    public static class Parent {\n        public int x(int i) { return i + 2; }\n        public static String id() { return \"P\";}\n    }\n    public static class Child extends Parent {\n        public int x(int i) { return i + 3; }\n        public String x(String s) { return s + \"R\"; }\n        public static String id() { return \"C\"; }\n    }\n    public static void main(String[] args) {\n        Parent ref = new Child();\n        System.out.println(ref.x(2) + ref.id());\n    }\n}",
+          "line_numbers": [
+            1,
+            15
+          ],
+          "file": "data/codes/2025_round2/Q010_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "5P"
+        ],
+        "raw_text": "5P"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1282
+      }
+    },
+    {
+      "file": "items_2025_round2.jsonl",
+      "q_no": "Q015",
+      "doc_id": "2025_round2",
+      "question_text": "다음은 Java언어의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 Java언어의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 문제는 **Java 객체 배열과 참조**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nBO a = new BO(1);  // a.v = 1\nBO b = new BO(2);  // b.v = 2\nBO c = new BO(3);  // c.v = 3\nBO[] arr = {a, b, c};  // arr[0] = a, arr[1] = b, arr[2] = c\nBO t = arr[0];         // t = a (참조 복사)\narr[0] = arr[2];      // arr[0] = c (이제 arr[0]은 c를 가리킴)\narr[2] = t;           // arr[2] = a (이제 arr[2]는 a를 가리킴)\narr[1].v = arr[0].v; // arr[1].v = arr[0].v = c.v = 3\nSystem.out.println(a.v + \"a\" + b.v + \"b\" + c.v);\n```\n\n**핵심 개념:**\n- Java에서 객체 배열은 **참조 배열**입니다.\n- 배열 요소는 객체를 참조하는 포인터입니다.\n- 배열 요소를 교환해도 원본 객체(`a`, `b`, `c`)는 변경되지 않습니다.\n- 하지만 배열 요소를 통해 객체의 필드를 수정하면 원본 객체가 변경됩니다.\n\n**실행 과정:**\n\n1. **초기 상태:**\n   - `a.v = 1`, `b.v = 2`, `c.v = 3`\n   - `arr = {a, b, c}` → `arr[0] = a`, `arr[1] = b`, `arr[2] = c`\n\n2. **`BO t = arr[0];`**\n   - `t = a` (참조 복사)\n\n3. **`arr[0] = arr[2];`**\n   - `arr[0] = c` (이제 `arr[0]`은 `c`를 가리킴)\n   - **원본 객체 `a`는 변경되지 않음** (여전히 `a.v = 1`)\n\n4. **`arr[2] = t;`**\n   - `arr[2] = a` (이제 `arr[2]`는 `a`를 가리킴)\n   - **원본 객체 `c`는 변경되지 않음** (여전히 `c.v = 3`)\n\n5. **`arr[1].v = arr[0].v;`**\n   - `arr[1] = b`이므로 `b.v = arr[0].v`\n   - `arr[0] = c`이므로 `arr[0].v = c.v = 3`\n   - 따라서 `b.v = 3` (원본 객체 `b`의 필드가 변경됨)\n\n6. **최종 상태:**\n   - `a.v = 1` (변경 없음)\n   - `b.v = 3` (변경됨)\n   - `c.v = 3` (변경 없음)\n   - `arr = {c, b, a}` (배열 요소만 재배치됨)\n\n7. **출력:**\n   - `a.v + \"a\" + b.v + \"b\" + c.v = 1 + \"a\" + 3 + \"b\" + 3 = \"1a3b3\"`\n\n**정리:**\n- 배열 요소 교환은 참조만 바꾸므로 원본 객체는 변경되지 않습니다.\n- 배열 요소를 통해 객체의 필드를 수정하면 원본 객체가 변경됩니다.\n\n**답:** \"1a3b3\"",
+      "explanation_preview": "이 문제는 **Java 객체 배열과 참조**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nBO a = new BO(1);  // a.v = 1\nBO b = new BO(2);  // b.v = 2\nBO c = new BO(3);  // c.v = 3\nBO[] arr = {a, b, c};  // arr[0] = a, arr[1] = b, a",
+      "image_refs": [
+        "images/2025_round2/Q015.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "public class Main{\n    public static class BO {\n        public int v;\n        public BO(int v) {\n            this.v = v;\n        }\n    }\n    public static void main(String[] args) {\n        BO a = new BO(1);\n        BO b = new BO(2);\n        BO c = new BO(3);\n        BO[] arr = {a, b, c};\n        BO t = arr[0];\n        arr[0] = arr[2];\n        arr[2] = t;\n        arr[1].v = arr[0].v;\n        System.out.println(a.v + \"a\" + b.v + \"b\" + c.v);\n    }\n}",
+          "line_numbers": [
+            1,
+            19
+          ],
+          "file": "data/codes/2025_round2/Q015_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "1a3b3"
+        ],
+        "raw_text": "1a3b3"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1477
+      }
+    },
+    {
+      "file": "items_2022_round1.jsonl",
+      "q_no": "Q004",
+      "doc_id": "2022_round1",
+      "question_text": "다음 SQL 결과에 알맞는 쿼리을 작성하시오.\nSELECT name, score FROM 성적\n\n(1) BY ( 2 ) ( 3 )",
+      "question_full": "다음 SQL 결과에 알맞는 쿼리을 작성하시오.\nSELECT name, score FROM 성적\n\n(1) BY ( 2 ) ( 3 )",
+      "explanation_current": "문제에서 제시된 SQL 결과를 보면 **점수(score) 기준으로 내림차순 정렬**이 필요합니다.\n\n**주어진 쿼리 패턴:**\n```sql\nSELECT name, score FROM 성적\n(1) BY (2) (3)\n```\n\n**패턴 분석:**\n- `(1) BY (2) (3)` 형태는 **ORDER BY 절**을 나타냅니다\n- `BY` 앞에는 `ORDER`가 오고\n- `BY` 뒤에는 정렬 기준 컬럼명과 정렬 방향이 옵니다\n\n**ORDER BY 절 구조:**\n```sql\nORDER BY 컬럼명 [ASC | DESC]\n```\n- `ORDER BY`: 결과를 정렬하기 위한 SQL 절\n- `컬럼명`: 정렬 기준이 되는 컬럼\n- `ASC`: 오름차순 (Ascending, 기본값, 생략 가능)\n- `DESC`: 내림차순 (Descending, 높은 값부터 낮은 값 순서)\n\n**문제의 요구사항:**\n- 주어진 결과를 보면 점수가 **높은 순서부터 낮은 순서**로 정렬되어 있음\n- 따라서 **내림차순(DESC)** 정렬 필요\n- 정렬 기준 컬럼은 **score**\n\n**빈칸 채우기:**\n1. **(1)**: `ORDER` - ORDER BY 절의 시작 키워드\n2. **(2)**: `score` - 정렬 기준 컬럼명 (점수 컬럼)\n3. **(3)**: `DESC` - 내림차순 정렬 지정\n\n**완성된 쿼리:**\n```sql\nSELECT name, score FROM 성적\nORDER BY score DESC\n```\n\n**실행 결과:**\n- 성적 테이블에서 학생 이름과 점수를 조회\n- 점수가 높은 학생부터 낮은 학생 순서로 정렬되어 출력\n\n**ORDER BY 사용 예시:**\n- `ORDER BY score ASC` 또는 `ORDER BY score`: 점수 오름차순 (낮은 점수 → 높은 점수)\n- `ORDER BY score DESC`: 점수 내림차순 (높은 점수 → 낮은 점수)\n- `ORDER BY name`: 이름 오름차순 (가나다순)\n\n**답:**\n- (1) **ORDER**\n- (2) **score**\n- (3) **DESC**",
+      "explanation_preview": "문제에서 제시된 SQL 결과를 보면 **점수(score) 기준으로 내림차순 정렬**이 필요합니다.\n\n**주어진 쿼리 패턴:**\n```sql\nSELECT name, score FROM 성적\n(1) BY (2) (3)\n```\n\n**패턴 분석:**\n- `(1) BY (2) (3)` 형태는 **ORDER BY 절**을 나타냅니다\n- `BY` 앞에는 `ORDER`가",
+      "image_refs": [
+        "images/2022_round1/4.png"
+      ],
+      "code_blocks": [],
+      "table_refs": [
+        {
+          "id": "table1",
+          "json": "data/tables/2022_round1/Q004_table1.json",
+          "rows": 18,
+          "cols": 1
+        }
+      ],
+      "answer": {
+        "keys": [
+          "1) ORDER",
+          "2) score",
+          "3) DESC"
+        ],
+        "raw_text": "1) ORDER 2) score 3) DESC"
+      },
+      "primary_category": "SQL",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1030
+      }
+    },
+    {
+      "file": "items_2022_round3.jsonl",
+      "q_no": "Q019",
+      "doc_id": "2022_round3",
+      "question_text": "다음 자바 코드에 대한 출력 값을 작성하시오.",
+      "question_full": "다음 자바 코드에 대한 출력 값을 작성하시오.",
+      "explanation_current": "**Java 배열과 반복문 문제입니다.**\n\n**문제의 전체 코드:**\n\n```java\npublic class Main {\n    static int[] MakeArray(){\n        int[] tempArr = new int[4];\n        \n        for(int i=0; i<tempArr.Length; i++){\n            tempArr[i] = i;\n        }\n        \n        return tempArr;\n    }\n    \n    public static void main(String[] args){\n        int[] intArr;\n        intArr = MakeArray();\n        \n        for(int i=0; i < intArr.Length; i++)\n            System.out.print(intArr[i]);\n    }\n}\n```\n\n**코드 실행 과정:**\n\n1. **`MakeArray()` 메서드:**\n   - `int[] tempArr = new int[4];`: 크기 4인 배열 생성\n   - 초기값: `[0, 0, 0, 0]`\n   \n   - `for(int i=0; i<tempArr.Length; i++)`: 0부터 3까지 반복\n     - `i=0`: `tempArr[0] = 0` → `[0, 0, 0, 0]`\n     - `i=1`: `tempArr[1] = 1` → `[0, 1, 0, 0]`\n     - `i=2`: `tempArr[2] = 2` → `[0, 1, 2, 0]`\n     - `i=3`: `tempArr[3] = 3` → `[0, 1, 2, 3]`\n   \n   - `return tempArr;`: `[0, 1, 2, 3]` 반환\n\n2. **`main()` 메서드:**\n   - `intArr = MakeArray();`: `intArr = [0, 1, 2, 3]`\n   \n   - `for(int i=0; i < intArr.Length; i++)`: 0부터 3까지 반복\n     - `i=0`: `System.out.print(intArr[0]);` → 출력: **0**\n     - `i=1`: `System.out.print(intArr[1]);` → 출력: **1**\n     - `i=2`: `System.out.print(intArr[2]);` → 출력: **2**\n     - `i=3`: `System.out.print(intArr[3]);` → 출력: **3**\n\n**최종 출력:** **0123**\n\n**핵심 포인트:**\n\n- 배열의 각 인덱스에 인덱스 값 자체를 저장 (`tempArr[i] = i`)\n- `System.out.print()`는 줄바꿈 없이 출력 (println과 다름)\n- 배열 길이: `.length` (Java에서는 소문자 'l'이지만, 문제 코드는 'L'로 표기)\n\n**답:** **0123** 타입과 초기값 확인\n   - 인스턴스 변수 vs 클래스 변수 vs 지역 변수 구분\n\n2. **반복문**:\n   - `for`, `while`, `do-while` 등의 반복문 구조 확인\n   - 반복 횟수와 조건 확인\n   - `System.out.print()` vs `System.out.println()` 구분 (줄바꿈 여부)\n\n3. **출력 순서**:\n   - 출력문의 실행 순서 확인\n   - 여러 출력문이 있을 경우 순서대로 출력\n\n4. **문자열/배열 처리**:\n   - 문자열의 인덱스 접근 (`charAt()`, `substring()` 등)\n   - 배열의 인덱스 접근 (`arr[i]`)\n\n**일반적인 \"0123\" 출력 패턴:**\n- **0부터 3까지**의 숫자를 순차적으로 출력하는 코드\n- `System.out.print()`를 사용하여 줄바꿈 없이 연속 출력\n- 반복문이나 순차적인 출력문으로 구현\n\n**답:** 문제의 이미지에서 코드를 확인하고, 코드 실행 과정을 단계별로 추적하여 정확한 출력값을 도출해야 합니다. 일반적으로 변수의 초기값부터 시작하여 각 문장의 실행 결과를 순서대로 추적하면 정확한 답을 얻을 수 있습니다. 이 경우 출력값은 **\"0123\"**입니다.",
+      "explanation_preview": "**Java 배열과 반복문 문제입니다.**\n\n**문제의 전체 코드:**\n\n```java\npublic class Main {\n    static int[] MakeArray(){\n        int[] tempArr = new int[4];\n        \n        for(int i=0; i<tempArr.Length; i++){\n           ",
+      "image_refs": [
+        "images/2022_round3/19.png"
+      ],
+      "code_blocks": [],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "0123"
+        ],
+        "raw_text": "0123"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 2065
+      }
+    },
+    {
+      "file": "items_2023_round1.jsonl",
+      "q_no": "Q015",
+      "doc_id": "2023_round1",
+      "question_text": "다음 파이썬 코드의 알맞는 출력값을 작성하시오.",
+      "question_full": "다음 파이썬 코드의 알맞는 출력값을 작성하시오.",
+      "explanation_current": "**Python Set 연산 문제입니다.**\n\n**문제의 전체 코드:**\n\n```python\na = {'한국', '중국', '일본'}\na.add('베트남')\na.add('중국')\na.remove('일본')\na.update({'홀츠', '한국', '태국'})\nprint(a)\n```\n\n**코드 실행 과정:**\n\n1. **초기 Set 생성:**\n   ```python\n   a = {'한국', '중국', '일본'}\n   ```\n   - `a = {'한국', '중국', '일본'}`\n\n2. **`a.add('베트남')`:**\n   - Set에 '베트남' 추가\n   - `a = {'한국', '중국', '일본', '베트남'}`\n\n3. **`a.add('중국')`:**\n   - Set에 '중국' 추가 시도\n   - **Set은 중복을 허용하지 않음** → '중국'은 이미 있으므로 변화 없음\n   - `a = {'한국', '중국', '일본', '베트남'}`\n\n4. **`a.remove('일본')`:**\n   - Set에서 '일본' 제거\n   - `a = {'한국', '중국', '베트남'}`\n\n5. **`a.update({'홀츠', '한국', '태국'})`:**\n   - `update()`: 다른 Set의 모든 요소를 현재 Set에 추가 (합집합 연산)\n   - '홀츠', '한국', '태국' 추가 시도\n   - '한국'은 이미 있으므로 중복 제거됨\n   - '홀츠', '태국'만 추가됨\n   - `a = {'한국', '중국', '베트남', '홀츠', '태국'}`\n\n**그런데 이미지를 보면:**\n\n이미지의 실제 코드에서는 `update` 대신 다른 연산이 있을 수 있습니다. 문제의 정답이 \"{'중국', '한국', '일본', '베트남'}\"이므로, 실제 코드를 확인하여 정확한 연산을 파악해야 합니다.\n\n**Python Set 연산 정리:**\n\n- **`add(element)`**: 요소 1개 추가 (중복 시 무시)\n- **`remove(element)`**: 요소 제거 (없으면 에러)\n- **`update(set)`**: 다른 Set의 모든 요소 추가 (합집합)\n- **`discard(element)`**: 요소 제거 (없어도 에러 없음)\n\n**Set의 특징:**\n\n- **중복 허용 안 됨**: 같은 요소는 하나만 저장\n- **순서 없음**: 출력 순서는 보장되지 않음 (Python 3.7+에서는 입력 순서 유지)\n- **가변**: 요소 추가/제거 가능\n\n**답:** 문제 이미지의 실제 코드를 기반으로 연산을 추적하면 **{'중국', '한국', '일본', '베트남'}** - **메서드 오버라이딩**: 자식 클래스의 `display()`가 부모 클래스의 `display()`를 덮어씀\n   - 자식 클래스의 `display()` 메서드 실행\n   - `print(f\"Vehicle name: {self.name}\")` 실행\n   - `self.name = \"Spark\"`이므로 출력: **\"Vehicle name: Spark\"**\n\n**핵심 개념:**\n\n- **상속**: `Car(Vehicle)` - `Car`가 `Vehicle`을 상속받음\n- **`super()`**: 부모 클래스의 메서드나 생성자를 호출\n- **메서드 오버라이딩**: 자식 클래스에서 부모 클래스의 메서드를 재정의\n- **메서드 호출 순서**: 자식 클래스에 메서드가 있으면 자식 클래스의 메서드가 우선 호출됨\n\n**답:** **\"Vehicle name: Spark\"**",
+      "explanation_preview": "**Python Set 연산 문제입니다.**\n\n**문제의 전체 코드:**\n\n```python\na = {'한국', '중국', '일본'}\na.add('베트남')\na.add('중국')\na.remove('일본')\na.update({'홀츠', '한국', '태국'})\nprint(a)\n```\n\n**코드 실행 과정:**\n\n1. **초기 Set 생성:**\n   ```pyt",
+      "image_refs": [
+        "images/2023_round1/15.png"
+      ],
+      "code_blocks": [],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "{'중국', '한국', '일본', '베트남'}"
+        ],
+        "raw_text": "{'중국', '한국', '일본', '베트남'}"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1709
+      }
+    },
+    {
+      "file": "items_2023_round1.jsonl",
+      "q_no": "Q017",
+      "doc_id": "2023_round1",
+      "question_text": "다음 JAVA 코드에서 알맞는 출력 값을 작성하시오.",
+      "question_full": "다음 JAVA 코드에서 알맞는 출력 값을 작성하시오.",
+      "explanation_current": "**Java 추상 클래스, 메서드 오버로딩, 다형성을 묻는 문제입니다.**\n\n**이미지의 코드 분석:**\n\n```java\nabstract class Vehicle {\n    String name;\n    abstract public String getName(String val);\n    \n    public String getName() {\n        return \"Vehicle name: \" + name;\n    }\n}\n\nclass Car extends Vehicle {\n    public Car(String val) {\n        name=super.name=val;\n    }\n    \n    public String getName(String val) {\n        return \"Car name:\" + val;\n    }\n    \n    public String getName(byte val[]) {\n        return \"Car name:\" + val;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        Vehicle obj = new Car(\"Spark\");\n        System.out.println(obj.getName());\n    }\n}\n```\n\n**코드 실행 과정:**\n\n1. **추상 클래스 Vehicle:**\n   - `String name` 필드 선언\n   - `abstract public String getName(String val)`: 추상 메서드 (파라미터 1개)\n   - `public String getName()`: 구현된 메서드 (파라미터 없음)\n\n2. **Car 클래스 (Vehicle 상속):**\n   - `public Car(String val)`: 생성자에서 `name = \"Spark\"` 설정\n   - `getName(String val)`: 추상 메서드 구현 (파라미터 String 1개)\n   - `getName(byte val[])`: 추가 오버로딩 메서드 (파라미터 byte배열)\n   - **주의**: `getName()` (파라미터 없음)은 오버라이딩하지 않음!\n\n3. **main 실행:**\n   - `Vehicle obj = new Car(\"Spark\");`\n     - Car 객체 생성, Vehicle 타입 변수에 저장 (다형성)\n     - 생성자 실행: `name = \"Spark\"`\n   \n   - `obj.getName()` 호출:\n     - Car 클래스에 `getName()` (파라미터 없음)이 **오버라이딩되지 않음**\n     - 따라서 **부모 클래스 Vehicle의 `getName()` 메서드 호출**\n     - `return \"Vehicle name: \" + name;`\n     - `name = \"Spark\"`이므로 반환값: **\"Vehicle name: Spark\"**\n   \n   - `System.out.println(...)`: **\"Vehicle name: Spark\"** 출력\n\n**핵심 개념:**\n\n1. **추상 클래스와 추상 메서드:**\n   - `abstract` 키워드로 선언\n   - 추상 메서드는 자식 클래스에서 반드시 구현해야 함\n   - 추상 클래스도 구현된 메서드를 가질 수 있음\n\n2. **메서드 오버로딩(Overloading):**\n   - 같은 이름의 메서드를 **파라미터 타입/개수**를 다르게 하여 여러 개 정의\n   - Car 클래스에서 `getName(String)`, `getName(byte[])`로 오버로딩\n\n3. **메서드 오버라이딩(Overriding) vs 오버로딩:**\n   - **오버라이딩**: 부모 클래스의 메서드를 **같은 시그니처(이름, 파라미터)**로 재정의\n   - **오버로딩**: 같은 이름의 메서드를 **다른 파라미터**로 정의\n   - 이 문제에서 `getName()`은 오버라이딩되지 않았으므로 부모 클래스 메서드 사용\n\n4. **다형성(Polymorphism):**\n   - `Vehicle obj = new Car(\"Spark\");`\n   - 부모 타입 변수에 자식 객체 저장\n   - 메서드 호출 시 실제 객체 타입(Car)의 메서드 우선 호출\n   - 단, 오버라이딩되지 않은 메서드는 부모 클래스 메서드 호출\n\n**메서드 호출 규칙:**\n\n| 메서드 | Car 클래스 정의 여부 | 호출되는 메서드 |\n|--------|---------------------|----------------|\n| `getName()` (파라미터 없음) | X (오버라이딩 안 됨) | **Vehicle.getName()** |\n| `getName(String)` | O (구현됨) | Car.getName(String) |\n| `getName(byte[])` | O (오버로딩) | Car.getName(byte[]) |\n\n**답:** **\"Vehicle name: Spark\"**",
+      "explanation_preview": "**Java 추상 클래스, 메서드 오버로딩, 다형성을 묻는 문제입니다.**\n\n**이미지의 코드 분석:**\n\n```java\nabstract class Vehicle {\n    String name;\n    abstract public String getName(String val);\n    \n    public String getName() {\n       ",
+      "image_refs": [
+        "images/2023_round1/17.png"
+      ],
+      "code_blocks": [],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "Vehicle name: Spark"
+        ],
+        "raw_text": "Vehicle name: Spark"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 2448
+      }
+    },
+    {
+      "file": "items_2023_round2.jsonl",
+      "q_no": "Q009",
+      "doc_id": "2023_round2",
+      "question_text": "다음은 C언어 문제이다.\n알맞은 출력값을 작성하시오.",
+      "question_full": "다음은 C언어 문제이다.\n알맞은 출력값을 작성하시오.",
+      "explanation_current": "이 C언어 코드는 스택(Stack) 자료구조를 구현하고 사용하는 문제입니다.\n\n**코드 분석:**\n\n```c void into(int num) {\nif (point >= 10) printf(\"Full\");\nelse isWhat[++point] = num; // push (전위 증가)\n}\n\nint take() {\nif (isEmpty() == 1) printf(\"Empty\");\nelse return isWhat[point--]; // pop (후위 감소)\nreturn 0;\n}\n```\n\n**실행 과정:**\n\n1. **초기 상태:**\n- `point = -1` (빈 스택)\n\n2. **`into(5); into(2);`**\n- 스택: `[5, 2]`, `point = 1`\n\n3. **while 루프:**첫 번째 반복:**\n- `take()` → `isWhat[1] = 2` 반환, `point = 0` → **\"2\"** 출력\n- `into(4);` → 스택: `[5, 4]`, `point = 1`\n- `into(1);` → 스택: `[5, 4, 1]`, `point = 2`\n- `take()` → `isWhat[2] = 1` 반환, `point = 1` → **\"1\"** 출력\n- `into(3);` → 스택: `[5, 4, 3]`, `point = 2`\n- `take()` → `isWhat[2] = 3` 반환, `point = 1` → **\"3\"** 출력\n- `take()` → `isWhat[1] = 4` 반환, `point = 0` → **\"4\"** 출력\n- `into(6);` → 스택: `[5, 6]`, `point = 1`\n- `take()` → `isWhat[1] = 6` 반환, `point = 0` → **\"6\"** 출력\n- `take()` → `isWhat[0] = 5` 반환, `point = -1` → **\"5\"** 출력\n\n**두 번째 반복:**\n- `isEmpty() == 1` → 루프 종료\n\n**최종 출력:** \"213465\"\n\n**답:** \"213465\"",
+      "explanation_preview": "이 C언어 코드는 스택(Stack) 자료구조를 구현하고 사용하는 문제입니다.\n\n**코드 분석:**\n\n```c void into(int num) {\nif (point >= 10) printf(\"Full\");\nelse isWhat[++point] = num; // push (전위 증가)\n}\n\nint take() {\nif (isEmpty() == 1) print",
+      "image_refs": [
+        "images/2023_round2/9.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "c",
+          "code": "#include <stdio.h>\n#define MAX_SIZE 10\nint isWhat[MAX_SIZE];\nint point= -1;\nint isEmpty() {\n    if (point == -1) return 1;\n    return 0;\n}\nint isFull() {\n    if (point == 10) return 1;\n    return 0;\n}\nvoid into(int num) {\n    if (point >= 10) printf(\"Full\");\n    else isWhat[++point] = num;\n}\nint take() {\n    if (isEmpty() == 1) printf(\"Empty\");\n    else return isWhat[point--];\n    return 0;\n}\nint main(int argc, char const *argv[]){\n    int e;\n    into(5); into(2);\n    while(!isEmpty()){\n        printf(\"%d\", take());\n        into(4); into(1); printf(\"%d\", take());\n        into(3); printf(\"%d\", take()); printf(\"%d\", take());\n        into(6); printf(\"%d\", take()); printf(\"%d\", take());\n    }\n    return 0;\n}",
+          "line_numbers": [
+            1,
+            32
+          ],
+          "file": "data/codes/2023_round2/Q009_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "213465"
+        ],
+        "raw_text": "213465"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1002
+      }
+    },
+    {
+      "file": "items_2023_round2.jsonl",
+      "q_no": "Q019",
+      "doc_id": "2023_round2",
+      "question_text": "다음 파이썬 코드에서 알맞는 출력값을 작성하시오.",
+      "question_full": "다음 파이썬 코드에서 알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 문제는 **Python 코드의 실행 결과**를 구하는 문제입니다. 문제의 이미지를 참고하여 코드 실행 과정을 분석해야 합니다.\n\n**문제 해결 방법:**\n\n이 문제는 Python 코드의 실행 흐름을 추적하여 출력값을 구하는 문제입니다. 코드의 실제 내용(변수, 문자열 조작, 리스트 메서드, 반복문 등)을 확인하고, 각 단계별로 변수 값의 변화를 추적하여 최종 출력값을 도출해야 합니다.\n\n**Python 코드 분석 시 확인사항:**\n\n1. **문자열 조작**:\n   - 문자열 슬라이싱: `str[start:end]`\n   - 문자열 메서드: `replace()`, `split()`, `join()`, `strip()` 등\n   - 문자열 인덱싱: `str[index]`\n\n2. **리스트 조작**:\n   - 리스트 인덱싱: `list[index]`\n   - 리스트 메서드: `append()`, `pop()`, `remove()`, `insert()` 등\n   - 리스트 슬라이싱: `list[start:end]`\n\n3. **반복문**:\n   - `for` 루프: `for item in iterable`\n   - `while` 루프: 조건에 따른 반복\n   - 반복 횟수와 종료 조건 확인\n\n4. **출력문**:\n   - `print()` 함수\n   - 출력 형식 및 구분자 확인\n\n**일반적인 Python 문자열/리스트 조작 패턴:**\n\n```python\n# 예시 1: 문자열 슬라이싱\ns = \"engineering\"\nprint(s[1:5])  # \"ngin\"\nprint(s[::2])  # \"enieig\"\n\n# 예시 2: 리스트 조작\narr = ['e', 'n', 'g', 'i', 'n', 'e', 'e', 'r', 'i', 'n', 'g']\narr.pop(0)  # 첫 번째 요소 제거\nprint(''.join(arr))  # \"ngineering\"\n```\n\n**답:** 문제의 이미지에서 코드를 확인하고, 문자열이나 리스트의 조작 과정을 단계별로 추적하여 정확한 출력값을 도출해야 합니다. 일반적으로 문자열 슬라이싱, 인덱싱, 또는 리스트 조작을 통해 특정 문자들을 제거하거나 재배열하는 과정을 거칩니다.",
+      "explanation_preview": "이 문제는 **Python 코드의 실행 결과**를 구하는 문제입니다. 문제의 이미지를 참고하여 코드 실행 과정을 분석해야 합니다.\n\n**문제 해결 방법:**\n\n이 문제는 Python 코드의 실행 흐름을 추적하여 출력값을 구하는 문제입니다. 코드의 실제 내용(변수, 문자열 조작, 리스트 메서드, 반복문 등)을 확인하고, 각 단계별로 변수 값의 변화를 추적하여",
+      "image_refs": [
+        "images/2023_round2/19.png"
+      ],
+      "code_blocks": [],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "engneing"
+        ],
+        "raw_text": "engneing"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1077
+      }
+    },
+    {
+      "file": "items_2023_round3.jsonl",
+      "q_no": "Q016",
+      "doc_id": "2023_round3",
+      "question_text": "다음 설명에 알맞는 답을 보기에서 골라 작성하시오.",
+      "question_full": "다음 설명에 알맞는 답을 보기에서 골라 작성하시오.",
+      "explanation_current": "**Equivalence Partitioning (동등 분할) 테스트 기법 문제입니다.**\n\n**Equivalence Partitioning (동등 분할)의 정의:**\n- 입력 데이터를 **동등한(equivalent) 그룹으로 분할**하여 각 그룹에서 **대표값 하나씩만 테스트**하는 기법\n- **EP (Equivalence Partitioning)**라고도 함\n- 블랙박스 테스트 기법 중 하나\n\n**동등 분할의 특징:**\n\n1. **입력 영역 분할:**\n   - 유효한 입력 영역과 무효한 입력 영역으로 분할\n   - 각 영역 내의 값들은 동일하게 처리됨\n\n2. **대표값 선택:**\n   - 각 분할 영역에서 **대표값 하나만 선택**하여 테스트\n   - 분할 영역 내의 모든 값은 동일한 결과를 가정\n\n3. **테스트 케이스 감소:**\n   - 모든 가능한 값을 테스트하지 않고 대표값만 테스트\n   - 테스트 효율성 향상\n\n**예시:**\n\n**입력: 정수 (1~100)**\n\n1. **유효한 입력 영역:**\n   - 1~100: 정상 처리\n   - 대표값: 50\n\n2. **무효한 입력 영역:**\n   - < 1: 오류 처리\n   - 대표값: 0, -1\n   - > 100: 오류 처리\n   - 대표값: 101, 200\n\n**테스트 케이스:**\n- 50 (유효)\n- 0 (무효, 작음)\n- 101 (무효, 큼)\n\n**동등 분할 vs 경계값 분석:**\n\n| 기법 | 특징 | 예시 |\n|------|------|------|\n| **동등 분할** | 각 분할 영역의 대표값 테스트 | 50, 0, 101 |\n| **경계값 분석** | 경계값과 그 근처 값 테스트 | 1, 0, -1, 100, 101, 102 |\n\n**다른 테스트 기법:**\n\n- **Boundary Value Analysis (경계값 분석)**: 경계값과 그 근처 값 테스트\n- **Decision Table (의사결정 테이블)**: 조건 조합 테스트\n- **State Transition (상태 전이)**: 상태 변화 테스트\n\n**답:** **ㄱ (Equivalence Partitioning / 동등 분할)**",
+      "explanation_preview": "**Equivalence Partitioning (동등 분할) 테스트 기법 문제입니다.**\n\n**Equivalence Partitioning (동등 분할)의 정의:**\n- 입력 데이터를 **동등한(equivalent) 그룹으로 분할**하여 각 그룹에서 **대표값 하나씩만 테스트**하는 기법\n- **EP (Equivalence Partitioning)**라고",
+      "image_refs": [
+        "images/2023_round3/16.png"
+      ],
+      "code_blocks": [],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "ㄱ"
+        ],
+        "raw_text": "ㄱ"
+      },
+      "primary_category": "기타",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1058
+      }
+    },
+    {
+      "file": "items_2024_round1.jsonl",
+      "q_no": "Q001",
+      "doc_id": "2024_round1",
+      "question_text": "다음 Java 코드에서 알맞는 출력 값을 작성하시오.",
+      "question_full": "다음 Java 코드에서 알맞는 출력 값을 작성하시오.",
+      "explanation_current": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static public Connection get() {\nif(_inst == null) {\n_inst = new Connection();\nreturn _inst;\n}\nreturn _inst;\n}\npublic void count() {\ncount++;\n}\npublic int getCount() {\nreturn count;\n}\n}\n```\n\n**실행 과정:**\n\n1. **`Connection.get()` 호출 (conn1):**\n- `_inst == null`이므로 `new Connection()` 생성\n- `_inst`에 저장되어 반환\n- `conn1.count()` 호출 → `count = 1`\n\n2. **`Connection.get()` 호출 (conn2):**\n- `_inst != null`이므로 기존 인스턴스 반환 (conn1과 같은 객체!)\n- `conn2.count()` 호출 → 같은 객체의 `count = 2`\n\n3. **`Connection.get()` 호출 (conn3):**\n- 동일한 인스턴스 반환\n- `conn3.count()` 호출 → `count = 3`\n\n4. **`conn1.count()` 재호출:**\n- 같은 객체이므로 `count = 4`\n\n5. **`conn1.getCount()` 출력:**\n- **출력: 4**핵심 포인트:**\n- 싱글톤 패턴은 클래스의 인스턴스가 하나만 존재하도록 보장합니다.\n- `get()` 메서드를 통해 항상 같은 인스턴스를 반환합니다.\n- 따라서 `conn1`, `conn2`, `conn3`는 모두 같은 객체를 참조합니다.\n- `count`는 인스턴스 변수이므로 같은 객체 내에서 공유됩니다.\n\n**답:** 4",
+      "explanation_preview": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static pub",
+      "image_refs": [
+        "images/2024_round1/Q001.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "class Connection {\n    private static Connection _inst = null;\n    private int count = 0;\n    static public Connection get() {\n        if(_inst == null) {\n            _inst = new Connection();\n            return _inst;\n        }\n        return _inst;\n    }\n    public void count() {\n         count++; \n    }\n    public int getCount() {\n         return count; \n    }\n}\npublic class main {  \n    public static void main(String[] args) {\n        Connection conn1 = Connection.get();\n        conn1.count();\n        Connection conn2 = Connection.get();\n        conn2.count();\n        Connection conn3 = Connection.get();\n        conn3.count();\n        conn1.count();\n        System.out.print(conn1.getCount());\n    }\n}",
+          "line_numbers": [
+            1,
+            29
+          ],
+          "file": "data/codes/2024_round1/Q001_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "4"
+        ],
+        "raw_text": "4"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1022
+      }
+    },
+    {
+      "file": "items_2024_round1.jsonl",
+      "q_no": "Q002",
+      "doc_id": "2024_round1",
+      "question_text": "다음 C언어 코드에서 알맞는 출력 값을 작성하시오.",
+      "question_full": "다음 C언어 코드에서 알맞는 출력 값을 작성하시오.",
+      "explanation_current": "이 C언어 코드는 삼항 연산자와 비트 시프트 연산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c int v1 = 0, v2 = 35, v3 = 29;\nif(v1 > v2 ? v2 : v1) {\nv2 = v2 << 2;\n} else {\nv3 = v3 << 2;\n}\nprintf(\"%d\", v2+v3);\n```\n\n**실행 과정:**\n\n1. **초기값:**\n- `v1 = 0`, `v2 = 35`, `v3 = 29`\n\n2. **삼항 연산자 평가:**\n```c v1 > v2 ? v2 : v1\n```\n- `0 > 35` → 거짓(false)\n- 따라서 `v1` (값: 0) 반환\n\n3. **if 조건 판단:**\n```c if(0) { // 거짓!\nv2 = v2 << 2;\n} else {\nv3 = v3 << 2; // 이 블록 실행\n}\n```\n\n4. **비트 시프트 연산:**\n```c v3 = 29 << 2;\n```\n- `<<` (왼쪽 시프트): 비트를 왼쪽으로 2칸 이동 = 곱하기 4\n- `29 << 2 = 29 × 4 = 116`\n\n5. **최종 계산:**\n- `v2 = 35` (변경 없음)\n- `v3 = 116`\n- `v2 + v3 = 35 + 116 = 151`\n\n**답:** 151",
+      "explanation_preview": "이 C언어 코드는 삼항 연산자와 비트 시프트 연산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c int v1 = 0, v2 = 35, v3 = 29;\nif(v1 > v2 ? v2 : v1) {\nv2 = v2 << 2;\n} else {\nv3 = v3 << 2;\n}\nprintf(\"%d\", v2+v3);\n```\n\n**실행 과정:**\n\n1. **초기값:*",
+      "image_refs": [
+        "images/2024_round1/Q002.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "c",
+          "code": "#include <stdio.h>\nint main() {\n    int v1 = 0, v2 = 35, v3 = 29;\n    if(v1 > v2 ? v2 : v1) {\n        v2 = v2 << 2;\n    }else{\n        v3 = v3 << 2;\n    }\n    printf(\"%d\", v2+v3);\n}",
+          "line_numbers": [
+            1,
+            10
+          ],
+          "file": "data/codes/2024_round1/Q002_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "151"
+        ],
+        "raw_text": "151"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 614
+      }
+    },
+    {
+      "file": "items_2024_round1.jsonl",
+      "q_no": "Q004",
+      "doc_id": "2024_round1",
+      "question_text": "다음은 C언어에 대한 문제이다.\n알맞는 출력 값을 작성하시오.",
+      "question_full": "다음은 C언어에 대한 문제이다.\n알맞는 출력 값을 작성하시오.",
+      "explanation_current": "이 C언어 코드는 문자열을 역순으로 뒤집고 홀수 인덱스 문자를 출력하는 문제입니다.\n\n**코드 분석:**\n\n```c char str[100] = \"ABCDEFGH\";\nreverse(str); // 문자열 역순\n// 역순 후: \"HGFEDCBA\"\nfor(int i=1; i<len; i+=2) {\nprintf(\"%c\", str[i]); // 홀수 인덱스만 출력\n}\n```\n\n**실행 과정:**\n\n1. **초기 상태:**\n- `str = \"ABCDEFGH\"`\n- 인덱스: 0=A, 1=B, 2=C, 3=D, 4=E, 5=F, 6=G, 7=H\n\n2. **`reverse()` 함수 실행:**\n```c void reverse(char* str) {\nint len = strlen(str); // len = 8 char *p1 = str; // p1 = &str[0]\nchar *p2 = str + len - 1; // p2 = &str[7]\nwhile(p1 < p2) {\n// 문자 교환 temp = *p1;\n*p1 = *p2;\n*p2 = temp;\np1++;\np2--;\n}\n}\n```\n- `p1`과 `p2`를 교환하며 문자열 뒤집기\n- 결과: `str = \"HGFEDCBA\"`\n\n3. **홀수 인덱스 출력:**\n```c for(int i=1; i<8; i+=2) {\nprintf(\"%c\", str[i]);\n}\n```\n- i=1: str[1] = 'G' 출력\n- i=3: str[3] = 'E' 출력\n- i=5: str[5] = 'C' 출력\n- i=7: str[7] = 'A' 출력\n\n**최종 출력:** \"GECA\"\n\n**답:** \"GECA\"",
+      "explanation_preview": "이 C언어 코드는 문자열을 역순으로 뒤집고 홀수 인덱스 문자를 출력하는 문제입니다.\n\n**코드 분석:**\n\n```c char str[100] = \"ABCDEFGH\";\nreverse(str); // 문자열 역순\n// 역순 후: \"HGFEDCBA\"\nfor(int i=1; i<len; i+=2) {\nprintf(\"%c\", str[i]); // 홀수 인덱스만 출력",
+      "image_refs": [
+        "images/2024_round1/Q004.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "c",
+          "code": "#include <stdio.h>\n#include <string.h>\nvoid reverse(char* str){\n    int len = strlen(str);\n    char temp;\n    char*p1 = str;\n    char*p2 = str + len - 1;\n    while(p1<p2){\n        temp = *p1;\n        *p1 = *p2;\n        *p2 = temp;\n        p1++;\n        p2--;\n    }\n}\nint main(int argc, char* argv[]){\n    char str[100] = \"ABCDEFGH\";\n    reverse(str);\n    int len = strlen(str);\n    for(int i=1; i<len; i+=2){\n        printf(\"%c\",str[i]);\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+          "line_numbers": [
+            1,
+            25
+          ],
+          "file": "data/codes/2024_round1/Q004_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "GECA"
+        ],
+        "raw_text": "GECA"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 803
+      }
+    },
+    {
+      "file": "items_2024_round1.jsonl",
+      "q_no": "Q006",
+      "doc_id": "2024_round1",
+      "question_text": "아래 표에서 나타나고 있는 정규형을 작성하시오.",
+      "question_full": "아래 표에서 나타나고 있는 정규형을 작성하시오.",
+      "explanation_current": "이 문제는 **데이터베이스 정규화의 제3정규형(3NF)**을 판별하는 문제입니다.\n\n**주어진 표 분석:**\n\n표 구조: (고객아이디, 강좌명, 강사번호)\n\n**정규형 판별 과정:**\n\n1. **제1정규형(1NF) 확인:**\n   - 모든 속성이 원자값(더 이상 분할 불가) ✓\n   - 중복 튜플 없음 ✓\n   - **1NF 만족**\n\n2. **제2정규형(2NF) 확인:**\n   - 기본키: (고객아이디, 강좌명) - 복합키\n   - 비주요 속성: 강사번호\n   - **완전 함수 종속 확인:**\n     - 강사번호는 (고객아이디, 강좌명)에 완전 종속\n     - 부분 종속 없음 ✓\n   - **2NF 만족**\n\n3. **제3정규형(3NF) 확인:**\n   - **이행 함수 종속 확인:**\n     - 고객아이디 → 강사번호? (아니오)\n     - 강좌명 → 강사번호? (표에서 확인 필요)\n   - 표를 보면 같은 강좌명에 다른 강사번호가 있을 수 있음\n   - 하지만 기본키가 복합키이므로, 이행 종속이 없음\n   - **3NF 만족**\n\n4. **BCNF 확인:**\n   - BCNF는 모든 결정자가 후보키여야 함\n   - 이 표는 3NF까지 만족하지만 BCNF는 아닐 수 있음\n\n**정규형 정리:**\n\n| 정규형 | 조건 | 이 표의 상태 |\n|--------|------|------------|\n| **1NF** | 모든 속성이 원자값 | ✓ 만족 |\n| **2NF** | 완전 함수 종속 | ✓ 만족 |\n| **3NF** | 이행 함수 종속 없음 | ✓ 만족 |\n| **BCNF** | 모든 결정자가 후보키 | 확인 필요 |\n\n**답:** **\"제 3정규형\"**",
+      "explanation_preview": "이 문제는 **데이터베이스 정규화의 제3정규형(3NF)**을 판별하는 문제입니다.\n\n**주어진 표 분석:**\n\n표 구조: (고객아이디, 강좌명, 강사번호)\n\n**정규형 판별 과정:**\n\n1. **제1정규형(1NF) 확인:**\n   - 모든 속성이 원자값(더 이상 분할 불가) ✓\n   - 중복 튜플 없음 ✓\n   - **1NF 만족**\n\n2. **제2정규형(",
+      "image_refs": [
+        "images/2024_round1/Q006.png"
+      ],
+      "code_blocks": [],
+      "table_refs": [
+        {
+          "id": "table1",
+          "json": "data/tables/2024_round1/Q006_table1.json",
+          "rows": 6,
+          "cols": 3
+        }
+      ],
+      "answer": {
+        "keys": [
+          "제 3정규형"
+        ],
+        "raw_text": "제 3정규형"
+      },
+      "primary_category": "기타",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 832
+      }
+    },
+    {
+      "file": "items_2024_round1.jsonl",
+      "q_no": "Q001",
+      "doc_id": "2024_round1",
+      "question_text": "대표적인 링크 상태 라우팅 프로토콜이다. 이것은 인터넷에서 연결된 링크의 상태를 감시하여 최적의 경로를 선택한다는것이다.\n\n2. 단일 자율 시스템 내에서 라우팅 정보를 배포하는 데 사용되는 내부 게이트웨이 프로토콜이다.\n\n3. 모든 대상에 도달하기 위한 최단 경로를 구축하고 계산하며 최단 경로는 Dijkstra 알고리즘을 사용하여 계산된다.",
+      "question_full": "대표적인 링크 상태 라우팅 프로토콜이다. 이것은 인터넷에서 연결된 링크의 상태를 감시하여 최적의 경로를 선택한다는것이다.\n\n2. 단일 자율 시스템 내에서 라우팅 정보를 배포하는 데 사용되는 내부 게이트웨이 프로토콜이다.\n\n3. 모든 대상에 도달하기 위한 최단 경로를 구축하고 계산하며 최단 경로는 Dijkstra 알고리즘을 사용하여 계산된다.",
+      "explanation_current": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static public Connection get() {\nif(_inst == null) {\n_inst = new Connection();\nreturn _inst;\n}\nreturn _inst;\n}\npublic void count() {\ncount++;\n}\npublic int getCount() {\nreturn count;\n}\n}\n```\n\n**실행 과정:**\n\n1. **`Connection.get()` 호출 (conn1):**\n- `_inst == null`이므로 `new Connection()` 생성\n- `_inst`에 저장되어 반환\n- `conn1.count()` 호출 → `count = 1`\n\n2. **`Connection.get()` 호출 (conn2):**\n- `_inst != null`이므로 기존 인스턴스 반환 (conn1과 같은 객체!)\n- `conn2.count()` 호출 → 같은 객체의 `count = 2`\n\n3. **`Connection.get()` 호출 (conn3):**\n- 동일한 인스턴스 반환\n- `conn3.count()` 호출 → `count = 3`\n\n4. **`conn1.count()` 재호출:**\n- 같은 객체이므로 `count = 4`\n\n5. **`conn1.getCount()` 출력:**\n- **출력: 4**핵심 포인트:**\n- 싱글톤 패턴은 클래스의 인스턴스가 하나만 존재하도록 보장합니다.\n- `get()` 메서드를 통해 항상 같은 인스턴스를 반환합니다.\n- 따라서 `conn1`, `conn2`, `conn3`는 모두 같은 객체를 참조합니다.\n- `count`는 인스턴스 변수이므로 같은 객체 내에서 공유됩니다.\n\n**답:** 4",
+      "explanation_preview": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static pub",
+      "image_refs": [
+        "images/2024_round1/Q001.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "class Connection {\n    private static Connection _inst = null;\n    private int count = 0;\n    static public Connection get() {\n        if(_inst == null) {\n            _inst = new Connection();\n            return _inst;\n        }\n        return _inst;\n    }\n    public void count() {\n         count++; \n    }\n    public int getCount() {\n         return count; \n    }\n}\npublic class main {  \n    public static void main(String[] args) {\n        Connection conn1 = Connection.get();\n        conn1.count();\n        Connection conn2 = Connection.get();\n        conn2.count();\n        Connection conn3 = Connection.get();\n        conn3.count();\n        conn1.count();\n        System.out.print(conn1.getCount());\n    }\n}",
+          "line_numbers": [
+            1,
+            29
+          ],
+          "file": "data/codes/2024_round1/Q001_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "4"
+        ],
+        "raw_text": "4"
+      },
+      "primary_category": "네트워크",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1022
+      }
+    },
+    {
+      "file": "items_2024_round1.jsonl",
+      "q_no": "Q013",
+      "doc_id": "2024_round1",
+      "question_text": "아래 보기의 SQL 문장과 테이블을 참고하여\n\n출력 값을 표로 작성하시오.",
+      "question_full": "아래 보기의 SQL 문장과 테이블을 참고하여\n\n출력 값을 표로 작성하시오.",
+      "explanation_current": "**SQL 서브쿼리와 IN 연산자 문제입니다.**\n\n**이미지의 SQL 쿼리:**\n\n```sql\nSELECT B\nFROM R1\nWHERE C IN (SELECT C FROM R2 WHERE D=\"k\");\n```\n\n**이미지의 테이블 데이터:**\n\n**R1 테이블:**\n| A | B | C |\n|---|---|---|\n| 1 | a | x |\n| 2 | b | x |\n| 1 | c | w |\n\n**R2 테이블:**\n| C | D | E |\n|---|---|---|\n| x | k | 3 |\n| y | k | 3 |\n| z | s | 2 |\n\n**실행 과정:**\n\n1. **서브쿼리 실행:**\n   ```sql\n   SELECT C FROM R2 WHERE D=\"k\"\n   ```\n   - R2 테이블에서 `D=\"k\"`인 행을 찾습니다:\n     - 첫 번째 행: C=x, D=k, E=3 → C=x 선택 ✓\n     - 두 번째 행: C=y, D=k, E=3 → C=y 선택 ✓\n     - 세 번째 행: C=z, D=s, E=2 → 조건 불만족\n   - **서브쿼리 결과: {x, y}**\n\n2. **메인 쿼리 실행:**\n   ```sql\n   SELECT B FROM R1\n   WHERE C IN (x, y)\n   ```\n   - R1 테이블에서 `C IN (x, y)`인 행을 찾습니다:\n     - 첫 번째 행: A=1, B=a, C=x → C=x는 서브쿼리 결과에 포함 → **B=a 선택** ✓\n     - 두 번째 행: A=2, B=b, C=x → C=x는 서브쿼리 결과에 포함 → **B=b 선택** ✓\n     - 세 번째 행: A=1, B=c, C=w → C=w는 서브쿼리 결과에 미포함 → 선택 안 됨\n   - **최종 결과: a, b**\n\n**핵심 개념:**\n\n1. **서브쿼리 (Subquery):**\n   - 다른 SQL 쿼리 내부에 포함된 SELECT 문\n   - 서브쿼리 결과를 외부 쿼리의 조건으로 사용\n   - 서브쿼리가 먼저 실행되고, 그 결과를 외부 쿼리에서 사용\n\n2. **IN 연산자:**\n   - `WHERE 컬럼 IN (값1, 값2, ...)`: 컬럼 값이 목록에 포함되는지 확인\n   - `WHERE 컬럼 IN (SELECT ...)`: 서브쿼리 결과 집합에 포함되는지 확인\n   - 여러 개의 OR 조건을 간결하게 표현\n\n3. **실행 순서:**\n   - 1단계: 서브쿼리 실행 → 결과 집합 생성\n   - 2단계: 메인 쿼리 실행 → 서브쿼리 결과를 조건으로 사용\n\n**SQL 쿼리 구조 분석:**\n\n```sql\nSELECT B           -- ③ 최종적으로 B 컬럼만 선택\nFROM R1            -- ① R1 테이블 조회\nWHERE C IN (       -- ② C 값이 서브쿼리 결과에 포함되는지 확인\n  SELECT C         -- ② 서브쿼리: C 값 추출\n  FROM R2          -- ② R2 테이블에서\n  WHERE D=\"k\"      -- ② D가 \"k\"인 행만\n);\n```\n\n**답:** **B 컬럼의 값: a, b**",
+      "explanation_preview": "**SQL 서브쿼리와 IN 연산자 문제입니다.**\n\n**이미지의 SQL 쿼리:**\n\n```sql\nSELECT B\nFROM R1\nWHERE C IN (SELECT C FROM R2 WHERE D=\"k\");\n```\n\n**이미지의 테이블 데이터:**\n\n**R1 테이블:**\n| A | B | C |\n|---|---|---|\n| 1 | a | x |\n| 2 | b ",
+      "image_refs": [
+        "images/2024_round1/Q013.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "unknown",
+          "code": "SELECT\n    B\nFROM\n    R1\nWHERE\n    C IN (SELECT C FROM R2 WHERE D=\"k\");",
+          "line_numbers": [
+            1,
+            6
+          ],
+          "file": "data/codes/2024_round1/Q013_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "a",
+          "b"
+        ],
+        "raw_text": "a b"
+      },
+      "primary_category": "SQL",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1525
+      }
+    },
+    {
+      "file": "items_2024_round1.jsonl",
+      "q_no": "Q001",
+      "doc_id": "2024_round1",
+      "question_text": "모든 분기와 조건의 조합을 고려하나 모든 조합을 테스트하는 대신에 테스트가 필요한 중요한 조합을 찾아내는데에 중점을 둔다.\n\n2. 특정 조건을 수행할 때 다른 조건과는 상관없이 전체 결과에 영향을 미치는 조건만을 테스트한다.\n\n3. 각각의 파라미터는 적어도 한 번은 최종 결과에 영향을 주어야 한다.\n\n[보기]\n\nㄱ. 구문 커버리지\n\nㄴ. 결정 커버리지\n\nㄷ",
+      "question_full": "모든 분기와 조건의 조합을 고려하나 모든 조합을 테스트하는 대신에 테스트가 필요한 중요한 조합을 찾아내는데에 중점을 둔다.\n\n2. 특정 조건을 수행할 때 다른 조건과는 상관없이 전체 결과에 영향을 미치는 조건만을 테스트한다.\n\n3. 각각의 파라미터는 적어도 한 번은 최종 결과에 영향을 주어야 한다.\n\n[보기]\n\nㄱ. 구문 커버리지\n\nㄴ. 결정 커버리지\n\nㄷ. 조건 커버리지\n\nㄹ. 변경 조건/결정 커버리지\n\nㅁ.다중 조건 커버리지\n\nㅂ.경로 커버리지\n\nㅅ.조건/결정 커버리지",
+      "explanation_current": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static public Connection get() {\nif(_inst == null) {\n_inst = new Connection();\nreturn _inst;\n}\nreturn _inst;\n}\npublic void count() {\ncount++;\n}\npublic int getCount() {\nreturn count;\n}\n}\n```\n\n**실행 과정:**\n\n1. **`Connection.get()` 호출 (conn1):**\n- `_inst == null`이므로 `new Connection()` 생성\n- `_inst`에 저장되어 반환\n- `conn1.count()` 호출 → `count = 1`\n\n2. **`Connection.get()` 호출 (conn2):**\n- `_inst != null`이므로 기존 인스턴스 반환 (conn1과 같은 객체!)\n- `conn2.count()` 호출 → 같은 객체의 `count = 2`\n\n3. **`Connection.get()` 호출 (conn3):**\n- 동일한 인스턴스 반환\n- `conn3.count()` 호출 → `count = 3`\n\n4. **`conn1.count()` 재호출:**\n- 같은 객체이므로 `count = 4`\n\n5. **`conn1.getCount()` 출력:**\n- **출력: 4**핵심 포인트:**\n- 싱글톤 패턴은 클래스의 인스턴스가 하나만 존재하도록 보장합니다.\n- `get()` 메서드를 통해 항상 같은 인스턴스를 반환합니다.\n- 따라서 `conn1`, `conn2`, `conn3`는 모두 같은 객체를 참조합니다.\n- `count`는 인스턴스 변수이므로 같은 객체 내에서 공유됩니다.\n\n**답:** 4",
+      "explanation_preview": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static pub",
+      "image_refs": [
+        "images/2024_round1/Q001.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "class Connection {\n    private static Connection _inst = null;\n    private int count = 0;\n    static public Connection get() {\n        if(_inst == null) {\n            _inst = new Connection();\n            return _inst;\n        }\n        return _inst;\n    }\n    public void count() {\n         count++; \n    }\n    public int getCount() {\n         return count; \n    }\n}\npublic class main {  \n    public static void main(String[] args) {\n        Connection conn1 = Connection.get();\n        conn1.count();\n        Connection conn2 = Connection.get();\n        conn2.count();\n        Connection conn3 = Connection.get();\n        conn3.count();\n        conn1.count();\n        System.out.print(conn1.getCount());\n    }\n}",
+          "line_numbers": [
+            1,
+            29
+          ],
+          "file": "data/codes/2024_round1/Q001_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "4"
+        ],
+        "raw_text": "4"
+      },
+      "primary_category": "소프트웨어공학",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1022
+      }
+    },
+    {
+      "file": "items_2024_round1.jsonl",
+      "q_no": "Q001",
+      "doc_id": "2024_round1",
+      "question_text": "불특정 다수가 아닌 명확한 표적을 정하여 지속적인 정보수집 후 공격감행할 수 있다.\n\n2. 시스템에 직접 침투하는 것뿐 아니라 표적 내부직원들이 이용하는 다양한 단말을 대상으로 한다.\n\n3. 한가지 기술만이 아닌 Zero-day 취약점, 악성코드 등 다양한 보안 위협 공격 기술을 사용한다.\n\n4. 일반적으로 공격은 침투, 검색, 수집 및 유출의 4단계로 실",
+      "question_full": "불특정 다수가 아닌 명확한 표적을 정하여 지속적인 정보수집 후 공격감행할 수 있다.\n\n2. 시스템에 직접 침투하는 것뿐 아니라 표적 내부직원들이 이용하는 다양한 단말을 대상으로 한다.\n\n3. 한가지 기술만이 아닌 Zero-day 취약점, 악성코드 등 다양한 보안 위협 공격 기술을 사용한다.\n\n4. 일반적으로 공격은 침투, 검색, 수집 및 유출의 4단계로 실행되며, 각 단계별로 다양한 공격 기술을 사용한다.",
+      "explanation_current": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static public Connection get() {\nif(_inst == null) {\n_inst = new Connection();\nreturn _inst;\n}\nreturn _inst;\n}\npublic void count() {\ncount++;\n}\npublic int getCount() {\nreturn count;\n}\n}\n```\n\n**실행 과정:**\n\n1. **`Connection.get()` 호출 (conn1):**\n- `_inst == null`이므로 `new Connection()` 생성\n- `_inst`에 저장되어 반환\n- `conn1.count()` 호출 → `count = 1`\n\n2. **`Connection.get()` 호출 (conn2):**\n- `_inst != null`이므로 기존 인스턴스 반환 (conn1과 같은 객체!)\n- `conn2.count()` 호출 → 같은 객체의 `count = 2`\n\n3. **`Connection.get()` 호출 (conn3):**\n- 동일한 인스턴스 반환\n- `conn3.count()` 호출 → `count = 3`\n\n4. **`conn1.count()` 재호출:**\n- 같은 객체이므로 `count = 4`\n\n5. **`conn1.getCount()` 출력:**\n- **출력: 4**핵심 포인트:**\n- 싱글톤 패턴은 클래스의 인스턴스가 하나만 존재하도록 보장합니다.\n- `get()` 메서드를 통해 항상 같은 인스턴스를 반환합니다.\n- 따라서 `conn1`, `conn2`, `conn3`는 모두 같은 객체를 참조합니다.\n- `count`는 인스턴스 변수이므로 같은 객체 내에서 공유됩니다.\n\n**답:** 4",
+      "explanation_preview": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static pub",
+      "image_refs": [
+        "images/2024_round1/Q001.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "class Connection {\n    private static Connection _inst = null;\n    private int count = 0;\n    static public Connection get() {\n        if(_inst == null) {\n            _inst = new Connection();\n            return _inst;\n        }\n        return _inst;\n    }\n    public void count() {\n         count++; \n    }\n    public int getCount() {\n         return count; \n    }\n}\npublic class main {  \n    public static void main(String[] args) {\n        Connection conn1 = Connection.get();\n        conn1.count();\n        Connection conn2 = Connection.get();\n        conn2.count();\n        Connection conn3 = Connection.get();\n        conn3.count();\n        conn1.count();\n        System.out.print(conn1.getCount());\n    }\n}",
+          "line_numbers": [
+            1,
+            29
+          ],
+          "file": "data/codes/2024_round1/Q001_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "4"
+        ],
+        "raw_text": "4"
+      },
+      "primary_category": "정보보안",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1022
+      }
+    },
+    {
+      "file": "items_2024_round2.jsonl",
+      "q_no": "Q006",
+      "doc_id": "2024_round2",
+      "question_text": "다음은 Python에 대한 문제이다.\n아래 코드를 읽고 알맞는 출력 값을 작성하시오.",
+      "question_full": "다음은 Python에 대한 문제이다.\n아래 코드를 읽고 알맞는 출력 값을 작성하시오.",
+      "explanation_current": "이 파이썬 코드는 문자열에서 패턴의 출현 횟수를 세는 문제입니다.\n\n**코드 분석:**\n\n```python def fnCalculation(x, y):\nresult = 0 for i in range(len(x)):\ntemp = x[i:i+len(y)] # x에서 길이 len(y)만큼 슬라이싱 if temp == y:\nresult += 1 return result\n\na = \"abdcabcabca\"\np1 = \"ab\"\np2 = \"ca\"\nout = f\"ab{fnCalculation(a, p1)}ca{fnCalculation(a, p2)}\"\nprint(out)\n```\n\n**실행 과정:**\n\n1. **`fnCalculation(a, \"ab\")` 계산:**\n- a = \"abdcabcabca\"\n- i=0: \"ab\" == \"ab\" → result = 1\n- i=1: \"bd\" != \"ab\"\n- i=2: \"dc\" != \"ab\"\n- i=3: \"ca\" != \"ab\"\n- i=4: \"ab\" == \"ab\" → result = 2\n- i=5: \"bc\" != \"ab\"\n- i=6: \"ca\" != \"ab\"\n- i=7: \"ab\" == \"ab\" → result = 3\n- i=8: \"bc\" != \"ab\"\n- i=9: \"ca\" != \"ab\"\n- 결과: **3**\n\n2. **`fnCalculation(a, \"ca\")` 계산:**\n- i=0: \"ab\" != \"ca\"\n- i=1: \"bd\" != \"ca\"\n- i=2: \"dc\" != \"ca\"\n- i=3: \"ca\" == \"ca\" → result = 1\n- i=4: \"ab\" != \"ca\"\n- i=5: \"bc\" != \"ca\"\n- i=6: \"ca\" == \"ca\" → result = 2\n- i=7: \"ab\" != \"ca\"\n- i=8: \"bc\" != \"ca\"\n- i=9: \"ca\" == \"ca\" → result = 3\n- 결과: **3**\n\n3. **최종 출력:**\n```python out = f\"ab{3}ca{3}\" = \"ab3ca3\"\n```\n\n**답:** \"ab3ca3\"",
+      "explanation_preview": "이 파이썬 코드는 문자열에서 패턴의 출현 횟수를 세는 문제입니다.\n\n**코드 분석:**\n\n```python def fnCalculation(x, y):\nresult = 0 for i in range(len(x)):\ntemp = x[i:i+len(y)] # x에서 길이 len(y)만큼 슬라이싱 if temp == y:\nresult += 1 return res",
+      "image_refs": [
+        "images/2024_round2/Q006.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "python",
+          "code": "def fnCalculation(x,y):\n    result = 0;\n    for i in range(len(x)):\n     temp = x[i:i+len(y)] \n     if temp == y:\n       result += 1;\n    return result\na = \"abdcabcabca\"\np1 = \"ab\";\np2 = \"ca\";\nout = f\"ab{fnCalculation(a,p1)}ca{fnCalculation(a,p2)}\"\nprint(out)",
+          "line_numbers": [
+            1,
+            12
+          ],
+          "file": "data/codes/2024_round2/Q006_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "ab3ca3"
+        ],
+        "raw_text": "ab3ca3"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1000
+      }
+    },
+    {
+      "file": "items_2024_round2.jsonl",
+      "q_no": "Q013",
+      "doc_id": "2024_round2",
+      "question_text": "다음은 C언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 C언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 C언어 코드는 포인터 배열과 포인터 연산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c int arr[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};\nint* parr[2] = {arr[1], arr[2]};\nprintf(\"%d\", parr[1][1] + *(parr[1]+2) + **parr);\n```\n\n**메모리 레이아웃:**\n\n```\narr[0] → [1, 2, 3]\narr[1] → [4, 5, 6]\narr[2] → [7, 8, 9]\n```\n\n**실행 과정:**\n\n1. **`parr` 배열 초기화:**\n```c int* parr[2] = {arr[1], arr[2]};\n```\n- `parr[0]` = `arr[1]` (두 번째 행을 가리킴)\n- `parr[1]` = `arr[2]` (세 번째 행을 가리킴)\n\n2. **표현식 계산:**\n```c parr[1][1] + *(parr[1]+2) + **parr\n```\n\n- **`parr[1][1]`:**\n- `parr[1]` = `arr[2]` → `[7, 8, 9]`\n- `parr[1][1]` = `arr[2][1]` = **8**\n\n- **`*(parr[1]+2)`:**\n- `parr[1]` = `arr[2]` (시작 주소)\n- `parr[1] + 2` = `arr[2] + 2` (두 칸 뒤)\n- `*(parr[1]+2)` = `arr[2][2]` = **9**\n\n- **`**parr`:**\n- `parr` = `parr[0]`의 주소\n- `*parr` = `parr[0]` = `arr[1]` (주소)\n- `**parr` = `arr[1][0]` = **4**\n\n3. **최종 계산:**\n- `8 + 9 + 4 = 21`\n\n**답:** 21",
+      "explanation_preview": "이 C언어 코드는 포인터 배열과 포인터 연산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c int arr[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};\nint* parr[2] = {arr[1], arr[2]};\nprintf(\"%d\", parr[1][1] + *(parr[1]+2) + **parr);\n```\n\n**메모리 레이아웃:",
+      "image_refs": [
+        "images/2024_round2/Q013.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "c",
+          "code": "#include <stdio.h>\nint main() {\n    int arr[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};\n    int* parr[2] = {arr[1], arr[2]};\n    printf(\"%d\", parr[1][1] + *(parr[1]+2) + **parr);\n    return 0;\n}",
+          "line_numbers": [
+            1,
+            7
+          ],
+          "file": "data/codes/2024_round2/Q013_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "21"
+        ],
+        "raw_text": "21"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 864
+      }
+    },
+    {
+      "file": "items_2024_round2.jsonl",
+      "q_no": "Q014",
+      "doc_id": "2024_round2",
+      "question_text": "다음은 Java 언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 Java 언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이미지의 Java 코드를 분석하여 홀수 합과 짝수 합을 계산하는 문제입니다.\n\n**코드 분석:**\n\n```java\nint a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};\nODDNumber OE = new ODDNumber();\nSystem.out.print(OE.sum(a, true) + \", \" + OE.sum(a, false));\n\ninterface Number {\n    int sum(int[] a, boolean odd);\n}\n\nclass ODDNumber implements Number {\n    public int sum(int[] a, boolean odd) {\n        int result = 0;\n        for(int i=0; i < a.length; i++){\n            if((odd && a[i] % 2 != 0) || (!odd && a[i] % 2 == 0))\n                result += a[i];\n        }\n        return result;\n    }\n}\n```\n\n**실행 과정:**\n\n1. **`OE.sum(a, true)` 호출 (홀수 합):**\n   - `odd = true`이므로 조건: `(true && a[i] % 2 != 0)` → **홀수만 선택**\n   - 배열: `{1, 2, 3, 4, 5, 6, 7, 8, 9}`\n   - i=0: a[0]=1 (홀수) → result += 1 (result = 1)\n   - i=1: a[1]=2 (짝수) → 건너뜀\n   - i=2: a[2]=3 (홀수) → result += 3 (result = 4)\n   - i=3: a[3]=4 (짝수) → 건너뜀\n   - i=4: a[4]=5 (홀수) → result += 5 (result = 9)\n   - i=5: a[5]=6 (짝수) → 건너뜀\n   - i=6: a[6]=7 (홀수) → result += 7 (result = 16)\n   - i=7: a[7]=8 (짝수) → 건너뜀\n   - i=8: a[8]=9 (홀수) → result += 9 (result = 25)\n   - **결과: 25**\n\n2. **`OE.sum(a, false)` 호출 (짝수 합):**\n   - `odd = false`이므로 조건: `(!false && a[i] % 2 == 0)` → **짝수만 선택**\n   - i=0: a[0]=1 (홀수) → 건너뜀\n   - i=1: a[1]=2 (짝수) → result += 2 (result = 2)\n   - i=2: a[2]=3 (홀수) → 건너뜀\n   - i=3: a[3]=4 (짝수) → result += 4 (result = 6)\n   - i=4: a[4]=5 (홀수) → 건너뜀\n   - i=5: a[5]=6 (짝수) → result += 6 (result = 12)\n   - i=6: a[6]=7 (홀수) → 건너뜀\n   - i=7: a[7]=8 (짝수) → result += 8 (result = 20)\n   - i=8: a[8]=9 (홀수) → 건너뜀\n   - **결과: 20**\n\n3. **최종 출력:**\n```java\nSystem.out.print(25 + \", \" + 20);\n// 출력: \"25, 20\"\n```\n\n**핵심 개념:**\n- `odd && a[i] % 2 != 0`: 홀수 필터링\n- `!odd && a[i] % 2 == 0`: 짝수 필터링\n- `a[i] % 2 != 0`: 홀수 판별 (나머지가 1)\n- `a[i] % 2 == 0`: 짝수 판별 (나머지가 0)\n\n**답:** \"25, 20\"",
+      "explanation_preview": "이미지의 Java 코드를 분석하여 홀수 합과 짝수 합을 계산하는 문제입니다.\n\n**코드 분석:**\n\n```java\nint a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};\nODDNumber OE = new ODDNumber();\nSystem.out.print(OE.sum(a, true) + \", \" + OE.sum(a, false));\n\nint",
+      "image_refs": [
+        "images/2024_round2/Q014.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "class Main {\n    public static void main(String[] args) {\n        int a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};\n        ODDNumber OE = new ODDNumber();\n        System.out.print(OE.sum(a, true) + \", \" + OE.sum(a, false));\n    }\n}\ninterface Number {\n    int sum(int[] a, boolean odd);\n}\nclass ODDNumber implements Number {\n    public int sum(int[] a, boolean odd) {\n        int result = 0;\n        for(int i=0; i < a.length; i++){\n            if((odd && a[i] % 2 != 0) || (!odd && a[i] % 2 == 0))\n                result += a[i];\n        }        \n        return result;\n    }    \n}",
+          "line_numbers": [
+            1,
+            20
+          ],
+          "file": "data/codes/2024_round2/Q014_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "25, 20"
+        ],
+        "raw_text": "25, 20"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 1767
+      }
+    }
+  ]
+}
