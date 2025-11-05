@@ -3127,8 +3127,8 @@
             loadFontSize();
             updateStats();
             
-            // 기본 모듈 활성화
-            const menuItem = document.getElementById(`menu_${currentModule}`);
+            // 기본 모듈 활성화 (App.state.currentModule 사용)
+            const menuItem = document.getElementById(`menu_${App.state.currentModule}`);
             if (menuItem) {
                 menuItem.style.background = '#667eea';
                 menuItem.style.color = 'white';
