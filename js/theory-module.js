@@ -1,15 +1,28 @@
 // 정처기 실기 이론 모듈 - 객관식/주관식 문제 생성 및 검증
 
-// 이론 모듈 상태
-App.theory = {
-    questionType: 'objective', // 'objective' or 'subjective'
-    currentQuestion: null,
-    questionPool: [],
-    usedQuestions: new Set()
-};
+// 이론 모듈 상태 초기화
+if (typeof App === 'undefined') {
+    console.error('❌ App 객체가 정의되지 않았습니다!');
+} else {
+    console.log('✅ App 객체 사용 가능');
+    App.theory = {
+        questionType: 'objective', // 'objective' or 'subjective'
+        currentQuestion: null,
+        questionPool: [],
+        usedQuestions: new Set()
+    };
+}
 
 // 이론 모듈 시작
 function startTheoryMode(questionType) {
+    console.log('🎯 이론 모듈 시작:', questionType);
+    
+    if (!App || !App.theory) {
+        console.error('❌ App.theory가 초기화되지 않았습니다!');
+        alert('이론 모듈을 초기화할 수 없습니다. 페이지를 새로고침해주세요.');
+        return;
+    }
+    
     initTheoryModule(questionType);
     
     // 문제 로드
@@ -19,12 +32,30 @@ function startTheoryMode(questionType) {
 // 이론 문제 로드
 async function loadTheoryQuestions() {
     try {
+        console.log('📥 이론 문제 로드 시작...');
+        console.log('App.moduleConfig:', App.moduleConfig);
+        
         const config = App.moduleConfig['theory'];
+        console.log('theory config:', config);
+        
+        if (!config) {
+            throw new Error('theory 모듈 설정을 찾을 수 없습니다.');
+        }
+        
+        console.log('📂 파일 로드:', config.itemsFile);
         
         // items.jsonl 로드
         const response = await fetch(config.itemsFile);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${config.itemsFile} 파일을 불러올 수 없습니다.`);
+        }
+        
         const text = await response.text();
+        console.log('📄 파일 크기:', text.length, 'bytes');
+        
         const questions = text.trim().split('\n').map(line => JSON.parse(line));
+        console.log('✅ 파싱된 문제 수:', questions.length);
         
         App.state.allQuestions = questions;
         allQuestions = App.state.allQuestions; // 하위 호환성
@@ -36,15 +67,17 @@ async function loadTheoryQuestions() {
         App.state.currentIndex = 0;
         currentIndex = 0; // 하위 호환성
         
+        console.log('🎲 첫 문제:', App.state.currentQuestions[0]);
+        
         // 첫 문제 표시
         displayTheoryQuestion(App.state.currentQuestions[0]);
         updateStats();
         
-        console.log(`이론 문제 ${questions.length}개 로드 완료`);
+        console.log(`✅ 이론 문제 ${questions.length}개 로드 완료`);
         
     } catch (error) {
-        console.error('이론 문제 로드 오류:', error);
-        showMessage('문제를 불러올 수 없습니다.');
+        console.error('❌ 이론 문제 로드 오류:', error);
+        alert(`문제를 불러올 수 없습니다: ${error.message}`);
     }
 }
 
