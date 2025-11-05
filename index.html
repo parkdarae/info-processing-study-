@@ -2821,6 +2821,15 @@
 
         // 통계 업데이트
         function updateStats() {
+            // App 객체가 있을 때만 실행
+            if (typeof App === 'undefined' || !App.state) {
+                console.log('⏳ App 객체 대기 중 - updateStats 스킵');
+                return;
+            }
+            
+            const stats = App.state.stats;
+            const allQuestions = App.state.allQuestions;
+            
             stats.total = allQuestions.length;
             const progress = ((stats.correct + stats.wrong) / stats.total * 100).toFixed(1);
             const accuracy = stats.correct > 0 ? (stats.correct / (stats.correct + stats.wrong) * 100).toFixed(1) : 0;
@@ -3058,17 +3067,21 @@
 
         // 진행 상황 저장
         function saveProgress() {
-            localStorage.setItem('progress', JSON.stringify({
-                correct: stats.correct,
-                wrong: stats.wrong
-            }));
+            if (typeof App !== 'undefined' && App.state) {
+                localStorage.setItem('progress', JSON.stringify({
+                    correct: App.state.stats.correct,
+                    wrong: App.state.stats.wrong
+                }));
+            }
         }
 
         // 진행 상황 로드
         function loadProgress() {
             const saved = JSON.parse(localStorage.getItem('progress') || '{}');
-            stats.correct = saved.correct || 0;
-            stats.wrong = saved.wrong || 0;
+            if (typeof App !== 'undefined' && App.state) {
+                App.state.stats.correct = saved.correct || 0;
+                App.state.stats.wrong = saved.wrong || 0;
+            }
         }
 
         // 오답 추가
@@ -3113,8 +3126,10 @@
         function resetProgress() {
             if (confirm('모든 진행 상황을 초기화하시겠습니까?')) {
                 localStorage.clear();
-                stats = { total: 0, correct: 0, wrong: 0, wrongQuestions: [] };
-                updateStats();
+                if (typeof App !== 'undefined' && App.state) {
+                    App.state.stats = { total: 0, correct: 0, wrong: 0, wrongQuestions: [] };
+                    updateStats();
+                }
                 location.reload();
             }
         }
@@ -3125,23 +3140,39 @@
             localStorage.setItem('welcomeShown', 'true');
         }
 
-        // 초기화
+        // 초기화 (외부 스크립트 로드 후 실행)
         document.addEventListener('DOMContentLoaded', function() {
-            loadProgress();
-            loadFontSize();
-            updateStats();
-            
-            // 기본 모듈 활성화 (App.state.currentModule 사용)
-            const menuItem = document.getElementById(`menu_${App.state.currentModule}`);
-            if (menuItem) {
-                menuItem.style.background = '#667eea';
-                menuItem.style.color = 'white';
+            // App 객체가 로드될 때까지 대기
+            function initWhenReady() {
+                if (typeof App !== 'undefined' && App.state) {
+                    console.log('✅ App 객체 로드 완료, 초기화 시작');
+                    
+                    loadProgress();
+                    loadFontSize();
+                    
+                    // App.state 사용하여 통계 업데이트
+                    if (typeof updateStats === 'function') {
+                        updateStats();
+                    }
+                    
+                    // 기본 모듈 활성화
+                    const menuItem = document.getElementById(`menu_${App.state.currentModule}`);
+                    if (menuItem) {
+                        menuItem.style.background = '#667eea';
+                        menuItem.style.color = 'white';
+                    }
+                    
+                    // 환영 팝업 표시 (첫 방문 시)
+                    if (!localStorage.getItem('welcomeShown')) {
+                        document.getElementById('welcomePopup').classList.add('show');
+                    }
+                } else {
+                    console.log('⏳ App 객체 대기 중...');
+                    setTimeout(initWhenReady, 100);
+                }
             }
             
-            // 환영 팝업 표시 (첫 방문 시)
-            if (!localStorage.getItem('welcomeShown')) {
-                document.getElementById('welcomePopup').classList.add('show');
-            }
+            initWhenReady();
         });
     </script>
     
