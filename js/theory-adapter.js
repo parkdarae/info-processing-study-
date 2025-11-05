@@ -8,13 +8,22 @@ function convertTheoryToQuestion(theoryItem, questionType, allTheoryItems) {
     const choices = questionType === 'objective' ? generateChoices(theoryItem, isDescriptionToTerm, allTheoryItems) : [];
     const correctAnswer = isDescriptionToTerm ? theoryItem.term : theoryItem.description;
     
+    // 디버깅 로그
+    console.log('문제 변환:', {
+        doc_id: theoryItem.doc_id,
+        questionType: questionType,
+        correctAnswer: correctAnswer,
+        choices: choices,
+        acceptAnswers: theoryItem.accept_answers
+    });
+    
     return {
         q_no: theoryItem.doc_id,
         question_text: questionText,
         choices: choices,
         answer: {
-            keys: [correctAnswer],
-            raw_text: correctAnswer
+            keys: theoryItem.accept_answers || [correctAnswer],
+            raw_text: theoryItem.accept_answers ? theoryItem.accept_answers.join(', ') : correctAnswer
         },
         explanation: generateExplanation(theoryItem),
         image_refs: [],
@@ -25,7 +34,7 @@ function convertTheoryToQuestion(theoryItem, questionType, allTheoryItems) {
             originalItem: theoryItem,
             questionType: questionType,
             isDescriptionToTerm: isDescriptionToTerm,
-            acceptAnswers: theoryItem.accept_answers
+            acceptAnswers: theoryItem.accept_answers || [correctAnswer]
         }
     };
 }
@@ -42,6 +51,13 @@ function generateQuestionText(theoryItem, isDescriptionToTerm) {
 // 객관식 선택지 생성
 function generateChoices(theoryItem, isDescriptionToTerm, allTheoryItems) {
     const correctAnswer = isDescriptionToTerm ? theoryItem.term : theoryItem.description;
+    
+    // 디버깅 로그
+    console.log('선택지 생성:', {
+        item: theoryItem.doc_id,
+        correct: correctAnswer,
+        isDescToTerm: isDescriptionToTerm
+    });
     
     // 같은 subcategory 내에서 오답 3개 선택
     let wrongItems = allTheoryItems.filter(item => 
@@ -64,14 +80,24 @@ function generateChoices(theoryItem, isDescriptionToTerm, allTheoryItems) {
     
     // 랜덤하게 3개 선택
     const shuffled = shuffleArray(wrongItems);
-    const selectedWrong = shuffled.slice(0, 3);
+    const selectedWrong = shuffled.slice(0, Math.min(3, wrongItems.length));
     
-    // 선택지 배열 생성 (기존 형식과 동일)
+    // 선택지 배열 생성 (기존 형식과 동일 - 문자열 배열)
     const choices = [correctAnswer];
+    
     selectedWrong.forEach(wrongItem => {
         const wrongText = isDescriptionToTerm ? wrongItem.term : wrongItem.description;
-        choices.push(wrongText);
+        if (wrongText && wrongText.trim()) {
+            choices.push(wrongText);
+        }
     });
+    
+    // 부족한 선택지는 기본값으로 채우기
+    while (choices.length < 4) {
+        choices.push(`선택지 ${choices.length}`);
+    }
+    
+    console.log('생성된 선택지:', choices);
     
     // 선택지 순서 섞기
     return shuffleArray(choices);
