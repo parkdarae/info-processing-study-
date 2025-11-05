@@ -9,6 +9,7 @@ class TheoryFrequentModule {
         this.currentLabel = 'all'; // all, database, os, network, security, etc.
         this.studyData = this.loadStudyData();
         this.spacedRepetition = new SpacedRepetitionManager();
+        this.bookmarkedItems = this.loadBookmarkedItems();
     }
 
     // 학습 데이터 로드
@@ -29,6 +30,65 @@ class TheoryFrequentModule {
     // 학습 데이터 저장
     saveStudyData() {
         localStorage.setItem('theory_frequent_study_data', JSON.stringify(this.studyData));
+    }
+
+    // 북마크 데이터 로드
+    loadBookmarkedItems() {
+        const saved = localStorage.getItem('theory_frequent_bookmarks');
+        return saved ? JSON.parse(saved) : [];
+    }
+
+    // 북마크 데이터 저장
+    saveBookmarkedItems() {
+        localStorage.setItem('theory_frequent_bookmarks', JSON.stringify(this.bookmarkedItems));
+    }
+
+    // 문제 북마크 토글
+    toggleBookmark(itemId) {
+        const index = this.bookmarkedItems.indexOf(itemId);
+        if (index > -1) {
+            this.bookmarkedItems.splice(index, 1);
+        } else {
+            this.bookmarkedItems.push(itemId);
+        }
+        this.saveBookmarkedItems();
+        return this.bookmarkedItems.includes(itemId);
+    }
+
+    // 체크한 문제들 복사
+    copyBookmarkedItems() {
+        if (this.bookmarkedItems.length === 0) {
+            alert('체크한 문제가 없습니다.');
+            return;
+        }
+
+        const bookmarkedQuestions = this.items.filter(item => 
+            this.bookmarkedItems.includes(item.id)
+        );
+
+        let copyText = `📚 실기 최빈출 - 체크한 문제 목록 (${bookmarkedQuestions.length}개)\n`;
+        copyText += `생성일: ${new Date().toLocaleDateString()}\n\n`;
+
+        bookmarkedQuestions.forEach((item, index) => {
+            copyText += `${index + 1}. ${item.title}\n`;
+            copyText += `Q: ${item.question}\n`;
+            copyText += `A: ${item.content.replace(/\n/g, ' ')}\n`;
+            copyText += `라벨: ${item.labels.map(label => this.getLabelName(label)).join(', ')}\n\n`;
+        });
+
+        // 클립보드에 복사
+        navigator.clipboard.writeText(copyText).then(() => {
+            alert(`체크한 ${bookmarkedQuestions.length}개 문제가 클립보드에 복사되었습니다!`);
+        }).catch(() => {
+            // 클립보드 API가 지원되지 않는 경우 텍스트 영역 사용
+            const textArea = document.createElement('textarea');
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert(`체크한 ${bookmarkedQuestions.length}개 문제가 클립보드에 복사되었습니다!`);
+        });
     }
 
     // 데이터 로드
@@ -130,6 +190,11 @@ class TheoryFrequentModule {
                 </div>
                 
                 <div class="flashcard-controls">
+                    <div class="top-controls">
+                        <button class="back-to-dashboard-btn" onclick="theoryFrequent.renderDashboard()">
+                            <i class="fas fa-home"></i> 대시보드로 돌아가기
+                        </button>
+                    </div>
                     <div class="navigation-controls">
                         <button class="control-btn" onclick="theoryFrequent.previousItem()" ${this.currentIndex === 0 ? 'disabled' : ''}>
                             <i class="fas fa-chevron-left"></i> 이전
