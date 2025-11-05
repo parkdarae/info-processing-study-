@@ -79,6 +79,10 @@ function switchModule(moduleName) {
                                 <small style="opacity: 0.7;">직접 입력</small>
                             </button>
                         </div>
+                        <p style="color: #666; margin-top: 30px; font-size: 0.9em;">
+                            💡 선택 후 기존과 동일한 모든 기능 사용 가능:<br>
+                            순차/랜덤/범위설정/오답만풀기/체크한문제/정답확인/답보기/해설보기
+                        </p>
                     </div>
                 </div>
             `;

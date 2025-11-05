@@ -5,12 +5,20 @@ function displayQuestion(question) {
     console.log('[displayQuestion] 호출됨:', question.q_no);
     console.log('[displayQuestion] image_refs:', question.image_refs);
     console.log('[displayQuestion] code_blocks:', question.code_blocks);
+    console.log('[displayQuestion] 이론 문제 여부:', question.meta?.isTheoryQuestion);
     
     const container = document.getElementById('questionContainer');
     
     let html = `
         <div class="question-card">
             <div class="question-header">
+                ${question.meta?.isTheoryQuestion ? `
+                    <div class="question-meta">
+                        <span class="question-category">${question.meta.originalItem.category}</span>
+                        ${question.meta.originalItem.subcategory !== question.meta.originalItem.category ? 
+                            `<span class="question-subcategory">${question.meta.originalItem.subcategory}</span>` : ''}
+                    </div>
+                ` : ''}
                 <div class="question-no">${question.q_no}</div>
                 <button class="btn btn-secondary" onclick="markQuestion('${question.q_no}')">
                     <i class="fas fa-star"></i> 체크

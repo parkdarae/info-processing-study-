@@ -3198,13 +3198,15 @@
         // 순차적으로 스크립트 로드
         async function loadAllScripts() {
             try {
-                await loadScript('js/config.js?v=20251105003');
-                await loadScript('js/app.js?v=20251105003');
-                await loadScript('js/theory-module.js?v=20251105003');
-                await loadScript('js/components/menu.js?v=20251105003');
-                await loadScript('js/components/modal.js?v=20251105003');
-                await loadScript('js/components/question-display.js?v=20251105003');
-                await loadScript('js/modes/range.js?v=20251105003');
+                await loadScript('js/config.js?v=20251105004');
+                await loadScript('js/app.js?v=20251105004');
+                await loadScript('js/utils/validator.js?v=20251105004');
+                await loadScript('js/theory-adapter.js?v=20251105004');
+                await loadScript('js/theory-module.js?v=20251105004');
+                await loadScript('js/components/menu.js?v=20251105004');
+                await loadScript('js/components/modal.js?v=20251105004');
+                await loadScript('js/components/question-display.js?v=20251105004');
+                await loadScript('js/modes/range.js?v=20251105004');
                 console.log('🎉 모든 스크립트 로드 완료');
             } catch (error) {
                 console.error('💥 스크립트 로드 실패:', error);

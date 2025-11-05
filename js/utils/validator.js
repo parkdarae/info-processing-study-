@@ -116,6 +116,11 @@ function levenshteinDistance(str1, str2) {
 
 // 복수 답안 체크 (스마트 매칭)
 function checkMultipleAnswer(userAnswers, question) {
+    // 이론 모듈 문제인 경우 전용 검증 사용
+    if (question.meta && question.meta.isTheoryQuestion) {
+        return checkTheoryAnswer(userAnswers, question);
+    }
+    
     const correctAnswers = question.answer.keys || [];
     
     console.log('=== 복수 답안 체크 ===');
@@ -231,5 +236,31 @@ function checkAnswerMatch(user, correct) {
     // 50% 이상 매칭
     const matchRate = matches / Math.max(userKeywords.length, correctKeywords.length);
     return matchRate >= 0.5;
+}
+
+// 이론 모듈용 답안 검증
+function checkTheoryAnswer(userAnswers, question) {
+    const acceptAnswers = question.meta.acceptAnswers || [];
+    const userAnswer = Array.isArray(userAnswers) ? userAnswers[0] : userAnswers;
+    
+    if (!userAnswer || !userAnswer.trim()) {
+        return false;
+    }
+    
+    // 정규화하여 비교
+    const normalizedUser = normalizeTheoryAnswer(userAnswer);
+    
+    return acceptAnswers.some(answer => {
+        const normalizedAnswer = normalizeTheoryAnswer(answer);
+        return normalizedUser === normalizedAnswer;
+    });
+}
+
+// 이론 답안 정규화
+function normalizeTheoryAnswer(answer) {
+    if (!answer) return '';
+    
+    // 공백 제거 및 소문자 변환
+    return answer.toString().toLowerCase().replace(/\s+/g, '').trim();
 }
 
