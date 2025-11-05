@@ -1256,6 +1256,209 @@
                 padding: 20px 15px;
             }
         }
+
+        /* ========================================
+           정처기 실기 이론 모듈 스타일
+           ======================================== */
+        
+        /* 주관식 답안 입력 */
+        .subjective-answer {
+            margin-top: 30px;
+        }
+        
+        .subjective-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-family: 'Noto Sans KR', sans-serif;
+            transition: all 0.3s;
+        }
+        
+        .subjective-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .subjective-hint {
+            margin-top: 10px;
+            color: #6c757d;
+            font-size: 0.95em;
+        }
+        
+        /* 문제 메타 정보 */
+        .question-meta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .question-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .question-subcategory {
+            background: #f8f9fa;
+            color: #667eea;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        
+        /* 선택지 목록 */
+        .choices-list {
+            margin-top: 25px;
+        }
+        
+        .choice-item.selected {
+            background: #e3f2fd;
+            border-color: #667eea;
+            box-shadow: 0 3px 12px rgba(102, 126, 234, 0.2);
+        }
+        
+        /* 결과 섹션 */
+        .result-section {
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid;
+            animation: slideDown 0.3s ease-out;
+        }
+        
+        .result-correct {
+            background: #f1f9f1;
+            border-color: #28a745;
+        }
+        
+        .result-incorrect {
+            background: #fff5f5;
+            border-color: #dc3545;
+        }
+        
+        .result-badge {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .result-correct .result-badge {
+            color: #28a745;
+        }
+        
+        .result-incorrect .result-badge {
+            color: #dc3545;
+        }
+        
+        .user-answer {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            font-size: 1.05em;
+        }
+        
+        .correct-answer {
+            margin: 15px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            font-size: 1.05em;
+        }
+        
+        .explanation-content {
+            line-height: 1.8;
+        }
+        
+        .explanation-content p {
+            margin: 10px 0;
+        }
+        
+        /* 완료 화면 */
+        .complete-screen {
+            text-align: center;
+            padding: 50px 30px;
+        }
+        
+        .complete-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+        
+        .complete-screen h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        
+        .complete-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .complete-stats .stat-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px 35px;
+            border-radius: 15px;
+            min-width: 150px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .complete-stats .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .complete-stats .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        
+        .restart-btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .submit-btn {
+            padding: 15px 40px;
+            font-size: 1.1em;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -1335,6 +1538,9 @@
                 </div>
                 <div class="menu-item" onclick="switchModule('code_control')" id="menu_code_control">
                     <i class="fas fa-code"></i> 💻 코드-제어문14문제
+                </div>
+                <div class="menu-item" onclick="switchModule('theory')" id="menu_theory">
+                    <i class="fas fa-lightbulb"></i> 🎯 정처기 실기 이론
                 </div>
                 <div class="past-exam-selector">
                     <div style="font-weight: 500; margin-bottom: 10px;">
@@ -3138,6 +3344,15 @@
             }
         });
     </script>
+    
+    <!-- 외부 JavaScript 모듈 로드 -->
+    <script src="js/config.js?v=20251105"></script>
+    <script src="js/theory-module.js?v=20251105"></script>
+    <script src="js/app.js?v=20251105"></script>
+    <script src="js/components/menu.js?v=20251105"></script>
+    <script src="js/components/modal.js?v=20251105"></script>
+    <script src="js/components/question.js?v=20251105"></script>
+    <script src="js/modes/range.js?v=20251105"></script>
 </body>
 </html>
 

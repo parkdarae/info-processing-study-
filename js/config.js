@@ -36,6 +36,14 @@ App.moduleConfig = {
         tablesFile: 'tables_code_control.jsonl',
         maxRange: 14
     },
+    'theory': {
+        title: '정처기 실기 이론',
+        itemsFile: 'data/items_theory.jsonl',
+        tablesFile: '',
+        type: 'theory',
+        maxRange: 175,
+        categories: ['정보보안', '데이터베이스', '네트워크', '운영체제', '소프트웨어공학', '프로그래밍', '자료구조', '알고리즘', '기타']
+    },
     '2025_round1': {
         title: '정보처리기사 실기 2025년 1회 기출문제',
         itemsFile: 'data/items_2025_round1.jsonl',
