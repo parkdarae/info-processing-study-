@@ -1,14 +1,13 @@
-// PMP 문제집 학습 모듈
+// PMP 문제집 학습 모듈 (핵심키워드130과 동일한 스타일)
 class PMPModule {
     constructor() {
         this.items = [];
         this.currentItem = null;
         this.currentIndex = 0;
-        this.isFlipped = false;
-        this.studyMode = 'card'; // card, quiz
+        this.studyMode = 'quiz'; // quiz 모드 (핵심키워드130과 동일)
         this.currentLabel = 'all';
         this.studyData = this.loadStudyData();
-        this.spacedRepetition = new PMPSpacedRepetition();
+        this.selectedAnswer = null;
     }
 
     // 학습 데이터 로드
@@ -19,11 +18,11 @@ class PMPModule {
         }
         return {
             completedItems: [],
-            reviewSchedule: {},
             studyTime: {},
             streak: 0,
             lastStudyDate: null,
-            bookmarkedItems: []
+            bookmarkedItems: [],
+            stats: { correct: 0, wrong: 0, total: 0 }
         };
     }
 
@@ -32,16 +31,22 @@ class PMPModule {
         localStorage.setItem('pmp_study_data', JSON.stringify(this.studyData));
     }
 
-    // 북마크 관리
-    toggleBookmark(itemId) {
+    // 북마크 토글
+    toggleBookmarkButton(itemId) {
         const index = this.studyData.bookmarkedItems.indexOf(itemId);
+        const btn = event.target.closest('button');
+        
         if (index === -1) {
             this.studyData.bookmarkedItems.push(itemId);
+            btn.innerHTML = '<i class="fas fa-star"></i> 체크됨';
+            btn.style.background = '#28a745';
         } else {
             this.studyData.bookmarkedItems.splice(index, 1);
+            btn.innerHTML = '<i class="fas fa-star"></i> 체크';
+            btn.style.background = '';
         }
+        
         this.saveStudyData();
-        return this.studyData.bookmarkedItems.includes(itemId);
     }
 
     // 북마크 상태 확인
@@ -55,11 +60,7 @@ class PMPModule {
             const response = await fetch('data/items_pmp.jsonl');
             const text = await response.text();
             
-            this.items = text.trim().split('\n').map(line => {
-                const item = JSON.parse(line);
-                item.studyState = this.getItemStudyState(item.id);
-                return item;
-            });
+            this.items = text.trim().split('\n').map(line => JSON.parse(line));
             
             console.log(`PMP ${this.items.length}개 문제 로드 완료`);
             return this.items;
@@ -67,18 +68,6 @@ class PMPModule {
             console.error('PMP 데이터 로드 실패:', error);
             return [];
         }
-    }
-
-    // 항목별 학습 상태 조회
-    getItemStudyState(itemId) {
-        return this.studyData.studyTime[itemId] || {
-            attempts: 0,
-            correct: 0,
-            lastReview: null,
-            nextReview: null,
-            difficulty: 1,
-            interval: 1
-        };
     }
 
     // 라벨별 필터링
@@ -95,200 +84,205 @@ class PMPModule {
         return this.items.filter(item => this.isBookmarked(item.id));
     }
 
-    // 카드 모드 렌더링
-    renderCard(item) {
+    // 문제 표시 (핵심키워드130과 동일한 스타일)
+    renderQuestion(item) {
         const container = document.getElementById('questionContainer');
         const isBookmarked = this.isBookmarked(item.id);
         
         container.innerHTML = `
-            <div class="pmp-card-container">
-                <div class="pmp-card ${this.isFlipped ? 'flipped' : ''}" onclick="pmpModule.flipCard()">
-                    <div class="pmp-card-front">
-                        <div class="card-header">
-                            <span class="card-number">${this.currentIndex + 1} / ${this.items.length}</span>
-                            <div class="card-actions">
-                                <button class="bookmark-btn ${isBookmarked ? 'bookmarked' : ''}" 
-                                        onclick="pmpModule.toggleBookmark('${item.id}'); event.stopPropagation();">
-                                    <i class="fas fa-star"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-labels">
-                            ${item.labels.map(label => `<span class="label label-${label}">${this.getLabelName(label)}</span>`).join('')}
-                        </div>
-                        <div class="card-content">
-                            <div class="question-text">${item.question}</div>
-                            <div class="options-list">
-                                ${item.options.map(option => `<div class="option-item">${option}</div>`).join('')}
-                            </div>
-                            <div class="flip-hint">
-                                <i class="fas fa-hand-pointer"></i>
-                                클릭하여 정답 확인
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pmp-card-back">
-                        <div class="card-header">
-                            <span class="card-number">${this.currentIndex + 1} / ${this.items.length}</span>
-                            <div class="card-actions">
-                                <button class="bookmark-btn ${isBookmarked ? 'bookmarked' : ''}" 
-                                        onclick="pmpModule.toggleBookmark('${item.id}'); event.stopPropagation();">
-                                    <i class="fas fa-star"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="card-labels">
-                            ${item.labels.map(label => `<span class="label label-${label}">${this.getLabelName(label)}</span>`).join('')}
-                        </div>
-                        <div class="card-content">
-                            <div class="answer-section">
-                                <div class="correct-answer">
-                                    <strong>정답: ${item.answer}</strong>
-                                    <p>${item.answer_text}</p>
-                                </div>
-                                <div class="explanation">
-                                    <h4>해설</h4>
-                                    <p>${item.explanation}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="question-card">
+                <div class="question-header">
+                    <div class="question-no">${item.q_no}</div>
+                    <button class="btn btn-secondary" onclick="pmpModule.toggleBookmarkButton('${item.id}')">
+                        <i class="fas fa-star"></i> ${isBookmarked ? '체크됨' : '체크'}
+                    </button>
                 </div>
                 
-                <div class="pmp-controls">
-                    <div class="top-controls">
-                        <button class="back-to-dashboard-btn" onclick="pmpModule.renderDashboard()">
-                            <i class="fas fa-home"></i> 대시보드로 돌아가기
-                        </button>
-                    </div>
-                    <div class="navigation-controls">
-                        <button class="control-btn" onclick="pmpModule.previousItem()" ${this.currentIndex === 0 ? 'disabled' : ''}>
-                            <i class="fas fa-chevron-left"></i> 이전
-                        </button>
-                        <button class="control-btn" onclick="pmpModule.nextItem()" ${this.currentIndex === this.items.length - 1 ? 'disabled' : ''}>
-                            다음 <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                    
-                    ${this.isFlipped ? `
-                        <div class="self-assessment">
-                            <p>이 문제를 얼마나 잘 알고 있나요?</p>
-                            <div class="assessment-buttons">
-                                <button class="assessment-btn difficulty-hard" onclick="pmpModule.recordAssessment(3)">
-                                    <i class="fas fa-times"></i> 모르겠음
-                                </button>
-                                <button class="assessment-btn difficulty-medium" onclick="pmpModule.recordAssessment(2)">
-                                    <i class="fas fa-question"></i> 애매함
-                                </button>
-                                <button class="assessment-btn difficulty-easy" onclick="pmpModule.recordAssessment(1)">
-                                    <i class="fas fa-check"></i> 알았음
-                                </button>
-                            </div>
-                        </div>
-                    ` : ''}
+                <div class="question-labels" style="margin-bottom: 20px;">
+                    ${item.labels.map(label => `<span class="label label-${label}" style="background: ${this.getLabelColor(label)}; color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.8em; margin-right: 8px;">${this.getLabelName(label)}</span>`).join('')}
                 </div>
                 
-                <div class="study-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${((this.currentIndex + 1) / this.items.length) * 100}%"></div>
-                    </div>
-                    <div class="progress-text">
-                        진도: ${this.currentIndex + 1} / ${this.items.length} 
-                        (${Math.round(((this.currentIndex + 1) / this.items.length) * 100)}%)
-                    </div>
+                <div class="question-text">
+                    ${item.question}
                 </div>
+                
+                <div class="choices">
+                    ${item.options.map((option, index) => {
+                        const key = String.fromCharCode(65 + index); // A, B, C, D
+                        const text = option.replace(/^[A-D]\)\s*/, ''); // A) 제거
+                        return `
+                            <div class="choice-item" onclick="pmpModule.selectChoice(this, '${key}')">
+                                <span class="choice-key">${key}</span>
+                                <span class="choice-text">${text}</span>
+                            </div>
+                        `;
+                    }).join('')}
+                </div>
+                
+                <input type="text" class="answer-input" id="pmpAnswerInput" 
+                       placeholder="정답을 입력하세요 (A, B, C, D)" style="display: none;">
+                
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="pmpModule.checkAnswer()">
+                        <i class="fas fa-check"></i> 정답 확인
+                    </button>
+                    <button class="btn" onclick="pmpModule.showAnswerOnly()" style="background: #17a2b8; color: white;">
+                        <i class="fas fa-eye"></i> 답 보기
+                    </button>
+                    <button class="btn btn-secondary" onclick="pmpModule.previousItem()">
+                        <i class="fas fa-arrow-left"></i> 이전 문제
+                    </button>
+                    <button class="btn btn-secondary" onclick="pmpModule.nextItem()">
+                        <i class="fas fa-arrow-right"></i> 다음 문제
+                    </button>
+                    <button class="btn btn-secondary" onclick="pmpModule.showExplanation()">
+                        <i class="fas fa-lightbulb"></i> 해설 보기
+                    </button>
+                    <button class="btn btn-secondary" onclick="pmpModule.renderDashboard()">
+                        <i class="fas fa-home"></i> 대시보드
+                    </button>
+                </div>
+                
+                <div class="result-section" id="pmpResultSection" style="display: none;"></div>
+                <div class="explanation" id="pmpExplanationDiv"></div>
             </div>
         `;
+        
+        // 북마크 버튼 스타일 업데이트
+        this.updateBookmarkButtonStyle(item.id);
     }
 
-    // 라벨명 변환
-    getLabelName(label) {
-        const labelMap = {
-            'project_integration': '통합관리',
-            'project_scope': '범위관리',
-            'project_schedule': '일정관리',
-            'project_cost': '원가관리',
-            'project_quality': '품질관리',
-            'project_resource': '자원관리',
-            'project_communication': '의사소통',
-            'project_risk': '위험관리',
-            'project_procurement': '조달관리',
-            'project_stakeholder': '이해관계자',
-            'initiating': '착수',
-            'planning': '기획',
-            'executing': '실행',
-            'monitoring': '감시통제',
-            'closing': '종료'
-        };
-        return labelMap[label] || label;
-    }
-
-    // 카드 뒤집기
-    flipCard() {
-        this.isFlipped = !this.isFlipped;
-        this.renderCard(this.currentItem);
-    }
-
-    // 이전 항목
-    previousItem() {
-        if (this.currentIndex > 0) {
-            this.currentIndex--;
-            this.currentItem = this.items[this.currentIndex];
-            this.isFlipped = false;
-            this.renderCard(this.currentItem);
+    // 선택지 클릭
+    selectChoice(element, key) {
+        // 모든 선택지 스타일 초기화
+        document.querySelectorAll('.choice-item').forEach(item => {
+            item.style.background = '#f8f9fa';
+            item.style.color = '';
+        });
+        
+        // 선택된 선택지 하이라이트
+        element.style.background = '#667eea';
+        element.style.color = 'white';
+        
+        // 선택된 답안 저장
+        this.selectedAnswer = key;
+        
+        // 숨겨진 입력창에 값 설정
+        const answerInput = document.getElementById('pmpAnswerInput');
+        if (answerInput) {
+            answerInput.value = key;
         }
     }
 
-    // 다음 항목
-    nextItem() {
-        if (this.currentIndex < this.items.length - 1) {
-            this.currentIndex++;
-            this.currentItem = this.items[this.currentIndex];
-            this.isFlipped = false;
-            this.renderCard(this.currentItem);
-        }
-    }
-
-    // 자가평가 기록
-    recordAssessment(difficulty) {
-        const itemId = this.currentItem.id;
-        const now = new Date();
-        
-        if (!this.studyData.studyTime[itemId]) {
-            this.studyData.studyTime[itemId] = {
-                attempts: 0,
-                correct: 0,
-                lastReview: null,
-                nextReview: null,
-                difficulty: 1,
-                interval: 1
-            };
+    // 정답 확인
+    checkAnswer() {
+        if (!this.selectedAnswer) {
+            alert('답안을 선택해주세요.');
+            return;
         }
         
-        const itemData = this.studyData.studyTime[itemId];
-        itemData.attempts++;
-        itemData.lastReview = now.toISOString();
-        itemData.difficulty = difficulty;
+        const item = this.currentItem;
+        const isCorrect = this.selectedAnswer === item.answer;
+        const resultSection = document.getElementById('pmpResultSection');
         
-        const nextInterval = this.spacedRepetition.calculateNextInterval(difficulty, itemData.interval);
-        itemData.interval = nextInterval;
-        
-        const nextReview = new Date(now.getTime() + nextInterval * 24 * 60 * 60 * 1000);
-        itemData.nextReview = nextReview.toISOString();
-        
-        if (difficulty === 1) {
-            itemData.correct++;
+        // 통계 업데이트
+        this.studyData.stats.total++;
+        if (isCorrect) {
+            this.studyData.stats.correct++;
+        } else {
+            this.studyData.stats.wrong++;
         }
         
-        if (!this.studyData.completedItems.includes(itemId)) {
-            this.studyData.completedItems.push(itemId);
+        // 완료 항목에 추가
+        if (!this.studyData.completedItems.includes(item.id)) {
+            this.studyData.completedItems.push(item.id);
         }
         
         this.saveStudyData();
         
-        setTimeout(() => {
-            this.nextItem();
-        }, 1000);
+        // 결과 표시
+        resultSection.style.display = 'block';
+        if (isCorrect) {
+            resultSection.className = 'result-section correct';
+            resultSection.style.background = '#d4edda';
+            resultSection.style.border = '2px solid #155724';
+            resultSection.style.color = '#155724';
+            resultSection.innerHTML = `
+                <i class="fas fa-check-circle"></i> <strong>정답입니다!</strong> ${item.answer_text}
+            `;
+        } else {
+            resultSection.className = 'result-section wrong';
+            resultSection.style.background = '#f8d7da';
+            resultSection.style.border = '2px solid #721c24';
+            resultSection.style.color = '#721c24';
+            resultSection.innerHTML = `
+                <i class="fas fa-times-circle"></i> <strong>오답입니다.</strong> 정답: ${item.answer} - ${item.answer_text}
+            `;
+        }
+    }
+
+    // 답 보기 (정답만 표시, 통계 반영 안함)
+    showAnswerOnly() {
+        const item = this.currentItem;
+        const resultSection = document.getElementById('pmpResultSection');
+        
+        resultSection.style.display = 'block';
+        resultSection.className = 'result-section';
+        resultSection.style.background = '#d1ecf1';
+        resultSection.style.border = '2px solid #0c5460';
+        resultSection.style.color = '#0c5460';
+        resultSection.innerHTML = `
+            <i class="fas fa-eye"></i> <strong>정답:</strong> ${item.answer} - ${item.answer_text}
+        `;
+    }
+
+    // 해설 보기
+    showExplanation() {
+        const explanationDiv = document.getElementById('pmpExplanationDiv');
+        const item = this.currentItem;
+        
+        if (item.explanation) {
+            explanationDiv.innerHTML = `
+                <div class="explanation-content">
+                    <h4><i class="fas fa-lightbulb"></i> 해설</h4>
+                    <p>${item.explanation}</p>
+                </div>
+            `;
+            explanationDiv.classList.toggle('show');
+        } else {
+            explanationDiv.innerHTML = '<div class="explanation-content"><p>해설이 없습니다.</p></div>';
+            explanationDiv.classList.add('show');
+        }
+    }
+
+    // 이전 문제
+    previousItem() {
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+            this.currentItem = this.items[this.currentIndex];
+            this.selectedAnswer = null;
+            this.renderQuestion(this.currentItem);
+        }
+    }
+
+    // 다음 문제
+    nextItem() {
+        if (this.currentIndex < this.items.length - 1) {
+            this.currentIndex++;
+            this.currentItem = this.items[this.currentIndex];
+            this.selectedAnswer = null;
+            this.renderQuestion(this.currentItem);
+        }
+    }
+
+    // 북마크 버튼 스타일 업데이트
+    updateBookmarkButtonStyle(itemId) {
+        const btn = document.querySelector(`button[onclick*="${itemId}"]`);
+        if (btn) {
+            const isBookmarked = this.isBookmarked(itemId);
+            btn.innerHTML = `<i class="fas fa-star"></i> ${isBookmarked ? '체크됨' : '체크'}`;
+            btn.style.background = isBookmarked ? '#28a745' : '';
+        }
     }
 
     // 대시보드 렌더링
@@ -308,26 +302,12 @@ class PMPModule {
                 </div>
                 
                 <div class="study-modes">
-                    <div class="mode-selector">
-                        <button class="mode-btn active" onclick="pmpModule.setStudyMode('card')">
-                            <i class="fas fa-id-card"></i>
-                            <span>카드 모드</span>
-                        </button>
-                        <button class="mode-btn" onclick="pmpModule.setStudyMode('quiz')">
-                            <i class="fas fa-list-ul"></i>
-                            <span>객관식 모드</span>
-                        </button>
-                    </div>
-                    
                     <div class="filter-options">
                         <button class="filter-btn" onclick="pmpModule.startStudy('all', 'sequential')">
-                            <i class="fas fa-play"></i> 전체 순차 학습
+                            <i class="fas fa-play"></i> 전체 순차 학습 (${stats.total}개)
                         </button>
                         <button class="filter-btn" onclick="pmpModule.startStudy('all', 'random')">
-                            <i class="fas fa-random"></i> 전체 랜덤 학습
-                        </button>
-                        <button class="filter-btn" onclick="pmpModule.showRangeModal()">
-                            <i class="fas fa-sliders-h"></i> 범위 설정
+                            <i class="fas fa-random"></i> 전체 랜덤 학습 (${stats.total}개)
                         </button>
                         <button class="filter-btn" onclick="pmpModule.startBookmarkedStudy()">
                             <i class="fas fa-star"></i> 체크한 문제 (${stats.bookmarked}개)
@@ -388,6 +368,8 @@ class PMPModule {
 
         return knowledgeAreas.map(area => {
             const count = stats.byLabel[area] || 0;
+            if (count === 0) return '';
+            
             const icon = this.getKnowledgeAreaIcon(area);
             const color = this.getKnowledgeAreaColor(area);
             
@@ -403,7 +385,7 @@ class PMPModule {
                     </div>
                 </button>
             `;
-        }).join('');
+        }).filter(card => card).join('');
     }
 
     // 프로세스 그룹 카드 렌더링
@@ -412,6 +394,8 @@ class PMPModule {
 
         return processGroups.map(process => {
             const count = stats.byLabel[process] || 0;
+            if (count === 0) return '';
+            
             const icon = this.getProcessGroupIcon(process);
             const color = this.getProcessGroupColor(process);
             
@@ -427,7 +411,51 @@ class PMPModule {
                     </div>
                 </button>
             `;
-        }).join('');
+        }).filter(card => card).join('');
+    }
+
+    // 라벨명 변환
+    getLabelName(label) {
+        const labelMap = {
+            'project_integration': '통합관리',
+            'project_scope': '범위관리',
+            'project_schedule': '일정관리',
+            'project_cost': '원가관리',
+            'project_quality': '품질관리',
+            'project_resource': '자원관리',
+            'project_communication': '의사소통',
+            'project_risk': '위험관리',
+            'project_procurement': '조달관리',
+            'project_stakeholder': '이해관계자',
+            'initiating': '착수',
+            'planning': '기획',
+            'executing': '실행',
+            'monitoring': '감시통제',
+            'closing': '종료'
+        };
+        return labelMap[label] || label;
+    }
+
+    // 라벨 색상
+    getLabelColor(label) {
+        const colors = {
+            'project_integration': '#6f42c1',
+            'project_scope': '#20c997',
+            'project_schedule': '#fd7e14',
+            'project_cost': '#28a745',
+            'project_quality': '#ffc107',
+            'project_resource': '#dc3545',
+            'project_communication': '#17a2b8',
+            'project_risk': '#e83e8c',
+            'project_procurement': '#6610f2',
+            'project_stakeholder': '#007bff',
+            'initiating': '#28a745',
+            'planning': '#17a2b8',
+            'executing': '#ffc107',
+            'monitoring': '#fd7e14',
+            'closing': '#dc3545'
+        };
+        return colors[label] || '#6c757d';
     }
 
     // 지식 영역 아이콘
@@ -508,9 +536,9 @@ class PMPModule {
         this.items = studyItems;
         this.currentIndex = 0;
         this.currentItem = this.items[0];
-        this.isFlipped = false;
+        this.selectedAnswer = null;
         
-        this.renderCard(this.currentItem);
+        this.renderQuestion(this.currentItem);
     }
 
     // 체크한 문제 학습 시작
@@ -525,22 +553,9 @@ class PMPModule {
         this.items = bookmarkedItems;
         this.currentIndex = 0;
         this.currentItem = this.items[0];
-        this.isFlipped = false;
+        this.selectedAnswer = null;
         
-        this.renderCard(this.currentItem);
-    }
-
-    // 범위 설정 모달 표시
-    showRangeModal() {
-        // 범위 설정 모달 구현 (기존 시스템과 유사)
-        alert('범위 설정 기능은 곧 구현됩니다.');
-    }
-
-    // 학습 모드 설정
-    setStudyMode(mode) {
-        this.studyMode = mode;
-        document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
-        event.currentTarget.classList.add('active');
+        this.renderQuestion(this.currentItem);
     }
 
     // 배열 셔플
@@ -572,33 +587,10 @@ class PMPModule {
         });
 
         // 정답률 계산
-        let totalAttempts = 0;
-        let totalCorrect = 0;
-
-        Object.values(this.studyData.studyTime).forEach(data => {
-            totalAttempts += data.attempts;
-            totalCorrect += data.correct;
-        });
-
-        stats.accuracy = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
+        const totalAttempts = this.studyData.stats.correct + this.studyData.stats.wrong;
+        stats.accuracy = totalAttempts > 0 ? Math.round((this.studyData.stats.correct / totalAttempts) * 100) : 0;
 
         return stats;
-    }
-}
-
-// PMP 간격 반복 학습 클래스
-class PMPSpacedRepetition {
-    calculateNextInterval(difficulty, currentInterval) {
-        const multipliers = {
-            1: 2.5, // 알았음
-            2: 1.3, // 애매함  
-            3: 0.5  // 모르겠음
-        };
-        
-        const multiplier = multipliers[difficulty] || 1;
-        let nextInterval = Math.round(currentInterval * multiplier);
-        
-        return Math.max(1, Math.min(30, nextInterval));
     }
 }
 

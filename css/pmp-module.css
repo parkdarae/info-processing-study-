@@ -241,94 +241,49 @@
     font-weight: 500;
 }
 
-/* PMP 카드 학습 */
-.pmp-card-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.pmp-card {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    margin-bottom: 30px;
-    perspective: 1000px;
-    cursor: pointer;
-}
-
-.pmp-card-front,
-.pmp-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    transition: transform 0.6s;
+/* PMP 문제 카드 (핵심키워드130과 동일한 스타일) */
+.question-card {
+    background: white;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    background: linear-gradient(135deg, #6f42c1 0%, #495057 100%);
-    color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-.pmp-card.flipped .pmp-card-front {
-    transform: rotateY(-180deg);
-}
-
-.pmp-card.flipped .pmp-card-back {
-    transform: rotateY(0deg);
-}
-
-.pmp-card-back {
-    transform: rotateY(180deg);
-    background: linear-gradient(135deg, #495057 0%, #6f42c1 100%);
-}
-
-.card-header {
-    padding: 20px 25px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-.card-number {
-    font-weight: 600;
-    font-size: 1.1em;
-    opacity: 0.9;
-}
-
-.card-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.bookmark-btn {
-    background: rgba(255,255,255,0.2);
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 1.1em;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin: 20px auto;
+    max-width: 900px;
+    overflow: hidden;
+    border: 3px solid #f8f9fa;
     transition: all 0.3s;
 }
 
-.bookmark-btn:hover {
-    background: rgba(255,255,255,0.3);
+.question-card:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    border-color: #6f42c1;
 }
 
-.bookmark-btn.bookmarked {
-    background: #ffc107;
-    color: #333;
+/* 문제 헤더 */
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
 }
 
-.card-labels {
-    padding: 0 25px 15px;
+.question-no {
+    background: linear-gradient(135deg, #6f42c1 0%, #495057 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+/* 라벨 */
+.question-labels {
+    padding: 15px 25px;
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    background: #f8f9fa;
 }
 
 .label {
@@ -336,14 +291,58 @@
     border-radius: 15px;
     font-size: 0.8em;
     font-weight: 500;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(10px);
+    color: white;
 }
 
-.card-content {
-    flex: 1;
+/* 문제 텍스트 */
+.question-text {
     padding: 25px;
-    overflow-y: auto;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #333;
+    background: white;
+}
+
+/* 선택지 */
+.options-container {
+    padding: 0 25px 25px;
+    background: white;
+}
+
+.option-item {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+}
+
+.option-item:hover {
+    background: #e9ecef;
+    border-color: #6f42c1;
+}
+
+.option-item.selected {
+    background: #e3f2fd;
+    border-color: #2196f3;
+    color: #1976d2;
+}
+
+.option-item.correct {
+    background: #d4edda;
+    border-color: #28a745;
+    color: #155724;
+}
+
+.option-item.incorrect {
+    background: #f8d7da;
+    border-color: #dc3545;
+    color: #721c24;
 }
 
 .question-text {
@@ -406,65 +405,71 @@
     animation: pulse 2s infinite;
 }
 
-/* PMP 컨트롤 */
-.pmp-controls {
-    margin-bottom: 30px;
+/* 문제 컨트롤 (핵심키워드130과 동일한 스타일) */
+.question-controls {
+    padding: 20px 25px;
+    background: white;
+    border-top: 2px solid #f8f9fa;
 }
 
-.top-controls {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.back-to-dashboard-btn {
-    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 12px 25px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1em;
-    transition: all 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
-}
-
-.back-to-dashboard-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.4);
+.main-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .navigation-controls {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.control-btn {
-    background: linear-gradient(135deg, #6f42c1 0%, #495057 100%);
-    color: white;
+.btn {
+    padding: 10px 20px;
     border: none;
-    border-radius: 10px;
-    padding: 12px 25px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
+    font-size: 0.95em;
     transition: all 0.3s;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
-.control-btn:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(111, 66, 193, 0.4);
+.btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.control-btn:disabled {
+.btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    color: #333;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d, #545b62);
+    color: white;
 }
 
 /* 자가평가 */
@@ -525,12 +530,65 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* 진도 표시 */
-.study-progress {
+/* 답안 섹션 */
+.answer-section {
+    padding: 20px 25px;
+    background: #f8f9fa;
+    border-top: 2px solid #e9ecef;
+}
+
+.answer-content {
     background: white;
-    border-radius: 15px;
+    border-radius: 12px;
     padding: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.correct-answer {
+    background: #d4edda;
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #155724;
+}
+
+.correct-answer strong {
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.explanation {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 10px;
+    padding: 15px;
+    color: #856404;
+}
+
+.explanation h4 {
+    margin: 0 0 10px 0;
+    color: #856404;
+    font-size: 1.1em;
+}
+
+.explanation p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* 진도 표시 */
+.progress-info {
+    padding: 15px 25px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+.progress-text {
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .progress-bar {
@@ -539,7 +597,6 @@
     background: #e0e0e0;
     border-radius: 4px;
     overflow: hidden;
-    margin-bottom: 10px;
 }
 
 .progress-fill {
@@ -547,12 +604,6 @@
     background: linear-gradient(135deg, #6f42c1 0%, #495057 100%);
     border-radius: 4px;
     transition: width 0.3s ease;
-}
-
-.progress-text {
-    text-align: center;
-    color: #666;
-    font-weight: 500;
 }
 
 /* 라벨별 색상 */
@@ -615,26 +666,20 @@
         grid-template-columns: 1fr;
     }
     
-    .pmp-card {
-        height: 450px;
+    .question-card {
+        margin: 15px;
     }
     
-    .back-to-dashboard-btn {
-        width: 100%;
-    }
-    
+    .main-controls,
     .navigation-controls {
         flex-direction: column;
-        gap: 10px;
+        align-items: center;
     }
     
-    .assessment-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .assessment-btn {
-        max-width: none;
+    .btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
     }
     
     .stats-grid {
