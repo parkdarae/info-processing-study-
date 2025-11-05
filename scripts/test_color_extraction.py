@@ -84,3 +84,4 @@ output.close()
 print("테스트 완료! data/color_test.txt 확인")
 
 
+

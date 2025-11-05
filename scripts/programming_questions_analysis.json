@@ -1,0 +1,81 @@
+{
+  "total_stats": {
+    "total_questions": 257,
+    "code_questions": 76,
+    "generic_explanations": 66
+  },
+  "file_stats": [
+    {
+      "file": "2021_round1",
+      "total": 22,
+      "code": 5,
+      "generic": 4
+    },
+    {
+      "file": "2022_round1",
+      "total": 21,
+      "code": 6,
+      "generic": 5
+    },
+    {
+      "file": "2022_round2",
+      "total": 34,
+      "code": 1,
+      "generic": 1
+    },
+    {
+      "file": "2022_round3",
+      "total": 20,
+      "code": 0,
+      "generic": 0
+    },
+    {
+      "file": "2023_round1",
+      "total": 18,
+      "code": 4,
+      "generic": 4
+    },
+    {
+      "file": "2023_round2",
+      "total": 20,
+      "code": 2,
+      "generic": 2
+    },
+    {
+      "file": "2023_round3",
+      "total": 20,
+      "code": 8,
+      "generic": 7
+    },
+    {
+      "file": "2024_round1",
+      "total": 23,
+      "code": 13,
+      "generic": 12
+    },
+    {
+      "file": "2024_round2",
+      "total": 20,
+      "code": 9,
+      "generic": 8
+    },
+    {
+      "file": "2024_round3",
+      "total": 19,
+      "code": 10,
+      "generic": 10
+    },
+    {
+      "file": "2025_round1",
+      "total": 20,
+      "code": 9,
+      "generic": 6
+    },
+    {
+      "file": "2025_round2",
+      "total": 20,
+      "code": 9,
+      "generic": 7
+    }
+  ]
+}

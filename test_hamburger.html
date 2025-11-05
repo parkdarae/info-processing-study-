@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햄버거 메뉴 테스트</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 3px solid yellow; /* 디버깅용 */
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        .hamburger-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid red; /* 디버깅용 - 빨간 테두리 */
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            transition: all 0.3s;
+            font-size: 1.5em;
+            z-index: 1000;
+        }
+        
+        .hamburger-btn:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white; margin-bottom: 20px;">햄버거 메뉴 테스트</h1>
+    
+    <div class="header">
+        <div class="header-content">
+            <h1>정보처리기사 실기 핵심 키워드130 문제은행</h1>
+            <p>실시간 학습 현황 및 진도 관리</p>
+        </div>
+        <button class="hamburger-btn" onclick="alert('햄버거 버튼 작동!')">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    
+    <div style="background: white; padding: 20px; margin-top: 20px; border-radius: 10px;">
+        <h2>테스트 결과:</h2>
+        <ul style="margin-top: 10px; line-height: 2;">
+            <li><strong>햄버거 버튼이 보이나요?</strong> (빨간 테두리가 있어야 함)</li>
+            <li><strong>클릭하면 알림창이 뜨나요?</strong></li>
+            <li><strong>hover 시 회전하나요?</strong></li>
+        </ul>
+        <p style="margin-top: 20px; color: red; font-weight: bold;">
+            ⚠️ 만약 버튼이 안보이면 Font Awesome이 로드되지 않았거나 CSS 문제입니다.
+        </p>
+    </div>
+    
+    <script>
+        console.log('햄버거 버튼 요소:', document.querySelector('.hamburger-btn'));
+        console.log('Font Awesome 아이콘:', document.querySelector('.fa-bars'));
+    </script>
+</body>
+</html>
+
+
+

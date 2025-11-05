@@ -1,0 +1,2847 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리기사 실기 핵심 키워드130 문제은행</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        body.font-smallest { font-size: 12px; }
+        body.font-small { font-size: 14px; }
+        body.font-normal { font-size: 16px; }
+        body.font-large { font-size: 18px; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .hamburger-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            transition: all 0.3s;
+            font-size: 1.5em;
+        }
+
+        .hamburger-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            animation: fadeIn 0.3s;
+        }
+
+        .menu-overlay.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .sidebar-menu {
+            position: fixed;
+            top: 0;
+            right: -350px;
+            width: 300px;
+            height: 100%;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            z-index: 10001;
+            transition: right 0.3s ease-out;
+            overflow-y: auto;
+        }
+
+        .sidebar-menu.show {
+            right: 0;
+        }
+
+        .menu-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .close-menu {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            transition: all 0.3s;
+        }
+
+        .close-menu:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .menu-content {
+            padding: 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+        }
+
+        .menu-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .menu-item {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 10px;
+            background: white;
+        }
+
+        .menu-item:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+            transform: translateX(5px);
+        }
+
+        .past-exam-selector {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            background: white;
+        }
+
+        .past-exam-selector select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .past-exam-selector select:hover {
+            border-color: #667eea;
+        }
+
+        .past-exam-selector select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+        }
+
+        .past-exam-info {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #eee;
+        }
+
+        .font-size-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10002;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .font-size-modal.show {
+            display: flex;
+        }
+
+        .font-modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .font-size-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .font-size-option {
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .font-size-option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .font-size-option.active {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+        }
+
+        .stats-toggle {
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .stats-toggle:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-size: clamp(1.5em, 5vw, 2.5em);
+        }
+        
+        .header p {
+            font-size: clamp(0.9em, 2vw, 1.1em);
+        }
+
+        .mode-selector {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .mode-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .mode-buttons-container {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 15px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .mode-buttons-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mode-btn {
+            padding: 20px;
+            border: 2px solid #667eea;
+            background: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mode-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(102, 126, 234, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .mode-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .mode-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            border-color: #5568d3;
+        }
+
+        .mode-btn.active {
+            background: #667eea;
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            }
+            50% {
+                box-shadow: 0 5px 20px rgba(102, 126, 234, 0.6);
+            }
+        }
+
+        .question-container {
+            padding: 30px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .question-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+
+        .question-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .question-no {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .question-text {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .choices {
+            margin: 20px 0;
+        }
+
+        .choice-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .choice-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .choice-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .choice-item:active {
+            transform: translateX(5px) scale(0.98);
+        }
+
+        .choice-key {
+            font-weight: bold;
+            color: #667eea;
+            margin-right: 10px;
+            min-width: 30px;
+        }
+
+        .choice-text {
+            flex: 1;
+            white-space: pre-line;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .action-buttons .btn {
+            white-space: nowrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        .btn-video {
+            background: #ff0000;
+            color: white;
+        }
+
+        .btn-video:hover {
+            background: #cc0000;
+        }
+
+        .result-section {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .result-section.show {
+            display: block;
+        }
+
+        .result-correct {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            border: 2px solid #28a745;
+            color: #155724;
+            animation: correctPulse 0.5s ease-out;
+        }
+
+        .result-incorrect {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            border: 2px solid #dc3545;
+            color: #721c24;
+            animation: shake 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes correctPulse {
+            0% {
+                transform: scale(0.9);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-10px);
+            }
+            75% {
+                transform: translateX(10px);
+            }
+        }
+
+        .stats {
+            background: white;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-width: 200px;
+        }
+
+        .stats h3 {
+            margin: 0 0 8px 0;
+            color: #667eea;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+
+        .stats-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85em;
+            padding: 3px 0;
+        }
+        
+        .stats-item span:last-child {
+            font-weight: bold;
+            color: #667eea;
+            transition: all 0.3s;
+        }
+        
+        .stats-item span:last-child.updating {
+            animation: numberBounce 0.5s ease-out;
+        }
+
+        @keyframes numberBounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+                color: #5568d3;
+            }
+        }
+        
+        .stats .btn {
+            padding: 6px 12px;
+            margin: 5px 0 0 0;
+            font-size: 0.8em;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .stats .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .image-placeholder {
+            width: 100%;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-align: center;
+            color: #6c757d;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .multiple-answers {
+            margin: 20px 0;
+        }
+
+        .answer-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .answer-item label {
+            min-width: 30px;
+            font-weight: bold;
+            color: #667eea;
+            margin-right: 10px;
+        }
+
+        .answer-input-small {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .symbol-buttons {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .symbol-buttons strong {
+            display: block;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .symbol-btn {
+            padding: 8px 15px;
+            margin: 5px;
+            border: 2px solid #667eea;
+            background: white;
+            border-radius: 6px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .symbol-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .table-container {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .table-caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 1.1em;
+            padding: 8px 0;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .table-after-text {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-left: 3px solid #667eea;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+
+        .question-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .question-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .question-table th {
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .question-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .question-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .question-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* 설명 창 */
+        .explanation {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 5px;
+            white-space: pre-line;
+            display: none;
+            line-height: 1.8;
+        }
+
+        .explanation.show {
+            display: block;
+        }
+        
+        /* 해설 내 숫자 번호 크기 */
+        .explanation code {
+            font-size: 1em !important;
+        }
+        
+        .explanation .code-box {
+            font-size: 1.15em;
+        }
+        
+        /* 해설의 pre.code-box만 크게 */
+        .explanation pre.code-box {
+            font-size: 1.3em;
+            line-height: 2.0;
+        }
+        
+        /* 해설 내 테이블 스타일 */
+        .explanation table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .explanation th,
+        .explanation td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        
+        .explanation th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        /* 해설 내 원형 숫자 스타일 */
+        .explanation .circle-number {
+            font-size: 1em;
+            font-weight: normal;
+            display: inline;
+        }
+
+        /* 코드 박스 스타일 */
+        .code-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            overflow-x: auto;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        /* 기본 코드 블록은 원래 크기 유지 */
+
+        .code-box pre {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: none;
+        }
+
+        .code-box code {
+            color: #333;
+            background: transparent;
+            padding: 0;
+            border: none;
+            white-space: pre;
+            font-size: inherit;
+        }
+
+        /* 키워드 강조 */
+        .code-box code .keyword {
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .code-box code .string {
+            color: #008000;
+        }
+
+        .code-box code .comment {
+            color: #808080;
+            font-style: italic;
+        }
+
+        /* 설명의 코드 박스 */
+        .explanation .code-box {
+            background: #fff;
+            border: 1px solid #ffc107;
+            margin: 10px 0;
+        }
+
+        /* 정답의 코드 박스 */
+        .result-section .code-box {
+            background: #f0f0f0;
+            margin: 10px 0;
+        }
+
+        /* 스크롤바 스타일 */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5568d3;
+        }
+
+        .welcome-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .welcome-popup.show {
+            display: flex;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .popup-content h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .popup-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .popup-content li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        /* 범위 설정 모달 */
+        .range-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .range-modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .range-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .range-modal-header h3 {
+            margin: 0;
+            font-size: 1.3em;
+            color: #333;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #999;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .range-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .range-input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .range-input-group label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .range-input-group input {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1.1em;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+
+        .range-input-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .range-preview {
+            background: #f5f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        .range-order-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .range-order-options label {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .range-order-options input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .range-order-options label:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .range-order-options input[type="radio"]:checked + span {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .range-modal-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .range-modal-buttons button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .range-modal-buttons .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .range-modal-buttons .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .range-modal-buttons .btn-secondary {
+            background: #e0e0e0;
+            color: #666;
+        }
+
+        .range-modal-buttons .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+                font-size: 18px;
+            }
+
+            .container {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .mode-selector {
+                padding: 20px 15px;
+            }
+
+            .question-container {
+                padding: 20px 15px;
+                max-height: none;
+            }
+
+            .choice-item {
+                padding: 15px;
+            }
+
+            .choice-key {
+                font-size: 1.2em;
+            }
+
+            .choice-text {
+                font-size: 1.05em;
+            }
+
+            .answer-input {
+                padding: 18px;
+                font-size: 1.1em;
+            }
+
+            .mode-buttons {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .mode-btn {
+                padding: 15px;
+                font-size: 1.1em;
+            }
+
+            .question-text {
+                font-size: 1.15em;
+            }
+
+            .stats {
+                margin: 5px 0;
+                padding: 10px;
+            }
+
+            .stats h3 {
+                font-size: 1em;
+            }
+
+            .stats-grid {
+                gap: 5px;
+            }
+
+            .stats-item {
+                font-size: 0.85em;
+                padding: 3px 0;
+            }
+
+            .stats .btn {
+                padding: 5px 8px;
+                font-size: 0.75em;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 0.95em;
+            }
+
+            .question-card {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 환영 팝업 -->
+    <div class="welcome-popup" id="welcomePopup">
+        <div class="popup-content">
+            <h2>학습 시스템 사용 안내</h2>
+            <p style="margin-bottom: 20px;">지원되는 정답 형식:</p>
+            <ul>
+                <li>숫자: 1, 2, 3, 4</li>
+                <li>영문: a, b, c, d</li>
+                <li>한글: ㄱ, ㄴ, ㄷ, ㄹ</li>
+                <li>번호: ①, ②, ③, ④</li>
+                <li>대소문자 무시: Agile = agile = AGILE</li>
+                <li>띄어쓰기 무시: 애자일 = 애 자 일</li>
+                <li>동의어 인식: 애자일 = Agile</li>
+                <li>복수 정답: 1, 2 또는 ①②</li>
+            </ul>
+            <button class="btn btn-primary" onclick="closeWelcomePopup()" style="width: 100%; margin-top: 20px;">시작하기</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-book-reader"></i> 정보처리기사 실기 핵심 키워드130 문제은행</h1>
+                <p>실시간 학습 현황 및 진도 관리</p>
+            </div>
+            <button class="hamburger-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mode-selector">
+            <div class="mode-buttons">
+                <button class="mode-btn" onclick="setMode('sequential')">
+                    <i class="fas fa-forward"></i> 순차 풀기
+                </button>
+                <button class="mode-btn" onclick="setMode('random')">
+                    <i class="fas fa-random"></i> 랜덤 풀기
+                </button>
+                <button class="mode-btn" onclick="setMode('range')">
+                    <i class="fas fa-list"></i> 범위 설정
+                </button>
+                <button class="mode-btn" onclick="setMode('wrong')">
+                    <i class="fas fa-times-circle"></i> 오답만 풀기
+                </button>
+                <button class="mode-btn" onclick="setMode('marked')">
+                    <i class="fas fa-star"></i> 체크한 문제
+                </button>
+            </div>
+        </div>
+
+        <div class="question-container" id="questionContainer">
+            <div class="question-card">
+                <div style="text-align: center; padding: 50px;">
+                    <i class="fas fa-book" style="font-size: 4em; color: #667eea; margin-bottom: 20px;"></i>
+                    <h2>학습 모드를 선택해주세요</h2>
+                    <p style="color: #6c757d; margin-top: 10px;">위 버튼 중 하나를 클릭하여 시작하세요</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 햄버거 메뉴 -->
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+    <div class="sidebar-menu" id="sidebarMenu">
+        <div class="menu-header">
+            <h3><i class="fas fa-cog"></i> 메뉴</h3>
+            <button class="close-menu" onclick="closeMenu()">×</button>
+        </div>
+        <div class="menu-content">
+            <div class="menu-section">
+                <h3><i class="fas fa-book"></i> 문제집 선택</h3>
+                <div class="menu-item" onclick="switchModule('keyword130')" id="menu_keyword130">
+                    <i class="fas fa-check"></i> 📚 핵심 키워드130
+                </div>
+                <div class="menu-item" onclick="switchModule('code_control')" id="menu_code_control">
+                    <i class="fas fa-code"></i> 💻 코드-제어문14문제
+                </div>
+                <div class="past-exam-selector">
+                    <div style="font-weight: 500; margin-bottom: 10px;">
+                        <i class="fas fa-graduation-cap"></i> 📝 정보처리기사 실기 기출문제
+                    </div>
+                    <select id="pastExamSelector" onchange="switchPastExam()">
+                        <option value="">회차를 선택하세요</option>
+                        <option value="2025_round1">2025년 1회</option>
+                        <option value="2025_round2">2025년 2회</option>
+                        <option value="2024_round3">2024년 3회</option>
+                        <option value="2024_round2">2024년 2회</option>
+                        <option value="2024_round1">2024년 1회</option>
+                        <option value="2023_round2">2023년 2회</option>
+                        <option value="2022_round3">2022년 3회</option>
+                        <option value="2022_round2">2022년 2회</option>
+                        <option value="2021_round1">2021년 1회</option>
+                    </select>
+                    <div class="past-exam-info" id="pastExamInfo">
+                        기출문제를 선택하면 해당 회차의 문제를 풀어볼 수 있습니다.
+                    </div>
+                </div>
+            </div>
+            <div class="menu-section">
+                <h3><i class="fas fa-chart-line"></i> 학습 통계</h3>
+                <div class="menu-item" onclick="toggleStats()">
+                    <i class="fas fa-eye"></i> 학습 통계 보기
+                </div>
+                <div class="menu-item" onclick="resetProgress()">
+                    <i class="fas fa-redo"></i> 통계 초기화
+                </div>
+            </div>
+            <div class="menu-section">
+                <h3><i class="fas fa-font"></i> 폰트 크기</h3>
+                <div class="menu-item" onclick="openFontModal()">
+                    <i class="fas fa-text-height"></i> 폰트 크기 변경
+                </div>
+            </div>
+            <div class="menu-section">
+                <h3><i class="fas fa-info-circle"></i> 정보</h3>
+                <div class="menu-item" onclick="showWelcome()">
+                    <i class="fas fa-question-circle"></i> 사용 방법
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 폰트 크기 모달 -->
+    <div class="font-size-modal" id="fontSizeModal">
+        <div class="font-modal-content">
+            <h2><i class="fas fa-text-height"></i> 폰트 크기 선택</h2>
+            <div class="font-size-grid">
+                <div class="font-size-option" onclick="selectFontSize('smallest')">
+                    <div style="font-size: 0.7em;">A</div>
+                    <small>제일 작게</small>
+                </div>
+                <div class="font-size-option" onclick="selectFontSize('small')">
+                    <div style="font-size: 0.85em;">A</div>
+                    <small>작게</small>
+                </div>
+                <div class="font-size-option" onclick="selectFontSize('normal')">
+                    <div style="font-size: 1em;">A</div>
+                    <small>보통</small>
+                </div>
+                <div class="font-size-option" onclick="selectFontSize('large')">
+                    <div style="font-size: 1.15em;">A</div>
+                    <small>크게</small>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="closeFontModal()" style="width: 100%;">확인</button>
+        </div>
+    </div>
+
+    <!-- 학습 통계 모달 -->
+    <div class="range-modal" id="statsModal">
+        <div class="range-modal-content">
+            <div class="range-modal-header">
+                <h3><i class="fas fa-chart-line"></i> 학습 통계</h3>
+                <button class="close-modal" onclick="closeStats()">×</button>
+            </div>
+            <div class="stats-grid" style="margin-top: 20px;">
+                <div class="stats-item" style="padding: 15px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px;">
+                    <span>진행률:</span>
+                    <span id="modalProgress" style="font-size: 1.2em;">0%</span>
+                </div>
+                <div class="stats-item" style="padding: 15px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px;">
+                    <span>정답률:</span>
+                    <span id="modalAccuracy" style="font-size: 1.2em;">0%</span>
+                </div>
+                <div class="stats-item" style="padding: 15px; background: #f8f9fa; border-radius: 8px; margin-bottom: 10px;">
+                    <span>남은 문제:</span>
+                    <span id="modalRemaining" style="font-size: 1.2em;">0</span>
+                </div>
+                <div class="stats-item" style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                    <span>오답 수:</span>
+                    <span id="modalWrongCount" style="font-size: 1.2em;">0</span>
+                </div>
+            </div>
+            <button class="btn btn-secondary" onclick="resetProgress()" style="width: 100%; margin-top: 20px;">초기화</button>
+        </div>
+    </div>
+
+    <!-- 범위 설정 모달 -->
+    <div class="range-modal" id="rangeModal">
+        <div class="range-modal-content">
+            <div class="range-modal-header">
+                <h3><i class="fas fa-list"></i> 범위 설정</h3>
+                <button class="close-modal" onclick="closeRangeModal()">×</button>
+            </div>
+            
+            <div class="range-inputs">
+                <div class="range-input-group">
+                    <label>시작 문제번호</label>
+                    <input type="number" id="rangeStart" min="1" max="130" value="1">
+                </div>
+                <div class="range-input-group">
+                    <label>끝 문제번호</label>
+                    <input type="number" id="rangeEnd" min="1" max="130" value="130">
+                </div>
+            </div>
+            
+            <div class="range-preview" id="rangePreview">
+                선택된 범위: 1번 ~ 130번 (총 130문제)
+            </div>
+            
+            <div class="range-order-options">
+                <label>
+                    <input type="radio" name="rangeOrder" value="sequential" checked>
+                    <span>순차 풀기</span>
+                </label>
+                <label>
+                    <input type="radio" name="rangeOrder" value="random">
+                    <span>랜덤 풀기</span>
+                </label>
+            </div>
+            
+            <div class="range-modal-buttons">
+                <button class="btn-secondary" onclick="closeRangeModal()">취소</button>
+                <button class="btn-primary" onclick="applyRangeFilter()">시작하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 전역 변수
+        let currentModule = 'keyword130'; // 기본 모듈
+        let allQuestions = [];
+        let allTables = {};
+        let currentQuestions = [];
+        let currentIndex = 0;
+        let currentMode = null;
+        let stats = {
+            total: 0,
+            correct: 0,
+            wrong: 0,
+            wrongQuestions: []
+        };
+        
+        // 모듈 설정
+        const moduleConfig = {
+            'keyword130': {
+                title: '정보처리기사 실기 핵심 키워드130 문제은행',
+                itemsFile: 'items.jsonl',
+                tablesFile: 'tables.jsonl',
+                maxRange: 130
+            },
+            'code_control': {
+                title: '코드-제어문14문제',
+                itemsFile: 'items_code_control.jsonl',
+                tablesFile: 'tables_code_control.jsonl',
+                maxRange: 14
+            },
+            // 기출문제 모듈들 (실제 크롤링된 문제 수)
+            '2025_round1': {
+                title: '정보처리기사 실기 2025년 1회 기출문제',
+                itemsFile: 'data/items_2025_round1.jsonl',
+                tablesFile: 'data/tables_2025_round1.jsonl',
+                maxRange: 19,
+                isPastExam: true
+            },
+            '2025_round2': {
+                title: '정보처리기사 실기 2025년 2회 기출문제',
+                itemsFile: 'data/items_2025_round2.jsonl',
+                tablesFile: 'data/tables_2025_round2.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2024_round3': {
+                title: '정보처리기사 실기 2024년 3회 기출문제',
+                itemsFile: 'data/items_2024_round3.jsonl',
+                tablesFile: 'data/tables_2024_round3.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2024_round2': {
+                title: '정보처리기사 실기 2024년 2회 기출문제',
+                itemsFile: 'data/items_2024_round2.jsonl',
+                tablesFile: 'data/tables_2024_round2.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2024_round1': {
+                title: '정보처리기사 실기 2024년 1회 기출문제',
+                itemsFile: 'data/items_2024_round1.jsonl',
+                tablesFile: 'data/tables_2024_round1.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2023_round2': {
+                title: '정보처리기사 실기 2023년 2회 기출문제',
+                itemsFile: 'data/items_2023_round2.jsonl',
+                tablesFile: 'data/tables_2023_round2.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2022_round3': {
+                title: '정보처리기사 실기 2022년 3회 기출문제',
+                itemsFile: 'data/items_2022_round3.jsonl',
+                tablesFile: 'data/tables_2022_round3.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2022_round2': {
+                title: '정보처리기사 실기 2022년 2회 기출문제',
+                itemsFile: 'data/items_2022_round2.jsonl',
+                tablesFile: 'data/tables_2022_round2.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            },
+            '2021_round1': {
+                title: '정보처리기사 실기 2021년 1회 기출문제',
+                itemsFile: 'data/items_2021_round1.jsonl',
+                tablesFile: 'data/tables_2021_round1.jsonl',
+                maxRange: 20,
+                isPastExam: true
+            }
+        };
+
+        // 동의어 사전
+        const synonyms = {
+            '애자일': ['agile', 'Agile', 'AGILE'],
+            '클래스': ['class', 'Class', 'CLASS'],
+            '함수': ['function', 'Function', 'FUNCTION'],
+            '변수': ['variable', 'Variable', 'VARIABLE']
+        };
+
+        // 정규화 함수
+        function normalizeAnswer(answer) {
+            // 대소문자 무시
+            answer = answer.toLowerCase().trim();
+            
+            // 띄어쓰기 제거
+            answer = answer.replace(/\s/g, '');
+            
+            // 동의어 변환
+            for (let [key, values] of Object.entries(synonyms)) {
+                if (values.includes(answer)) {
+                    answer = key;
+                    break;
+                }
+            }
+            
+            return answer;
+        }
+
+        // 키 매핑
+        function mapAnswerKey(input, choices) {
+            // 숫자 변환
+            const numMap = {'1': '1', '2': '2', '3': '3', '4': '4', 
+                           '①': '1', '②': '2', '③': '3', '④': '4',
+                           'ㄱ': '1', 'ㄴ': '2', 'ㄷ': '3', 'ㄹ': '4',
+                           'a': '1', 'b': '2', 'c': '3', 'd': '4'};
+            
+            const lowerInput = input.toLowerCase().trim();
+            if (numMap[lowerInput]) {
+                return numMap[lowerInput];
+            }
+            
+            // 복수 정답 처리
+            const matches = input.match(/[1-4①②③④ㄱㄴㄷㄹabcd]/g);
+            if (matches && matches.length > 1) {
+                return matches.map(m => numMap[m.toLowerCase()]).filter(Boolean);
+            }
+            
+            return lowerInput;
+        }
+
+        // 정답 체크 (단일 답안)
+        function checkAnswer(userAnswer, correctAnswer, choices) {
+            if (!userAnswer) return false;
+            
+            // 서술형 답인 경우 (choices가 없거나 0개인 경우)
+            if (!choices || choices.length === 0) {
+                // 답안 배열 처리
+                if (correctAnswer.keys && correctAnswer.keys.length > 0) {
+                    // 첫 번째 답안으로 비교
+                    const correctText = normalizeAnswerText(correctAnswer.keys[0]);
+                    const userText = normalizeAnswerText(userAnswer);
+                    return checkAnswerMatch(userText, correctText);
+                } else {
+                    // raw_text로 비교
+                    const correctText = normalizeAnswerText(correctAnswer.raw_text);
+                    const userText = normalizeAnswerText(userAnswer);
+                    return checkAnswerMatch(userText, correctText);
+                }
+            }
+            
+            // 객관식 답 체크
+            const user = mapAnswerKey(userAnswer, choices);
+            const correct = correctAnswer.keys;
+            
+            // 복수 정답
+            if (Array.isArray(user)) {
+                return JSON.stringify(user.sort()) === JSON.stringify(correct.sort());
+            }
+            
+            // 단일 정답
+            return correct.includes(user);
+        }
+        
+        // 문자열 유사도 계산
+        function calculateSimilarity(str1, str2) {
+            const longer = str1.length > str2.length ? str1 : str2;
+            const shorter = str1.length > str2.length ? str2 : str1;
+            
+            if (longer.length === 0) return 1.0;
+            
+            const editDistance = levenshteinDistance(longer, shorter);
+            return (longer.length - editDistance) / longer.length;
+        }
+        
+        // 레벤슈타인 거리 계산
+        function levenshteinDistance(str1, str2) {
+            const matrix = [];
+            
+            for (let i = 0; i <= str2.length; i++) {
+                matrix[i] = [i];
+            }
+            
+            for (let j = 0; j <= str1.length; j++) {
+                matrix[0][j] = j;
+            }
+            
+            for (let i = 1; i <= str2.length; i++) {
+                for (let j = 1; j <= str1.length; j++) {
+                    if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
+                        matrix[i][j] = matrix[i - 1][j - 1];
+                    } else {
+                        matrix[i][j] = Math.min(
+                            matrix[i - 1][j - 1] + 1,
+                            matrix[i][j - 1] + 1,
+                            matrix[i - 1][j] + 1
+                        );
+                    }
+                }
+            }
+            
+            return matrix[str2.length][str1.length];
+        }
+
+        // 학습 모드 설정
+        function setMode(mode) {
+            currentMode = mode;
+            
+            // 버튼 활성화
+            document.querySelectorAll('.mode-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 문제 로드
+            loadQuestions(mode);
+        }
+
+        // 문제 로드
+        async function loadQuestions(mode) {
+            try {
+                const config = moduleConfig[currentModule];
+                
+                // items.jsonl 로드
+                const response = await fetch(config.itemsFile);
+                const text = await response.text();
+                allQuestions = text.trim().split('\n').map(line => JSON.parse(line));
+                
+                // tables.jsonl 로드
+                try {
+                    const tablesResponse = await fetch(config.tablesFile);
+                    const tablesText = await tablesResponse.text();
+                    const tables = tablesText.trim().split('\n').map(line => JSON.parse(line));
+                    
+                    // 표를 ID로 인덱싱
+                    allTables = {};
+                    for (const table of tables) {
+                        allTables[table.table_id] = table;
+                    }
+                    console.log(`${tables.length}개 표 로드 완료`);
+                } catch (e) {
+                    console.log('표 데이터 없음:', e);
+                }
+                
+                // 모드별 필터링
+                currentQuestions = filterQuestionsByMode(mode);
+                
+                if (currentQuestions.length === 0) {
+                    showMessage('해당 모드에 문제가 없습니다.');
+                    return;
+                }
+                
+                currentIndex = 0;
+                displayQuestion(currentQuestions[0]);
+                updateStats();
+                
+            } catch (error) {
+                console.error('문제 로드 오류:', error);
+                showMessage('문제를 불러올 수 없습니다.');
+            }
+        }
+
+        // 모드별 필터링
+        function filterQuestionsByMode(mode) {
+            const savedProgress = JSON.parse(localStorage.getItem('progress') || '{}');
+            const wrongQuestions = JSON.parse(localStorage.getItem('wrongQuestions') || '[]');
+            const markedQuestions = JSON.parse(localStorage.getItem('markedQuestions') || '[]');
+            
+            switch(mode) {
+                case 'sequential':
+                    return allQuestions;
+                    
+                case 'random':
+                    return shuffleArray([...allQuestions]);
+                    
+                case 'range':
+                    // 모달 창 표시
+                    showRangeModal();
+                    return [];
+                    
+                case 'wrong':
+                    return allQuestions.filter(q => wrongQuestions.includes(q.q_no));
+                    
+                case 'marked':
+                    return allQuestions.filter(q => markedQuestions.includes(q.q_no));
+                    
+                default:
+                    return allQuestions;
+            }
+        }
+
+        // 모듈 전환
+        function switchModule(moduleName) {
+            closeMenu();
+            
+            if (!moduleConfig[moduleName]) {
+                showMessage('알 수 없는 모듈입니다.');
+                return;
+            }
+            
+            currentModule = moduleName;
+            const config = moduleConfig[moduleName];
+            
+            // 제목 업데이트
+            document.querySelector('.header h1').innerHTML = `<i class="fas fa-book-reader"></i> ${config.title}`;
+            
+            // 메뉴 활성화 상태 업데이트
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.style.background = 'white';
+                item.style.color = '';
+            });
+            const menuItem = document.getElementById(`menu_${moduleName}`);
+            if (menuItem) {
+                menuItem.style.background = '#667eea';
+                menuItem.style.color = 'white';
+            }
+            
+            // 범위 모달 max 값 업데이트
+            document.getElementById('rangeStart').max = config.maxRange;
+            document.getElementById('rangeEnd').max = config.maxRange;
+            document.getElementById('rangeEnd').value = config.maxRange;
+            
+            // 문제 로드
+            if (currentMode) {
+                loadQuestions(currentMode);
+            } else {
+                currentQuestions = [];
+                currentIndex = 0;
+                document.getElementById('questionContainer').innerHTML = `
+                    <div class="question-card">
+                        <div style="text-align: center; padding: 50px;">
+                            <i class="fas fa-book" style="font-size: 4em; color: #667eea; margin-bottom: 20px;"></i>
+                            <h2>학습 모드를 선택해주세요</h2>
+                            <p style="color: #6c757d; margin-top: 10px;">위 버튼 중 하나를 클릭하여 시작하세요</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            updateStats();
+        }
+
+        // 기출문제 회차 선택
+        function switchPastExam() {
+            const selector = document.getElementById('pastExamSelector');
+            const examId = selector.value;
+            
+            if (!examId) {
+                return;
+            }
+            
+            // switchModule 호출
+            switchModule(examId);
+            
+            // 정보 업데이트
+            const config = moduleConfig[examId];
+            const infoDiv = document.getElementById('pastExamInfo');
+            infoDiv.innerHTML = `
+                <i class="fas fa-check-circle" style="color: #667eea;"></i> 
+                선택됨: ${config.maxRange}개 문제
+            `;
+            
+            // 기존 메뉴 아이템 비활성화
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.style.background = 'white';
+                item.style.color = '';
+            });
+        }
+        
+        // 배열 섞기
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // 범위 설정 모달 표시
+        function showRangeModal() {
+            const modal = document.getElementById('rangeModal');
+            modal.style.display = 'flex';
+            
+            // 입력값 변경 이벤트 리스너
+            const startInput = document.getElementById('rangeStart');
+            const endInput = document.getElementById('rangeEnd');
+            
+            startInput.addEventListener('input', updateRangePreview);
+            endInput.addEventListener('input', updateRangePreview);
+            
+            updateRangePreview();
+        }
+
+        // 범위 설정 모달 닫기
+        function closeRangeModal() {
+            const modal = document.getElementById('rangeModal');
+            modal.style.display = 'none';
+        }
+
+        // 범위 미리보기 업데이트
+        function updateRangePreview() {
+            const config = moduleConfig[currentModule];
+            const start = parseInt(document.getElementById('rangeStart').value) || 1;
+            const end = parseInt(document.getElementById('rangeEnd').value) || config.maxRange;
+            
+            // 유효성 검사
+            const validStart = Math.max(1, Math.min(start, config.maxRange));
+            const validEnd = Math.max(validStart, Math.min(end, config.maxRange));
+            
+            const count = validEnd - validStart + 1;
+            const preview = document.getElementById('rangePreview');
+            preview.textContent = `선택된 범위: ${validStart}번 ~ ${validEnd}번 (총 ${count}문제)`;
+        }
+
+        // 범위 필터 적용
+        async function applyRangeFilter() {
+            const config = moduleConfig[currentModule];
+            const start = parseInt(document.getElementById('rangeStart').value) || 1;
+            const end = parseInt(document.getElementById('rangeEnd').value) || config.maxRange;
+            const order = document.querySelector('input[name="rangeOrder"]:checked').value;
+            
+            // 유효성 검사
+            const validStart = Math.max(1, Math.min(start, config.maxRange));
+            const validEnd = Math.max(validStart, Math.min(end, config.maxRange));
+            
+            // 모달 닫기
+            closeRangeModal();
+            
+            // 문제 로드
+            try {
+                const config = moduleConfig[currentModule];
+                
+                // items.jsonl 로드
+                const response = await fetch(config.itemsFile);
+                const text = await response.text();
+                allQuestions = text.trim().split('\n').map(line => JSON.parse(line));
+                
+                // tables.jsonl 로드
+                try {
+                    const tablesResponse = await fetch(config.tablesFile);
+                    const tablesText = await tablesResponse.text();
+                    const tables = tablesText.trim().split('\n').map(line => JSON.parse(line));
+                    
+                    // 표를 ID로 인덱싱
+                    allTables = {};
+                    for (const table of tables) {
+                        allTables[table.table_id] = table;
+                    }
+                    console.log(`${tables.length}개 표 로드 완료`);
+                } catch (e) {
+                    console.log('표 데이터 없음:', e);
+                }
+                
+                // 범위 필터링 (Q 또는 C 접두사 처리)
+                currentQuestions = allQuestions.filter(q => {
+                    const num = parseInt(q.q_no.replace(/^[QC]/, '').replace(/^0+/, '') || '0');
+                    return num >= validStart && num <= validEnd;
+                });
+                
+                // 순서 적용
+                if (order === 'random') {
+                    currentQuestions = shuffleArray(currentQuestions);
+                }
+                
+                if (currentQuestions.length === 0) {
+                    showMessage('해당 범위에 문제가 없습니다.');
+                    return;
+                }
+                
+                currentIndex = 0;
+                currentMode = 'range';
+                displayQuestion(currentQuestions[currentIndex]);
+                
+                showMessage(`${validStart}~${validEnd}번 문제 ${currentQuestions.length}개 로드 완료!`);
+            } catch (error) {
+                console.error('문제 로드 실패:', error);
+                showMessage('문제를 불러올 수 없습니다.');
+            }
+        }
+
+        // 문제 표시
+        function displayQuestion(question) {
+            const container = document.getElementById('questionContainer');
+            
+            let html = `
+                <div class="question-card">
+                    <div class="question-header">
+                        <div class="question-no">${question.q_no}</div>
+                        <button class="btn btn-secondary" onclick="markQuestion('${question.q_no}')">
+                            <i class="fas fa-star"></i> 체크
+                        </button>
+                    </div>
+                    <div class="question-text">${formatCodeBlocks(question.question_text)}</div>
+            `;
+            
+            // 이미지 표시
+            if (question.image_refs && question.image_refs.length > 0) {
+                for (let img of question.image_refs) {
+                    html += `<img src="images/${img}" class="image-preview" alt="문제 이미지">`;
+                }
+            }
+            
+            // 표 표시
+            if (question.table_refs && question.table_refs.length > 0) {
+                for (let tableRef of question.table_refs) {
+                    const table = allTables[tableRef];
+                    if (table) {
+                        html += '<div class="table-container">';
+                        if (table.caption && table.caption.trim() !== '') {
+                            html += `<div class="table-caption">${escapeHtml(table.caption)}</div>`;
+                        }
+                        html += '<table class="question-table">';
+                        
+                        // 헤더 (header 또는 headers 필드 모두 지원)
+                        const headerData = table.headers || table.header;
+                        if (headerData && headerData.length > 0) {
+                            html += '<thead><tr>';
+                            for (let cell of headerData) {
+                                html += `<th>${escapeHtml(cell)}</th>`;
+                            }
+                            html += '</tr></thead>';
+                        }
+                        
+                        // 바디
+                        html += '<tbody>';
+                        if (table.rows && table.rows.length > 0) {
+                            for (let row of table.rows) {
+                                html += '<tr>';
+                                for (let cell of row) {
+                                    // 셀 내용이 이미지 파일명인지 확인
+                                    if (cell && typeof cell === 'string' && (cell.endsWith('.png') || cell.endsWith('.jpg') || cell.endsWith('.jpeg') || cell.endsWith('.gif'))) {
+                                        html += `<td><img src="images/${cell}" class="table-image" alt=""></td>`;
+                                    } else if (cell && typeof cell === 'string' && cell.includes('<strong>')) {
+                                        // HTML 태그가 포함된 경우 이스케이프하지 않음
+                                        html += `<td>${cell}</td>`;
+                                    } else {
+                                        // 일반 텍스트는 이스케이프
+                                        html += `<td>${escapeHtml(cell).replace(/\n/g, '<br>')}</td>`;
+                                    }
+                                }
+                                html += '</tr>';
+                            }
+                        }
+                        html += '</tbody></table></div>';
+                        
+                        // 표 뒤에 추가 텍스트가 있으면 표시
+                        if (table.after_text) {
+                            html += `<div class="table-after-text">${escapeHtml(table.after_text).replace(/\n/g, '<br>')}</div>`;
+                        }
+                    }
+                }
+            }
+            
+            // Q062 보기 (테이블 뒤)
+            if (question.q_no === 'Q062') {
+                html += `
+                    <div class="choices-section" style="margin-top: 20px;">
+                        <strong>&lt;보기&gt;</strong><br>
+                        • Equivalence Partition<br>
+                        • Boundary Value Analysis<br>
+                        • Condition Test<br>
+                        • Cause-Effect Graph<br>
+                        • Error Guess<br>
+                        • Comparison Test<br>
+                        • Base Path Test<br>
+                        • Loop Test<br>
+                        • Data Flow Test
+                    </div>
+                `;
+            }
+            
+            // 선택지 표시
+            if (question.choices && question.choices.length > 0) {
+                html += '<div class="choices">';
+                for (let choice of question.choices) {
+                    html += `
+                        <div class="choice-item" onclick="selectChoice(this)">
+                            <span class="choice-key">${choice.raw_key}</span>
+                            <span class="choice-text">${escapeHtml(choice.text)}</span>
+                        </div>
+                    `;
+                }
+                html += '</div>';
+            }
+            
+            // 복수 답안 개수 확인
+            let numAnswers = 1;
+            
+            // 1. 괄호 안 번호 범위 추출: (①~⑤)
+            const rangeMatch = question.question_text.match(/\([\s]*([①-⑳])[\s]*~[\s]*([①-⑳])[\s]*\)/);
+            if (rangeMatch) {
+                const startNum = rangeMatch[1].charCodeAt(0) - 0x2460 + 1;
+                const endNum = rangeMatch[2].charCodeAt(0) - 0x2460 + 1;
+                numAnswers = endNum - startNum + 1;
+            }
+            
+            // 2. 괄호 안 번호 개수 추출: (①, ②) 또는 (① ② ③)
+            if (numAnswers === 1) {
+                const bracketNumbers = question.question_text.match(/\([\s]*([①-⑳][\s,]*[\s①-⑳]*)+\s*\)/);
+                if (bracketNumbers) {
+                    const matches = bracketNumbers[0].match(/[①-⑳]/g);
+                    if (matches && matches.length > 1) {
+                        numAnswers = matches.length;
+                    }
+                }
+            }
+            
+            // 3. 정답 배열 길이로 확인
+            if (numAnswers === 1 && question.answer && question.answer.keys && question.answer.keys.length > 1) {
+                numAnswers = question.answer.keys.length;
+            }
+            
+            // 16번, 17번은 특수: 순차 입력 모드 (1개 입력창)
+            if (question.q_no === 'Q016' || question.q_no === 'Q017') {
+                numAnswers = 1;
+            }
+            
+            // 입력 필드 생성
+            if (numAnswers > 1) {
+                // 복수 답안 입력창
+                html += `<div class="multiple-answers">`;
+                
+                // 특정 문제는 커스텀 라벨
+                const customLabels = {
+                    'Q013': ['카디널리티:', '디그리:'],
+                    'Q008': ['계산식:', '답:'],
+                    'Q122': ['LEVEL:']
+                };
+                
+                for (let i = 0; i < numAnswers; i++) {
+                    let label;
+                    
+                    if (customLabels[question.q_no] && customLabels[question.q_no][i]) {
+                        label = customLabels[question.q_no][i];
+                    } else {
+                        const num = String.fromCharCode(0x2460 + i); // ①, ②, ...
+                        label = `${num}:`;
+                    }
+                    
+                    html += `
+                        <div class="answer-item">
+                            <label>${label}</label>
+                            <input type="text" class="answer-input-small" id="answerInput_${i}" 
+                                   placeholder="답 입력">
+                        </div>
+                    `;
+                }
+                html += `</div>`;
+                
+                // 특수문자가 필요한지 확인 (정답에 특수문자가 포함되어 있는 경우만)
+                const hasSymbols = question.answer && question.answer.keys && 
+                    question.answer.keys.some(ans => /[∪―×π▷◁∩÷Δ]/.test(ans));
+                
+                if (hasSymbols) {
+                    html += `
+                        <div class="symbol-buttons">
+                            <strong>자주 사용하는 기호:</strong>
+                            <button class="symbol-btn" onclick="insertSymbol('∪')">∪</button>
+                            <button class="symbol-btn" onclick="insertSymbol('―')">―</button>
+                            <button class="symbol-btn" onclick="insertSymbol('×')">×</button>
+                            <button class="symbol-btn" onclick="insertSymbol('π')">π</button>
+                            <button class="symbol-btn" onclick="insertSymbol('▷◁')">▷◁</button>
+                            <button class="symbol-btn" onclick="insertSymbol('∩')">∩</button>
+                            <button class="symbol-btn" onclick="insertSymbol('÷')">÷</button>
+                            <button class="symbol-btn" onclick="insertSymbol('Δ')">Δ</button>
+                        </div>
+                    `;
+                }
+            } else {
+                // 단일 답안 입력창
+                const placeholder = (question.q_no === 'Q016' || question.q_no === 'Q017') ? '특수문자 버튼을 클릭하여 입력하세요' : '정답을 입력하세요 (예: 1, 2, a, b, ㄱ, ①)';
+                const isReadonly = question.q_no === 'Q016' || question.q_no === 'Q017';
+                html += `
+                    <input type="text" class="answer-input" id="answerInput_0" 
+                           placeholder="${placeholder}" ${isReadonly ? 'readonly' : ''}>
+                `;
+            }
+            
+            // 16번, 17번은 특수문자 버튼 표시
+            if (question.q_no === 'Q016' || question.q_no === 'Q017') {
+                html += `
+                    <div class="symbol-buttons">
+                        <strong>기호를 순서대로 클릭하세요 (다시 클릭하면 제거):</strong>
+                        <button class="symbol-btn" onclick="insertSymbol('∪')">∪</button>
+                        <button class="symbol-btn" onclick="insertSymbol('―')">―</button>
+                        <button class="symbol-btn" onclick="insertSymbol('×')">×</button>
+                        <button class="symbol-btn" onclick="insertSymbol('π')">π</button>
+                        <button class="symbol-btn" onclick="insertSymbol('▷◁')">▷◁</button>
+                        <button class="symbol-btn" onclick="insertSymbol('∩')">∩</button>
+                        <button class="symbol-btn" onclick="insertSymbol('÷')">÷</button>
+                        <button class="symbol-btn" onclick="insertSymbol('Δ')">Δ</button>
+                    </div>
+                `;
+            }
+            
+            html += `
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="checkCurrentAnswer()">
+                            <i class="fas fa-check"></i> 정답 확인
+                        </button>
+                        <button class="btn" onclick="showAnswerOnly()" style="background: #17a2b8; color: white;">
+                            <i class="fas fa-eye"></i> 답 보기
+                        </button>
+                        <button class="btn btn-secondary" onclick="prevQuestion()">
+                            <i class="fas fa-arrow-left"></i> 이전 문제
+                        </button>
+                        <button class="btn btn-secondary" onclick="nextQuestion()">
+                            <i class="fas fa-arrow-right"></i> 다음 문제
+                        </button>
+                        <button class="btn btn-secondary" onclick="showExplanation()">
+                            <i class="fas fa-lightbulb"></i> 해설 보기
+                        </button>
+                        <button class="btn btn-video" onclick="openVideo()" id="videoBtn" style="display: none;">
+                            <i class="fab fa-youtube"></i> 동영상 설명
+                        </button>
+                    </div>
+                    <div class="result-section" id="resultSection" style="display: none;"></div>
+                    <div class="explanation" id="explanationDiv"></div>
+            </div>
+            `;
+            
+            container.innerHTML = html;
+            
+            // 동영상 버튼 표시 업데이트
+            setTimeout(() => {
+                updateVideoButton();
+            }, 0);
+        }
+
+        // 이미 답변한 문제 추적
+        let answeredQuestions = new Set();
+
+        // 정답 확인
+        function checkCurrentAnswer() {
+            const question = currentQuestions[currentIndex];
+            const questionId = question.q_no;
+            
+            // 이미 답변했으면 무시
+            if (answeredQuestions.has(questionId)) {
+                console.log('이미 답변한 문제입니다.');
+                return;
+            }
+            
+            // 복수 답안인지 확인
+            let userAnswers = [];
+            const answerInput0 = document.getElementById('answerInput_0');
+            
+            if (answerInput0) {
+                // 모든 입력창 확인 (0부터 시작)
+                for (let i = 0; i < 10; i++) {
+                    const input = document.getElementById(`answerInput_${i}`);
+                    if (input) {
+                        userAnswers.push(input.value);
+                    }
+                }
+            }
+            
+            // 답변 입력 확인
+            if (userAnswers.length === 0 || userAnswers.every(a => !a || !a.trim())) {
+                alert('답을 입력해주세요.');
+                return;
+            }
+            
+            const isCorrect = checkMultipleAnswer(userAnswers, question);
+            const resultSection = document.getElementById('resultSection');
+            
+            // 이미 답변했다고 표시
+            answeredQuestions.add(questionId);
+            
+            // 결과 영역 표시
+            resultSection.style.display = 'block';
+            
+            if (isCorrect) {
+                resultSection.className = 'result-section result-correct show';
+                resultSection.innerHTML = '<i class="fas fa-check-circle"></i> <strong>정답입니다!</strong>';
+                stats.correct++;
+                removeWrongQuestion(question.q_no);
+            } else {
+                resultSection.className = 'result-section result-incorrect show';
+                
+                // 정답 텍스트 처리 (괄호 제거)
+                let answerText = question.answer.raw_text || '정답 없음';
+                
+                // 괄호 안 내용 제거
+                answerText = answerText.replace(/\([^)]*\)/g, '');
+                // • 제거
+                answerText = answerText.replace(/[•]/g, '');
+                // 여러 공백을 하나로
+                answerText = answerText.replace(/\s+/g, ' ').trim();
+                
+                resultSection.innerHTML = `
+                    <i class="fas fa-times-circle"></i> <strong>오답입니다.</strong><br>
+                    <strong>정답:</strong> ${formatCodeBlocks(answerText)}
+                `;
+                stats.wrong++;
+                addWrongQuestion(question.q_no);
+            }
+            
+            // LocalStorage에 저장
+            saveProgress();
+            updateStats();
+        }
+        
+        // 복수 답안 체크 (스마트 매칭)
+        function checkMultipleAnswer(userAnswers, question) {
+            const correctAnswers = question.answer.keys || [];
+            
+            console.log('=== 복수 답안 체크 ===');
+            console.log('문제:', question.q_no);
+            console.log('입력:', userAnswers);
+            console.log('정답:', correctAnswers);
+            
+            if (userAnswers.length !== correctAnswers.length) {
+                console.log('❌ 답안 개수 불일치');
+                return false;
+            }
+            
+            // Q060 특별 처리: 숫자만 비교
+            if (question.q_no === 'Q060') {
+                console.log('🔢 Q060 숫자 전용 매칭');
+                for (let i = 0; i < userAnswers.length; i++) {
+                    const userDigits = (userAnswers[i] || '').toString().replace(/[^0-9]/g, '');
+                    const correctDigits = (correctAnswers[i] || '').toString().replace(/[^0-9]/g, '');
+                    console.log(`  [${i+1}] "${userDigits}" === "${correctDigits}" ?`, userDigits === correctDigits);
+                    if (userDigits !== correctDigits) {
+                        console.log('❌ 불일치');
+                        return false;
+                    }
+                }
+                console.log('✅ Q060 정답!');
+                return true;
+            }
+            
+            // 각 답안 비교 (순서 중요)
+            for (let i = 0; i < userAnswers.length; i++) {
+                const user = normalizeAnswerText(userAnswers[i]);
+                const correct = normalizeAnswerText(correctAnswers[i]);
+                
+                console.log(`답안 ${i+1}:`);
+                console.log('  입력:', user);
+                console.log('  정답:', correct);
+                
+                // 키워드 기반 매칭
+                const match = checkAnswerMatch(user, correct);
+                console.log('  결과:', match ? '✅' : '❌');
+                
+                if (!match) {
+                    return false;
+                }
+            }
+            
+            console.log('✅ 정답!');
+            return true;
+        }
+        
+        // 답안 텍스트 정규화
+        function normalizeAnswerText(text) {
+            if (!text) return '';
+            
+            // 소문자로 변환
+            text = text.toLowerCase();
+            
+            // 원문자를 한글 자음으로 변환 (㉠→ㄱ, ㉡→ㄴ, ㉢→ㄷ, ㉣→ㄹ, ㉤→ㅁ, ㉥→ㅂ, ㉦→ㅅ, ㉧→ㅇ, ㉨→ㅈ)
+            const circledToJamo = {
+                '㉠': 'ㄱ', '㉡': 'ㄴ', '㉢': 'ㄷ', '㉣': 'ㄹ', '㉤': 'ㅁ',
+                '㉥': 'ㅂ', '㉦': 'ㅅ', '㉧': 'ㅇ', '㉨': 'ㅈ', '㉩': 'ㅊ'
+            };
+            text = text.replace(/[㉠-㉩]/g, match => circledToJamo[match] || match);
+            
+            // 괄호 안 내용 제거: 관계(Relationship) -> 관계
+            text = text.replace(/\([^)]*\)/g, '');
+            
+            // 띄어쓰기 제거
+            text = text.replace(/\s+/g, '');
+            
+            // 기타 특수문자 정리 (쉼표, 화살표, 하이픈, 점 등)
+            text = text.replace(/[•·,→\-\.]/g, '');
+            
+            return text.trim();
+        }
+        
+        // 답안 매칭 체크 (스마트 매칭)
+        function checkAnswerMatch(user, correct) {
+            // 정확 일치
+            if (user === correct) {
+                return true;
+            }
+            
+            // 숫자만 있는 경우 (60번 문제 등)
+            const userDigits = user.replace(/[^0-9]/g, '');
+            const correctDigits = correct.replace(/[^0-9]/g, '');
+            
+            if (userDigits && correctDigits && userDigits === correctDigits) {
+                return true;
+            }
+            
+            // 키워드 추출 (한글/영문 단어)
+            const getKeywords = (text) => {
+                return text.match(/[가-힣]+|[a-z]+/gi) || [];
+            };
+            
+            const userKeywords = getKeywords(user);
+            const correctKeywords = getKeywords(correct);
+            
+            // 하나라도 키워드가 없으면 단순 비교
+            if (userKeywords.length === 0 || correctKeywords.length === 0) {
+                return user === correct;
+            }
+            
+            // 키워드 매칭 수
+            let matches = 0;
+            for (const keyword of userKeywords) {
+                if (correctKeywords.some(ck => ck.includes(keyword) || keyword.includes(ck))) {
+                    matches++;
+                }
+            }
+            
+            // 50% 이상 매칭
+            const matchRate = matches / Math.max(userKeywords.length, correctKeywords.length);
+            return matchRate >= 0.5;
+        }
+        
+        // 특수문자 입력 함수
+        // 특수문자 입력 순서 추적
+        let symbolInputOrder = {
+            symbols: [],
+            inputIndex: 0
+        };
+
+        function insertSymbol(symbol) {
+            const question = currentQuestions[currentIndex];
+            
+            // 16번, 17번: 순차 입력 모드
+            if (question.q_no === 'Q016' || question.q_no === 'Q017') {
+                const input = document.getElementById('answerInput_0');
+                if (!input) return;
+                
+                // 같은 기호를 다시 클릭하면 제거
+                const currentSymbols = symbolInputOrder.symbols;
+                const symbolIndex = currentSymbols.indexOf(symbol);
+                
+                if (symbolIndex > -1) {
+                    // 이미 있는 기호이면 제거
+                    currentSymbols.splice(symbolIndex, 1);
+                    symbolInputOrder.inputIndex = currentSymbols.length;
+                } else {
+                    // 새로운 기호 추가 (16번은 최대 5개, 17번은 1개)
+                    const maxSymbols = question.q_no === 'Q016' ? 5 : 1;
+                    
+                    // 17번은 1개만 입력 가능 (이미 입력된 기호가 있으면 교체)
+                    if (question.q_no === 'Q017' && currentSymbols.length > 0) {
+                        currentSymbols[0] = symbol;
+                        symbolInputOrder.inputIndex = 1;
+                    } else if (currentSymbols.length < maxSymbols) {
+                        currentSymbols.push(symbol);
+                        symbolInputOrder.inputIndex = currentSymbols.length;
+                    }
+                }
+                
+                // 입력창에 표시
+                input.value = currentSymbols.join(', ');
+                return;
+            }
+            
+            // 다른 문제: 일반 입력
+            const answerInputs = [];
+            for (let i = 0; i < 10; i++) {
+                const input = document.getElementById(`answerInput_${i}`);
+                if (input) {
+                    answerInputs.push(input);
+                }
+            }
+            
+            if (answerInputs.length === 0) return;
+            
+            const activeElement = document.activeElement;
+            if (activeElement && activeElement.classList.contains('answer-input-small')) {
+                const selectionStart = activeElement.selectionStart;
+                const selectionEnd = activeElement.selectionEnd;
+                const value = activeElement.value;
+                
+                activeElement.value = value.substring(0, selectionStart) + symbol + value.substring(selectionEnd);
+                activeElement.focus();
+                activeElement.setSelectionRange(selectionStart + symbol.length, selectionStart + symbol.length);
+            }
+        }
+
+        // 이전 문제
+        function prevQuestion() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = currentQuestions.length - 1;
+                showMessage('첫 번째 문제입니다. 마지막 문제로 이동합니다.');
+            }
+            displayQuestion(currentQuestions[currentIndex]);
+            
+            // 새 문제이므로 answeredQuestions에서 제거
+            const questionId = currentQuestions[currentIndex].q_no;
+            answeredQuestions.delete(questionId);
+            
+            // 특수문자 입력 순서 초기화
+            symbolInputOrder = {
+                symbols: [],
+                inputIndex: 0
+            };
+        }
+        
+        // 다음 문제
+        function nextQuestion() {
+            currentIndex++;
+            if (currentIndex >= currentQuestions.length) {
+                currentIndex = 0;
+                showMessage('모든 문제를 완료했습니다!');
+            }
+            displayQuestion(currentQuestions[currentIndex]);
+            
+            // 새 문제이므로 answeredQuestions에서 제거
+            const questionId = currentQuestions[currentIndex].q_no;
+            answeredQuestions.delete(questionId);
+            
+            // 특수문자 입력 순서 초기화
+            symbolInputOrder = {
+                symbols: [],
+                inputIndex: 0
+            };
+        }
+
+        // 해설 보기
+        function showExplanation() {
+            const explanationDiv = document.getElementById('explanationDiv');
+            const question = currentQuestions[currentIndex];
+            
+            if (question.explanation) {
+                explanationDiv.innerHTML = formatCodeBlocks(question.explanation);
+                explanationDiv.classList.toggle('show');
+            } else {
+                explanationDiv.innerHTML = '해설이 없습니다.';
+                explanationDiv.classList.add('show');
+            }
+        }
+
+        // 동영상 열기
+        function openVideo() {
+            const question = currentQuestions[currentIndex];
+            if (question.video_url) {
+                window.open(question.video_url, '_blank');
+            }
+        }
+
+        // 문제가 바뀔 때 동영상 버튼 표시/숨김
+        function updateVideoButton() {
+            const videoBtn = document.getElementById('videoBtn');
+            const question = currentQuestions[currentIndex];
+            if (question && question.video_url) {
+                videoBtn.style.display = 'inline-block';
+            } else {
+                videoBtn.style.display = 'none';
+            }
+        }
+
+        // 답 보기 (학습 모드 - 통계 반영 안 함)
+        function showAnswerOnly() {
+            const question = currentQuestions[currentIndex];
+            const resultSection = document.getElementById('resultSection');
+            
+            // 정답 텍스트 처리 (괄호 제거)
+            let answerText = question.answer.raw_text || '정답 없음';
+            
+            // 괄호 안 내용 제거
+            answerText = answerText.replace(/\([^)]*\)/g, '');
+            // • 제거
+            answerText = answerText.replace(/[•]/g, '');
+            // 여러 공백을 하나로
+            answerText = answerText.replace(/\s+/g, ' ').trim();
+            
+            // 결과 영역 표시 (정보성 스타일)
+            resultSection.style.display = 'block';
+            resultSection.className = 'result-section';
+            resultSection.style.background = '#d1ecf1';
+            resultSection.style.border = '2px solid #0c5460';
+            resultSection.style.color = '#0c5460';
+            resultSection.innerHTML = `
+                <i class="fas fa-eye"></i> <strong>정답:</strong> ${formatCodeBlocks(answerText)}
+            `;
+        }
+
+        // 선택지 선택
+        function selectChoice(element) {
+            document.querySelectorAll('.choice-item').forEach(item => {
+                item.style.background = '#f8f9fa';
+            });
+            element.style.background = '#667eea';
+            element.style.color = 'white';
+            
+            const answerInput = document.getElementById('answerInput');
+            const key = element.querySelector('.choice-key').textContent.trim();
+            answerInput.value = key;
+        }
+
+        // 통계 업데이트
+        function updateStats() {
+            stats.total = allQuestions.length;
+            const progress = ((stats.correct + stats.wrong) / stats.total * 100).toFixed(1);
+            const accuracy = stats.correct > 0 ? (stats.correct / (stats.correct + stats.wrong) * 100).toFixed(1) : 0;
+            
+            // 애니메이션과 함께 업데이트
+            updateStatWithAnimation('progress', progress + '%');
+            updateStatWithAnimation('accuracy', accuracy + '%');
+            updateStatWithAnimation('remaining', allQuestions.length - (stats.correct + stats.wrong));
+            updateStatWithAnimation('wrongCount', stats.wrong);
+        }
+
+        // 애니메이션과 함께 통계 업데이트
+        function updateStatWithAnimation(id, newValue) {
+            const element = document.getElementById(id);
+            if (element && element.textContent !== newValue.toString()) {
+                element.classList.add('updating');
+                setTimeout(() => {
+                    element.textContent = newValue;
+                    element.classList.remove('updating');
+                }, 100);
+            }
+        }
+
+        // 메시지 표시
+        function showMessage(msg) {
+            alert(msg);
+        }
+
+        // HTML 이스케이프
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 코드 블록 감지 및 박스로 변환
+        function formatCodeBlocks(text) {
+            if (!text) return '';
+            
+            // <pre> 태그가 이미 있으면 그대로 반환 (들여쓰기 보존)
+            if (text.includes('<pre')) {
+                return text;
+            }
+            
+            // HTML 태그가 포함되어 있으면 일반 텍스트로 처리
+            if (text.includes('<img') || text.includes('<table') || text.includes('<div')) {
+                const lines = text.split('\n');
+                let result = '';
+                for (let i = 0; i < lines.length; i++) {
+                    const line = lines[i];
+                    // HTML 태그가 있으면 그대로 유지
+                    if (line.includes('<img') || line.includes('<table') || line.includes('</table>') || line.includes('<div') || line.includes('</div>')) {
+                        result += line + '\n';
+                    } else {
+                        // 원형 숫자가 문장 시작에 있을 때만 줄바꿈 추가
+                        let escapedLine = escapeHtml(line);
+                        // 원형 숫자가 줄 맨 앞에 있는 경우에만 줄바꿈
+                        if (/^([❶❷❸❹❺❻❼❽❾➊➋➌➍➎➏➐➑➒➓])/.test(line.trim())) {
+                            escapedLine = escapedLine.replace(/^([❶❷❸❹❺❻❼❽❾➊➋➌➍➎➏➐➑➒➓])/, '<br>$1');
+                        }
+                        result += escapedLine + '\n';
+                    }
+                }
+                return result;
+            }
+            
+            // 코드 블록 패턴: 빈 줄 이후에 나타나는 코드 블록을 감지
+            const lines = text.split('\n');
+            let result = '';
+            let inCodeBlock = false;
+            let codeBuffer = '';
+            
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                const prevLine = i > 0 ? lines[i - 1] : '';
+                
+                // 빈 줄 이후에 나오는 것을 코드로 간주
+                const isEmpty = line.trim() === '';
+                const prevIsEmpty = prevLine.trim() === '';
+                
+                // 코드 블록 시작 감지: 빈 줄 이후 + 코드 키워드 또는 들여쓰기가 있는 경우
+                const isCodeLine = /^(\s*)(#include|#|int main|public class|for\s*\(|while\s*\(|if\s*\(|switch\s*\(|import|package|from|import|def |class |String|int |float |void |char |boolean |➊|❶|❷|❸|❹|❺|❻|❼|❽|❾|➊|➋|➌|➍|➎|➏|➐|➑|➒|➓)/.test(line);
+                
+                // 이전 줄이 빈 줄이면서 현재 줄이 코드로 보이는 경우
+                if (prevIsEmpty && isCodeLine) {
+                    if (codeBuffer.trim() !== '' && inCodeBlock) {
+                        // 이전 코드 블록 닫기
+                        result += '<div class="code-box"><pre><code>' + escapeHtml(codeBuffer.trim()) + '</code></pre></div>';
+                    }
+                    inCodeBlock = true;
+                    codeBuffer = line + '\n';
+                } else if (inCodeBlock) {
+                    // 코드 블록 내부
+                    // 빈 줄이 2개 이상 연속되면 코드 블록 종료
+                    if (line.trim() === '' && lines[i + 1] && lines[i + 1].trim() === '') {
+                        result += '<div class="code-box"><pre><code>' + escapeHtml(codeBuffer.trim()) + '</code></pre></div>';
+                        codeBuffer = '';
+                        inCodeBlock = false;
+                    } else if (line.trim() === '') {
+                        codeBuffer += '\n';
+                    } else {
+                        codeBuffer += line + '\n';
+                    }
+                } else {
+                    // 일반 텍스트 - HTML 태그가 있으면 그대로 유지, 없으면 escape
+                    if (line.includes('<img') || line.includes('<table') || line.includes('</table>') || line.includes('<div') || line.includes('</div>')) {
+                        result += line + '\n';
+                    } else {
+                        // 원형 숫자 뒤에 자동 줄바꿈 추가
+                        let escapedLine = escapeHtml(line);
+                        // 원형 숫자 패턴: ❶❷❸❹❺❻❼❽❾➊➋➌➍➎➏➐➑➒➓
+                        escapedLine = escapedLine.replace(/([❶❷❸❹❺❻❼❽❾➊➋➌➍➎➏➐➑➒➓])/g, '$1<br>');
+                        result += escapedLine + '\n';
+                    }
+                }
+            }
+            
+            // 마지막에 코드 블록이 남아있으면 추가
+            if (codeBuffer.trim() !== '') {
+                result += '<div class="code-box"><pre><code>' + escapeHtml(codeBuffer.trim()) + '</code></pre></div>';
+            }
+            
+            return result;
+        }
+
+        // 폰트 크기 설정
+        function setFontSize(size) {
+            // body의 폰트 클래스 제거
+            document.body.classList.remove('font-smallest', 'font-small', 'font-normal', 'font-large');
+            // 새 폰트 크기 클래스 추가
+            document.body.classList.add('font-' + size);
+            
+            // active 클래스 업데이트
+            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // localStorage에 저장
+            localStorage.setItem('fontSize', size);
+        }
+
+        // 저장된 폰트 크기 로드
+        function loadFontSize() {
+            const savedSize = localStorage.getItem('fontSize') || 'normal';
+            setFontSize(savedSize);
+        }
+
+        // 햄버거 메뉴 토글
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const overlay = document.getElementById('menuOverlay');
+            
+            sidebar.classList.toggle('show');
+            overlay.classList.toggle('show');
+        }
+
+        // 메뉴 닫기
+        function closeMenu() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const overlay = document.getElementById('menuOverlay');
+            
+            sidebar.classList.remove('show');
+            overlay.classList.remove('show');
+        }
+
+        // 통계 모달 토글
+        function toggleStats() {
+            closeMenu();
+            const modal = document.getElementById('statsModal');
+            modal.style.display = 'flex';
+            
+            // 모달에 통계 업데이트
+            document.getElementById('modalProgress').textContent = document.getElementById('progress').textContent;
+            document.getElementById('modalAccuracy').textContent = document.getElementById('accuracy').textContent;
+            document.getElementById('modalRemaining').textContent = document.getElementById('remaining').textContent;
+            document.getElementById('modalWrongCount').textContent = document.getElementById('wrongCount').textContent;
+        }
+
+        // 통계 모달 닫기
+        function closeStats() {
+            const modal = document.getElementById('statsModal');
+            modal.style.display = 'none';
+        }
+
+        // 폰트 크기 모달 열기
+        function openFontModal() {
+            closeMenu();
+            const modal = document.getElementById('fontSizeModal');
+            modal.classList.add('show');
+            
+            // 현재 선택된 폰트 크기 표시
+            const currentSize = localStorage.getItem('fontSize') || 'normal';
+            document.querySelectorAll('.font-size-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelectorAll('.font-size-option').forEach(opt => {
+                if (opt.onclick.toString().includes(currentSize)) {
+                    opt.classList.add('active');
+                }
+            });
+        }
+
+        // 폰트 크기 모달 닫기
+        function closeFontModal() {
+            const modal = document.getElementById('fontSizeModal');
+            modal.classList.remove('show');
+        }
+
+        // 폰트 크기 선택
+        function selectFontSize(size) {
+            const currentSize = localStorage.getItem('fontSize') || 'normal';
+            setFontSize(size);
+            
+            // active 클래스 업데이트
+            document.querySelectorAll('.font-size-option').forEach(opt => opt.classList.remove('active'));
+            event.target.closest('.font-size-option').classList.add('active');
+        }
+
+        // 사용 방법 보기
+        function showWelcome() {
+            closeMenu();
+            document.getElementById('welcomePopup').classList.add('show');
+        }
+
+        // 진행 상황 저장
+        function saveProgress() {
+            localStorage.setItem('progress', JSON.stringify({
+                correct: stats.correct,
+                wrong: stats.wrong
+            }));
+        }
+
+        // 진행 상황 로드
+        function loadProgress() {
+            const saved = JSON.parse(localStorage.getItem('progress') || '{}');
+            stats.correct = saved.correct || 0;
+            stats.wrong = saved.wrong || 0;
+        }
+
+        // 오답 추가
+        function addWrongQuestion(qNo) {
+            const wrongQuestions = JSON.parse(localStorage.getItem('wrongQuestions') || '[]');
+            if (!wrongQuestions.includes(qNo)) {
+                wrongQuestions.push(qNo);
+                localStorage.setItem('wrongQuestions', JSON.stringify(wrongQuestions));
+            }
+        }
+
+        // 오답 제거
+        function removeWrongQuestion(qNo) {
+            const wrongQuestions = JSON.parse(localStorage.getItem('wrongQuestions') || '[]');
+            const index = wrongQuestions.indexOf(qNo);
+            if (index > -1) {
+                wrongQuestions.splice(index, 1);
+                localStorage.setItem('wrongQuestions', JSON.stringify(wrongQuestions));
+            }
+        }
+
+        // 문제 체크
+        function markQuestion(qNo) {
+            const markedQuestions = JSON.parse(localStorage.getItem('markedQuestions') || '[]');
+            const btn = event.target.closest('button');
+            
+            if (!markedQuestions.includes(qNo)) {
+                markedQuestions.push(qNo);
+                localStorage.setItem('markedQuestions', JSON.stringify(markedQuestions));
+                btn.innerHTML = '<i class="fas fa-check"></i> 체크됨';
+                btn.style.background = '#28a745';
+            } else {
+                const index = markedQuestions.indexOf(qNo);
+                markedQuestions.splice(index, 1);
+                localStorage.setItem('markedQuestions', JSON.stringify(markedQuestions));
+                btn.innerHTML = '<i class="fas fa-star"></i> 체크';
+                btn.style.background = '';
+            }
+        }
+
+        // 진행 초기화
+        function resetProgress() {
+            if (confirm('모든 진행 상황을 초기화하시겠습니까?')) {
+                localStorage.clear();
+                stats = { total: 0, correct: 0, wrong: 0, wrongQuestions: [] };
+                updateStats();
+                location.reload();
+            }
+        }
+
+        // 환영 팝업 닫기
+        function closeWelcomePopup() {
+            document.getElementById('welcomePopup').classList.remove('show');
+            localStorage.setItem('welcomeShown', 'true');
+        }
+
+        // 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProgress();
+            loadFontSize();
+            updateStats();
+            
+            // 기본 모듈 활성화
+            const menuItem = document.getElementById(`menu_${currentModule}`);
+            if (menuItem) {
+                menuItem.style.background = '#667eea';
+                menuItem.style.color = 'white';
+            }
+            
+            // 환영 팝업 표시 (첫 방문 시)
+            if (!localStorage.getItem('welcomeShown')) {
+                document.getElementById('welcomePopup').classList.add('show');
+            }
+        });
+    </script>
+</body>
+</html>
+

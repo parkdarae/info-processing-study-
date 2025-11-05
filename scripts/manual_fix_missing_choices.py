@@ -63,3 +63,4 @@ for fix in fixes:
 print(f"\n[OK] 수동 수정 완료!")
 
 
+

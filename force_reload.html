@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>강제 새로고침</title>
+    <script>
+        // 현재 시간을 파라미터로 추가하여 캐시 무효화
+        const timestamp = new Date().getTime();
+        window.location.href = 'index.html?v=' + timestamp;
+    </script>
+</head>
+<body>
+    <h1>리다이렉팅 중...</h1>
+</body>
+</html>
+
+
+

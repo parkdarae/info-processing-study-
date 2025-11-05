@@ -15,3 +15,4 @@ for i, q in enumerate(questions, 1):
     print(f"{i:2}. {q_no:4} | {text}")
 
 
+

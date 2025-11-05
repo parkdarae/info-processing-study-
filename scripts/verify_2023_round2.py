@@ -23,3 +23,4 @@ print(f"Q015 (암호화): {questions[14]['answer']['keys']}")
 print(f"Q020 (스텁/드라이버): {questions[19]['answer']['keys']}")
 
 
+

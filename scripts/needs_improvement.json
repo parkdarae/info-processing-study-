@@ -1,0 +1,69 @@
+{
+  "total": 7,
+  "timestamp": "2025-11-05T15:56:57.583887",
+  "items": [
+    {
+      "file": "data/items_2023_round1.jsonl",
+      "filename": "2023_round1",
+      "line_num": 1,
+      "q_no": "Q001",
+      "question_text": "class Static{\n\npublic int a = 20;\nstatic int b = 0;\n\n}\n\npublic class Main{\npublic static void main(String[] args) {\n\nint a;\na = 10;\nStatic.b = a;\n\nStatic st = new Static();\n\nSystem.out.println(Static....",
+      "explanation_length": 1559,
+      "code_blocks": 1
+    },
+    {
+      "file": "data/items_2023_round1.jsonl",
+      "filename": "2023_round1",
+      "line_num": 2,
+      "q_no": "Q002",
+      "question_text": "#include <stdio.h>\n\nint main(){\nchar a[] = \"Art\";\nchar* p = NULL;\np = a;\n\nprintf(\"%s\\n\", a);\nprintf(\"%c\\n\", *p);\nprintf(\"%c\\n\", *a);\nprintf(\"%s\\n\", p);\n\nfor(int i = 0; a[i] != '\\0'; i++)\nprintf(\"%c\", ...",
+      "explanation_length": 1683,
+      "code_blocks": 1
+    },
+    {
+      "file": "data/items_2023_round1.jsonl",
+      "filename": "2023_round1",
+      "line_num": 8,
+      "q_no": "Q009",
+      "question_text": "다음 아래 코드에서 이진수를 십진수로 변환하는 코드에 대해 괄호 (a) (b)의 적합한 답을 작성하시오....",
+      "explanation_length": 1944,
+      "code_blocks": 1
+    },
+    {
+      "file": "data/items_2024_round2.jsonl",
+      "filename": "2024_round2",
+      "line_num": 14,
+      "q_no": "Q014",
+      "question_text": "다음은 Java 언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오....",
+      "explanation_length": 1746,
+      "code_blocks": 1
+    },
+    {
+      "file": "data/items_2024_round3.jsonl",
+      "filename": "2024_round3",
+      "line_num": 18,
+      "q_no": "Q019",
+      "question_text": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오....",
+      "explanation_length": 1564,
+      "code_blocks": 1
+    },
+    {
+      "file": "data/items_2025_round1.jsonl",
+      "filename": "2025_round1",
+      "line_num": 15,
+      "q_no": "Q015",
+      "question_text": "문장(Statement) 커버리지 테스트를 수행하려고 한다. 코드를 아래의 제어 흐름도 빈칸에 연결되도록 작성하고 문장 커버리지 순서대로 작성하시오....",
+      "explanation_length": 1282,
+      "code_blocks": 1
+    },
+    {
+      "file": "data/items_2025_round2.jsonl",
+      "filename": "2025_round2",
+      "line_num": 9,
+      "q_no": "Q009",
+      "question_text": "다음은 Java언어의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오....",
+      "explanation_length": 1475,
+      "code_blocks": 1
+    }
+  ]
+}

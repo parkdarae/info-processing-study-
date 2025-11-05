@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 테스트</title>
+    <style>
+        body { padding: 20px; font-family: sans-serif; }
+        img { max-width: 800px; border: 2px solid #ccc; margin: 10px 0; }
+        .test-section { margin: 20px 0; padding: 20px; background: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>이미지 로딩 테스트</h1>
+    
+    <div class="test-section">
+        <h2>테스트 1: 직접 경로</h2>
+        <p>경로: images/2025_round1/Q002.png</p>
+        <img src="images/2025_round1/Q002.png" alt="Q002">
+    </div>
+    
+    <div class="test-section">
+        <h2>테스트 2: Q005 (코드)</h2>
+        <p>경로: images/2025_round1/Q005.png</p>
+        <img src="images/2025_round1/Q005.png" alt="Q005">
+    </div>
+    
+    <div class="test-section">
+        <h2>테스트 3: Q007 (테이블)</h2>
+        <p>경로: images/2025_round1/Q007.png</p>
+        <img src="images/2025_round1/Q007.png" alt="Q007">
+    </div>
+    
+    <div class="test-section">
+        <h2>테스트 4: 2025년 2회 Q001</h2>
+        <p>경로: images/2025_round2/Q001.png</p>
+        <img src="images/2025_round2/Q001.png" alt="Q001 2회">
+    </div>
+
+    <script>
+        // 이미지 로딩 이벤트 리스너
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('load', function() {
+                console.log('✓ 로드 성공:', this.src);
+                this.style.border = '2px solid green';
+            });
+            img.addEventListener('error', function() {
+                console.error('✗ 로드 실패:', this.src);
+                this.style.border = '2px solid red';
+                this.alt = '이미지 로딩 실패: ' + this.src;
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

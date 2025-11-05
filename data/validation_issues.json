@@ -1,0 +1,3105 @@
+{
+  "generated_at": "2025-11-05T10:30:48.339697",
+  "summary": {
+    "priority_1_image": 34,
+    "priority_2_answer": 5,
+    "priority_3_explanation": 160,
+    "total_issues": 199
+  },
+  "issues": [
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2021_round1.jsonl",
+      "doc_id": "2021_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/420",
+      "description": "해설 품질 점수: 65점",
+      "current_state": {
+        "quality_score": 65,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **경계값 분석(Boundary Value Analysis)** 테스트 기법을 설명하는 문제입니다.\n\n**경계값 분석이란?**\n- 블랙박스 테스트 기법 중 하나\n- 입력 조건의 **경계값과 그 근처 값**을 테스트 케이스로 선정하는 기법\n- 경계에서 오류가 발생할 가능성이 높기 때문에 경계값을 집중적으로 테스트\n\n**문제 분석:**\n- 입력 조건"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2021_round1.jsonl",
+      "doc_id": "2021_round1",
+      "q_no": "Q002",
+      "tistory_url": "https://chobopark.tistory.com/420",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 DB 설계 절차에 관한 설명이다.\n다음 빈칸에 들어갈 알맞은 용어를 쓰시오.\n\n- (1)은/는 특정 DBMS의 특성 및 성능을 고려하여 데이터베이스 저장 구조로 변환하는 과...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2021_round1.jsonl",
+      "doc_id": "2021_round1",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/420",
+      "description": "question_text가 비정상적으로 짧음 (25자)",
+      "current_state": {
+        "question_text": "다음은 파이썬 코드이다.\n출력 결과를 쓰시오.",
+        "length": 25
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2021_round1.jsonl",
+      "doc_id": "2021_round1",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/420",
+      "description": "question_text가 비정상적으로 짧음 (21자)",
+      "current_state": {
+        "question_text": "다음 Java 프로그램 결과를 쓰시오.",
+        "length": 21
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2021_round1.jsonl",
+      "doc_id": "2021_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/420",
+      "description": "question_text가 비정상적으로 짧음 (28자)",
+      "current_state": {
+        "question_text": "0 <= x <= 10이면 -1 0 10 11 검사",
+        "length": 28
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2021_round1.jsonl",
+      "doc_id": "2021_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/420",
+      "description": "해설 품질 점수: 65점",
+      "current_state": {
+        "quality_score": 65,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **경계값 분석(Boundary Value Analysis)** 테스트 기법을 설명하는 문제입니다.\n\n**경계값 분석이란?**\n- 블랙박스 테스트 기법 중 하나\n- 입력 조건의 **경계값과 그 근처 값**을 테스트 케이스로 선정하는 기법\n- 경계에서 오류가 발생할 가능성이 높기 때문에 경계값을 집중적으로 테스트\n\n**문제 분석:**\n- 입력 조건"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2021_round1.jsonl",
+      "doc_id": "2021_round1",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/420",
+      "description": "question_text가 비정상적으로 짧음 (27자)",
+      "current_state": {
+        "question_text": "다음은 C언어 프로그램이다.\n실행 결과를 쓰시오.",
+        "length": 27
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2021_round1.jsonl",
+      "doc_id": "2021_round1",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/420",
+      "description": "question_text가 비정상적으로 짧음 (28자)",
+      "current_state": {
+        "question_text": "다음은 Java 프로그램이다.\n실행 결과를 쓰시오.",
+        "length": 28
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 설명에 맞는 RAID 단계를 숫자로 작성하시오.\n\n- Striping(스트라이핑) 구현 방식\n\n- I/O 로드의 분산으로 매우 빠른 속도\n\n- 데이터를 블럭으로 분할 저장하며...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "question_text가 비정상적으로 짧음 (27자)",
+      "current_state": {
+        "question_text": "다음 자바 문법에 알맞는 출력 결과를 작성하시오.",
+        "length": 27
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**주어진 코드:**\n```java\nclass A {\n    int a;\n    int b;\n}\n\npublic class Main {\n    static void func1(A m) {\n        m.a *= 10;\n    }\n    \n    static void func2(A m) {\n        m.a += m.b;\n    }\n    \n    pu"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q004",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "문제에서 제시된 SQL 결과를 보면 **점수(score) 기준으로 내림차순 정렬**이 필요합니다.\n\n**주어진 쿼리 패턴:**\n```sql\nSELECT name, score FROM 성적\n(1) BY (2) (3)\n```\n\n**패턴 분석:**\n- `(1) BY (2) (3)` 형태는 **ORDER BY 절**을 나타냅니다\n- `BY` 앞에는 `ORDER`가"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음 아래 단어를 영어 약자로 작성하시오.\n임시 키 무결성 프로토콜...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "문제에서 요구하는 것은 **\"임시 키 무결성 프로토콜\"**을 영어 약자로 작성하는 것입니다.\n\n**TKIP (Temporal Key Integrity Protocol):**\n\n**영어 약자 풀이:**\n- **T**emporal: 임시의, 시간에 따른\n- **K**ey: 키\n- **I**ntegrity: 무결성\n- **P**rotocol: 프로토콜\n- **T"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q014",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 코드는 **재귀 함수를 이용한 팩토리얼 계산** 문제입니다.\n\n**주어진 코드:**\n```c\n#include <stdio.h>\nint func(int a) {\n    if (a <= 1) return 1;\n    return a * func(a - 1);\n}\nint main() {\n    int a;\n    scanf(\"%d\", &a);\n    prin"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "문제에서 요구하는 것은 **\"정보보호 관리체계\"**의 영문 약자입니다.\n\n**ISMS (Information Security Management System):**\n\n**영어 약자 풀이:**\n- **I**nformation: 정보\n- **S**ecurity: 보안, 보호\n- **M**anagement: 관리\n- **S**ystem: 체계, 시스템\n- **I"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "question_text가 비정상적으로 짧음 (27자)",
+      "current_state": {
+        "question_text": "다음 소스코드가 실행할 때의 출력값을 작성하시오.",
+        "length": 27
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **V모델(V-Model)**에서의 테스트 단계를 순서대로 나열하는 문제입니다.\n\n**V모델(V-Model)이란?**\n- 소프트웨어 개발 생명주기 모델 중 하나\n- **개발 단계**와 **테스트 단계**가 대칭적으로 연결된 V자 형태의 모델\n- 왼쪽 다리는 개발 단계, 오른쪽 다리는 테스트 단계\n\n**V모델의 테스트 단계 (오른쪽 다리, 아래에서"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round1.jsonl",
+      "doc_id": "2022_round1",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/463",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **V모델(V-Model)**에서의 테스트 단계를 순서대로 작성하는 문제입니다.\n\n**V모델(V-Model)의 구조:**\n- 소프트웨어 개발 생명주기 모델\n- **개발 단계(왼쪽 다리)**와 **테스트 단계(오른쪽 다리)**가 V자 형태로 대칭\n- 각 개발 단계마다 대응하는 테스트 단계가 존재\n\n**V모델의 테스트 단계 (아래에서 위로 순서):*"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **HTML (HyperText Markup Language, 하이퍼텍스트 마크업 언어)**에 대한 문제입니다.\n\n**HTML (HyperText Markup Language, 하이퍼텍스트 마크업 언어)이란?**\n\n**영어 약자 풀이:**\n- **H**ypertext: 하이퍼텍스트\n- **T**ext: 텍스트\n- **M**arkup: 마크업\n- "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "문제에서 설명하는 특징들이 모두 **VPN (Virtual Private Network, 가상 사설망)**을 가리킵니다.\n\n**VPN (Virtual Private Network, 가상 사설망):**\n\n**영어 약자 풀이:**\n- **V**irtual: 가상의\n- **P**rivate: 사설의\n- **N**etwork: 네트워크\n- **VPN = Virtu"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **SOLID 원칙** 중 **ISP (Interface Segregation Principle, 인터페이스 분리 원칙)**에 대한 문제입니다.\n\n**ISP (Interface Segregation Principle, 인터페이스 분리 원칙)이란?**\n\n**영어 약자 풀이:**\n- **I**nterface: 인터페이스\n- **S**egregatio"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "question_text가 비정상적으로 짧음 (25자)",
+      "current_state": {
+        "question_text": "다음 자바 코드에 알맞는 출력값을 작성하시오.",
+        "length": 25
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**문제의 이미지를 참고하여 코드 실행 과정을 분석합니다.**\n\n**출력값이 \"-8\"인 경우 가능한 코드 패턴:**\n\n**가능한 패턴 1: 뺄셈 연산**\n```java\nint a = 10;\nint b = 18;\nint result = a - b;\nSystem.out.println(result);  // -8\n```\n\n**가능한 패턴 2: 음수 덧셈**\n``"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "question_text가 비정상적으로 짧음 (23자)",
+      "current_state": {
+        "question_text": "다음 소스코드에 대한 출력값을 작성하시오.",
+        "length": 23
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q009",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "IP 주소가 139.127.19.132이고 서브넷마스크 255.255.255.192일 때 아래의 답을 작성하시오.\n(10진수로 표기)\n\n(1) 괄호 안에 들어갈 네트워크 주소 : ...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q010",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **소프트웨어 테스트의 단계**에 관한 문제입니다.\n\n**1. 베타 테스트 (Beta Test):**\n\n**베타 테스트의 정의:**\n- **선정된 최종 사용자**가 여러 명의 사용자 앞에서 행하는 테스트 기법\n- **실제 업무**를 가지고 사용자가 직접 테스트\n- **사용자 환경**에서 실시되는 테스트\n\n**베타 테스트의 특징:**\n- **실행 "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "question_text가 비정상적으로 짧음 (29자)",
+      "current_state": {
+        "question_text": "다음은 파이썬 코드이다.\n알맞는 출력값을 작성하시오.",
+        "length": 29
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**문제의 이미지를 참고하여 코드 실행 과정을 분석합니다.**\n\n**출력값이 \"REMEMBER AND STR\"인 경우 가능한 코드 패턴:**\n\n**패턴 1: 문자열 대문자 변환**\n```python\ntext = \"remember and str\"\nresult = text.upper()\nprint(result)  # \"REMEMBER AND STR\"\n```\n\n"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q014",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **라우팅 프로토콜의 분류 및 종류**에 관한 문제입니다.\n\n**라우팅 프로토콜 분류:**\n\n**1. IGP (Interior Gateway Protocol, 내부 게이트웨이 프로토콜):**\n\n**영어 약자 풀이:**\n- **I**nterior: 내부의\n- **G**ateway: 게이트웨이\n- **P**rotocol: 프로토콜\n- **IGP = "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **HTML (HyperText Markup Language, 하이퍼텍스트 마크업 언어)**에 대한 문제입니다.\n\n**HTML (HyperText Markup Language, 하이퍼텍스트 마크업 언어)이란?**\n\n**영어 약자 풀이:**\n- **H**ypertext: 하이퍼텍스트\n- **T**ext: 텍스트\n- **M**arkup: 마크업\n- "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "question_text가 비정상적으로 짧음 (29자)",
+      "current_state": {
+        "question_text": "다음 C언어에서 출력에 대한 알맞은 답을 작성하시오.",
+        "length": 29
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **C언어 문자열 포인터와 문자열 길이 계산 함수**에 관한 문제입니다.\n\n**주어진 코드:**\n```c\n#include <stdio.h>\nint len(char*p);\nint main(){\n  char* p1 = \"2022\";\n  char* p2 = \"202207\";  \n  int a = len(p1);\n  int b = len(p2);\n  p"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "question_text가 비정상적으로 짧음 (27자)",
+      "current_state": {
+        "question_text": "다음 C언어 코드에서 알맞는 출력값을 작성하시오.",
+        "length": 27
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "question_text가 비정상적으로 짧음 (25자)",
+      "current_state": {
+        "question_text": "다음 자바코드에서 알맞는 출력값을 작성하시오.",
+        "length": 25
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q018",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**함수 종속성(Functional Dependency, FD)의 종류:**\n\n**함수 종속성 정의:**\n- 관계형 데이터베이스에서 **속성 간의 의존 관계**를 나타내는 개념\n- `X → Y`: X가 결정되면 Y가 결정됨 (X가 Y를 함수적으로 결정)\n- 예: `학번 → 이름` (학번이 결정되면 이름이 결정됨)\n\n**1. Full Functional De"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **HTML (HyperText Markup Language, 하이퍼텍스트 마크업 언어)**에 대한 문제입니다.\n\n**HTML (HyperText Markup Language, 하이퍼텍스트 마크업 언어)이란?**\n\n**영어 약자 풀이:**\n- **H**ypertext: 하이퍼텍스트\n- **T**ext: 텍스트\n- **M**arkup: 마크업\n- "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **웹 기술의 기본 개념**에 관한 문제입니다.\n\n**1. HTTP (Hypertext Transfer Protocol, 하이퍼텍스트 전송 프로토콜):**\n\n**HTTP의 정의:**\n- 인터넷에서 **웹 서버와 사용자의 인터넷 브라우저 사이에 문서를 전송**하기 위해 사용되는 통신 규약\n- 인터넷에서 **하이퍼텍스트(hypertext) 문서를 교"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round2.jsonl",
+      "doc_id": "2022_round2",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/482",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **HTML (HyperText Markup Language, 하이퍼텍스트 마크업 언어)**에 대한 문제입니다.\n\n**HTML (HyperText Markup Language, 하이퍼텍스트 마크업 언어)이란?**\n\n**영어 약자 풀이:**\n- **H**ypertext: 하이퍼텍스트\n- **T**ext: 텍스트\n- **M**arkup: 마크업\n- "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q004",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text가 비정상적으로 짧음 (22자)",
+      "current_state": {
+        "question_text": "아래 코드에 대한 출력 값을 작성하시오.",
+        "length": 22
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q004",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**코드 실행 결과 분석 문제입니다.**\n\n**문제의 이미지를 참고하여 코드 실행 과정을 분석해야 합니다.**\n\n**일반적인 코드 실행 분석 방법:**\n1. 변수 초기화 상태 확인\n2. 반복문/조건문 실행 순서 추적\n3. 변수 값 변화 추적\n4. 출력문 위치와 순서 확인\n\n**답:** 문제의 이미지와 코드를 확인하여 정확한 출력값을 작성합니다. 답은 **\""
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 코드에 대한 출력 값을 작성하시오.\n첫번째 네트워크 주소가 192.168.1.0/24일때 FLSM 3개로 분할했을때 두번째 네트워크 브로드캐스드 IP를 10진수로 변환한 값을...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 설명에 대한 알맞는 답을 작성하시오.\n(     1     ) 은/는 보안학적 측면에서 기술적인 방법이 아닌 사람들간의 기본적인 신뢰를 기반으로 사람을 속여 비밀 정보를 획득...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q009",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text가 비정상적으로 짧음 (25자)",
+      "current_state": {
+        "question_text": "다음 파이썬 코드에 대한 출력값을 작성하시오.",
+        "length": 25
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q010",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **SIEM (Security Information and Event Management, 보안 정보 및 이벤트 관리)**에 대한 문제입니다.\n\n**SIEM (Security Information and Event Management)이란?**\n\n**영어 약자 풀이:**\n- **S**ecurity: 보안\n- **I**nformation: 정보\n-"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q011",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text가 비정상적으로 짧음 (28자)",
+      "current_state": {
+        "question_text": "다음 보기 중, 형상 관리 항목을 3가지 고르시오.",
+        "length": 28
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text가 비정상적으로 짧음 (22자)",
+      "current_state": {
+        "question_text": "다음 코드에 대한 출력 값을 작성하시오.",
+        "length": 22
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 프로그래밍 분야의 핵심 개념을 이해하는 문제입니다.\n\n**문제 해석 과정:**\n\n1. **문제 분석**: 문제에서 설명하는 내용을 정확히 파악합니다. 핵심 키워드와 특징을 찾습니다.\n\n2. **개념 확인**: 해당 개념의 정의, 작동 원리, 특징을 이해합니다. 정보처리기사 실기에서 자주 출제되는 표준 용어와 정의를 확인합니다.\n\n3. **보기 매"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q014",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 설명에 대하여 알맞는 답을 보기에서 고르시오.\n(기호식 보기가 있습니다. ex: CSRF 등)\n(   1   )은/는 프로세서(processor) 안에 독립적인 보안 구역을 ...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 설명에 대하여 알맞는 용어를 작성하시오.\n(       )은/는 여러 개의 사이트에서 한번의 로그인으로 여러가지 다른 사이트들을 자동적으로 접속하여 이용하는 방법을 말한다. ...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 운영체제 분야의 핵심 개념을 이해하는 문제입니다.\n\n**문제 해석 과정:**\n\n1. **문제 분석**: 문제에서 설명하는 내용을 정확히 파악합니다. 핵심 키워드와 특징을 찾습니다.\n\n2. **개념 확인**: 해당 개념의 정의, 작동 원리, 특징을 이해합니다. 정보처리기사 실기에서 자주 출제되는 표준 용어와 정의를 확인합니다.\n\n3. **보기 매칭"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 UML에 관한 설명이다.\n괄호 안에 알맞는 답을 작성하시오.\nUML은 통합 모델링 언어로써, 시스템을 모델로 표현해주는 대표적인 모델링 언어이다.\n구성 요소로는 사물, ( ...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 프로그래밍 분야의 핵심 개념을 이해하는 문제입니다.\n\n**문제 해석 과정:**\n\n1. **문제 분석**: 문제에서 설명하는 내용을 정확히 파악합니다. 핵심 키워드와 특징을 찾습니다.\n\n2. **개념 확인**: 해당 개념의 정의, 작동 원리, 특징을 이해합니다. 정보처리기사 실기에서 자주 출제되는 표준 용어와 정의를 확인합니다.\n\n3. **보기 매"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q018",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **E-R 다이어그램(Entity-Relationship Diagram)**의 구성 요소와 기호에 대한 문제입니다.\n\n**E-R 다이어그램이란?**\n- 데이터베이스 설계에서 **개념적 설계 단계**에서 사용하는 다이어그램\n- 엔티티(Entity), 속성(Attribute), 관계(Relationship)를 시각적으로 표현\n\n**문제에서 설명한 각"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text가 비정상적으로 짧음 (25자)",
+      "current_state": {
+        "question_text": "다음 자바 코드에 대한 출력 값을 작성하시오.",
+        "length": 25
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**Java 배열과 반복문 문제입니다.**\n\n**문제의 전체 코드:**\n\n```java\npublic class Main {\n    static int[] MakeArray(){\n        int[] tempArr = new int[4];\n        \n        for(int i=0; i<tempArr.Length; i++){\n           "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "question_text가 비정상적으로 짧음 (25자)",
+      "current_state": {
+        "question_text": "다음 자바 코드에 대한 출력 값을 작성하시오.",
+        "length": 25
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2022_round3.jsonl",
+      "doc_id": "2022_round3",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/494",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**Java 코드 실행 결과 분석 문제입니다.**\n\n**문제의 이미지를 참고하여 코드 실행 과정을 분석해야 합니다.**\n\n**일반적인 코드 실행 분석 방법:**\n1. 변수 선언 및 초기화 상태 확인\n2. 반복문/조건문 실행 순서 추적\n3. 변수 값 변화 추적\n4. 출력문 위치와 순서 확인\n\n**답:** 문제의 이미지와 코드를 확인하여 정확한 출력값을 작성합"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**SSH (Secure Shell, 시큐어 셸):**\n\n**영어 약자 풀이:**\n- **S**ecure: 보안의, 안전한\n- **S**hell: 셸 (명령 프롬프트)\n- **H** (없음, SSH는 두 단어)\n- **SSH = Secure Shell**\n\n**SSH의 정의:**\n- **원격 접속을 위한 보안 프로토콜**\n- 네트워크상의 다른 컴퓨터에 **"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 내용을 확인하여\n\n알맞는 답을 작성하시오....",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "question_text가 비정상적으로 짧음 (26자)",
+      "current_state": {
+        "question_text": "아래 내용을 확인하여\n\n알맞는 답을 작성하시오.",
+        "length": 26
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "악성코드는 그 특성에 따라 웜, 트로이 목마, 바이러스로 분류됩니다.\n\n**악성코드의 특징:**\n\n1. **웜(Worm):**\n- 자기 복제를 통해 네트워크로 확산\n- 다른 파일에 기생하지 않고 독립적으로 실행\n- 네트워크 취약점을 이용해 빠르게 전파\n- 예: Code Red, Nimda\n\n2. **트로이 목마(Trojan Horse):**\n- 정상 프로그"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 내용에서 괄호 안에 알맞는 용어를 작성하시오.\n​\n(    )  네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **SQL DELETE 문**을 작성하는 문제입니다.\n\n**DELETE 문의 기본 구조:**\n\n1. **FROM 절**: 조회할 테이블을 지정합니다. 여러 테이블이 나열되면 카티시안 곱(Cross Join)이 발생하며, JOIN 조건이 필요합니다.\n\n2. **JOIN 절**: 여러 테이블을 연결할 때 사용합니다.\n- INNER JOIN: 양쪽 테"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "question_text가 비정상적으로 짧음 (26자)",
+      "current_state": {
+        "question_text": "다음 파이썬 코드의 알맞는 출력값을 작성하시오.",
+        "length": 26
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**Python Set 연산 문제입니다.**\n\n**문제의 전체 코드:**\n\n```python\na = {'한국', '중국', '일본'}\na.add('베트남')\na.add('중국')\na.remove('일본')\na.update({'홀츠', '한국', '태국'})\nprint(a)\n```\n\n**코드 실행 과정:**\n\n1. **초기 Set 생성:**\n   ```pyt"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "question_text가 비정상적으로 짧음 (29자)",
+      "current_state": {
+        "question_text": "다음 JAVA 코드에서 알맞는 출력 값을 작성하시오.",
+        "length": 29
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**Java 추상 클래스, 메서드 오버로딩, 다형성을 묻는 문제입니다.**\n\n**이미지의 코드 분석:**\n\n```java\nabstract class Vehicle {\n    String name;\n    abstract public String getName(String val);\n    \n    public String getName() {\n       "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "question_text가 비정상적으로 짧음 (25자)",
+      "current_state": {
+        "question_text": "다음 자바 코드에 대한 출력 값을 작성하시오.",
+        "length": 25
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round1.jsonl",
+      "doc_id": "2023_round1",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/516",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**Java 코드 실행 결과 분석 문제입니다.**\n\n**문제의 이미지를 참고하여 코드 실행 과정을 분석해야 합니다.**\n\n**일반적인 코드 실행 분석 방법:**\n1. 변수 선언 및 초기화 상태 확인\n2. 반복문/조건문 실행 순서 추적\n3. 변수 값 변화 추적\n4. 출력문 위치와 순서 확인\n\n**답:** 문제의 이미지와 코드를 확인하여 정확한 출력값을 작성합"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "explanation_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q002",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설이 너무 짧음 (18자)",
+      "current_state": {
+        "explanation": "d = (m % 100) / 10",
+        "length": 18
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**주어진 코드:**\n```c\n#include <stdio.h>\nvoid main(){\n    int n[3] = {73, 95, 82};\n    int sum = 0;\n    for(int i=0; i<3; i++){\n        sum += n[i];\n    }\n    switch(sum/30){\n        case 10:\n        case "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "explanation_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설이 너무 짧음 (7자)",
+      "current_state": {
+        "explanation": "조건 커버리지",
+        "length": 7
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "question_text가 비정상적으로 짧음 (24자)",
+      "current_state": {
+        "question_text": "다음은 소스코드의 알맞은 출력을 작성하시오.",
+        "length": 24
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "question_text가 비정상적으로 짧음 (20자)",
+      "current_state": {
+        "question_text": "다음 내용에 알맞는 답을 작성하시오.",
+        "length": 20
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "템퍼프루핑(Tamper Proofing)은 소프트웨어나 시스템이 변조되지 않도록 보호하는 기술입니다.\n\n**템퍼프루핑의 특징:**\n- 소프트웨어 코드나 데이터가 무단으로 수정되는 것을 방지\n- 변조 시도를 감지하고 대응\n- 무결성 검증 기능 제공\n\n**답:** \"템퍼프루핑\""
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q009",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "question_text가 비정상적으로 짧음 (29자)",
+      "current_state": {
+        "question_text": "다음은 C언어 문제이다.\n알맞은 출력값을 작성하시오.",
+        "length": 29
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q009",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 스택(Stack) 자료구조를 구현하고 사용하는 문제입니다.\n\n**코드 분석:**\n\n```c void into(int num) {\nif (point >= 10) printf(\"Full\");\nelse isWhat[++point] = num; // push (전위 증가)\n}\n\nint take() {\nif (isEmpty() == 1) print"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "explanation_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q010",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설이 너무 짧음 (9자)",
+      "current_state": {
+        "explanation": "물리적 설계 구현",
+        "length": 9
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "explanation_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q012",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설이 너무 짧음 (16자)",
+      "current_state": {
+        "explanation": "4. parity 5. CRC",
+        "length": 16
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "explanation_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설이 너무 짧음 (9자)",
+      "current_state": {
+        "explanation": "4. ㅊ 5. ㅋ",
+        "length": 9
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **HDLC (High-Level Data Link Control) 프로토콜**의 프레임 타입과 모드에 대한 문제입니다.\n\n**HDLC 프레임 타입:**\n\n1. **정보 프레임 (Information Frame, ㄷ)**:\n   - **첫 번째 비트**: `0`\n   - **필드**: Seq (송신용 순서번호), Next (응답용 순서번호), P"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "explanation_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q014",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설이 너무 짧음 (4자)",
+      "current_state": {
+        "explanation": "true",
+        "length": 4
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q014",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**Java 코드 실행 결과 분석 문제입니다.**\n\n**문제의 이미지를 참고하여 코드 실행 과정을 분석해야 합니다.**\n\n**일반적인 코드 실행 분석 방법:**\n1. 변수 선언 및 초기화 상태 확인\n2. 반복문/조건문 실행 순서 추적\n3. 변수 값 변화 추적\n4. 출력문 위치와 순서 확인\n\n**답:** 문제의 이미지와 코드를 확인하여 정확한 출력값을 작성합"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "암호화 알고리즘은 키 사용 방식에 따라 대칭키와 비대칭키로 분류됩니다.\n\n**대칭키 암호화 (Symmetric Key Cryptography):**\n- 암호화와 복호화에 **같은 키** 사용\n- 빠른 속도, 대용량 데이터 처리 적합\n- 키 배포 문제 존재\n\n**대칭키 알고리즘:**\n- **DES (Data Encryption Standard)**: 56비트"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "explanation_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설이 너무 짧음 (10자)",
+      "current_state": {
+        "explanation": "또는 해싱 hash",
+        "length": 10
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "question_text가 비정상적으로 짧음 (22자)",
+      "current_state": {
+        "question_text": "다음 괄호 안에 알맞는 답을 작성하시오.",
+        "length": 22
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **해시(Hash)** 또는 **해싱(Hashing)**에 대한 문제입니다. 문제의 설명을 확인하여 정확한 답을 작성해야 합니다.\n\n**해시(Hash)란?**\n\n**정의:**\n- 데이터를 **고정된 길이의 값(해시 값)**으로 변환하는 함수\n- **해시 함수(Hash Function)**: 입력 데이터를 해시 값으로 변환하는 함수\n- **해싱(H"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q018",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "선택 정렬(Selection Sort)은 오름차순 정렬 시 최소값을 찾아 앞으로 이동시키는 알고리즘입니다.\n\n**선택 정렬 알고리즘:**\n1. 배열에서 최소값 찾기 2. 최소값을 첫 번째 위치와 교환 3. 남은 부분에서 최소값 찾기 4. 두 번째 위치와 교환 5. 반복...\n\n**오름차순 정렬:**\n- 작은 값부터 앞으로 이동\n- 비교 연산자: **\">\"*"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "question_text가 비정상적으로 짧음 (27자)",
+      "current_state": {
+        "question_text": "다음 파이썬 코드에서 알맞는 출력값을 작성하시오.",
+        "length": 27
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **Python 코드의 실행 결과**를 구하는 문제입니다. 문제의 이미지를 참고하여 코드 실행 과정을 분석해야 합니다.\n\n**문제 해결 방법:**\n\n이 문제는 Python 코드의 실행 흐름을 추적하여 출력값을 구하는 문제입니다. 코드의 실제 내용(변수, 문자열 조작, 리스트 메서드, 반복문 등)을 확인하고, 각 단계별로 변수 값의 변화를 추적하여"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "question_text가 비정상적으로 짧음 (23자)",
+      "current_state": {
+        "question_text": "다음 설명에 대한 알맞는 답을 작성하시오.",
+        "length": 23
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round2.jsonl",
+      "doc_id": "2023_round2",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/528",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "스텁(Stub)과 드라이버(Driver)는 소프트웨어 테스트에서 사용하는 더미 모듈입니다.\n\n**스텁(Stub):**\n- 하향식 통합 테스트에서 사용\n- 상위 모듈이 호출하는 하위 모듈을 대체\n- 하위 모듈이 아직 구현되지 않았을 때 사용\n- 상위 모듈 테스트를 위해 간단한 결과만 반환\n\n**드라이버(Driver):**\n- 상향식 통합 테스트에서 사용\n- "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q002",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **OAuth (Open Authorization)**에 대한 문제입니다.\n\n**OAuth란?**\n\n**정의:**\n- **OAuth (Open Authorization)**: 제3자 애플리케이션에 사용자 리소스 접근 권한을 안전하게 부여하는 **인증 및 권한 부여 프로토콜**\n- 사용자가 비밀번호를 공유하지 않고도 다른 서비스에 자신의 계정 정보"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**관계 대수 UNION 연산:**\n\n**UNION 연산의 정의:**\n- 두 릴레이션을 **합집합**하는 연산\n- 두 릴레이션의 **모든 튜플을 합치고 중복을 제거**\n- 기호: `∪` 또는 `UNION`\n\n**UNION 연산의 조건:**\n- **차수(Degree) 동일**: 두 릴레이션의 속성 개수가 같아야 함\n- **도메인 호환**: 대응되는 속성의 도"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **서버 접근 통제(Access Control)** 유형을 묻는 문제입니다.\n\n**접근 통제 유형:**\n\n1. **MAC (Mandatory Access Control) - 강제적 접근 통제**\n- 미리 정해진 정책과 보안 등급에 따라 접근을 통제합니다.\n- 시스템 관리자가 접근 권한을 결정합니다.\n\n2. **RBAC (Role-Based Acc"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "question_text가 비정상적으로 짧음 (26자)",
+      "current_state": {
+        "question_text": "다음 C언어 코드에 알맞는 출력값을 작성하시오.",
+        "length": 26
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 **팩토리얼(Factorial)**을 계산하는 재귀 함수 문제입니다.\n\n**팩토리얼이란?**\nn! = n × (n-1) × (n-2) × ... × 2 × 1\n\n**코드 실행 단계:**\n\n```c f(7) = 7 * f(6)\n= 7 * 6 * f(5)\n= 7 * 6 * 5 * f(4)\n= 7 * 6 * 5 * 4 * f(3)\n= 7 * 6"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q009",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 네트워크 프로토콜 중 **ATM (Asynchronous Transfer Mode)**에 대한 문제입니다.\n\n**ATM (Asynchronous Transfer Mode):**\n- 비동기 전송 방식으로, 데이터를 고정 크기의 셀(cell) 단위로 전송합니다.\n- 셀 크기는 53바이트입니다 (48바이트 데이터 + 5바이트 헤더).\n- 고속 데이터 "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q010",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**C언어 포인터와 문자열 출력 문제입니다.**\n\n**문제의 코드:**\n\n```c\nchar* p = \"KOREA\";\nprintf(\"%s\\n\", p);        // 1번 출력\nprintf(\"%s\\n\", p+1);     // 2번 출력\nprintf(\"%c\\n\", *p);      // 3번 출력\nprintf(\"%c\\n\", *(p+3));  // 4번 출"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q011",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**Java 재귀 함수와 메서드 오버라이딩 문제입니다.**\n\n**문제의 코드:**\n\n```java\nclass Parent {\n    int compute(int num) {\n        if(num <= 1) return num;\n        return compute(num-1) + compute(num-2);  // 피보나치 패턴\n    }\n}\n\nc"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q012",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "**NAT (Network Address Translation) 기술 문제입니다.**\n\n**NAT의 정의:**\n- 외부의 공인 IP 주소와 포트를 내부의 사설 IP 주소로 변환하는 기술\n- 라우터나 방화벽에서 구현됨\n- 여러 내부 네트워크가 하나의 공인 IP를 공유할 수 있게 함\n\n**NAT의 주요 특징:**\n1. **주소 변환**: 공인 IP ↔ 사설 I"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "**Java 컴파일 에러 탐지 문제입니다.**\n\n**문제의 코드:**\n\n```java\nclass Person {\n    private String name;                    // 2번 라인: 인스턴스 변수\n    public Person(String val) {            // 3번 라인: 생성자\n        name = val"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "**UML 패키지 다이어그램 (Package Diagram):**\n\n**패키지 다이어그램의 정의:**\n- 관련된 클래스나 모듈을 **패키지로 그룹화**하여 표현하는 UML 다이어그램\n- 패키지 간의 **의존 관계**를 보여줌\n- 모듈화와 재사용성을 나타냄\n\n**패키지 다이어그램의 특징:**\n- **그룹화**: 관련된 클래스들을 패키지로 묶어 표현\n- **의"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "question_text가 비정상적으로 짧음 (28자)",
+      "current_state": {
+        "question_text": "다음 설명에 알맞는 답을 보기에서 골라 작성하시오.",
+        "length": 28
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**Equivalence Partitioning (동등 분할) 테스트 기법 문제입니다.**\n\n**Equivalence Partitioning (동등 분할)의 정의:**\n- 입력 데이터를 **동등한(equivalent) 그룹으로 분할**하여 각 그룹에서 **대표값 하나씩만 테스트**하는 기법\n- **EP (Equivalence Partitioning)**라고"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **클라우드 컴퓨팅 서비스 모델**을 묻는 문제입니다.\n\n**클라우드 서비스 모델:**\n\n1. **IaaS (Infrastructure as a Service) - 인프라 서비스**\n- 가상화된 하드웨어 자원(서버, 스토리지, 네트워크)을 제공\n- 사용자가 OS, 미들웨어, 애플리케이션을 직접 관리\n- 예: AWS EC2, Google Compu"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q018",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 라우팅 프로토콜 중 **RIP (Routing Information Protocol)**에 대한 문제입니다.\n\n**RIP (Routing Information Protocol)란?**\n- 거리 벡터(Distance Vector) 라우팅 프로토콜입니다.\n- 홉(hop) 수를 거리로 사용하여 최단 경로를 결정합니다.\n- 30초마다 라우팅 정보를 주기"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **관계 대수(Relational Algebra)의 연산 기호**를 묻는 문제입니다.\n\n**관계 대수 연산 기호:**\n\n1. **JOIN (조인) - (1) ㄷ**:\n   - 기호: `⋈` (보울 기호)\n   - 두 릴레이션을 조건에 따라 결합\n   - **Theta JOIN (θ-JOIN)**: `R ⋈_θ S`\n   - **EQUI JOIN*"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2023_round3.jsonl",
+      "doc_id": "2023_round3",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/538",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **데이터베이스 무결성 제약조건 중 참조 무결성(Referential Integrity)**에 대한 문제입니다.\n\n**참조 무결성(Referential Integrity)이란?**\n\n**정의:**\n- **외래키(Foreign Key)**가 참조하는 **기본키(Primary Key)**가 존재해야 하는 제약조건\n- 한 릴레이션의 외래키가 다른 릴레"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text가 비정상적으로 짧음 (29자)",
+      "current_state": {
+        "question_text": "다음 Java 코드에서 알맞는 출력 값을 작성하시오.",
+        "length": 29
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static pub"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q002",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text가 비정상적으로 짧음 (28자)",
+      "current_state": {
+        "question_text": "다음 C언어 코드에서 알맞는 출력 값을 작성하시오.",
+        "length": 28
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q002",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 삼항 연산자와 비트 시프트 연산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c int v1 = 0, v2 = 35, v3 = 29;\nif(v1 > v2 ? v2 : v1) {\nv2 = v2 << 2;\n} else {\nv3 = v3 << 2;\n}\nprintf(\"%d\", v2+v3);\n```\n\n**실행 과정:**\n\n1. **초기값:*"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q004",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 문자열을 역순으로 뒤집고 홀수 인덱스 문자를 출력하는 문제입니다.\n\n**코드 분석:**\n\n```c char str[100] = \"ABCDEFGH\";\nreverse(str); // 문자열 역순\n// 역순 후: \"HGFEDCBA\"\nfor(int i=1; i<len; i+=2) {\nprintf(\"%c\", str[i]); // 홀수 인덱스만 출력"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text가 비정상적으로 짧음 (26자)",
+      "current_state": {
+        "question_text": "아래 표에서 나타나고 있는 정규형을 작성하시오.",
+        "length": 26
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **데이터베이스 정규화의 제3정규형(3NF)**을 판별하는 문제입니다.\n\n**주어진 표 분석:**\n\n표 구조: (고객아이디, 강좌명, 강사번호)\n\n**정규형 판별 과정:**\n\n1. **제1정규형(1NF) 확인:**\n   - 모든 속성이 원자값(더 이상 분할 불가) ✓\n   - 중복 튜플 없음 ✓\n   - **1NF 만족**\n\n2. **제2정규형("
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래의 내용에서 설명하는 네트워크 용어를 영문 약자로 작성하시오....",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static pub"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 내용의 각각의 설명에 대한 답을 작성하시오.\n\n(1) 조인에 참여하는 두 릴레이션의 속성 값을 비교하여 조건을 만족하는 튜플만 반환한다.\n(2) 조건이 정확하게 '=' 등호로...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q009",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 65점",
+      "current_state": {
+        "quality_score": 65,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 운영체제의 페이지 교체 알고리즘인 LRU와 LFU를 이해하는 문제입니다.\n\n**주어진 정보:**\n- 할당된 프레임 수: 3개\n- 페이지 참조 순서: 1, 2, 3, 1, 2, 4, 1, 2, 5, 7\n\n**LRU (Least Recently Used) - 가장 최근에 사용되지 않은 페이지 교체:**초기 상태:** [빈, 빈, 빈]\n\n| 참조 | "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q011",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text가 비정상적으로 짧음 (23자)",
+      "current_state": {
+        "question_text": "다음 C언어의 알맞는 출력값을 작성하시오.",
+        "length": 23
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**SQL 서브쿼리와 IN 연산자 문제입니다.**\n\n**이미지의 SQL 쿼리:**\n\n```sql\nSELECT B\nFROM R1\nWHERE C IN (SELECT C FROM R2 WHERE D=\"k\");\n```\n\n**이미지의 테이블 데이터:**\n\n**R1 테이블:**\n| A | B | C |\n|---|---|---|\n| 1 | a | x |\n| 2 | b "
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q014",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래는 애플리케이션 테스트 관리에 대한 내용이다.\n설명하는 답을 보기에서 골라 작성하시오....",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q014",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 65점",
+      "current_state": {
+        "quality_score": 65,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 소프트웨어 테스트의 커버리지 종류를 이해하는 문제입니다.\n\n**문제에서 설명하는 특징:**\n\n1. **\"모든 분기와 조건의 조합을 고려하나 모든 조합을 테스트하는 대신에 테스트가 필요한 중요한 조합을 찾아내는데에 중점을 둔다\"**\n- 모든 가능한 조건 조합을 테스트하지 않고, 의미 있는 조합만 선택합니다.\n\n2. **\"특정 조건을 수행할 때 다른"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static pub"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음 아래 내용을 보고\n\n보기에서 알맞는 용어를 골라 작성하시오.\n인터넷 공격자의 존재를 숨기면서 이 공격자에게 시스템에 대한 무제한 접근 권한을 부여하는 악성 프로그램이다.\n해커...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **Java 상속과 메서드 오버라이딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nclass classOne {\n    int a, b;\n    public classOne(int a, int b) {\n        this.a = a;\n        this.b = b;\n    }\n    public void print() "
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음 아래 내용을 보고\n\n보기에서 알맞는 용어를 골라 작성하시오....",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **APT (Advanced Persistent Threat, 지능형 지속 위협)**에 대한 문제입니다.\n\n**APT (Advanced Persistent Threat)란?**\n\n**정의:**\n- **APT (Advanced Persistent Threat, 지능형 지속 위협)**: 특정 표적을 정하여 지속적으로 정보를 수집하고 장기간에 걸쳐 공"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 Java 코드는 싱글톤(Singleton) 디자인 패턴과 인스턴스 변수 공유를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java class Connection {\nprivate static Connection _inst = null; // 클래스 변수(static)\nprivate int count = 0; // 인스턴스 변수 static pub"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "question_too_short",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text가 비정상적으로 짧음 (27자)",
+      "current_state": {
+        "question_text": "다음 C언어 코드의 알맞는 출력 값을 작성하시오.",
+        "length": 27
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round1.jsonl",
+      "doc_id": "2024_round1",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/546",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음 아래의 내용을 보고\n\n알맞는 용어를 작성하시오.\n구체적인 클래스에 의존하지 않고 서로 연관되거나 의존적인 객체들의 조합을 만드는 인터페이스를 제공하는 패턴이다.\n연관성이 있는...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "**Java 배열 참조 비교 문제입니다.**\n\n**이미지의 전체 코드:**\n\n```java\nclass Main {\n    public static void main(String[] args) {\n        int[] a = new int[]{1, 2, 3, 4};\n        int[] b = new int[]{1, 2, 3, 4};\n        i"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 SQL에 관한 문제이다.\n아래 SQL 구문의 빈칸을 작성하시오.\n사원 [사원번호(PK), 이름, 나이, 부서]\n부서 [사원번호(PK), 이름, 주소, 나이]\n신입 사원이 들...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 2,
+      "issue_type": "choices_missing",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "객관식 문제로 보이나 choices 배열이 비어있음",
+      "current_state": {
+        "question_text": "다음은 SQL에 관한 문제이다.\n아래 SQL 구문의 빈칸을 작성하시오.\n사원 [사원번호(PK), 이름, 나이, 부서]\n부서 [사원번호(PK), 이름, 주소, 나이]\n신입 사원이 들...",
+        "choices": []
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 65점",
+      "current_state": {
+        "quality_score": 65,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 **SQL 문법의 기본 키워드**를 묻는 문제입니다.\n\n**각 SQL 문의 빈칸 분석:**\n\n1. **① INSERT 문 - VALUES:**\n```sql\nINSERT INTO 사원 (사원번호, 이름, 주소, 부서) VALUES (32431, '정실기', '서울', '영업');\n```\n- `INSERT INTO` 문에서 **직접 값을 삽입**할 "
+      }
+    },
+    {
+      "priority": 2,
+      "issue_type": "choices_missing",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q004",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "객관식 문제로 보이나 choices 배열이 비어있음",
+      "current_state": {
+        "question_text": "다음 릴레이션의 Cardinality와 Degree를 작성하시오.\nCardinality : (\n\n①  )\nDegree\n: (  ②  )...",
+        "choices": []
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 프로토콜에 대한 내용이다.\n아래 내용을 읽고 알맞는 답을 작성하시오.\n\n- Network layer에서 IP패킷을 암호화하고 인증하는 등의 보안을 위한 표준이다.\n\n- 기업...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "IPSec(IP Security)는 네트워크 계층에서 IP 패킷을 암호화하고 인증하는 보안 프로토콜입니다.\n\n**문제에서 설명하는 각 특징:**\n\n1. **\"Network layer에서 IP패킷을 암호화하고 인증하는 등의 보안을 위한 표준이다\"**\n- IPSec은 OSI 7계층 중 3계층(네트워크 계층)에서 동작합니다.\n- IP 패킷 자체를 암호화하여 데이"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 파이썬 코드는 문자열에서 패턴의 출현 횟수를 세는 문제입니다.\n\n**코드 분석:**\n\n```python def fnCalculation(x, y):\nresult = 0 for i in range(len(x)):\ntemp = x[i:i+len(y)] # x에서 길이 len(y)만큼 슬라이싱 if temp == y:\nresult += 1 return res"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 설명하는 내용을 확인하여\n\n알맞는 알고리즘을 작성하시오.\n\n- 대칭키 알고리즘으로 1997년 NIST(미국 국립기술표준원)에서 DES를 대체하기 위해 생성되었다.\n\n- 128...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "AES(Advanced Encryption Standard)는 고급 암호화 표준으로 대칭키 암호 알고리즘입니다.\n\n**문제에서 설명하는 각 특징:**\n\n1. **\"대칭키 알고리즘으로 1997년 NIST(미국 국립기술표준원)에서 DES를 대체하기 위해 생성되었다\"**\n- AES는 대칭키 암호 알고리즘입니다 (같은 키로 암호화/복호화).\n- 1997년 NIST"
+      }
+    },
+    {
+      "priority": 2,
+      "issue_type": "choices_missing",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "객관식 문제로 보이나 choices 배열이 비어있음",
+      "current_state": {
+        "question_text": "패킷 교환 방식 중에 연결형과 비연결형에 해당하는 방식을 작성하시오.\n\n① 연결형 교환 방식\n② 비연결형 교환 방식...",
+        "choices": []
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q009",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 내용을 확인하고 보기에서 알맞는 답을 고르시오.\n실행 순서가 밀접한 관계를 갖는 기능을 모아 모듈로 구성한다.\n한 모듈 내부의 한 기능 요소에 의한 출력 자료가 다음 기능 원...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 포인터 배열과 포인터 연산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c int arr[3][3] = {1, 2, 3, 4, 5, 6, 7, 8, 9};\nint* parr[2] = {arr[1], arr[2]};\nprintf(\"%d\", parr[1][1] + *(parr[1]+2) + **parr);\n```\n\n**메모리 레이아웃:"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q014",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Java 코드를 분석하여 홀수 합과 짝수 합을 계산하는 문제입니다.\n\n**코드 분석:**\n\n```java\nint a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};\nODDNumber OE = new ODDNumber();\nSystem.out.print(OE.sum(a, true) + \", \" + OE.sum(a, false));\n\nint"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 문자열 복사 함수와 인덱스 합 계산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c void sumFn(char* d, const char* s) {\nwhile (*s) {\n*d = *s;\nd++;\ns++;\n}\n*d = '\\0';\n}\n```\n\n**실행 과정:**\n\n1. **초기값:**\n```c const char* str1 = \"f"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래는 소프트웨어 설계에 대한 내용이다.\n내용을 읽고 괄호 안에 알맞는 답을 작성하시오.\n\n- 어떤 모듈이 다른 모듈 내부의 논리적인 흐름을 제어하기 위해, 제어를 통신하거나 제어...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Java 코드는 재귀 함수를 사용하여 문자열에서 뒤에서부터 중복을 제거하는 알고리즘입니다.\n\n**코드 분석:**\n\n```java\nString str = \"abacabcd\";\nboolean[] seen = new boolean[256];\nSystem.out.print(calculFn(str, str.length()-1, seen));\n\npublic "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q018",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 함수 파라미터의 값 전달과 switch 문의 fall-through를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c void swap(int a, int b) {\nint = a;\na = b;\nb = t;\n}\n```\n\n**실행 과정:**\n\n1. **초기값:**\n```c int a = 11;\nint b = 19;\n```\n\n2. **`s"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 구조체 포인터와 연결 리스트를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c struct node {\nint n1;\nstruct node *n2;\n};\n\nstruct node a = {10, NULL};\nstruct node b = {20, NULL};\nstruct node c = {30, NULL};\nstruct node *hea"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round2.jsonl",
+      "doc_id": "2024_round2",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/552",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Java 코드는 String의 split() 메서드를 사용하여 문자열을 분할하는 문제입니다.\n\n**코드 분석:**\n\n```java\nString str = \"ITISTESTSTRING\";\nString[] result = str.split(\"T\");\nSystem.out.print(result[3]);\n```\n\n**String.split() 메서드:**"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Java 코드는 String의 equals() 메서드를 사용하여 내용을 비교하는 문제입니다.\n\n**코드 분석:**\n\n```java\nstatic String[] s = new String[3];\ns[0] = \"A\";\ns[1] = \"A\";\ns[2] = new String(\"A\");\nfunc(s, 3);\n\nstatic void func(String[] "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q002",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 파이썬 코드는 리스트를 역순으로 뒤집고 짝수 인덱스와 홀수 인덱스의 합 차이를 계산하는 문제입니다.\n\n**코드 분석:**\n\n```python def func(lst):\nfor i in range(len(lst) // 2):\nlst[i], lst[-i-1] = lst[-i-1], lst[i] # 리스트 역순\n\nlst = [1, 2, 3, 4, 5, 6]\n"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **중첩 서브쿼리와 JOIN**을 이해하는 SQL 문제입니다.\n\n**SQL 쿼리 분석:**\n\n```sql\nSELECT count(*) \nFROM employee AS e JOIN project AS p ON e.project_id = p.project_id \nWHERE p.name IN (\n    SELECT name FROM project p "
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 네트워크 취약점에 대한 문제이다.\n아래 내용을 보고\n\n알맞는 용어를 작성하시오.\n\n- IP나 ICMP의 특성을 악용하여 엄청난 양의 데이터를 한 사이트에 집중적으로 보냄으로...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "스머프(Smurf) 공격은 IP와 ICMP의 특성을 악용한 DDoS 공격입니다.\n\n**문제에서 설명하는 각 특징:**\n\n1. **\"IP나 ICMP의 특성을 악용하여 엄청난 양의 데이터를 한 사이트에 집중적으로 보냄으로써 네트워크의 일부를 불능 상태로 만드는 공격이다\"**\n- 스머프 공격은 IP 브로드캐스트 주소를 악용합니다.\n- 공격자는 피해자의 IP 주소"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 static 변수의 특성을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c int func() {\nstatic int x = 0; // static 변수 (초기화는 한 번만!)\nx += 2;\nreturn x;\n}\n\nint main() {\nint x = 1; // 지역 변수 (func의 x와 별개)\nint sum = 0;\nfor(int"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q010",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 파이썬 코드는 `type()` 함수를 사용한 타입 체크를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```python def func(value):\nif type(value) == type(100): # int 타입 체크 return 100 elif type(value) == type(\"\"): # str 타입 체크 return len(value)\nel"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q011",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Java 코드는 상속에서 필드 숨김과 메서드 오버라이딩의 차이를 보여주는 문제입니다.\n\n**코드 분석:**\n\n```java\nBase a = new Derivate();\nDerivate b = new Derivate();\nSystem.out.print(a.getX() + a.x + b.getX() + b.x);\n\nclass Base {\n    int"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q012",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 연결 리스트에서 인접한 노드 쌍의 값을 교환하는 문제입니다.\n\n**코드 분석:**\n\n```c void func(struct Node* node) {\nwhile(node != NULL && node->next != NULL) {\nint = node->value;\nnode->value = node->next->value;\nnode->next-"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 테스트 커버리지에 대한 문제이다.\n아래 내용에 알맞는 답을 보기에서 골라 작성하시오.\n\n1. 테스트를 통해 프로그램의 모든 문장을 최소한 번씩 실행했는지를 측정\n\n2. 프로...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 데이터베이스에 관한 문제이다.\n아래 내용을 읽고 알맞는 답을 보기에서 찾아 골라 작성하시오.\n\n(1) 다른 테이블, 릴레이션의 기본 키를 참조하는 속성 또는 속성들의 집합\n...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "이 문제는 데이터베이스 분야의 개념을 이해하는 문제입니다.\n\n**문제에서 설명하는 내용:**\n\n다음은 데이터베이스에 관한 문제이다.\n아래 내용을 읽고 알맞는 답을 보기에서 찾아 골라 작성하시오.\n\n(1) 다른 테이블, 릴레이션의 기본 키를 참조하는 속성 또는 속성들의 집합\n(2) 테이블에서 각 행을 유일하게 식별할 수 있는 최소한의 속성들의 집합\n(3) 후"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 이중 포인터와 배열 연산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c void func(int** arr, int size) {\nfor(int i=0; i<size; i++) {\n*(*arr + i) = (*(*arr+i) + i) % size;\n}\n}\n\nint main() {\nint arr[] = {3, 1, 4, 1, 5};"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음 아래 내용을 보고\n\n알맞는 용어를 작성하시오.\n\n(3글자로 작성)\n\n- 공용 네트워크를 통해 사설 네트워크를 확장하는 기술이다.\n\n- 사용자의 IP 주소를 숨기고, 사용자가 ...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 70점",
+      "current_state": {
+        "quality_score": 70,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "VPN(Virtual Private Network)은 공용 네트워크를 통해 사설 네트워크를 확장하는 기술입니다.\n\n**문제에서 설명하는 각 특징:**\n\n1. **\"공용 네트워크를 통해 사설 네트워크를 확장하는 기술이다\"**\n- 인터넷 같은 공용 네트워크 위에 가상의 사설 네트워크를 구축합니다.\n- 물리적으로 멀리 떨어진 네트워크를 하나의 사설망처럼 사용할 "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q018",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 Java 코드는 예외 처리 메커니즘과 finally 블록의 실행 순서를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java public static void main(String[] args) {\nint sum = 0;\ntry {\nfunc(); // NullPointerException 발생\n} catch (NullPointerException "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q019",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Java 코드는 제네릭 타입 소거(Type Erasure)로 인한 메서드 오버로딩 해석 문제입니다.\n\n**코드 분석:**\n\n```java\nnew Collection<>(0).print();\n\nclass Collection<T> {\n    T value;\n    public Collection(T t) {\n        value = t;\n    }"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 네트워크에 대한 문제이다.\n아래 내용을 보고\n\n알맞는 용어를 작성하시오.\n\n- 중앙 관리나 고정된 인프라 없이 임시로 구성되는 네트워크이다.\n\n- 일반적으로 무선 통신을 통...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2024_round3.jsonl",
+      "doc_id": "2024_round3",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/553",
+      "description": "해설 품질 점수: 65점",
+      "current_state": {
+        "quality_score": 65,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "Ad-hoc Network(애드혹 네트워크)는 중앙 관리나 고정된 인프라 없이 임시로 구성되는 네트워크입니다.\n\n**문제에서 설명하는 각 특징:**\n\n1. **\"중앙 관리나 고정된 인프라 없이 임시로 구성되는 네트워크이다\"**\n- 중앙 서버나 라우터 없이 노드들이 직접 통신합니다.\n- 인프라가 필요 없어 빠르게 구성 가능합니다.\n- 동적으로 네트워크를 형성"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래의 내용에서 설명 글의 괄호안의 용어를 영문 약자로 작성하시오.\n(        ) 은/는 3글자의 영어 약자로 이루어진 오류 기법으로 데이터를 전송하거나 저장할 때 데이터의 ...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q004",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 악성코드 관련된 문제이다.\n아래 내용을 확인하여\n\n보기에 골라 작성하시오.\n사용자가 원치 않는 소프트웨어를 구매하도록 조작하기 위해 사회 공학을 사용하여 충격, 불안 또는 ...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q004",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "해설 품질 점수: 65점",
+      "current_state": {
+        "quality_score": 65,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "구체적인 설명 부족"
+        ],
+        "explanation_preview": "스캐어웨어(Scareware)는 사용자를 속여 돈을 지불하거나 소프트웨어를 구매하도록 조작하는 악성 소프트웨어입니다.\n\n**문제에서 설명하는 각 특징:**\n\n1. **\"사용자가 원치 않는 소프트웨어를 구매하도록 조작하기 위해 사회 공학을 사용하여 충격, 불안 또는 위협에 대한 인식을 유발\"**\n- 스캐어웨어는 사용자의 두려움(scare)을 이용합니다.\n- "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 Java 코드는 예외 처리 메커니즘(try-catch-finally)을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java int a = 5, b = 0;\ntry {\nSystem.out.print(a/b); // 5 / 0 → ArithmeticException 발생!\n} catch(ArithmeticException e) {\nSystem.out"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래 내용은 ARP/RARP에 대한 설명이다. 각 설명에 해당하는 것을 작성하시오.\n\n(1) 은/는 네트워크상에서 IP 주소를 MAC 주소로 변환하는 프로토콜이고,\n( 2 ) 은/...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "아래는 데이터베이스에 관련된 설명이다.\n알맞는 용어를 보기에서 골라 괄호를 작성하시오.\n\n1. 릴레이션에서 속성의 개수를 의미 : ( 1 )\n\n2. 릴레이션에서 튜플의 개수를 의미...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q010",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 문자 배열에 문자를 삽입하는 알고리즘을 구현한 문제입니다.\n\n**코드 실행 단계:**\n\n1. **초기 상태:**\n```c char Data[5] = {'B', 'A', 'D', 'E'};\nchar c = 'C';\n```\n- 배열: `Data[0]='B', Data[1]='A', Data[2]='D', Data[3]='E', Data[4]="
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q011",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 2차원 배열을 동적으로 할당하고 데이터를 배치한 후 합을 계산하는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **2차원 배열 동적 할당:**\n```c int rows = 3, cols = 3;\nint data[] = {5, 2, 7, 4, 1, 8, 3, 6, 9};\n```\n- 3×3 배열을 동적으로 할당합니다.\n- data 배열: {"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q013",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **Java 상속, 정적 변수, 메서드 오버라이딩, 생성자 호출 순서**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nnew Child();\nSystem.out.println(Parent.total);\n\nclass Parent {\n    static int total = 0;  // 정적 변수 (클래스 변수)\n    int v ="
+      }
+    },
+    {
+      "priority": 2,
+      "issue_type": "choices_missing",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q001",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "객관식 문제로 보이나 choices 배열이 비어있음",
+      "current_state": {
+        "question_text": "(\n\n①    )\n\n2. (    ②    )\n\n3. (    ③    )\n\n4. (    ④    )    5. (    ⑤    )  6. (    ⑥    )\n문장 커버리지 ...",
+        "choices": []
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **Java 재귀 함수와 분할 정복**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nint[] data = {3, 5, 8, 12, 17};\nSystem.out.println(func(data, 0, data.length - 1));\n\nstatic int func(int[] a, int st, int end) {\n    if (s"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Python 코드는 이진 트리를 구성하고 홀수 레벨의 노드 값만 합산하는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **트리 구성:**\n```python\nli = [3, 5, 8, 12, 15, 18, 21]\nroot = tree(li)\n```\n- `tree()` 함수는 리스트를 이진 트리로 변환합니다.\n- `nodes[(i - 1) // 2]"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q018",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 연결 리스트에 노드를 삽입하고 특정 값을 가진 노드를 맨 앞으로 이동시키는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **insert() 함수로 리스트 생성:**\n```c for (int i = 1; i <= 5; i++)\nhead = insert(head, i);\n```\n- `insert()`는 새 노드를 리스트의 맨 앞에 추가합니다"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round1.jsonl",
+      "doc_id": "2025_round1",
+      "q_no": "Q020",
+      "tistory_url": "https://chobopark.tistory.com/554",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Java 코드는 메서드 오버로딩과 재귀 함수를 결합한 문제입니다.\n\n**코드 분석:**\n\n```java\npublic static void main(String[] args) {\n    System.out.println(calc(\"5\"));\n}\n\nstatic int calc(int value) {\n    if (value <= 1) return va"
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q003",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 정보보안 관련 문제이다.\n아래 내용을 보고\n\n알맞는 단어를 작성하시오.\n원격 접속과 관련된 보안 프로토콜이며 암호화된 통신을 제공하는 보안 접속용 프로토콜이다\n.\n공개키 기...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q005",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Java 코드는 배열 참조 전달과 String 파라미터 전달의 차이를 보여주는 문제입니다.\n\n**코드 분석:**\n\n```java\nString data[] = { \"A\" };\nString s = \"B\";\nchange(data, s);\nSystem.out.print(data[0] + s);\n\npublic static void change(String["
+      }
+    },
+    {
+      "priority": 2,
+      "issue_type": "choices_missing",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q006",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "객관식 문제로 보이나 choices 배열이 비어있음",
+      "current_state": {
+        "question_text": "다음은 IP 주소와 서브넷 마스크에 관한 문제이다.\n주어진 정보를 참고하여\n\n괄호 안에 들어갈 알맞은 값을 쓰시오\n.\n호스트의 IP 주소가 223.13.234.132 이고 서브넷 ...",
+        "choices": []
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q007",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 디자인 패턴에 관한 문제이다.\n아래 내용을 보고\n\n알맞는 단어를 작성하시오.\n어떤 객체에 대한 접근을 제어하거나 추가적인 기능을 부여하기 위해 해당 객체의 대리 객체를 사용...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 1,
+      "issue_type": "image_missing",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q008",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "question_text에 이미지 관련 키워드가 있으나 image_refs와 code_blocks가 비어있음",
+      "current_state": {
+        "question_text": "다음은 웹 데이터 교환 방식에 관한 문제이다.\n아래 설명을 읽고 괄호 안에 들어갈 알맞은 용어를 작성하시오\n.\n(\n)\n은\n/\n는 웹 페이지 전체를 다시 불러오지 않고 JavaScr...",
+        "image_refs": [],
+        "code_blocks_count": 0
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q009",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이미지의 Java 코드는 람다 표현식으로 함수형 인터페이스를 구현하고 예외 처리하는 문제입니다.\n\n**코드 분석:**\n\n```java\nstatic interface F {\n    int apply(int x) throws Exception;\n}\n\npublic static int run(F f) {\n    try {\n        return f.apply("
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q010",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **Java 메서드 오버라이딩, 오버로딩, 정적 메서드**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nParent ref = new Child();\nSystem.out.println(ref.x(2) + ref.id());\n\nclass Parent {\n    public int x(int i) { return i + 2; }   "
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q012",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 원형 큐(Circular Queue) 자료구조를 구현하고 사용하는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **초기 상태:**\n```c Queue q = {{0}, 0, 0};\n```\n- 큐 구조체를 초기화: 배열 `a[] = {0, 0, 0}`, `front = 0`, `rear = 0`\n\n2. **`enq(&q, 1)` 실행:**"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q014",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 포인터의 포인터(이중 포인터)와 구조체 배열을 다루는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **초기 상태:**\n```c struct dat a[] = {{1, 2}, {3, 4}, {5, 6}};\n```\n- 구조체 배열 `a`를 초기화: `a[0] = {1, 2}`, `a[1] = {3, 4}`, `a[2] = {5, 6}`\n\n2"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q015",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "해설 품질 점수: 30점",
+      "current_state": {
+        "quality_score": 30,
+        "issues": [
+          "범용적인 설명 문구 과다",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 문제는 **Java 객체 배열과 참조**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nBO a = new BO(1);  // a.v = 1\nBO b = new BO(2);  // b.v = 2\nBO c = new BO(3);  // c.v = 3\nBO[] arr = {a, b, c};  // arr[0] = a, arr[1] = b, a"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q016",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "해설 품질 점수: 50점",
+      "current_state": {
+        "quality_score": 50,
+        "issues": [
+          "범용적인 설명 문구 사용",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 연결 리스트(Linked List)의 포인터 연결을 추적하는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **노드 생성 및 초기화:**\n```c struct node a = {1, NULL};\nstruct node b = {2, NULL};\nstruct node c = {3, NULL};\n```\n- 세 개의 노드 생성: `a.p = 1`"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q017",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 파이썬 코드는 딕셔너리, 집합(set) 생성과 연산을 이해하는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **딕셔너리 생성:**\n```python lst = [1, 2, 3]\ndst = {i : i * 2 for i in lst}\n```\n- 딕셔너리 컴프리헨션: `dst = {1: 2, 2: 4, 3: 6}`\n- 키는 리스트의 각 요소, 값은 그 요"
+      }
+    },
+    {
+      "priority": 3,
+      "issue_type": "poor_quality_explanation",
+      "file": "items_2025_round2.jsonl",
+      "doc_id": "2025_round2",
+      "q_no": "Q018",
+      "tistory_url": "https://chobopark.tistory.com/555",
+      "description": "해설 품질 점수: 45점",
+      "current_state": {
+        "quality_score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "explanation_preview": "이 C언어 코드는 연결 리스트를 역순으로 생성하고 출력하는 문제입니다.\n\n**코드 실행 단계:**\n\n1. **`func(\"BEST\")` 호출:**\n- 문자열 \"BEST\"를 받아서 연결 리스트를 생성합니다.\n- 연결 리스트는 **역순**으로 구성됩니다 (새 노드가 맨 앞에 추가됨).\n\n```c while(*s) { // 문자열의 각 문자를 처리 n = mal"
+      }
+    }
+  ]
+}

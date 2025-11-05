@@ -1,5 +1,5 @@
 {
-  "total": 81,
+  "total": 83,
   "items": [
     {
       "file": "items_2023_round3.jsonl",
@@ -113,86 +113,6 @@
         ],
         "is_poor": true,
         "length": 1161
-      }
-    },
-    {
-      "file": "items_2024_round3.jsonl",
-      "q_no": "Q011",
-      "doc_id": "2024_round3",
-      "question_text": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
-      "question_full": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
-      "explanation_current": "이 문제는 **Java 상속, 필드 숨김(Field Hiding), 메서드 오버라이딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nBase a = new Derivate();\nDerivate b = new Derivate();\nSystem.out.print(a.getX() + a.x + b.getX() + b.x);\n\nclass Base {\n    int x = 3;\n    int getX() {\n        return x * 2;  // Base의 x 사용\n    }\n}\n\nclass Derivate extends Base {\n    int x = 7;  // 필드 숨김 (Base의 x를 숨김)\n    int getX() {\n        return x * 3;  // Derivate의 x 사용 (7 * 3 = 21)\n    }\n}\n```\n\n**핵심 개념:**\n\n1. **필드 숨김 (Field Hiding):**\n   - 자식 클래스에서 부모 클래스의 필드와 같은 이름의 필드를 선언하면 부모의 필드가 **숨겨집니다**.\n   - `Base.x = 3`, `Derivate.x = 7` (서로 다른 필드)\n\n2. **메서드 오버라이딩 (Method Overriding):**\n   - 자식 클래스에서 부모 클래스의 메서드를 재정의하면 **항상 자식의 메서드가 호출**됩니다.\n   - 객체의 실제 타입(`Derivate`)에 따라 메서드가 결정됩니다.\n\n3. **필드 접근 vs 메서드 호출:**\n   - **필드 접근 (`a.x`)**: 참조 변수의 타입(`Base`)에 따라 결정 → `Base.x = 3`\n   - **메서드 호출 (`a.getX()`)**: 객체의 실제 타입(`Derivate`)에 따라 결정 → `Derivate.getX()` 호출\n\n**실행 과정:**\n\n1. **`a.getX()` 계산:**\n   - `a`는 `Base` 타입으로 선언되었지만 실제 객체는 `Derivate`입니다.\n   - 메서드는 **실제 타입**에 따라 결정되므로 `Derivate.getX()` 호출됩니다.\n   - `Derivate.getX()`는 `Derivate.x`를 사용: `7 * 3 = 21`\n   - **결과: 21**\n\n2. **`a.x` 계산:**\n   - 필드는 **참조 변수의 타입**에 따라 결정됩니다.\n   - `a`는 `Base` 타입이므로 `Base.x = 3`\n   - **결과: 3**\n\n3. **`b.getX()` 계산:**\n   - `b`는 `Derivate` 타입으로 선언되었고 실제 객체도 `Derivate`입니다.\n   - `Derivate.getX()` 호출: `7 * 3 = 21`\n   - **결과: 21**\n\n4. **`b.x` 계산:**\n   - `b`는 `Derivate` 타입이므로 `Derivate.x = 7`\n   - **결과: 7**\n\n5. **최종 출력:**\n```java\nSystem.out.print(21 + 3 + 21 + 7);\n// 출력: \"52\"\n```\n\n**정리:**\n- 필드: 참조 변수 타입에 따라 결정 (`a.x` → `Base.x`, `b.x` → `Derivate.x`)\n- 메서드: 실제 객체 타입에 따라 결정 (`a.getX()`, `b.getX()` → 모두 `Derivate.getX()`)\n\n**답:** \"52\"",
-      "explanation_preview": "이 문제는 **Java 상속, 필드 숨김(Field Hiding), 메서드 오버라이딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nBase a = new Derivate();\nDerivate b = new Derivate();\nSystem.out.print(a.getX() + a.x + b.getX() + b.x);\n\nclass Base",
-      "image_refs": [
-        "images/2024_round3/Q011.png"
-      ],
-      "code_blocks": [
-        {
-          "language": "java",
-          "code": "public class Main{\n  public static void main(String[] args){\n    Base a =  new Derivate();\n    Derivate b = new Derivate();\n    System.out.print(a.getX() + a.x + b.getX() + b.x);\n  }\n}\nclass Base{\n  int x = 3;\n  int getX(){\n     return x * 2; \n  }\n}\nclass Derivate extends Base{\n  int x = 7;\n  int getX(){\n     return x * 3;\n  }\n}",
-          "line_numbers": [
-            1,
-            19
-          ],
-          "file": "data/codes/2024_round3/Q011_code.txt"
-        }
-      ],
-      "table_refs": [],
-      "answer": {
-        "keys": [
-          "52"
-        ],
-        "raw_text": "52"
-      },
-      "primary_category": "프로그래밍",
-      "quality": {
-        "score": 30,
-        "issues": [
-          "범용적인 설명 문구 과다",
-          "문제 내용과 연관성 부족"
-        ],
-        "is_poor": true,
-        "length": 1646
-      }
-    },
-    {
-      "file": "items_2024_round3.jsonl",
-      "q_no": "Q019",
-      "doc_id": "2024_round3",
-      "question_text": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
-      "question_full": "다음은 Java 코드에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
-      "explanation_current": "이 문제는 **Java 제네릭 타입 소거(Type Erasure)와 메서드 오버로딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nnew Collection<>(0).print();\n\nclass Collection<T> {\n    T value;\n    public Collection(T t) {\n        value = t;\n    }\n    public void print() {\n        new Printer().print(value);\n    }\n    \n    class Printer {\n        void print(Integer a) {\n            System.out.print(\"A\" + a);\n        }\n        void print(Object a) {\n            System.out.print(\"B\" + a);\n        }\n        void print(Number a) {\n            System.out.print(\"C\" + a);\n        }\n    }\n}\n```\n\n**핵심 개념:**\n\n1. **제네릭 타입 소거 (Type Erasure):**\n   - 컴파일 시 제네릭 타입 정보가 **삭제**됩니다.\n   - `Collection<Integer>` → `Collection` (타입 정보 제거)\n   - 런타임에는 `T`가 `Object`로 취급됩니다.\n\n2. **메서드 오버로딩 해석:**\n   - 컴파일 타임에 타입을 결정합니다.\n   - `value`는 `T` 타입이지만, 컴파일 시 `Object`로 취급됩니다.\n   - `0`은 `int` 리터럴이지만, `Integer`로 오토박싱됩니다.\n   - 하지만 `value`는 `Object` 타입이므로 `print(Object)`가 호출됩니다.\n\n**실행 과정:**\n\n1. **객체 생성:**\n   - `new Collection<>(0)` → `Collection<Integer>` 생성\n   - `value = 0` (Integer로 오토박싱)\n\n2. **`print()` 호출:**\n   - `new Printer().print(value)` 실행\n   - `value`는 컴파일 타임에 `Object` 타입으로 취급됩니다.\n\n3. **메서드 오버로딩 해석:**\n   - `print(Integer a)`: `Integer` 타입 매칭\n   - `print(Number a)`: `Number` 타입 매칭 (Integer는 Number의 자식)\n   - `print(Object a)`: `Object` 타입 매칭\n   - 컴파일러는 **가장 구체적인 타입**을 찾지만, `value`는 `Object` 타입이므로 `print(Object)`가 호출됩니다.\n\n4. **출력:**\n   - `print(Object a)` 실행 → `\"B\" + 0` → **\"B0\" 출력**\n\n**참고:**\n- 제네릭 타입 소거로 인해 런타임에는 타입 정보가 없습니다.\n- `print(Integer)`와 `print(Number)`는 `value`가 `Object` 타입이므로 매칭되지 않습니다.\n- `print(Object)`가 가장 넓은 범위를 가지므로 선택됩니다.\n\n**답:** \"B0\"",
-      "explanation_preview": "이 문제는 **Java 제네릭 타입 소거(Type Erasure)와 메서드 오버로딩**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nnew Collection<>(0).print();\n\nclass Collection<T> {\n    T value;\n    public Collection(T t) {\n        value = t;\n    ",
-      "image_refs": [
-        "images/2024_round3/Q019.png"
-      ],
-      "code_blocks": [
-        {
-          "language": "java",
-          "code": "class Main {\n  public static class Collection<T>{\n    T value;\n    public Collection(T t){\n        value = t;\n    }\n    public void print(){\n       new Printer().print(value);\n    }\n   class Printer{\n      void print(Integer a){\n        System.out.print(\"A\" + a);\n      }\n      void print(Object a){\n        System.out.print(\"B\" + a);\n      } \n      void print(Number a){\n        System.out.print(\"C\" + a);\n      }\n   }\n }\n  public static void main(String[] args) {\n      new Collection<>(0).print();\n  }\n}",
-          "line_numbers": [
-            1,
-            25
-          ],
-          "file": "data/codes/2024_round3/Q019_code.txt"
-        }
-      ],
-      "table_refs": [],
-      "answer": {
-        "keys": [
-          "B0"
-        ],
-        "raw_text": "B0"
-      },
-      "primary_category": "프로그래밍",
-      "quality": {
-        "score": 30,
-        "issues": [
-          "범용적인 설명 문구 과다",
-          "문제 내용과 연관성 부족"
-        ],
-        "is_poor": true,
-        "length": 1598
       }
     },
     {
@@ -313,93 +233,6 @@
         ],
         "is_poor": true,
         "length": 1366
-      }
-    },
-    {
-      "file": "items_2025_round2.jsonl",
-      "q_no": "Q005",
-      "doc_id": "2025_round2",
-      "question_text": "다음은 Java의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
-      "question_full": "다음은 Java의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
-      "explanation_current": "이 문제는 **Java 참조 타입과 메서드 파라미터 전달**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nString data[] = { \"A\" };\nString s = \"B\";\nchange(data, s);\nSystem.out.print(data[0] + s);\n\npublic static void change(String[] data, String s) {\n    data[0] = s;\n    s = \"Z\";\n}\n```\n\n**핵심 개념:**\n- Java는 **참조 타입(reference type)**과 **기본 타입(primitive type)**을 다르게 처리합니다.\n- 배열은 참조 타입이므로, 배열 참조가 전달되면 같은 배열 객체를 가리킵니다.\n- String도 참조 타입이지만, 메서드 내부에서 파라미터에 새로운 값을 할당하면 원본 변수에는 영향이 없습니다.\n\n**실행 과정:**\n\n1. **초기 상태:**\n   - `data[] = { \"A\" }` (배열 참조)\n   - `s = \"B\"` (String 참조)\n\n2. **`change(data, s)` 호출:**\n   - `data` 파라미터: 배열 참조가 전달됨 (같은 배열 객체를 가리킴)\n   - `s` 파라미터: String 참조 \"B\"가 전달됨\n\n3. **메서드 내부 실행:**\n   - `data[0] = s;` → `data[0] = \"B\"` (배열의 첫 번째 요소가 \"B\"로 변경됨)\n     - **원본 배열이 변경됨** (참조 타입이므로)\n   - `s = \"Z\";` → 메서드 내부의 파라미터 `s`만 \"Z\"로 변경됨\n     - **원본 변수 `s`는 변경되지 않음** (새로운 참조를 할당했을 뿐)\n\n4. **메서드 종료 후:**\n   - `data[0] = \"B\"` (메서드에서 변경된 값 유지)\n   - `s = \"B\"` (원본 변수는 변경되지 않음)\n\n5. **출력:**\n   - `data[0] + s = \"B\" + \"B\" = \"BB\"`\n\n**정리:**\n- 배열은 참조 타입이므로 메서드에서 배열 요소를 수정하면 원본 배열이 변경됩니다.\n- String도 참조 타입이지만, 메서드 내부에서 파라미터에 새로운 값을 할당하면 그 값은 메서드 내부에서만 유효하고 원본 변수에는 영향이 없습니다.\n\n**답:** \"BB\"",
-      "explanation_preview": "이 문제는 **Java 참조 타입과 메서드 파라미터 전달**을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nString data[] = { \"A\" };\nString s = \"B\";\nchange(data, s);\nSystem.out.print(data[0] + s);\n\npublic static void change(String[] data, S",
-      "image_refs": [
-        "images/2025_round2/Q005.png"
-      ],
-      "code_blocks": [
-        {
-          "language": "java",
-          "code": "public class Main {\n    public static void change(String[] data, String s){\n        data[0] = s;\n        s = \"Z\";\n    }\n    public static void main(String[] args) {\n        String data[] = { \"A\" };\n        String s = \"B\";\n        change(data, s);\n        System.out.print(data[0] + s);\n    }\n}",
-          "line_numbers": [
-            1,
-            12
-          ],
-          "file": "data/codes/2025_round2/Q005_code.txt"
-        }
-      ],
-      "table_refs": [
-        {
-          "id": "table1",
-          "json": "data/tables/2025_round2/Q005_table1.json",
-          "rows": 18,
-          "cols": 1
-        }
-      ],
-      "answer": {
-        "keys": [
-          "BB"
-        ],
-        "raw_text": "BB"
-      },
-      "primary_category": "프로그래밍",
-      "quality": {
-        "score": 30,
-        "issues": [
-          "범용적인 설명 문구 과다",
-          "문제 내용과 연관성 부족"
-        ],
-        "is_poor": true,
-        "length": 1134
-      }
-    },
-    {
-      "file": "items_2025_round2.jsonl",
-      "q_no": "Q009",
-      "doc_id": "2025_round2",
-      "question_text": "다음은 Java언어의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
-      "question_full": "다음은 Java언어의 문제이다.\n아래 코드를 보고\n\n알맞는 출력값을 작성하시오.",
-      "explanation_current": "이 문제는 **Java 람다 표현식과 예외 처리**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nstatic interface F {\n    int apply(int x) throws Exception;\n}\n\npublic static int run(F f) {\n    try {\n        return f.apply(3);\n    } catch (Exception e) {\n        return 7;\n    }\n}\n\nF f = (x) -> {\n    if (x > 2) {\n        throw new Exception();\n    }\n    return x * 2;\n};\n\nSystem.out.print(run(f) + run((int n) -> n + 9));\n```\n\n**핵심 개념:**\n- `F` 인터페이스는 `apply(int x)` 메서드를 정의하며, 예외를 던질 수 있습니다.\n- `run` 메서드는 `F` 타입의 함수를 받아 실행하고, 예외가 발생하면 7을 반환합니다.\n- 람다 표현식 `(x) -> { ... }`는 함수형 인터페이스 `F`를 구현합니다.\n\n**실행 과정:**\n\n1. **`F f` 람다 함수 정의:**\n   - `f = (x) -> { if (x > 2) throw new Exception(); return x * 2; }`\n   - x가 2보다 크면 예외를 발생시키고, 그렇지 않으면 `x * 2`를 반환합니다.\n\n2. **첫 번째 `run(f)` 호출:**\n   - `run` 메서드 내부에서 `f.apply(3)` 실행\n   - `x = 3`이므로 `x > 2` 조건이 **참**입니다.\n   - `throw new Exception()`이 실행되어 예외가 발생합니다.\n   - `run` 메서드의 `catch (Exception e)` 블록이 예외를 잡아서 **7을 반환**합니다.\n   - **결과: `run(f) = 7`**\n\n3. **두 번째 `run((int n) -> n + 9)` 호출:**\n   - 새로운 람다 함수 `(int n) -> n + 9`가 전달됩니다.\n   - 이 함수는 예외를 발생시키지 않는 일반적인 함수입니다.\n   - `run` 메서드 내부에서 `f.apply(3)` 실행 (여기서 `f`는 전달된 람다 함수)\n   - `n = 3`이므로 `3 + 9 = 12`를 반환합니다.\n   - 예외가 발생하지 않으므로 `try` 블록이 정상적으로 실행됩니다.\n   - **결과: `run((int n) -> n + 9) = 12`**\n\n4. **최종 출력:**\n   - `run(f) + run((int n) -> n + 9) = 7 + 12 = 19`\n   - `System.out.print(19)` 실행\n\n**정리:**\n- 람다 표현식에서 조건에 따라 예외를 발생시킬 수 있습니다.\n- `run` 메서드는 try-catch 블록으로 예외를 처리하고, 예외 발생 시 7을 반환합니다.\n- 두 개의 서로 다른 람다 함수가 각각 다른 결과를 반환합니다.\n\n**답:** 19",
-      "explanation_preview": "이 문제는 **Java 람다 표현식과 예외 처리**를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```java\nstatic interface F {\n    int apply(int x) throws Exception;\n}\n\npublic static int run(F f) {\n    try {\n        return f.apply(3);\n    } ca",
-      "image_refs": [
-        "images/2025_round2/Q009.png"
-      ],
-      "code_blocks": [
-        {
-          "language": "java",
-          "code": "public class Main {\n    static interface F {\n        int apply(int x) throws Exception;\n    }\n    public static int run(F f) {\n        try {\n            return f.apply(3);\n        } catch (Exception e) {\n            return 7;\n        }\n    }\n    public static void main(String[] args) {\n        F f = (x) -> {\n            if (x > 2) {\n                throw new Exception();\n            }\n            return x * 2;\n        };\n        System.out.print(run(f) + run((int n) -> n + 9));\n    }\n}",
-          "line_numbers": [
-            1,
-            21
-          ],
-          "file": "data/codes/2025_round2/Q009_code.txt"
-        }
-      ],
-      "table_refs": [],
-      "answer": {
-        "keys": [
-          "19"
-        ],
-        "raw_text": "19"
-      },
-      "primary_category": "프로그래밍",
-      "quality": {
-        "score": 30,
-        "issues": [
-          "범용적인 설명 문구 과다",
-          "문제 내용과 연관성 부족"
-        ],
-        "is_poor": true,
-        "length": 1494
       }
     },
     {
@@ -1147,6 +980,166 @@
         ],
         "is_poor": true,
         "length": 1767
+      }
+    },
+    {
+      "file": "items_2024_round2.jsonl",
+      "q_no": "Q015",
+      "doc_id": "2024_round2",
+      "question_text": "다음은 C언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "question_full": "다음은 C언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력값을 작성하시오.",
+      "explanation_current": "이 C언어 코드는 문자열 복사 함수와 인덱스 합 계산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c void sumFn(char* d, const char* s) {\nwhile (*s) {\n*d = *s;\nd++;\ns++;\n}\n*d = '\\0';\n}\n```\n\n**실행 과정:**\n\n1. **초기값:**\n```c const char* str1 = \"first\"; // 길이: 5 char str2[50] = \"teststring\"; // 길이: 10\n```\n\n2. **`sumFn(str2, str1)` 호출:**\n- `str1 = \"first\"`를 `str2`에 복사\n- 복사 후: `str2 = \"first\\0...\"` (길이: 5)\n\n3. **인덱스 합 계산:**\n```c for (int i = 0; str2[i] != '\\0'; i++) {\nresult += i;\n}\n```\n- i=0: result += 0 (result = 0)\n- i=1: result += 1 (result = 1)\n- i=2: result += 2 (result = 3)\n- i=3: result += 3 (result = 6)\n- i=4: result += 4 (result = 10)\n- i=5: `str2[5] == '\\0'` → 루프 종료\n\n4. **최종 출력:**\n- **출력: 10**답:** 10",
+      "explanation_preview": "이 C언어 코드는 문자열 복사 함수와 인덱스 합 계산을 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c void sumFn(char* d, const char* s) {\nwhile (*s) {\n*d = *s;\nd++;\ns++;\n}\n*d = '\\0';\n}\n```\n\n**실행 과정:**\n\n1. **초기값:**\n```c const char* str1 = \"f",
+      "image_refs": [
+        "images/2024_round2/Q015.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "c",
+          "code": "#include <stdio.h>\n#include <string.h>\nvoid sumFn(char* d, const char* s) {\n    while (*s) {\n        *d = *s;\n        d++;\n        s++;\n    }\n    *d = '\\0'; \n}\nint main() {\n   const char* str1 = \"first\";\n    char str2[50] = \"teststring\";  \n    int result=0;\n    sumFn(str2, str1);\n    for (int i = 0; str2[i] != '\\0'; i++) {\n        result += i;\n    }\n    printf(\"%d\", result);\n    return 0;\n}",
+          "line_numbers": [
+            1,
+            21
+          ],
+          "file": "data/codes/2024_round2/Q015_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "10"
+        ],
+        "raw_text": "10"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 671
+      }
+    },
+    {
+      "file": "items_2024_round2.jsonl",
+      "q_no": "Q017",
+      "doc_id": "2024_round2",
+      "question_text": "다음은 Java에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력 값을 작성하시오.",
+      "question_full": "다음은 Java에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력 값을 작성하시오.",
+      "explanation_current": "이미지의 Java 코드는 재귀 함수를 사용하여 문자열에서 뒤에서부터 중복을 제거하는 알고리즘입니다.\n\n**코드 분석:**\n\n```java\nString str = \"abacabcd\";\nboolean[] seen = new boolean[256];\nSystem.out.print(calculFn(str, str.length()-1, seen));\n\npublic static String calculFn(String str, int index, boolean[] seen) {\n    if(index < 0) return \"\";\n    char c = str.charAt(index);\n    String result = calculFn(str, index-1, seen);\n    if(!seen[c]) {\n        seen[c] = true;\n        return c + result;\n    }\n    return result;\n}\n```\n\n**알고리즘 이해:**\n\n1. **재귀 호출 순서**: 문자열을 **뒤에서 앞으로** 처리합니다 (index가 감소).\n2. **중복 제거**: `seen[]` 배열로 이미 본 문자를 체크합니다.\n3. **결과 구성**: 처음 본 문자를 **앞에 추가**합니다.\n\n**실행 과정 (재귀 스택):**\n\n```\ncalculFn(\"abacabcd\", 7, seen) // index=7, c='d'\n  → seen['d']=false → seen['d']=true → \"d\" + result\n  ↓\ncalculFn(\"abacabcd\", 6, seen) // index=6, c='c'\n  → seen['c']=false → seen['c']=true → \"c\" + result\n  ↓\ncalculFn(\"abacabcd\", 5, seen) // index=5, c='b'\n  → seen['b']=false → seen['b']=true → \"b\" + result\n  ↓\ncalculFn(\"abacabcd\", 4, seen) // index=4, c='a'\n  → seen['a']=false → seen['a']=true → \"a\" + result\n  ↓\ncalculFn(\"abacabcd\", 3, seen) // index=3, c='c'\n  → seen['c']=true (이미 본 문자) → result 반환 (\"a\" 추가 안 함)\n  ↓\ncalculFn(\"abacabcd\", 2, seen) // index=2, c='a'\n  → seen['a']=true (이미 본 문자) → result 반환\n  ↓\ncalculFn(\"abacabcd\", 1, seen) // index=1, c='b'\n  → seen['b']=true (이미 본 문자) → result 반환\n  ↓\ncalculFn(\"abacabcd\", 0, seen) // index=0, c='a'\n  → seen['a']=true (이미 본 문자) → result 반환\n  ↓\ncalculFn(\"abacabcd\", -1, seen) // 종료 조건\n  → return \"\"\n```\n\n**결과 구성 (재귀 반환 순서):**\n\n1. `calculFn(-1)` → `\"\"` 반환\n2. `calculFn(0)` → `\"\"` 반환 (a는 이미 봄)\n3. `calculFn(1)` → `\"\"` 반환 (b는 이미 봄)\n4. `calculFn(2)` → `\"\"` 반환 (a는 이미 봄)\n5. `calculFn(3)` → `\"\"` 반환 (c는 이미 봄)\n6. `calculFn(4)` → `\"a\" + \"\"` = `\"a\"` 반환 (처음 본 a)\n7. `calculFn(5)` → `\"b\" + \"a\"` = `\"ba\"` 반환 (처음 본 b)\n8. `calculFn(6)` → `\"c\" + \"ba\"` = `\"cba\"` 반환 (처음 본 c)\n9. `calculFn(7)` → `\"d\" + \"cba\"` = `\"dcba\"` 반환 (처음 본 d)\n\n**핵심 포인트:**\n- 문자열을 **뒤에서 앞으로** 처리하므로, 결과는 **역순**으로 구성됩니다.\n- **처음 본 문자만 추가**하므로 중복이 제거됩니다.\n- `seen[c]`는 ASCII 코드를 인덱스로 사용합니다 (char → int 자동 변환).\n\n**답:** \"dcba\"",
+      "explanation_preview": "이미지의 Java 코드는 재귀 함수를 사용하여 문자열에서 뒤에서부터 중복을 제거하는 알고리즘입니다.\n\n**코드 분석:**\n\n```java\nString str = \"abacabcd\";\nboolean[] seen = new boolean[256];\nSystem.out.print(calculFn(str, str.length()-1, seen));\n\npublic ",
+      "image_refs": [
+        "images/2024_round2/Q017.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "java",
+          "code": "class Main {\n    public static void main(String[] args) {\n        String str = \"abacabcd\";\n        boolean[] seen = new boolean[256];\n        System.out.print(calculFn(str, str.length()-1, seen));\n    }\n    public static String calculFn(String str, int index, boolean[] seen) {\n        if(index < 0) return \"\";\n        char c = str.charAt(index);\n        String result = calculFn(str, index-1, seen);\n        if(!seen[c]) {\n            seen[c] = true;\n            return c + result;\n        }\n        return result;\n    }\n}",
+          "line_numbers": [
+            1,
+            17
+          ],
+          "file": "data/codes/2024_round2/Q017_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "dcba"
+        ],
+        "raw_text": "dcba"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 2079
+      }
+    },
+    {
+      "file": "items_2024_round2.jsonl",
+      "q_no": "Q018",
+      "doc_id": "2024_round2",
+      "question_text": "다음은 C언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력 값을 작성하시오.",
+      "question_full": "다음은 C언어에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력 값을 작성하시오.",
+      "explanation_current": "이 C언어 코드는 함수 파라미터의 값 전달과 switch 문의 fall-through를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c void swap(int a, int b) {\nint = a;\na = b;\nb = t;\n}\n```\n\n**실행 과정:**\n\n1. **초기값:**\n```c int a = 11;\nint b = 19;\n```\n\n2. **`swap(a, b)` 호출:**\n- C언어는 값에 의한 전달(Call by Value)을 사용합니다.\n- `swap()` 함수 내부에서 `a`와 `b`의 값을 변경해도 원본 변수에는 영향이 없습니다.\n- **함수 호출 후에도 `a = 11`, `b = 19` (변경 없음)**\n\n3. **switch 문 실행:**\n```c switch(a) { // a = 11 case 1:\nb += 1;\ncase 11: // 매칭! (하지만 break 없음)\nb += 2; // 실행 default:\nb += 3; // 실행 (fall-through)\nbreak;\n}\n```\n- `a = 11`이므로 `case 11:`로 이동합니다.\n- **break가 없으므로 아래로 fall-through**합니다.\n- `b += 2` → `b = 19 + 2 = 21`\n- `default:` 실행 → `b += 3` → `b = 21 + 3 = 24`\n\n4. **최종 계산:**\n```c printf(\"%d\", a - b); // 11 - 24 = -13\n```\n\n**답:** \"-13\"",
+      "explanation_preview": "이 C언어 코드는 함수 파라미터의 값 전달과 switch 문의 fall-through를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c void swap(int a, int b) {\nint = a;\na = b;\nb = t;\n}\n```\n\n**실행 과정:**\n\n1. **초기값:**\n```c int a = 11;\nint b = 19;\n```\n\n2. **`s",
+      "image_refs": [
+        "images/2024_round2/Q018.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "c",
+          "code": "#include <stdio.h>\nvoid swap(int a, int b) {\n    int t = a;\n    a = b;\n    b = t;\n}\nint main() {\n    int a = 11;\n    int b = 19;\n    swap(a, b);\n    switch(a) {\n        case 1:\n            b += 1;\n        case 11:\n            b += 2;\n        default:\n            b += 3;\n        break;\n    }\n    printf(\"%d\", a-b);\n}",
+          "line_numbers": [
+            1,
+            21
+          ],
+          "file": "data/codes/2024_round2/Q018_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "-13"
+        ],
+        "raw_text": "-13"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 739
+      }
+    },
+    {
+      "file": "items_2024_round2.jsonl",
+      "q_no": "Q019",
+      "doc_id": "2024_round2",
+      "question_text": "다음은 C언어의 구조체에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력 값을 작성하시오.",
+      "question_full": "다음은 C언어의 구조체에 대한 문제이다.\n아래 코드를 확인하여\n\n알맞는 출력 값을 작성하시오.",
+      "explanation_current": "이 C언어 코드는 구조체 포인터와 연결 리스트를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c struct node {\nint n1;\nstruct node *n2;\n};\n\nstruct node a = {10, NULL};\nstruct node b = {20, NULL};\nstruct node c = {30, NULL};\nstruct node *head = &a;\na.n2 = &b;\nb.n2 = &c;\nprintf(\"%d\\n\", head->n2->n1);\n```\n\n**메모리 구조:**\n\n```\nhead → a {n1=10, n2=&b}\n↓\nb {n1=20, n2=&c}\n↓\nc {n1=30, n2=NULL}\n```\n\n**표현식 계산:**\n\n```c head->n2->n1\n```\n\n1. **`head`**: `&a` (a의 주소)\n\n2. **`head->n2`**: `a.n2` = `&b` (b의 주소)\n\n3. **`head->n2->n1`**: `b.n1` = **20**답:** 20",
+      "explanation_preview": "이 C언어 코드는 구조체 포인터와 연결 리스트를 이해하는 문제입니다.\n\n**코드 분석:**\n\n```c struct node {\nint n1;\nstruct node *n2;\n};\n\nstruct node a = {10, NULL};\nstruct node b = {20, NULL};\nstruct node c = {30, NULL};\nstruct node *hea",
+      "image_refs": [
+        "images/2024_round2/Q019.png"
+      ],
+      "code_blocks": [
+        {
+          "language": "c",
+          "code": "#include <stdio.h>\nstruct node {\n    int n1;\n    struct node *n2;\n};\nint main() {\n    struct node a = {10, NULL};\n    struct node b = {20, NULL};\n    struct node c = {30, NULL};\n    struct node *head = &a;\n    a.n2 = &b;\n    b.n2 = &c;\n    printf(\"%d\\n\", head->n2->n1);\n    return 0;\n}",
+          "line_numbers": [
+            1,
+            15
+          ],
+          "file": "data/codes/2024_round2/Q019_code.txt"
+        }
+      ],
+      "table_refs": [],
+      "answer": {
+        "keys": [
+          "20"
+        ],
+        "raw_text": "20"
+      },
+      "primary_category": "프로그래밍",
+      "quality": {
+        "score": 45,
+        "issues": [
+          "범용적인 설명 문구 다수",
+          "문제 내용과 연관성 부족"
+        ],
+        "is_poor": true,
+        "length": 503
       }
     }
   ]

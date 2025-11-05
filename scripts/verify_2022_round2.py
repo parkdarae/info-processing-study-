@@ -29,3 +29,4 @@ print(f"Q001 (베타, 행13): {questions[12]['answer']['keys']}")
 print(f"Q012 (TTL): {questions[15]['answer']['keys']}")
 
 
+

@@ -1,0 +1,38 @@
+<div class="range-modal-content">
+    <div class="range-modal-header">
+        <h3><i class="fas fa-list"></i> 범위 설정</h3>
+        <button class="close-modal" onclick="closeRangeModal()">×</button>
+    </div>
+    
+    <div class="range-inputs">
+        <div class="range-input-group">
+            <label>시작 문제번호</label>
+            <input type="number" id="rangeStart" min="1" max="130" value="1">
+        </div>
+        <div class="range-input-group">
+            <label>끝 문제번호</label>
+            <input type="number" id="rangeEnd" min="1" max="130" value="130">
+        </div>
+    </div>
+    
+    <div class="range-preview" id="rangePreview">
+        선택된 범위: 1번 ~ 130번 (총 130문제)
+    </div>
+    
+    <div class="range-order-options">
+        <label>
+            <input type="radio" name="rangeOrder" value="sequential" checked>
+            <span>순차 풀기</span>
+        </label>
+        <label>
+            <input type="radio" name="rangeOrder" value="random">
+            <span>랜덤 풀기</span>
+        </label>
+    </div>
+    
+    <div class="range-modal-buttons">
+        <button class="btn-secondary" onclick="closeRangeModal()">취소</button>
+        <button class="btn-primary" onclick="applyRangeFilter()">시작하기</button>
+    </div>
+</div>
+

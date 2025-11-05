@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>서버 접속</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 30px;
+        }
+        .server-url {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+        .info {
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        .countdown {
+            font-size: 18px;
+            color: #667eea;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 로컬 서버 접속</h1>
+        
+        <p>CORS 에러를 해결하려면 로컬 서버로 접속해야 합니다.</p>
+        
+        <div class="server-url">
+            http://localhost:8000
+        </div>
+        
+        <div class="countdown" id="countdown">
+            <span id="timer">3</span>초 후 자동으로 이동합니다...
+        </div>
+        
+        <a href="http://localhost:8000" class="btn" id="openBtn">
+            🌐 지금 열기
+        </a>
+        
+        <div class="info">
+            💡 서버가 실행 중이어야 합니다.<br>
+            검은 창(명령 프롬프트)이 열려 있는지 확인하세요.
+        </div>
+    </div>
+
+    <script>
+        let count = 3;
+        const timerEl = document.getElementById('timer');
+        const countdownEl = document.getElementById('countdown');
+        
+        const interval = setInterval(() => {
+            count--;
+            timerEl.textContent = count;
+            
+            if (count <= 0) {
+                clearInterval(interval);
+                countdownEl.innerHTML = '🔄 이동 중...';
+                window.location.href = 'http://localhost:8000';
+            }
+        }, 1000);
+        
+        // 버튼 클릭 시 카운트다운 중지
+        document.getElementById('openBtn').addEventListener('click', () => {
+            clearInterval(interval);
+        });
+    </script>
+</body>
+</html>
+
+
+

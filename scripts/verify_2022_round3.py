@@ -23,3 +23,4 @@ print(f"Q018 (E-R다이어그램): {questions[17]['answer']['keys']}")
 print(f"Q020 (자바 993): {questions[19]['answer']['keys']}")
 
 
+

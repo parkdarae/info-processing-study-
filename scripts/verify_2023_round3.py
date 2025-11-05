@@ -31,3 +31,4 @@ print(f"Q017 (클라우드): {questions[16]['answer']['keys']}")
 print(f"Q020 (참조무결성): {questions[19]['answer']['keys']}")
 
 
+

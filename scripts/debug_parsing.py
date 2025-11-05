@@ -49,3 +49,4 @@ paragraphs_all = content.find_all('p')
 print(f"총 단락 수 (recursive=True): {len(paragraphs_all)}")
 
 
+

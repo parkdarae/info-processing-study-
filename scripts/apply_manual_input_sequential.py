@@ -95,3 +95,4 @@ if __name__ == "__main__":
     apply_manual_input_sequential()
 
 
+

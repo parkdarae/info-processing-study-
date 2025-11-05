@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리기사 실기 핵심 키워드130 문제은행</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/question.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- 환영 팝업 (템플릿으로 로드됨) -->
+    <div class="welcome-popup" id="welcomePopup"></div>
+
+    <!-- 메인 컨테이너 -->
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-book-reader"></i> 정보처리기사 실기 핵심 키워드130 문제은행</h1>
+                <p>실시간 학습 현황 및 진도 관리</p>
+            </div>
+            <button class="hamburger-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="mode-selector">
+            <div class="mode-buttons">
+                <button class="mode-btn" onclick="setMode('sequential')">
+                    <i class="fas fa-forward"></i> 순차 풀기
+                </button>
+                <button class="mode-btn" onclick="setMode('random')">
+                    <i class="fas fa-random"></i> 랜덤 풀기
+                </button>
+                <button class="mode-btn" onclick="setMode('range')">
+                    <i class="fas fa-list"></i> 범위 설정
+                </button>
+                <button class="mode-btn" onclick="setMode('wrong')">
+                    <i class="fas fa-times-circle"></i> 오답만 풀기
+                </button>
+                <button class="mode-btn" onclick="setMode('marked')">
+                    <i class="fas fa-star"></i> 체크한 문제
+                </button>
+            </div>
+        </div>
+
+        <div class="question-container" id="questionContainer">
+            <div class="question-card">
+                <div style="text-align: center; padding: 50px;">
+                    <i class="fas fa-book" style="font-size: 4em; color: #667eea; margin-bottom: 20px;"></i>
+                    <h2>학습 모드를 선택해주세요</h2>
+                    <p style="color: #6c757d; margin-top: 10px;">위 버튼 중 하나를 클릭하여 시작하세요</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 햄버거 메뉴 -->
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+    <div class="sidebar-menu" id="sidebarMenu"></div>
+
+    <!-- 폰트 크기 모달 -->
+    <div class="font-size-modal" id="fontSizeModal"></div>
+
+    <!-- 학습 통계 모달 -->
+    <div class="range-modal" id="statsModal"></div>
+
+    <!-- 범위 설정 모달 -->
+    <div class="range-modal" id="rangeModal"></div>
+
+    <!-- JavaScript Files (순서 중요) -->
+    <script src="js/config.js"></script>
+    <script src="js/utils/storage.js"></script>
+    <script src="js/utils/formatter.js"></script>
+    <script src="js/utils/validator.js"></script>
+    <script src="js/components/menu.js"></script>
+    <script src="js/components/modal.js"></script>
+    <script src="js/components/question-display.js"></script>
+    <script src="js/modes/sequential.js"></script>
+    <script src="js/modes/random.js"></script>
+    <script src="js/modes/range.js"></script>
+    <script src="js/modes/wrong.js"></script>
+    <script src="js/modes/marked.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

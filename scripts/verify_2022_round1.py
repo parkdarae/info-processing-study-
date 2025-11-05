@@ -30,3 +30,4 @@ print(f"\nQ020 (테스트 단계)")
 print(f"  답안: {q020['answer']['keys']}")
 
 
+

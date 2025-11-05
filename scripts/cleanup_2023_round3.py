@@ -44,3 +44,4 @@ with_ans = [q for q in cleaned if q['answer']['keys']]
 print(f"\n답안 있음: {len(with_ans)}/{len(cleaned)}개 ({len(with_ans)/len(cleaned)*100:.1f}%)")
 
 
+

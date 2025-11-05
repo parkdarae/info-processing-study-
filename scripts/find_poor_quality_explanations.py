@@ -3,9 +3,18 @@
 해설 품질이 낮은 문제 찾기 스크립트
 범용적이거나 실질적이지 않은 해설을 찾아 개선이 필요한 항목을 식별합니다.
 """
+# -*- coding: utf-8 -*-
 import json
 from pathlib import Path
 import re
+from datetime import datetime
+import sys
+import io
+
+# Windows 콘솔 인코딩 설정
+if sys.platform == 'win32':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8')
 
 def load_jsonl(filepath: Path):
     """JSONL 파일 로드"""
@@ -37,7 +46,9 @@ def analyze_explanation_quality(explanation, question_text=""):
     generic_phrases = [
         "이 문제는 변수의 값 변화를 추적하는 문제입니다",
         "이 문제는 데이터베이스 분야의 개념을 이해하는 문제입니다",
+        "이 문제는.*이해하는 문제입니다",  # 정규식 패턴
         "문제에서 설명한 내용과 특징을 정확히 분석하면",
+        "코드의 실제 내용에 따라 구체적인 해설을 작성해야 합니다",
         "답이",
         "최종 출력값",
         "모든 연산을 완료한 후",
@@ -47,16 +58,36 @@ def analyze_explanation_quality(explanation, question_text=""):
         "반복문/조건문 추적",
         "연산 수행",
         "최종 출력 계산",
-        "변수의 초기값부터 시작하여"
+        "변수의 초기값부터 시작하여",
+        "코드의 실제 내용에 따라",
+        "코드의 실제 내용.*에 따라",
+        "구체적인 해설을 작성해야 합니다",
+        "문제 요구사항:",
+        "분석:",
+        "답:"
     ]
     
-    generic_count = sum(1 for phrase in generic_phrases if phrase in explanation_str)
+    # 정규식 패턴과 일반 문자열 패턴 분리
+    regex_patterns = [p for p in generic_phrases if '.*' in p or p.startswith('^') or p.endswith('$')]
+    string_patterns = [p for p in generic_phrases if p not in regex_patterns]
+    
+    # 일반 문자열 매칭
+    generic_count = sum(1 for phrase in string_patterns if phrase in explanation_str)
+    
+    # 정규식 매칭
+    for pattern in regex_patterns:
+        if re.search(pattern.replace('.*', '.*'), explanation_str):
+            generic_count += 1
+    
     if generic_count >= 3:
         issues.append("범용적인 설명 문구 과다")
         score -= 30
     elif generic_count >= 2:
         issues.append("범용적인 설명 문구 다수")
         score -= 15
+    elif generic_count >= 1:
+        issues.append("범용적인 설명 문구 사용")
+        score -= 10
     
     # 3. 문제와 연관성이 없는 해설
     if question_text:
@@ -89,19 +120,21 @@ def analyze_explanation_quality(explanation, question_text=""):
     }
 
 def find_poor_quality_explanations():
-    """2021년, 2022년 해설 품질 분석"""
+    """2025~2021 전체 회차 해설 품질 분석"""
     data_dir = Path("data")
     
-    target_files = [
-        "items_2021_round1.jsonl",
-        "items_2022_round1.jsonl",
-        "items_2022_round2.jsonl",
-        "items_2022_round3.jsonl"
-    ]
+    # 2025~2021 모든 회차 파일 찾기
+    target_files = []
+    for year in range(2021, 2026):
+        for round_num in range(1, 4):
+            filename = f"items_{year}_round{round_num}.jsonl"
+            filepath = data_dir / filename
+            if filepath.exists():
+                target_files.append(filename)
     
     poor_quality = []
     
-    for filename in target_files:
+    for filename in sorted(target_files):
         filepath = data_dir / filename
         if not filepath.exists():
             continue
@@ -118,8 +151,16 @@ def find_poor_quality_explanations():
                 poor_quality.append({
                     'file': filename,
                     'q_no': q.get('q_no'),
-                    'question_preview': question_text[:100],
+                    'doc_id': q.get('doc_id'),
+                    'question_text': question_text[:200],  # 전체 텍스트 일부
+                    'question_full': question_text,  # 전체 텍스트
+                    'explanation_current': str(explanation) if explanation else None,
                     'explanation_preview': str(explanation)[:200] if explanation else None,
+                    'image_refs': q.get('image_refs', []),
+                    'code_blocks': q.get('code_blocks', []),
+                    'table_refs': q.get('table_refs', []),
+                    'answer': q.get('answer', {}),
+                    'primary_category': q.get('primary_category'),
                     'quality': quality
                 })
     
@@ -153,23 +194,47 @@ def main():
         
         for item in items:
             print(f"\n{item['q_no']}:")
-            print(f"  문제: {item['question_preview']}...")
-            print(f"  해설: {item['explanation_preview']}...")
+            print(f"  문제: {item['question_text']}...")
+            if item.get('explanation_preview'):
+                print(f"  해설: {item['explanation_preview']}...")
+            else:
+                print(f"  해설: (해설 없음)")
             print(f"  품질 점수: {item['quality']['score']}/100")
             print(f"  이슈: {', '.join(item['quality']['issues'])}")
             print(f"  길이: {item['quality']['length']}자")
     
     # 리포트 저장
     report = {
+        "version": "2.0",
+        "generated_at": datetime.now().isoformat(),
         "total": len(poor_quality),
+        "stats": {
+            "by_file": {},
+            "by_issue_type": {}
+        },
         "items": poor_quality
     }
     
-    report_path = Path("data/poor_quality_explanations.json")
+    # 파일별 통계
+    for item in poor_quality:
+        filename = item['file']
+        if filename not in report['stats']['by_file']:
+            report['stats']['by_file'][filename] = 0
+        report['stats']['by_file'][filename] += 1
+        
+        # 이슈 타입별 통계
+        for issue in item['quality']['issues']:
+            if issue not in report['stats']['by_issue_type']:
+                report['stats']['by_issue_type'][issue] = 0
+            report['stats']['by_issue_type'][issue] += 1
+    
+    report_path = Path("data/poor_quality_explanations_all.json")
     with open(report_path, 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
     
     print(f"\n[저장] 리포트: {report_path}")
+    print(f"[통계] 파일별: {len(report['stats']['by_file'])}개 파일")
+    print(f"[통계] 이슈 유형: {len(report['stats']['by_issue_type'])}개 유형")
     print("=" * 80)
 
 if __name__ == "__main__":

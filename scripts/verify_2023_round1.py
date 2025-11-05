@@ -23,3 +23,4 @@ print(f"Q012 (튜플/인스턴스/카디널리티): {questions[9]['answer']['key
 print(f"Q020 (500): {questions[17]['answer']['keys']}")
 
 
+
