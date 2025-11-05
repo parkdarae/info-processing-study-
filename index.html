@@ -2963,9 +2963,11 @@
             // 새 폰트 크기 클래스 추가
             document.body.classList.add('font-' + size);
             
-            // active 클래스 업데이트
-            document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            // active 클래스 업데이트 (event가 있을 때만)
+            if (typeof event !== 'undefined' && event && event.target) {
+                document.querySelectorAll('.font-btn').forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+            }
             
             // localStorage에 저장
             localStorage.setItem('fontSize', size);
@@ -2974,7 +2976,9 @@
         // 저장된 폰트 크기 로드
         function loadFontSize() {
             const savedSize = localStorage.getItem('fontSize') || 'normal';
-            setFontSize(savedSize);
+            // body 클래스만 설정 (event 없이)
+            document.body.classList.remove('font-smallest', 'font-small', 'font-normal', 'font-large');
+            document.body.classList.add('font-' + savedSize);
         }
 
         // 햄버거 메뉴 토글
