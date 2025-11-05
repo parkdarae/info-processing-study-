@@ -65,6 +65,12 @@ function switchModule(moduleName) {
                 theoryFrequent.renderDashboard();
             });
         }
+        // PMP 모듈인 경우 대시보드 표시
+        else if (moduleName === 'pmp') {
+            pmpModule.loadItems().then(() => {
+                pmpModule.renderDashboard();
+            });
+        }
         // 이론 모듈인 경우 객관식/주관식 선택 화면 표시
         else if (moduleName === 'theory') {
             document.getElementById('questionContainer').innerHTML = `

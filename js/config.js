@@ -44,6 +44,14 @@ App.moduleConfig = {
         maxRange: 50,
         isTheoryFrequent: true
     },
+    'pmp': {
+        title: '📋 PMP 문제집',
+        itemsFile: 'data/items_pmp.jsonl',
+        tablesFile: '',
+        type: 'pmp',
+        maxRange: 20,
+        isPMP: true
+    },
     'theory': {
         title: '정처기 실기 이론',
         itemsFile: 'data/items_theory.jsonl',

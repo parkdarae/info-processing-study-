@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/theory-frequent.css?v=20251105210000">
     <link rel="stylesheet" href="css/theory-category.css?v=20251105220000">
+    <link rel="stylesheet" href="css/pmp-module.css?v=20251105230000">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -1544,6 +1545,9 @@
                 </div>
                 <div class="menu-item" onclick="switchModule('theory_frequent')" id="menu_theory_frequent">
                     <i class="fas fa-star"></i> ⭐ 실기 최빈출 50개
+                </div>
+                <div class="menu-item" onclick="switchModule('pmp')" id="menu_pmp">
+                    <i class="fas fa-project-diagram"></i> 📋 PMP 문제집
                 </div>
                 <div class="menu-item" onclick="switchModule('theory')" id="menu_theory">
                     <i class="fas fa-lightbulb"></i> 🎯 정처기 실기 이론
@@ -3209,6 +3213,7 @@
                 await loadScript('js/theory-adapter.js?v=20251105004');
                 await loadScript('js/theory-module.js?v=20251105004');
                 await loadScript('js/theory-frequent-module.js?v=20251105210000');
+                await loadScript('js/pmp-module.js?v=20251105230000');
                 await loadScript('js/components/theory-category.js?v=20251105220000');
                 await loadScript('js/components/menu.js?v=20251105004');
                 await loadScript('js/components/modal.js?v=20251105004');
