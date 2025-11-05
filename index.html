@@ -435,6 +435,27 @@
             margin-bottom: 30px;
             color: #2c3e50;
             font-weight: 400;
+            white-space: pre-line;  /* 줄바꿈 유지, 연속 공백은 축약 */
+        }
+
+        /* 보기 섹션 전용 스타일 */
+        .choices-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            white-space: pre-wrap;  /* 공백과 줄바꿈 모두 유지 */
+            font-family: 'Noto Sans KR', 'Consolas', monospace;
+            line-height: 1.9;
+        }
+
+        .choices-section-title {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            display: block;
         }
 
         .choices {
@@ -2836,6 +2857,16 @@
         // 코드 블록 감지 및 박스로 변환
         function formatCodeBlocks(text) {
             if (!text) return '';
+            
+            // 보기 섹션 처리 (우선 처리)
+            if (text.includes('<보기>') || text.includes('＜보기＞')) {
+                text = text.replace(
+                    /(<보기>|＜보기＞)([\s\S]*?)(?=\n\n|$)/g,
+                    function(match, title, content) {
+                        return '<div class="choices-section"><span class="choices-section-title">' + title + '</span>' + content + '</div>';
+                    }
+                );
+            }
             
             // <pre> 태그가 이미 있으면 그대로 반환 (들여쓰기 보존)
             if (text.includes('<pre')) {
