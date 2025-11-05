@@ -82,25 +82,42 @@ function generateChoices(theoryItem, isDescriptionToTerm, allTheoryItems) {
     const shuffled = shuffleArray(wrongItems);
     const selectedWrong = shuffled.slice(0, Math.min(3, wrongItems.length));
     
-    // 선택지 배열 생성 (기존 형식과 동일 - 문자열 배열)
-    const choices = [correctAnswer];
+    // 선택지 배열 생성 (기존 형식과 동일 - 객체 배열)
+    const choices = [];
     
-    selectedWrong.forEach(wrongItem => {
+    // 정답 추가
+    choices.push({
+        raw_key: 'A',
+        text: correctAnswer
+    });
+    
+    // 오답 추가
+    selectedWrong.forEach((wrongItem, index) => {
         const wrongText = isDescriptionToTerm ? wrongItem.term : wrongItem.description;
         if (wrongText && wrongText.trim()) {
-            choices.push(wrongText);
+            choices.push({
+                raw_key: String.fromCharCode(66 + index), // B, C, D
+                text: wrongText
+            });
         }
     });
     
     // 부족한 선택지는 기본값으로 채우기
     while (choices.length < 4) {
-        choices.push(`선택지 ${choices.length}`);
+        choices.push({
+            raw_key: String.fromCharCode(65 + choices.length), // A, B, C, D
+            text: `선택지 ${choices.length + 1}`
+        });
     }
     
     console.log('생성된 선택지:', choices);
     
-    // 선택지 순서 섞기
-    return shuffleArray(choices);
+    // 선택지 순서 섞기 (키는 다시 할당)
+    const shuffledTexts = shuffleArray(choices.map(c => c.text));
+    return shuffledTexts.map((text, index) => ({
+        raw_key: String.fromCharCode(65 + index), // A, B, C, D
+        text: text
+    }));
 }
 
 // 해설 생성
