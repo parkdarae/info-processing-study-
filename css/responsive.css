@@ -1,0 +1,93 @@
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .mode-buttons-container {
+        grid-template-columns: 1fr;
+    }
+
+    body {
+        padding: 5px;
+        font-size: 18px;
+    }
+
+    .container {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .header {
+        padding: 20px 15px;
+    }
+
+    .mode-selector {
+        padding: 20px 15px;
+    }
+
+    .question-container {
+        padding: 20px 15px;
+        max-height: none;
+    }
+
+    .choice-item {
+        padding: 15px;
+    }
+
+    .choice-key {
+        font-size: 1.2em;
+    }
+
+    .choice-text {
+        font-size: 1.05em;
+    }
+
+    .answer-input {
+        padding: 18px;
+        font-size: 1.1em;
+    }
+
+    .mode-buttons {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .mode-btn {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+
+    .question-text {
+        font-size: 1.15em;
+    }
+
+    .stats {
+        margin: 5px 0;
+        padding: 10px;
+    }
+
+    .stats h3 {
+        font-size: 1em;
+    }
+
+    .stats-grid {
+        gap: 5px;
+    }
+
+    .stats-item {
+        font-size: 0.85em;
+        padding: 3px 0;
+    }
+
+    .stats .btn {
+        padding: 5px 8px;
+        font-size: 0.75em;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95em;
+    }
+
+    .question-card {
+        padding: 20px 15px;
+    }
+}
+

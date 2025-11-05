@@ -392,34 +392,49 @@
             background: white;
             border: 2px solid #e9ecef;
             border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
+            padding: 30px;
+            margin-bottom: 30px;
             transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .question-card:hover {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            border-color: #667eea;
+        }
+        
+        /* 이미지 스타일 */
+        .question-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            border: 2px solid #e9ecef;
         }
 
         .question-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #e9ecef;
+            margin-bottom: 25px;
+            padding-bottom: 18px;
+            border-bottom: 3px solid #e9ecef;
         }
 
         .question-no {
-            font-size: 1.5em;
+            font-size: 1.6em;
             font-weight: bold;
             color: #667eea;
+            text-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
         }
 
         .question-text {
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 25px;
+            font-size: 1.25em;
+            line-height: 2.0;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-weight: 400;
         }
 
         .choices {
@@ -429,12 +444,14 @@
         .choice-item {
             display: flex;
             align-items: flex-start;
-            padding: 15px;
-            margin-bottom: 10px;
+            padding: 18px 20px;
+            margin-bottom: 12px;
             background: #f8f9fa;
-            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s;
+            line-height: 1.8;
         }
 
         .choice-item {
@@ -442,9 +459,10 @@
         }
 
         .choice-item:hover {
-            background: #e9ecef;
+            background: #e3f2fd;
+            border-color: #667eea;
             transform: translateX(5px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 12px rgba(102, 126, 234, 0.2);
         }
 
         .choice-item:active {
@@ -454,13 +472,16 @@
         .choice-key {
             font-weight: bold;
             color: #667eea;
-            margin-right: 10px;
-            min-width: 30px;
+            margin-right: 15px;
+            min-width: 35px;
+            font-size: 1.1em;
         }
 
         .choice-text {
             flex: 1;
             white-space: pre-line;
+            font-size: 1.05em;
+            color: #2c3e50;
         }
 
         .answer-input {
@@ -536,16 +557,20 @@
 
         .result-correct {
             background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
-            border: 2px solid #28a745;
+            border: 3px solid #28a745;
             color: #155724;
             animation: correctPulse 0.5s ease-out;
+            font-size: 1.05em;
+            line-height: 1.9;
         }
 
         .result-incorrect {
             background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
-            border: 2px solid #dc3545;
+            border: 3px solid #dc3545;
             color: #721c24;
             animation: shake 0.5s ease-out;
+            font-size: 1.05em;
+            line-height: 1.9;
         }
 
         @keyframes slideIn {
@@ -722,11 +747,11 @@
 
         .table-caption {
             font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-            font-size: 1.1em;
-            padding: 8px 0;
-            border-bottom: 2px solid #667eea;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.15em;
+            padding: 10px 0;
+            border-bottom: 3px solid #667eea;
         }
 
         .table-after-text {
@@ -755,15 +780,18 @@
         }
 
         .question-table th {
-            padding: 12px 15px;
+            padding: 15px 18px;
             text-align: left;
             font-weight: 600;
+            font-size: 1.05em;
             border-bottom: 2px solid rgba(255,255,255,0.2);
         }
 
         .question-table td {
-            padding: 10px 15px;
+            padding: 13px 18px;
             border-bottom: 1px solid #e9ecef;
+            font-size: 1.02em;
+            line-height: 1.7;
         }
 
         .question-table tbody tr:hover {
@@ -776,14 +804,16 @@
 
         /* 설명 창 */
         .explanation {
-            margin-top: 20px;
-            padding: 20px;
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            border-radius: 5px;
+            margin-top: 25px;
+            padding: 25px;
+            background: #fff9e6;
+            border-left: 5px solid #ffc107;
+            border-radius: 8px;
             white-space: pre-line;
             display: none;
-            line-height: 1.8;
+            line-height: 2.0;
+            font-size: 1.05em;
+            box-shadow: 0 3px 10px rgba(255, 193, 7, 0.15);
         }
 
         .explanation.show {
@@ -809,18 +839,21 @@
         .explanation table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
         
         .explanation th,
         .explanation td {
-            padding: 8px 12px;
+            padding: 12px 15px;
             border: 1px solid #ddd;
             text-align: left;
+            line-height: 1.7;
         }
         
         .explanation th {
-            background: #f8f9fa;
+            background: #667eea;
+            color: white;
             font-weight: bold;
         }
         
@@ -833,16 +866,17 @@
 
         /* 코드 박스 스타일 */
         .code-box {
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-            border-left: 4px solid #667eea;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
+            background: #1e1e1e;
+            border: 2px solid #3c3c3c;
+            border-left: 5px solid #667eea;
+            border-radius: 10px;
+            padding: 24px;
+            margin: 25px 0;
             overflow-x: auto;
             font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-            font-size: 0.95em;
-            line-height: 1.6;
+            font-size: 1.05em;
+            line-height: 1.8;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
         
         /* 기본 코드 블록은 원래 크기 유지 */
@@ -855,7 +889,7 @@
         }
 
         .code-box code {
-            color: #333;
+            color: #d4d4d4;
             background: transparent;
             padding: 0;
             border: none;
@@ -865,30 +899,31 @@
 
         /* 키워드 강조 */
         .code-box code .keyword {
-            color: #0066cc;
+            color: #569cd6;
             font-weight: bold;
         }
 
         .code-box code .string {
-            color: #008000;
+            color: #ce9178;
         }
 
         .code-box code .comment {
-            color: #808080;
+            color: #6a9955;
             font-style: italic;
         }
 
         /* 설명의 코드 박스 */
         .explanation .code-box {
-            background: #fff;
-            border: 1px solid #ffc107;
-            margin: 10px 0;
+            background: #1e1e1e;
+            border: 2px solid #ffc107;
+            border-left: 5px solid #ffc107;
+            margin: 15px 0;
         }
 
         /* 정답의 코드 박스 */
         .result-section .code-box {
-            background: #f0f0f0;
-            margin: 10px 0;
+            background: #1e1e1e;
+            margin: 15px 0;
         }
 
         /* 스크롤바 스타일 */
