@@ -138,8 +138,8 @@ function displayTheoryQuestion(item) {
     const question = generateTheoryQuestion(item);
     App.theory.currentQuestion = question;
     
-    const questionCard = document.querySelector('.question-card');
-    if (!questionCard) return;
+    const container = document.getElementById('questionContainer');
+    if (!container) return;
     
     // 문제 번호 및 카테고리 표시
     const headerHTML = `
@@ -187,14 +187,14 @@ function displayTheoryQuestion(item) {
                 <input type="text" id="subjectiveInput" placeholder="정답을 입력하세요" 
                        class="subjective-input" onkeypress="if(event.key==='Enter') checkTheorySubjective()">
                 <p class="subjective-hint">💡 힌트: 여러 답안 가능 (용어/약어 모두 인정, 대소문자 무관)</p>
+                <button class="submit-btn" onclick="checkTheorySubjective()" style="margin-top: 15px;">
+                    <i class="fas fa-check"></i> 정답 확인
+                </button>
             </div>
         `;
     }
     
-    questionCard.innerHTML = headerHTML + questionTextHTML + answerHTML;
-    
-    // 버튼 영역 업데이트
-    updateTheoryButtons();
+    container.innerHTML = `<div class="question-card">${headerHTML}${questionTextHTML}${answerHTML}</div>`;
 }
 
 // 객관식 선택
@@ -302,6 +302,11 @@ function showTheoryResult(isCorrect, question, userAnswer = null) {
                 <p><strong>카테고리:</strong> ${item.category} > ${item.subcategory}</p>
             </div>
         </div>
+        <div style="text-align: center; margin-top: 25px;">
+            <button class="nav-btn" onclick="nextTheoryQuestion()">
+                <i class="fas fa-arrow-right"></i> 다음 문제
+            </button>
+        </div>
     `;
     
     resultSection.innerHTML = resultHTML;
@@ -310,36 +315,8 @@ function showTheoryResult(isCorrect, question, userAnswer = null) {
     if (questionCard) {
         questionCard.appendChild(resultSection);
     }
-    
-    // 버튼 업데이트 (다음 문제 버튼 활성화)
-    updateTheoryButtons(true);
 }
 
-// 이론 모듈 버튼 업데이트
-function updateTheoryButtons(answered = false) {
-    const buttonArea = document.querySelector('.button-area');
-    if (!buttonArea) return;
-    
-    let buttonsHTML = '';
-    
-    if (answered) {
-        // 다음 문제 버튼
-        buttonsHTML = `
-            <button class="nav-btn" onclick="nextTheoryQuestion()">
-                <i class="fas fa-arrow-right"></i> 다음 문제
-            </button>
-        `;
-    } else if (App.theory.questionType === 'subjective') {
-        // 주관식: 정답 확인 버튼
-        buttonsHTML = `
-            <button class="submit-btn" onclick="checkTheorySubjective()">
-                <i class="fas fa-check"></i> 정답 확인
-            </button>
-        `;
-    }
-    
-    buttonArea.innerHTML = buttonsHTML;
-}
 
 // 다음 문제로 이동
 function nextTheoryQuestion() {
