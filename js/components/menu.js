@@ -59,8 +59,14 @@ function switchModule(moduleName) {
         App.state.currentIndex = 0;
         currentIndex = 0; // 하위 호환성
         
+        // 실기 최빈출 모듈인 경우 대시보드 표시
+        if (moduleName === 'theory_frequent') {
+            theoryFrequent.loadItems().then(() => {
+                theoryFrequent.renderDashboard();
+            });
+        }
         // 이론 모듈인 경우 객관식/주관식 선택 화면 표시
-        if (moduleName === 'theory') {
+        else if (moduleName === 'theory') {
             document.getElementById('questionContainer').innerHTML = `
                 <div class="question-card">
                     <div style="text-align: center; padding: 50px;">

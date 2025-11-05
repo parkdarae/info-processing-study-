@@ -36,6 +36,14 @@ App.moduleConfig = {
         tablesFile: 'tables_code_control.jsonl',
         maxRange: 14
     },
+    'theory_frequent': {
+        title: '⭐ 실기 최빈출 50개',
+        itemsFile: 'data/items_theory_frequent.jsonl',
+        tablesFile: '',
+        type: 'flashcard',
+        maxRange: 50,
+        isTheoryFrequent: true
+    },
     'theory': {
         title: '정처기 실기 이론',
         itemsFile: 'data/items_theory.jsonl',

@@ -1,0 +1,179 @@
+<!-- 실기 최빈출 50개 학습 템플릿 -->
+<div class="theory-frequent-template">
+    <!-- 대시보드 -->
+    <div class="theory-frequent-dashboard" id="theoryFrequentDashboard">
+        <div class="dashboard-header">
+            <h2><i class="fas fa-star"></i> 실기 최빈출 50개 학습</h2>
+            <p>플래시카드 방식으로 핵심 개념을 암기하세요</p>
+        </div>
+        
+        <div class="study-modes">
+            <h3>📚 라벨별 학습</h3>
+            <div class="label-grid">
+                <button class="label-btn" onclick="theoryFrequent.startLabelStudy('all')">
+                    <i class="fas fa-list"></i>
+                    <span>전체 학습</span>
+                    <small id="total-count">50개 항목</small>
+                </button>
+                <button class="label-btn" onclick="theoryFrequent.startLabelStudy('database')">
+                    <i class="fas fa-database"></i>
+                    <span>데이터베이스</span>
+                    <small id="database-count">0개</small>
+                </button>
+                <button class="label-btn" onclick="theoryFrequent.startLabelStudy('os')">
+                    <i class="fas fa-desktop"></i>
+                    <span>운영체제</span>
+                    <small id="os-count">0개</small>
+                </button>
+                <button class="label-btn" onclick="theoryFrequent.startLabelStudy('network')">
+                    <i class="fas fa-network-wired"></i>
+                    <span>네트워크</span>
+                    <small id="network-count">0개</small>
+                </button>
+                <button class="label-btn" onclick="theoryFrequent.startLabelStudy('security')">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>정보보안</span>
+                    <small id="security-count">0개</small>
+                </button>
+                <button class="label-btn" onclick="theoryFrequent.startLabelStudy('software_engineering')">
+                    <i class="fas fa-cogs"></i>
+                    <span>SW공학</span>
+                    <small id="software-count">0개</small>
+                </button>
+            </div>
+        </div>
+        
+        <div class="study-stats">
+            <h3>📊 학습 통계</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="stat-number" id="completed-count">0</div>
+                    <div class="stat-label">완료한 항목</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-number" id="total-time">0분</div>
+                    <div class="stat-label">총 학습시간</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-fire"></i>
+                    <div class="stat-number" id="streak-count">0</div>
+                    <div class="stat-label">연속 학습일</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-percentage"></i>
+                    <div class="stat-number" id="accuracy-rate">0%</div>
+                    <div class="stat-label">정답률</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 플래시카드 학습 화면 -->
+    <div class="flashcard-study" id="flashcardStudy" style="display: none;">
+        <div class="flashcard-container">
+            <div class="flashcard" id="flashcard">
+                <div class="flashcard-front">
+                    <div class="card-header">
+                        <span class="card-number" id="cardNumber">1 / 50</span>
+                        <div class="card-labels" id="cardLabels">
+                            <!-- 라벨들이 동적으로 추가됨 -->
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 id="cardTitle">문제 제목</h3>
+                        <p class="question" id="cardQuestion">문제 내용</p>
+                        <div class="flip-hint">
+                            <i class="fas fa-hand-pointer"></i>
+                            클릭하여 답 확인
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="card-header">
+                        <span class="card-number" id="cardNumberBack">1 / 50</span>
+                        <div class="card-labels" id="cardLabelsBack">
+                            <!-- 라벨들이 동적으로 추가됨 -->
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3 id="cardTitleBack">문제 제목</h3>
+                        <div class="answer-content" id="cardAnswer">
+                            <p>답안 내용</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flashcard-controls">
+                <div class="navigation-controls">
+                    <button class="control-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i> 이전
+                    </button>
+                    <button class="control-btn" id="nextBtn">
+                        다음 <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="self-assessment" id="selfAssessment" style="display: none;">
+                    <p>이 문제를 얼마나 잘 알고 있나요?</p>
+                    <div class="assessment-buttons">
+                        <button class="assessment-btn difficulty-hard" onclick="theoryFrequent.recordAssessment(3)">
+                            <i class="fas fa-times"></i> 모르겠음
+                        </button>
+                        <button class="assessment-btn difficulty-medium" onclick="theoryFrequent.recordAssessment(2)">
+                            <i class="fas fa-question"></i> 애매함
+                        </button>
+                        <button class="assessment-btn difficulty-easy" onclick="theoryFrequent.recordAssessment(1)">
+                            <i class="fas fa-check"></i> 알았음
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="study-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text" id="progressText">
+                    진도: 1 / 50 (2%)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 학습 완료 모달 -->
+<div class="study-complete-modal" id="studyCompleteModal" style="display: none;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-trophy"></i> 학습 완료!</h3>
+        </div>
+        <div class="modal-body">
+            <p>축하합니다! 선택한 항목들을 모두 학습하셨습니다.</p>
+            <div class="completion-stats">
+                <div class="completion-stat">
+                    <i class="fas fa-check-circle"></i>
+                    <span>완료 항목: <strong id="completedItems">0</strong>개</span>
+                </div>
+                <div class="completion-stat">
+                    <i class="fas fa-clock"></i>
+                    <span>소요 시간: <strong id="studyDuration">0</strong>분</span>
+                </div>
+                <div class="completion-stat">
+                    <i class="fas fa-percentage"></i>
+                    <span>정답률: <strong id="finalAccuracy">0</strong>%</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="modal-btn primary" onclick="theoryFrequent.renderDashboard()">
+                <i class="fas fa-home"></i> 대시보드로
+            </button>
+            <button class="modal-btn secondary" onclick="theoryFrequent.restartStudy()">
+                <i class="fas fa-redo"></i> 다시 학습
+            </button>
+        </div>
+    </div>
+</div>

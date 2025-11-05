@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/theory-frequent.css?v=20251105210000">
+    <link rel="stylesheet" href="css/theory-category.css?v=20251105220000">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -1539,6 +1541,9 @@
                 </div>
                 <div class="menu-item" onclick="switchModule('code_control')" id="menu_code_control">
                     <i class="fas fa-code"></i> 💻 코드-제어문14문제
+                </div>
+                <div class="menu-item" onclick="switchModule('theory_frequent')" id="menu_theory_frequent">
+                    <i class="fas fa-star"></i> ⭐ 실기 최빈출 50개
                 </div>
                 <div class="menu-item" onclick="switchModule('theory')" id="menu_theory">
                     <i class="fas fa-lightbulb"></i> 🎯 정처기 실기 이론
@@ -3203,6 +3208,8 @@
                 await loadScript('js/utils/validator.js?v=20251105004');
                 await loadScript('js/theory-adapter.js?v=20251105004');
                 await loadScript('js/theory-module.js?v=20251105004');
+                await loadScript('js/theory-frequent-module.js?v=20251105210000');
+                await loadScript('js/components/theory-category.js?v=20251105220000');
                 await loadScript('js/components/menu.js?v=20251105004');
                 await loadScript('js/components/modal.js?v=20251105004');
                 await loadScript('js/components/question-display.js?v=20251105004');

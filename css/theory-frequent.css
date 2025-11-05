@@ -1,0 +1,645 @@
+/* 실기 최빈출 50개 학습 모듈 스타일 */
+
+.theory-frequent-dashboard {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dashboard-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.dashboard-header p {
+    color: #666;
+    font-size: 1.1em;
+}
+
+/* 학습 모드 섹션 */
+.study-modes {
+    margin-bottom: 40px;
+}
+
+.study-modes h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.label-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.label-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 20px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.label-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.label-btn i {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.label-btn span {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.label-btn small {
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+
+/* 통계 섹션 */
+.study-stats h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border: 2px solid #f8f9fa;
+    transition: all 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: #667eea;
+}
+
+.stat-card i {
+    font-size: 2.5em;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.stat-number {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+/* 플래시카드 컨테이너 */
+.flashcard-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.flashcard {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 30px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.flashcard.flipped .flashcard-front {
+    transform: rotateY(-180deg);
+}
+
+.flashcard.flipped .flashcard-back {
+    transform: rotateY(0deg);
+}
+
+.flashcard-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.card-header {
+    padding: 20px 25px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.card-number {
+    font-weight: 600;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.card-labels {
+    display: flex;
+    gap: 8px;
+}
+
+.label {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8em;
+    font-weight: 500;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.card-content {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.question {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.answer-content {
+    text-align: left;
+}
+
+.answer-content p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    font-size: 1.1em;
+}
+
+.flip-hint {
+    opacity: 0.7;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+/* 플래시카드 컨트롤 */
+.flashcard-controls {
+    margin-bottom: 30px;
+}
+
+.navigation-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.control-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 자가평가 */
+.self-assessment {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.self-assessment p {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.assessment-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.assessment-btn {
+    flex: 1;
+    max-width: 150px;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.difficulty-easy {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+}
+
+.difficulty-medium {
+    background: linear-gradient(135deg, #FF9800, #F57C00);
+    color: white;
+}
+
+.difficulty-hard {
+    background: linear-gradient(135deg, #f44336, #d32f2f);
+    color: white;
+}
+
+.assessment-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.assessment-btn i {
+    font-size: 1.2em;
+}
+
+/* 진도 표시 */
+.study-progress {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    text-align: center;
+    color: #666;
+    font-weight: 500;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .flashcard {
+        height: 350px;
+    }
+    
+    .assessment-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .assessment-btn {
+        max-width: none;
+    }
+    
+    .navigation-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .label-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+/* 진도 오버뷰 */
+.progress-overview {
+    margin-top: 30px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.progress-overview h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.overall-progress {
+    margin-bottom: 25px;
+}
+
+.overall-progress .progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.overall-progress .progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 6px;
+    transition: width 0.3s ease;
+}
+
+.overall-progress .progress-text {
+    text-align: center;
+    color: #666;
+    font-weight: 600;
+}
+
+.label-progress {
+    margin-top: 20px;
+}
+
+.label-progress-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px 0;
+}
+
+.label-name {
+    font-weight: 500;
+    color: #333;
+    min-width: 80px;
+}
+
+.mini-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    margin-left: 15px;
+}
+
+.mini-progress-bar {
+    flex: 1;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.mini-progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.mini-progress-text {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: 500;
+    min-width: 35px;
+    text-align: right;
+}
+
+/* 라벨별 색상 */
+.label-database { background: rgba(33, 150, 243, 0.8) !important; }
+.label-sql { background: rgba(76, 175, 80, 0.8) !important; }
+.label-os { background: rgba(255, 152, 0, 0.8) !important; }
+.label-network { background: rgba(156, 39, 176, 0.8) !important; }
+.label-security { background: rgba(244, 67, 54, 0.8) !important; }
+.label-software_engineering { background: rgba(96, 125, 139, 0.8) !important; }
+.label-programming { background: rgba(63, 81, 181, 0.8) !important; }
+.label-data_structure { background: rgba(139, 195, 74, 0.8) !important; }
+.label-algorithm { background: rgba(255, 193, 7, 0.8) !important; }
+.label-other { background: rgba(158, 158, 158, 0.8) !important; }
+
+/* 미니 진도바 라벨별 색상 */
+.mini-progress-fill.label-database { background: linear-gradient(135deg, #2196F3, #1976D2); }
+.mini-progress-fill.label-sql { background: linear-gradient(135deg, #4CAF50, #388E3C); }
+.mini-progress-fill.label-os { background: linear-gradient(135deg, #FF9800, #F57C00); }
+.mini-progress-fill.label-network { background: linear-gradient(135deg, #9C27B0, #7B1FA2); }
+.mini-progress-fill.label-security { background: linear-gradient(135deg, #F44336, #D32F2F); }
+.mini-progress-fill.label-software_engineering { background: linear-gradient(135deg, #607D8B, #455A64); }
+.mini-progress-fill.label-programming { background: linear-gradient(135deg, #3F51B5, #303F9F); }
+.mini-progress-fill.label-data_structure { background: linear-gradient(135deg, #8BC34A, #689F38); }
+.mini-progress-fill.label-algorithm { background: linear-gradient(135deg, #FFC107, #FFA000); }
+.mini-progress-fill.label-other { background: linear-gradient(135deg, #9E9E9E, #757575); }
+
+/* 학습 완료 모달 */
+.study-complete-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.modal-header i {
+    font-size: 1.2em;
+    margin-right: 8px;
+}
+
+.modal-body {
+    padding: 30px 25px;
+    text-align: center;
+}
+
+.modal-body p {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.completion-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.completion-stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    font-size: 1em;
+}
+
+.completion-stat i {
+    color: #667eea;
+    font-size: 1.2em;
+}
+
+.completion-stat strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.modal-footer {
+    padding: 20px 25px 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.modal-btn.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.modal-btn.secondary {
+    background: #f8f9fa;
+    color: #333;
+    border: 2px solid #e9ecef;
+}
+
+.modal-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
