@@ -4,11 +4,12 @@ class PMPModule {
         this.items = [];
         this.currentItem = null;
         this.currentIndex = 0;
-        this.studyMode = 'quiz'; // quiz 모드 (핵심키워드130과 동일)
+        this.studyMode = 'quiz'; // 'quiz' 또는 'card'
         this.currentLabel = 'all';
         this.studyData = this.loadStudyData();
         this.selectedAnswer = null;
         this.enhancedMode = false; // 학습 모드 (키워드 강조)
+        this.cardStep = 1; // 카드 학습 단계 (1: 문제, 2: 답, 3: 해설)
     }
 
     // 학습 데이터 로드
@@ -338,6 +339,102 @@ class PMPModule {
         }
     }
 
+    // 카드 학습 모드 렌더링
+    renderCardMode(item) {
+        const container = document.getElementById('questionContainer');
+        const isBookmarked = this.isBookmarked(item.id);
+        
+        let cardContent = '';
+        
+        // 단계별 콘텐츠
+        if (this.cardStep === 1) {
+            // 1단계: 문제만
+            const questionText = this.highlightKeywords(item.question);
+            cardContent = `
+                <div class="card-question">
+                    <h3>문제</h3>
+                    <p>${questionText}</p>
+                </div>
+                <div class="card-hint">카드를 클릭하여 답 확인</div>
+            `;
+        } else if (this.cardStep === 2) {
+            // 2단계: 답
+            const answerText = item.options.find(opt => opt.startsWith(item.answer + '.'))
+                ?.replace(/^[A-D]\.\s*/, '') || item.answer_text;
+            cardContent = `
+                <div class="card-question dimmed">
+                    <p>${item.question}</p>
+                </div>
+                <div class="card-answer">
+                    <h3>정답</h3>
+                    <div class="answer-key">${item.answer}</div>
+                    <p>${answerText}</p>
+                </div>
+                <div class="card-hint">클릭하여 해설 확인</div>
+            `;
+        } else if (this.cardStep === 3) {
+            // 3단계: 해설 요약
+            const answerText = item.options.find(opt => opt.startsWith(item.answer + '.'))
+                ?.replace(/^[A-D]\.\s*/, '') || item.answer_text;
+            const explanationText = this.highlightKeywords(this.summarizeExplanation(item.explanation));
+            cardContent = `
+                <div class="card-question dimmed">
+                    <p>${item.question}</p>
+                </div>
+                <div class="card-answer">
+                    <div class="answer-key">${item.answer}</div>
+                    <p>${answerText}</p>
+                </div>
+                <div class="card-explanation">
+                    <h3>해설 요약</h3>
+                    <p>${explanationText}</p>
+                </div>
+                <div class="card-hint">클릭하여 다음 문제</div>
+            `;
+        }
+        
+        container.innerHTML = `
+            <div class="question-card card-mode" onclick="pmpModule.nextCardStep()">
+                <div class="question-header">
+                    <div class="question-no">${item.q_no}</div>
+                    <div class="card-step-indicator">${this.cardStep}/3</div>
+                    <button class="btn btn-secondary" onclick="event.stopPropagation(); pmpModule.toggleBookmarkButton('${item.id}')">
+                        <i class="fas fa-star"></i> ${isBookmarked ? '✓' : '☆'}
+                    </button>
+                </div>
+                
+                <div class="card-content">
+                    ${cardContent}
+                </div>
+                
+                <div class="action-buttons">
+                    <div class="main-controls">
+                        <button class="btn btn-primary" onclick="event.stopPropagation(); pmpModule.nextCardStep()">
+                            <i class="fas fa-arrow-right"></i> ${this.cardStep === 3 ? '다음문제' : '다음'}
+                        </button>
+                        <button class="btn" onclick="event.stopPropagation(); pmpModule.jumpToCardStep(2)" style="background: #17a2b8; color: white;">
+                            <i class="fas fa-eye"></i> 답
+                        </button>
+                        <button class="btn btn-secondary" onclick="event.stopPropagation(); pmpModule.jumpToCardStep(3)">
+                            <i class="fas fa-lightbulb"></i> 해설
+                        </button>
+                    </div>
+                    <div class="navigation-controls">
+                        <button class="btn btn-secondary" onclick="event.stopPropagation(); pmpModule.previousCardItem()" ${this.currentIndex === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="event.stopPropagation(); pmpModule.renderDashboard()">
+                            <i class="fas fa-home"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="event.stopPropagation(); pmpModule.nextCardItem()" ${this.currentIndex === this.items.length - 1 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
     // 대시보드 렌더링
     renderDashboard() {
         const container = document.getElementById('questionContainer');
@@ -360,6 +457,9 @@ class PMPModule {
                         </button>
                         <button class="filter-btn" onclick="pmpModule.startStudy('all', 'random')">
                             <i class="fas fa-random"></i> 랜덤학습
+                        </button>
+                        <button class="filter-btn" onclick="pmpModule.startCardStudy('all', 'sequential')" style="background: linear-gradient(135deg, #e83e8c 0%, #dc3545 100%);">
+                            <i class="fas fa-layer-group"></i> 카드학습
                         </button>
                         <button class="filter-btn" onclick="pmpModule.showRangeModal()">
                             <i class="fas fa-sliders-h"></i> 범위학습
@@ -658,8 +758,35 @@ class PMPModule {
         this.currentIndex = 0;
         this.currentItem = this.items[0];
         this.selectedAnswer = null;
+        this.studyMode = 'quiz';
         
         this.renderQuestion(this.currentItem);
+    }
+
+    // 카드 학습 모드 시작
+    async startCardStudy(label = 'all', mode = 'sequential') {
+        if (this.items.length === 0) {
+            await this.loadItems();
+        }
+        
+        let studyItems = this.filterByLabel(label);
+        
+        if (mode === 'random') {
+            studyItems = this.shuffleArray([...studyItems]);
+        }
+        
+        if (studyItems.length === 0) {
+            alert('선택한 조건에 해당하는 문제가 없습니다.');
+            return;
+        }
+        
+        this.items = studyItems;
+        this.currentIndex = 0;
+        this.currentItem = this.items[0];
+        this.studyMode = 'card';
+        this.cardStep = 1;
+        
+        this.renderCardMode(this.currentItem);
     }
 
     // 체크한 문제 학습 시작
@@ -741,6 +868,60 @@ class PMPModule {
             [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
         }
         return shuffled;
+    }
+
+    // 카드 학습: 다음 단계로 진행
+    nextCardStep() {
+        if (this.cardStep < 3) {
+            this.cardStep++;
+            this.renderCardMode(this.currentItem);
+        } else {
+            // 3단계에서 다음 문제로
+            this.nextCardItem();
+        }
+    }
+
+    // 카드 학습: 특정 단계로 점프
+    jumpToCardStep(step) {
+        this.cardStep = step;
+        this.renderCardMode(this.currentItem);
+    }
+
+    // 카드 학습: 다음 문제
+    nextCardItem() {
+        if (this.currentIndex < this.items.length - 1) {
+            this.currentIndex++;
+            this.currentItem = this.items[this.currentIndex];
+            this.cardStep = 1; // 1단계로 리셋
+            this.renderCardMode(this.currentItem);
+        } else {
+            // 마지막 문제인 경우 대시보드로
+            alert('모든 문제를 완료했습니다!');
+            this.renderDashboard();
+        }
+    }
+
+    // 카드 학습: 이전 문제
+    previousCardItem() {
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+            this.currentItem = this.items[this.currentIndex];
+            this.cardStep = 1; // 1단계로 리셋
+            this.renderCardMode(this.currentItem);
+        }
+    }
+
+    // 해설 요약 (첫 2-3 문장 추출)
+    summarizeExplanation(explanation) {
+        if (!explanation || explanation === '해설이 없습니다.') {
+            return '해설이 없습니다.';
+        }
+        
+        // 첫 2-3 문장만 추출 (간단한 요약)
+        const sentences = explanation.split(/[.!?]\s+/);
+        const summary = sentences.slice(0, 2).join('. ');
+        
+        return summary + (sentences.length > 2 ? '...' : '');
     }
 
     // 통계 계산

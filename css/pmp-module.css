@@ -628,6 +628,126 @@
 .label-monitoring { background: rgba(253, 126, 20, 0.8) !important; }
 .label-closing { background: rgba(220, 53, 69, 0.8) !important; }
 
+/* 카드 학습 모드 */
+.card-mode {
+    cursor: pointer;
+    user-select: none;
+}
+
+.card-mode:active {
+    transform: scale(0.98);
+}
+
+.card-step-indicator {
+    background: rgba(111, 66, 193, 0.2);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #6f42c1;
+}
+
+.card-content {
+    padding: 30px 25px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-question {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.card-question.dimmed {
+    opacity: 0.5;
+    font-size: 0.9em;
+}
+
+.card-question h3 {
+    color: #6f42c1;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.card-question p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+}
+
+.card-answer {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    border: 2px solid #28a745;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.card-answer h3 {
+    color: #155724;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.answer-key {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-answer p {
+    font-size: 1.1em;
+    color: #155724;
+    line-height: 1.5;
+}
+
+.card-explanation {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border: 2px solid #ffc107;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.card-explanation h3 {
+    color: #856404;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.card-explanation p {
+    font-size: 1em;
+    color: #856404;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.card-hint {
+    margin-top: 20px;
+    color: #999;
+    font-size: 0.9em;
+    font-style: italic;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
 /* 컴팩트 섹션 (드롭다운) */
 .compact-section {
     background: white;
@@ -951,6 +1071,49 @@
     
     .stats-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    
+    /* 카드 모드 모바일 최적화 */
+    .card-content {
+        padding: 20px 15px;
+        min-height: 250px;
+    }
+    
+    .card-question p {
+        font-size: 1.05em;
+    }
+    
+    .card-question h3 {
+        font-size: 1.1em;
+    }
+    
+    .answer-key {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 1.3em;
+    }
+    
+    .card-answer, .card-explanation {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .card-answer h3, .card-explanation h3 {
+        font-size: 1em;
+    }
+    
+    .card-answer p {
+        font-size: 1em;
+    }
+    
+    .card-explanation p {
+        font-size: 0.95em;
+    }
+    
+    .card-hint {
+        font-size: 0.85em;
+        margin-top: 15px;
     }
 }
 
