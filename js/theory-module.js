@@ -33,6 +33,42 @@ function startTheoryMode(questionType) {
     loadTheoryQuestions();
 }
 
+// 이론 데이터 로드 (대시보드용)
+async function loadTheoryData() {
+    try {
+        console.log('📥 이론 데이터 로드 시작 (대시보드용)...');
+        
+        const config = App.moduleConfig['theory'];
+        if (!config) {
+            throw new Error('theory 모듈 설정을 찾을 수 없습니다.');
+        }
+        
+        console.log('📂 파일 로드:', config.itemsFile);
+        
+        const response = await fetch(config.itemsFile);
+        if (!response.ok) {
+            throw new Error(`파일 로드 실패: ${response.statusText}`);
+        }
+        
+        const text = await response.text();
+        const theoryItems = text.trim().split('\n').map(line => JSON.parse(line));
+        
+        console.log('✅ 로드된 이론 항목 수:', theoryItems.length);
+        
+        // App.theory에 저장
+        App.theory.allTheoryData = theoryItems;
+        
+        // 카테고리별 통계 계산
+        App.theory.categoryStats = calculateCategoryStats(theoryItems);
+        
+        console.log('✅ 이론 데이터 로드 완료');
+        return theoryItems;
+    } catch (error) {
+        console.error('❌ 이론 데이터 로드 실패:', error);
+        throw error;
+    }
+}
+
 // 이론 문제 로드 (기존 시스템 활용)
 async function loadTheoryQuestions() {
     try {
@@ -309,3 +345,8 @@ function startTheoryQuestions(questionsData) {
     }
 }
 
+// 전역 함수로 노출 (HTML 및 menu.js에서 호출용)
+window.loadTheoryData = loadTheoryData;
+window.startTheoryMode = startTheoryMode;
+window.startCategoryStudy = startCategoryStudy;
+window.startTheoryQuestions = startTheoryQuestions;

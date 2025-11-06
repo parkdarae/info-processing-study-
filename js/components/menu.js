@@ -82,34 +82,26 @@ function switchModule(moduleName) {
         currentMode = null; // 하위 호환성
         renderCodeControlDashboard();
     }
-    // 이론 모듈인 경우 객관식/주관식 선택 화면 표시
+    // 이론 모듈인 경우 카테고리 대시보드 표시
     else if (moduleName === 'theory') {
-        App.state.currentMode = null; // 선택 화면 표시를 위해 모드 초기화
+        App.state.currentMode = null; // 대시보드 표시를 위해 모드 초기화
+        currentMode = null; // 하위 호환성
+        // theory 데이터 로드 후 대시보드 렌더링
+        loadTheoryData().then(() => {
+            renderTheoryCategoryDashboard();
+        }).catch(error => {
+            console.error('Theory 데이터 로드 실패:', error);
             document.getElementById('questionContainer').innerHTML = `
                 <div class="question-card">
                     <div style="text-align: center; padding: 50px;">
-                        <i class="fas fa-lightbulb" style="font-size: 4em; color: #667eea; margin-bottom: 20px;"></i>
-                        <h2>🎯 정처기 실기 이론 학습</h2>
-                        <p style="color: #6c757d; margin: 20px 0;">문제 유형을 선택해주세요</p>
-                        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
-                            <button class="mode-btn" onclick="startTheoryMode('objective')" style="flex: 1; max-width: 300px; padding: 30px; font-size: 1.2em;">
-                                <i class="fas fa-list-ul" style="font-size: 2em; margin-bottom: 10px;"></i><br>
-                                <strong>객관식</strong><br>
-                                <small style="opacity: 0.7;">4지선다 문제</small>
-                            </button>
-                            <button class="mode-btn" onclick="startTheoryMode('subjective')" style="flex: 1; max-width: 300px; padding: 30px; font-size: 1.2em;">
-                                <i class="fas fa-keyboard" style="font-size: 2em; margin-bottom: 10px;"></i><br>
-                                <strong>주관식</strong><br>
-                                <small style="opacity: 0.7;">직접 입력</small>
-                            </button>
-                        </div>
-                        <p style="color: #666; margin-top: 30px; font-size: 0.9em;">
-                            💡 선택 후 기존과 동일한 모든 기능 사용 가능:<br>
-                            순차/랜덤/범위설정/오답만풀기/체크한문제/정답확인/답보기/해설보기
-                        </p>
+                        <i class="fas fa-exclamation-triangle" style="font-size: 4em; color: #dc3545; margin-bottom: 20px;"></i>
+                        <h2>데이터 로드 실패</h2>
+                        <p style="color: #6c757d; margin: 20px 0;">이론 문제 데이터를 불러오지 못했습니다.</p>
+                        <button class="btn-primary" onclick="location.reload()">새로고침</button>
                     </div>
                 </div>
             `;
+        });
     } 
     // 기출문제 모듈인 경우 기본 메시지 표시
     else {
