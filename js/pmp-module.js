@@ -136,12 +136,12 @@ class PMPModule {
             <div class="question-card">
                 <div class="question-header">
                     <div class="question-no">${item.q_no}</div>
-                    <div style="display: flex; gap: 10px;">
-                        <button class="btn btn-info" onclick="pmpModule.toggleEnhancedMode()" style="font-size: 0.9em;">
-                            <i class="fas fa-highlighter"></i> ${this.enhancedMode ? '강조 OFF' : '강조 ON'}
+                    <div style="display: flex; gap: 6px;">
+                        <button class="btn btn-info" onclick="pmpModule.toggleEnhancedMode()">
+                            <i class="fas fa-highlighter"></i> ${this.enhancedMode ? 'OFF' : 'ON'}
                         </button>
                         <button class="btn btn-secondary" onclick="pmpModule.toggleBookmarkButton('${item.id}')">
-                            <i class="fas fa-star"></i> ${isBookmarked ? '체크됨' : '체크'}
+                            <i class="fas fa-star"></i> ${isBookmarked ? '✓' : '☆'}
                         </button>
                     </div>
                 </div>
@@ -171,24 +171,28 @@ class PMPModule {
                        placeholder="정답을 입력하세요 (A, B, C, D)" style="display: none;">
                 
                 <div class="action-buttons">
-                    <button class="btn btn-primary" onclick="pmpModule.checkAnswer()">
-                        <i class="fas fa-check"></i> 정답 확인
-                    </button>
-                    <button class="btn" onclick="pmpModule.showAnswerOnly()" style="background: #17a2b8; color: white;">
-                        <i class="fas fa-eye"></i> 답 보기
-                    </button>
-                    <button class="btn btn-secondary" onclick="pmpModule.previousItem()">
-                        <i class="fas fa-arrow-left"></i> 이전 문제
-                    </button>
-                    <button class="btn btn-secondary" onclick="pmpModule.nextItem()">
-                        <i class="fas fa-arrow-right"></i> 다음 문제
-                    </button>
-                    <button class="btn btn-secondary" onclick="pmpModule.showExplanation()">
-                        <i class="fas fa-lightbulb"></i> 해설 보기
-                    </button>
-                    <button class="btn btn-secondary" onclick="pmpModule.renderDashboard()">
-                        <i class="fas fa-home"></i> 대시보드
-                    </button>
+                    <div class="main-controls">
+                        <button class="btn btn-primary" onclick="pmpModule.checkAnswer()">
+                            <i class="fas fa-check"></i> 제출
+                        </button>
+                        <button class="btn" onclick="pmpModule.showAnswerOnly()" style="background: #17a2b8; color: white;">
+                            <i class="fas fa-eye"></i> 답
+                        </button>
+                        <button class="btn btn-secondary" onclick="pmpModule.showExplanation()">
+                            <i class="fas fa-lightbulb"></i> 해설
+                        </button>
+                    </div>
+                    <div class="navigation-controls">
+                        <button class="btn btn-secondary" onclick="pmpModule.previousItem()" ${this.currentIndex === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="pmpModule.renderDashboard()">
+                            <i class="fas fa-home"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="pmpModule.nextItem()" ${this.currentIndex === this.items.length - 1 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
                 
                 <div class="result-section" id="pmpResultSection" style="display: none;"></div>

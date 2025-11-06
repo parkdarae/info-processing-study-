@@ -428,16 +428,17 @@
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 6px 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
-    font-weight: 600;
-    font-size: 0.95em;
+    font-weight: 500;
+    font-size: 0.85em;
     transition: all 0.3s;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
+    white-space: nowrap;
 }
 
 .btn:hover:not(:disabled) {
@@ -677,8 +678,16 @@
     }
     
     .btn {
-        width: 100%;
-        max-width: 250px;
+        padding: 8px 10px;
+        font-size: 0.8em;
+        min-width: auto;
+    }
+    
+    .main-controls,
+    .navigation-controls {
+        gap: 6px;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
     }
     
