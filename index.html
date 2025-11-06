@@ -511,9 +511,32 @@
 
         .action-buttons {
             display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .main-controls {
+            display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .main-controls .btn {
+            flex: 1;
+            min-width: 100px;
+        }
+
+        .navigation-controls {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .navigation-controls .btn {
+            min-width: 50px;
+            padding: 12px 20px;
         }
 
         .action-buttons .btn {
@@ -1244,6 +1267,17 @@
             .btn {
                 padding: 12px 20px;
                 font-size: 0.95em;
+            }
+
+            .main-controls .btn {
+                min-width: 80px;
+                padding: 12px 15px;
+                font-size: 0.9em;
+            }
+
+            .navigation-controls .btn {
+                min-width: 45px;
+                padding: 12px 15px;
             }
 
             .question-card {
@@ -2406,24 +2440,31 @@
             
             html += `
                     <div class="action-buttons">
-                        <button class="btn btn-primary" onclick="checkCurrentAnswer()">
-                            <i class="fas fa-check"></i> 정답 확인
-                        </button>
-                        <button class="btn" onclick="showAnswerOnly()" style="background: #17a2b8; color: white;">
-                            <i class="fas fa-eye"></i> 답 보기
-                        </button>
-                        <button class="btn btn-secondary" onclick="prevQuestion()">
-                            <i class="fas fa-arrow-left"></i> 이전 문제
-                        </button>
-                        <button class="btn btn-secondary" onclick="nextQuestion()">
-                            <i class="fas fa-arrow-right"></i> 다음 문제
-                        </button>
-                        <button class="btn btn-secondary" onclick="showExplanation()">
-                            <i class="fas fa-lightbulb"></i> 해설 보기
-                        </button>
-                        <button class="btn btn-video" onclick="openVideo()" id="videoBtn" style="display: none;">
-                            <i class="fab fa-youtube"></i> 동영상 설명
-                        </button>
+                        <div class="main-controls">
+                            <button class="btn btn-primary" onclick="checkCurrentAnswer()">
+                                <i class="fas fa-check"></i> 제출
+                            </button>
+                            <button class="btn" onclick="showAnswerOnly()" style="background: #17a2b8; color: white;">
+                                <i class="fas fa-eye"></i> 답
+                            </button>
+                            <button class="btn btn-secondary" onclick="showExplanation()">
+                                <i class="fas fa-lightbulb"></i> 해설
+                            </button>
+                            <button class="btn btn-video" onclick="openVideo()" id="videoBtn" style="display: none;">
+                                <i class="fab fa-youtube"></i> 동영상
+                            </button>
+                        </div>
+                        <div class="navigation-controls">
+                            <button class="btn btn-secondary" onclick="prevQuestion()">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="btn btn-secondary" onclick="returnToDashboard()">
+                                <i class="fas fa-home"></i>
+                            </button>
+                            <button class="btn btn-secondary" onclick="nextQuestion()">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="result-section" id="resultSection" style="display: none;"></div>
                     <div class="explanation" id="explanationDiv"></div>
@@ -2766,6 +2807,26 @@
                 symbols: [],
                 inputIndex: 0
             };
+        }
+
+        // 대시보드로 돌아가기
+        function returnToDashboard() {
+            const module = App.state.currentModule;
+            
+            if (module === 'keyword130') {
+                keyword130Module.renderDashboard();
+            } else if (module === 'code_control') {
+                codeControlModule.renderDashboard();
+            } else if (module === 'theory') {
+                renderTheoryCategoryDashboard();
+            } else if (module === 'theory_frequent') {
+                theoryFrequentModule.renderDashboard();
+            } else if (module === 'pmp') {
+                pmpModule.renderDashboard();
+            } else {
+                // 기본: 메인 화면으로
+                location.reload();
+            }
         }
 
         // 해설 보기
