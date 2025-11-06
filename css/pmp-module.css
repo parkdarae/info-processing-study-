@@ -1318,3 +1318,67 @@
         font-size: 1.1em;
     }
 }
+
+/* 복수 선택 체크박스 스타일 */
+.choice-checkbox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.choice-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.choice-checkbox label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+    margin: 0;
+}
+
+.choice-checkbox .choice-key {
+    flex-shrink: 0;
+}
+
+.choice-checkbox .choice-text {
+    flex: 1;
+}
+
+.multiple-hint {
+    margin: 15px 0;
+    padding: 10px 15px;
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+    color: #856404;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.multiple-hint i {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .choice-checkbox {
+        padding: 12px;
+    }
+    
+    .choice-checkbox input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .multiple-hint {
+        font-size: 0.9em;
+        padding: 8px 12px;
+    }
+}

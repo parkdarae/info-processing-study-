@@ -129,9 +129,47 @@ class PMPModule {
         const container = document.getElementById('questionContainer');
         const isBookmarked = this.isBookmarked(item.id);
         
+        // 복수 답안 여부 확인
+        const isMultipleChoice = Array.isArray(item.answer);
+        const requiredCount = isMultipleChoice ? item.answer.length : 1;
+        
         // 학습 모드에 따라 텍스트 처리
         const questionText = this.highlightKeywords(item.question);
         const explanationText = this.highlightKeywords(item.explanation || '');
+        
+        // 선택지 HTML 생성
+        let choicesHTML = '';
+        if (isMultipleChoice) {
+            // 복수 선택: 체크박스 사용
+            choicesHTML = item.options.map((option, index) => {
+                const key = String.fromCharCode(65 + index);
+                const text = option.replace(/^[A-F]\)\s*/, '');
+                return `
+                    <div class="choice-item choice-checkbox" data-key="${key}" onclick="pmpModule.selectChoice(this, '${key}')">
+                        <input type="checkbox" id="choice_${key}" class="choice-check">
+                        <label for="choice_${key}">
+                            <span class="choice-key">${key}</span>
+                            <span class="choice-text">${text}</span>
+                        </label>
+                    </div>
+                `;
+            }).join('');
+            choicesHTML += `<div class="multiple-hint">
+                <i class="fas fa-info-circle"></i> ${requiredCount}개를 선택하세요
+            </div>`;
+        } else {
+            // 단일 선택: 기존 방식
+            choicesHTML = item.options.map((option, index) => {
+                const key = String.fromCharCode(65 + index);
+                const text = option.replace(/^[A-D]\)\s*/, '');
+                return `
+                    <div class="choice-item" onclick="pmpModule.selectChoice(this, '${key}')">
+                        <span class="choice-key">${key}</span>
+                        <span class="choice-text">${text}</span>
+                    </div>
+                `;
+            }).join('');
+        }
         
         container.innerHTML = `
             <div class="question-card">
@@ -156,16 +194,7 @@ class PMPModule {
                 </div>
                 
                 <div class="choices">
-                    ${item.options.map((option, index) => {
-                        const key = String.fromCharCode(65 + index); // A, B, C, D
-                        const text = option.replace(/^[A-D]\)\s*/, ''); // A) 제거
-                        return `
-                            <div class="choice-item" onclick="pmpModule.selectChoice(this, '${key}')">
-                                <span class="choice-key">${key}</span>
-                                <span class="choice-text">${text}</span>
-                            </div>
-                        `;
-                    }).join('')}
+                    ${choicesHTML}
                 </div>
                 
                 <input type="text" class="answer-input" id="pmpAnswerInput" 
@@ -207,36 +236,84 @@ class PMPModule {
 
     // 선택지 클릭
     selectChoice(element, key) {
-        // 모든 선택지 스타일 초기화
-        document.querySelectorAll('.choice-item').forEach(item => {
-            item.style.background = '#f8f9fa';
-            item.style.color = '';
-        });
+        const item = this.currentItem;
+        const isMultipleChoice = Array.isArray(item.answer);
         
-        // 선택된 선택지 하이라이트
-        element.style.background = '#667eea';
-        element.style.color = 'white';
-        
-        // 선택된 답안 저장
-        this.selectedAnswer = key;
-        
-        // 숨겨진 입력창에 값 설정
-        const answerInput = document.getElementById('pmpAnswerInput');
-        if (answerInput) {
-            answerInput.value = key;
+        if (isMultipleChoice) {
+            // 복수 선택: 체크박스 토글
+            const checkbox = element.querySelector('.choice-check');
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked;
+                
+                // 선택된 답안 배열 관리
+                if (!this.selectedAnswers) this.selectedAnswers = [];
+                const index = this.selectedAnswers.indexOf(key);
+                
+                if (checkbox.checked) {
+                    if (index === -1) this.selectedAnswers.push(key);
+                    element.style.background = '#667eea';
+                    element.style.color = 'white';
+                } else {
+                    if (index > -1) this.selectedAnswers.splice(index, 1);
+                    element.style.background = '#f8f9fa';
+                    element.style.color = '';
+                }
+            }
+        } else {
+            // 단일 선택: 기존 로직
+            document.querySelectorAll('.choice-item').forEach(item => {
+                item.style.background = '#f8f9fa';
+                item.style.color = '';
+            });
+            
+            element.style.background = '#667eea';
+            element.style.color = 'white';
+            
+            this.selectedAnswer = key;
+            
+            const answerInput = document.getElementById('pmpAnswerInput');
+            if (answerInput) {
+                answerInput.value = key;
+            }
         }
     }
 
     // 정답 확인
     checkAnswer() {
-        if (!this.selectedAnswer) {
-            alert('답안을 선택해주세요.');
-            return;
-        }
-        
         const item = this.currentItem;
-        const isCorrect = this.selectedAnswer === item.answer;
+        const isMultipleChoice = Array.isArray(item.answer);
         const resultSection = document.getElementById('pmpResultSection');
+        
+        let isCorrect = false;
+        let userAnswer = '';
+        let correctAnswerDisplay = '';
+        
+        if (isMultipleChoice) {
+            // 복수 선택 검증
+            if (!this.selectedAnswers || this.selectedAnswers.length === 0) {
+                alert('답안을 선택해주세요.');
+                return;
+            }
+            
+            // 순서 무관 비교: 정렬 후 비교
+            const userAnswers = [...this.selectedAnswers].sort();
+            const correctAnswers = [...item.answer].sort();
+            isCorrect = JSON.stringify(userAnswers) === JSON.stringify(correctAnswers);
+            
+            userAnswer = userAnswers.join(', ');
+            correctAnswerDisplay = correctAnswers.join(', ');
+            
+        } else {
+            // 단일 선택 검증
+            if (!this.selectedAnswer) {
+                alert('답안을 선택해주세요.');
+                return;
+            }
+            
+            isCorrect = this.selectedAnswer === item.answer;
+            userAnswer = this.selectedAnswer;
+            correctAnswerDisplay = item.answer;
+        }
         
         // 통계 업데이트
         this.studyData.stats.total++;
@@ -254,6 +331,10 @@ class PMPModule {
         this.saveStudyData();
         
         // 결과 표시
+        const answerTextDisplay = Array.isArray(item.answer_text) 
+            ? item.answer_text.join('<br>') 
+            : item.answer_text;
+        
         resultSection.style.display = 'block';
         if (isCorrect) {
             resultSection.className = 'result-section correct';
@@ -261,7 +342,8 @@ class PMPModule {
             resultSection.style.border = '2px solid #155724';
             resultSection.style.color = '#155724';
             resultSection.innerHTML = `
-                <i class="fas fa-check-circle"></i> <strong>정답입니다!</strong> ${item.answer_text}
+                <i class="fas fa-check-circle"></i> <strong>정답입니다!</strong><br>
+                정답: ${correctAnswerDisplay}
             `;
         } else {
             resultSection.className = 'result-section wrong';
@@ -269,7 +351,9 @@ class PMPModule {
             resultSection.style.border = '2px solid #721c24';
             resultSection.style.color = '#721c24';
             resultSection.innerHTML = `
-                <i class="fas fa-times-circle"></i> <strong>오답입니다.</strong> 정답: ${item.answer} - ${item.answer_text}
+                <i class="fas fa-times-circle"></i> <strong>오답입니다.</strong><br>
+                선택: ${userAnswer}<br>
+                정답: ${correctAnswerDisplay}
             `;
         }
     }
@@ -278,6 +362,15 @@ class PMPModule {
     showAnswerOnly() {
         const item = this.currentItem;
         const resultSection = document.getElementById('pmpResultSection');
+        const isMultipleChoice = Array.isArray(item.answer);
+        
+        const correctAnswerDisplay = isMultipleChoice 
+            ? item.answer.join(', ') 
+            : item.answer;
+        
+        const answerTextDisplay = Array.isArray(item.answer_text)
+            ? item.answer_text.join('<br>')
+            : item.answer_text;
         
         resultSection.style.display = 'block';
         resultSection.className = 'result-section';
@@ -285,7 +378,7 @@ class PMPModule {
         resultSection.style.border = '2px solid #0c5460';
         resultSection.style.color = '#0c5460';
         resultSection.innerHTML = `
-            <i class="fas fa-eye"></i> <strong>정답:</strong> ${item.answer} - ${item.answer_text}
+            <i class="fas fa-eye"></i> <strong>정답:</strong> ${correctAnswerDisplay}
         `;
     }
 
@@ -315,6 +408,7 @@ class PMPModule {
             this.currentIndex--;
             this.currentItem = this.items[this.currentIndex];
             this.selectedAnswer = null;
+            this.selectedAnswers = [];  // 복수 답안 초기화
             this.renderQuestion(this.currentItem);
         }
     }
@@ -325,6 +419,7 @@ class PMPModule {
             this.currentIndex++;
             this.currentItem = this.items[this.currentIndex];
             this.selectedAnswer = null;
+            this.selectedAnswers = [];  // 복수 답안 초기화
             this.renderQuestion(this.currentItem);
         }
     }
@@ -358,31 +453,41 @@ class PMPModule {
             `;
         } else if (this.cardStep === 2) {
             // 2단계: 답
-            const answerText = item.options.find(opt => opt.startsWith(item.answer + '.'))
-                ?.replace(/^[A-D]\.\s*/, '') || item.answer_text;
+            const answerDisplay = Array.isArray(item.answer) 
+                ? item.answer.join(', ') 
+                : item.answer;
+            const answerTextDisplay = Array.isArray(item.answer_text)
+                ? item.answer_text.join('<br>')
+                : (item.options.find(opt => opt.startsWith(item.answer + '.'))
+                    ?.replace(/^[A-D]\.\s*/, '') || item.answer_text);
             cardContent = `
                 <div class="card-question dimmed">
                     <p>${item.question}</p>
                 </div>
                 <div class="card-answer">
                     <h3>정답</h3>
-                    <div class="answer-key">${item.answer}</div>
-                    <p>${answerText}</p>
+                    <div class="answer-key">${answerDisplay}</div>
+                    <p>${answerTextDisplay}</p>
                 </div>
                 <div class="card-hint">클릭하여 해설 확인</div>
             `;
         } else if (this.cardStep === 3) {
             // 3단계: 해설 요약
-            const answerText = item.options.find(opt => opt.startsWith(item.answer + '.'))
-                ?.replace(/^[A-D]\.\s*/, '') || item.answer_text;
+            const answerDisplay = Array.isArray(item.answer) 
+                ? item.answer.join(', ') 
+                : item.answer;
+            const answerTextDisplay = Array.isArray(item.answer_text)
+                ? item.answer_text.join('<br>')
+                : (item.options.find(opt => opt.startsWith(item.answer + '.'))
+                    ?.replace(/^[A-D]\.\s*/, '') || item.answer_text);
             const explanationText = this.highlightKeywords(this.summarizeExplanation(item.explanation));
             cardContent = `
                 <div class="card-question dimmed">
                     <p>${item.question}</p>
                 </div>
                 <div class="card-answer">
-                    <div class="answer-key">${item.answer}</div>
-                    <p>${answerText}</p>
+                    <div class="answer-key">${answerDisplay}</div>
+                    <p>${answerTextDisplay}</p>
                 </div>
                 <div class="card-explanation">
                     <h3>해설 요약</h3>
