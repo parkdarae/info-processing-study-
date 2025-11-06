@@ -154,11 +154,6 @@ class TheoryFrequentModule {
     renderFlashcard(item) {
         const container = document.getElementById('questionContainer');
         
-        // 디버깅: 아이템 데이터 확인
-        console.log('현재 플래시카드 데이터:', item);
-        console.log('답안 내용:', item.content);
-        console.log('뒤집힘 상태:', this.isFlipped);
-        
         container.innerHTML = `
             <div class="flashcard-container">
                 <div class="flashcard ${this.isFlipped ? 'flipped' : ''}" onclick="flipCard()">
@@ -187,9 +182,7 @@ class TheoryFrequentModule {
                         </div>
                         <div class="card-content">
                             <h3>${item.title}</h3>
-                            <div class="answer-content">
-                                ${item.content ? item.content.split('\n').filter(line => line.trim() !== '').map(line => `<p>${line}</p>`).join('') : '<p>답안 내용이 없습니다.</p>'}
-                            </div>
+                            ${item.content ? item.content.split('\n').filter(line => line.trim() !== '').map(line => `<p class="answer-line">${line}</p>`).join('') : '<p class="answer-line">답안 내용이 없습니다.</p>'}
                         </div>
                     </div>
                 </div>
