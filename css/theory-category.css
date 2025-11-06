@@ -3,30 +3,24 @@
 .theory-category-dashboard {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
 }
 
-/* 대시보드 헤더 */
-.dashboard-header {
+/* 컴팩트 헤더 */
+.dashboard-header-compact {
     text-align: center;
-    margin-bottom: 40px;
-    padding: 30px 20px;
+    margin-bottom: 20px;
+    padding: 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 20px;
+    border-radius: 15px;
     color: white;
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
-.dashboard-header h2 {
-    margin: 0 0 10px 0;
-    font-size: 2.2em;
-    font-weight: 600;
-}
-
-.dashboard-header p {
-    margin: 0 0 20px 0;
-    font-size: 1.1em;
-    opacity: 0.9;
+.dashboard-header-compact h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.6em;
+    font-weight: 700;
 }
 
 .total-count {
@@ -34,118 +28,213 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: 15px;
 }
 
 .count-number {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 700;
     color: #FFD700;
 }
 
 .count-label {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 500;
 }
 
-/* 학습 모드 선택 */
-.study-mode-selector {
-    margin-bottom: 40px;
-}
-
-.study-mode-selector h3 {
-    color: #333;
+/* 미니 통계 카드 */
+.stats-mini-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
     margin-bottom: 20px;
-    font-size: 1.5em;
 }
 
-.mode-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.mode-btn {
+.mini-card {
     background: white;
-    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.mini-card i {
+    font-size: 1.8em;
+    color: #667eea;
+}
+
+.mini-content {
+    flex: 1;
+}
+
+.mini-value {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.mini-label {
+    font-size: 0.85em;
+    color: #666;
+    font-weight: 500;
+}
+
+/* 메인 액션 카드 */
+.main-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.main-action-card {
+    background: white;
+    border: none;
     border-radius: 15px;
-    padding: 15px 25px;
+    padding: 20px;
     cursor: pointer;
     transition: all 0.3s;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 8px;
-    min-width: 120px;
-    font-size: 1em;
-    color: #666;
+    gap: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
 }
 
-.mode-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-color: #667eea;
+.main-action-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.mode-btn.active {
+.main-action-card.primary {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    border-color: #667eea;
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
-.mode-btn i {
-    font-size: 1.5em;
+.main-action-card.secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
 }
 
-.mode-btn span {
-    font-weight: 500;
+.main-action-card.accent {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
 }
 
-/* 카테고리 그리드 섹션 */
-.category-grid-section {
-    margin-bottom: 40px;
+.main-action-card.special {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
 }
 
-.section-header {
+.action-icon {
+    font-size: 2.5em;
+}
+
+.action-content {
+    flex: 1;
+}
+
+.action-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.action-desc {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* 카테고리 섹션 (컴팩트) */
+.category-section-compact {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+}
+
+.section-toggle {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 18px 20px;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.section-header h3 {
-    color: #333;
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.all-study-btn {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 12px 25px;
-    cursor: pointer;
+    font-size: 1.1em;
     font-weight: 600;
-    font-size: 1em;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.section-toggle:hover {
+    background: #f8f9fa;
+}
+
+.section-toggle span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-icon {
+    transition: transform 0.3s;
+    color: #667eea;
+}
+
+.section-content {
+    padding: 0 20px 20px;
+}
+
+.category-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.category-btn-compact {
+    background: white;
+    border: 2px solid #f0f0f0;
+    border-left: 4px solid #667eea;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
     transition: all 0.3s;
     display: flex;
     align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    gap: 12px;
+    text-align: left;
 }
 
-.all-study-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+.category-btn-compact:hover {
+    background: #f8f9fa;
+    border-left-width: 6px;
+    transform: translateX(2px);
 }
 
-.all-study-btn i {
-    font-size: 1.1em;
+.category-btn-compact i {
+    font-size: 1.8em;
+}
+
+.category-text {
+    flex: 1;
+}
+
+.category-name-compact {
+    font-size: 1em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.category-count-compact {
+    font-size: 0.85em;
+    color: #666;
 }
 
 /* 카테고리 그리드 */
@@ -538,46 +627,58 @@
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     .theory-category-dashboard {
+        padding: 10px;
+    }
+    
+    .dashboard-header-compact {
         padding: 15px;
+        margin-bottom: 15px;
     }
     
-    .dashboard-header {
-        padding: 20px 15px;
-    }
-    
-    .dashboard-header h2 {
-        font-size: 1.8em;
+    .dashboard-header-compact h2 {
+        font-size: 1.3em;
     }
     
     .count-number {
+        font-size: 1.7em;
+    }
+    
+    .stats-mini-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .mini-card {
+        padding: 12px;
+    }
+    
+    .main-actions {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .main-action-card {
+        padding: 18px;
+    }
+    
+    .action-icon {
         font-size: 2em;
     }
     
-    .mode-buttons {
-        flex-direction: column;
-        align-items: center;
+    .action-title {
+        font-size: 1.1em;
     }
     
-    .mode-btn {
-        min-width: 200px;
+    .action-desc {
+        font-size: 0.85em;
     }
     
-    .section-header {
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-    }
-    
-    .category-grid {
+    .category-grid-compact {
         grid-template-columns: 1fr;
     }
     
-    .category-card {
-        padding: 20px;
-    }
-    
-    .progress-overview {
-        grid-template-columns: 1fr;
+    .category-btn-compact {
+        padding: 12px;
     }
     
     .range-inputs {
@@ -596,6 +697,18 @@
 }
 
 @media (max-width: 480px) {
+    .dashboard-header-compact h2 {
+        font-size: 1.15em;
+    }
+    
+    .count-number {
+        font-size: 1.5em;
+    }
+    
+    .mini-value {
+        font-size: 1.3em;
+    }
+    
     .modal-content {
         width: 95%;
         margin: 10px;

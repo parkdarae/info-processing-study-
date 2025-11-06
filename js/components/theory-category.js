@@ -12,76 +12,77 @@ function renderTheoryCategoryDashboard() {
     
     container.innerHTML = `
         <div class="theory-category-dashboard">
-            <div class="dashboard-header">
-                <h2><i class="fas fa-graduation-cap"></i> 정처기 실기 이론</h2>
-                <p>카테고리별로 체계적인 학습을 시작하세요</p>
+            <div class="dashboard-header-compact">
+                <h2><i class="fas fa-graduation-cap"></i> 핵심 키워드 130 문제</h2>
                 <div class="total-count">
                     <span class="count-number">${totalCount}</span>
                     <span class="count-label">개 문제</span>
                 </div>
             </div>
             
-            <div class="study-mode-selector">
-                <h3>📚 학습 모드 선택</h3>
-                <div class="mode-buttons">
-                    <button class="mode-btn active" onclick="setTheoryStudyMode('sequential')">
-                        <i class="fas fa-list-ol"></i>
-                        <span>순차 풀기</span>
-                    </button>
-                    <button class="mode-btn" onclick="setTheoryStudyMode('random')">
-                        <i class="fas fa-random"></i>
-                        <span>랜덤 풀기</span>
-                    </button>
-                    <button class="mode-btn" onclick="setTheoryStudyMode('range')">
-                        <i class="fas fa-sliders-h"></i>
-                        <span>범위 설정</span>
-                    </button>
+            <div class="stats-mini-cards">
+                <div class="mini-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="mini-content">
+                        <div class="mini-value" id="completedCount">0</div>
+                        <div class="mini-label">완료</div>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <i class="fas fa-percentage"></i>
+                    <div class="mini-content">
+                        <div class="mini-value" id="accuracyRate">0%</div>
+                        <div class="mini-label">정답률</div>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="mini-content">
+                        <div class="mini-value" id="studyTime">0분</div>
+                        <div class="mini-label">학습시간</div>
+                    </div>
                 </div>
             </div>
             
-            <div class="category-grid-section">
-                <div class="section-header">
-                    <h3>🏷️ 카테고리별 학습</h3>
-                    <button class="all-study-btn" onclick="startCategoryStudy('all', getTheoryStudyMode())">
-                        <i class="fas fa-play"></i>
-                        전체 학습 시작 (${totalCount}개)
-                    </button>
-                </div>
-                
-                <div class="category-grid">
-                    ${renderCategoryCards(categoryStats)}
-                </div>
+            <div class="main-actions">
+                <button class="main-action-card primary" onclick="startCategoryStudy('all', 'sequential')">
+                    <div class="action-icon"><i class="fas fa-play-circle"></i></div>
+                    <div class="action-content">
+                        <div class="action-title">순차 학습</div>
+                        <div class="action-desc">1번부터 순서대로</div>
+                    </div>
+                </button>
+                <button class="main-action-card secondary" onclick="startCategoryStudy('all', 'random')">
+                    <div class="action-icon"><i class="fas fa-random"></i></div>
+                    <div class="action-content">
+                        <div class="action-title">랜덤 학습</div>
+                        <div class="action-desc">문제를 섞어서</div>
+                    </div>
+                </button>
+                <button class="main-action-card accent" onclick="showTheoryRangeModal(App.theory.allTheoryData, 'all')">
+                    <div class="action-icon"><i class="fas fa-sliders-h"></i></div>
+                    <div class="action-content">
+                        <div class="action-title">범위 학습</div>
+                        <div class="action-desc">원하는 범위만</div>
+                    </div>
+                </button>
+                <button class="main-action-card special" onclick="startWrongAnswerReview()">
+                    <div class="action-icon"><i class="fas fa-exclamation-circle"></i></div>
+                    <div class="action-content">
+                        <div class="action-title">오답 노트</div>
+                        <div class="action-desc">틀린 문제만</div>
+                    </div>
+                </button>
             </div>
             
-            <div class="study-progress-section">
-                <h3>📊 학습 현황</h3>
-                <div class="progress-overview">
-                    <div class="progress-item">
-                        <div class="progress-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="progress-info">
-                            <div class="progress-value" id="completedCount">0</div>
-                            <div class="progress-label">완료한 문제</div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-icon">
-                            <i class="fas fa-percentage"></i>
-                        </div>
-                        <div class="progress-info">
-                            <div class="progress-value" id="accuracyRate">0%</div>
-                            <div class="progress-label">정답률</div>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="progress-info">
-                            <div class="progress-value" id="studyTime">0분</div>
-                            <div class="progress-label">학습 시간</div>
-                        </div>
+            <div class="category-section-compact">
+                <button class="section-toggle" onclick="toggleCategorySection()">
+                    <span><i class="fas fa-folder-open"></i> 카테고리별 학습</span>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </button>
+                <div id="category-section" class="section-content" style="display: none;">
+                    <div class="category-grid-compact">
+                        ${renderCategoryCardsCompact(categoryStats)}
                     </div>
                 </div>
             </div>
@@ -92,43 +93,62 @@ function renderTheoryCategoryDashboard() {
     updateTheoryProgress();
 }
 
-// 카테고리 카드 렌더링
-function renderCategoryCards(categoryStats) {
+// 컴팩트 카테고리 카드 렌더링
+function renderCategoryCardsCompact(categoryStats) {
     const sortedCategories = Object.entries(THEORY_CATEGORY_CONFIG)
         .sort((a, b) => b[1].count - a[1].count)
         .filter(([category, config]) => config.count > 0);
     
     return sortedCategories.map(([category, config]) => {
         const count = config.count;
-        const percentage = App.theory.categoryStats?.totalCount > 0 
-            ? Math.round((count / App.theory.categoryStats.totalCount) * 100) 
-            : 0;
         
         return `
-            <div class="category-card" onclick="startCategoryStudy('${category}', getTheoryStudyMode())" 
+            <button class="category-btn-compact" onclick="startCategoryStudy('${category}', 'sequential')" 
                  style="border-left-color: ${config.color}">
-                <div class="category-header">
-                    <div class="category-icon" style="color: ${config.color}">
-                        <i class="${config.icon}"></i>
-                    </div>
-                    <div class="category-info">
-                        <div class="category-name">${config.name}</div>
-                        <div class="category-count">${count}개 문제</div>
-                    </div>
+                <i class="${config.icon}" style="color: ${config.color}"></i>
+                <div class="category-text">
+                    <div class="category-name-compact">${config.name}</div>
+                    <div class="category-count-compact">${count}개</div>
                 </div>
-                <div class="category-progress">
-                    <div class="progress-bar">
-                        <div class="progress-fill" style="width: ${percentage}%; background: ${config.color}"></div>
-                    </div>
-                    <div class="progress-text">${percentage}%</div>
-                </div>
-                <div class="category-action">
-                    <i class="fas fa-play"></i>
-                    학습 시작
-                </div>
-            </div>
+            </button>
         `;
     }).join('');
+}
+
+// 카테고리 섹션 토글
+function toggleCategorySection() {
+    const section = document.getElementById('category-section');
+    const toggle = event.target.closest('.section-toggle');
+    const icon = toggle.querySelector('.toggle-icon');
+    
+    if (section.style.display === 'none') {
+        section.style.display = 'grid';
+        icon.style.transform = 'rotate(180deg)';
+    } else {
+        section.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+    }
+}
+
+// 오답 학습 시작
+function startWrongAnswerReview() {
+    const wrongAnswers = JSON.parse(localStorage.getItem('wrongQuestions') || '[]');
+    
+    if (wrongAnswers.length === 0) {
+        alert('틀린 문제가 없습니다. 먼저 문제를 풀어보세요!');
+        return;
+    }
+    
+    const wrongQuestions = App.theory.allTheoryData.filter(item => 
+        wrongAnswers.some(wrong => wrong.id === item.doc_id)
+    );
+    
+    if (wrongQuestions.length === 0) {
+        alert('틀린 문제가 없습니다.');
+        return;
+    }
+    
+    startTheoryQuestions(wrongQuestions);
 }
 
 // 현재 학습 모드 가져오기
@@ -286,3 +306,5 @@ window.setTheoryStudyMode = setTheoryStudyMode;
 window.showTheoryRangeModal = showTheoryRangeModal;
 window.closeTheoryRangeModal = closeTheoryRangeModal;
 window.applyTheoryRange = applyTheoryRange;
+window.toggleCategorySection = toggleCategorySection;
+window.startWrongAnswerReview = startWrongAnswerReview;
