@@ -403,16 +403,14 @@ class TheoryFrequentModule {
     toggleSection(sectionId) {
         const section = document.getElementById(`${sectionId}-section`);
         const toggle = event.target.closest('.section-toggle');
-        const icon = toggle.querySelector('i.fa-chevron-down, i.fa-chevron-up');
+        const icon = toggle.querySelector('.toggle-icon');
         
         if (section.style.display === 'none') {
             section.style.display = 'block';
-            icon.classList.remove('fa-chevron-down');
-            icon.classList.add('fa-chevron-up');
+            icon.style.transform = 'rotate(180deg)';
         } else {
             section.style.display = 'none';
-            icon.classList.remove('fa-chevron-up');
-            icon.classList.add('fa-chevron-down');
+            icon.style.transform = 'rotate(0deg)';
         }
     }
 
@@ -423,95 +421,96 @@ class TheoryFrequentModule {
         
         container.innerHTML = `
             <div class="theory-frequent-dashboard">
-                <div class="dashboard-header">
-                    <h2><i class="fas fa-star"></i> 실기 최빈출 50개 학습</h2>
-                    <p>플래시카드 방식으로 핵심 개념을 암기하세요</p>
+                <div class="dashboard-header-compact">
+                    <h2><i class="fas fa-star"></i> 실기 최빈출 50개</h2>
+                    <div class="total-count">
+                        <span class="count-number">${stats.total}</span>
+                        <span class="count-label">개 문제</span>
+                    </div>
                 </div>
                 
-                <div class="study-modes">
-                    <div class="label-grid">
-                        <button class="label-btn" onclick="theoryFrequent.startLabelStudy('all')" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                            <i class="fas fa-play-circle"></i>
-                            <span>전체 학습 시작</span>
-                            <small>${stats.total}개 항목</small>
-                        </button>
+                <!-- 학습 통계 (상단으로 이동) -->
+                <div class="study-stats-top">
+                    <div class="stats-grid-horizontal">
+                        <div class="stat-card-mini">
+                            <i class="fas fa-check-circle" style="color: #28a745;"></i>
+                            <div class="stat-content">
+                                <div class="stat-number">${stats.completed}</div>
+                                <div class="stat-label">완료</div>
+                            </div>
+                        </div>
+                        <div class="stat-card-mini">
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <div class="stat-content">
+                                <div class="stat-number">${stats.bookmarked}</div>
+                                <div class="stat-label">체크</div>
+                            </div>
+                        </div>
+                        <div class="stat-card-mini">
+                            <i class="fas fa-fire" style="color: #fd7e14;"></i>
+                            <div class="stat-content">
+                                <div class="stat-number">${stats.streak}</div>
+                                <div class="stat-label">연속일</div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                
+                <!-- 주요 학습 버튼 -->
+                <div class="main-study-section">
+                    <button class="main-study-btn" onclick="theoryFrequent.startLabelStudy('all')">
+                        <div class="btn-icon"><i class="fas fa-play-circle"></i></div>
+                        <div class="btn-content">
+                            <div class="btn-title">전체 학습 시작</div>
+                            <div class="btn-desc">${stats.total}개 항목 • 플래시카드 방식</div>
+                        </div>
+                    </button>
                 </div>
                 
                 <!-- 라벨별 학습 드롭다운 -->
                 <div class="compact-section">
                     <button class="section-toggle" onclick="theoryFrequent.toggleSection('labels')">
-                        <span>📚 라벨별 학습</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span><i class="fas fa-folder-open"></i> 라벨별 학습</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
                     </button>
                     <div id="labels-section" class="section-content" style="display: none;">
                         <div class="label-grid-compact">
                             <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('database')">
-                                데이터베이스 (${stats.byLabel.database || 0})
+                                <i class="fas fa-database"></i> 데이터베이스<br><small>${stats.byLabel.database || 0}개</small>
                             </button>
                             <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('os')">
-                                운영체제 (${stats.byLabel.os || 0})
+                                <i class="fas fa-desktop"></i> 운영체제<br><small>${stats.byLabel.os || 0}개</small>
                             </button>
                             <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('network')">
-                                네트워크 (${stats.byLabel.network || 0})
+                                <i class="fas fa-network-wired"></i> 네트워크<br><small>${stats.byLabel.network || 0}개</small>
                             </button>
                             <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('security')">
-                                정보보안 (${stats.byLabel.security || 0})
+                                <i class="fas fa-shield-alt"></i> 정보보안<br><small>${stats.byLabel.security || 0}개</small>
                             </button>
                             <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('software_engineering')">
-                                SW공학 (${stats.byLabel.software_engineering || 0})
+                                <i class="fas fa-cogs"></i> SW공학<br><small>${stats.byLabel.software_engineering || 0}개</small>
                             </button>
                             <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('programming')">
-                                프로그래밍 (${stats.byLabel.programming || 0})
+                                <i class="fas fa-code"></i> 프로그래밍<br><small>${stats.byLabel.programming || 0}개</small>
                             </button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 학습 통계 -->
-                <div class="study-stats">
-                    <h3>📊 학습 통계</h3>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <i class="fas fa-check-circle"></i>
-                            <div class="stat-number">${stats.completed}</div>
-                            <div class="stat-label">완료한 항목</div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-clock"></i>
-                            <div class="stat-number">${stats.totalTime}분</div>
-                            <div class="stat-label">총 학습시간</div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-fire"></i>
-                            <div class="stat-number">${stats.streak}</div>
-                            <div class="stat-label">연속 학습일</div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-percentage"></i>
-                            <div class="stat-number">${stats.accuracy}%</div>
-                            <div class="stat-label">정답률</div>
-                        </div>
-                    </div>
-                    
-                    <div class="progress-overview">
-                        <h4>📈 전체 진도</h4>
-                        <div class="overall-progress">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: ${(stats.completed / stats.total * 100)}%"></div>
-                            </div>
-                            <div class="progress-text">
-                                ${stats.completed} / ${stats.total} (${Math.round(stats.completed / stats.total * 100)}%)
-                            </div>
-                        </div>
-                    </div>
+                <!-- 체크한 문제 복사 -->
+                ${stats.bookmarked > 0 ? `
+                <div class="bookmark-section">
+                    <button class="bookmark-copy-btn" onclick="theoryFrequent.copyBookmarkedItems()">
+                        <i class="fas fa-copy"></i> 체크한 ${stats.bookmarked}개 문제 복사하기
+                    </button>
                 </div>
+                ` : ''}
                 
                 <!-- 라벨별 진도 드롭다운 -->
                 <div class="compact-section">
                     <button class="section-toggle" onclick="theoryFrequent.toggleSection('progress')">
-                        <span>📋 라벨별 진도</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span><i class="fas fa-chart-line"></i> 라벨별 진도</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
                     </button>
                     <div id="progress-section" class="section-content" style="display: none;">
                         <div class="label-progress">
