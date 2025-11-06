@@ -307,14 +307,16 @@
 
         .mode-selector {
             padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 2px solid #e9ecef;
+            background: white;
+            border-bottom: 1px solid #e9ecef;
         }
 
         .mode-buttons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .mode-buttons-container {
@@ -328,19 +330,26 @@
             .mode-buttons-container {
                 grid-template-columns: 1fr;
             }
+            
+            .mode-buttons {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
         }
 
         .mode-btn {
-            padding: 20px;
-            border: 2px solid #667eea;
+            padding: 18px 20px;
+            border: none;
             background: white;
-            border-radius: 10px;
+            color: #333;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: center;
             font-size: 1.1em;
-            font-weight: 500;
+            font-weight: 600;
             position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             overflow: hidden;
         }
 
@@ -363,16 +372,43 @@
         }
 
         .mode-btn:hover {
-            background: #667eea;
-            color: white;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-            border-color: #5568d3;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .mode-btn i {
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        /* 버튼별 색상 */
+        .mode-btn:nth-child(1) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .mode-btn:nth-child(2) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+        }
+        
+        .mode-btn:nth-child(3) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+        }
+        
+        .mode-btn:nth-child(4) {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: white;
+        }
+        
+        .mode-btn:nth-child(5) {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            color: #333;
         }
 
         .mode-btn.active {
-            background: #667eea;
-            color: white;
+            transform: scale(0.98);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
             animation: pulse 2s infinite;
         }
@@ -1216,12 +1252,12 @@
 
             .mode-buttons {
                 grid-template-columns: 1fr;
-                gap: 10px;
+                gap: 12px;
             }
-
+            
             .mode-btn {
-                padding: 15px;
-                font-size: 1.1em;
+                padding: 16px 18px;
+                font-size: 1em;
             }
 
             .question-text {
