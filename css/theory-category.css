@@ -1,88 +1,16 @@
 /* 정처기 실기 이론 - 카테고리별 학습 스타일 */
+/* 공통 스타일은 dashboard-common.css에서 상속 */
 
 .theory-category-dashboard {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px;
+    /* 공통 .module-dashboard 스타일 사용 */
 }
 
-/* 컴팩트 헤더 */
-.dashboard-header-compact {
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 15px;
-    color: white;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-.dashboard-header-compact h2 {
-    margin: 0 0 12px 0;
-    font-size: 1.6em;
-    font-weight: 700;
-}
-
-.total-count {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.count-number {
-    font-size: 2em;
-    font-weight: 700;
-    color: #FFD700;
-}
-
-.count-label {
-    font-size: 1.1em;
-    font-weight: 500;
-}
-
-/* 미니 통계 카드 */
-.stats-mini-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 20px;
-}
-
-.mini-card {
-    background: white;
-    border-radius: 12px;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    border: 1px solid #f0f0f0;
-}
-
-.mini-card i {
-    font-size: 1.8em;
+/* Theory 모듈 커스텀 색상 */
+.theory-category-dashboard .dashboard-header-compact h2 {
     color: #667eea;
 }
 
-.mini-content {
-    flex: 1;
-}
-
-.mini-value {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: #333;
-    margin-bottom: 2px;
-}
-
-.mini-label {
-    font-size: 0.85em;
-    color: #666;
-    font-weight: 500;
-}
-
-/* 메인 액션 카드 */
+/* 메인 액션 카드 (2x2 그리드) */
 .main-actions {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

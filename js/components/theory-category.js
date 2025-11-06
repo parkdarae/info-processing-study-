@@ -11,71 +11,71 @@ function renderTheoryCategoryDashboard() {
     const categoryStats = App.theory.categoryStats?.stats || {};
     
     container.innerHTML = `
-        <div class="theory-category-dashboard">
+        <div class="module-dashboard theory-category-dashboard">
             <div class="dashboard-header-compact">
-                <h2><i class="fas fa-graduation-cap"></i> 핵심 키워드 130 문제</h2>
+                <h2><i class="fas fa-lightbulb"></i> 정처기 실기 이론</h2>
                 <div class="total-count">
                     <span class="count-number">${totalCount}</span>
                     <span class="count-label">개 문제</span>
                 </div>
             </div>
             
-            <div class="stats-mini-cards">
-                <div class="mini-card">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="mini-content">
-                        <div class="mini-value" id="completedCount">0</div>
-                        <div class="mini-label">완료</div>
+            <!-- 학습 통계 -->
+            <div class="study-stats-top">
+                <div class="stats-grid-horizontal">
+                    <div class="stat-card-mini">
+                        <i class="fas fa-check-circle" style="color: #28a745;"></i>
+                        <div class="stat-content">
+                            <div class="stat-number" id="completedCount">0</div>
+                            <div class="stat-label">완료</div>
+                        </div>
                     </div>
-                </div>
-                <div class="mini-card">
-                    <i class="fas fa-percentage"></i>
-                    <div class="mini-content">
-                        <div class="mini-value" id="accuracyRate">0%</div>
-                        <div class="mini-label">정답률</div>
+                    <div class="stat-card-mini">
+                        <i class="fas fa-percentage" style="color: #17a2b8;"></i>
+                        <div class="stat-content">
+                            <div class="stat-number" id="accuracyRate">0%</div>
+                            <div class="stat-label">정답률</div>
+                        </div>
                     </div>
-                </div>
-                <div class="mini-card">
-                    <i class="fas fa-clock"></i>
-                    <div class="mini-content">
-                        <div class="mini-value" id="studyTime">0분</div>
-                        <div class="mini-label">학습시간</div>
+                    <div class="stat-card-mini">
+                        <i class="fas fa-clock" style="color: #fd7e14;"></i>
+                        <div class="stat-content">
+                            <div class="stat-number" id="studyTime">0분</div>
+                            <div class="stat-label">학습시간</div>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <div class="main-actions">
-                <button class="main-action-card primary" onclick="startCategoryStudy('all', 'sequential')">
-                    <div class="action-icon"><i class="fas fa-play-circle"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">순차 학습</div>
-                        <div class="action-desc">1번부터 순서대로</div>
-                    </div>
-                </button>
-                <button class="main-action-card secondary" onclick="startCategoryStudy('all', 'random')">
-                    <div class="action-icon"><i class="fas fa-random"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">랜덤 학습</div>
-                        <div class="action-desc">문제를 섞어서</div>
-                    </div>
-                </button>
-                <button class="main-action-card accent" onclick="showTheoryRangeModal(App.theory.allTheoryData, 'all')">
-                    <div class="action-icon"><i class="fas fa-sliders-h"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">범위 학습</div>
-                        <div class="action-desc">원하는 범위만</div>
-                    </div>
-                </button>
-                <button class="main-action-card special" onclick="startWrongAnswerReview()">
-                    <div class="action-icon"><i class="fas fa-exclamation-circle"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">오답 노트</div>
-                        <div class="action-desc">틀린 문제만</div>
-                    </div>
-                </button>
+            <!-- 주요 학습 모드 -->
+            <div class="main-study-modes">
+                <h3 class="section-title"><i class="fas fa-graduation-cap"></i> 학습 시작하기</h3>
+                <div class="main-mode-grid">
+                    <button class="main-mode-card primary" onclick="startCategoryStudy('all', 'sequential')">
+                        <div class="mode-icon"><i class="fas fa-play-circle"></i></div>
+                        <div class="mode-title">순차학습</div>
+                        <div class="mode-desc">처음부터 순서대로</div>
+                    </button>
+                    <button class="main-mode-card secondary" onclick="startCategoryStudy('all', 'random')">
+                        <div class="mode-icon"><i class="fas fa-random"></i></div>
+                        <div class="mode-title">랜덤학습</div>
+                        <div class="mode-desc">무작위로 섞어서</div>
+                    </button>
+                    <button class="main-mode-card accent" onclick="showTheoryRangeModal(App.theory.allTheoryData, 'all')">
+                        <div class="mode-icon"><i class="fas fa-sliders-h"></i></div>
+                        <div class="mode-title">범위학습</div>
+                        <div class="mode-desc">원하는 범위만</div>
+                    </button>
+                    <button class="main-mode-card bookmarked" onclick="startWrongAnswerReview()">
+                        <div class="mode-icon"><i class="fas fa-exclamation-circle"></i></div>
+                        <div class="mode-title">오답노트</div>
+                        <div class="mode-desc">틀린 문제만</div>
+                    </button>
+                </div>
             </div>
             
-            <div class="category-section-compact">
+            <!-- 카테고리별 학습 드롭다운 -->
+            <div class="compact-section">
                 <button class="section-toggle" onclick="toggleCategorySection()">
                     <span><i class="fas fa-folder-open"></i> 카테고리별 학습</span>
                     <i class="fas fa-chevron-down toggle-icon"></i>

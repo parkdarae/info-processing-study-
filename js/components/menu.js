@@ -74,13 +74,17 @@ function switchModule(moduleName) {
     else if (moduleName === 'keyword130') {
         App.state.currentMode = null; // 대시보드 표시를 위해 모드 초기화
         currentMode = null; // 하위 호환성
-        renderKeyword130Dashboard();
+        keyword130Module.loadItems().then(() => {
+            keyword130Module.renderDashboard();
+        });
     }
     // 코드-제어문 모듈인 경우 대시보드 표시
     else if (moduleName === 'code_control') {
         App.state.currentMode = null; // 대시보드 표시를 위해 모드 초기화
         currentMode = null; // 하위 호환성
-        renderCodeControlDashboard();
+        codeControlModule.loadItems().then(() => {
+            codeControlModule.renderDashboard();
+        });
     }
     // 이론 모듈인 경우 카테고리 대시보드 표시
     else if (moduleName === 'theory') {
