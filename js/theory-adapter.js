@@ -170,3 +170,10 @@ function normalizeTheoryAnswer(answer) {
 function convertTheoryItemsToQuestions(theoryItems, questionType) {
     return theoryItems.map(item => convertTheoryToQuestion(item, questionType, theoryItems));
 }
+
+// 전역 함수로 노출
+window.convertTheoryToQuestion = convertTheoryToQuestion;
+window.convertTheoryItemsToQuestions = convertTheoryItemsToQuestions;
+window.generateQuestionText = generateQuestionText;
+window.generateChoices = generateChoices;
+window.generateExplanation = generateExplanation;

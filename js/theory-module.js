@@ -38,6 +38,21 @@ async function loadTheoryData() {
     try {
         console.log('📥 이론 데이터 로드 시작 (대시보드용)...');
         
+        // App.theory 초기화 확인
+        if (!App.theory) {
+            console.log('🔧 App.theory 초기화...');
+            App.theory = {
+                questionType: 'objective', // 기본값: 객관식
+                currentQuestion: null,
+                questionPool: [],
+                usedQuestions: new Set(),
+                allTheoryData: [],
+                categoryStats: {},
+                currentCategory: 'all',
+                studyMode: 'sequential'
+            };
+        }
+        
         const config = App.moduleConfig['theory'];
         if (!config) {
             throw new Error('theory 모듈 설정을 찾을 수 없습니다.');
@@ -62,6 +77,7 @@ async function loadTheoryData() {
         App.theory.categoryStats = calculateCategoryStats(theoryItems);
         
         console.log('✅ 이론 데이터 로드 완료');
+        console.log('📊 카테고리 통계:', App.theory.categoryStats);
         return theoryItems;
     } catch (error) {
         console.error('❌ 이론 데이터 로드 실패:', error);
@@ -317,18 +333,20 @@ function startCategoryStudy(category, mode = 'sequential') {
 function startTheoryQuestions(questionsData) {
     console.log(`🚀 이론 문제 학습 시작: ${questionsData.length}개 문제`);
     
-    // 기존 이론 모듈 시스템과 연동
-    App.state.allQuestions = questionsData.map((item, index) => ({
-        ...item,
-        id: item.doc_id || `theory_${index + 1}`,
-        question: `${item.term}의 의미는?`,
-        answer: item.accept_answers[0] || item.term,
-        explanation: item.description,
-        category: item.category,
-        subcategory: item.subcategory
-    }));
+    // 문제 유형 기본값 설정 (객관식)
+    const questionType = App.theory.questionType || 'objective';
     
-    App.state.currentQuestions = App.state.allQuestions;
+    // 이론 데이터를 기존 문제 형식으로 변환
+    const convertedQuestions = questionsData.map((item, index) => {
+        return convertTheoryToQuestion(item, questionType, questionsData);
+    });
+    
+    console.log('✅ 변환된 문제 수:', convertedQuestions.length);
+    console.log('📝 첫 번째 문제 샘플:', convertedQuestions[0]);
+    
+    // App.state에 저장 (기존 시스템과 호환)
+    App.state.allQuestions = convertedQuestions;
+    App.state.currentQuestions = convertedQuestions;
     App.state.currentIndex = 0;
     App.state.currentMode = 'theory_category';
     
