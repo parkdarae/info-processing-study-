@@ -50,37 +50,41 @@ function switchModule(moduleName) {
     document.getElementById('rangeEnd').max = config.maxRange;
     document.getElementById('rangeEnd').value = config.maxRange;
     
-    // 문제 로드
-    if (App.state.currentMode) {
-        loadQuestions(App.state.currentMode);
-    } else {
-        App.state.currentQuestions = [];
-        currentQuestions = []; // 하위 호환성
-        App.state.currentIndex = 0;
-        currentIndex = 0; // 하위 호환성
-        
-        // 실기 최빈출 모듈인 경우 대시보드 표시
-        if (moduleName === 'theory_frequent') {
-            theoryFrequent.loadItems().then(() => {
-                theoryFrequent.renderDashboard();
-            });
-        }
-        // PMP 모듈인 경우 대시보드 표시
-        else if (moduleName === 'pmp') {
-            pmpModule.loadItems().then(() => {
-                pmpModule.renderDashboard();
-            });
-        }
-        // 핵심 키워드 130 모듈인 경우 대시보드 표시
-        else if (moduleName === 'keyword130') {
-            renderKeyword130Dashboard();
-        }
-        // 코드-제어문 모듈인 경우 대시보드 표시
-        else if (moduleName === 'code_control') {
-            renderCodeControlDashboard();
-        }
-        // 이론 모듈인 경우 객관식/주관식 선택 화면 표시
-        else if (moduleName === 'theory') {
+    // 모듈별로 대시보드 표시 또는 문제 로드
+    App.state.currentQuestions = [];
+    currentQuestions = []; // 하위 호환성
+    App.state.currentIndex = 0;
+    currentIndex = 0; // 하위 호환성
+    
+    // 실기 최빈출 모듈인 경우 대시보드 표시
+    if (moduleName === 'theory_frequent') {
+        App.state.currentMode = null; // 대시보드 표시를 위해 모드 초기화
+        theoryFrequent.loadItems().then(() => {
+            theoryFrequent.renderDashboard();
+        });
+    }
+    // PMP 모듈인 경우 대시보드 표시
+    else if (moduleName === 'pmp') {
+        App.state.currentMode = null; // 대시보드 표시를 위해 모드 초기화
+        pmpModule.loadItems().then(() => {
+            pmpModule.renderDashboard();
+        });
+    }
+    // 핵심 키워드 130 모듈인 경우 대시보드 표시
+    else if (moduleName === 'keyword130') {
+        App.state.currentMode = null; // 대시보드 표시를 위해 모드 초기화
+        currentMode = null; // 하위 호환성
+        renderKeyword130Dashboard();
+    }
+    // 코드-제어문 모듈인 경우 대시보드 표시
+    else if (moduleName === 'code_control') {
+        App.state.currentMode = null; // 대시보드 표시를 위해 모드 초기화
+        currentMode = null; // 하위 호환성
+        renderCodeControlDashboard();
+    }
+    // 이론 모듈인 경우 객관식/주관식 선택 화면 표시
+    else if (moduleName === 'theory') {
+        App.state.currentMode = null; // 선택 화면 표시를 위해 모드 초기화
             document.getElementById('questionContainer').innerHTML = `
                 <div class="question-card">
                     <div style="text-align: center; padding: 50px;">
@@ -106,17 +110,18 @@ function switchModule(moduleName) {
                     </div>
                 </div>
             `;
-        } else {
-            document.getElementById('questionContainer').innerHTML = `
-                <div class="question-card">
-                    <div style="text-align: center; padding: 50px;">
-                        <i class="fas fa-book" style="font-size: 4em; color: #667eea; margin-bottom: 20px;"></i>
-                        <h2>학습 모드를 선택해주세요</h2>
-                        <p style="color: #6c757d; margin-top: 10px;">위 버튼 중 하나를 클릭하여 시작하세요</p>
-                    </div>
+    } 
+    // 기출문제 모듈인 경우 기본 메시지 표시
+    else {
+        document.getElementById('questionContainer').innerHTML = `
+            <div class="question-card">
+                <div style="text-align: center; padding: 50px;">
+                    <i class="fas fa-book" style="font-size: 4em; color: #667eea; margin-bottom: 20px;"></i>
+                    <h2>학습 모드를 선택해주세요</h2>
+                    <p style="color: #6c757d; margin-top: 10px;">위 버튼 중 하나를 클릭하여 시작하세요</p>
                 </div>
-            `;
-        }
+            </div>
+        `;
     }
     
     updateStats();
