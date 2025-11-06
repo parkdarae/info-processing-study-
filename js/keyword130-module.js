@@ -4,6 +4,7 @@ class Keyword130Module {
         this.items = [];
         this.currentItem = null;
         this.currentIndex = 0;
+        this.cardStep = 1; // 카드 학습 단계 (1: 문제, 2: 답, 3: 다음)
         this.studyData = this.loadStudyData();
         this.bookmarkedItems = this.loadBookmarkedItems();
     }
@@ -160,10 +161,10 @@ class Keyword130Module {
                             <div class="mode-title">랜덤학습</div>
                             <div class="mode-desc">무작위로 섞어서</div>
                         </button>
-                        <button class="main-mode-card accent" onclick="keyword130Module.showRangeModal()">
-                            <div class="mode-icon"><i class="fas fa-sliders-h"></i></div>
-                            <div class="mode-title">범위학습</div>
-                            <div class="mode-desc">원하는 범위만</div>
+                        <button class="main-mode-card accent" onclick="keyword130Module.startCardStudy()">
+                            <div class="mode-icon"><i class="fas fa-layer-group"></i></div>
+                            <div class="mode-title">카드학습</div>
+                            <div class="mode-desc">플립 카드 방식</div>
                         </button>
                         <button class="main-mode-card bookmarked" onclick="keyword130Module.startBookmarkedStudy()">
                             <div class="mode-icon"><i class="fas fa-star"></i></div>
@@ -171,6 +172,13 @@ class Keyword130Module {
                             <div class="mode-desc">${stats.bookmarked}개 문제</div>
                         </button>
                     </div>
+                </div>
+                
+                <!-- 범위학습 섹션 -->
+                <div class="range-study-section">
+                    <button class="range-study-btn" onclick="keyword130Module.showRangeModal()">
+                        <i class="fas fa-sliders-h"></i> 범위를 지정해서 학습하기
+                    </button>
                 </div>
             </div>
         `;
@@ -229,6 +237,134 @@ class Keyword130Module {
         currentMode = 'bookmarked';
 
         startSequentialMode();
+    }
+
+    // 카드 학습 시작
+    async startCardStudy() {
+        if (this.items.length === 0) {
+            await this.loadItems();
+        }
+
+        this.currentIndex = 0;
+        this.currentItem = this.items[0];
+        this.cardStep = 1;
+        this.renderCardMode(this.currentItem);
+    }
+
+    // 카드 모드 렌더링
+    renderCardMode(item) {
+        const container = document.getElementById('questionContainer');
+        const isBookmarked = this.bookmarkedItems.includes(item.q_no);
+        
+        let cardContent = '';
+        
+        // 단계별 콘텐츠
+        if (this.cardStep === 1) {
+            // 1단계: 문제만
+            cardContent = `
+                <div class="card-question">
+                    <h3>문제</h3>
+                    <p>${item.question_text}</p>
+                </div>
+            `;
+        } else if (this.cardStep === 2) {
+            // 2단계: 답
+            const answerText = item.answer?.raw_text || item.answer?.keys?.[0] || '답안 없음';
+            cardContent = `
+                <div class="card-question dimmed">
+                    <p>${item.question_text}</p>
+                </div>
+                <div class="card-answer">
+                    <h3>정답</h3>
+                    <p>${answerText}</p>
+                </div>
+            `;
+        }
+        
+        container.innerHTML = `
+            <div class="question-card card-mode" onclick="keyword130Module.nextCardStep()">
+                <div class="question-header">
+                    <div class="question-no">${item.q_no}</div>
+                    <div class="card-step-indicator">${this.cardStep}/2</div>
+                    <button class="btn btn-secondary" onclick="event.stopPropagation(); keyword130Module.toggleBookmark('${item.q_no}')">
+                        <i class="fas fa-star"></i> ${isBookmarked ? '✓' : '☆'}
+                    </button>
+                </div>
+                
+                <div class="card-content">
+                    ${cardContent}
+                </div>
+                
+                <div class="action-buttons">
+                    <div class="main-controls">
+                        <button class="btn btn-primary" onclick="event.stopPropagation(); keyword130Module.nextCardStep()">
+                            <i class="fas fa-arrow-right"></i> ${this.cardStep === 2 ? '다음문제' : '답보기'}
+                        </button>
+                        <button class="btn" onclick="event.stopPropagation(); keyword130Module.jumpToCardStep(2)" style="background: #17a2b8; color: white;">
+                            <i class="fas fa-eye"></i> 답
+                        </button>
+                    </div>
+                    <div class="navigation-controls">
+                        <button class="btn btn-secondary" onclick="event.stopPropagation(); keyword130Module.previousCardItem()" ${this.currentIndex === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="event.stopPropagation(); keyword130Module.renderDashboard()">
+                            <i class="fas fa-home"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="event.stopPropagation(); keyword130Module.nextCardItem()" ${this.currentIndex === this.items.length - 1 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="progress-indicator">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${((this.currentIndex + 1) / this.items.length) * 100}%"></div>
+                    </div>
+                    <div class="progress-text">${this.currentIndex + 1} / ${this.items.length}</div>
+                </div>
+            </div>
+        `;
+    }
+
+    // 다음 카드 단계
+    nextCardStep() {
+        if (this.cardStep === 1) {
+            this.cardStep = 2;
+            this.renderCardMode(this.currentItem);
+        } else {
+            // 다음 문제로
+            this.nextCardItem();
+        }
+    }
+
+    // 특정 카드 단계로 이동
+    jumpToCardStep(step) {
+        this.cardStep = step;
+        this.renderCardMode(this.currentItem);
+    }
+
+    // 이전 카드 항목
+    previousCardItem() {
+        if (this.currentIndex > 0) {
+            this.currentIndex--;
+            this.currentItem = this.items[this.currentIndex];
+            this.cardStep = 1;
+            this.renderCardMode(this.currentItem);
+        }
+    }
+
+    // 다음 카드 항목
+    nextCardItem() {
+        if (this.currentIndex < this.items.length - 1) {
+            this.currentIndex++;
+            this.currentItem = this.items[this.currentIndex];
+            this.cardStep = 1;
+            this.renderCardMode(this.currentItem);
+        } else {
+            alert('학습을 완료했습니다! 🎉');
+            this.renderDashboard();
+        }
     }
 }
 
