@@ -405,26 +405,29 @@
     animation: pulse 2s infinite;
 }
 
-/* 문제 컨트롤 (핵심키워드130과 동일한 스타일) */
-.question-controls {
-    padding: 20px 25px;
+/* 문제 컨트롤 (모바일 최적화) */
+.question-controls,
+.action-buttons {
+    padding: 15px 20px;
     background: white;
     border-top: 2px solid #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .main-controls {
     display: flex;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: 6px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .navigation-controls {
     display: flex;
-    gap: 10px;
+    gap: 6px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .btn {
@@ -625,14 +628,15 @@
 .label-monitoring { background: rgba(253, 126, 20, 0.8) !important; }
 .label-closing { background: rgba(220, 53, 69, 0.8) !important; }
 
-/* 반응형 디자인 */
+/* 반응형 디자인 - 모바일 최적화 */
 @media (max-width: 768px) {
+    /* 대시보드 패딩 축소 */
     .pmp-dashboard {
-        padding: 15px;
+        padding: 10px 8px;
     }
     
     .dashboard-header {
-        padding: 20px 15px;
+        padding: 20px 10px;
     }
     
     .dashboard-header h2 {
@@ -643,6 +647,11 @@
         font-size: 2em;
     }
     
+    /* 학습 모드 패딩 축소 */
+    .study-modes {
+        padding: 10px;
+    }
+    
     .mode-selector {
         flex-direction: column;
         align-items: center;
@@ -650,6 +659,7 @@
     
     .mode-btn {
         min-width: 200px;
+        padding: 12px 15px;
     }
     
     .filter-options {
@@ -667,8 +677,62 @@
         grid-template-columns: 1fr;
     }
     
+    /* 지식영역/프로세스 그룹 패딩 축소 */
+    .knowledge-areas,
+    .process-groups {
+        padding: 10px;
+    }
+    
+    /* 통계 패딩 축소 */
+    .study-stats {
+        padding: 10px;
+    }
+    
+    .stat-card {
+        padding: 15px;
+    }
+    
+    /* 문제 카드 최적화 - 폭 최대화 */
     .question-card {
-        margin: 15px;
+        margin: 10px 5px;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+    
+    /* 문제 헤더 패딩 축소 */
+    .question-header {
+        padding: 15px 10px;
+    }
+    
+    /* 문제 라벨 패딩 축소 */
+    .question-labels {
+        padding: 10px 10px;
+        margin-bottom: 12px;
+    }
+    
+    /* 문제 텍스트 최적화 */
+    .question-text {
+        padding: 12px;
+        font-size: 1.05em;
+        line-height: 1.6;
+    }
+    
+    /* 선택지 영역 패딩 축소 */
+    .options-container {
+        padding: 0 10px 15px;
+    }
+    
+    /* 선택지 항목 압축 */
+    .option-item {
+        padding: 12px 10px;
+        margin-bottom: 8px;
+        font-size: 0.95em;
+    }
+    
+    /* 액션 버튼 영역 압축 */
+    .action-buttons,
+    .question-controls {
+        padding: 10px 8px;
     }
     
     .main-controls,
@@ -689,6 +753,31 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    
+    /* 답안 섹션 패딩 축소 */
+    .answer-section {
+        padding: 12px 10px;
+    }
+    
+    .answer-content {
+        padding: 12px;
+    }
+    
+    /* 해설 섹션 패딩 축소 */
+    .explanation {
+        padding: 12px 10px;
+    }
+    
+    /* 진행률 바 최적화 */
+    .progress-info {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    
+    /* 자가평가 패딩 축소 */
+    .self-assessment {
+        padding: 15px 10px;
     }
     
     .stats-grid {
