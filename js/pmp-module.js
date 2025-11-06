@@ -355,7 +355,6 @@ class PMPModule {
                     <h3>문제</h3>
                     <p>${questionText}</p>
                 </div>
-                <div class="card-hint">카드를 클릭하여 답 확인</div>
             `;
         } else if (this.cardStep === 2) {
             // 2단계: 답
