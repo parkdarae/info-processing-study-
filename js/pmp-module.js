@@ -8,6 +8,7 @@ class PMPModule {
         this.currentLabel = 'all';
         this.studyData = this.loadStudyData();
         this.selectedAnswer = null;
+        this.enhancedMode = false; // 학습 모드 (키워드 강조)
     }
 
     // 학습 데이터 로드
@@ -29,6 +30,14 @@ class PMPModule {
     // 학습 데이터 저장
     saveStudyData() {
         localStorage.setItem('pmp_study_data', JSON.stringify(this.studyData));
+    }
+
+    // 학습 모드 토글 (키워드 강조)
+    toggleEnhancedMode() {
+        this.enhancedMode = !this.enhancedMode;
+        if (this.currentItem) {
+            this.renderQuestion(this.currentItem);
+        }
     }
 
     // 북마크 토글
@@ -84,18 +93,57 @@ class PMPModule {
         return this.items.filter(item => this.isBookmarked(item.id));
     }
 
+    // 주요 키워드 강조
+    highlightKeywords(text) {
+        if (!this.enhancedMode) return text;
+        
+        // PMP 주요 키워드 목록
+        const keywords = [
+            // 프로세스 그룹
+            '착수', '기획', '계획', '실행', '수행', '감시', '통제', '종료',
+            // 지식 영역
+            '통합', '범위', '일정', '원가', '품질', '자원', '의사소통', '위험', '조달', '이해관계자',
+            // 주요 개념
+            'WBS', 'EVM', 'CPM', 'PERT', 'QA', 'QC', '헌장', '변경', '리스크', '계약',
+            '애자일', '스프린트', '백로그', '스크럼', '칸반',
+            '프로젝트 관리자', '후원자', '팀원', '고객',
+            '베이스라인', '마일스톤', '인도물', '요구사항',
+            // 영문 키워드
+            'Agile', 'Sprint', 'Scrum', 'Kanban', 'Backlog',
+            'Stakeholder', 'Sponsor', 'Charter', 'Baseline',
+            'Milestone', 'Deliverable', 'Requirement'
+        ];
+        
+        let highlightedText = text;
+        keywords.forEach(keyword => {
+            const regex = new RegExp(`(${keyword})`, 'gi');
+            highlightedText = highlightedText.replace(regex, '<strong style="color: #6f42c1; font-weight: 700;">$1</strong>');
+        });
+        
+        return highlightedText;
+    }
+
     // 문제 표시 (핵심키워드130과 동일한 스타일)
     renderQuestion(item) {
         const container = document.getElementById('questionContainer');
         const isBookmarked = this.isBookmarked(item.id);
         
+        // 학습 모드에 따라 텍스트 처리
+        const questionText = this.highlightKeywords(item.question);
+        const explanationText = this.highlightKeywords(item.explanation || '');
+        
         container.innerHTML = `
             <div class="question-card">
                 <div class="question-header">
                     <div class="question-no">${item.q_no}</div>
-                    <button class="btn btn-secondary" onclick="pmpModule.toggleBookmarkButton('${item.id}')">
-                        <i class="fas fa-star"></i> ${isBookmarked ? '체크됨' : '체크'}
-                    </button>
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn btn-info" onclick="pmpModule.toggleEnhancedMode()" style="font-size: 0.9em;">
+                            <i class="fas fa-highlighter"></i> ${this.enhancedMode ? '강조 OFF' : '강조 ON'}
+                        </button>
+                        <button class="btn btn-secondary" onclick="pmpModule.toggleBookmarkButton('${item.id}')">
+                            <i class="fas fa-star"></i> ${isBookmarked ? '체크됨' : '체크'}
+                        </button>
+                    </div>
                 </div>
                 
                 <div class="question-labels" style="margin-bottom: 20px;">
@@ -103,7 +151,7 @@ class PMPModule {
                 </div>
                 
                 <div class="question-text">
-                    ${item.question}
+                    ${questionText}
                 </div>
                 
                 <div class="choices">
@@ -242,10 +290,11 @@ class PMPModule {
         const item = this.currentItem;
         
         if (item.explanation) {
+            const explanationText = this.highlightKeywords(item.explanation);
             explanationDiv.innerHTML = `
                 <div class="explanation-content">
                     <h4><i class="fas fa-lightbulb"></i> 해설</h4>
-                    <p>${item.explanation}</p>
+                    <p style="white-space: pre-line;">${explanationText}</p>
                 </div>
             `;
             explanationDiv.classList.toggle('show');
