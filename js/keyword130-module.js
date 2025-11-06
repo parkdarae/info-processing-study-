@@ -258,6 +258,17 @@ class Keyword130Module {
         
         let cardContent = '';
         
+        // 이미지 렌더링 함수
+        const renderImages = () => {
+            if (!item.image_refs || item.image_refs.length === 0) return '';
+            
+            return item.image_refs.map(img => {
+                // 이미 images/ 경로가 포함되어 있는지 확인
+                const imgSrc = img.includes('images/') ? img : `images/${img}`;
+                return `<img src="${imgSrc}" class="image-preview" alt="문제 이미지" style="max-width: 100%; margin: 15px 0; border-radius: 8px;">`;
+            }).join('');
+        };
+        
         // 단계별 콘텐츠
         if (this.cardStep === 1) {
             // 1단계: 문제만
@@ -265,6 +276,7 @@ class Keyword130Module {
                 <div class="card-question">
                     <h3>문제</h3>
                     <p>${item.question_text}</p>
+                    ${renderImages()}
                 </div>
             `;
         } else if (this.cardStep === 2) {
@@ -273,6 +285,7 @@ class Keyword130Module {
             cardContent = `
                 <div class="card-question dimmed">
                     <p>${item.question_text}</p>
+                    ${renderImages()}
                 </div>
                 <div class="card-answer">
                     <h3>정답</h3>
