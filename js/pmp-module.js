@@ -347,7 +347,6 @@ class PMPModule {
             <div class="pmp-dashboard">
                 <div class="dashboard-header">
                     <h2><i class="fas fa-project-diagram"></i> PMP 문제집</h2>
-                    <p>Project Management Professional 자격증 대비 학습</p>
                     <div class="total-count">
                         <span class="count-number">${stats.total}</span>
                         <span class="count-label">개 문제</span>
@@ -357,43 +356,59 @@ class PMPModule {
                 <div class="study-modes">
                     <div class="filter-options">
                         <button class="filter-btn" onclick="pmpModule.startStudy('all', 'sequential')">
-                            <i class="fas fa-play"></i> 전체 순차 학습 (${stats.total}개)
+                            <i class="fas fa-play"></i> 순차학습
                         </button>
                         <button class="filter-btn" onclick="pmpModule.startStudy('all', 'random')">
-                            <i class="fas fa-random"></i> 전체 랜덤 학습 (${stats.total}개)
+                            <i class="fas fa-random"></i> 랜덤학습
+                        </button>
+                        <button class="filter-btn" onclick="pmpModule.showRangeModal()">
+                            <i class="fas fa-sliders-h"></i> 범위학습
                         </button>
                         <button class="filter-btn" onclick="pmpModule.startBookmarkedStudy()">
-                            <i class="fas fa-star"></i> 체크한 문제 (${stats.bookmarked}개)
+                            <i class="fas fa-star"></i> 체크문제 (${stats.bookmarked})
                         </button>
                     </div>
                 </div>
                 
-                <div class="knowledge-areas">
-                    <h3>📚 지식 영역별 학습</h3>
-                    <div class="label-grid">
-                        ${this.renderKnowledgeAreaCards(stats)}
+                <!-- 지식영역 드롭다운 -->
+                <div class="compact-section">
+                    <button class="section-toggle" onclick="pmpModule.toggleSection('knowledge')">
+                        <span>📚 지식영역별 학습</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="knowledge-section" class="section-content" style="display: none;">
+                        <div class="label-grid-compact">
+                            ${this.renderKnowledgeAreaCardsCompact(stats)}
+                        </div>
                     </div>
                 </div>
                 
-                <div class="process-groups">
-                    <h3>🔄 프로세스 그룹별 학습</h3>
-                    <div class="label-grid">
-                        ${this.renderProcessGroupCards(stats)}
+                <!-- 프로세스 그룹 드롭다운 -->
+                <div class="compact-section">
+                    <button class="section-toggle" onclick="pmpModule.toggleSection('process')">
+                        <span>🔄 프로세스 그룹별 학습</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="process-section" class="section-content" style="display: none;">
+                        <div class="label-grid-compact">
+                            ${this.renderProcessGroupCardsCompact(stats)}
+                        </div>
                     </div>
                 </div>
                 
+                <!-- 학습 통계 -->
                 <div class="study-stats">
                     <h3>📊 학습 통계</h3>
                     <div class="stats-grid">
                         <div class="stat-card">
                             <i class="fas fa-check-circle"></i>
                             <div class="stat-number">${stats.completed}</div>
-                            <div class="stat-label">완료한 문제</div>
+                            <div class="stat-label">완료</div>
                         </div>
                         <div class="stat-card">
                             <i class="fas fa-star"></i>
                             <div class="stat-number">${stats.bookmarked}</div>
-                            <div class="stat-label">체크한 문제</div>
+                            <div class="stat-label">체크</div>
                         </div>
                         <div class="stat-card">
                             <i class="fas fa-percentage"></i>
@@ -403,12 +418,65 @@ class PMPModule {
                         <div class="stat-card">
                             <i class="fas fa-fire"></i>
                             <div class="stat-number">${stats.streak}</div>
-                            <div class="stat-label">연속 학습일</div>
+                            <div class="stat-label">연속일</div>
                         </div>
                     </div>
                 </div>
             </div>
         `;
+    }
+    
+    // 섹션 토글
+    toggleSection(sectionId) {
+        const section = document.getElementById(`${sectionId}-section`);
+        const toggle = event.target.closest('.section-toggle');
+        const icon = toggle.querySelector('i');
+        
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        } else {
+            section.style.display = 'none';
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    }
+    
+    // 컴팩트 지식영역 카드
+    renderKnowledgeAreaCardsCompact(stats) {
+        const knowledgeAreas = [
+            'project_integration', 'project_scope', 'project_schedule', 'project_cost',
+            'project_quality', 'project_resource', 'project_communication', 
+            'project_risk', 'project_procurement', 'project_stakeholder'
+        ];
+
+        return knowledgeAreas.map(area => {
+            const count = stats.byLabel[area] || 0;
+            if (count === 0) return '';
+            
+            return `
+                <button class="label-btn-compact" onclick="pmpModule.startStudy('${area}', 'sequential')">
+                    ${this.getLabelName(area)} (${count})
+                </button>
+            `;
+        }).filter(card => card).join('');
+    }
+    
+    // 컴팩트 프로세스 그룹 카드
+    renderProcessGroupCardsCompact(stats) {
+        const processGroups = ['initiating', 'planning', 'executing', 'monitoring', 'closing'];
+
+        return processGroups.map(process => {
+            const count = stats.byLabel[process] || 0;
+            if (count === 0) return '';
+            
+            return `
+                <button class="label-btn-compact" onclick="pmpModule.startStudy('${process}', 'sequential')">
+                    ${this.getLabelName(process)} (${count})
+                </button>
+            `;
+        }).filter(card => card).join('');
     }
 
     // 지식 영역 카드 렌더링
@@ -604,6 +672,60 @@ class PMPModule {
         }
         
         this.items = bookmarkedItems;
+        this.currentIndex = 0;
+        this.currentItem = this.items[0];
+        this.selectedAnswer = null;
+        
+        this.renderQuestion(this.currentItem);
+    }
+    
+    // 범위 학습 모달 표시
+    showRangeModal() {
+        const totalQuestions = this.items.length;
+        const rangeStart = prompt(`시작 문제 번호 (1~${totalQuestions}):`, '1');
+        
+        if (!rangeStart) return; // 취소
+        
+        const rangeEnd = prompt(`끝 문제 번호 (${rangeStart}~${totalQuestions}):`, totalQuestions.toString());
+        
+        if (!rangeEnd) return; // 취소
+        
+        const start = parseInt(rangeStart);
+        const end = parseInt(rangeEnd);
+        
+        // 유효성 검사
+        if (isNaN(start) || isNaN(end)) {
+            alert('숫자를 입력해주세요.');
+            return;
+        }
+        
+        if (start < 1 || start > totalQuestions || end < 1 || end > totalQuestions) {
+            alert(`1~${totalQuestions} 사이의 번호를 입력해주세요.`);
+            return;
+        }
+        
+        if (start > end) {
+            alert('시작 번호가 끝 번호보다 클 수 없습니다.');
+            return;
+        }
+        
+        this.startRangeStudy(start, end);
+    }
+    
+    // 범위 학습 시작
+    startRangeStudy(start, end) {
+        // q_no 기준으로 필터링
+        const rangeItems = this.items.filter(item => {
+            const qNo = parseInt(item.q_no);
+            return qNo >= start && qNo <= end;
+        });
+        
+        if (rangeItems.length === 0) {
+            alert(`${start}~${end} 범위에 해당하는 문제가 없습니다.`);
+            return;
+        }
+        
+        this.items = rangeItems;
         this.currentIndex = 0;
         this.currentItem = this.items[0];
         this.selectedAnswer = null;

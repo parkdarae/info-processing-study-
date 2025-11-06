@@ -1546,8 +1546,27 @@
                 <div class="menu-item" onclick="switchModule('theory_frequent')" id="menu_theory_frequent">
                     <i class="fas fa-star"></i> ⭐ 실기 최빈출 50개
                 </div>
-                <div class="menu-item" onclick="switchModule('pmp')" id="menu_pmp">
-                    <i class="fas fa-project-diagram"></i> 📋 PMP 문제집
+                <div class="past-exam-selector" style="margin-top: 10px;">
+                    <div style="font-weight: 500; margin-bottom: 10px; cursor: pointer;" onclick="togglePMPMenu()">
+                        <i class="fas fa-project-diagram"></i> 📋 PMP 문제집 <i class="fas fa-chevron-down" id="pmpMenuIcon"></i>
+                    </div>
+                    <div id="pmpSubMenu" style="display: none; padding-left: 15px;">
+                        <div class="menu-item" onclick="switchModule('pmp')" id="menu_pmp" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-home"></i> 대시보드
+                        </div>
+                        <div class="menu-item" onclick="switchModule('pmp'); setTimeout(() => pmpModule.startStudy('all', 'sequential'), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-play"></i> 순차학습
+                        </div>
+                        <div class="menu-item" onclick="switchModule('pmp'); setTimeout(() => pmpModule.startStudy('all', 'random'), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-random"></i> 랜덤학습
+                        </div>
+                        <div class="menu-item" onclick="switchModule('pmp'); setTimeout(() => pmpModule.showRangeModal(), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-sliders-h"></i> 범위학습
+                        </div>
+                        <div class="menu-item" onclick="switchModule('pmp'); setTimeout(() => pmpModule.startBookmarkedStudy(), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-star"></i> 체크문제
+                        </div>
+                    </div>
                 </div>
                 <div class="menu-item" onclick="switchModule('theory')" id="menu_theory">
                     <i class="fas fa-lightbulb"></i> 🎯 정처기 실기 이론
@@ -3006,6 +3025,22 @@
             
             sidebar.classList.toggle('show');
             overlay.classList.toggle('show');
+        }
+        
+        // PMP 메뉴 토글
+        function togglePMPMenu() {
+            const subMenu = document.getElementById('pmpSubMenu');
+            const icon = document.getElementById('pmpMenuIcon');
+            
+            if (subMenu.style.display === 'none') {
+                subMenu.style.display = 'block';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                subMenu.style.display = 'none';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
         }
 
         // 메뉴 닫기
