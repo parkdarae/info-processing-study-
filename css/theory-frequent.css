@@ -305,16 +305,16 @@
 
 .flashcard-front {
     background: white;
-    color: #333;
-    border: 2px solid #e9ecef;
+    color: #2c3e50;
+    border: 1px solid #dee2e6;
     transform: rotateY(0deg);
     z-index: 2;
 }
 
 .flashcard-back {
     background: white;
-    color: #333 !important;
-    border: 2px solid #28a745;
+    color: #2c3e50 !important;
+    border: 1px solid #dee2e6;
     transform: rotateY(180deg);
     z-index: 1;
 }
@@ -330,18 +330,18 @@
 }
 
 .card-header {
-    padding: 15px 20px;
+    padding: 18px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e9ecef;
-    background: #fafbfc;
+    border-bottom: 1px solid #f0f0f0;
+    background: transparent;
     flex-shrink: 0;
 }
 
 .flashcard-back .card-header {
-    background: #f0f9f4;
-    border-bottom: 1px solid #28a745;
+    background: transparent;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .card-number {
@@ -370,7 +370,7 @@
 
 .card-content {
     flex: 1;
-    padding: 25px 30px;
+    padding: 30px 35px;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -378,36 +378,36 @@
 }
 
 .card-content h3 {
-    font-size: 1.3em;
-    margin-bottom: 18px;
-    font-weight: 600;
-    color: #333;
+    font-size: 1.35em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
     text-align: left;
+    letter-spacing: -0.3px;
 }
 
 .flashcard-back .card-content h3 {
-    color: #155724 !important;
+    color: #1a1a1a !important;
 }
 
 .question {
     font-size: 1.15em;
-    line-height: 1.8;
+    line-height: 1.85;
     margin-bottom: 25px;
-    color: #333;
+    color: #2c3e50;
     font-weight: 400;
     text-align: left;
 }
 
-/* 답안 라인 스타일 - 불필요한 박스 제거 */
+/* 답안 라인 스타일 - 초간단 깔끔 */
 .answer-line {
-    margin-bottom: 15px;
-    line-height: 1.8;
-    font-size: 1.1em;
-    color: #333 !important;
+    margin-bottom: 18px;
+    line-height: 1.9;
+    font-size: 1.15em;
+    color: #2c3e50 !important;
     padding: 0;
     background: transparent;
-    border-left: 3px solid #28a745;
-    padding-left: 15px;
+    border: none;
     word-wrap: break-word;
     white-space: pre-wrap;
     text-align: left;
@@ -749,42 +749,41 @@
     
     /* 플래시카드 */
     .flashcard-container {
-        padding: 5px;
+        padding: 8px;
     }
     
     .flashcard {
-        min-height: 450px;
+        min-height: 480px;
     }
     
     .flashcard-front,
     .flashcard-back {
-        min-height: 450px;
+        min-height: 480px;
     }
     
     .card-header {
-        padding: 12px 15px;
+        padding: 15px 20px;
     }
     
     .card-content {
-        padding: 20px 18px;
+        padding: 25px 22px;
     }
     
     .card-content h3 {
-        font-size: 1.15em;
-        margin-bottom: 15px;
+        font-size: 1.25em;
+        margin-bottom: 18px;
     }
     
     .question {
-        font-size: 1.05em;
-        line-height: 1.7;
+        font-size: 1.08em;
+        line-height: 1.8;
         margin-bottom: 20px;
     }
     
     .answer-line {
-        font-size: 1em;
-        line-height: 1.7;
-        padding-left: 12px;
-        margin-bottom: 12px;
+        font-size: 1.08em;
+        line-height: 1.85;
+        margin-bottom: 16px;
     }
     
     .back-to-dashboard-btn {
