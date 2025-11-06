@@ -312,11 +312,12 @@
         }
 
         .mode-buttons {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            max-width: 900px;
+            display: flex;
+            gap: 12px;
+            max-width: 1200px;
             margin: 0 auto;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .mode-buttons-container {
@@ -338,7 +339,7 @@
         }
 
         .mode-btn {
-            padding: 18px 20px;
+            padding: 15px 25px;
             border: none;
             background: white;
             color: #333;
@@ -346,11 +347,13 @@
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: center;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
             position: relative;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             overflow: hidden;
+            flex: 0 1 auto;
+            white-space: nowrap;
         }
 
         .mode-btn::before {
@@ -377,8 +380,8 @@
         }
         
         .mode-btn i {
-            font-size: 1.2em;
-            margin-right: 8px;
+            font-size: 1.1em;
+            margin-right: 6px;
         }
         
         /* 버튼별 색상 */
@@ -1251,13 +1254,14 @@
             }
 
             .mode-buttons {
-                grid-template-columns: 1fr;
-                gap: 12px;
+                flex-direction: column;
+                gap: 10px;
             }
             
             .mode-btn {
-                padding: 16px 18px;
-                font-size: 1em;
+                padding: 14px 20px;
+                font-size: 0.95em;
+                width: 100%;
             }
 
             .question-text {
