@@ -5,6 +5,7 @@ class TheoryFrequentModule {
         this.currentItem = null;
         this.currentIndex = 0;
         this.isFlipped = false;
+        this.clickCount = 0;
         this.studyMode = 'flashcard'; // flashcard, quiz, fill-blank
         this.currentLabel = 'all'; // all, database, os, network, security, etc.
         this.studyData = this.loadStudyData();
@@ -167,10 +168,6 @@ class TheoryFrequentModule {
                         <div class="card-content">
                             <h3>${item.title}</h3>
                             <p class="question">${item.question}</p>
-                            <div class="flip-hint">
-                                <i class="fas fa-hand-pointer"></i>
-                                클릭하여 답 확인
-                            </div>
                         </div>
                     </div>
                     <div class="flashcard-back">
@@ -188,36 +185,17 @@ class TheoryFrequentModule {
                 </div>
                 
                 <div class="flashcard-controls">
-                    <div class="top-controls">
-                        <button class="back-to-dashboard-btn" onclick="theoryFrequent.renderDashboard()">
-                            <i class="fas fa-home"></i> 대시보드로 돌아가기
+                    <div class="compact-nav">
+                        <button onclick="theoryFrequent.previousItem()" ${this.currentIndex === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button onclick="theoryFrequent.renderDashboard()">
+                            <i class="fas fa-home"></i>
+                        </button>
+                        <button onclick="theoryFrequent.nextItem()" ${this.currentIndex === this.items.length - 1 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
-                    <div class="navigation-controls">
-                        <button class="control-btn" onclick="theoryFrequent.previousItem()" ${this.currentIndex === 0 ? 'disabled' : ''}>
-                            <i class="fas fa-chevron-left"></i> 이전
-                        </button>
-                        <button class="control-btn" onclick="theoryFrequent.nextItem()" ${this.currentIndex === this.items.length - 1 ? 'disabled' : ''}>
-                            다음 <i class="fas fa-chevron-right"></i>
-                        </button>
-                    </div>
-                    
-                    ${this.isFlipped ? `
-                        <div class="self-assessment">
-                            <p>이 문제를 얼마나 잘 알고 있나요?</p>
-                            <div class="assessment-buttons">
-                                <button class="assessment-btn difficulty-hard" onclick="theoryFrequent.recordAssessment(3)">
-                                    <i class="fas fa-times"></i> 모르겠음
-                                </button>
-                                <button class="assessment-btn difficulty-medium" onclick="theoryFrequent.recordAssessment(2)">
-                                    <i class="fas fa-question"></i> 애매함
-                                </button>
-                                <button class="assessment-btn difficulty-easy" onclick="theoryFrequent.recordAssessment(1)">
-                                    <i class="fas fa-check"></i> 알았음
-                                </button>
-                            </div>
-                        </div>
-                    ` : ''}
                 </div>
                 
                 <div class="study-progress">
@@ -229,6 +207,10 @@ class TheoryFrequentModule {
                         (${Math.round(((this.currentIndex + 1) / this.items.length) * 100)}%)
                     </div>
                 </div>
+                
+                <button class="reset-study-btn" onclick="theoryFrequent.resetStudy()">
+                    <i class="fas fa-redo"></i> 처음부터 다시 풀기
+                </button>
             </div>
         `;
     }
@@ -250,10 +232,22 @@ class TheoryFrequentModule {
         return labelMap[label] || label;
     }
 
-    // 카드 뒤집기
+    // 카드 뒤집기 (3단계 클릭 시스템)
     flipCard() {
-        this.isFlipped = !this.isFlipped;
-        this.renderFlashcard(this.currentItem);
+        this.clickCount++;
+        console.log('flipCard 호출됨, clickCount:', this.clickCount, 'isFlipped:', this.isFlipped);
+        
+        if (this.clickCount === 1) {
+            // 첫 번째 클릭: 답 표시
+            console.log('답 표시');
+            this.isFlipped = true;
+            this.renderFlashcard(this.currentItem);
+        } else if (this.clickCount === 2) {
+            // 두 번째 클릭: difficulty=3으로 자동 기록 후 다음 문제
+            console.log('다음 문제로 이동');
+            this.clickCount = 0; // 카운터 리셋
+            this.recordAssessment(3);
+        }
     }
 
     // 이전 항목
@@ -262,6 +256,7 @@ class TheoryFrequentModule {
             this.currentIndex--;
             this.currentItem = this.items[this.currentIndex];
             this.isFlipped = false;
+            this.clickCount = 0; // 클릭 카운터 리셋
             this.renderFlashcard(this.currentItem);
         }
     }
@@ -272,7 +267,12 @@ class TheoryFrequentModule {
             this.currentIndex++;
             this.currentItem = this.items[this.currentIndex];
             this.isFlipped = false;
+            this.clickCount = 0; // 클릭 카운터 리셋
             this.renderFlashcard(this.currentItem);
+        } else {
+            // 마지막 문제 완료 시 대시보드로
+            alert('학습을 완료했습니다! 🎉');
+            this.renderDashboard();
         }
     }
 
@@ -319,10 +319,8 @@ class TheoryFrequentModule {
         
         this.saveStudyData();
         
-        // 다음 항목으로 자동 이동
-        setTimeout(() => {
-            this.nextItem();
-        }, 1000);
+        // 다음 항목으로 즉시 이동
+        this.nextItem();
     }
 
     // 학습 시작
@@ -350,6 +348,7 @@ class TheoryFrequentModule {
         this.currentIndex = 0;
         this.currentItem = this.items[0];
         this.isFlipped = false;
+        this.clickCount = 0; // 클릭 카운터 초기화
         
         if (mode === 'flashcard') {
             this.renderFlashcard(this.currentItem);
@@ -611,6 +610,24 @@ class SpacedRepetitionManager {
             // 학습 횟수가 적은 항목들 우선
             return aState.attempts - bState.attempts;
         });
+    }
+
+    // 학습 데이터 리셋
+    resetStudy() {
+        if (confirm('학습 데이터를 초기화하고 처음부터 다시 시작하시겠습니까?')) {
+            this.studyData = {
+                studyTime: {},
+                completedItems: [],
+                lastStudyDate: null,
+                streak: 0
+            };
+            this.saveStudyData();
+            this.currentIndex = 0;
+            this.currentItem = this.items[0];
+            this.isFlipped = false;
+            this.clickCount = 0; // 클릭 카운터 리셋
+            this.renderFlashcard(this.currentItem);
+        }
     }
 }
 
