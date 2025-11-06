@@ -450,31 +450,79 @@ class PMPModule {
                     </div>
                 </div>
                 
-                <div class="study-modes">
-                    <div class="filter-options">
-                        <button class="filter-btn" onclick="pmpModule.startStudy('all', 'sequential')">
-                            <i class="fas fa-play"></i> 순차학습
+                <!-- 학습 통계 (상단으로 이동) -->
+                <div class="study-stats-top">
+                    <div class="stats-grid-horizontal">
+                        <div class="stat-card-mini">
+                            <i class="fas fa-check-circle" style="color: #28a745;"></i>
+                            <div class="stat-content">
+                                <div class="stat-number">${stats.completed}</div>
+                                <div class="stat-label">완료</div>
+                            </div>
+                        </div>
+                        <div class="stat-card-mini">
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <div class="stat-content">
+                                <div class="stat-number">${stats.bookmarked}</div>
+                                <div class="stat-label">체크</div>
+                            </div>
+                        </div>
+                        <div class="stat-card-mini">
+                            <i class="fas fa-percentage" style="color: #17a2b8;"></i>
+                            <div class="stat-content">
+                                <div class="stat-number">${stats.accuracy}%</div>
+                                <div class="stat-label">정답률</div>
+                            </div>
+                        </div>
+                        <div class="stat-card-mini">
+                            <i class="fas fa-fire" style="color: #fd7e14;"></i>
+                            <div class="stat-content">
+                                <div class="stat-number">${stats.streak}</div>
+                                <div class="stat-label">연속일</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 주요 학습 모드 -->
+                <div class="main-study-modes">
+                    <h3 class="section-title"><i class="fas fa-graduation-cap"></i> 학습 시작하기</h3>
+                    <div class="main-mode-grid">
+                        <button class="main-mode-card primary" onclick="pmpModule.startStudy('all', 'sequential')">
+                            <div class="mode-icon"><i class="fas fa-play-circle"></i></div>
+                            <div class="mode-title">순차학습</div>
+                            <div class="mode-desc">처음부터 순서대로</div>
                         </button>
-                        <button class="filter-btn" onclick="pmpModule.startStudy('all', 'random')">
-                            <i class="fas fa-random"></i> 랜덤학습
+                        <button class="main-mode-card secondary" onclick="pmpModule.startStudy('all', 'random')">
+                            <div class="mode-icon"><i class="fas fa-random"></i></div>
+                            <div class="mode-title">랜덤학습</div>
+                            <div class="mode-desc">무작위로 섞어서</div>
                         </button>
-                        <button class="filter-btn" onclick="pmpModule.startCardStudy('all', 'sequential')" style="background: linear-gradient(135deg, #e83e8c 0%, #dc3545 100%);">
-                            <i class="fas fa-layer-group"></i> 카드학습
+                        <button class="main-mode-card accent" onclick="pmpModule.startCardStudy('all', 'sequential')">
+                            <div class="mode-icon"><i class="fas fa-layer-group"></i></div>
+                            <div class="mode-title">카드학습</div>
+                            <div class="mode-desc">플립 카드 방식</div>
                         </button>
-                        <button class="filter-btn" onclick="pmpModule.showRangeModal()">
-                            <i class="fas fa-sliders-h"></i> 범위학습
-                        </button>
-                        <button class="filter-btn" onclick="pmpModule.startBookmarkedStudy()">
-                            <i class="fas fa-star"></i> 체크문제 (${stats.bookmarked})
+                        <button class="main-mode-card bookmarked" onclick="pmpModule.startBookmarkedStudy()">
+                            <div class="mode-icon"><i class="fas fa-star"></i></div>
+                            <div class="mode-title">체크문제</div>
+                            <div class="mode-desc">${stats.bookmarked}개 문제</div>
                         </button>
                     </div>
+                </div>
+                
+                <!-- 범위학습 (별도 강조) -->
+                <div class="range-study-section">
+                    <button class="range-study-btn" onclick="pmpModule.showRangeModal()">
+                        <i class="fas fa-sliders-h"></i> 범위를 지정해서 학습하기
+                    </button>
                 </div>
                 
                 <!-- 지식영역 드롭다운 -->
                 <div class="compact-section">
                     <button class="section-toggle" onclick="pmpModule.toggleSection('knowledge')">
-                        <span>📚 지식영역별 학습</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span><i class="fas fa-book"></i> 지식영역별 학습</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
                     </button>
                     <div id="knowledge-section" class="section-content" style="display: none;">
                         <div class="label-grid-compact">
@@ -486,39 +534,12 @@ class PMPModule {
                 <!-- 프로세스 그룹 드롭다운 -->
                 <div class="compact-section">
                     <button class="section-toggle" onclick="pmpModule.toggleSection('process')">
-                        <span>🔄 프로세스 그룹별 학습</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <span><i class="fas fa-cogs"></i> 프로세스 그룹별 학습</span>
+                        <i class="fas fa-chevron-down toggle-icon"></i>
                     </button>
                     <div id="process-section" class="section-content" style="display: none;">
                         <div class="label-grid-compact">
                             ${this.renderProcessGroupCardsCompact(stats)}
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 학습 통계 -->
-                <div class="study-stats">
-                    <h3>📊 학습 통계</h3>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <i class="fas fa-check-circle"></i>
-                            <div class="stat-number">${stats.completed}</div>
-                            <div class="stat-label">완료</div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-star"></i>
-                            <div class="stat-number">${stats.bookmarked}</div>
-                            <div class="stat-label">체크</div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-percentage"></i>
-                            <div class="stat-number">${stats.accuracy}%</div>
-                            <div class="stat-label">정답률</div>
-                        </div>
-                        <div class="stat-card">
-                            <i class="fas fa-fire"></i>
-                            <div class="stat-number">${stats.streak}</div>
-                            <div class="stat-label">연속일</div>
                         </div>
                     </div>
                 </div>
@@ -530,16 +551,14 @@ class PMPModule {
     toggleSection(sectionId) {
         const section = document.getElementById(`${sectionId}-section`);
         const toggle = event.target.closest('.section-toggle');
-        const icon = toggle.querySelector('i');
+        const icon = toggle.querySelector('.toggle-icon');
         
         if (section.style.display === 'none') {
             section.style.display = 'block';
-            icon.classList.remove('fa-chevron-down');
-            icon.classList.add('fa-chevron-up');
+            icon.style.transform = 'rotate(180deg)';
         } else {
             section.style.display = 'none';
-            icon.classList.remove('fa-chevron-up');
-            icon.classList.add('fa-chevron-down');
+            icon.style.transform = 'rotate(0deg)';
         }
     }
     
