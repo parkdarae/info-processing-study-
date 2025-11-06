@@ -114,5 +114,129 @@ button {
     background: #764ba2;
 }
 
+/* 간단한 대시보드 스타일 */
+.simple-dashboard {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dash-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.dash-header h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.dash-stats {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.dash-stats span {
+    font-size: 1em;
+    color: #666;
+    font-weight: 500;
+    padding: 6px 15px;
+    background: #f8f9fa;
+    border-radius: 20px;
+}
+
+.dash-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.dash-btn {
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #333;
+}
+
+.dash-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.dash-btn i {
+    font-size: 1.2em;
+}
+
+.dash-btn.primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+.dash-btn.secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border-color: #f093fb;
+}
+
+.dash-btn.accent {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+    border-color: #4facfe;
+}
+
+.dash-btn.special {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    color: white;
+    border-color: #fa709a;
+}
+
+.dash-btn.marked {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    color: #333;
+    border-color: #ffeaa7;
+}
+
+@media (max-width: 768px) {
+    .simple-dashboard {
+        padding: 15px;
+    }
+    
+    .dash-header h2 {
+        font-size: 1.5em;
+    }
+    
+    .dash-stats {
+        gap: 12px;
+    }
+    
+    .dash-stats span {
+        font-size: 0.9em;
+        padding: 5px 12px;
+    }
+    
+    .dash-actions {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .dash-btn {
+        padding: 16px 18px;
+        font-size: 1em;
+    }
+}
+
 
 

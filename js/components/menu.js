@@ -185,86 +185,34 @@ function renderKeyword130Dashboard() {
     const stats = getKeyword130Stats();
     
     container.innerHTML = `
-        <div class="theory-category-dashboard">
-            <div class="dashboard-header-compact">
-                <h2><i class="fas fa-graduation-cap"></i> 핵심 키워드 130 문제</h2>
-                <div class="total-count">
-                    <span class="count-number">130</span>
-                    <span class="count-label">개 문제</span>
+        <div class="simple-dashboard">
+            <div class="dash-header">
+                <h2>핵심 키워드 130</h2>
+                <div class="dash-stats">
+                    <span>완료 ${stats.completed}</span>
+                    <span>정답률 ${stats.accuracy}%</span>
+                    <span>체크 ${stats.marked}</span>
                 </div>
             </div>
             
-            <div class="stats-mini-cards">
-                <div class="mini-card">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="mini-content">
-                        <div class="mini-value">${stats.completed}</div>
-                        <div class="mini-label">완료</div>
-                    </div>
-                </div>
-                <div class="mini-card">
-                    <i class="fas fa-percentage"></i>
-                    <div class="mini-content">
-                        <div class="mini-value">${stats.accuracy}%</div>
-                        <div class="mini-label">정답률</div>
-                    </div>
-                </div>
-                <div class="mini-card">
-                    <i class="fas fa-star"></i>
-                    <div class="mini-content">
-                        <div class="mini-value">${stats.marked}</div>
-                        <div class="mini-label">체크</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="main-actions">
-                <button class="main-action-card primary" onclick="loadQuestions('sequential')">
-                    <div class="action-icon"><i class="fas fa-play-circle"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">순차 학습</div>
-                        <div class="action-desc">1번부터 순서대로</div>
-                    </div>
+            <div class="dash-actions">
+                <button class="dash-btn primary" onclick="loadQuestions('sequential')">
+                    <i class="fas fa-play-circle"></i> 순차 풀기
                 </button>
-                <button class="main-action-card secondary" onclick="loadQuestions('random')">
-                    <div class="action-icon"><i class="fas fa-random"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">랜덤 학습</div>
-                        <div class="action-desc">문제를 섞어서</div>
-                    </div>
+                <button class="dash-btn secondary" onclick="loadQuestions('random')">
+                    <i class="fas fa-random"></i> 랜덤 풀기
                 </button>
-                <button class="main-action-card accent" onclick="showRangeModal()">
-                    <div class="action-icon"><i class="fas fa-sliders-h"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">범위 학습</div>
-                        <div class="action-desc">원하는 범위만</div>
-                    </div>
+                <button class="dash-btn accent" onclick="showRangeModal()">
+                    <i class="fas fa-sliders-h"></i> 범위 설정
                 </button>
-                <button class="main-action-card special" onclick="loadQuestions('wrong')">
-                    <div class="action-icon"><i class="fas fa-exclamation-circle"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">오답 노트</div>
-                        <div class="action-desc">틀린 문제만</div>
-                    </div>
+                <button class="dash-btn special" onclick="loadQuestions('wrong')">
+                    <i class="fas fa-times-circle"></i> 오답 노트
                 </button>
-            </div>
-            
-            <div class="category-section-compact">
-                <button class="section-toggle" onclick="toggleKeyword130Section()">
-                    <span><i class="fas fa-check"></i> 체크한 문제</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
+                ${stats.marked > 0 ? `
+                <button class="dash-btn marked" onclick="loadQuestions('marked')">
+                    <i class="fas fa-star"></i> 체크 문제 (${stats.marked})
                 </button>
-                <div id="keyword130-section" class="section-content" style="display: none;">
-                    <div style="text-align: center; padding: 20px;">
-                        <button class="main-action-card special" onclick="loadQuestions('marked')" style="max-width: 400px; margin: 0 auto;">
-                            <div class="action-icon"><i class="fas fa-star"></i></div>
-                            <div class="action-content">
-                                <div class="action-title">체크한 ${stats.marked}개 문제 풀기</div>
-                                <div class="action-desc">나중에 다시 풀어볼 문제</div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
+                ` : ''}
             </div>
         </div>
     `;
@@ -286,107 +234,40 @@ function getKeyword130Stats() {
     };
 }
 
-// 키워드 130 섹션 토글
-function toggleKeyword130Section() {
-    const section = document.getElementById('keyword130-section');
-    const toggle = event.target.closest('.section-toggle');
-    const icon = toggle.querySelector('.toggle-icon');
-    
-    if (section.style.display === 'none') {
-        section.style.display = 'block';
-        icon.style.transform = 'rotate(180deg)';
-    } else {
-        section.style.display = 'none';
-        icon.style.transform = 'rotate(0deg)';
-    }
-}
-
 // 코드-제어문 14문제 대시보드 렌더링
 function renderCodeControlDashboard() {
     const container = document.getElementById('questionContainer');
     const stats = getCodeControlStats();
     
     container.innerHTML = `
-        <div class="theory-category-dashboard">
-            <div class="dashboard-header-compact">
-                <h2><i class="fas fa-code"></i> 코드-제어문 14 문제</h2>
-                <div class="total-count">
-                    <span class="count-number">14</span>
-                    <span class="count-label">개 문제</span>
+        <div class="simple-dashboard">
+            <div class="dash-header">
+                <h2>코드-제어문 14</h2>
+                <div class="dash-stats">
+                    <span>완료 ${stats.completed}</span>
+                    <span>정답률 ${stats.accuracy}%</span>
+                    <span>체크 ${stats.marked}</span>
                 </div>
             </div>
             
-            <div class="stats-mini-cards">
-                <div class="mini-card">
-                    <i class="fas fa-check-circle"></i>
-                    <div class="mini-content">
-                        <div class="mini-value">${stats.completed}</div>
-                        <div class="mini-label">완료</div>
-                    </div>
-                </div>
-                <div class="mini-card">
-                    <i class="fas fa-percentage"></i>
-                    <div class="mini-content">
-                        <div class="mini-value">${stats.accuracy}%</div>
-                        <div class="mini-label">정답률</div>
-                    </div>
-                </div>
-                <div class="mini-card">
-                    <i class="fas fa-star"></i>
-                    <div class="mini-content">
-                        <div class="mini-value">${stats.marked}</div>
-                        <div class="mini-label">체크</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="main-actions">
-                <button class="main-action-card primary" onclick="loadQuestions('sequential')">
-                    <div class="action-icon"><i class="fas fa-play-circle"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">순차 학습</div>
-                        <div class="action-desc">1번부터 순서대로</div>
-                    </div>
+            <div class="dash-actions">
+                <button class="dash-btn primary" onclick="loadQuestions('sequential')">
+                    <i class="fas fa-play-circle"></i> 순차 풀기
                 </button>
-                <button class="main-action-card secondary" onclick="loadQuestions('random')">
-                    <div class="action-icon"><i class="fas fa-random"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">랜덤 학습</div>
-                        <div class="action-desc">문제를 섞어서</div>
-                    </div>
+                <button class="dash-btn secondary" onclick="loadQuestions('random')">
+                    <i class="fas fa-random"></i> 랜덤 풀기
                 </button>
-                <button class="main-action-card accent" onclick="showRangeModal()">
-                    <div class="action-icon"><i class="fas fa-sliders-h"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">범위 학습</div>
-                        <div class="action-desc">원하는 범위만</div>
-                    </div>
+                <button class="dash-btn accent" onclick="showRangeModal()">
+                    <i class="fas fa-sliders-h"></i> 범위 설정
                 </button>
-                <button class="main-action-card special" onclick="loadQuestions('wrong')">
-                    <div class="action-icon"><i class="fas fa-exclamation-circle"></i></div>
-                    <div class="action-content">
-                        <div class="action-title">오답 노트</div>
-                        <div class="action-desc">틀린 문제만</div>
-                    </div>
+                <button class="dash-btn special" onclick="loadQuestions('wrong')">
+                    <i class="fas fa-times-circle"></i> 오답 노트
                 </button>
-            </div>
-            
-            <div class="category-section-compact">
-                <button class="section-toggle" onclick="toggleCodeControlSection()">
-                    <span><i class="fas fa-check"></i> 체크한 문제</span>
-                    <i class="fas fa-chevron-down toggle-icon"></i>
+                ${stats.marked > 0 ? `
+                <button class="dash-btn marked" onclick="loadQuestions('marked')">
+                    <i class="fas fa-star"></i> 체크 문제 (${stats.marked})
                 </button>
-                <div id="codecontrol-section" class="section-content" style="display: none;">
-                    <div style="text-align: center; padding: 20px;">
-                        <button class="main-action-card special" onclick="loadQuestions('marked')" style="max-width: 400px; margin: 0 auto;">
-                            <div class="action-icon"><i class="fas fa-star"></i></div>
-                            <div class="action-content">
-                                <div class="action-title">체크한 ${stats.marked}개 문제 풀기</div>
-                                <div class="action-desc">나중에 다시 풀어볼 문제</div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
+                ` : ''}
             </div>
         </div>
     `;
@@ -406,20 +287,5 @@ function getCodeControlStats() {
         accuracy: accuracy,
         marked: markedQuestions.length
     };
-}
-
-// 코드-제어문 섹션 토글
-function toggleCodeControlSection() {
-    const section = document.getElementById('codecontrol-section');
-    const toggle = event.target.closest('.section-toggle');
-    const icon = toggle.querySelector('.toggle-icon');
-    
-    if (section.style.display === 'none') {
-        section.style.display = 'block';
-        icon.style.transform = 'rotate(180deg)';
-    } else {
-        section.style.display = 'none';
-        icon.style.transform = 'rotate(0deg)';
-    }
 }
 
