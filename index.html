@@ -306,19 +306,16 @@
         }
 
         .mode-selector {
-            padding: 12px;
-            background: white;
-            border-bottom: 1px solid #e9ecef;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
         }
 
         .mode-buttons {
             display: flex;
             gap: 8px;
-            max-width: 1200px;
-            margin: 0 auto;
-            justify-content: center;
-            flex-wrap: nowrap;
-            overflow-x: auto;
+            justify-content: flex-start;
+            flex-wrap: wrap;
         }
 
         .mode-buttons-container {
@@ -340,81 +337,32 @@
         }
 
         .mode-btn {
-            padding: 12px 18px;
-            border: none;
+            padding: 10px 16px;
+            border: 1px solid #dee2e6;
             background: white;
-            color: #333;
-            border-radius: 10px;
+            color: #495057;
+            border-radius: 6px;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s;
             text-align: center;
-            font-size: 0.95em;
-            font-weight: 600;
-            position: relative;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            flex: 0 0 auto;
+            font-size: 0.9em;
+            font-weight: 500;
             white-space: nowrap;
         }
 
-        .mode-btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(102, 126, 234, 0.1);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .mode-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
         .mode-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: #e9ecef;
+            border-color: #adb5bd;
         }
         
         .mode-btn i {
-            font-size: 1.1em;
             margin-right: 6px;
-        }
-        
-        /* 버튼별 색상 */
-        .mode-btn:nth-child(1) {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .mode-btn:nth-child(2) {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-        }
-        
-        .mode-btn:nth-child(3) {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-        }
-        
-        .mode-btn:nth-child(4) {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            color: white;
-        }
-        
-        .mode-btn:nth-child(5) {
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-            color: #333;
         }
 
         .mode-btn.active {
-            transform: scale(0.98);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-            animation: pulse 2s infinite;
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
         }
 
         @keyframes pulse {
@@ -1251,29 +1199,16 @@
             }
 
             .mode-selector {
-                padding: 8px;
+                padding: 8px 12px;
             }
             
             .mode-buttons {
                 gap: 6px;
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-            
-            .mode-buttons::-webkit-scrollbar {
-                display: none;
             }
             
             .mode-btn {
-                padding: 10px 14px;
+                padding: 8px 12px;
                 font-size: 0.85em;
-                border-radius: 8px;
-            }
-            
-            .mode-btn i {
-                font-size: 1em;
-                margin-right: 4px;
             }
 
             .question-text {
