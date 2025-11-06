@@ -154,6 +154,11 @@ class TheoryFrequentModule {
     renderFlashcard(item) {
         const container = document.getElementById('questionContainer');
         
+        // 디버깅: 아이템 데이터 확인
+        console.log('현재 플래시카드 데이터:', item);
+        console.log('답안 내용:', item.content);
+        console.log('뒤집힘 상태:', this.isFlipped);
+        
         container.innerHTML = `
             <div class="flashcard-container">
                 <div class="flashcard ${this.isFlipped ? 'flipped' : ''}" onclick="flipCard()">
@@ -183,7 +188,7 @@ class TheoryFrequentModule {
                         <div class="card-content">
                             <h3>${item.title}</h3>
                             <div class="answer-content">
-                                ${item.content.split('\n').map(line => `<p>${line}</p>`).join('')}
+                                ${item.content ? item.content.split('\n').filter(line => line.trim() !== '').map(line => `<p>${line}</p>`).join('') : '<p>답안 내용이 없습니다.</p>'}
                             </div>
                         </div>
                     </div>
@@ -394,6 +399,23 @@ class TheoryFrequentModule {
         this.studyData.lastStudyDate = today;
     }
 
+    // 섹션 토글
+    toggleSection(sectionId) {
+        const section = document.getElementById(`${sectionId}-section`);
+        const toggle = event.target.closest('.section-toggle');
+        const icon = toggle.querySelector('i.fa-chevron-down, i.fa-chevron-up');
+        
+        if (section.style.display === 'none') {
+            section.style.display = 'block';
+            icon.classList.remove('fa-chevron-down');
+            icon.classList.add('fa-chevron-up');
+        } else {
+            section.style.display = 'none';
+            icon.classList.remove('fa-chevron-up');
+            icon.classList.add('fa-chevron-down');
+        }
+    }
+
     // 대시보드 렌더링
     renderDashboard() {
         const container = document.getElementById('questionContainer');
@@ -407,41 +429,46 @@ class TheoryFrequentModule {
                 </div>
                 
                 <div class="study-modes">
-                    <h3>📚 라벨별 학습</h3>
                     <div class="label-grid">
-                        <button class="label-btn" onclick="theoryFrequent.startLabelStudy('all')">
-                            <i class="fas fa-list"></i>
-                            <span>전체 학습</span>
+                        <button class="label-btn" onclick="theoryFrequent.startLabelStudy('all')" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-play-circle"></i>
+                            <span>전체 학습 시작</span>
                             <small>${stats.total}개 항목</small>
-                        </button>
-                        <button class="label-btn" onclick="theoryFrequent.startLabelStudy('database')">
-                            <i class="fas fa-database"></i>
-                            <span>데이터베이스</span>
-                            <small>${stats.byLabel.database || 0}개</small>
-                        </button>
-                        <button class="label-btn" onclick="theoryFrequent.startLabelStudy('os')">
-                            <i class="fas fa-desktop"></i>
-                            <span>운영체제</span>
-                            <small>${stats.byLabel.os || 0}개</small>
-                        </button>
-                        <button class="label-btn" onclick="theoryFrequent.startLabelStudy('network')">
-                            <i class="fas fa-network-wired"></i>
-                            <span>네트워크</span>
-                            <small>${stats.byLabel.network || 0}개</small>
-                        </button>
-                        <button class="label-btn" onclick="theoryFrequent.startLabelStudy('security')">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>정보보안</span>
-                            <small>${stats.byLabel.security || 0}개</small>
-                        </button>
-                        <button class="label-btn" onclick="theoryFrequent.startLabelStudy('software_engineering')">
-                            <i class="fas fa-cogs"></i>
-                            <span>SW공학</span>
-                            <small>${stats.byLabel.software_engineering || 0}개</small>
                         </button>
                     </div>
                 </div>
                 
+                <!-- 라벨별 학습 드롭다운 -->
+                <div class="compact-section">
+                    <button class="section-toggle" onclick="theoryFrequent.toggleSection('labels')">
+                        <span>📚 라벨별 학습</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="labels-section" class="section-content" style="display: none;">
+                        <div class="label-grid-compact">
+                            <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('database')">
+                                데이터베이스 (${stats.byLabel.database || 0})
+                            </button>
+                            <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('os')">
+                                운영체제 (${stats.byLabel.os || 0})
+                            </button>
+                            <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('network')">
+                                네트워크 (${stats.byLabel.network || 0})
+                            </button>
+                            <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('security')">
+                                정보보안 (${stats.byLabel.security || 0})
+                            </button>
+                            <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('software_engineering')">
+                                SW공학 (${stats.byLabel.software_engineering || 0})
+                            </button>
+                            <button class="label-btn-compact" onclick="theoryFrequent.startLabelStudy('programming')">
+                                프로그래밍 (${stats.byLabel.programming || 0})
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 학습 통계 -->
                 <div class="study-stats">
                     <h3>📊 학습 통계</h3>
                     <div class="stats-grid">
@@ -477,9 +504,17 @@ class TheoryFrequentModule {
                                 ${stats.completed} / ${stats.total} (${Math.round(stats.completed / stats.total * 100)}%)
                             </div>
                         </div>
-                        
+                    </div>
+                </div>
+                
+                <!-- 라벨별 진도 드롭다운 -->
+                <div class="compact-section">
+                    <button class="section-toggle" onclick="theoryFrequent.toggleSection('progress')">
+                        <span>📋 라벨별 진도</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="progress-section" class="section-content" style="display: none;">
                         <div class="label-progress">
-                            <h4>📋 라벨별 진도</h4>
                             ${Object.entries(stats.byLabel).map(([label, count]) => {
                                 const completedInLabel = this.studyData.completedItems.filter(id => {
                                     const item = this.items.find(i => i.id === id);
