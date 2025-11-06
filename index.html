@@ -306,18 +306,19 @@
         }
 
         .mode-selector {
-            padding: 20px;
+            padding: 12px;
             background: white;
             border-bottom: 1px solid #e9ecef;
         }
 
         .mode-buttons {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             max-width: 1200px;
             margin: 0 auto;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            overflow-x: auto;
         }
 
         .mode-buttons-container {
@@ -339,20 +340,20 @@
         }
 
         .mode-btn {
-            padding: 15px 25px;
+            padding: 12px 18px;
             border: none;
             background: white;
             color: #333;
-            border-radius: 12px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-align: center;
-            font-size: 1em;
+            font-size: 0.95em;
             font-weight: 600;
             position: relative;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             overflow: hidden;
-            flex: 0 1 auto;
+            flex: 0 0 auto;
             white-space: nowrap;
         }
 
@@ -1214,8 +1215,8 @@
 
         @media (max-width: 768px) {
             body {
-                padding: 5px;
-                font-size: 18px;
+                padding: 0;
+                font-size: 16px;
             }
 
             .container {
@@ -1224,15 +1225,11 @@
             }
 
             .header {
-                padding: 20px 15px;
-            }
-
-            .mode-selector {
-                padding: 20px 15px;
+                padding: 15px 12px;
             }
 
             .question-container {
-                padding: 20px 15px;
+                padding: 15px 12px;
                 max-height: none;
             }
 
@@ -1253,15 +1250,30 @@
                 font-size: 1.1em;
             }
 
+            .mode-selector {
+                padding: 8px;
+            }
+            
             .mode-buttons {
-                flex-direction: column;
-                gap: 10px;
+                gap: 6px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            
+            .mode-buttons::-webkit-scrollbar {
+                display: none;
             }
             
             .mode-btn {
-                padding: 14px 20px;
-                font-size: 0.95em;
-                width: 100%;
+                padding: 10px 14px;
+                font-size: 0.85em;
+                border-radius: 8px;
+            }
+            
+            .mode-btn i {
+                font-size: 1em;
+                margin-right: 4px;
             }
 
             .question-text {
