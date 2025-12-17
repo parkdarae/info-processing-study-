@@ -3311,19 +3311,28 @@
                 await loadScript('js/keyword130-module.js?v=20251106');
                 await loadScript('js/code-control-module.js?v=20251106');
                 await loadScript('js/components/theory-category.js?v=20251105220000');
-                await loadScript('js/components/menu.js?v=20251105004');
+                await loadScript('js/components/menu.js?v=20251217_cissp');
                 await loadScript('js/components/modal.js?v=20251105004');
                 await loadScript('js/components/question-display.js?v=20251105004');
                 await loadScript('js/modes/range.js?v=20251105004');
                 console.log('🎉 모든 스크립트 로드 완료');
                 
                 // CISSP 모듈 설정 확인
-                if (App.moduleConfig && App.moduleConfig.cissp) {
-                    console.log('✅ CISSP 모듈 설정 확인됨:', App.moduleConfig.cissp);
+                console.log('=== 모듈 설정 검증 ===');
+                console.log('App 객체 존재:', typeof App !== 'undefined');
+                console.log('App.moduleConfig 존재:', typeof App.moduleConfig !== 'undefined');
+                if (App && App.moduleConfig) {
+                    console.log('전체 모듈 목록:', Object.keys(App.moduleConfig));
+                    if (App.moduleConfig.cissp) {
+                        console.log('✅ CISSP 모듈 설정 확인됨:', App.moduleConfig.cissp);
+                    } else {
+                        console.error('❌ CISSP 모듈 설정을 찾을 수 없습니다.');
+                        console.log('사용 가능한 모듈:', Object.keys(App.moduleConfig));
+                    }
                 } else {
-                    console.error('❌ CISSP 모듈 설정을 찾을 수 없습니다.');
-                    console.log('사용 가능한 모듈:', Object.keys(App.moduleConfig || {}));
+                    console.error('❌ App.moduleConfig가 초기화되지 않았습니다!');
                 }
+                console.log('===================');
             } catch (error) {
                 console.error('💥 스크립트 로드 실패:', error);
                 alert('일부 기능이 작동하지 않을 수 있습니다.');
