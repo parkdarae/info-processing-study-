@@ -70,6 +70,18 @@ function switchModule(moduleName) {
             pmpModule.renderDashboard();
         });
     }
+    // CISSP 모듈인 경우 대시보드 표시
+    else if (moduleName === 'cissp') {
+        App.state.currentMode = null; // 대시보드 표시를 위해 모드 초기화
+        if (typeof window.cisspModule !== 'undefined' && window.cisspModule) {
+            window.cisspModule.loadItems().then(() => {
+                window.cisspModule.renderDashboard();
+            });
+        } else {
+            console.error('CISSP 모듈이 로드되지 않았습니다. 페이지를 새로고침해주세요.');
+            alert('CISSP 모듈을 불러올 수 없습니다. 페이지를 새로고침해주세요.');
+        }
+    }
     // 핵심 키워드 130 모듈인 경우 대시보드 표시
     else if (moduleName === 'keyword130') {
         App.state.currentMode = null; // 대시보드 표시를 위해 모드 초기화

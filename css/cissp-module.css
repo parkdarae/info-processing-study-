@@ -1,0 +1,498 @@
+/* CISSP 문제집 모듈 스타일 */
+
+/* 대시보드 */
+.cissp-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.cissp-header {
+    background: linear-gradient(135deg, #1a5276 0%, #2e86ab 100%) !important;
+}
+
+.no-data-warning {
+    background: rgba(255, 193, 7, 0.2);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #fff;
+}
+
+/* 언어 선택 섹션 */
+.language-selector {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.language-selector h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.lang-btn {
+    background: white;
+    border: 3px solid #e9ecef;
+    border-radius: 15px;
+    padding: 25px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.lang-btn:hover {
+    border-color: #1a5276;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(26, 82, 118, 0.15);
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, #1a5276 0%, #2e86ab 100%);
+    border-color: #1a5276;
+    color: white;
+}
+
+.lang-btn .flag {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.lang-btn .lang-name {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.lang-btn .lang-desc {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* 문제 카드 - CISSP 테마 */
+.cissp-card {
+    border-color: #1a5276;
+}
+
+.cissp-card .question-header {
+    background: linear-gradient(135deg, #1a5276 0%, #2e86ab 100%);
+    color: white;
+}
+
+.cissp-card .question-no {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* 언어 힌트 */
+.lang-hint {
+    background: linear-gradient(135deg, #e8f4f8 0%, #d4eaf0 100%);
+    padding: 10px 20px;
+    font-size: 0.9em;
+    color: #1a5276;
+    text-align: center;
+    border-bottom: 1px solid #cfe2e8;
+}
+
+.lang-hint i {
+    margin-right: 8px;
+    animation: point 1s ease-in-out infinite;
+}
+
+@keyframes point {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+/* 인터랙티브 텍스트 */
+.interactive-word {
+    cursor: pointer;
+    border-bottom: 1px dashed #1a5276;
+    transition: all 0.2s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.interactive-word:hover {
+    background: rgba(26, 82, 118, 0.1);
+    border-bottom-color: #2e86ab;
+}
+
+/* 한글 인라인 표시 */
+.korean-inline {
+    color: #c0392b;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-left: 4px;
+    font-style: normal;
+    display: inline;
+}
+
+.interactive-word:hover .korean-inline {
+    color: #e74c3c;
+}
+
+.interactive-sentence {
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: inline;
+}
+
+.interactive-sentence:hover {
+    background: rgba(46, 134, 171, 0.1);
+    border-radius: 4px;
+}
+
+.interactive-sentence.has-translation {
+    border-bottom: 2px solid #2e86ab;
+}
+
+/* 문장 번역 인라인 표시 */
+.interactive-sentence-wrapper {
+    display: block;
+    margin: 4px 0;
+}
+
+.sentence-translation-inline {
+    color: #c0392b;
+    font-weight: 500;
+    font-size: 0.95em;
+    margin-top: 4px;
+    margin-left: 8px;
+    padding: 6px 12px;
+    background: rgba(231, 76, 60, 0.1);
+    border-left: 3px solid #e74c3c;
+    border-radius: 4px;
+    line-height: 1.5;
+    display: block;
+}
+
+/* 팝업 스타일 */
+.cissp-popup {
+    position: absolute;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 15px 20px;
+    max-width: 350px;
+    min-width: 200px;
+    z-index: 1000;
+    animation: popupIn 0.2s ease;
+    border: 2px solid #1a5276;
+}
+
+@keyframes popupIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 단어 팝업 */
+.word-popup-content .word-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #1a5276;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 8px;
+}
+
+.word-popup-content .word-meaning {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.word-popup-content .word-pos {
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.word-popup-content .word-example {
+    font-size: 0.9em;
+    color: #555;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 3px solid #2e86ab;
+}
+
+/* 문장 팝업 */
+.sentence-popup-content .sentence-original {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e9ecef;
+    line-height: 1.5;
+}
+
+.sentence-popup-content .sentence-translation {
+    font-size: 1em;
+    color: #1a5276;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* 언어 토글 버튼 */
+.btn-lang-en {
+    background: linear-gradient(135deg, #1a5276 0%, #2e86ab 100%) !important;
+    color: white !important;
+}
+
+.btn-lang-ko {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%) !important;
+    color: white !important;
+}
+
+/* 한글 변환 버튼 */
+.korean-convert-btn {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%) !important;
+    color: white !important;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.korean-convert-btn:hover {
+    background: linear-gradient(135deg, #229954 0%, #27ae60 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.korean-convert-btn.active {
+    background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%) !important;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+}
+
+/* TTS 토글 버튼 */
+.tts-toggle-btn {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%) !important;
+    color: white !important;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.tts-toggle-btn:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+}
+
+.tts-toggle-btn.active {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 20px rgba(40, 167, 69, 0.6);
+    }
+}
+
+/* TTS 클릭 가능한 문제 영역 */
+.question-text.tts-clickable {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.question-text.tts-clickable:hover {
+    background: rgba(40, 167, 69, 0.05);
+    border-radius: 8px;
+    padding: 5px;
+    margin: -5px;
+}
+
+.question-text.tts-clickable::after {
+    content: '🔊';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 0.8em;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+
+.question-text.tts-clickable:hover::after {
+    opacity: 1;
+}
+
+/* 북마크 버튼 */
+.btn-bookmarked {
+    background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%) !important;
+    color: white !important;
+}
+
+/* 헤더 버튼 그룹 */
+.header-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* 선택지 상태 */
+.choice-item.selected {
+    background: linear-gradient(135deg, #1a5276 0%, #2e86ab 100%);
+    color: white;
+    border-color: #1a5276;
+}
+
+.choice-item.correct {
+    background: #d4edda !important;
+    border-color: #28a745 !important;
+    color: #155724 !important;
+}
+
+.choice-item.incorrect {
+    background: #f8d7da !important;
+    border-color: #dc3545 !important;
+    color: #721c24 !important;
+}
+
+/* 결과 섹션 */
+.result-section {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.result-section.correct {
+    background: #d4edda;
+    border: 2px solid #28a745;
+    color: #155724;
+}
+
+.result-section.wrong {
+    background: #f8d7da;
+    border: 2px solid #dc3545;
+    color: #721c24;
+}
+
+.result-section.info {
+    background: #d1ecf1;
+    border: 2px solid #17a2b8;
+    color: #0c5460;
+}
+
+.result-section i {
+    margin-right: 8px;
+}
+
+/* 오답 모드 버튼 */
+.main-mode-card.wrong-mode {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+}
+
+/* 문제 이미지 */
+.question-images {
+    padding: 15px 25px;
+    text-align: center;
+}
+
+.question-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+
+/* 통계 초기화 섹션 */
+.reset-section {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .cissp-dashboard {
+        padding: 10px;
+    }
+    
+    .language-options {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .lang-btn {
+        padding: 20px 15px;
+    }
+    
+    .lang-btn .flag {
+        font-size: 2em;
+    }
+    
+    .lang-btn .lang-name {
+        font-size: 1.1em;
+    }
+    
+    .lang-hint {
+        font-size: 0.85em;
+        padding: 8px 15px;
+    }
+    
+    .cissp-popup {
+        max-width: 90%;
+        left: 5% !important;
+        right: 5%;
+    }
+    
+    .header-buttons {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .header-buttons .btn {
+        font-size: 0.8em;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .word-popup-content .word-title {
+        font-size: 1.1em;
+    }
+    
+    .word-popup-content .word-meaning {
+        font-size: 1em;
+    }
+    
+    .word-popup-content .word-example {
+        font-size: 0.85em;
+    }
+}
+
+

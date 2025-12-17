@@ -1,0 +1,2842 @@
+{
+  "confidentiality": {
+    "meaning": "기밀성",
+    "pos": "noun",
+    "example": "Confidentiality ensures that information is not disclosed to unauthorized individuals."
+  },
+  "integrity": {
+    "meaning": "무결성",
+    "pos": "noun",
+    "example": "Data integrity ensures that information has not been altered."
+  },
+  "availability": {
+    "meaning": "가용성",
+    "pos": "noun",
+    "example": "Availability ensures that systems and data are accessible when needed."
+  },
+  "authentication": {
+    "meaning": "인증",
+    "pos": "noun",
+    "example": "Authentication verifies the identity of a user or system."
+  },
+  "authorization": {
+    "meaning": "권한 부여, 인가",
+    "pos": "noun",
+    "example": "Authorization determines what actions a user can perform."
+  },
+  "accountability": {
+    "meaning": "책임성",
+    "pos": "noun",
+    "example": "Accountability ensures actions can be traced to individuals."
+  },
+  "nonrepudiation": {
+    "meaning": "부인 방지",
+    "pos": "noun",
+    "example": "Nonrepudiation prevents denial of performed actions."
+  },
+  "encryption": {
+    "meaning": "암호화",
+    "pos": "noun",
+    "example": "Encryption converts data into a coded format."
+  },
+  "decryption": {
+    "meaning": "복호화",
+    "pos": "noun",
+    "example": "Decryption converts encrypted data back to readable format."
+  },
+  "vulnerability": {
+    "meaning": "취약점",
+    "pos": "noun",
+    "example": "A vulnerability is a weakness that can be exploited."
+  },
+  "threat": {
+    "meaning": "위협",
+    "pos": "noun",
+    "example": "A threat is a potential cause of an unwanted incident."
+  },
+  "risk": {
+    "meaning": "위험",
+    "pos": "noun",
+    "example": "Risk is the potential for loss or damage."
+  },
+  "mitigation": {
+    "meaning": "완화, 경감",
+    "pos": "noun",
+    "example": "Risk mitigation reduces the impact of potential threats."
+  },
+  "compliance": {
+    "meaning": "준수, 컴플라이언스",
+    "pos": "noun",
+    "example": "Compliance ensures adherence to laws and regulations."
+  },
+  "audit": {
+    "meaning": "감사",
+    "pos": "noun",
+    "example": "An audit examines and verifies organizational processes."
+  },
+  "policy": {
+    "meaning": "정책",
+    "pos": "noun",
+    "example": "A security policy defines rules for protecting information."
+  },
+  "procedure": {
+    "meaning": "절차",
+    "pos": "noun",
+    "example": "A procedure provides step-by-step instructions."
+  },
+  "guideline": {
+    "meaning": "지침, 가이드라인",
+    "pos": "noun",
+    "example": "Guidelines provide recommended actions."
+  },
+  "standard": {
+    "meaning": "표준",
+    "pos": "noun",
+    "example": "Standards define mandatory requirements."
+  },
+  "baseline": {
+    "meaning": "기준선, 베이스라인",
+    "pos": "noun",
+    "example": "A baseline is a minimum level of security."
+  },
+  "incident": {
+    "meaning": "사고, 인시던트",
+    "pos": "noun",
+    "example": "A security incident is an event that threatens information security."
+  },
+  "breach": {
+    "meaning": "침해, 위반",
+    "pos": "noun",
+    "example": "A data breach results in unauthorized data access."
+  },
+  "firewall": {
+    "meaning": "방화벽",
+    "pos": "noun",
+    "example": "A firewall controls network traffic based on security rules."
+  },
+  "malware": {
+    "meaning": "악성코드",
+    "pos": "noun",
+    "example": "Malware is software designed to cause harm."
+  },
+  "phishing": {
+    "meaning": "피싱",
+    "pos": "noun",
+    "example": "Phishing attempts to steal sensitive information through deception."
+  },
+  "ransomware": {
+    "meaning": "랜섬웨어",
+    "pos": "noun",
+    "example": "Ransomware encrypts data and demands payment for decryption."
+  },
+  "virus": {
+    "meaning": "바이러스",
+    "pos": "noun",
+    "example": "A virus is malicious code that replicates itself."
+  },
+  "worm": {
+    "meaning": "웜",
+    "pos": "noun",
+    "example": "A worm spreads across networks without user interaction."
+  },
+  "trojan": {
+    "meaning": "트로이 목마",
+    "pos": "noun",
+    "example": "A trojan disguises itself as legitimate software."
+  },
+  "biometric": {
+    "meaning": "생체 인식의",
+    "pos": "adjective",
+    "example": "Biometric authentication uses physical characteristics."
+  },
+  "cryptography": {
+    "meaning": "암호학",
+    "pos": "noun",
+    "example": "Cryptography is the science of secure communication."
+  },
+  "symmetric": {
+    "meaning": "대칭의",
+    "pos": "adjective",
+    "example": "Symmetric encryption uses the same key for encryption and decryption."
+  },
+  "asymmetric": {
+    "meaning": "비대칭의",
+    "pos": "adjective",
+    "example": "Asymmetric encryption uses different keys for encryption and decryption."
+  },
+  "certificate": {
+    "meaning": "인증서",
+    "pos": "noun",
+    "example": "A digital certificate validates identity."
+  },
+  "hash": {
+    "meaning": "해시",
+    "pos": "noun",
+    "example": "A hash is a fixed-size output from a hash function."
+  },
+  "token": {
+    "meaning": "토큰",
+    "pos": "noun",
+    "example": "A security token provides authentication credentials."
+  },
+  "governance": {
+    "meaning": "거버넌스, 통제",
+    "pos": "noun",
+    "example": "IT governance ensures alignment with business objectives."
+  },
+  "framework": {
+    "meaning": "프레임워크, 체계",
+    "pos": "noun",
+    "example": "A security framework provides a structured approach."
+  },
+  "assessment": {
+    "meaning": "평가",
+    "pos": "noun",
+    "example": "A risk assessment identifies potential threats."
+  },
+  "penetration": {
+    "meaning": "침투",
+    "pos": "noun",
+    "example": "Penetration testing simulates attacks to find vulnerabilities."
+  },
+  "intrusion": {
+    "meaning": "침입",
+    "pos": "noun",
+    "example": "An intrusion detection system monitors for attacks."
+  },
+  "detection": {
+    "meaning": "탐지",
+    "pos": "noun",
+    "example": "Threat detection identifies potential security issues."
+  },
+  "prevention": {
+    "meaning": "예방",
+    "pos": "noun",
+    "example": "Intrusion prevention blocks detected attacks."
+  },
+  "recovery": {
+    "meaning": "복구",
+    "pos": "noun",
+    "example": "Disaster recovery restores operations after an incident."
+  },
+  "continuity": {
+    "meaning": "연속성",
+    "pos": "noun",
+    "example": "Business continuity ensures operations continue during disruptions."
+  },
+  "resilience": {
+    "meaning": "복원력, 탄력성",
+    "pos": "noun",
+    "example": "System resilience enables quick recovery from failures."
+  },
+  "redundancy": {
+    "meaning": "중복성",
+    "pos": "noun",
+    "example": "Redundancy provides backup systems for failures."
+  },
+  "backup": {
+    "meaning": "백업",
+    "pos": "noun",
+    "example": "Regular backups protect against data loss."
+  },
+  "asset": {
+    "meaning": "자산",
+    "pos": "noun",
+    "example": "Asset management tracks organizational resources."
+  },
+  "classification": {
+    "meaning": "분류",
+    "pos": "noun",
+    "example": "Data classification categorizes information by sensitivity."
+  },
+  "labeling": {
+    "meaning": "레이블링, 표시",
+    "pos": "noun",
+    "example": "Security labeling marks data sensitivity levels."
+  },
+  "handling": {
+    "meaning": "취급",
+    "pos": "noun",
+    "example": "Data handling procedures protect sensitive information."
+  },
+  "disposal": {
+    "meaning": "폐기",
+    "pos": "noun",
+    "example": "Secure disposal prevents data recovery from discarded media."
+  },
+  "sanitization": {
+    "meaning": "소거, 정화",
+    "pos": "noun",
+    "example": "Media sanitization removes all data from storage devices."
+  },
+  "segregation": {
+    "meaning": "분리",
+    "pos": "noun",
+    "example": "Duty segregation prevents fraud by dividing responsibilities."
+  },
+  "separation": {
+    "meaning": "분리",
+    "pos": "noun",
+    "example": "Separation of duties requires multiple people for critical tasks."
+  },
+  "privilege": {
+    "meaning": "권한",
+    "pos": "noun",
+    "example": "Least privilege limits access to minimum necessary."
+  },
+  "escalation": {
+    "meaning": "에스컬레이션, 상향보고",
+    "pos": "noun",
+    "example": "Incident escalation routes issues to appropriate levels."
+  },
+  "disclosure": {
+    "meaning": "공개",
+    "pos": "noun",
+    "example": "Responsible disclosure reports vulnerabilities to vendors."
+  },
+  "awareness": {
+    "meaning": "인식",
+    "pos": "noun",
+    "example": "Security awareness training educates employees."
+  },
+  "due diligence": {
+    "meaning": "실사, 주의의무",
+    "pos": "noun",
+    "example": "Due diligence investigates risks before decisions."
+  },
+  "due care": {
+    "meaning": "상당한 주의",
+    "pos": "noun",
+    "example": "Due care implements reasonable security measures."
+  },
+  "liability": {
+    "meaning": "책임",
+    "pos": "noun",
+    "example": "Legal liability results from negligent security."
+  },
+  "negligence": {
+    "meaning": "과실",
+    "pos": "noun",
+    "example": "Negligence is failure to exercise reasonable care."
+  },
+  "forensics": {
+    "meaning": "포렌식, 디지털 수사",
+    "pos": "noun",
+    "example": "Digital forensics investigates security incidents."
+  },
+  "evidence": {
+    "meaning": "증거",
+    "pos": "noun",
+    "example": "Chain of custody preserves evidence integrity."
+  },
+  "chain of custody": {
+    "meaning": "증거 연속성",
+    "pos": "noun",
+    "example": "Chain of custody tracks evidence handling."
+  },
+  "investigation": {
+    "meaning": "조사",
+    "pos": "noun",
+    "example": "Security investigation analyzes incidents."
+  },
+  "network": {
+    "meaning": "네트워크",
+    "pos": "noun",
+    "example": "Network security protects data in transit."
+  },
+  "protocol": {
+    "meaning": "프로토콜",
+    "pos": "noun",
+    "example": "Security protocols define communication rules."
+  },
+  "packet": {
+    "meaning": "패킷",
+    "pos": "noun",
+    "example": "Packet filtering examines network traffic."
+  },
+  "proxy": {
+    "meaning": "프록시",
+    "pos": "noun",
+    "example": "A proxy server intermediates client requests."
+  },
+  "gateway": {
+    "meaning": "게이트웨이",
+    "pos": "noun",
+    "example": "A security gateway controls network access."
+  },
+  "segment": {
+    "meaning": "세그먼트",
+    "pos": "noun",
+    "example": "Network segmentation isolates sensitive systems."
+  },
+  "perimeter": {
+    "meaning": "경계",
+    "pos": "noun",
+    "example": "Perimeter security protects network boundaries."
+  },
+  "demilitarized zone": {
+    "meaning": "비무장 지대, DMZ",
+    "pos": "noun",
+    "example": "A DMZ separates internal and external networks."
+  },
+  "vpn": {
+    "meaning": "가상사설망",
+    "pos": "noun",
+    "example": "A VPN creates secure connections over public networks."
+  },
+  "tunnel": {
+    "meaning": "터널",
+    "pos": "noun",
+    "example": "VPN tunneling encrypts traffic between endpoints."
+  },
+  "wireless": {
+    "meaning": "무선의",
+    "pos": "adjective",
+    "example": "Wireless security protects Wi-Fi communications."
+  },
+  "application": {
+    "meaning": "응용 프로그램, 애플리케이션",
+    "pos": "noun",
+    "example": "Application security protects software from attacks."
+  },
+  "database": {
+    "meaning": "데이터베이스",
+    "pos": "noun",
+    "example": "Database security protects stored information."
+  },
+  "injection": {
+    "meaning": "인젝션, 주입",
+    "pos": "noun",
+    "example": "SQL injection exploits database vulnerabilities."
+  },
+  "overflow": {
+    "meaning": "오버플로우",
+    "pos": "noun",
+    "example": "Buffer overflow attacks exploit memory handling."
+  },
+  "validation": {
+    "meaning": "검증",
+    "pos": "noun",
+    "example": "Input validation prevents malicious data entry."
+  },
+  "sanitize": {
+    "meaning": "정화하다",
+    "pos": "verb",
+    "example": "Sanitize input to prevent injection attacks."
+  },
+  "patch": {
+    "meaning": "패치",
+    "pos": "noun",
+    "example": "Security patches fix known vulnerabilities."
+  },
+  "update": {
+    "meaning": "업데이트",
+    "pos": "noun",
+    "example": "Regular updates maintain system security."
+  },
+  "configuration": {
+    "meaning": "구성, 설정",
+    "pos": "noun",
+    "example": "Secure configuration hardens systems against attacks."
+  },
+  "hardening": {
+    "meaning": "강화",
+    "pos": "noun",
+    "example": "System hardening reduces attack surfaces."
+  },
+  "monitoring": {
+    "meaning": "모니터링",
+    "pos": "noun",
+    "example": "Security monitoring detects suspicious activities."
+  },
+  "logging": {
+    "meaning": "로깅",
+    "pos": "noun",
+    "example": "Security logging records system events."
+  },
+  "alert": {
+    "meaning": "경보",
+    "pos": "noun",
+    "example": "Security alerts notify of potential threats."
+  },
+  "response": {
+    "meaning": "대응",
+    "pos": "noun",
+    "example": "Incident response handles security events."
+  },
+  "remediation": {
+    "meaning": "개선, 수정",
+    "pos": "noun",
+    "example": "Vulnerability remediation fixes security weaknesses."
+  },
+  "countermeasure": {
+    "meaning": "대응책",
+    "pos": "noun",
+    "example": "Security countermeasures protect against threats."
+  },
+  "control": {
+    "meaning": "통제",
+    "pos": "noun",
+    "example": "Security controls protect information assets."
+  },
+  "safeguard": {
+    "meaning": "보호 장치",
+    "pos": "noun",
+    "example": "Safeguards protect against identified risks."
+  },
+  "deterrent": {
+    "meaning": "억제책",
+    "pos": "noun",
+    "example": "Deterrent controls discourage attackers."
+  },
+  "preventive": {
+    "meaning": "예방적인",
+    "pos": "adjective",
+    "example": "Preventive controls stop incidents before they occur."
+  },
+  "detective": {
+    "meaning": "탐지적인",
+    "pos": "adjective",
+    "example": "Detective controls identify security incidents."
+  },
+  "corrective": {
+    "meaning": "교정적인",
+    "pos": "adjective",
+    "example": "Corrective controls fix security issues."
+  },
+  "compensating": {
+    "meaning": "보완적인",
+    "pos": "adjective",
+    "example": "Compensating controls provide alternative protection."
+  },
+  "administrative": {
+    "meaning": "관리적인",
+    "pos": "adjective",
+    "example": "Administrative controls include policies and procedures."
+  },
+  "technical": {
+    "meaning": "기술적인",
+    "pos": "adjective",
+    "example": "Technical controls use technology for protection."
+  },
+  "physical": {
+    "meaning": "물리적인",
+    "pos": "adjective",
+    "example": "Physical controls protect tangible assets."
+  },
+  "operational": {
+    "meaning": "운영적인",
+    "pos": "adjective",
+    "example": "Operational controls manage day-to-day security."
+  },
+  "strategic": {
+    "meaning": "전략적인",
+    "pos": "adjective",
+    "example": "Strategic security aligns with business goals."
+  },
+  "tactical": {
+    "meaning": "전술적인",
+    "pos": "adjective",
+    "example": "Tactical security implements strategic plans."
+  },
+  "implement": {
+    "meaning": "구현하다",
+    "pos": "verb",
+    "example": "Implement security controls to protect assets."
+  },
+  "deploy": {
+    "meaning": "배포하다",
+    "pos": "verb",
+    "example": "Deploy security solutions across the organization."
+  },
+  "enforce": {
+    "meaning": "시행하다",
+    "pos": "verb",
+    "example": "Enforce security policies consistently."
+  },
+  "evaluate": {
+    "meaning": "평가하다",
+    "pos": "verb",
+    "example": "Evaluate security effectiveness regularly."
+  },
+  "maintain": {
+    "meaning": "유지하다",
+    "pos": "verb",
+    "example": "Maintain security controls over time."
+  },
+  "terminate": {
+    "meaning": "종료하다",
+    "pos": "verb",
+    "example": "Terminate access when no longer needed."
+  },
+  "revoke": {
+    "meaning": "취소하다",
+    "pos": "verb",
+    "example": "Revoke certificates when compromised."
+  },
+  "grant": {
+    "meaning": "부여하다",
+    "pos": "verb",
+    "example": "Grant access based on need to know."
+  },
+  "restrict": {
+    "meaning": "제한하다",
+    "pos": "verb",
+    "example": "Restrict access to sensitive data."
+  },
+  "protect": {
+    "meaning": "보호하다",
+    "pos": "verb",
+    "example": "Protect information assets from threats."
+  },
+  "secure": {
+    "meaning": "보호하다, 안전한",
+    "pos": "verb/adjective",
+    "example": "Secure systems against unauthorized access."
+  },
+  "compromise": {
+    "meaning": "침해, 손상",
+    "pos": "noun",
+    "example": "A system compromise requires immediate response."
+  },
+  "exploit": {
+    "meaning": "익스플로잇, 취약점 공격",
+    "pos": "noun",
+    "example": "An exploit takes advantage of vulnerabilities."
+  },
+  "attack": {
+    "meaning": "공격",
+    "pos": "noun",
+    "example": "A cyber attack targets information systems."
+  },
+  "attacker": {
+    "meaning": "공격자",
+    "pos": "noun",
+    "example": "An attacker attempts unauthorized access."
+  },
+  "adversary": {
+    "meaning": "적대자",
+    "pos": "noun",
+    "example": "An adversary poses security threats."
+  },
+  "insider": {
+    "meaning": "내부자",
+    "pos": "noun",
+    "example": "Insider threats come from within the organization."
+  },
+  "outsider": {
+    "meaning": "외부자",
+    "pos": "noun",
+    "example": "Outsider attacks originate externally."
+  },
+  "exposure": {
+    "meaning": "노출",
+    "pos": "noun",
+    "example": "Data exposure reveals sensitive information."
+  },
+  "leakage": {
+    "meaning": "유출",
+    "pos": "noun",
+    "example": "Data leakage is unintended information disclosure."
+  },
+  "loss": {
+    "meaning": "손실",
+    "pos": "noun",
+    "example": "Data loss results from deletion or corruption."
+  },
+  "theft": {
+    "meaning": "도난",
+    "pos": "noun",
+    "example": "Identity theft misuses personal information."
+  },
+  "fraud": {
+    "meaning": "사기",
+    "pos": "noun",
+    "example": "Financial fraud involves deception for gain."
+  },
+  "denial of service": {
+    "meaning": "서비스 거부",
+    "pos": "noun",
+    "example": "Denial of service attacks disrupt availability."
+  },
+  "spoofing": {
+    "meaning": "스푸핑",
+    "pos": "noun",
+    "example": "IP spoofing disguises the source of traffic."
+  },
+  "sniffing": {
+    "meaning": "스니핑",
+    "pos": "noun",
+    "example": "Packet sniffing captures network traffic."
+  },
+  "hijacking": {
+    "meaning": "하이재킹",
+    "pos": "noun",
+    "example": "Session hijacking takes over active sessions."
+  },
+  "tampering": {
+    "meaning": "변조",
+    "pos": "noun",
+    "example": "Data tampering modifies information without authorization."
+  },
+  "repudiation": {
+    "meaning": "부인",
+    "pos": "noun",
+    "example": "Repudiation denies responsibility for actions."
+  },
+  "privilege escalation": {
+    "meaning": "권한 상승",
+    "pos": "noun",
+    "example": "Privilege escalation gains unauthorized access levels."
+  },
+  "lateral movement": {
+    "meaning": "측면 이동",
+    "pos": "noun",
+    "example": "Lateral movement spreads through networks."
+  },
+  "persistence": {
+    "meaning": "지속성",
+    "pos": "noun",
+    "example": "Attackers establish persistence to maintain access."
+  },
+  "exfiltration": {
+    "meaning": "유출",
+    "pos": "noun",
+    "example": "Data exfiltration removes information from networks."
+  },
+  "social engineering": {
+    "meaning": "사회공학",
+    "pos": "noun",
+    "example": "Social engineering manipulates people to reveal information."
+  },
+  "pretexting": {
+    "meaning": "프리텍스팅",
+    "pos": "noun",
+    "example": "Pretexting creates a fabricated scenario to obtain information."
+  },
+  "tailgating": {
+    "meaning": "테일게이팅",
+    "pos": "noun",
+    "example": "Tailgating follows authorized personnel into secure areas."
+  },
+  "shoulder surfing": {
+    "meaning": "숄더 서핑",
+    "pos": "noun",
+    "example": "Shoulder surfing observes someone entering credentials."
+  },
+  "dumpster diving": {
+    "meaning": "덤스터 다이빙",
+    "pos": "noun",
+    "example": "Dumpster diving searches trash for sensitive information."
+  },
+  "vishing": {
+    "meaning": "비싱",
+    "pos": "noun",
+    "example": "Vishing uses voice calls for phishing attacks."
+  },
+  "smishing": {
+    "meaning": "스미싱",
+    "pos": "noun",
+    "example": "Smishing uses SMS messages for phishing attacks."
+  },
+  "spear phishing": {
+    "meaning": "스피어 피싱",
+    "pos": "noun",
+    "example": "Spear phishing targets specific individuals."
+  },
+  "whaling": {
+    "meaning": "웨일링",
+    "pos": "noun",
+    "example": "Whaling targets high-level executives."
+  },
+  "baiting": {
+    "meaning": "베이팅",
+    "pos": "noun",
+    "example": "Baiting uses physical media to deliver malware."
+  },
+  "watering hole": {
+    "meaning": "워터링 홀",
+    "pos": "noun",
+    "example": "Watering hole attacks compromise frequently visited websites."
+  },
+  "man-in-the-middle": {
+    "meaning": "중간자 공격",
+    "pos": "noun",
+    "example": "Man-in-the-middle attacks intercept communications."
+  },
+  "replay attack": {
+    "meaning": "재생 공격",
+    "pos": "noun",
+    "example": "Replay attacks retransmit captured data."
+  },
+  "birthday attack": {
+    "meaning": "생일 공격",
+    "pos": "noun",
+    "example": "Birthday attacks exploit hash collision probabilities."
+  },
+  "brute force": {
+    "meaning": "무차별 대입",
+    "pos": "noun",
+    "example": "Brute force attacks try all possible combinations."
+  },
+  "dictionary attack": {
+    "meaning": "사전 공격",
+    "pos": "noun",
+    "example": "Dictionary attacks use common words as passwords."
+  },
+  "rainbow table": {
+    "meaning": "레인보우 테이블",
+    "pos": "noun",
+    "example": "Rainbow tables are precomputed hash tables."
+  },
+  "salting": {
+    "meaning": "솔팅",
+    "pos": "noun",
+    "example": "Salting adds random data to passwords before hashing."
+  },
+  "key stretching": {
+    "meaning": "키 스트레칭",
+    "pos": "noun",
+    "example": "Key stretching makes passwords harder to crack."
+  },
+  "zero-day": {
+    "meaning": "제로데이",
+    "pos": "noun",
+    "example": "Zero-day vulnerabilities are unknown to vendors."
+  },
+  "advanced persistent threat": {
+    "meaning": "지능형 지속 위협, APT",
+    "pos": "noun",
+    "example": "APT attacks are sophisticated and long-term."
+  },
+  "botnet": {
+    "meaning": "봇넷",
+    "pos": "noun",
+    "example": "A botnet is a network of compromised computers."
+  },
+  "rootkit": {
+    "meaning": "루트킷",
+    "pos": "noun",
+    "example": "A rootkit hides malicious activity on systems."
+  },
+  "spyware": {
+    "meaning": "스파이웨어",
+    "pos": "noun",
+    "example": "Spyware secretly collects user information."
+  },
+  "adware": {
+    "meaning": "애드웨어",
+    "pos": "noun",
+    "example": "Adware displays unwanted advertisements."
+  },
+  "keylogger": {
+    "meaning": "키로거",
+    "pos": "noun",
+    "example": "A keylogger records keystrokes."
+  },
+  "backdoor": {
+    "meaning": "백도어",
+    "pos": "noun",
+    "example": "A backdoor provides unauthorized access."
+  },
+  "logic bomb": {
+    "meaning": "논리 폭탄",
+    "pos": "noun",
+    "example": "A logic bomb triggers on specific conditions."
+  },
+  "time bomb": {
+    "meaning": "시한 폭탄",
+    "pos": "noun",
+    "example": "A time bomb activates at a specific time."
+  },
+  "polymorphic": {
+    "meaning": "다형성의",
+    "pos": "adjective",
+    "example": "Polymorphic malware changes its code to avoid detection."
+  },
+  "metamorphic": {
+    "meaning": "변형성의",
+    "pos": "adjective",
+    "example": "Metamorphic malware rewrites itself completely."
+  },
+  "cryptojacking": {
+    "meaning": "크립토재킹",
+    "pos": "noun",
+    "example": "Cryptojacking uses systems to mine cryptocurrency."
+  },
+  "drive-by download": {
+    "meaning": "드라이브 바이 다운로드",
+    "pos": "noun",
+    "example": "Drive-by downloads install malware without consent."
+  },
+  "cross-site scripting": {
+    "meaning": "크로스 사이트 스크립팅, XSS",
+    "pos": "noun",
+    "example": "XSS injects malicious scripts into web pages."
+  },
+  "cross-site request forgery": {
+    "meaning": "크로스 사이트 요청 위조, CSRF",
+    "pos": "noun",
+    "example": "CSRF tricks users into performing unwanted actions."
+  },
+  "sql injection": {
+    "meaning": "SQL 인젝션",
+    "pos": "noun",
+    "example": "SQL injection manipulates database queries."
+  },
+  "command injection": {
+    "meaning": "명령어 인젝션",
+    "pos": "noun",
+    "example": "Command injection executes system commands."
+  },
+  "directory traversal": {
+    "meaning": "디렉토리 순회",
+    "pos": "noun",
+    "example": "Directory traversal accesses unauthorized files."
+  },
+  "file inclusion": {
+    "meaning": "파일 포함",
+    "pos": "noun",
+    "example": "File inclusion attacks include malicious files."
+  },
+  "insecure deserialization": {
+    "meaning": "안전하지 않은 역직렬화",
+    "pos": "noun",
+    "example": "Insecure deserialization allows code execution."
+  },
+  "xml external entity": {
+    "meaning": "XML 외부 엔티티, XXE",
+    "pos": "noun",
+    "example": "XXE attacks exploit XML parsers."
+  },
+  "server-side request forgery": {
+    "meaning": "서버 측 요청 위조, SSRF",
+    "pos": "noun",
+    "example": "SSRF makes servers send requests to internal resources."
+  },
+  "race condition": {
+    "meaning": "경쟁 조건",
+    "pos": "noun",
+    "example": "Race conditions occur when timing affects outcomes."
+  },
+  "time-of-check to time-of-use": {
+    "meaning": "TOCTOU",
+    "pos": "noun",
+    "example": "TOCTOU attacks exploit timing gaps."
+  },
+  "integer overflow": {
+    "meaning": "정수 오버플로우",
+    "pos": "noun",
+    "example": "Integer overflow causes unexpected calculations."
+  },
+  "format string": {
+    "meaning": "포맷 스트링",
+    "pos": "noun",
+    "example": "Format string attacks exploit string functions."
+  },
+  "heap spray": {
+    "meaning": "힙 스프레이",
+    "pos": "noun",
+    "example": "Heap spray places malicious code in memory."
+  },
+  "use after free": {
+    "meaning": "해제 후 사용",
+    "pos": "noun",
+    "example": "Use after free accesses freed memory."
+  },
+  "null pointer dereference": {
+    "meaning": "널 포인터 역참조",
+    "pos": "noun",
+    "example": "Null pointer dereference causes crashes."
+  },
+  "aes": {
+    "meaning": "고급 암호화 표준",
+    "pos": "noun",
+    "example": "AES is a symmetric encryption algorithm."
+  },
+  "des": {
+    "meaning": "데이터 암호화 표준",
+    "pos": "noun",
+    "example": "DES is an outdated encryption standard."
+  },
+  "triple des": {
+    "meaning": "트리플 DES",
+    "pos": "noun",
+    "example": "Triple DES applies DES three times."
+  },
+  "rsa": {
+    "meaning": "RSA 암호화",
+    "pos": "noun",
+    "example": "RSA is an asymmetric encryption algorithm."
+  },
+  "diffie-hellman": {
+    "meaning": "Diffie-Hellman (디피-헬만)",
+    "pos": "noun",
+    "example": "Diffie-Hellman enables secure key exchange."
+  },
+  "elliptic curve": {
+    "meaning": "타원 곡선",
+    "pos": "noun",
+    "example": "Elliptic curve cryptography provides strong security."
+  },
+  "sha": {
+    "meaning": "보안 해시 알고리즘",
+    "pos": "noun",
+    "example": "SHA produces fixed-size hash values."
+  },
+  "md5": {
+    "meaning": "MD5",
+    "pos": "noun",
+    "example": "MD5 is a deprecated hash function."
+  },
+  "hmac": {
+    "meaning": "해시 기반 메시지 인증 코드",
+    "pos": "noun",
+    "example": "HMAC provides message authentication."
+  },
+  "digital signature": {
+    "meaning": "디지털 서명",
+    "pos": "noun",
+    "example": "Digital signatures verify message authenticity."
+  },
+  "pki": {
+    "meaning": "공개 키 인프라",
+    "pos": "noun",
+    "example": "PKI manages digital certificates."
+  },
+  "certificate authority": {
+    "meaning": "인증 기관, CA",
+    "pos": "noun",
+    "example": "A CA issues digital certificates."
+  },
+  "registration authority": {
+    "meaning": "등록 기관, RA",
+    "pos": "noun",
+    "example": "An RA verifies certificate requests."
+  },
+  "certificate revocation list": {
+    "meaning": "인증서 해지 목록, CRL",
+    "pos": "noun",
+    "example": "A CRL lists revoked certificates."
+  },
+  "ocsp": {
+    "meaning": "온라인 인증서 상태 프로토콜",
+    "pos": "noun",
+    "example": "OCSP checks certificate validity in real-time."
+  },
+  "tls": {
+    "meaning": "전송 계층 보안",
+    "pos": "noun",
+    "example": "TLS encrypts data in transit."
+  },
+  "ssl": {
+    "meaning": "보안 소켓 계층",
+    "pos": "noun",
+    "example": "SSL is the predecessor to TLS."
+  },
+  "ipsec": {
+    "meaning": "인터넷 프로토콜 보안",
+    "pos": "noun",
+    "example": "IPsec secures IP communications."
+  },
+  "ssh": {
+    "meaning": "보안 셸",
+    "pos": "noun",
+    "example": "SSH provides secure remote access."
+  },
+  "kerberos": {
+    "meaning": "Kerberos (커버로스)",
+    "pos": "noun",
+    "example": "Kerberos is a network authentication protocol."
+  },
+  "ldap": {
+    "meaning": "경량 디렉토리 접근 프로토콜",
+    "pos": "noun",
+    "example": "LDAP accesses directory services."
+  },
+  "radius": {
+    "meaning": "원격 인증 전화 접속 사용자 서비스",
+    "pos": "noun",
+    "example": "RADIUS provides centralized authentication."
+  },
+  "tacacs": {
+    "meaning": "터미널 접근 컨트롤러 접근 제어 시스템",
+    "pos": "noun",
+    "example": "TACACS+ provides access control."
+  },
+  "saml": {
+    "meaning": "보안 어설션 마크업 언어",
+    "pos": "noun",
+    "example": "SAML enables single sign-on."
+  },
+  "oauth": {
+    "meaning": "개방형 인증",
+    "pos": "noun",
+    "example": "OAuth authorizes third-party access."
+  },
+  "openid connect": {
+    "meaning": "오픈아이디 커넥트",
+    "pos": "noun",
+    "example": "OpenID Connect provides identity authentication."
+  },
+  "single sign-on": {
+    "meaning": "싱글 사인온, SSO",
+    "pos": "noun",
+    "example": "SSO allows one login for multiple systems."
+  },
+  "federation": {
+    "meaning": "연합",
+    "pos": "noun",
+    "example": "Identity federation shares authentication across organizations."
+  },
+  "identity provider": {
+    "meaning": "ID 제공자, IdP",
+    "pos": "noun",
+    "example": "An IdP manages user identities."
+  },
+  "service provider": {
+    "meaning": "서비스 제공자, SP",
+    "pos": "noun",
+    "example": "An SP relies on IdP for authentication."
+  },
+  "access control list": {
+    "meaning": "접근 제어 목록, ACL",
+    "pos": "noun",
+    "example": "An ACL defines who can access resources."
+  },
+  "role-based access control": {
+    "meaning": "역할 기반 접근 제어, RBAC",
+    "pos": "noun",
+    "example": "RBAC assigns permissions based on roles."
+  },
+  "mandatory access control": {
+    "meaning": "강제적 접근 제어, MAC",
+    "pos": "noun",
+    "example": "MAC enforces system-defined access rules."
+  },
+  "discretionary access control": {
+    "meaning": "임의적 접근 제어, DAC",
+    "pos": "noun",
+    "example": "DAC allows owners to set permissions."
+  },
+  "attribute-based access control": {
+    "meaning": "속성 기반 접근 제어, ABAC",
+    "pos": "noun",
+    "example": "ABAC uses attributes for access decisions."
+  },
+  "rule-based access control": {
+    "meaning": "규칙 기반 접근 제어",
+    "pos": "noun",
+    "example": "Rule-based control uses predefined rules."
+  },
+  "context-based access control": {
+    "meaning": "컨텍스트 기반 접근 제어",
+    "pos": "noun",
+    "example": "Context-based control considers circumstances."
+  },
+  "need to know": {
+    "meaning": "알 필요가 있는 원칙",
+    "pos": "noun",
+    "example": "Need to know limits information access."
+  },
+  "least privilege": {
+    "meaning": "최소 권한",
+    "pos": "noun",
+    "example": "Least privilege grants minimum necessary access."
+  },
+  "defense in depth": {
+    "meaning": "심층 방어",
+    "pos": "noun",
+    "example": "Defense in depth uses multiple security layers."
+  },
+  "zero trust": {
+    "meaning": "제로 트러스트",
+    "pos": "noun",
+    "example": "Zero trust verifies every access request."
+  },
+  "microsegmentation": {
+    "meaning": "마이크로세분화",
+    "pos": "noun",
+    "example": "Microsegmentation isolates workloads."
+  },
+  "threat modeling": {
+    "meaning": "위협 모델링",
+    "pos": "noun",
+    "example": "Threat modeling identifies potential threats."
+  },
+  "stride": {
+    "meaning": "STRIDE",
+    "pos": "noun",
+    "example": "STRIDE categorizes security threats."
+  },
+  "dread": {
+    "meaning": "DREAD",
+    "pos": "noun",
+    "example": "DREAD rates threat severity."
+  },
+  "attack surface": {
+    "meaning": "공격 표면",
+    "pos": "noun",
+    "example": "Attack surface is the total exposure to threats."
+  },
+  "attack vector": {
+    "meaning": "공격 벡터",
+    "pos": "noun",
+    "example": "Attack vectors are paths attackers use."
+  },
+  "kill chain": {
+    "meaning": "킬 체인",
+    "pos": "noun",
+    "example": "Kill chain describes attack stages."
+  },
+  "mitre att&ck": {
+    "meaning": "MITRE ATT&CK",
+    "pos": "noun",
+    "example": "MITRE ATT&CK documents adversary techniques."
+  },
+  "indicator of compromise": {
+    "meaning": "침해 지표, IoC",
+    "pos": "noun",
+    "example": "IoCs help detect security incidents."
+  },
+  "threat intelligence": {
+    "meaning": "위협 인텔리전스",
+    "pos": "noun",
+    "example": "Threat intelligence provides attack information."
+  },
+  "vulnerability scanning": {
+    "meaning": "취약점 스캐닝",
+    "pos": "noun",
+    "example": "Vulnerability scanning identifies weaknesses."
+  },
+  "penetration testing": {
+    "meaning": "침투 테스트",
+    "pos": "noun",
+    "example": "Penetration testing simulates attacks."
+  },
+  "red team": {
+    "meaning": "레드 팀",
+    "pos": "noun",
+    "example": "Red teams simulate adversary attacks."
+  },
+  "blue team": {
+    "meaning": "블루 팀",
+    "pos": "noun",
+    "example": "Blue teams defend against attacks."
+  },
+  "purple team": {
+    "meaning": "퍼플 팀",
+    "pos": "noun",
+    "example": "Purple teams combine red and blue activities."
+  },
+  "security operations center": {
+    "meaning": "보안 운영 센터, SOC",
+    "pos": "noun",
+    "example": "A SOC monitors security events."
+  },
+  "siem": {
+    "meaning": "보안 정보 및 이벤트 관리",
+    "pos": "noun",
+    "example": "SIEM collects and analyzes security data."
+  },
+  "soar": {
+    "meaning": "보안 오케스트레이션, 자동화 및 대응",
+    "pos": "noun",
+    "example": "SOAR automates security responses."
+  },
+  "edr": {
+    "meaning": "엔드포인트 탐지 및 대응",
+    "pos": "noun",
+    "example": "EDR monitors endpoint activities."
+  },
+  "xdr": {
+    "meaning": "확장 탐지 및 대응",
+    "pos": "noun",
+    "example": "XDR provides cross-layer detection."
+  },
+  "ndr": {
+    "meaning": "네트워크 탐지 및 대응",
+    "pos": "noun",
+    "example": "NDR monitors network traffic."
+  },
+  "dlp": {
+    "meaning": "데이터 손실 방지",
+    "pos": "noun",
+    "example": "DLP prevents unauthorized data transfers."
+  },
+  "casb": {
+    "meaning": "클라우드 접근 보안 브로커",
+    "pos": "noun",
+    "example": "CASB secures cloud application access."
+  },
+  "sase": {
+    "meaning": "보안 접근 서비스 에지",
+    "pos": "noun",
+    "example": "SASE combines networking and security."
+  },
+  "ztna": {
+    "meaning": "제로 트러스트 네트워크 접근",
+    "pos": "noun",
+    "example": "ZTNA provides secure remote access."
+  },
+  "ids": {
+    "meaning": "침입 탐지 시스템",
+    "pos": "noun",
+    "example": "IDS detects suspicious activities."
+  },
+  "ips": {
+    "meaning": "침입 방지 시스템",
+    "pos": "noun",
+    "example": "IPS blocks detected threats."
+  },
+  "hids": {
+    "meaning": "호스트 기반 침입 탐지 시스템",
+    "pos": "noun",
+    "example": "HIDS monitors host activities."
+  },
+  "nids": {
+    "meaning": "네트워크 기반 침입 탐지 시스템",
+    "pos": "noun",
+    "example": "NIDS monitors network traffic."
+  },
+  "waf": {
+    "meaning": "웹 애플리케이션 방화벽",
+    "pos": "noun",
+    "example": "WAF protects web applications."
+  },
+  "ngfw": {
+    "meaning": "차세대 방화벽",
+    "pos": "noun",
+    "example": "NGFW provides advanced filtering."
+  },
+  "utm": {
+    "meaning": "통합 위협 관리",
+    "pos": "noun",
+    "example": "UTM combines multiple security functions."
+  },
+  "nat": {
+    "meaning": "네트워크 주소 변환",
+    "pos": "noun",
+    "example": "NAT translates IP addresses."
+  },
+  "nac": {
+    "meaning": "네트워크 접근 제어",
+    "pos": "noun",
+    "example": "NAC controls network access."
+  },
+  "sdn": {
+    "meaning": "소프트웨어 정의 네트워킹",
+    "pos": "noun",
+    "example": "SDN separates network control from forwarding."
+  },
+  "vlan": {
+    "meaning": "가상 근거리 통신망",
+    "pos": "noun",
+    "example": "VLANs segment networks logically."
+  },
+  "mpls": {
+    "meaning": "다중 프로토콜 레이블 스위칭",
+    "pos": "noun",
+    "example": "MPLS routes network traffic efficiently."
+  },
+  "bgp": {
+    "meaning": "BGP (경계 게이트웨이 프로토콜)",
+    "pos": "noun",
+    "example": "BGP routes traffic between networks."
+  },
+  "dns": {
+    "meaning": "도메인 네임 시스템",
+    "pos": "noun",
+    "example": "DNS resolves domain names to IP addresses."
+  },
+  "dnssec": {
+    "meaning": "DNS 보안 확장",
+    "pos": "noun",
+    "example": "DNSSEC authenticates DNS responses."
+  },
+  "dhcp": {
+    "meaning": "동적 호스트 구성 프로토콜",
+    "pos": "noun",
+    "example": "DHCP assigns IP addresses automatically."
+  },
+  "snmp": {
+    "meaning": "간이 네트워크 관리 프로토콜",
+    "pos": "noun",
+    "example": "SNMP monitors network devices."
+  },
+  "ntp": {
+    "meaning": "네트워크 시간 프로토콜",
+    "pos": "noun",
+    "example": "NTP synchronizes system clocks."
+  },
+  "wpa": {
+    "meaning": "Wi-Fi 보호 접근",
+    "pos": "noun",
+    "example": "WPA secures wireless networks."
+  },
+  "wep": {
+    "meaning": "유선 동등 프라이버시",
+    "pos": "noun",
+    "example": "WEP is an outdated wireless security protocol."
+  },
+  "802.1x": {
+    "meaning": "802.1X",
+    "pos": "noun",
+    "example": "802.1X provides port-based authentication."
+  },
+  "bcp": {
+    "meaning": "업무 연속성 계획",
+    "pos": "noun",
+    "example": "BCP ensures operations continue during disruptions."
+  },
+  "drp": {
+    "meaning": "재해 복구 계획",
+    "pos": "noun",
+    "example": "DRP restores IT systems after disasters."
+  },
+  "bia": {
+    "meaning": "업무 영향 분석",
+    "pos": "noun",
+    "example": "BIA identifies critical business functions."
+  },
+  "rto": {
+    "meaning": "복구 시간 목표",
+    "pos": "noun",
+    "example": "RTO is the target time to restore operations."
+  },
+  "rpo": {
+    "meaning": "복구 시점 목표",
+    "pos": "noun",
+    "example": "RPO is the maximum acceptable data loss."
+  },
+  "mtd": {
+    "meaning": "최대 허용 중단 시간",
+    "pos": "noun",
+    "example": "MTD is the longest acceptable downtime."
+  },
+  "mtbf": {
+    "meaning": "평균 고장 간격",
+    "pos": "noun",
+    "example": "MTBF measures system reliability."
+  },
+  "mttr": {
+    "meaning": "평균 복구 시간",
+    "pos": "noun",
+    "example": "MTTR is the average time to repair."
+  },
+  "hot site": {
+    "meaning": "핫 사이트",
+    "pos": "noun",
+    "example": "A hot site is fully operational and ready."
+  },
+  "warm site": {
+    "meaning": "웜 사이트",
+    "pos": "noun",
+    "example": "A warm site has partial equipment ready."
+  },
+  "cold site": {
+    "meaning": "콜드 사이트",
+    "pos": "noun",
+    "example": "A cold site is an empty facility."
+  },
+  "reciprocal agreement": {
+    "meaning": "상호 협정",
+    "pos": "noun",
+    "example": "Reciprocal agreements share facilities between organizations."
+  },
+  "tabletop exercise": {
+    "meaning": "탁상 훈련",
+    "pos": "noun",
+    "example": "Tabletop exercises discuss scenarios."
+  },
+  "simulation": {
+    "meaning": "시뮬레이션",
+    "pos": "noun",
+    "example": "Simulations test response capabilities."
+  },
+  "full interruption test": {
+    "meaning": "전체 중단 테스트",
+    "pos": "noun",
+    "example": "Full interruption tests activate backup systems."
+  },
+  "parallel test": {
+    "meaning": "병행 테스트",
+    "pos": "noun",
+    "example": "Parallel tests run backup systems alongside production."
+  },
+  "sdlc": {
+    "meaning": "소프트웨어 개발 수명 주기",
+    "pos": "noun",
+    "example": "SDLC defines software development phases."
+  },
+  "agile": {
+    "meaning": "애자일",
+    "pos": "noun",
+    "example": "Agile emphasizes iterative development."
+  },
+  "devops": {
+    "meaning": "데브옵스",
+    "pos": "noun",
+    "example": "DevOps integrates development and operations."
+  },
+  "devsecops": {
+    "meaning": "데브섹옵스",
+    "pos": "noun",
+    "example": "DevSecOps integrates security into DevOps."
+  },
+  "sast": {
+    "meaning": "정적 애플리케이션 보안 테스트",
+    "pos": "noun",
+    "example": "SAST analyzes source code for vulnerabilities."
+  },
+  "dast": {
+    "meaning": "동적 애플리케이션 보안 테스트",
+    "pos": "noun",
+    "example": "DAST tests running applications."
+  },
+  "iast": {
+    "meaning": "대화형 애플리케이션 보안 테스트",
+    "pos": "noun",
+    "example": "IAST combines SAST and DAST techniques."
+  },
+  "rasp": {
+    "meaning": "런타임 애플리케이션 자체 보호",
+    "pos": "noun",
+    "example": "RASP protects applications at runtime."
+  },
+  "code review": {
+    "meaning": "코드 검토",
+    "pos": "noun",
+    "example": "Code review identifies security issues in source code."
+  },
+  "fuzzing": {
+    "meaning": "퍼징",
+    "pos": "noun",
+    "example": "Fuzzing sends random inputs to find vulnerabilities."
+  },
+  "secure coding": {
+    "meaning": "보안 코딩",
+    "pos": "noun",
+    "example": "Secure coding prevents vulnerabilities."
+  },
+  "input validation": {
+    "meaning": "입력 유효성 검사",
+    "pos": "noun",
+    "example": "Input validation checks user input."
+  },
+  "output encoding": {
+    "meaning": "출력 인코딩",
+    "pos": "noun",
+    "example": "Output encoding prevents injection attacks."
+  },
+  "parameterized query": {
+    "meaning": "매개변수화된 쿼리",
+    "pos": "noun",
+    "example": "Parameterized queries prevent SQL injection."
+  },
+  "sandbox": {
+    "meaning": "샌드박스",
+    "pos": "noun",
+    "example": "A sandbox isolates untrusted code."
+  },
+  "containerization": {
+    "meaning": "컨테이너화",
+    "pos": "noun",
+    "example": "Containerization packages applications with dependencies."
+  },
+  "virtualization": {
+    "meaning": "가상화",
+    "pos": "noun",
+    "example": "Virtualization creates virtual machines."
+  },
+  "hypervisor": {
+    "meaning": "하이퍼바이저",
+    "pos": "noun",
+    "example": "A hypervisor manages virtual machines."
+  },
+  "cloud computing": {
+    "meaning": "클라우드 컴퓨팅",
+    "pos": "noun",
+    "example": "Cloud computing provides on-demand resources."
+  },
+  "iaas": {
+    "meaning": "서비스로서의 인프라",
+    "pos": "noun",
+    "example": "IaaS provides virtualized computing resources."
+  },
+  "paas": {
+    "meaning": "서비스로서의 플랫폼",
+    "pos": "noun",
+    "example": "PaaS provides development platforms."
+  },
+  "saas": {
+    "meaning": "서비스로서의 소프트웨어",
+    "pos": "noun",
+    "example": "SaaS provides software over the internet."
+  },
+  "shared responsibility": {
+    "meaning": "공유 책임",
+    "pos": "noun",
+    "example": "Shared responsibility divides security duties in cloud."
+  },
+  "data sovereignty": {
+    "meaning": "데이터 주권",
+    "pos": "noun",
+    "example": "Data sovereignty concerns where data is stored."
+  },
+  "data residency": {
+    "meaning": "데이터 거주지",
+    "pos": "noun",
+    "example": "Data residency specifies data location requirements."
+  },
+  "gdpr": {
+    "meaning": "일반 데이터 보호 규정",
+    "pos": "noun",
+    "example": "GDPR regulates personal data protection in EU."
+  },
+  "hipaa": {
+    "meaning": "건강보험 이동성 및 책임에 관한 법",
+    "pos": "noun",
+    "example": "HIPAA protects health information in the US."
+  },
+  "pci dss": {
+    "meaning": "지불 카드 산업 데이터 보안 표준",
+    "pos": "noun",
+    "example": "PCI DSS secures payment card data."
+  },
+  "sox": {
+    "meaning": "사베인스-옥슬리법",
+    "pos": "noun",
+    "example": "SOX regulates financial reporting."
+  },
+  "iso 27001": {
+    "meaning": "ISO 27001",
+    "pos": "noun",
+    "example": "ISO 27001 is an information security standard."
+  },
+  "nist": {
+    "meaning": "미국 국립표준기술연구소",
+    "pos": "noun",
+    "example": "NIST provides security frameworks."
+  },
+  "cobit": {
+    "meaning": "COBIT",
+    "pos": "noun",
+    "example": "COBIT is an IT governance framework."
+  },
+  "coso": {
+    "meaning": "COSO",
+    "pos": "noun",
+    "example": "COSO provides internal control guidance."
+  },
+  "itil": {
+    "meaning": "ITIL",
+    "pos": "noun",
+    "example": "ITIL is an IT service management framework."
+  },
+  "privacy": {
+    "meaning": "프라이버시, 사생활",
+    "pos": "noun",
+    "example": "Privacy protects personal information."
+  },
+  "anonymization": {
+    "meaning": "익명화",
+    "pos": "noun",
+    "example": "Anonymization removes identifying information."
+  },
+  "pseudonymization": {
+    "meaning": "가명화",
+    "pos": "noun",
+    "example": "Pseudonymization replaces identifiers with pseudonyms."
+  },
+  "data masking": {
+    "meaning": "데이터 마스킹",
+    "pos": "noun",
+    "example": "Data masking hides sensitive data."
+  },
+  "tokenization": {
+    "meaning": "토큰화",
+    "pos": "noun",
+    "example": "Tokenization replaces sensitive data with tokens."
+  },
+  "data minimization": {
+    "meaning": "데이터 최소화",
+    "pos": "noun",
+    "example": "Data minimization collects only necessary data."
+  },
+  "retention": {
+    "meaning": "보존",
+    "pos": "noun",
+    "example": "Data retention defines how long data is kept."
+  },
+  "archiving": {
+    "meaning": "아카이빙",
+    "pos": "noun",
+    "example": "Archiving stores data for long-term preservation."
+  },
+  "encryption at rest": {
+    "meaning": "저장 시 암호화",
+    "pos": "noun",
+    "example": "Encryption at rest protects stored data."
+  },
+  "encryption in transit": {
+    "meaning": "전송 중 암호화",
+    "pos": "noun",
+    "example": "Encryption in transit protects data during transfer."
+  },
+  "key management": {
+    "meaning": "키 관리",
+    "pos": "noun",
+    "example": "Key management handles cryptographic keys."
+  },
+  "hsm": {
+    "meaning": "하드웨어 보안 모듈",
+    "pos": "noun",
+    "example": "An HSM securely stores cryptographic keys."
+  },
+  "tpm": {
+    "meaning": "신뢰할 수 있는 플랫폼 모듈",
+    "pos": "noun",
+    "example": "A TPM provides hardware-based security."
+  },
+  "secure boot": {
+    "meaning": "보안 부팅",
+    "pos": "noun",
+    "example": "Secure boot verifies boot components."
+  },
+  "trusted computing": {
+    "meaning": "신뢰할 수 있는 컴퓨팅",
+    "pos": "noun",
+    "example": "Trusted computing ensures system integrity."
+  },
+  "attestation": {
+    "meaning": "증명",
+    "pos": "noun",
+    "example": "Attestation verifies system state."
+  },
+  "data loss prevention": {
+    "meaning": "데이터 손실 방지",
+    "pos": "noun",
+    "example": "DLP prevents unauthorized data transfers."
+  },
+  "endpoint protection": {
+    "meaning": "엔드포인트 보호",
+    "pos": "noun",
+    "example": "Endpoint protection secures devices."
+  },
+  "antivirus": {
+    "meaning": "안티바이러스",
+    "pos": "noun",
+    "example": "Antivirus detects and removes malware."
+  },
+  "antimalware": {
+    "meaning": "안티멀웨어",
+    "pos": "noun",
+    "example": "Antimalware protects against malicious software."
+  },
+  "whitelisting": {
+    "meaning": "화이트리스팅",
+    "pos": "noun",
+    "example": "Whitelisting allows only approved applications."
+  },
+  "blacklisting": {
+    "meaning": "블랙리스팅",
+    "pos": "noun",
+    "example": "Blacklisting blocks known malicious items."
+  },
+  "heuristic": {
+    "meaning": "휴리스틱",
+    "pos": "noun",
+    "example": "Heuristic analysis detects unknown malware."
+  },
+  "signature-based": {
+    "meaning": "시그니처 기반",
+    "pos": "adjective",
+    "example": "Signature-based detection matches known patterns."
+  },
+  "behavior-based": {
+    "meaning": "행동 기반",
+    "pos": "adjective",
+    "example": "Behavior-based detection identifies suspicious actions."
+  },
+  "anomaly-based": {
+    "meaning": "이상 기반",
+    "pos": "adjective",
+    "example": "Anomaly-based detection identifies deviations."
+  },
+  "machine learning": {
+    "meaning": "기계 학습",
+    "pos": "noun",
+    "example": "Machine learning improves threat detection."
+  },
+  "artificial intelligence": {
+    "meaning": "인공 지능",
+    "pos": "noun",
+    "example": "AI enhances security capabilities."
+  },
+  "user behavior analytics": {
+    "meaning": "사용자 행동 분석, UBA",
+    "pos": "noun",
+    "example": "UBA detects insider threats."
+  },
+  "privileged access management": {
+    "meaning": "특권 접근 관리, PAM",
+    "pos": "noun",
+    "example": "PAM controls privileged accounts."
+  },
+  "identity and access management": {
+    "meaning": "ID 및 접근 관리, IAM",
+    "pos": "noun",
+    "example": "IAM manages user identities and access."
+  },
+  "multi-factor authentication": {
+    "meaning": "다중 요소 인증, MFA",
+    "pos": "noun",
+    "example": "MFA requires multiple authentication factors."
+  },
+  "two-factor authentication": {
+    "meaning": "이중 인증, 2FA",
+    "pos": "noun",
+    "example": "2FA uses two authentication factors."
+  },
+  "passwordless": {
+    "meaning": "패스워드리스",
+    "pos": "adjective",
+    "example": "Passwordless authentication eliminates passwords."
+  },
+  "otp": {
+    "meaning": "일회용 비밀번호",
+    "pos": "noun",
+    "example": "OTP provides one-time use codes."
+  },
+  "fido": {
+    "meaning": "FIDO",
+    "pos": "noun",
+    "example": "FIDO standards enable passwordless authentication."
+  },
+  "smart card": {
+    "meaning": "스마트 카드",
+    "pos": "noun",
+    "example": "Smart cards store authentication credentials."
+  },
+  "fingerprint": {
+    "meaning": "지문",
+    "pos": "noun",
+    "example": "Fingerprint scanning is a biometric method."
+  },
+  "facial recognition": {
+    "meaning": "얼굴 인식",
+    "pos": "noun",
+    "example": "Facial recognition identifies faces."
+  },
+  "iris scan": {
+    "meaning": "홍채 스캔",
+    "pos": "noun",
+    "example": "Iris scans identify unique eye patterns."
+  },
+  "retina scan": {
+    "meaning": "망막 스캔",
+    "pos": "noun",
+    "example": "Retina scans identify blood vessel patterns."
+  },
+  "voice recognition": {
+    "meaning": "음성 인식",
+    "pos": "noun",
+    "example": "Voice recognition identifies voice patterns."
+  },
+  "geolocation": {
+    "meaning": "지리적 위치",
+    "pos": "noun",
+    "example": "Geolocation tracks user location."
+  },
+  "risk-based authentication": {
+    "meaning": "위험 기반 인증",
+    "pos": "noun",
+    "example": "Risk-based authentication adjusts based on risk."
+  },
+  "adaptive authentication": {
+    "meaning": "적응형 인증",
+    "pos": "noun",
+    "example": "Adaptive authentication responds to context."
+  },
+  "step-up authentication": {
+    "meaning": "스텝업 인증",
+    "pos": "noun",
+    "example": "Step-up authentication requires additional verification."
+  },
+  "bell-lapadula": {
+    "meaning": "Bell-LaPadula 모델 (벨-라파둘라 모델)",
+    "pos": "noun",
+    "example": "Bell-LaPadula model enforces confidentiality."
+  },
+  "biba": {
+    "meaning": "Biba 모델 (비바 모델)",
+    "pos": "noun",
+    "example": "Biba model enforces integrity."
+  },
+  "clark-wilson": {
+    "meaning": "Clark-Wilson 모델 (클락-윌슨 모델)",
+    "pos": "noun",
+    "example": "Clark-Wilson model ensures data integrity through well-formed transactions."
+  },
+  "brewer-nash": {
+    "meaning": "브루어-내쉬 모델, 중국 만리장성",
+    "pos": "noun",
+    "example": "Brewer-Nash prevents conflicts of interest."
+  },
+  "lattice-based": {
+    "meaning": "래티스 기반",
+    "pos": "adjective",
+    "example": "Lattice-based models use mathematical structures."
+  },
+  "state machine": {
+    "meaning": "상태 기계",
+    "pos": "noun",
+    "example": "State machine models track system states."
+  },
+  "information flow": {
+    "meaning": "정보 흐름",
+    "pos": "noun",
+    "example": "Information flow models control data movement."
+  },
+  "take-grant": {
+    "meaning": "Take-Grant 모델 (테이크-그랜트 모델)",
+    "pos": "noun",
+    "example": "Take-grant models analyze access rights transfer."
+  },
+  "access control matrix": {
+    "meaning": "접근 제어 매트릭스",
+    "pos": "noun",
+    "example": "Access control matrix defines subject-object permissions."
+  },
+  "capability list": {
+    "meaning": "권한 목록",
+    "pos": "noun",
+    "example": "Capability lists define what subjects can access."
+  },
+  "covert channel": {
+    "meaning": "은닉 채널",
+    "pos": "noun",
+    "example": "Covert channels allow unauthorized communication."
+  },
+  "timing channel": {
+    "meaning": "타이밍 채널",
+    "pos": "noun",
+    "example": "Timing channels leak information through timing."
+  },
+  "storage channel": {
+    "meaning": "저장 채널",
+    "pos": "noun",
+    "example": "Storage channels leak data through shared resources."
+  },
+  "emanation": {
+    "meaning": "방사, 방출",
+    "pos": "noun",
+    "example": "Emanation security protects against signal leakage."
+  },
+  "tempest": {
+    "meaning": "템페스트",
+    "pos": "noun",
+    "example": "TEMPEST standards protect against emanation attacks."
+  },
+  "faraday cage": {
+    "meaning": "패러데이 케이지",
+    "pos": "noun",
+    "example": "Faraday cages block electromagnetic signals."
+  },
+  "white noise": {
+    "meaning": "화이트 노이즈",
+    "pos": "noun",
+    "example": "White noise masks electromagnetic emanations."
+  },
+  "reference monitor": {
+    "meaning": "참조 모니터",
+    "pos": "noun",
+    "example": "Reference monitor mediates all access requests."
+  },
+  "security kernel": {
+    "meaning": "보안 커널",
+    "pos": "noun",
+    "example": "Security kernel implements reference monitor."
+  },
+  "trusted computing base": {
+    "meaning": "신뢰 컴퓨팅 기반, TCB",
+    "pos": "noun",
+    "example": "TCB contains all security-critical components."
+  },
+  "protection ring": {
+    "meaning": "보호 링",
+    "pos": "noun",
+    "example": "Protection rings separate privilege levels."
+  },
+  "ring 0": {
+    "meaning": "링 0",
+    "pos": "noun",
+    "example": "Ring 0 is the most privileged level."
+  },
+  "kernel mode": {
+    "meaning": "커널 모드",
+    "pos": "noun",
+    "example": "Kernel mode has full system access."
+  },
+  "user mode": {
+    "meaning": "사용자 모드",
+    "pos": "noun",
+    "example": "User mode has limited privileges."
+  },
+  "process isolation": {
+    "meaning": "프로세스 격리",
+    "pos": "noun",
+    "example": "Process isolation prevents interference."
+  },
+  "memory protection": {
+    "meaning": "메모리 보호",
+    "pos": "noun",
+    "example": "Memory protection prevents unauthorized access."
+  },
+  "address space layout randomization": {
+    "meaning": "주소 공간 배치 무작위화, ASLR",
+    "pos": "noun",
+    "example": "ASLR randomizes memory locations."
+  },
+  "data execution prevention": {
+    "meaning": "데이터 실행 방지, DEP",
+    "pos": "noun",
+    "example": "DEP prevents code execution in data areas."
+  },
+  "stack canary": {
+    "meaning": "스택 카나리",
+    "pos": "noun",
+    "example": "Stack canaries detect buffer overflows."
+  },
+  "common criteria": {
+    "meaning": "공통 평가 기준",
+    "pos": "noun",
+    "example": "Common Criteria is an international security standard."
+  },
+  "evaluation assurance level": {
+    "meaning": "평가 보증 등급, EAL",
+    "pos": "noun",
+    "example": "EAL measures security evaluation depth."
+  },
+  "protection profile": {
+    "meaning": "보호 프로파일",
+    "pos": "noun",
+    "example": "Protection profiles define security requirements."
+  },
+  "security target": {
+    "meaning": "보안 목표",
+    "pos": "noun",
+    "example": "Security target specifies product security claims."
+  },
+  "target of evaluation": {
+    "meaning": "평가 대상, TOE",
+    "pos": "noun",
+    "example": "TOE is the product being evaluated."
+  },
+  "orange book": {
+    "meaning": "오렌지 북, TCSEC",
+    "pos": "noun",
+    "example": "Orange Book was a US security standard."
+  },
+  "certification": {
+    "meaning": "인증",
+    "pos": "noun",
+    "example": "Certification validates security compliance."
+  },
+  "accreditation": {
+    "meaning": "인가, 승인",
+    "pos": "noun",
+    "example": "Accreditation authorizes system operation."
+  },
+  "cisa": {
+    "meaning": "미국 사이버보안 및 인프라 보안국",
+    "pos": "noun",
+    "example": "CISA coordinates national cyber defense."
+  },
+  "fisma": {
+    "meaning": "연방 정보보안 관리법",
+    "pos": "noun",
+    "example": "FISMA requires federal agency security programs."
+  },
+  "fedramp": {
+    "meaning": "연방 위험 및 인증 관리 프로그램",
+    "pos": "noun",
+    "example": "FedRAMP certifies cloud services for federal use."
+  },
+  "cmmc": {
+    "meaning": "사이버보안 성숙도 모델 인증",
+    "pos": "noun",
+    "example": "CMMC is required for defense contractors."
+  },
+  "glba": {
+    "meaning": "그램-리치-블라일리법",
+    "pos": "noun",
+    "example": "GLBA protects financial information."
+  },
+  "ferpa": {
+    "meaning": "가족 교육권 및 프라이버시법",
+    "pos": "noun",
+    "example": "FERPA protects student education records."
+  },
+  "coppa": {
+    "meaning": "아동 온라인 프라이버시 보호법",
+    "pos": "noun",
+    "example": "COPPA protects children's online privacy."
+  },
+  "ccpa": {
+    "meaning": "캘리포니아 소비자 프라이버시법",
+    "pos": "noun",
+    "example": "CCPA grants privacy rights to California residents."
+  },
+  "safe harbor": {
+    "meaning": "세이프 하버",
+    "pos": "noun",
+    "example": "Safe Harbor was a US-EU data transfer framework."
+  },
+  "privacy shield": {
+    "meaning": "프라이버시 쉴드",
+    "pos": "noun",
+    "example": "Privacy Shield replaced Safe Harbor."
+  },
+  "binding corporate rules": {
+    "meaning": "구속력 있는 기업 규칙, BCR",
+    "pos": "noun",
+    "example": "BCRs allow intra-company data transfers."
+  },
+  "standard contractual clauses": {
+    "meaning": "표준 계약 조항, SCC",
+    "pos": "noun",
+    "example": "SCCs enable international data transfers."
+  },
+  "data protection officer": {
+    "meaning": "데이터 보호 책임자, DPO",
+    "pos": "noun",
+    "example": "DPOs oversee privacy compliance."
+  },
+  "privacy impact assessment": {
+    "meaning": "개인정보 영향 평가, PIA",
+    "pos": "noun",
+    "example": "PIAs assess privacy risks."
+  },
+  "data subject": {
+    "meaning": "데이터 주체",
+    "pos": "noun",
+    "example": "Data subjects have rights over their data."
+  },
+  "data controller": {
+    "meaning": "데이터 컨트롤러",
+    "pos": "noun",
+    "example": "Data controllers determine data processing purposes."
+  },
+  "data processor": {
+    "meaning": "데이터 프로세서",
+    "pos": "noun",
+    "example": "Data processors process data on behalf of controllers."
+  },
+  "right to be forgotten": {
+    "meaning": "잊혀질 권리",
+    "pos": "noun",
+    "example": "Right to be forgotten allows data deletion."
+  },
+  "data portability": {
+    "meaning": "데이터 이동성",
+    "pos": "noun",
+    "example": "Data portability allows data transfer between services."
+  },
+  "consent": {
+    "meaning": "동의",
+    "pos": "noun",
+    "example": "Consent is required for data processing."
+  },
+  "legitimate interest": {
+    "meaning": "정당한 이익",
+    "pos": "noun",
+    "example": "Legitimate interest is a legal basis for processing."
+  },
+  "purpose limitation": {
+    "meaning": "목적 제한",
+    "pos": "noun",
+    "example": "Purpose limitation restricts data use."
+  },
+  "storage limitation": {
+    "meaning": "저장 제한",
+    "pos": "noun",
+    "example": "Storage limitation requires data deletion."
+  },
+  "data breach notification": {
+    "meaning": "데이터 침해 통지",
+    "pos": "noun",
+    "example": "Breach notification informs affected parties."
+  },
+  "incident management": {
+    "meaning": "인시던트 관리",
+    "pos": "noun",
+    "example": "Incident management handles security events."
+  },
+  "incident handler": {
+    "meaning": "인시던트 핸들러",
+    "pos": "noun",
+    "example": "Incident handlers respond to security events."
+  },
+  "triage": {
+    "meaning": "트리아지, 우선순위 결정",
+    "pos": "noun",
+    "example": "Triage prioritizes incident response."
+  },
+  "containment": {
+    "meaning": "격리, 억제",
+    "pos": "noun",
+    "example": "Containment limits incident damage."
+  },
+  "eradication": {
+    "meaning": "근절",
+    "pos": "noun",
+    "example": "Eradication removes the threat."
+  },
+  "lessons learned": {
+    "meaning": "교훈",
+    "pos": "noun",
+    "example": "Lessons learned improve future response."
+  },
+  "root cause analysis": {
+    "meaning": "근본 원인 분석",
+    "pos": "noun",
+    "example": "Root cause analysis identifies underlying issues."
+  },
+  "playbook": {
+    "meaning": "플레이북",
+    "pos": "noun",
+    "example": "Playbooks guide incident response."
+  },
+  "runbook": {
+    "meaning": "런북",
+    "pos": "noun",
+    "example": "Runbooks provide operational procedures."
+  },
+  "war room": {
+    "meaning": "워 룸",
+    "pos": "noun",
+    "example": "War rooms coordinate incident response."
+  },
+  "crisis management": {
+    "meaning": "위기 관리",
+    "pos": "noun",
+    "example": "Crisis management handles major incidents."
+  },
+  "crisis communication": {
+    "meaning": "위기 커뮤니케이션",
+    "pos": "noun",
+    "example": "Crisis communication informs stakeholders."
+  },
+  "media handling": {
+    "meaning": "미디어 처리",
+    "pos": "noun",
+    "example": "Media handling manages public relations."
+  },
+  "image": {
+    "meaning": "이미지",
+    "pos": "noun",
+    "example": "Forensic images preserve evidence."
+  },
+  "live acquisition": {
+    "meaning": "라이브 수집",
+    "pos": "noun",
+    "example": "Live acquisition captures running system data."
+  },
+  "dead acquisition": {
+    "meaning": "데드 수집",
+    "pos": "noun",
+    "example": "Dead acquisition captures powered-off systems."
+  },
+  "write blocker": {
+    "meaning": "쓰기 차단기",
+    "pos": "noun",
+    "example": "Write blockers prevent evidence modification."
+  },
+  "volatile data": {
+    "meaning": "휘발성 데이터",
+    "pos": "noun",
+    "example": "Volatile data is lost when powered off."
+  },
+  "non-volatile": {
+    "meaning": "비휘발성",
+    "pos": "adjective",
+    "example": "Non-volatile data persists after power loss."
+  },
+  "order of volatility": {
+    "meaning": "휘발성 순서",
+    "pos": "noun",
+    "example": "Order of volatility guides evidence collection."
+  },
+  "locard exchange principle": {
+    "meaning": "로카르 교환 원칙",
+    "pos": "noun",
+    "example": "Locard's principle states every contact leaves a trace."
+  },
+  "e-discovery": {
+    "meaning": "전자 증거개시",
+    "pos": "noun",
+    "example": "E-discovery identifies electronic evidence."
+  },
+  "legal hold": {
+    "meaning": "법적 보존",
+    "pos": "noun",
+    "example": "Legal holds preserve relevant data."
+  },
+  "spoliation": {
+    "meaning": "증거 훼손",
+    "pos": "noun",
+    "example": "Spoliation is destruction of evidence."
+  },
+  "admissibility": {
+    "meaning": "증거 능력",
+    "pos": "noun",
+    "example": "Admissibility determines if evidence can be used."
+  },
+  "best evidence rule": {
+    "meaning": "최선 증거 규칙",
+    "pos": "noun",
+    "example": "Best evidence rule prefers original documents."
+  },
+  "hearsay": {
+    "meaning": "전문 증거",
+    "pos": "noun",
+    "example": "Hearsay is generally inadmissible."
+  },
+  "expert witness": {
+    "meaning": "전문가 증인",
+    "pos": "noun",
+    "example": "Expert witnesses provide technical testimony."
+  },
+  "daubert standard": {
+    "meaning": "도버트 기준",
+    "pos": "noun",
+    "example": "Daubert standard tests expert reliability."
+  },
+  "frye standard": {
+    "meaning": "프라이 기준",
+    "pos": "noun",
+    "example": "Frye standard requires general acceptance."
+  },
+  "intellectual property": {
+    "meaning": "지적 재산권",
+    "pos": "noun",
+    "example": "Intellectual property includes patents and copyrights."
+  },
+  "patent": {
+    "meaning": "특허",
+    "pos": "noun",
+    "example": "Patents protect inventions."
+  },
+  "copyright": {
+    "meaning": "저작권",
+    "pos": "noun",
+    "example": "Copyright protects creative works."
+  },
+  "trademark": {
+    "meaning": "상표",
+    "pos": "noun",
+    "example": "Trademarks protect brand identifiers."
+  },
+  "trade secret": {
+    "meaning": "영업 비밀",
+    "pos": "noun",
+    "example": "Trade secrets are confidential business information."
+  },
+  "nda": {
+    "meaning": "비밀유지계약",
+    "pos": "noun",
+    "example": "NDAs protect confidential information."
+  },
+  "sla": {
+    "meaning": "서비스 수준 계약",
+    "pos": "noun",
+    "example": "SLAs define service expectations."
+  },
+  "mou": {
+    "meaning": "양해각서",
+    "pos": "noun",
+    "example": "MOUs establish mutual understanding."
+  },
+  "msa": {
+    "meaning": "마스터 서비스 계약",
+    "pos": "noun",
+    "example": "MSAs govern ongoing service relationships."
+  },
+  "sow": {
+    "meaning": "작업 범위서",
+    "pos": "noun",
+    "example": "SOWs define project deliverables."
+  },
+  "vendor management": {
+    "meaning": "벤더 관리",
+    "pos": "noun",
+    "example": "Vendor management assesses third-party risks."
+  },
+  "supply chain": {
+    "meaning": "공급망",
+    "pos": "noun",
+    "example": "Supply chain security protects the delivery process."
+  },
+  "third-party risk": {
+    "meaning": "제3자 위험",
+    "pos": "noun",
+    "example": "Third-party risk comes from external partners."
+  },
+  "fourth-party risk": {
+    "meaning": "제4자 위험",
+    "pos": "noun",
+    "example": "Fourth-party risk comes from vendor's vendors."
+  },
+  "right to audit": {
+    "meaning": "감사 권한",
+    "pos": "noun",
+    "example": "Right to audit allows vendor assessment."
+  },
+  "security questionnaire": {
+    "meaning": "보안 질문지",
+    "pos": "noun",
+    "example": "Security questionnaires assess vendor security."
+  },
+  "soc 2": {
+    "meaning": "SOC 2",
+    "pos": "noun",
+    "example": "SOC 2 reports assess service organization controls."
+  },
+  "iso 27002": {
+    "meaning": "ISO 27002",
+    "pos": "noun",
+    "example": "ISO 27002 provides security control guidance."
+  },
+  "cis controls": {
+    "meaning": "CIS 컨트롤",
+    "pos": "noun",
+    "example": "CIS Controls are prioritized security actions."
+  },
+  "nist csf": {
+    "meaning": "NIST 사이버보안 프레임워크",
+    "pos": "noun",
+    "example": "NIST CSF organizes security activities."
+  },
+  "identify": {
+    "meaning": "식별",
+    "pos": "verb",
+    "example": "Identify assets and risks."
+  },
+  "detect": {
+    "meaning": "탐지하다",
+    "pos": "verb",
+    "example": "Detect security events promptly."
+  },
+  "respond": {
+    "meaning": "대응하다",
+    "pos": "verb",
+    "example": "Respond to detected incidents."
+  },
+  "recover": {
+    "meaning": "복구하다",
+    "pos": "verb",
+    "example": "Recover from security incidents."
+  },
+  "risk appetite": {
+    "meaning": "위험 선호도",
+    "pos": "noun",
+    "example": "Risk appetite defines acceptable risk levels."
+  },
+  "risk tolerance": {
+    "meaning": "위험 허용도",
+    "pos": "noun",
+    "example": "Risk tolerance is the acceptable variation."
+  },
+  "risk capacity": {
+    "meaning": "위험 수용 능력",
+    "pos": "noun",
+    "example": "Risk capacity is the maximum risk an organization can absorb."
+  },
+  "inherent risk": {
+    "meaning": "고유 위험",
+    "pos": "noun",
+    "example": "Inherent risk exists before controls."
+  },
+  "residual risk": {
+    "meaning": "잔여 위험",
+    "pos": "noun",
+    "example": "Residual risk remains after controls."
+  },
+  "risk transfer": {
+    "meaning": "위험 전가",
+    "pos": "noun",
+    "example": "Risk transfer shifts risk to others."
+  },
+  "risk avoidance": {
+    "meaning": "위험 회피",
+    "pos": "noun",
+    "example": "Risk avoidance eliminates the risk source."
+  },
+  "risk acceptance": {
+    "meaning": "위험 수용",
+    "pos": "noun",
+    "example": "Risk acceptance acknowledges the risk."
+  },
+  "risk mitigation": {
+    "meaning": "위험 완화",
+    "pos": "noun",
+    "example": "Risk mitigation reduces risk impact."
+  },
+  "qualitative risk": {
+    "meaning": "정성적 위험",
+    "pos": "noun",
+    "example": "Qualitative risk uses descriptive scales."
+  },
+  "quantitative risk": {
+    "meaning": "정량적 위험",
+    "pos": "noun",
+    "example": "Quantitative risk uses numerical values."
+  },
+  "single loss expectancy": {
+    "meaning": "단일 손실 예상, SLE",
+    "pos": "noun",
+    "example": "SLE is the expected loss per incident."
+  },
+  "annual rate of occurrence": {
+    "meaning": "연간 발생률, ARO",
+    "pos": "noun",
+    "example": "ARO is how often an incident occurs yearly."
+  },
+  "annual loss expectancy": {
+    "meaning": "연간 손실 예상, ALE",
+    "pos": "noun",
+    "example": "ALE equals SLE times ARO."
+  },
+  "exposure factor": {
+    "meaning": "노출 계수, EF",
+    "pos": "noun",
+    "example": "Exposure factor is the percentage of asset lost."
+  },
+  "asset value": {
+    "meaning": "자산 가치",
+    "pos": "noun",
+    "example": "Asset value determines loss calculations."
+  },
+  "cost-benefit analysis": {
+    "meaning": "비용-편익 분석",
+    "pos": "noun",
+    "example": "Cost-benefit analysis justifies security investments."
+  },
+  "return on security investment": {
+    "meaning": "보안 투자 수익률, ROSI",
+    "pos": "noun",
+    "example": "ROSI measures security investment value."
+  },
+  "total cost of ownership": {
+    "meaning": "총소유비용, TCO",
+    "pos": "noun",
+    "example": "TCO includes all ownership costs."
+  },
+  "security metrics": {
+    "meaning": "보안 지표",
+    "pos": "noun",
+    "example": "Security metrics measure security effectiveness."
+  },
+  "key performance indicator": {
+    "meaning": "핵심 성과 지표, KPI",
+    "pos": "noun",
+    "example": "KPIs track security performance."
+  },
+  "key risk indicator": {
+    "meaning": "핵심 위험 지표, KRI",
+    "pos": "noun",
+    "example": "KRIs signal risk changes."
+  },
+  "security posture": {
+    "meaning": "보안 태세",
+    "pos": "noun",
+    "example": "Security posture is overall security status."
+  },
+  "security culture": {
+    "meaning": "보안 문화",
+    "pos": "noun",
+    "example": "Security culture shapes employee behavior."
+  },
+  "security champion": {
+    "meaning": "보안 챔피언",
+    "pos": "noun",
+    "example": "Security champions promote security in teams."
+  },
+  "onboarding": {
+    "meaning": "온보딩",
+    "pos": "noun",
+    "example": "Onboarding includes security training."
+  },
+  "offboarding": {
+    "meaning": "오프보딩",
+    "pos": "noun",
+    "example": "Offboarding revokes access when employees leave."
+  },
+  "background check": {
+    "meaning": "신원 조회",
+    "pos": "noun",
+    "example": "Background checks verify employee history."
+  },
+  "job rotation": {
+    "meaning": "직무 순환",
+    "pos": "noun",
+    "example": "Job rotation prevents fraud."
+  },
+  "mandatory vacation": {
+    "meaning": "강제 휴가",
+    "pos": "noun",
+    "example": "Mandatory vacation helps detect fraud."
+  },
+  "acceptable use policy": {
+    "meaning": "이용 허용 정책, AUP",
+    "pos": "noun",
+    "example": "AUP defines acceptable resource use."
+  },
+  "clean desk policy": {
+    "meaning": "클린 데스크 정책",
+    "pos": "noun",
+    "example": "Clean desk policy secures physical documents."
+  },
+  "data classification policy": {
+    "meaning": "데이터 분류 정책",
+    "pos": "noun",
+    "example": "Data classification policy defines sensitivity levels."
+  },
+  "change management": {
+    "meaning": "변경 관리",
+    "pos": "noun",
+    "example": "Change management controls system modifications."
+  },
+  "configuration management": {
+    "meaning": "구성 관리",
+    "pos": "noun",
+    "example": "Configuration management tracks system settings."
+  },
+  "cmdb": {
+    "meaning": "구성 관리 데이터베이스",
+    "pos": "noun",
+    "example": "CMDB stores configuration information."
+  },
+  "version control": {
+    "meaning": "버전 관리",
+    "pos": "noun",
+    "example": "Version control tracks code changes."
+  },
+  "release management": {
+    "meaning": "릴리스 관리",
+    "pos": "noun",
+    "example": "Release management controls deployments."
+  },
+  "rollback": {
+    "meaning": "롤백",
+    "pos": "noun",
+    "example": "Rollback reverts to previous versions."
+  },
+  "change advisory board": {
+    "meaning": "변경 자문 위원회, CAB",
+    "pos": "noun",
+    "example": "CAB reviews proposed changes."
+  },
+  "request for change": {
+    "meaning": "변경 요청, RFC",
+    "pos": "noun",
+    "example": "RFC initiates the change process."
+  },
+  "maintenance window": {
+    "meaning": "유지보수 창",
+    "pos": "noun",
+    "example": "Maintenance windows schedule updates."
+  },
+  "uptime": {
+    "meaning": "가동 시간",
+    "pos": "noun",
+    "example": "Uptime measures system availability."
+  },
+  "downtime": {
+    "meaning": "중단 시간",
+    "pos": "noun",
+    "example": "Downtime is when systems are unavailable."
+  },
+  "high availability": {
+    "meaning": "고가용성",
+    "pos": "noun",
+    "example": "High availability minimizes downtime."
+  },
+  "fault tolerance": {
+    "meaning": "장애 허용",
+    "pos": "noun",
+    "example": "Fault tolerance continues operation during failures."
+  },
+  "failover": {
+    "meaning": "장애 조치(Failover)",
+    "pos": "noun",
+    "example": "Failover switches to backup systems."
+  },
+  "failback": {
+    "meaning": "페일백",
+    "pos": "noun",
+    "example": "Failback returns to primary systems."
+  },
+  "load balancing": {
+    "meaning": "부하 분산",
+    "pos": "noun",
+    "example": "Load balancing distributes traffic."
+  },
+  "clustering": {
+    "meaning": "클러스터링",
+    "pos": "noun",
+    "example": "Clustering groups servers for availability."
+  },
+  "raid": {
+    "meaning": "RAID",
+    "pos": "noun",
+    "example": "RAID provides disk redundancy."
+  },
+  "full backup": {
+    "meaning": "전체 백업",
+    "pos": "noun",
+    "example": "Full backup copies all data."
+  },
+  "incremental backup": {
+    "meaning": "증분 백업",
+    "pos": "noun",
+    "example": "Incremental backup copies changes since last backup."
+  },
+  "differential backup": {
+    "meaning": "차등 백업",
+    "pos": "noun",
+    "example": "Differential backup copies changes since last full backup."
+  },
+  "snapshot": {
+    "meaning": "스냅샷",
+    "pos": "noun",
+    "example": "Snapshots capture system state."
+  },
+  "replication": {
+    "meaning": "복제",
+    "pos": "noun",
+    "example": "Replication copies data to other locations."
+  },
+  "synchronous": {
+    "meaning": "동기식",
+    "pos": "adjective",
+    "example": "Synchronous replication writes simultaneously."
+  },
+  "asynchronous": {
+    "meaning": "비동기식",
+    "pos": "adjective",
+    "example": "Asynchronous replication writes with delay."
+  },
+  "journaling": {
+    "meaning": "저널링",
+    "pos": "noun",
+    "example": "Journaling logs transactions for recovery."
+  },
+  "physical security": {
+    "meaning": "물리적 보안",
+    "pos": "noun",
+    "example": "Physical security protects facilities."
+  },
+  "access badge": {
+    "meaning": "출입증",
+    "pos": "noun",
+    "example": "Access badges control building entry."
+  },
+  "mantrap": {
+    "meaning": "맨트랩",
+    "pos": "noun",
+    "example": "Mantraps prevent tailgating."
+  },
+  "turnstile": {
+    "meaning": "회전문",
+    "pos": "noun",
+    "example": "Turnstiles control pedestrian access."
+  },
+  "bollard": {
+    "meaning": "볼라드",
+    "pos": "noun",
+    "example": "Bollards prevent vehicle intrusion."
+  },
+  "fence": {
+    "meaning": "울타리",
+    "pos": "noun",
+    "example": "Fences define perimeter boundaries."
+  },
+  "lighting": {
+    "meaning": "조명",
+    "pos": "noun",
+    "example": "Proper lighting deters intruders."
+  },
+  "cctv": {
+    "meaning": "폐쇄회로 TV",
+    "pos": "noun",
+    "example": "CCTV monitors facilities."
+  },
+  "motion sensor": {
+    "meaning": "동작 센서",
+    "pos": "noun",
+    "example": "Motion sensors detect movement."
+  },
+  "alarm": {
+    "meaning": "경보",
+    "pos": "noun",
+    "example": "Alarms alert security personnel."
+  },
+  "guard": {
+    "meaning": "경비원",
+    "pos": "noun",
+    "example": "Guards provide human security presence."
+  },
+  "visitor log": {
+    "meaning": "방문자 기록",
+    "pos": "noun",
+    "example": "Visitor logs track facility access."
+  },
+  "escort": {
+    "meaning": "에스코트",
+    "pos": "noun",
+    "example": "Escorts accompany visitors."
+  },
+  "fire suppression": {
+    "meaning": "소화 시스템",
+    "pos": "noun",
+    "example": "Fire suppression protects data centers."
+  },
+  "halon": {
+    "meaning": "할론",
+    "pos": "noun",
+    "example": "Halon was used for fire suppression."
+  },
+  "fm-200": {
+    "meaning": "FM-200",
+    "pos": "noun",
+    "example": "FM-200 is a clean fire suppression agent."
+  },
+  "hvac": {
+    "meaning": "냉난방 공조",
+    "pos": "noun",
+    "example": "HVAC controls temperature and humidity."
+  },
+  "ups": {
+    "meaning": "무정전 전원 장치",
+    "pos": "noun",
+    "example": "UPS provides backup power."
+  },
+  "generator": {
+    "meaning": "발전기",
+    "pos": "noun",
+    "example": "Generators provide extended power."
+  },
+  "power conditioning": {
+    "meaning": "전력 조정",
+    "pos": "noun",
+    "example": "Power conditioning stabilizes electricity."
+  },
+  "surge protector": {
+    "meaning": "서지 보호기",
+    "pos": "noun",
+    "example": "Surge protectors prevent electrical damage."
+  }
+}

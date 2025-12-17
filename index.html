@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/theory-frequent.css?v=20251105210000">
     <link rel="stylesheet" href="css/theory-category.css?v=20251105220000">
     <link rel="stylesheet" href="css/pmp-module.css?v=20251105230000">
+    <link rel="stylesheet" href="css/cissp-module.css?v=20251216">
     <link rel="stylesheet" href="css/keyword130-module.css?v=20251106">
     <link rel="stylesheet" href="css/code-control-module.css?v=20251106">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -1569,6 +1570,9 @@
                 </div>
                 <div class="menu-item" onclick="switchModule('theory_frequent')" id="menu_theory_frequent">
                     <i class="fas fa-star"></i> ⭐ 실기 최빈출 50개
+                </div>
+                <div class="menu-item" onclick="switchModule('cissp')" id="menu_cissp">
+                    <i class="fas fa-shield-alt"></i> 🛡️ CISSP 문제은행 (1850)
                 </div>
                 <div class="past-exam-selector" style="margin-top: 10px;">
                     <div style="font-weight: 500; margin-bottom: 10px; cursor: pointer;" onclick="togglePMPMenu()">
@@ -3303,6 +3307,7 @@
                 await loadScript('js/theory-module.js?v=20251105004');
                 await loadScript('js/theory-frequent-module.js?v=20251105210000');
                 await loadScript('js/pmp-module.js?v=20251105230000');
+                await loadScript('js/cissp-module.js?v=20251216');
                 await loadScript('js/keyword130-module.js?v=20251106');
                 await loadScript('js/code-control-module.js?v=20251106');
                 await loadScript('js/components/theory-category.js?v=20251105220000');
