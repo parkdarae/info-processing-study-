@@ -3316,6 +3316,14 @@
                 await loadScript('js/components/question-display.js?v=20251105004');
                 await loadScript('js/modes/range.js?v=20251105004');
                 console.log('🎉 모든 스크립트 로드 완료');
+                
+                // CISSP 모듈 설정 확인
+                if (App.moduleConfig && App.moduleConfig.cissp) {
+                    console.log('✅ CISSP 모듈 설정 확인됨:', App.moduleConfig.cissp);
+                } else {
+                    console.error('❌ CISSP 모듈 설정을 찾을 수 없습니다.');
+                    console.log('사용 가능한 모듈:', Object.keys(App.moduleConfig || {}));
+                }
             } catch (error) {
                 console.error('💥 스크립트 로드 실패:', error);
                 alert('일부 기능이 작동하지 않을 수 있습니다.');
