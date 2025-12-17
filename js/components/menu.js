@@ -25,6 +25,7 @@ function switchModule(moduleName) {
     // App.moduleConfig가 초기화되지 않은 경우
     if (!App || !App.moduleConfig) {
         console.error('App.moduleConfig가 초기화되지 않았습니다. config.js가 로드되었는지 확인하세요.');
+        console.error('App 객체:', App);
         showMessage('모듈 설정을 불러올 수 없습니다. 페이지를 새로고침해주세요.');
         return;
     }
@@ -33,11 +34,24 @@ function switchModule(moduleName) {
     console.log('switchModule 호출:', moduleName);
     console.log('App.moduleConfig:', App.moduleConfig);
     console.log('모듈 존재 여부:', App.moduleConfig[moduleName]);
+    console.log('사용 가능한 모듈:', Object.keys(App.moduleConfig));
+    
+    // CISSP 모듈 특별 처리
+    if (moduleName === 'cissp') {
+        console.log('CISSP 모듈 전환 시도');
+        if (App.moduleConfig['cissp']) {
+            console.log('✅ CISSP 모듈 설정 발견:', App.moduleConfig['cissp']);
+        } else {
+            console.error('❌ CISSP 모듈 설정을 찾을 수 없습니다!');
+            console.error('전체 모듈 목록:', Object.keys(App.moduleConfig));
+        }
+    }
     
     if (!App.moduleConfig[moduleName]) {
         console.error('알 수 없는 모듈:', moduleName);
         console.error('사용 가능한 모듈:', Object.keys(App.moduleConfig));
-        showMessage(`알 수 없는 모듈입니다: ${moduleName}. 사용 가능한 모듈: ${Object.keys(App.moduleConfig).join(', ')}`);
+        const availableModules = Object.keys(App.moduleConfig).join(', ');
+        showMessage(`알 수 없는 모듈입니다: ${moduleName}\n사용 가능한 모듈: ${availableModules}`);
         return;
     }
     
