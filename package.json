@@ -1,0 +1,9 @@
+{
+  "name": "info-processing-study",
+  "version": "1.0.0",
+  "description": "Information Processing Engineer Study Platform",
+  "scripts": {
+    "build": "echo 'No build step required'"
+  }
+}
+

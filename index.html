@@ -3300,22 +3300,29 @@
         // 순차적으로 스크립트 로드
         async function loadAllScripts() {
             try {
-                // 강력한 캐시 무효화를 위한 버전 번호
-                await loadScript('js/config.js?v=20251217_cissp_fix');
+                // 강력한 캐시 무효화를 위한 버전 번호 (타임스탬프 포함)
+                const configVersion = '20251217_cissp_final_' + Date.now();
+                await loadScript(`js/config.js?v=${configVersion}`);
                 
-                // config.js 로드 후 즉시 CISSP 모듈 확인
-                await new Promise(resolve => setTimeout(resolve, 50)); // 짧은 대기
-                if (typeof App !== 'undefined' && App.moduleConfig) {
-                    if (!App.moduleConfig.cissp) {
-                        console.error('⚠️ CISSP 모듈이 config.js에 없습니다!');
-                        console.error('현재 모듈 목록:', Object.keys(App.moduleConfig));
-                        console.error('config.js 버전이 오래되었을 수 있습니다. 페이지를 강력 새로고침하세요 (Ctrl+Shift+R)');
-                    } else {
-                        console.log('✅ CISSP 모듈이 config.js에 있습니다:', App.moduleConfig.cissp);
+                // config.js 로드 후 즉시 CISSP 모듈 확인 (여러 번 시도)
+                let checkCount = 0;
+                const checkCISSP = setInterval(() => {
+                    checkCount++;
+                    if (typeof App !== 'undefined' && App.moduleConfig) {
+                        clearInterval(checkCISSP);
+                        if (!App.moduleConfig.cissp) {
+                            console.error('❌ CISSP 모듈이 config.js에 없습니다!');
+                            console.error('현재 모듈 목록:', Object.keys(App.moduleConfig));
+                            console.error('config.js 파일을 확인하세요. Vercel 재배포가 필요할 수 있습니다.');
+                            alert('CISSP 모듈을 찾을 수 없습니다. 관리자에게 문의하세요.');
+                        } else {
+                            console.log('✅ CISSP 모듈이 config.js에 있습니다:', App.moduleConfig.cissp);
+                        }
+                    } else if (checkCount > 20) {
+                        clearInterval(checkCISSP);
+                        console.error('⚠️ App.moduleConfig가 2초 내에 초기화되지 않았습니다.');
                     }
-                } else {
-                    console.error('⚠️ App.moduleConfig가 아직 초기화되지 않았습니다.');
-                }
+                }, 100);
                 
                 await loadScript('js/app.js?v=20251105004');
                 await loadScript('js/utils/validator.js?v=20251105004');
