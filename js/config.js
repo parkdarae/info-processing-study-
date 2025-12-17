@@ -19,7 +19,10 @@ App.state = {
     symbolInputOrder: {
         symbols: [],
         inputIndex: 0
-    }
+    },
+    // CISSP 이중언어 모드 상태
+    languageMode: 'ko', // 'ko' = 한국어, 'en' = 영어 학습모드
+    vocabulary: {} // 단어 사전 데이터
 };
 
 // 모듈 설정
@@ -51,6 +54,16 @@ App.moduleConfig = {
         type: 'pmp',
         maxRange: 20,
         isPMP: true
+    },
+    'cissp': {
+        title: '🔐 CISSP 문제집 (1850문제)',
+        itemsFile: 'data/items_cissp.jsonl',
+        tablesFile: '',
+        vocabularyFile: 'data/cissp_vocabulary.json',
+        type: 'cissp',
+        maxRange: 1850,
+        isCISSP: true,
+        supportsBilingual: true
     },
     'theory': {
         title: '정처기 실기 이론',
