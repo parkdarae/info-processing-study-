@@ -3300,7 +3300,20 @@
         // 순차적으로 스크립트 로드
         async function loadAllScripts() {
             try {
-                await loadScript('js/config.js?v=20251217_cissp');
+                // 타임스탬프로 캐시 완전 무효화
+                const timestamp = new Date().getTime();
+                await loadScript(`js/config.js?v=${timestamp}`);
+                
+                // config.js 로드 후 즉시 CISSP 모듈 확인
+                if (typeof App !== 'undefined' && App.moduleConfig) {
+                    if (!App.moduleConfig.cissp) {
+                        console.error('⚠️ CISSP 모듈이 config.js에 없습니다!');
+                        console.error('현재 모듈 목록:', Object.keys(App.moduleConfig));
+                    } else {
+                        console.log('✅ CISSP 모듈이 config.js에 있습니다:', App.moduleConfig.cissp);
+                    }
+                }
+                
                 await loadScript('js/app.js?v=20251105004');
                 await loadScript('js/utils/validator.js?v=20251105004');
                 await loadScript('js/theory-adapter.js?v=20251105004');
@@ -3311,7 +3324,7 @@
                 await loadScript('js/keyword130-module.js?v=20251106');
                 await loadScript('js/code-control-module.js?v=20251106');
                 await loadScript('js/components/theory-category.js?v=20251105220000');
-                await loadScript('js/components/menu.js?v=20251217_cissp');
+                await loadScript(`js/components/menu.js?v=${timestamp}`);
                 await loadScript('js/components/modal.js?v=20251105004');
                 await loadScript('js/components/question-display.js?v=20251105004');
                 await loadScript('js/modes/range.js?v=20251105004');
