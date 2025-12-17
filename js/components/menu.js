@@ -22,7 +22,14 @@ function closeMenu() {
 function switchModule(moduleName) {
     closeMenu();
     
+    // 디버깅: 모듈 설정 확인
+    console.log('switchModule 호출:', moduleName);
+    console.log('App.moduleConfig:', App.moduleConfig);
+    console.log('모듈 존재 여부:', App.moduleConfig[moduleName]);
+    
     if (!App.moduleConfig[moduleName]) {
+        console.error('알 수 없는 모듈:', moduleName);
+        console.error('사용 가능한 모듈:', Object.keys(App.moduleConfig));
         showMessage('알 수 없는 모듈입니다.');
         return;
     }
