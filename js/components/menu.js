@@ -22,6 +22,13 @@ function closeMenu() {
 function switchModule(moduleName) {
     closeMenu();
     
+    // App.moduleConfig가 초기화되지 않은 경우
+    if (!App || !App.moduleConfig) {
+        console.error('App.moduleConfig가 초기화되지 않았습니다. config.js가 로드되었는지 확인하세요.');
+        showMessage('모듈 설정을 불러올 수 없습니다. 페이지를 새로고침해주세요.');
+        return;
+    }
+    
     // 디버깅: 모듈 설정 확인
     console.log('switchModule 호출:', moduleName);
     console.log('App.moduleConfig:', App.moduleConfig);
@@ -30,7 +37,7 @@ function switchModule(moduleName) {
     if (!App.moduleConfig[moduleName]) {
         console.error('알 수 없는 모듈:', moduleName);
         console.error('사용 가능한 모듈:', Object.keys(App.moduleConfig));
-        showMessage('알 수 없는 모듈입니다.');
+        showMessage(`알 수 없는 모듈입니다: ${moduleName}. 사용 가능한 모듈: ${Object.keys(App.moduleConfig).join(', ')}`);
         return;
     }
     
