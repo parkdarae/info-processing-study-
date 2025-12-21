@@ -1774,6 +1774,29 @@
 
     <script>
         // 전역 변수와 모듈 설정은 config.js에서 관리됨
+        // CISSP 모듈이 config.js에 없을 경우를 대비한 사전 초기화
+        (function() {
+            if (typeof window.App === 'undefined') {
+                window.App = {};
+            }
+            if (typeof App.moduleConfig === 'undefined') {
+                App.moduleConfig = {};
+            }
+            // CISSP 모듈을 미리 추가 (config.js가 오래된 버전이어도 작동하도록)
+            if (!App.moduleConfig.cissp) {
+                App.moduleConfig.cissp = {
+                    title: '🔐 CISSP 문제집 (1850문제)',
+                    itemsFile: 'data/items_cissp.jsonl',
+                    tablesFile: '',
+                    vocabularyFile: 'data/cissp_vocabulary.json',
+                    type: 'cissp',
+                    maxRange: 1850,
+                    isCISSP: true,
+                    supportsBilingual: true
+                };
+                console.log('✅ CISSP 모듈을 index.html에서 사전 초기화했습니다.');
+            }
+        })();
         
         // 정규화 함수
         function normalizeAnswer(answer) {
