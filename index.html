@@ -3439,11 +3439,21 @@
                 const menuVersion = `20251221_cissp_fix_${Date.now()}_${Math.random().toString(36).substring(7)}`;
                 await loadScript(`js/components/menu.js?v=${menuVersion}&t=${Date.now()}&r=${Math.random()}`);
                 
-                // menu.js 로드 후 CISSP 모듈이 없으면 강제로 추가 (오래된 menu.js 대비)
-                await new Promise(resolve => setTimeout(resolve, 100));
-                if (typeof App !== 'undefined' && App.moduleConfig) {
+                // menu.js 로드 후 즉시 CISSP 모듈 추가 및 switchModule 오버라이드
+                await new Promise(resolve => setTimeout(resolve, 200));
+                
+                // CISSP 모듈 강제 추가 (여러 번 시도)
+                (function ensureCISSPModule() {
+                    if (typeof App === 'undefined') {
+                        setTimeout(ensureCISSPModule, 100);
+                        return;
+                    }
+                    if (typeof App.moduleConfig === 'undefined') {
+                        App.moduleConfig = {};
+                    }
+                    
                     if (!App.moduleConfig.cissp) {
-                        console.warn('⚠️ menu.js 로드 후에도 CISSP 모듈이 없습니다. index.html에서 강제로 추가합니다.');
+                        console.warn('⚠️ [index.html] CISSP 모듈이 없습니다. 강제로 추가합니다.');
                         App.moduleConfig.cissp = {
                             title: '🔐 CISSP 문제집 (1850문제)',
                             itemsFile: 'data/items_cissp.jsonl',
@@ -3454,15 +3464,20 @@
                             isCISSP: true,
                             supportsBilingual: true
                         };
-                        console.log('✅ CISSP 모듈을 index.html에서 최종 추가했습니다.');
-                        
-                        // switchModule 함수를 오버라이드하여 CISSP 모듈 추가 로직 포함
-                        if (typeof switchModule === 'function') {
-                            const originalSwitchModule = switchModule;
-                            window.switchModule = function(moduleName) {
-                                // CISSP 모듈이 없으면 추가
-                                if (moduleName === 'cissp' && (!App.moduleConfig || !App.moduleConfig.cissp)) {
-                                    if (!App.moduleConfig) App.moduleConfig = {};
+                        console.log('✅ [index.html] CISSP 모듈 추가 완료:', App.moduleConfig.cissp);
+                    }
+                    
+                    // switchModule 함수를 오버라이드하여 CISSP 모듈 추가 로직 포함
+                    if (typeof switchModule === 'function') {
+                        const originalSwitchModule = window.switchModule;
+                        window.switchModule = function(moduleName) {
+                            console.log('[오버라이드된 switchModule] 호출됨:', moduleName);
+                            
+                            // CISSP 모듈이 없으면 추가
+                            if (moduleName === 'cissp') {
+                                if (!App.moduleConfig) App.moduleConfig = {};
+                                if (!App.moduleConfig.cissp) {
+                                    console.warn('⚠️ [오버라이드] CISSP 모듈이 없습니다. 추가합니다.');
                                     App.moduleConfig.cissp = {
                                         title: '🔐 CISSP 문제집 (1850문제)',
                                         itemsFile: 'data/items_cissp.jsonl',
@@ -3473,15 +3488,32 @@
                                         isCISSP: true,
                                         supportsBilingual: true
                                     };
-                                    console.log('✅ switchModule 오버라이드: CISSP 모듈 추가됨');
+                                    console.log('✅ [오버라이드] CISSP 모듈 추가 완료');
                                 }
-                                // 원래 함수 호출
+                            }
+                            
+                            // 원래 함수 호출
+                            try {
                                 return originalSwitchModule.call(this, moduleName);
-                            };
-                            console.log('✅ switchModule 함수를 오버라이드하여 CISSP 모듈 추가 로직 포함');
-                        }
+                            } catch (error) {
+                                console.error('[오버라이드] 원래 함수 호출 실패:', error);
+                                // 원래 함수가 실패하면 직접 처리
+                                if (moduleName === 'cissp' && App.moduleConfig.cissp) {
+                                    // CISSP 모듈 처리
+                                    if (typeof window.cisspModule !== 'undefined' && window.cisspModule) {
+                                        window.cisspModule.loadItems().then(() => {
+                                            window.cisspModule.renderDashboard();
+                                        });
+                                    }
+                                }
+                            }
+                        };
+                        console.log('✅ [index.html] switchModule 함수 오버라이드 완료');
+                    } else {
+                        console.warn('⚠️ [index.html] switchModule 함수를 찾을 수 없습니다. 재시도합니다.');
+                        setTimeout(ensureCISSPModule, 200);
                     }
-                }
+                })();
                 
                 await loadScript('js/components/modal.js?v=20251105004');
                 await loadScript('js/components/question-display.js?v=20251105004');
