@@ -20,7 +20,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <meta name="version" content="20251217_cissp_deploy">
+    <meta name="version" content="20251221_cissp_fix_final">
     <style>
         * {
             margin: 0;
@@ -3346,7 +3346,9 @@
                 const cisspBackup = typeof App !== 'undefined' && App.moduleConfig && App.moduleConfig.cissp 
                     ? JSON.parse(JSON.stringify(App.moduleConfig.cissp)) : null;
                 
-                await loadScript(`js/config.js?v=${configVersion}&t=${Date.now()}`);
+                // config.js 강제 캐시 무효화 (여러 파라미터 사용)
+                const configVersionFinal = `${configVersion}_${Math.random().toString(36).substring(7)}`;
+                await loadScript(`js/config.js?v=${configVersionFinal}&t=${Date.now()}&r=${Math.random()}`);
                 
                 // #region agent log
                 fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:3336',message:'config.js loaded',data:{hasApp:typeof App!=='undefined',hasConfig:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined',modules:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined'?Object.keys(App.moduleConfig):[],hasCissp:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined'&&!!App.moduleConfig.cissp},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
