@@ -1,7 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "echo 'Force rebuild $(date)'",
+  "buildCommand": "echo 'Force rebuild' && touch .vercel-deploy-trigger",
   "outputDirectory": ".",
+  "installCommand": null,
   "routes": [
     {
       "src": "/(.*)",
