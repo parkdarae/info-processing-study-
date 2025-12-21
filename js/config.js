@@ -1,6 +1,9 @@
 // 전역 상태 관리 객체
 window.App = window.App || {};
 
+// Config 버전 (캐시 무효화용)
+App.configVersion = '20251217_cissp_final';
+
 // 전역 변수
 App.state = {
     currentModule: 'keyword130',

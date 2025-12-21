@@ -31,25 +31,46 @@ function switchModule(moduleName) {
     }
     
     // 디버깅: 모듈 설정 확인
-    console.log('switchModule 호출:', moduleName);
-    console.log('App.moduleConfig:', App.moduleConfig);
-    console.log('모듈 존재 여부:', App.moduleConfig[moduleName]);
-    console.log('사용 가능한 모듈:', Object.keys(App.moduleConfig));
+    console.log('=== switchModule 디버깅 ===');
+    console.log('호출된 모듈:', moduleName);
+    console.log('Config 버전:', App.configVersion || '버전 정보 없음');
+    console.log('App.moduleConfig 타입:', typeof App.moduleConfig);
+    console.log('모듈 존재 여부:', App.moduleConfig[moduleName] ? '✅ 있음' : '❌ 없음');
+    console.log('전체 모듈 목록:', Object.keys(App.moduleConfig));
+    console.log('모듈 개수:', Object.keys(App.moduleConfig).length);
     
     // CISSP 모듈 특별 처리
     if (moduleName === 'cissp') {
-        console.log('CISSP 모듈 전환 시도');
+        console.log('🔐 CISSP 모듈 전환 시도');
         if (App.moduleConfig['cissp']) {
             console.log('✅ CISSP 모듈 설정 발견:', App.moduleConfig['cissp']);
         } else {
             console.error('❌ CISSP 모듈 설정을 찾을 수 없습니다!');
             console.error('전체 모듈 목록:', Object.keys(App.moduleConfig));
+            console.error('모듈 키 확인:', Object.keys(App.moduleConfig).includes('cissp'));
+            console.error('직접 접근:', App.moduleConfig['cissp']);
+            console.error('점 표기법:', App.moduleConfig.cissp);
+            
+            // 강제로 CISSP 모듈 추가 시도
+            console.warn('⚠️ CISSP 모듈을 강제로 추가합니다.');
+            App.moduleConfig['cissp'] = {
+                title: '🔐 CISSP 문제집 (1850문제)',
+                itemsFile: 'data/items_cissp.jsonl',
+                tablesFile: '',
+                vocabularyFile: 'data/cissp_vocabulary.json',
+                type: 'cissp',
+                maxRange: 1850,
+                isCISSP: true,
+                supportsBilingual: true
+            };
+            console.log('✅ CISSP 모듈을 menu.js에서 강제로 추가했습니다.');
         }
     }
     
     if (!App.moduleConfig[moduleName]) {
-        console.error('알 수 없는 모듈:', moduleName);
+        console.error('❌ 알 수 없는 모듈:', moduleName);
         console.error('사용 가능한 모듈:', Object.keys(App.moduleConfig));
+        console.error('모듈 키 정확히 일치하는지 확인:', Object.keys(App.moduleConfig).filter(k => k === moduleName));
         const availableModules = Object.keys(App.moduleConfig).join(', ');
         showMessage(`알 수 없는 모듈입니다: ${moduleName}\n사용 가능한 모듈: ${availableModules}`);
         return;
