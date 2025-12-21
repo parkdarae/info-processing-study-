@@ -2,7 +2,8 @@
 window.App = window.App || {};
 
 // Config 버전 (캐시 무효화용)
-App.configVersion = '20251221_cissp_force_deploy';
+// Vercel 배포 강제 업데이트: 2025-12-21 23:50
+App.configVersion = '20251221_cissp_force_deploy_v2';
 
 // 전역 변수
 App.state = {
