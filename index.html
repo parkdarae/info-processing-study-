@@ -3438,6 +3438,51 @@
                 // menu.js 강제 캐시 무효화 (여러 파라미터 사용)
                 const menuVersion = `20251221_cissp_fix_${Date.now()}_${Math.random().toString(36).substring(7)}`;
                 await loadScript(`js/components/menu.js?v=${menuVersion}&t=${Date.now()}&r=${Math.random()}`);
+                
+                // menu.js 로드 후 CISSP 모듈이 없으면 강제로 추가 (오래된 menu.js 대비)
+                await new Promise(resolve => setTimeout(resolve, 100));
+                if (typeof App !== 'undefined' && App.moduleConfig) {
+                    if (!App.moduleConfig.cissp) {
+                        console.warn('⚠️ menu.js 로드 후에도 CISSP 모듈이 없습니다. index.html에서 강제로 추가합니다.');
+                        App.moduleConfig.cissp = {
+                            title: '🔐 CISSP 문제집 (1850문제)',
+                            itemsFile: 'data/items_cissp.jsonl',
+                            tablesFile: '',
+                            vocabularyFile: 'data/cissp_vocabulary.json',
+                            type: 'cissp',
+                            maxRange: 1850,
+                            isCISSP: true,
+                            supportsBilingual: true
+                        };
+                        console.log('✅ CISSP 모듈을 index.html에서 최종 추가했습니다.');
+                        
+                        // switchModule 함수를 오버라이드하여 CISSP 모듈 추가 로직 포함
+                        if (typeof switchModule === 'function') {
+                            const originalSwitchModule = switchModule;
+                            window.switchModule = function(moduleName) {
+                                // CISSP 모듈이 없으면 추가
+                                if (moduleName === 'cissp' && (!App.moduleConfig || !App.moduleConfig.cissp)) {
+                                    if (!App.moduleConfig) App.moduleConfig = {};
+                                    App.moduleConfig.cissp = {
+                                        title: '🔐 CISSP 문제집 (1850문제)',
+                                        itemsFile: 'data/items_cissp.jsonl',
+                                        tablesFile: '',
+                                        vocabularyFile: 'data/cissp_vocabulary.json',
+                                        type: 'cissp',
+                                        maxRange: 1850,
+                                        isCISSP: true,
+                                        supportsBilingual: true
+                                    };
+                                    console.log('✅ switchModule 오버라이드: CISSP 모듈 추가됨');
+                                }
+                                // 원래 함수 호출
+                                return originalSwitchModule.call(this, moduleName);
+                            };
+                            console.log('✅ switchModule 함수를 오버라이드하여 CISSP 모듈 추가 로직 포함');
+                        }
+                    }
+                }
+                
                 await loadScript('js/components/modal.js?v=20251105004');
                 await loadScript('js/components/question-display.js?v=20251105004');
                 await loadScript('js/modes/range.js?v=20251105004');
