@@ -125,14 +125,18 @@
 .interactive-word {
     cursor: pointer;
     border-bottom: 1px dashed #1a5276;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, border-bottom-color 0.2s ease;
     position: relative;
     display: inline-block;
+    padding: 0;
+    margin: 0;
 }
 
 .interactive-word:hover {
     background: rgba(26, 82, 118, 0.1);
     border-bottom-color: #2e86ab;
+    padding: 0;
+    margin: 0;
 }
 
 /* 한글 인라인 표시 */
@@ -151,13 +155,17 @@
 
 .interactive-sentence {
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background-color 0.2s ease;
     display: inline;
+    padding: 0;
+    margin: 0;
 }
 
 .interactive-sentence:hover {
     background: rgba(46, 134, 171, 0.1);
     border-radius: 4px;
+    padding: 0;
+    margin: 0;
 }
 
 .interactive-sentence.has-translation {
@@ -287,63 +295,6 @@
 .korean-convert-btn.active {
     background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%) !important;
     box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
-}
-
-/* TTS 토글 버튼 */
-.tts-toggle-btn {
-    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%) !important;
-    color: white !important;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-.tts-toggle-btn:hover {
-    background: linear-gradient(135deg, #5a6268 0%, #495057 100%) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
-}
-
-.tts-toggle-btn.active {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%) !important;
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
-    }
-    50% {
-        box-shadow: 0 4px 20px rgba(40, 167, 69, 0.6);
-    }
-}
-
-/* TTS 클릭 가능한 문제 영역 */
-.question-text.tts-clickable {
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-}
-
-.question-text.tts-clickable:hover {
-    background: rgba(40, 167, 69, 0.05);
-    border-radius: 8px;
-    padding: 5px;
-    margin: -5px;
-}
-
-.question-text.tts-clickable::after {
-    content: '🔊';
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    font-size: 0.8em;
-    opacity: 0.5;
-    transition: opacity 0.2s ease;
-}
-
-.question-text.tts-clickable:hover::after {
-    opacity: 1;
 }
 
 /* 북마크 버튼 */

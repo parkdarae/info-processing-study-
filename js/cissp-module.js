@@ -12,7 +12,6 @@ class CISSPModule {
         this.vocabulary = {}; // 단어 사전
         this.cardStep = 1;
         this.showKoreanInline = false; // 한글 인라인 표시 여부
-        this.ttsEnabled = this.loadTTSState(); // TTS 활성화 상태
     }
 
     // 학습 데이터 로드
@@ -34,17 +33,6 @@ class CISSPModule {
     // 학습 데이터 저장
     saveStudyData() {
         localStorage.setItem('cissp_study_data', JSON.stringify(this.studyData));
-    }
-
-    // TTS 상태 로드
-    loadTTSState() {
-        const saved = localStorage.getItem('cissp_tts_enabled');
-        return saved === 'true';
-    }
-
-    // TTS 상태 저장
-    saveTTSState() {
-        localStorage.setItem('cissp_tts_enabled', this.ttsEnabled.toString());
     }
 
     // 단어 사전 로드 (주요 단어 + 문제 단어 병합)
@@ -441,9 +429,6 @@ class CISSPModule {
                 <div class="question-header">
                     <div class="question-no">Q.${item.q_no}</div>
                     <div class="header-buttons">
-                        <button id="ttsToggleBtn" class="btn tts-toggle-btn ${this.ttsEnabled ? 'active' : ''}" onclick="cisspModule.toggleTTS()">
-                            <i class="fas ${this.ttsEnabled ? 'fa-volume-up' : 'fa-volume-mute'}"></i> ${this.ttsEnabled ? 'TTS 끄기' : 'TTS 켜기'}
-                        </button>
                         <button id="languageToggleBtn" class="btn ${this.languageMode === 'en' ? 'btn-lang-en' : 'btn-lang-ko'}" onclick="cisspModule.toggleLanguageMode()">
                             <i class="fas fa-globe"></i> ${this.languageMode === 'en' ? 'EN 🇺🇸' : 'KO 🇰🇷'}
                         </button>
@@ -458,9 +443,9 @@ class CISSPModule {
                     </div>
                 </div>
                 
-                ${this.languageMode === 'en' ? `<div class="lang-hint"><i class="fas fa-hand-pointer"></i> 단어/문장을 클릭하면 해석을 볼 수 있습니다${this.ttsEnabled ? ' | 문제를 클릭하면 음성으로 읽어줍니다' : ''}</div>` : ''}
+                ${this.languageMode === 'en' ? `<div class="lang-hint"><i class="fas fa-hand-pointer"></i> 단어/문장을 클릭하면 해석을 볼 수 있습니다</div>` : ''}
                 
-                <div class="question-text ${this.ttsEnabled ? 'tts-clickable' : ''}" ${this.ttsEnabled ? `onclick="if(event.target.classList.contains('interactive-word') || event.target.classList.contains('interactive-sentence') || event.target.closest('.interactive-word') || event.target.closest('.interactive-sentence')) { return; } cisspModule.speakQuestion();"` : ''}>
+                <div class="question-text">
                     ${displayQuestion}
                 </div>
                 
@@ -501,11 +486,6 @@ class CISSPModule {
     selectChoice(element, key) {
         const item = this.currentItem;
         const isMultipleAnswer = Array.isArray(item.answer) && item.answer.length > 1;
-        
-        // TTS 활성화 시 선택지 읽기
-        if (this.ttsEnabled) {
-            this.speakChoice(key);
-        }
         
         if (isMultipleAnswer) {
             // 복수 선택: 체크박스 토글
@@ -934,84 +914,6 @@ class CISSPModule {
         }
     }
 
-    // TTS 토글
-    toggleTTS() {
-        this.ttsEnabled = !this.ttsEnabled;
-        this.saveTTSState();
-        
-        // 버튼 상태 업데이트
-        const btn = document.getElementById('ttsToggleBtn');
-        if (btn) {
-            btn.classList.toggle('active', this.ttsEnabled);
-            btn.innerHTML = this.ttsEnabled 
-                ? '<i class="fas fa-volume-up"></i> TTS 끄기'
-                : '<i class="fas fa-volume-mute"></i> TTS 켜기';
-        }
-        
-        // 현재 문제 다시 렌더링 (TTS 상태에 따라 UI 변경)
-        if (this.currentItem) {
-            this.renderQuestion(this.currentItem);
-        }
-    }
-
-    // 텍스트를 음성으로 읽기
-    speakText(text) {
-        if (!text || typeof text !== 'string') {
-            return;
-        }
-        
-        // HTML 태그 제거
-        const cleanText = text.replace(/<[^>]*>/g, '').trim();
-        if (!cleanText) {
-            return;
-        }
-        
-        // 현재 재생 중인 음성 중지
-        if (window.speechSynthesis.speaking) {
-            window.speechSynthesis.cancel();
-        }
-        
-        // Web Speech API 사용
-        const utterance = new SpeechSynthesisUtterance(cleanText);
-        utterance.lang = 'en-US';
-        utterance.rate = 1.0; // 읽기 속도
-        utterance.pitch = 1.0; // 음성 피치
-        utterance.volume = 1.0; // 볼륨
-        
-        // 에러 처리
-        utterance.onerror = (event) => {
-            console.error('TTS 오류:', event);
-        };
-        
-        window.speechSynthesis.speak(utterance);
-    }
-
-    // 문제 텍스트 읽기
-    speakQuestion() {
-        if (!this.ttsEnabled || !this.currentItem) {
-            return;
-        }
-        
-        // 영어 문제 텍스트 사용
-        const questionText = this.currentItem.question_en || this.currentItem.question || '';
-        if (questionText) {
-            this.speakText(questionText);
-        }
-    }
-
-    // 선택지 텍스트 읽기
-    speakChoice(key) {
-        if (!this.ttsEnabled || !this.currentItem) {
-            return;
-        }
-        
-        // 영어 선택지 텍스트 사용
-        const choices = this.currentItem.choices_en || this.currentItem.choices || {};
-        const choiceText = choices[key] || '';
-        if (choiceText) {
-            this.speakText(choiceText);
-        }
-    }
 }
 
 // 전역 인스턴스
