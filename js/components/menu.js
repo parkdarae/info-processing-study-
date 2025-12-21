@@ -110,6 +110,37 @@ function switchModule(moduleName) {
     }
     
     // 최종 모듈 존재 여부 확인
+    // CISSP 모듈인 경우 먼저 추가 시도
+    if (moduleName === 'cissp' && !App.moduleConfig[moduleName]) {
+        console.warn('⚠️ [switchModule] CISSP 모듈이 없습니다. 즉시 추가합니다.');
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:113',message:'CISSP module missing in switchModule, adding now',data:{modules:Object.keys(App.moduleConfig),hasApp:typeof App!=='undefined',hasConfig:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+        // #endregion
+        
+        // App.moduleConfig가 없으면 초기화
+        if (!App.moduleConfig) {
+            App.moduleConfig = {};
+            console.warn('⚠️ [switchModule] App.moduleConfig가 없어서 초기화했습니다.');
+        }
+        
+        // CISSP 모듈 강제 추가
+        App.moduleConfig['cissp'] = {
+            title: '🔐 CISSP 문제집 (1850문제)',
+            itemsFile: 'data/items_cissp.jsonl',
+            tablesFile: '',
+            vocabularyFile: 'data/cissp_vocabulary.json',
+            type: 'cissp',
+            maxRange: 1850,
+            isCISSP: true,
+            supportsBilingual: true
+        };
+        console.log('✅ [switchModule] CISSP 모듈 추가 완료:', App.moduleConfig['cissp']);
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:130',message:'CISSP module added in switchModule',data:{modules:Object.keys(App.moduleConfig),hasCissp:!!App.moduleConfig['cissp']},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+        // #endregion
+    }
+    
+    // 최종 모듈 존재 여부 확인 (CISSP 모듈 추가 후)
     if (!App.moduleConfig[moduleName]) {
         console.error('❌ 알 수 없는 모듈:', moduleName);
         console.error('사용 가능한 모듈:', Object.keys(App.moduleConfig));
@@ -117,35 +148,12 @@ function switchModule(moduleName) {
         console.error('CISSP 모듈 추가 여부:', cisspModuleAdded);
         console.error('현재 App.moduleConfig[moduleName]:', App.moduleConfig[moduleName]);
         // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:110',message:'Module not found after all checks',data:{moduleName,modules:Object.keys(App.moduleConfig),cisspModuleAdded,moduleValue:App.moduleConfig[moduleName]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+        fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:140',message:'Module not found after all checks',data:{moduleName,modules:Object.keys(App.moduleConfig),cisspModuleAdded,moduleValue:App.moduleConfig[moduleName]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
         // #endregion
         
-        // CISSP 모듈인 경우 마지막 시도
-        if (moduleName === 'cissp') {
-            console.warn('⚠️ CISSP 모듈이 여전히 없습니다. 최종 재시도합니다.');
-            App.moduleConfig['cissp'] = {
-                title: '🔐 CISSP 문제집 (1850문제)',
-                itemsFile: 'data/items_cissp.jsonl',
-                tablesFile: '',
-                vocabularyFile: 'data/cissp_vocabulary.json',
-                type: 'cissp',
-                maxRange: 1850,
-                isCISSP: true,
-                supportsBilingual: true
-            };
-            console.log('✅ CISSP 모듈 최종 추가 완료:', App.moduleConfig['cissp']);
-            // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:125',message:'CISSP module final retry added',data:{modules:Object.keys(App.moduleConfig),hasCissp:!!App.moduleConfig['cissp']},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-            // #endregion
-            // CISSP 모듈 추가 후에도 없으면 계속 진행 (오류 표시하지 않음)
-            if (!App.moduleConfig['cissp']) {
-                console.error('❌ CISSP 모듈을 추가할 수 없습니다. 계속 진행합니다.');
-            }
-        } else {
-            const availableModules = Object.keys(App.moduleConfig).join(', ');
-            showMessage(`알 수 없는 모듈입니다: ${moduleName}\n사용 가능한 모듈: ${availableModules}`);
-            return;
-        }
+        const availableModules = Object.keys(App.moduleConfig).join(', ');
+        showMessage(`알 수 없는 모듈입니다: ${moduleName}\n사용 가능한 모듈: ${availableModules}`);
+        return;
     }
     
     App.state.currentModule = moduleName;

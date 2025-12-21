@@ -3415,7 +3415,25 @@
                     }
                 }
                 
-                // 최종 확인
+                // 최종 확인 및 강제 추가 (한 번 더 확인)
+                if (!App.moduleConfig.cissp) {
+                    console.error('❌ [최종 확인] CISSP 모듈이 여전히 없습니다! 강제로 추가합니다.');
+                    App.moduleConfig.cissp = {
+                        title: '🔐 CISSP 문제집 (1850문제)',
+                        itemsFile: 'data/items_cissp.jsonl',
+                        tablesFile: '',
+                        vocabularyFile: 'data/cissp_vocabulary.json',
+                        type: 'cissp',
+                        maxRange: 1850,
+                        isCISSP: true,
+                        supportsBilingual: true
+                    };
+                    console.log('✅ [최종 확인] CISSP 모듈 강제 추가 완료');
+                    // #region agent log
+                    fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:3418',message:'CISSP module force added in final check',data:{modules:Object.keys(App.moduleConfig)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+                    // #endregion
+                }
+                
                 console.log('📋 현재 등록된 모듈 목록:', Object.keys(App.moduleConfig));
                 console.log('📋 CISSP 모듈 존재 여부:', App.moduleConfig.cissp ? '✅ 있음' : '❌ 없음');
                 if (App.moduleConfig.cissp) {
