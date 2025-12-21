@@ -2,7 +2,7 @@
 window.App = window.App || {};
 
 // Config 버전 (캐시 무효화용)
-App.configVersion = '20251217_cissp_final';
+App.configVersion = '20251221_cissp_force_deploy';
 
 // 전역 변수
 App.state = {
