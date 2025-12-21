@@ -58,17 +58,16 @@ App.moduleConfig = {
         maxRange: 20,
         isPMP: true
     },
-    // CISSP 모듈 일시적으로 비활성화
-    // 'cissp': {
-    //     title: '🔐 CISSP 문제집 (1850문제)',
-    //     itemsFile: 'data/items_cissp.jsonl',
-    //     tablesFile: '',
-    //     vocabularyFile: 'data/cissp_vocabulary.json',
-    //     type: 'cissp',
-    //     maxRange: 1850,
-    //     isCISSP: true,
-    //     supportsBilingual: true
-    // },
+    'cissp': {
+        title: '🔐 CISSP 문제집 (1850문제)',
+        itemsFile: 'data/items_cissp.jsonl',
+        tablesFile: '',
+        vocabularyFile: 'data/cissp_vocabulary.json',
+        type: 'cissp',
+        maxRange: 1850,
+        isCISSP: true,
+        supportsBilingual: true
+    },
     'theory': {
         title: '정처기 실기 이론',
         itemsFile: 'data/items_theory.jsonl',
