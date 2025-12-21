@@ -20,12 +20,18 @@ function closeMenu() {
 
 // 모듈 전환
 function switchModule(moduleName) {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:22',message:'switchModule called',data:{moduleName,hasApp:typeof App!=='undefined',hasConfig:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined',modules:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined'?Object.keys(App.moduleConfig):[],hasCissp:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined'&&!!App.moduleConfig.cissp},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+    // #endregion
     closeMenu();
     
     // App.moduleConfig가 초기화되지 않은 경우
     if (!App || !App.moduleConfig) {
         console.error('App.moduleConfig가 초기화되지 않았습니다. config.js가 로드되었는지 확인하세요.');
         console.error('App 객체:', App);
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:29',message:'App.moduleConfig not initialized',data:{moduleName},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
+        // #endregion
         showMessage('모듈 설정을 불러올 수 없습니다. 페이지를 새로고침해주세요.');
         return;
     }
@@ -43,10 +49,16 @@ function switchModule(moduleName) {
     let cisspModuleAdded = false;
     if (moduleName === 'cissp') {
         console.log('🔐 CISSP 모듈 전환 시도');
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:44',message:'CISSP module switch attempt',data:{hasCissp:!!App.moduleConfig['cissp'],modules:Object.keys(App.moduleConfig),configVersion:App.configVersion||'unknown'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+        // #endregion
         if (!App.moduleConfig['cissp']) {
             console.error('❌ CISSP 모듈 설정을 찾을 수 없습니다!');
             console.error('전체 모듈 목록:', Object.keys(App.moduleConfig));
             console.error('모듈 키 확인:', Object.keys(App.moduleConfig).includes('cissp'));
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:47',message:'CISSP module not found',data:{modules:Object.keys(App.moduleConfig),configVersion:App.configVersion||'unknown'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+            // #endregion
             
             // 강제로 CISSP 모듈 추가
             console.warn('⚠️ CISSP 모듈을 강제로 추가합니다.');
@@ -63,22 +75,23 @@ function switchModule(moduleName) {
             cisspModuleAdded = true;
             console.log('✅ CISSP 모듈을 menu.js에서 강제로 추가했습니다.');
             console.log('추가 후 확인:', App.moduleConfig['cissp']);
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:64',message:'CISSP module added in menu.js',data:{modules:Object.keys(App.moduleConfig),hasCissp:!!App.moduleConfig['cissp']},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+            // #endregion
         } else {
             console.log('✅ CISSP 모듈 설정 발견:', App.moduleConfig['cissp']);
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:67',message:'CISSP module found',data:{modules:Object.keys(App.moduleConfig)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
+            // #endregion
         }
     }
     
-    // 모듈 존재 여부 최종 확인 (CISSP 모듈이 방금 추가된 경우 제외)
-    if (!App.moduleConfig[moduleName]) {
-        console.error('❌ 알 수 없는 모듈:', moduleName);
-        console.error('사용 가능한 모듈:', Object.keys(App.moduleConfig));
-        console.error('모듈 키 정확히 일치하는지 확인:', Object.keys(App.moduleConfig).filter(k => k === moduleName));
-        console.error('CISSP 모듈 추가 여부:', cisspModuleAdded);
-        console.error('현재 App.moduleConfig[moduleName]:', App.moduleConfig[moduleName]);
-        
-        // CISSP 모듈이 방금 추가되었는데도 없으면, 다시 한 번 시도
-        if (moduleName === 'cissp' && !cisspModuleAdded) {
-            console.warn('⚠️ CISSP 모듈이 여전히 없습니다. 재시도합니다.');
+    // 모듈 존재 여부 최종 확인
+    // CISSP 모듈이 방금 추가된 경우 다시 확인
+    if (moduleName === 'cissp' && cisspModuleAdded) {
+        // 추가 후 다시 확인
+        if (!App.moduleConfig['cissp']) {
+            console.error('❌ CISSP 모듈 추가 후에도 없습니다. 재시도합니다.');
             App.moduleConfig['cissp'] = {
                 title: '🔐 CISSP 문제집 (1850문제)',
                 itemsFile: 'data/items_cissp.jsonl',
@@ -90,7 +103,45 @@ function switchModule(moduleName) {
                 supportsBilingual: true
             };
             console.log('✅ CISSP 모듈 재추가 완료:', App.moduleConfig['cissp']);
-        } else if (moduleName !== 'cissp') {
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:92',message:'CISSP module retry added after initial add',data:{modules:Object.keys(App.moduleConfig),hasCissp:!!App.moduleConfig['cissp']},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+            // #endregion
+        }
+    }
+    
+    // 최종 모듈 존재 여부 확인
+    if (!App.moduleConfig[moduleName]) {
+        console.error('❌ 알 수 없는 모듈:', moduleName);
+        console.error('사용 가능한 모듈:', Object.keys(App.moduleConfig));
+        console.error('모듈 키 정확히 일치하는지 확인:', Object.keys(App.moduleConfig).filter(k => k === moduleName));
+        console.error('CISSP 모듈 추가 여부:', cisspModuleAdded);
+        console.error('현재 App.moduleConfig[moduleName]:', App.moduleConfig[moduleName]);
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:110',message:'Module not found after all checks',data:{moduleName,modules:Object.keys(App.moduleConfig),cisspModuleAdded,moduleValue:App.moduleConfig[moduleName]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+        // #endregion
+        
+        // CISSP 모듈인 경우 마지막 시도
+        if (moduleName === 'cissp') {
+            console.warn('⚠️ CISSP 모듈이 여전히 없습니다. 최종 재시도합니다.');
+            App.moduleConfig['cissp'] = {
+                title: '🔐 CISSP 문제집 (1850문제)',
+                itemsFile: 'data/items_cissp.jsonl',
+                tablesFile: '',
+                vocabularyFile: 'data/cissp_vocabulary.json',
+                type: 'cissp',
+                maxRange: 1850,
+                isCISSP: true,
+                supportsBilingual: true
+            };
+            console.log('✅ CISSP 모듈 최종 추가 완료:', App.moduleConfig['cissp']);
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'menu.js:125',message:'CISSP module final retry added',data:{modules:Object.keys(App.moduleConfig),hasCissp:!!App.moduleConfig['cissp']},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
+            // #endregion
+            // CISSP 모듈 추가 후에도 없으면 계속 진행 (오류 표시하지 않음)
+            if (!App.moduleConfig['cissp']) {
+                console.error('❌ CISSP 모듈을 추가할 수 없습니다. 계속 진행합니다.');
+            }
+        } else {
             const availableModules = Object.keys(App.moduleConfig).join(', ');
             showMessage(`알 수 없는 모듈입니다: ${moduleName}\n사용 가능한 모듈: ${availableModules}`);
             return;
