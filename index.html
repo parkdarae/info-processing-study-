@@ -3520,6 +3520,74 @@
                 await loadScript('js/modes/range.js?v=20251105004');
                 console.log('🎉 모든 스크립트 로드 완료');
                 
+                // 최종 CISSP 모듈 확인 및 추가 (모든 스크립트 로드 후)
+                (function finalCISSPCheck() {
+                    setTimeout(() => {
+                        if (typeof App === 'undefined' || typeof App.moduleConfig === 'undefined') {
+                            console.warn('⚠️ [최종 체크] App.moduleConfig가 아직 없습니다. 재시도합니다.');
+                            finalCISSPCheck();
+                            return;
+                        }
+                        
+                        if (!App.moduleConfig.cissp) {
+                            console.warn('⚠️ [최종 체크] CISSP 모듈이 없습니다. 강제로 추가합니다.');
+                            App.moduleConfig.cissp = {
+                                title: '🔐 CISSP 문제집 (1850문제)',
+                                itemsFile: 'data/items_cissp.jsonl',
+                                tablesFile: '',
+                                vocabularyFile: 'data/cissp_vocabulary.json',
+                                type: 'cissp',
+                                maxRange: 1850,
+                                isCISSP: true,
+                                supportsBilingual: true
+                            };
+                            console.log('✅ [최종 체크] CISSP 모듈 추가 완료');
+                        }
+                        
+                        // switchModule 최종 오버라이드
+                        if (typeof window.switchModule === 'function') {
+                            const originalSwitchModule = window.switchModule;
+                            window.switchModule = function(moduleName) {
+                                console.log('[최종 오버라이드 switchModule] 호출:', moduleName);
+                                
+                                // CISSP 모듈 강제 추가
+                                if (moduleName === 'cissp') {
+                                    if (!App.moduleConfig) App.moduleConfig = {};
+                                    if (!App.moduleConfig.cissp) {
+                                        App.moduleConfig.cissp = {
+                                            title: '🔐 CISSP 문제집 (1850문제)',
+                                            itemsFile: 'data/items_cissp.jsonl',
+                                            tablesFile: '',
+                                            vocabularyFile: 'data/cissp_vocabulary.json',
+                                            type: 'cissp',
+                                            maxRange: 1850,
+                                            isCISSP: true,
+                                            supportsBilingual: true
+                                        };
+                                        console.log('✅ [최종 오버라이드] CISSP 모듈 추가됨');
+                                    }
+                                }
+                                
+                                // 원래 함수 호출
+                                try {
+                                    return originalSwitchModule.call(this, moduleName);
+                                } catch (error) {
+                                    console.error('[최종 오버라이드] 오류:', error);
+                                    // 오류 발생 시 직접 처리
+                                    if (moduleName === 'cissp' && App.moduleConfig.cissp) {
+                                        if (typeof window.cisspModule !== 'undefined') {
+                                            window.cisspModule.loadItems().then(() => {
+                                                window.cisspModule.renderDashboard();
+                                            });
+                                        }
+                                    }
+                                }
+                            };
+                            console.log('✅ [최종 체크] switchModule 오버라이드 완료');
+                        }
+                    }, 500);
+                })();
+                
                 // CISSP 모듈 설정 확인
                 console.log('=== 모듈 설정 검증 ===');
                 console.log('App 객체 존재:', typeof App !== 'undefined');
