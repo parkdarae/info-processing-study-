@@ -3326,37 +3326,50 @@
             try {
                 // 강력한 캐시 무효화를 위한 버전 번호 (타임스탬프 포함)
                 const configVersion = '20251217_cissp_final_' + Date.now();
+                
+                // config.js 로드 전에 CISSP 모듈이 이미 추가되어 있는지 확인
+                if (typeof App !== 'undefined' && App.moduleConfig && App.moduleConfig.cissp) {
+                    console.log('✅ CISSP 모듈이 이미 초기화되어 있습니다 (index.html 사전 초기화).');
+                }
+                
                 await loadScript(`js/config.js?v=${configVersion}`);
                 
-                // config.js 로드 후 즉시 CISSP 모듈 확인 및 강제 추가
-                let checkCount = 0;
-                const checkCISSP = setInterval(() => {
-                    checkCount++;
-                    if (typeof App !== 'undefined' && App.moduleConfig) {
-                        clearInterval(checkCISSP);
-                        
-                        // CISSP 모듈이 없으면 강제로 추가
-                        if (!App.moduleConfig.cissp) {
-                            console.warn('⚠️ CISSP 모듈이 config.js에 없습니다. 강제로 추가합니다.');
-                            App.moduleConfig.cissp = {
-                                title: '🔐 CISSP 문제집 (1850문제)',
-                                itemsFile: 'data/items_cissp.jsonl',
-                                tablesFile: '',
-                                vocabularyFile: 'data/cissp_vocabulary.json',
-                                type: 'cissp',
-                                maxRange: 1850,
-                                isCISSP: true,
-                                supportsBilingual: true
-                            };
-                            console.log('✅ CISSP 모듈을 강제로 추가했습니다:', App.moduleConfig.cissp);
-                        } else {
-                            console.log('✅ CISSP 모듈이 config.js에 있습니다:', App.moduleConfig.cissp);
-                        }
-                    } else if (checkCount > 20) {
-                        clearInterval(checkCISSP);
-                        console.error('⚠️ App.moduleConfig가 2초 내에 초기화되지 않았습니다.');
-                    }
-                }, 100);
+                // config.js 로드 후 CISSP 모듈 최종 확인 및 강제 추가
+                await new Promise(resolve => setTimeout(resolve, 150)); // 조금 더 대기
+                
+                // App.moduleConfig가 없으면 초기화
+                if (typeof App === 'undefined') {
+                    window.App = {};
+                }
+                if (typeof App.moduleConfig === 'undefined') {
+                    App.moduleConfig = {};
+                    console.warn('⚠️ App.moduleConfig가 없어서 초기화했습니다.');
+                }
+                
+                // CISSP 모듈이 없으면 무조건 추가 (config.js가 덮어썼을 수 있음)
+                if (!App.moduleConfig.cissp) {
+                    console.warn('⚠️ CISSP 모듈이 config.js에 없습니다. 강제로 추가합니다.');
+                    App.moduleConfig.cissp = {
+                        title: '🔐 CISSP 문제집 (1850문제)',
+                        itemsFile: 'data/items_cissp.jsonl',
+                        tablesFile: '',
+                        vocabularyFile: 'data/cissp_vocabulary.json',
+                        type: 'cissp',
+                        maxRange: 1850,
+                        isCISSP: true,
+                        supportsBilingual: true
+                    };
+                    console.log('✅ CISSP 모듈을 index.html에서 강제로 추가했습니다.');
+                } else {
+                    console.log('✅ CISSP 모듈이 config.js에 있습니다:', App.moduleConfig.cissp);
+                }
+                
+                // 최종 확인
+                console.log('📋 현재 등록된 모듈 목록:', Object.keys(App.moduleConfig));
+                console.log('📋 CISSP 모듈 존재 여부:', App.moduleConfig.cissp ? '✅ 있음' : '❌ 없음');
+                if (App.moduleConfig.cissp) {
+                    console.log('📋 CISSP 모듈 상세:', App.moduleConfig.cissp);
+                }
                 
                 await loadScript('js/app.js?v=20251105004');
                 await loadScript('js/utils/validator.js?v=20251105004');
