@@ -3435,7 +3435,9 @@
                 await loadScript('js/keyword130-module.js?v=20251106');
                 await loadScript('js/code-control-module.js?v=20251106');
                 await loadScript('js/components/theory-category.js?v=20251105220000');
-                await loadScript(`js/components/menu.js?v=20251221_cissp_fix_${Date.now()}`);
+                // menu.js 강제 캐시 무효화 (여러 파라미터 사용)
+                const menuVersion = `20251221_cissp_fix_${Date.now()}_${Math.random().toString(36).substring(7)}`;
+                await loadScript(`js/components/menu.js?v=${menuVersion}&t=${Date.now()}&r=${Math.random()}`);
                 await loadScript('js/components/modal.js?v=20251105004');
                 await loadScript('js/components/question-display.js?v=20251105004');
                 await loadScript('js/modes/range.js?v=20251105004');
