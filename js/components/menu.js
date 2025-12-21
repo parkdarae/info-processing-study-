@@ -39,19 +39,16 @@ function switchModule(moduleName) {
     console.log('전체 모듈 목록:', Object.keys(App.moduleConfig));
     console.log('모듈 개수:', Object.keys(App.moduleConfig).length);
     
-    // CISSP 모듈 특별 처리
+    // CISSP 모듈 특별 처리 - 먼저 확인하고 없으면 추가
+    let cisspModuleAdded = false;
     if (moduleName === 'cissp') {
         console.log('🔐 CISSP 모듈 전환 시도');
-        if (App.moduleConfig['cissp']) {
-            console.log('✅ CISSP 모듈 설정 발견:', App.moduleConfig['cissp']);
-        } else {
+        if (!App.moduleConfig['cissp']) {
             console.error('❌ CISSP 모듈 설정을 찾을 수 없습니다!');
             console.error('전체 모듈 목록:', Object.keys(App.moduleConfig));
             console.error('모듈 키 확인:', Object.keys(App.moduleConfig).includes('cissp'));
-            console.error('직접 접근:', App.moduleConfig['cissp']);
-            console.error('점 표기법:', App.moduleConfig.cissp);
             
-            // 강제로 CISSP 모듈 추가 시도
+            // 강제로 CISSP 모듈 추가
             console.warn('⚠️ CISSP 모듈을 강제로 추가합니다.');
             App.moduleConfig['cissp'] = {
                 title: '🔐 CISSP 문제집 (1850문제)',
@@ -63,17 +60,41 @@ function switchModule(moduleName) {
                 isCISSP: true,
                 supportsBilingual: true
             };
+            cisspModuleAdded = true;
             console.log('✅ CISSP 모듈을 menu.js에서 강제로 추가했습니다.');
+            console.log('추가 후 확인:', App.moduleConfig['cissp']);
+        } else {
+            console.log('✅ CISSP 모듈 설정 발견:', App.moduleConfig['cissp']);
         }
     }
     
+    // 모듈 존재 여부 최종 확인 (CISSP 모듈이 방금 추가된 경우 제외)
     if (!App.moduleConfig[moduleName]) {
         console.error('❌ 알 수 없는 모듈:', moduleName);
         console.error('사용 가능한 모듈:', Object.keys(App.moduleConfig));
         console.error('모듈 키 정확히 일치하는지 확인:', Object.keys(App.moduleConfig).filter(k => k === moduleName));
-        const availableModules = Object.keys(App.moduleConfig).join(', ');
-        showMessage(`알 수 없는 모듈입니다: ${moduleName}\n사용 가능한 모듈: ${availableModules}`);
-        return;
+        console.error('CISSP 모듈 추가 여부:', cisspModuleAdded);
+        console.error('현재 App.moduleConfig[moduleName]:', App.moduleConfig[moduleName]);
+        
+        // CISSP 모듈이 방금 추가되었는데도 없으면, 다시 한 번 시도
+        if (moduleName === 'cissp' && !cisspModuleAdded) {
+            console.warn('⚠️ CISSP 모듈이 여전히 없습니다. 재시도합니다.');
+            App.moduleConfig['cissp'] = {
+                title: '🔐 CISSP 문제집 (1850문제)',
+                itemsFile: 'data/items_cissp.jsonl',
+                tablesFile: '',
+                vocabularyFile: 'data/cissp_vocabulary.json',
+                type: 'cissp',
+                maxRange: 1850,
+                isCISSP: true,
+                supportsBilingual: true
+            };
+            console.log('✅ CISSP 모듈 재추가 완료:', App.moduleConfig['cissp']);
+        } else if (moduleName !== 'cissp') {
+            const availableModules = Object.keys(App.moduleConfig).join(', ');
+            showMessage(`알 수 없는 모듈입니다: ${moduleName}\n사용 가능한 모듈: ${availableModules}`);
+            return;
+        }
     }
     
     App.state.currentModule = moduleName;
