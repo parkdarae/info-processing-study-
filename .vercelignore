@@ -1,0 +1,19 @@
+# Vercel 배포 시 무시할 파일/폴더
+node_modules/
+.git/
+.cursor/
+*.log
+*.md
+!README.md
+scripts/
+tests/
+docs/
+*.py
+*.bat
+playwright.config.ts
+check_deployed_menu.js
+verify_vercel_config.js
+debug_cissp_playwright.js
+MANUAL_VERCEL_DEPLOY.md
+VERCEL_PROJECT_RESET.md
+
