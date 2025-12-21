@@ -1776,6 +1776,9 @@
         // 전역 변수와 모듈 설정은 config.js에서 관리됨
         // CISSP 모듈이 config.js에 없을 경우를 대비한 사전 초기화
         (function() {
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:1778',message:'CISSP pre-init start',data:{hasApp:typeof window.App!=='undefined',hasConfig:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+            // #endregion
             if (typeof window.App === 'undefined') {
                 window.App = {};
             }
@@ -1795,6 +1798,13 @@
                     supportsBilingual: true
                 };
                 console.log('✅ CISSP 모듈을 index.html에서 사전 초기화했습니다.');
+                // #region agent log
+                fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:1797',message:'CISSP pre-init added',data:{modules:Object.keys(App.moduleConfig)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+                // #endregion
+            } else {
+                // #region agent log
+                fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:1800',message:'CISSP pre-init already exists',data:{modules:Object.keys(App.moduleConfig)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+                // #endregion
             }
         })();
         
@@ -3325,14 +3335,22 @@
         async function loadAllScripts() {
             try {
                 // 강력한 캐시 무효화를 위한 버전 번호 (타임스탬프 포함)
-                const configVersion = '20251217_cissp_final_' + Date.now();
+                const configVersion = '20251221_cissp_fix_' + Date.now();
                 
                 // config.js 로드 전에 CISSP 모듈이 이미 추가되어 있는지 확인
                 if (typeof App !== 'undefined' && App.moduleConfig && App.moduleConfig.cissp) {
                     console.log('✅ CISSP 모듈이 이미 초기화되어 있습니다 (index.html 사전 초기화).');
                 }
                 
-                await loadScript(`js/config.js?v=${configVersion}`);
+                // 사전 초기화된 CISSP 모듈 백업
+                const cisspBackup = typeof App !== 'undefined' && App.moduleConfig && App.moduleConfig.cissp 
+                    ? JSON.parse(JSON.stringify(App.moduleConfig.cissp)) : null;
+                
+                await loadScript(`js/config.js?v=${configVersion}&t=${Date.now()}`);
+                
+                // #region agent log
+                fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:3336',message:'config.js loaded',data:{hasApp:typeof App!=='undefined',hasConfig:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined',modules:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined'?Object.keys(App.moduleConfig):[],hasCissp:typeof App!=='undefined'&&typeof App.moduleConfig!=='undefined'&&!!App.moduleConfig.cissp},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+                // #endregion
                 
                 // config.js 로드 후 CISSP 모듈 최종 확인 및 강제 추가
                 await new Promise(resolve => setTimeout(resolve, 150)); // 조금 더 대기
@@ -3344,12 +3362,19 @@
                 if (typeof App.moduleConfig === 'undefined') {
                     App.moduleConfig = {};
                     console.warn('⚠️ App.moduleConfig가 없어서 초기화했습니다.');
+                    // #region agent log
+                    fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:3346',message:'App.moduleConfig was undefined after config.js',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
+                    // #endregion
                 }
                 
                 // CISSP 모듈이 없으면 무조건 추가 (config.js가 덮어썼을 수 있음)
+                // 백업이 있으면 복원, 없으면 새로 생성
                 if (!App.moduleConfig.cissp) {
                     console.warn('⚠️ CISSP 모듈이 config.js에 없습니다. 강제로 추가합니다.');
-                    App.moduleConfig.cissp = {
+                    // #region agent log
+                    fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:3350',message:'CISSP missing after config.js load',data:{modules:Object.keys(App.moduleConfig),configVersion:App.configVersion||'unknown',hadBackup:!!cisspBackup},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+                    // #endregion
+                    App.moduleConfig.cissp = cisspBackup || {
                         title: '🔐 CISSP 문제집 (1850문제)',
                         itemsFile: 'data/items_cissp.jsonl',
                         tablesFile: '',
@@ -3359,9 +3384,33 @@
                         isCISSP: true,
                         supportsBilingual: true
                     };
-                    console.log('✅ CISSP 모듈을 index.html에서 강제로 추가했습니다.');
+                    console.log('✅ CISSP 모듈을 index.html에서 강제로 추가했습니다.', cisspBackup ? '(백업에서 복원)' : '(새로 생성)');
+                    // #region agent log
+                    fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:3362',message:'CISSP added after config.js',data:{modules:Object.keys(App.moduleConfig),restored:!!cisspBackup},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+                    // #endregion
                 } else {
                     console.log('✅ CISSP 모듈이 config.js에 있습니다:', App.moduleConfig.cissp);
+                    // #region agent log
+                    fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:3364',message:'CISSP exists in config.js',data:{modules:Object.keys(App.moduleConfig)},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+                    // #endregion
+                }
+                
+                // config.js가 오래된 버전인 경우 강제로 CISSP 추가 (configVersion이 없거나 오래된 경우)
+                if (!App.configVersion || App.configVersion === '20251105004' || App.configVersion.includes('20251105')) {
+                    console.warn('⚠️ 오래된 config.js 버전 감지. CISSP 모듈 강제 추가.');
+                    if (!App.moduleConfig.cissp) {
+                        App.moduleConfig.cissp = cisspBackup || {
+                            title: '🔐 CISSP 문제집 (1850문제)',
+                            itemsFile: 'data/items_cissp.jsonl',
+                            tablesFile: '',
+                            vocabularyFile: 'data/cissp_vocabulary.json',
+                            type: 'cissp',
+                            maxRange: 1850,
+                            isCISSP: true,
+                            supportsBilingual: true
+                        };
+                        console.log('✅ 오래된 config.js 버전에 CISSP 모듈 추가 완료');
+                    }
                 }
                 
                 // 최종 확인
@@ -3370,6 +3419,9 @@
                 if (App.moduleConfig.cissp) {
                     console.log('📋 CISSP 모듈 상세:', App.moduleConfig.cissp);
                 }
+                // #region agent log
+                fetch('http://127.0.0.1:7242/ingest/d271eea3-8ff8-476b-a07c-f3d58e2f79f8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:3372',message:'Final check after config.js',data:{modules:Object.keys(App.moduleConfig),hasCissp:!!App.moduleConfig.cissp},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
+                // #endregion
                 
                 await loadScript('js/app.js?v=20251105004');
                 await loadScript('js/utils/validator.js?v=20251105004');
