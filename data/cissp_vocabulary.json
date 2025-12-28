@@ -2838,5 +2838,290 @@
     "meaning": "서지 보호기",
     "pos": "noun",
     "example": "Surge protectors prevent electrical damage."
+  },
+  "program": {
+    "meaning": "프로그램",
+    "pos": "noun",
+    "example": "The security program ensures compliance."
+  },
+  "vulnerabilities": {
+    "meaning": "취약점들",
+    "pos": "noun",
+    "example": "Vulnerabilities must be patched promptly."
+  },
+  "primary": {
+    "meaning": "주요한, 1차적인",
+    "pos": "adjective",
+    "example": "The primary goal is security."
+  },
+  "cloud": {
+    "meaning": "클라우드",
+    "pos": "noun",
+    "example": "Cloud computing provides scalability."
+  },
+  "plan": {
+    "meaning": "계획",
+    "pos": "noun",
+    "example": "A disaster recovery plan is essential."
+  },
+  "site": {
+    "meaning": "사이트, 장소",
+    "pos": "noun",
+    "example": "The backup site is ready."
+  },
+  "company": {
+    "meaning": "회사",
+    "pos": "noun",
+    "example": "The company implements security policies."
+  },
+  "change": {
+    "meaning": "변경, 변화",
+    "pos": "noun",
+    "example": "Change management is critical."
+  },
+  "first": {
+    "meaning": "첫 번째",
+    "pos": "adjective",
+    "example": "The first step is assessment."
+  },
+  "address": {
+    "meaning": "주소, 처리하다",
+    "pos": "noun/verb",
+    "example": "Address security concerns immediately."
+  },
+  "disaster": {
+    "meaning": "재해, 재난",
+    "pos": "noun",
+    "example": "Disaster recovery plans are mandatory."
+  },
+  "password": {
+    "meaning": "비밀번호",
+    "pos": "noun",
+    "example": "Strong passwords are required."
+  },
+  "owner": {
+    "meaning": "소유자",
+    "pos": "noun",
+    "example": "The data owner is responsible."
+  },
+  "provider": {
+    "meaning": "제공자, 공급자",
+    "pos": "noun",
+    "example": "The cloud provider manages infrastructure."
+  },
+  "technology": {
+    "meaning": "기술",
+    "pos": "noun",
+    "example": "New technology brings new risks."
+  },
+  "report": {
+    "meaning": "보고서, 보고하다",
+    "pos": "noun/verb",
+    "example": "Report incidents immediately."
+  },
+  "file": {
+    "meaning": "파일",
+    "pos": "noun",
+    "example": "File permissions must be set correctly."
+  },
+  "party": {
+    "meaning": "당사자",
+    "pos": "noun",
+    "example": "Third party vendors must be vetted."
+  },
+  "applications": {
+    "meaning": "애플리케이션들",
+    "pos": "noun",
+    "example": "Applications must be secured."
+  },
+  "device": {
+    "meaning": "장치",
+    "pos": "noun",
+    "example": "Mobile devices require encryption."
+  },
+  "provides": {
+    "meaning": "제공한다",
+    "pos": "verb",
+    "example": "The system provides authentication."
+  },
+  "effective": {
+    "meaning": "효과적인",
+    "pos": "adjective",
+    "example": "Effective controls reduce risk."
+  },
+  "protection": {
+    "meaning": "보호",
+    "pos": "noun",
+    "example": "Data protection is mandatory."
+  },
+  "within": {
+    "meaning": "내부에, 안에",
+    "pos": "preposition",
+    "example": "Access within the network is allowed."
+  },
+  "third": {
+    "meaning": "세 번째",
+    "pos": "adjective",
+    "example": "Third party audits are required."
+  },
+  "impact": {
+    "meaning": "영향, 충격",
+    "pos": "noun",
+    "example": "Assess the impact of breaches."
+  },
+  "important": {
+    "meaning": "중요한",
+    "pos": "adjective",
+    "example": "Important data must be encrypted."
+  },
+  "processes": {
+    "meaning": "프로세스들",
+    "pos": "noun",
+    "example": "Business processes must be documented."
+  },
+  "environment": {
+    "meaning": "환경",
+    "pos": "noun",
+    "example": "The production environment is secured."
+  },
+  "traffic": {
+    "meaning": "트래픽, 통신량",
+    "pos": "noun",
+    "example": "Network traffic is monitored."
+  },
+  "critical": {
+    "meaning": "중요한, 비판적인",
+    "pos": "adjective",
+    "example": "Critical systems need redundancy."
+  },
+  "perform": {
+    "meaning": "수행하다",
+    "pos": "verb",
+    "example": "Perform regular security audits."
+  },
+  "internal": {
+    "meaning": "내부의",
+    "pos": "adjective",
+    "example": "Internal threats are also dangerous."
+  },
+  "soc": {
+    "meaning": "SOC (보안 운영 센터)",
+    "pos": "noun",
+    "example": "The SOC monitors security events."
+  },
+  "team": {
+    "meaning": "팀",
+    "pos": "noun",
+    "example": "The security team responds to incidents."
+  },
+  "attacks": {
+    "meaning": "공격들",
+    "pos": "noun",
+    "example": "Attacks are increasing in frequency."
+  },
+  "operations": {
+    "meaning": "운영, 작업",
+    "pos": "noun",
+    "example": "Security operations are 24/7."
+  },
+  "virtual": {
+    "meaning": "가상의",
+    "pos": "adjective",
+    "example": "Virtual machines provide isolation."
+  },
+  "design": {
+    "meaning": "설계, 디자인",
+    "pos": "noun",
+    "example": "Secure design principles must be followed."
+  },
+  "open": {
+    "meaning": "열린, 공개된",
+    "pos": "adjective",
+    "example": "Open source software is widely used."
+  },
+  "between": {
+    "meaning": "사이에",
+    "pos": "preposition",
+    "example": "Communication between systems is encrypted."
+  },
+  "digital": {
+    "meaning": "디지털",
+    "pos": "adjective",
+    "example": "Digital signatures provide authenticity."
+  },
+  "potential": {
+    "meaning": "잠재적인",
+    "pos": "adjective",
+    "example": "Identify potential vulnerabilities."
+  },
+  "determine": {
+    "meaning": "결정하다",
+    "pos": "verb",
+    "example": "Determine the risk level."
+  },
+  "unauthorized": {
+    "meaning": "무단의, 승인되지 않은",
+    "pos": "adjective",
+    "example": "Unauthorized access is prohibited."
+  },
+  "policies": {
+    "meaning": "정책들",
+    "pos": "noun",
+    "example": "Security policies must be enforced."
+  },
+  "solution": {
+    "meaning": "해결책, 솔루션",
+    "pos": "noun",
+    "example": "Find the best security solution."
+  },
+  "source": {
+    "meaning": "소스, 출처",
+    "pos": "noun",
+    "example": "Open source code is reviewed."
+  },
+  "common": {
+    "meaning": "일반적인, 공통의",
+    "pos": "adjective",
+    "example": "Common vulnerabilities are documented."
+  },
+  "appropriate": {
+    "meaning": "적절한",
+    "pos": "adjective",
+    "example": "Use appropriate encryption methods."
+  },
+  "media": {
+    "meaning": "미디어, 매체",
+    "pos": "noun",
+    "example": "Removable media must be encrypted."
+  },
+  "storage": {
+    "meaning": "저장소, 저장",
+    "pos": "noun",
+    "example": "Cloud storage requires encryption."
+  },
+  "resources": {
+    "meaning": "자원들",
+    "pos": "noun",
+    "example": "Allocate resources for security."
+  },
+  "services": {
+    "meaning": "서비스들",
+    "pos": "noun",
+    "example": "Cloud services provide scalability."
+  },
+  "method": {
+    "meaning": "방법",
+    "pos": "noun",
+    "example": "Choose the right authentication method."
+  },
+  "public": {
+    "meaning": "공개된, 공공의",
+    "pos": "adjective",
+    "example": "Public key cryptography is used."
+  },
+  "model": {
+    "meaning": "모델",
+    "pos": "noun",
+    "example": "The security model defines access."
   }
 }
