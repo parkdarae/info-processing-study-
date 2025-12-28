@@ -946,20 +946,18 @@ class CISSPModule {
                 </div>
                 
                 <!-- 단어/문장 학습 모드 -->
-                <div class="vocab-sentence-learning-section">
+                <div class="main-study-modes">
                     <h3 class="section-title"><i class="fas fa-book-reader"></i> 단어 & 문장 학습</h3>
-                    <div class="vocab-sentence-grid">
-                        <button class="vocab-sentence-card vocab-card" onclick="cisspModule.startWordLearning()">
-                            <div class="vocab-sentence-icon"><i class="fas fa-spell-check"></i></div>
-                            <div class="vocab-sentence-title">자주 나오는 단어 학습</div>
-                            <div class="vocab-sentence-desc">빈도 40 이상 단어</div>
-                            <div class="vocab-sentence-count" id="word-learning-count">로딩 중...</div>
+                    <div class="main-mode-grid">
+                        <button class="main-mode-card accent" onclick="cisspModule.startWordLearning()">
+                            <div class="mode-icon"><i class="fas fa-spell-check"></i></div>
+                            <div class="mode-title">자주 나오는 단어 학습</div>
+                            <div class="mode-desc" id="word-learning-count">로딩 중...</div>
                         </button>
-                        <button class="vocab-sentence-card sentence-card" onclick="cisspModule.startSentenceLearning()">
-                            <div class="vocab-sentence-icon"><i class="fas fa-quote-left"></i></div>
-                            <div class="vocab-sentence-title">자주 나오는 문장 학습</div>
-                            <div class="vocab-sentence-desc">빈출 문장 패턴</div>
-                            <div class="vocab-sentence-count" id="sentence-learning-count">로딩 중...</div>
+                        <button class="main-mode-card secondary" onclick="cisspModule.startSentenceLearning()">
+                            <div class="mode-icon"><i class="fas fa-quote-left"></i></div>
+                            <div class="mode-title">자주 나오는 문장 학습</div>
+                            <div class="mode-desc" id="sentence-learning-count">로딩 중...</div>
                         </button>
                     </div>
                 </div>
@@ -991,7 +989,7 @@ class CISSPModule {
             
             const wordCountEl = document.getElementById('word-learning-count');
             if (wordCountEl) {
-                wordCountEl.textContent = `${frequentWords.length}개 단어`;
+                wordCountEl.textContent = `빈도 40 이상 ${frequentWords.length}개 단어`;
             }
             
             // 문장 개수는 문제에서 추출 (최대 200개)
@@ -999,7 +997,7 @@ class CISSPModule {
             if (sentenceCountEl) {
                 // 문제에서 문장 패턴 추출하여 개수 계산
                 const sentenceCount = Math.min(200, this.items.length);
-                sentenceCountEl.textContent = `${sentenceCount}개 문장`;
+                sentenceCountEl.textContent = `빈출 문장 패턴 ${sentenceCount}개`;
             }
         } catch (error) {
             console.error('단어/문장 카운트 업데이트 실패:', error);

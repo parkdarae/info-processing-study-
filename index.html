@@ -1572,8 +1572,36 @@
                 <div class="menu-item" onclick="switchModule('theory_frequent')" id="menu_theory_frequent">
                     <i class="fas fa-star"></i> ⭐ 실기 최빈출 50개
                 </div>
-                <div class="menu-item" onclick="switchModule('cissp')" id="menu_cissp">
-                    <i class="fas fa-shield-alt"></i> 🛡️ CISSP 문제은행 (1850)
+                <div class="past-exam-selector" style="margin-top: 10px;">
+                    <div style="font-weight: 500; margin-bottom: 10px; cursor: pointer;" onclick="toggleCISSPMenu()">
+                        <i class="fas fa-shield-alt"></i> 🔐 CISSP 문제은행 (1850) <i class="fas fa-chevron-down" id="cisspMenuIcon"></i>
+                    </div>
+                    <div id="cisspSubMenu" style="display: none; padding-left: 15px;">
+                        <div class="menu-item" onclick="switchModule('cissp')" id="menu_cissp" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-home"></i> 대시보드
+                        </div>
+                        <div class="menu-item" onclick="switchModule('cissp'); setTimeout(() => cisspModule.startStudy('sequential'), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-play"></i> 순차학습
+                        </div>
+                        <div class="menu-item" onclick="switchModule('cissp'); setTimeout(() => cisspModule.startStudy('random'), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-random"></i> 랜덤학습
+                        </div>
+                        <div class="menu-item" onclick="switchModule('cissp'); setTimeout(() => cisspModule.startStudy('wrong'), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-redo"></i> 오답 복습
+                        </div>
+                        <div class="menu-item" onclick="switchModule('cissp'); setTimeout(() => cisspModule.startStudy('bookmarked'), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-star"></i> 체크문제
+                        </div>
+                        <div class="menu-item" onclick="switchModule('cissp'); setTimeout(() => cisspModule.showRangeModal(), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-sliders-h"></i> 범위학습
+                        </div>
+                        <div class="menu-item" onclick="switchModule('cissp'); setTimeout(() => cisspModule.startWordLearning(), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-spell-check"></i> 단어 학습
+                        </div>
+                        <div class="menu-item" onclick="switchModule('cissp'); setTimeout(() => cisspModule.startSentenceLearning(), 100)" style="padding: 8px 10px; font-size: 0.9em;">
+                            <i class="fas fa-quote-left"></i> 문장 학습
+                        </div>
+                    </div>
                 </div>
                 <div class="past-exam-selector" style="margin-top: 10px;">
                     <div style="font-weight: 500; margin-bottom: 10px; cursor: pointer;" onclick="togglePMPMenu()">
@@ -3117,6 +3145,22 @@
             
             sidebar.classList.toggle('show');
             overlay.classList.toggle('show');
+        }
+        
+        // CISSP 메뉴 토글
+        function toggleCISSPMenu() {
+            const subMenu = document.getElementById('cisspSubMenu');
+            const icon = document.getElementById('cisspMenuIcon');
+            
+            if (subMenu.style.display === 'none') {
+                subMenu.style.display = 'block';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                subMenu.style.display = 'none';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
         }
         
         // PMP 메뉴 토글
