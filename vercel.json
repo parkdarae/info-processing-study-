@@ -4,12 +4,6 @@
   "outputDirectory": ".",
   "installCommand": null,
   "framework": null,
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/index.html",
