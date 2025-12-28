@@ -24,3 +24,4 @@ print(f"Q020 (스텁/드라이버): {questions[19]['answer']['keys']}")
 
 
 
+

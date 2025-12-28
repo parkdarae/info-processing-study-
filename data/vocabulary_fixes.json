@@ -1,0 +1,192 @@
+[
+  {
+    "word": "accountability",
+    "old": "책임 추적성",
+    "new": "책임성"
+  },
+  {
+    "word": "threat",
+    "old": "위협",
+    "new": "발견사항 수정 확인"
+  },
+  {
+    "word": "baseline",
+    "old": "기준선, 베이스라인",
+    "new": "가격"
+  },
+  {
+    "word": "firewall",
+    "old": "방화벽",
+    "new": "위험 감소 효과"
+  },
+  {
+    "word": "hash",
+    "old": "해시",
+    "new": "벤더만 확인"
+  },
+  {
+    "word": "redundancy",
+    "old": "중복성",
+    "new": "기술 검토만"
+  },
+  {
+    "word": "asset",
+    "old": "자산",
+    "new": "자동화된 경고 처리"
+  },
+  {
+    "word": "classification",
+    "old": "분류",
+    "new": "비밀번호와 보안 질문"
+  },
+  {
+    "word": "sanitization",
+    "old": "소거, 정화",
+    "new": "삭제"
+  },
+  {
+    "word": "protocol",
+    "old": "프로토콜",
+    "new": "교육 빈도만"
+  },
+  {
+    "word": "sanitize",
+    "old": "정화하다",
+    "new": "기능 테스트만"
+  },
+  {
+    "word": "patch",
+    "old": "패치",
+    "new": "문서화만"
+  },
+  {
+    "word": "configuration",
+    "old": "구성, 설정",
+    "new": "다양한 관점 및 오류 발견"
+  },
+  {
+    "word": "monitoring",
+    "old": "모니터링",
+    "new": "식별 및 수집"
+  },
+  {
+    "word": "alert",
+    "old": "경보",
+    "new": "최신 기술"
+  },
+  {
+    "word": "deterrent",
+    "old": "억제책",
+    "new": "취약점 분석"
+  },
+  {
+    "word": "preventive",
+    "old": "예방적인",
+    "new": "위협 식별"
+  },
+  {
+    "word": "detective",
+    "old": "탐지적인",
+    "new": "대응책 결정"
+  },
+  {
+    "word": "corrective",
+    "old": "교정적인",
+    "new": "자산 및 데이터 흐름 식별"
+  },
+  {
+    "word": "administrative",
+    "old": "관리적인",
+    "new": "행정적"
+  },
+  {
+    "word": "technical",
+    "old": "기술적인",
+    "new": "문서 형식만"
+  },
+  {
+    "word": "physical",
+    "old": "물리적인",
+    "new": "설계 가이드 제공"
+  },
+  {
+    "word": "strategic",
+    "old": "전략적인",
+    "new": "교육 참석률만"
+  },
+  {
+    "word": "deploy",
+    "old": "배포하다",
+    "new": "스캔이 더 상세함"
+  },
+  {
+    "word": "tailgating",
+    "old": "테일게이팅",
+    "new": "3개의 서버, 2개의 데이터센터, 1개의 클라우드"
+  },
+  {
+    "word": "diffie-hellman",
+    "old": "디피-헬만",
+    "new": "Diffie-Hellman"
+  },
+  {
+    "word": "kerberos",
+    "old": "커버로스",
+    "new": "Kerberos"
+  },
+  {
+    "word": "bgp",
+    "old": "경계 게이트웨이 프로토콜",
+    "new": "BGP"
+  },
+  {
+    "word": "802.1x",
+    "old": "802.1X",
+    "new": "데이터 저장 비용 최적화"
+  },
+  {
+    "word": "virtualization",
+    "old": "가상화",
+    "new": "일관성 및 속도 향상"
+  },
+  {
+    "word": "pseudonymization",
+    "old": "가명화",
+    "new": "비용 추적만"
+  },
+  {
+    "word": "retention",
+    "old": "보존",
+    "new": "SMS 기반 OTP"
+  },
+  {
+    "word": "antivirus",
+    "old": "안티바이러스",
+    "new": "비용 증가"
+  },
+  {
+    "word": "bell-lapadula",
+    "old": "벨-라파둘라 모델",
+    "new": "Bell-LaPadula"
+  },
+  {
+    "word": "biba",
+    "old": "비바 모델",
+    "new": "Biba"
+  },
+  {
+    "word": "clark-wilson",
+    "old": "클락-윌슨 모델",
+    "new": "Clark-Wilson"
+  },
+  {
+    "word": "take-grant",
+    "old": "테이크-그랜트 모델",
+    "new": "Take-Grant"
+  },
+  {
+    "word": "failover",
+    "old": "페일오버",
+    "new": "장애 조치(Failover)"
+  }
+]

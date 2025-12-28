@@ -12,6 +12,13 @@ class CISSPModule {
         this.vocabulary = {}; // 단어 사전
         this.cardStep = 1;
         this.showKoreanInline = false; // 한글 인라인 표시 여부
+        // 단어/문장 학습 모드
+        this.wordLearningMode = false;
+        this.wordLearningIndex = 0;
+        this.wordLearningList = [];
+        this.sentenceLearningMode = false;
+        this.sentenceLearningIndex = 0;
+        this.sentenceLearningList = [];
     }
 
     // 학습 데이터 로드
@@ -244,13 +251,26 @@ class CISSPModule {
             const meaning = wordData.meaning || '';
             const pos = wordData.pos && wordData.pos !== 'unknown' ? wordData.pos : '';
             const frequency = wordData.frequency ? ` (빈도: ${wordData.frequency})` : '';
+            const hasExampleParsed = wordData.example_parsed && Array.isArray(wordData.example_parsed) && wordData.example_parsed.length > 0;
             
             content = `
                 <div class="word-popup-content">
                     <div class="word-title">${word}</div>
                     ${meaning ? `<div class="word-meaning">${meaning}${frequency}</div>` : ''}
                     ${pos ? `<div class="word-pos">${pos}</div>` : ''}
-                    ${wordData.example ? `<div class="word-example">"${wordData.example}"</div>` : ''}
+                    ${wordData.example ? `
+                        <div class="word-example">
+                            <div class="example-text">"${wordData.example}"</div>
+                            ${hasExampleParsed ? `
+                                <button class="btn-phrase-toggle" onclick="cisspModule.togglePhraseTranslation('${word}', event)">
+                                    <i class="fas fa-list-ol"></i> 구문별 해석 보기
+                                </button>
+                                <div class="phrase-translation-container" id="phrase-translation-${word}" style="display: none;">
+                                    ${this.renderPhraseTranslation(wordData.example_parsed)}
+                                </div>
+                            ` : ''}
+                        </div>
+                    ` : ''}
                     ${!meaning && !pos && !wordData.example ? `
                         <div class="word-meaning" style="color: #999;">사전에 등록되어 있지만 의미가 아직 추가되지 않았습니다.</div>
                     ` : ''}
@@ -272,6 +292,55 @@ class CISSPModule {
         }
         
         this.showPopup(content, event);
+    }
+    
+    // 구문별 해석 렌더링
+    renderPhraseTranslation(exampleParsed) {
+        if (!exampleParsed || !Array.isArray(exampleParsed)) {
+            return '';
+        }
+        
+        // order 순서대로 정렬
+        const sorted = [...exampleParsed].sort((a, b) => (a.order || 0) - (b.order || 0));
+        
+        return `
+            <div class="phrase-translation-list">
+                ${sorted.map((phrase, index) => `
+                    <div class="phrase-item" data-order="${phrase.order}">
+                        <div class="phrase-header">
+                            <span class="phrase-number">(${phrase.order})</span>
+                            <span class="phrase-text">${phrase.phrase}</span>
+                            ${phrase.role ? `<span class="phrase-role">${phrase.role}</span>` : ''}
+                        </div>
+                        <div class="phrase-translation">→ ${phrase.translation}</div>
+                    </div>
+                `).join('')}
+            </div>
+        `;
+    }
+    
+    // 구문별 해석 토글
+    togglePhraseTranslation(word, event) {
+        event.stopPropagation();
+        const container = document.getElementById(`phrase-translation-${word}`);
+        const button = event.target.closest('.btn-phrase-toggle');
+        
+        if (container) {
+            const isVisible = container.style.display !== 'none';
+            container.style.display = isVisible ? 'none' : 'block';
+            
+            if (button) {
+                const icon = button.querySelector('i');
+                const text = button.childNodes[button.childNodes.length - 1];
+                if (isVisible) {
+                    icon.className = 'fas fa-list-ol';
+                    text.textContent = ' 구문별 해석 보기';
+                } else {
+                    icon.className = 'fas fa-chevron-up';
+                    text.textContent = ' 구문별 해석 숨기기';
+                }
+            }
+        }
     }
 
     // 문장 번역 토글 (인라인 표시)
@@ -876,6 +945,25 @@ class CISSPModule {
                     </button>
                 </div>
                 
+                <!-- 단어/문장 학습 모드 -->
+                <div class="vocab-sentence-learning-section">
+                    <h3 class="section-title"><i class="fas fa-book-reader"></i> 단어 & 문장 학습</h3>
+                    <div class="vocab-sentence-grid">
+                        <button class="vocab-sentence-card vocab-card" onclick="cisspModule.startWordLearning()">
+                            <div class="vocab-sentence-icon"><i class="fas fa-spell-check"></i></div>
+                            <div class="vocab-sentence-title">자주 나오는 단어 학습</div>
+                            <div class="vocab-sentence-desc">빈도 40 이상 단어</div>
+                            <div class="vocab-sentence-count" id="word-learning-count">로딩 중...</div>
+                        </button>
+                        <button class="vocab-sentence-card sentence-card" onclick="cisspModule.startSentenceLearning()">
+                            <div class="vocab-sentence-icon"><i class="fas fa-quote-left"></i></div>
+                            <div class="vocab-sentence-title">자주 나오는 문장 학습</div>
+                            <div class="vocab-sentence-desc">빈출 문장 패턴</div>
+                            <div class="vocab-sentence-count" id="sentence-learning-count">로딩 중...</div>
+                        </button>
+                    </div>
+                </div>
+                
                 <!-- 통계 초기화 -->
                 <div class="reset-section">
                     <button class="btn btn-secondary" onclick="cisspModule.resetStats()">
@@ -884,8 +972,332 @@ class CISSPModule {
                 </div>
             </div>
         `;
+        
+        // 단어/문장 학습 카운트 업데이트
+        this.updateWordSentenceCounts();
+    }
+    
+    // 단어/문장 학습 카운트 업데이트
+    async updateWordSentenceCounts() {
+        try {
+            // 빈도 40 이상인 단어 개수 계산
+            const problemVocabResponse = await fetch('data/cissp_problem_vocabulary.json');
+            const problemVocab = await problemVocabResponse.json();
+            
+            const frequentWords = Object.entries(problemVocab)
+                .filter(([word, data]) => data.frequency >= 40)
+                .sort((a, b) => b[1].frequency - a[1].frequency)
+                .slice(0, 1000);
+            
+            const wordCountEl = document.getElementById('word-learning-count');
+            if (wordCountEl) {
+                wordCountEl.textContent = `${frequentWords.length}개 단어`;
+            }
+            
+            // 문장 개수는 문제에서 추출 (최대 200개)
+            const sentenceCountEl = document.getElementById('sentence-learning-count');
+            if (sentenceCountEl) {
+                // 문제에서 문장 패턴 추출하여 개수 계산
+                const sentenceCount = Math.min(200, this.items.length);
+                sentenceCountEl.textContent = `${sentenceCount}개 문장`;
+            }
+        } catch (error) {
+            console.error('단어/문장 카운트 업데이트 실패:', error);
+            const wordCountEl = document.getElementById('word-learning-count');
+            if (wordCountEl) wordCountEl.textContent = '로드 실패';
+            const sentenceCountEl = document.getElementById('sentence-learning-count');
+            if (sentenceCountEl) sentenceCountEl.textContent = '로드 실패';
+        }
+    }
+    
+    // 자주 나오는 단어 학습 시작
+    async startWordLearning() {
+        try {
+            // 빈도 40 이상인 단어들 로드
+            const problemVocabResponse = await fetch('data/cissp_problem_vocabulary.json');
+            const problemVocab = await problemVocabResponse.json();
+            
+            // 빈도 40 이상인 단어들 필터링 및 정렬
+            const frequentWords = Object.entries(problemVocab)
+                .filter(([word, data]) => data.frequency >= 40)
+                .map(([word, data]) => ({
+                    word: word,
+                    meaning: data.meaning || '',
+                    pos: data.pos || 'unknown',
+                    frequency: data.frequency,
+                    example: data.example || ''
+                }))
+                .sort((a, b) => b.frequency - a.frequency)
+                .slice(0, 1000);
+            
+            if (frequentWords.length === 0) {
+                alert('학습할 단어가 없습니다.');
+                return;
+            }
+            
+            // 단어 학습 모드로 전환
+            this.wordLearningMode = true;
+            this.wordLearningIndex = 0;
+            this.wordLearningList = frequentWords;
+            
+            this.renderWordLearning();
+        } catch (error) {
+            console.error('단어 학습 시작 실패:', error);
+            alert('단어 학습 데이터를 불러올 수 없습니다.');
+        }
+    }
+    
+    // 단어 학습 렌더링
+    renderWordLearning() {
+        if (!this.wordLearningList || this.wordLearningList.length === 0) {
+            return;
+        }
+        
+        const currentWord = this.wordLearningList[this.wordLearningIndex];
+        const progress = ((this.wordLearningIndex + 1) / this.wordLearningList.length * 100).toFixed(1);
+        
+        const container = document.getElementById('questionContainer');
+        container.innerHTML = `
+            <div class="word-learning-container">
+                <div class="word-learning-header">
+                    <button class="btn btn-back" onclick="cisspModule.renderDashboard()">
+                        <i class="fas fa-arrow-left"></i> 대시보드로
+                    </button>
+                    <h2><i class="fas fa-spell-check"></i> 자주 나오는 단어 학습</h2>
+                    <div class="word-learning-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${progress}%"></div>
+                        </div>
+                        <div class="progress-text">${this.wordLearningIndex + 1} / ${this.wordLearningList.length} (${progress}%)</div>
+                    </div>
+                </div>
+                
+                <div class="word-learning-card">
+                    <div class="word-card-main">
+                        <div class="word-frequency-badge">빈도: ${currentWord.frequency}</div>
+                        <div class="word-display">${currentWord.word}</div>
+                        <div class="word-pos">${currentWord.pos !== 'unknown' ? currentWord.pos : ''}</div>
+                        <div class="word-meaning-display" id="word-meaning-display" style="display: none;">
+                            <div class="word-meaning-text">${currentWord.meaning || '의미 없음'}</div>
+                            ${currentWord.example ? `
+                                <div class="word-example-display">
+                                    <div class="example-label">예문:</div>
+                                    <div class="example-text">"${currentWord.example}"</div>
+                                    ${this.vocabulary[currentWord.word] && this.vocabulary[currentWord.word].example_parsed ? `
+                                        <button class="btn btn-sm btn-secondary" onclick="cisspModule.toggleWordExampleParsed('${currentWord.word}')" style="margin-top: 10px;">
+                                            <i class="fas fa-list-ol"></i> 구문별 해석 보기
+                                        </button>
+                                        <div class="word-example-parsed" id="word-example-parsed-${currentWord.word}" style="display: none; margin-top: 10px;">
+                                            ${this.renderPhraseTranslation(this.vocabulary[currentWord.word].example_parsed)}
+                                        </div>
+                                    ` : ''}
+                                </div>
+                            ` : ''}
+                        </div>
+                        <button class="btn btn-primary btn-show-meaning" onclick="cisspModule.toggleWordMeaning()">
+                            <i class="fas fa-eye"></i> 의미 보기
+                        </button>
+                    </div>
+                    
+                    <div class="word-learning-controls">
+                        <button class="btn btn-secondary" onclick="cisspModule.prevWord()" ${this.wordLearningIndex === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-left"></i> 이전
+                        </button>
+                        <button class="btn btn-primary" onclick="cisspModule.nextWord()" ${this.wordLearningIndex === this.wordLearningList.length - 1 ? 'disabled' : ''}>
+                            다음 <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // 단어 의미 토글
+    toggleWordMeaning() {
+        const meaningDisplay = document.getElementById('word-meaning-display');
+        const btn = document.querySelector('.btn-show-meaning');
+        
+        if (meaningDisplay.style.display === 'none') {
+            meaningDisplay.style.display = 'block';
+            if (btn) {
+                btn.innerHTML = '<i class="fas fa-eye-slash"></i> 의미 숨기기';
+            }
+        } else {
+            meaningDisplay.style.display = 'none';
+            if (btn) {
+                btn.innerHTML = '<i class="fas fa-eye"></i> 의미 보기';
+            }
+        }
+    }
+    
+    // 이전 단어
+    prevWord() {
+        if (this.wordLearningIndex > 0) {
+            this.wordLearningIndex--;
+            this.renderWordLearning();
+        }
+    }
+    
+    // 다음 단어
+    nextWord() {
+        if (this.wordLearningIndex < this.wordLearningList.length - 1) {
+            this.wordLearningIndex++;
+            this.renderWordLearning();
+        }
+    }
+    
+    // 자주 나오는 문장 학습 시작
+    async startSentenceLearning() {
+        try {
+            // 문제에서 문장 패턴 추출
+            const sentences = [];
+            const seenPatterns = new Set();
+            
+            for (const item of this.items) {
+                // 문제 본문에서 문장 추출
+                if (item.question_en) {
+                    const questionSentences = item.question_en.split(/[.!?]\s+/).filter(s => s.trim().length > 10);
+                    const questionKoSentences = item.question_ko ? item.question_ko.split(/[.!?]\s+/).filter(s => s.trim().length > 10) : [];
+                    
+                    for (let i = 0; i < questionSentences.length; i++) {
+                        const sent = questionSentences[i].trim();
+                        const sentKo = i < questionKoSentences.length ? questionKoSentences[i].trim() : '';
+                        
+                        // 패턴 추출 (첫 5단어)
+                        const pattern = sent.toLowerCase().split(/\s+/).slice(0, 5).join(' ');
+                        
+                        if (!seenPatterns.has(pattern) && sent.length > 10) {
+                            sentences.push({
+                                sentence_en: sent,
+                                sentence_ko: sentKo,
+                                pattern: pattern,
+                                source: `문제 ${item.q_no}`
+                            });
+                            seenPatterns.add(pattern);
+                            
+                            if (sentences.length >= 200) break;
+                        }
+                    }
+                }
+                
+                if (sentences.length >= 200) break;
+            }
+            
+            if (sentences.length === 0) {
+                alert('학습할 문장이 없습니다.');
+                return;
+            }
+            
+            // 문장 학습 모드로 전환
+            this.sentenceLearningMode = true;
+            this.sentenceLearningIndex = 0;
+            this.sentenceLearningList = sentences;
+            
+            this.renderSentenceLearning();
+        } catch (error) {
+            console.error('문장 학습 시작 실패:', error);
+            alert('문장 학습 데이터를 불러올 수 없습니다.');
+        }
+    }
+    
+    // 문장 학습 렌더링
+    renderSentenceLearning() {
+        if (!this.sentenceLearningList || this.sentenceLearningList.length === 0) {
+            return;
+        }
+        
+        const currentSentence = this.sentenceLearningList[this.sentenceLearningIndex];
+        const progress = ((this.sentenceLearningIndex + 1) / this.sentenceLearningList.length * 100).toFixed(1);
+        
+        // 영어 문장을 인터랙티브하게 변환
+        const interactiveSentence = this.makeInteractiveText(currentSentence.sentence_en, currentSentence.sentence_ko);
+        
+        const container = document.getElementById('questionContainer');
+        container.innerHTML = `
+            <div class="sentence-learning-container">
+                <div class="sentence-learning-header">
+                    <button class="btn btn-back" onclick="cisspModule.renderDashboard()">
+                        <i class="fas fa-arrow-left"></i> 대시보드로
+                    </button>
+                    <h2><i class="fas fa-quote-left"></i> 자주 나오는 문장 학습</h2>
+                    <div class="sentence-learning-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: ${progress}%"></div>
+                        </div>
+                        <div class="progress-text">${this.sentenceLearningIndex + 1} / ${this.sentenceLearningList.length} (${progress}%)</div>
+                    </div>
+                </div>
+                
+                <div class="sentence-learning-card">
+                    <div class="sentence-card-main">
+                        <div class="sentence-source">${currentSentence.source}</div>
+                        <div class="sentence-display">
+                            ${interactiveSentence}
+                        </div>
+                        <div class="sentence-translation-display" id="sentence-translation-display" style="display: none;">
+                            <div class="translation-label">한국어 번역:</div>
+                            <div class="translation-text">${currentSentence.sentence_ko || '번역 없음'}</div>
+                        </div>
+                        <button class="btn btn-primary btn-show-translation" onclick="cisspModule.toggleSentenceTranslation()">
+                            <i class="fas fa-language"></i> 번역 보기
+                        </button>
+                    </div>
+                    
+                    <div class="sentence-learning-controls">
+                        <button class="btn btn-secondary" onclick="cisspModule.prevSentence()" ${this.sentenceLearningIndex === 0 ? 'disabled' : ''}>
+                            <i class="fas fa-chevron-left"></i> 이전
+                        </button>
+                        <button class="btn btn-primary" onclick="cisspModule.nextSentence()" ${this.sentenceLearningIndex === this.sentenceLearningList.length - 1 ? 'disabled' : ''}>
+                            다음 <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // 문장 번역 토글
+    toggleSentenceTranslation() {
+        const translationDisplay = document.getElementById('sentence-translation-display');
+        const btn = document.querySelector('.btn-show-translation');
+        
+        if (translationDisplay.style.display === 'none') {
+            translationDisplay.style.display = 'block';
+            if (btn) {
+                btn.innerHTML = '<i class="fas fa-eye-slash"></i> 번역 숨기기';
+            }
+        } else {
+            translationDisplay.style.display = 'none';
+            if (btn) {
+                btn.innerHTML = '<i class="fas fa-language"></i> 번역 보기';
+            }
+        }
+    }
+    
+    // 이전 문장
+    prevSentence() {
+        if (this.sentenceLearningIndex > 0) {
+            this.sentenceLearningIndex--;
+            this.renderSentenceLearning();
+        }
+    }
+    
+    // 다음 문장
+    nextSentence() {
+        if (this.sentenceLearningIndex < this.sentenceLearningList.length - 1) {
+            this.sentenceLearningIndex++;
+            this.renderSentenceLearning();
+        }
     }
 
+    // 단어 예문 구문별 해석 토글
+    toggleWordExampleParsed(word) {
+        const container = document.getElementById(`word-example-parsed-${word}`);
+        if (container) {
+            container.style.display = container.style.display === 'none' ? 'block' : 'none';
+        }
+    }
+    
     // 언어 모드 설정
     setLanguageMode(mode) {
         this.languageMode = mode;

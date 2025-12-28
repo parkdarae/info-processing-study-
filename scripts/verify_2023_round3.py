@@ -32,3 +32,4 @@ print(f"Q020 (참조무결성): {questions[19]['answer']['keys']}")
 
 
 
+

@@ -4,6 +4,9 @@
   "description": "Information Processing Engineer Study Platform",
   "scripts": {
     "build": "echo 'No build step required'"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3"
   }
 }
-

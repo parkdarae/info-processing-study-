@@ -1,0 +1,362 @@
+[
+  {
+    "word": "accountability",
+    "type": "mismatch",
+    "vocab": "책임 추적성",
+    "actual": [
+      "책임성",
+      "WPA3-Personal"
+    ],
+    "message": "단어장: \"책임 추적성\" vs 실제: ['책임성', 'WPA3-Personal']"
+  },
+  {
+    "word": "threat",
+    "type": "mismatch",
+    "vocab": "위협",
+    "actual": [
+      "발견사항 수정 확인"
+    ],
+    "message": "단어장: \"위협\" vs 실제: ['발견사항 수정 확인']"
+  },
+  {
+    "word": "baseline",
+    "type": "mismatch",
+    "vocab": "기준선, 베이스라인",
+    "actual": [
+      "가격"
+    ],
+    "message": "단어장: \"기준선, 베이스라인\" vs 실제: ['가격']"
+  },
+  {
+    "word": "firewall",
+    "type": "mismatch",
+    "vocab": "방화벽",
+    "actual": [
+      "위험 감소 효과"
+    ],
+    "message": "단어장: \"방화벽\" vs 실제: ['위험 감소 효과']"
+  },
+  {
+    "word": "hash",
+    "type": "mismatch",
+    "vocab": "해시",
+    "actual": [
+      "벤더만 확인"
+    ],
+    "message": "단어장: \"해시\" vs 실제: ['벤더만 확인']"
+  },
+  {
+    "word": "redundancy",
+    "type": "mismatch",
+    "vocab": "중복성",
+    "actual": [
+      "기술 검토만"
+    ],
+    "message": "단어장: \"중복성\" vs 실제: ['기술 검토만']"
+  },
+  {
+    "word": "asset",
+    "type": "mismatch",
+    "vocab": "자산",
+    "actual": [
+      "자동화된 경고 처리"
+    ],
+    "message": "단어장: \"자산\" vs 실제: ['자동화된 경고 처리']"
+  },
+  {
+    "word": "classification",
+    "type": "mismatch",
+    "vocab": "분류",
+    "actual": [
+      "비밀번호와 보안 질문"
+    ],
+    "message": "단어장: \"분류\" vs 실제: ['비밀번호와 보안 질문']"
+  },
+  {
+    "word": "sanitization",
+    "type": "mismatch",
+    "vocab": "소거, 정화",
+    "actual": [
+      "삭제"
+    ],
+    "message": "단어장: \"소거, 정화\" vs 실제: ['삭제']"
+  },
+  {
+    "word": "protocol",
+    "type": "mismatch",
+    "vocab": "프로토콜",
+    "actual": [
+      "교육 빈도만"
+    ],
+    "message": "단어장: \"프로토콜\" vs 실제: ['교육 빈도만']"
+  },
+  {
+    "word": "sanitize",
+    "type": "mismatch",
+    "vocab": "정화하다",
+    "actual": [
+      "기능 테스트만"
+    ],
+    "message": "단어장: \"정화하다\" vs 실제: ['기능 테스트만']"
+  },
+  {
+    "word": "patch",
+    "type": "mismatch",
+    "vocab": "패치",
+    "actual": [
+      "절차만",
+      "문서화만"
+    ],
+    "message": "단어장: \"패치\" vs 실제: ['절차만', '문서화만']"
+  },
+  {
+    "word": "configuration",
+    "type": "mismatch",
+    "vocab": "구성, 설정",
+    "actual": [
+      "정책만",
+      "다양한 관점 및 오류 발견"
+    ],
+    "message": "단어장: \"구성, 설정\" vs 실제: ['정책만', '다양한 관점 및 오류 발견']"
+  },
+  {
+    "word": "monitoring",
+    "type": "mismatch",
+    "vocab": "모니터링",
+    "actual": [
+      "길이만 다름",
+      "식별 및 수집",
+      "공급업체 평판"
+    ],
+    "message": "단어장: \"모니터링\" vs 실제: ['길이만 다름', '식별 및 수집', '공급업체 평판']"
+  },
+  {
+    "word": "alert",
+    "type": "mismatch",
+    "vocab": "경보",
+    "actual": [
+      "최신 기술"
+    ],
+    "message": "단어장: \"경보\" vs 실제: ['최신 기술']"
+  },
+  {
+    "word": "deterrent",
+    "type": "mismatch",
+    "vocab": "억제책",
+    "actual": [
+      "취약점 분석"
+    ],
+    "message": "단어장: \"억제책\" vs 실제: ['취약점 분석']"
+  },
+  {
+    "word": "preventive",
+    "type": "mismatch",
+    "vocab": "예방적인",
+    "actual": [
+      "위협 식별"
+    ],
+    "message": "단어장: \"예방적인\" vs 실제: ['위협 식별']"
+  },
+  {
+    "word": "detective",
+    "type": "mismatch",
+    "vocab": "탐지적인",
+    "actual": [
+      "대응책 결정",
+      "구성 요소 간 독립성",
+      "정확성 및 최신성"
+    ],
+    "message": "단어장: \"탐지적인\" vs 실제: ['대응책 결정', '구성 요소 간 독립성', '정확성 및 최신성']"
+  },
+  {
+    "word": "corrective",
+    "type": "mismatch",
+    "vocab": "교정적인",
+    "actual": [
+      "자산 및 데이터 흐름 식별",
+      "문서 길이",
+      "비용 절감"
+    ],
+    "message": "단어장: \"교정적인\" vs 실제: ['자산 및 데이터 흐름 식별', '문서 길이', '비용 절감']"
+  },
+  {
+    "word": "administrative",
+    "type": "mismatch",
+    "vocab": "관리적인",
+    "actual": [
+      "행정적",
+      "그래픽 디자인"
+    ],
+    "message": "단어장: \"관리적인\" vs 실제: ['행정적', '그래픽 디자인']"
+  },
+  {
+    "word": "technical",
+    "type": "mismatch",
+    "vocab": "기술적인",
+    "actual": [
+      "문서 형식만"
+    ],
+    "message": "단어장: \"기술적인\" vs 실제: ['문서 형식만']"
+  },
+  {
+    "word": "physical",
+    "type": "mismatch",
+    "vocab": "물리적인",
+    "actual": [
+      "설계 가이드 제공"
+    ],
+    "message": "단어장: \"물리적인\" vs 실제: ['설계 가이드 제공']"
+  },
+  {
+    "word": "strategic",
+    "type": "mismatch",
+    "vocab": "전략적인",
+    "actual": [
+      "교육 참석률만"
+    ],
+    "message": "단어장: \"전략적인\" vs 실제: ['교육 참석률만']"
+  },
+  {
+    "word": "deploy",
+    "type": "mismatch",
+    "vocab": "배포하다",
+    "actual": [
+      "설정만",
+      "스캔이 더 상세함"
+    ],
+    "message": "단어장: \"배포하다\" vs 실제: ['설정만', '스캔이 더 상세함']"
+  },
+  {
+    "word": "tailgating",
+    "type": "mismatch",
+    "vocab": "테일게이팅",
+    "actual": [
+      "3개의 서버, 2개의 데이터센터, 1개의 클라우드"
+    ],
+    "message": "단어장: \"테일게이팅\" vs 실제: ['3개의 서버, 2개의 데이터센터, 1개의 클라우드']"
+  },
+  {
+    "word": "diffie-hellman",
+    "type": "mismatch",
+    "vocab": "디피-헬만",
+    "actual": [
+      "Diffie-Hellman"
+    ],
+    "message": "단어장: \"디피-헬만\" vs 실제: ['Diffie-Hellman']"
+  },
+  {
+    "word": "kerberos",
+    "type": "mismatch",
+    "vocab": "커버로스",
+    "actual": [
+      "보안 도구 사용",
+      "Kerberos"
+    ],
+    "message": "단어장: \"커버로스\" vs 실제: ['보안 도구 사용', 'Kerberos']"
+  },
+  {
+    "word": "bgp",
+    "type": "mismatch",
+    "vocab": "경계 게이트웨이 프로토콜",
+    "actual": [
+      "BGP"
+    ],
+    "message": "단어장: \"경계 게이트웨이 프로토콜\" vs 실제: ['BGP']"
+  },
+  {
+    "word": "802.1x",
+    "type": "mismatch",
+    "vocab": "802.1X",
+    "actual": [
+      "데이터 저장 비용 최적화"
+    ],
+    "message": "단어장: \"802.1X\" vs 실제: ['데이터 저장 비용 최적화']"
+  },
+  {
+    "word": "virtualization",
+    "type": "mismatch",
+    "vocab": "가상화",
+    "actual": [
+      "자동화 용이",
+      "일관성 및 속도 향상"
+    ],
+    "message": "단어장: \"가상화\" vs 실제: ['자동화 용이', '일관성 및 속도 향상']"
+  },
+  {
+    "word": "pseudonymization",
+    "type": "mismatch",
+    "vocab": "가명화",
+    "actual": [
+      "비용 추적만"
+    ],
+    "message": "단어장: \"가명화\" vs 실제: ['비용 추적만']"
+  },
+  {
+    "word": "retention",
+    "type": "mismatch",
+    "vocab": "보존",
+    "actual": [
+      "SMS 기반 OTP"
+    ],
+    "message": "단어장: \"보존\" vs 실제: ['SMS 기반 OTP']"
+  },
+  {
+    "word": "antivirus",
+    "type": "mismatch",
+    "vocab": "안티바이러스",
+    "actual": [
+      "벤더 추천",
+      "시간 절약만",
+      "비용 증가"
+    ],
+    "message": "단어장: \"안티바이러스\" vs 실제: ['벤더 추천', '시간 절약만', '비용 증가']"
+  },
+  {
+    "word": "bell-lapadula",
+    "type": "mismatch",
+    "vocab": "벨-라파둘라 모델",
+    "actual": [
+      "새로운 취약점 발견",
+      "Bell-LaPadula"
+    ],
+    "message": "단어장: \"벨-라파둘라 모델\" vs 실제: ['새로운 취약점 발견', 'Bell-LaPadula']"
+  },
+  {
+    "word": "biba",
+    "type": "mismatch",
+    "vocab": "비바 모델",
+    "actual": [
+      "Biba",
+      "규정 준수 확인"
+    ],
+    "message": "단어장: \"비바 모델\" vs 실제: ['Biba', '규정 준수 확인']"
+  },
+  {
+    "word": "clark-wilson",
+    "type": "mismatch",
+    "vocab": "클락-윌슨 모델",
+    "actual": [
+      "Clark-Wilson",
+      "성능 테스트"
+    ],
+    "message": "단어장: \"클락-윌슨 모델\" vs 실제: ['Clark-Wilson', '성능 테스트']"
+  },
+  {
+    "word": "take-grant",
+    "type": "mismatch",
+    "vocab": "테이크-그랜트 모델",
+    "actual": [
+      "Take-Grant"
+    ],
+    "message": "단어장: \"테이크-그랜트 모델\" vs 실제: ['Take-Grant']"
+  },
+  {
+    "word": "failover",
+    "type": "mismatch",
+    "vocab": "페일오버",
+    "actual": [
+      "장애 조치(Failover)"
+    ],
+    "message": "단어장: \"페일오버\" vs 실제: ['장애 조치(Failover)']"
+  }
+]

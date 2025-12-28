@@ -1,0 +1,323 @@
+[
+  {
+    "id": "PMP003",
+    "q_no": "3",
+    "required_count": 3,
+    "current_answer": "B",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "B",
+      "C",
+      "D"
+    ],
+    "explanation_preview": ", C, D 프로젝트 관리자는 팀 내 갈등을 해결하고 팀 성과를 책임져야 한다.\n\n* C 와 D: 먼저 상황을 정확히 파악하기 위해 당사자(고립된 팀원)와 주변 팀원들 모두로부터 정보를 수집하여 근본 원인을 이해하는 것이 필수적이다.\n\n* B: 파악된 정보를 바탕으로 팀 전체의 관계 개선과 협업 증진을 위해 팀 빌딩 활동을 계획하고 실행하는 것이 효과적인 "
+  },
+  {
+    "id": "PMP012",
+    "q_no": "12",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "C"
+    ],
+    "explanation_preview": ", C 문제 발생 시 프로젝트 관리자의 초기 대응은 상황 파악과 계획 검토이다.\n\n* A: '핵심 자원의 부재'는 예측 가능한 리스크이므로, 가장 먼저 리스크 관리 대장을 확인하여 사전에 수립된 대응 계획이 있는지 보는 것이 표준 절차이다.\n\n* C: 책임 할당 매트릭스(RAM)를 확인하면 해당 팀원이 책임지고 있던 구체적인 활동들이 무엇인지 명확히 파악할"
+  },
+  {
+    "id": "PMP018",
+    "q_no": "18",
+    "required_count": 3,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "B",
+      "E"
+    ],
+    "explanation_preview": ", B, E 품질에 대한 심각한 우려가 제기된 상황이다.\n\n* B: 먼저, 테스터들이 '품질이 낮다'고 판단한 구체적인 근거와 데이터를 요청하여 문제의 실체를 명확히 파악해야 한다.\n\n* E: 파악된 정보를 바탕으로 개발자를 포함한 전체 프로젝트 팀과 함께 이 문제를 논의(브레인스토밍)하여 원인과 해결책을 모색해야 한다.\n\n* A: 심각한 품질 문제가 사실"
+  },
+  {
+    "id": "PMP052",
+    "q_no": "52",
+    "required_count": 3,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "C",
+      "E",
+      "E"
+    ],
+    "explanation_preview": ", C, E\n\n* C, E: 프로젝트 관리자는 팀 내 갈등 상황이 발생했을 때, 먼저 사실관계를 파악해야 한다.\n\n이를 위해 갈등의 당사자(고립된 팀원)와 주변인(다른 팀원들) 모두로부터 객관적인 정보를 수집하여 상황과 원인을 정확히 이해하는 것이 필수적이다.\n\n* A: 파악된 정보를 바탕으로, 팀 전체의 관계를 개선하고 응집력을 높이기 위해 팀 빌딩 활동"
+  },
+  {
+    "id": "PMP064",
+    "q_no": "64",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "C"
+    ],
+    "explanation_preview": ", C 문제에서 요구하는 것은 문제의 '근본 원인'을 분석하는 도구이다.\n\n* A. 5 Whys: 문제에 대해 \"왜?\"라는 질문을 반복적으로 던져 근본 원인에 도달하는 간단하고 강력한 분석 기법이다.\n\n* C.\n\n이시카와 다이어그램(피시본 다이어그램): 특정 문제(결과)에 대해 잠재적인 원인들을 인력, 장비, 환경, 방법 등의 카테고리로 나누어 시각적으로 "
+  },
+  {
+    "id": "PMP215",
+    "q_no": "215",
+    "required_count": 3,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "C",
+      "E"
+    ],
+    "explanation_preview": ", C, E 애자일 접근법으로 신제품을 성공적으로 인도하기 위해서는 세 가지 기초 산출물이 필수적이다. - 제품 비전(Product vision): 프로젝트의 '왜'에 답하며 팀에 명확한 방향과 목표를 제공한다. - 제품 로드맵(Product roadmap): 비전을 달성하기 위한 전략적 계획으로, 주요 릴리스와 마일스톤을 시각화하여 보여준다. - 상위 수"
+  },
+  {
+    "id": "PMP217",
+    "q_no": "217",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "B"
+    ],
+    "explanation_preview": ", B 규정 준수 요구사항을 결정하고 해결하기 위해서는 전문 지식과 거버넌스 감독이 모두 필요하다. - 기능 관리자(Functional managers): 생산, 품질 보증, 법무 등 관련 부서의 책임자로서, 해당 산업의 특정 규제 및 운영 표준에 대한 깊은 전문 지식을 가지고 있어 실질적인 준수 요건을 정의하는 데 핵심적인 역할을 한다. - 리스크 운영 "
+  },
+  {
+    "id": "PMP248",
+    "q_no": "248",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "D"
+    ],
+    "explanation_preview": ", D 인도된 인보이스에서 오류가 발견된 것은 관리해야 할 새로운 문제를 의미한다. - 이슈 로그(Issue log): 이 오류는 추적, 할당 및 해결이 필요한 현재의 문제이다.\n\n이것이 이슈의 정의이므로, 이슈 로그는 즉시 갱신해야 할 주요 문서이다. - 변경 로그(Change log): 완료된 인도물의 결함을 수정하려면 일반적으로 재작업을 승인하기 위한"
+  },
+  {
+    "id": "PMP264",
+    "q_no": "264",
+    "required_count": 3,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation_preview": ", B, C 팀 성과 문제와 마감일 압박을 해결하기 위해 프로젝트 관리자는 즉각적이고 촉진적인 조치를 취해야 한다. - 팀 기본 규칙 정의: 행동, 의사소통, 성과에 대한 명확한 기대치를 설정한다. - 회고 세션 수행: 팀이 무엇이 효과가 있고 없는지를 성찰하고, 성과 문제의 근본 원인을 파악하며, 개선을 위한 실행 계획을 수립할 수 있게 한다. - 일일 "
+  },
+  {
+    "id": "PMP306",
+    "q_no": "306",
+    "required_count": 2,
+    "current_answer": "C",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "C",
+      "E"
+    ],
+    "explanation_preview": ", E 새로운 법안에 대한 논의는 프로젝트에 영향을 줄 수 있는 잠재적 사건이므로 '위험'이다.\n\n위험 관리의 첫 단계는 위험을 식별하는 것이다.\n\n따라서 프로젝트 팀과 함께 공식적으로 위험을 식별하는 프로세스를 수행(C)하고, 해당 법안이 미칠 구체적인 영향을 파악하기 위해 주제 전문가와 논의(E)하는 것이 가장 우선적인 조치이다."
+  },
+  {
+    "id": "PMP306",
+    "q_no": "306",
+    "required_count": 2,
+    "current_answer": "C",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "C",
+      "E"
+    ],
+    "explanation_preview": ", E 새로운 법안에 대한 논의는 프로젝트에 영향을 줄 수 있는 잠재적 사건이므로 '위험'이다.\n\n위험 관리의 첫 단계는 위험을 식별하는 것이다.\n\n따라서 프로젝트 팀과 함께 공식적으로 위험을 식별하는 프로세스를 수행(C)하고, 해당 법안이 미칠 구체적인 영향을 파악하기 위해 주제 전문가와 논의(E)하는 것이 가장 우선적인 조치이다."
+  },
+  {
+    "id": "PMP318",
+    "q_no": "318",
+    "required_count": 3,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "C",
+      "D"
+    ],
+    "explanation_preview": ", C, D 장애물(impediment)은 팀의 생산성을 저해하거나 작업을 방해하는 모든 요소를 의미한다.\n\n* A: 스크럼 보드에 없는 작업은 추적되지 않는 '숨겨진 작업'으로, 팀의 집중력을 분산시키고 예측을 어렵게 하므로 장애물이다.\n\n* C: 팀의 작업을 방해하거나 속도를 늦추는 기술적 문제(예: 느린 서버, 테스트 자동화 도구 부재 등)는 명백한 "
+  },
+  {
+    "id": "PMP362",
+    "q_no": "362",
+    "required_count": 3,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "B",
+      "E"
+    ],
+    "explanation_preview": ", B, E 프로젝트 성공을 보장하기 위해서는 과거의 경험을 활용하고, 현재의 작업을 체계적으로 계획하며 관리해야 한다.\n\n* 조직 프로세스 자산(OPA)(A): 과거 프로젝트의 템플릿, 정책, 절차 등 조직 차원에서 축적된 지식 자산은 매우 중요한 참고 자료이다.\n\n* 과거 프로젝트의 교훈 관리대장(B): 과거의 성공과 실패 요인을 직접적으로 파악하여 동"
+  },
+  {
+    "id": "PMP394",
+    "q_no": "394",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "D"
+    ],
+    "explanation_preview": ", D 이해관계자가 팀을 우회하여 후원자에게 직접 보고하는 것은 신뢰 부족 또는 소통 단절의 신호이다.\n\n이 관계를 개선하고 직접적인 소통 채널을 복원하기 위해 프로젝트 관리자는,\n\n* 해당 이해관계자와 정기적인 회의를 계획하여(A) 직접 업데이트를 제공하고 피드백을 받음으로써 신뢰를 구축하고,\n\n* 팀이 이해관계자와 쉽게 소통할 수 있는 투명한 환경을 조"
+  },
+  {
+    "id": "PMP400",
+    "q_no": "400",
+    "required_count": 2,
+    "current_answer": "B",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "B",
+      "D"
+    ],
+    "explanation_preview": ", D 프로젝트 관리자는 주제 전문가(SME)의 부재가 실제로 팀의 진행을 방해하는 '장애물'로 작용하고 있는지 확인하고자 한다.\n\n이를 파악하기 가장 좋은 두 가지 이벤트는 다음과 같다.\n\n* 스탠드업(Standup)(D): 매일 진행 상황과 장애물을 공유하는 회의로, 팀원들이 SME 의 도움이 필요한 질문 때문에 작업이 막혔을 경우 이곳에서 문제가 즉시"
+  },
+  {
+    "id": "PMP402",
+    "q_no": "402",
+    "required_count": 2,
+    "current_answer": "B",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "B",
+      "E"
+    ],
+    "explanation_preview": ", E 멘토링의 주요 이점은 경험이 적은 사람이 안전한 환경에서 지침과 조언을 구하는 것이다.\n\n멘토는 불이익에 대한 두려움 없이 문제를 논의할 수 있는 상대(B)가 되어준다.\n\n또한, 멘토는 자신의 경험과 과거 프로젝트 자산(E)을 공유하여 주니어 프로젝트 관리자가 잠재적 리스크를 미리 식별하고 대비하도록 도울 수 있다.\n\n멘토는 행정적 상사(A)가 아니"
+  },
+  {
+    "id": "PMP470",
+    "q_no": "470",
+    "required_count": 2,
+    "current_answer": "B",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "B",
+      "D"
+    ],
+    "explanation_preview": ", D 리스크가 이미 발생하여 '이슈'가 되었고, 이로 인해 2 개월의 지연이 확정된 상황이다.\n\nE 는 리스크가 발생하기 전의 활동이므로 적합하지 않다.\n\n현재 프로젝트 계획(특히 일정 기준선)은 더 이상 유효하지 않으므로, 공식적으로 수정해야 한다.\n\n이를 위해 먼저 이슈의 영향을 분석하여 공식적인 '변경 요청(B)'을 제출하고 승인을 받아야 한다.\n\n"
+  },
+  {
+    "id": "PMP489",
+    "q_no": "489",
+    "required_count": 2,
+    "current_answer": "D",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "D",
+      "E"
+    ],
+    "explanation_preview": ", E 고객이 일정을 앞당기기를 원할 때, 프로젝트 관리자는 일방적으로 거절하거나(C) 비용 문제만 제기(A)하기보다는 협력적인 해결책을 모색해야 한다.\n\n가장 먼저 해야 할 일은 고객과 대화하여, 앞당겨진 마일스톤에서 '반드시' 포함되어야 할 핵심 요구사항이 무엇인지 우선순위를 파악하는 것(D)이다.\n\n그 다음, 이 우선순위 목록을 가지고 개발팀과 함께 "
+  },
+  {
+    "id": "PMP508",
+    "q_no": "508",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "D"
+    ],
+    "explanation_preview": ", D 팀의 우려는 '방향성 부족'에 대한 것이다.\n\n이를 해결하기 위한 가장 근본적인 조치는 명확한 목표를 제시하는 것이다.\n\n프로젝트 관리자는 프로젝트의 목적과 최종 목표를 담은 '명확한 비전'을 설정하고, 이를 팀을 포함한 모든 이해관계자가 항상 인지할 수 있도록 해야 한다(D).\n\n그리고 프로젝트 전반에 걸쳐 팀이 그 비전과 방향성에 계속해서 집중하"
+  },
+  {
+    "id": "PMP516",
+    "q_no": "516",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "B"
+    ],
+    "explanation_preview": ", B 직원 이직이라는 위험을 완화하기 위한 전략은 팀원들의 동기를 부여하고 만족도를 높이는 데 초점을 맞춰야 한다.\n\n* A: 인정 및 포상 프로그램은 팀원들의 기여를 인정하고 성취감을 높여 이직률을 낮추는 직접적인 동기부여 방안이다.\n\n* B: 훈련, 멘토링, 코칭은 팀원들의 전문성을 향상시키고 경력 개발 기회를 제공하여 직무 만족도를 높이고 조직에 대"
+  },
+  {
+    "id": "PMP519",
+    "q_no": "519",
+    "required_count": 3,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "explanation_preview": ", B, C 효과적인 이해관계자 관리를 위해서는 모든 이해관계자를 동일하게 대하는 것이 아니라, 체계적으로 분석하고 분류하여 관리해야 한다.\n\n* C: 이해관계자 평가는 그들의 요구사항, 기대, 영향력 등을 파악하여 프로젝트 목표와 연계시키는 첫 단계이다.\n\n* B: 영향력/관심도 매트릭스와 같은 도구를 사용하여 이해관계자를 분류하고, 각 그룹에 맞는 참여"
+  },
+  {
+    "id": "PMP540",
+    "q_no": "540",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "D"
+    ],
+    "explanation_preview": ", D 가상 애자일 팀의 성과를 보장하기 위해서는 소통과 투명성을 높이는 것이 중요하다.\n\n* A: 매일 가상 회의(일일 스크럼)를 개최하면 팀원들이 매일 동기화하고, 진행 상황을 공유하며, 장애물을 신속하게 식별하여 해결할 수 있다.\n\n* D: 웹 기반 칸반 보드는 모든 팀원이 작업 흐름을 실시간으로 시각적으로 공유할 수 있는 '정보 방사기(Informa"
+  },
+  {
+    "id": "PMP559",
+    "q_no": "559",
+    "required_count": 2,
+    "current_answer": "B",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "B",
+      "C"
+    ],
+    "explanation_preview": ", C 프로젝트의 결과물(output)이 기대했던 사업적 성과(outcome)를 내지 못하는 상황이다.\n\n프로젝트 관리자는 프로젝트가 종료된 후에도 가치 실현을 추적하고 지원할 책임이 있다.\n\n* C: 가장 먼저 해야 할 일은 '왜' 이런 차이가 발생했는지 분석하는 것이다.\n\n초기 비즈니스 케이스에 설정된 편익 기준과 가정을 다시 분석하여, 예측이 잘못되었"
+  },
+  {
+    "id": "PMP560",
+    "q_no": "560",
+    "required_count": 2,
+    "current_answer": "B",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "B",
+      "C"
+    ],
+    "explanation_preview": ", C 고객 문의가 많아 팀이 과부하에 걸린 복합적인 문제이다.\n\n효과적인 해결을 위해서는 문제의 원인을 정확히 파악하고 체계적인 해결책을 도입해야 한다.\n\n* B: 먼저 문제의 본질을 파악해야 한다.\n\n설문 조사나 데이터 분석을 통해 고객 문의가 정말로 제품의 결함 때문인지, 사용 방법 안내가 부족한 것인지 등 근본 원인을 정확히 진단하는 것이 중요하다."
+  },
+  {
+    "id": "PMP574",
+    "q_no": "574",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "B"
+    ],
+    "explanation_preview": ", B 팀 규모가 줄어들면 팀의 작업 처리 능력(속도)이 감소하므로, 이에 맞춰 고객의 기대치를 재설정해야 한다.\n\n* A: 감소된 팀 규모를 반영한 새로운 예상 속도(velocity)를 고객에게 보여줌으로써, 향후 스프린트에서 얼마나 많은 작업을 완료할 수 있는지에 대한 현실적인 기대치를 설정할 수 있다.\n\n* B: 작업 처리 능력이 줄었으므로, 제한된 "
+  },
+  {
+    "id": "PMP594",
+    "q_no": "594",
+    "required_count": 2,
+    "current_answer": "A",
+    "current_answer_type": "str",
+    "extracted_answers": [
+      "A",
+      "D"
+    ],
+    "explanation_preview": ", D 팀의 속도가 저하될 때 프로젝트 관리자(스크럼 마스터)의 역할은 팀이 더 효율적으로 일할 수 있도록 돕는 것이다.\n\n* A: 팀의 작업 흐름을 관찰하여 병목 현상이나 낭비를 유발하는 비효율적인 프로세스를 찾아내고 개선하는 것은 속도를 높이는 근본적인 방법이다.\n\n* D: 장애물(Impediment)은 팀의 진행을 방해하는 모든 것이다.\n\n프로젝트 관"
+  }
+]

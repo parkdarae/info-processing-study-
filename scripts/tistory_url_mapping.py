@@ -50,3 +50,4 @@ if __name__ == "__main__":
     print(f"2025_round2: {get_tistory_url('2025_round2')}")
     print(f"\n총 {len(URL_MAPPING)}개 회차 매핑 완료")
 
+

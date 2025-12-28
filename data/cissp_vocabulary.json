@@ -12,22 +12,126 @@
   "availability": {
     "meaning": "가용성",
     "pos": "noun",
-    "example": "Availability ensures that systems and data are accessible when needed."
+    "example": "Availability ensures that systems and data are accessible when needed.",
+    "example_parsed": [
+      {
+        "phrase": "Availability",
+        "order": 1,
+        "translation": "가용성은",
+        "role": "주어"
+      },
+      {
+        "phrase": "ensures",
+        "order": 2,
+        "translation": "보장한다",
+        "role": "동사"
+      },
+      {
+        "phrase": "that systems and data are accessible",
+        "order": 3,
+        "translation": "시스템과 데이터가 접근 가능하도록",
+        "role": "목적어절"
+      },
+      {
+        "phrase": "when needed",
+        "order": 4,
+        "translation": "필요할 때",
+        "role": "부사절"
+      }
+    ]
   },
   "authentication": {
     "meaning": "인증",
     "pos": "noun",
-    "example": "Authentication verifies the identity of a user or system."
+    "example": "Authentication verifies the identity of a user or system.",
+    "example_parsed": [
+      {
+        "phrase": "Authentication",
+        "order": 1,
+        "translation": "인증은",
+        "role": "주어"
+      },
+      {
+        "phrase": "verifies",
+        "order": 2,
+        "translation": "확인한다",
+        "role": "동사"
+      },
+      {
+        "phrase": "the identity",
+        "order": 3,
+        "translation": "신원을",
+        "role": "목적어"
+      },
+      {
+        "phrase": "of a user or system",
+        "order": 4,
+        "translation": "사용자 또는 시스템의",
+        "role": "전치사구"
+      }
+    ]
   },
   "authorization": {
     "meaning": "권한 부여, 인가",
     "pos": "noun",
-    "example": "Authorization determines what actions a user can perform."
+    "example": "Authorization determines what actions a user can perform.",
+    "example_parsed": [
+      {
+        "phrase": "Authorization",
+        "order": 1,
+        "translation": "권한 부여는",
+        "role": "주어"
+      },
+      {
+        "phrase": "determines",
+        "order": 2,
+        "translation": "결정한다",
+        "role": "동사"
+      },
+      {
+        "phrase": "what actions",
+        "order": 3,
+        "translation": "어떤 행동을",
+        "role": "목적어"
+      },
+      {
+        "phrase": "a user can perform",
+        "order": 4,
+        "translation": "사용자가 수행할 수 있는지",
+        "role": "관계절"
+      }
+    ]
   },
   "accountability": {
     "meaning": "책임성",
     "pos": "noun",
-    "example": "Accountability ensures actions can be traced to individuals."
+    "example": "Accountability ensures actions can be traced to individuals.",
+    "example_parsed": [
+      {
+        "phrase": "Accountability",
+        "order": 1,
+        "translation": "책임성은",
+        "role": "주어"
+      },
+      {
+        "phrase": "ensures",
+        "order": 2,
+        "translation": "보장한다",
+        "role": "동사"
+      },
+      {
+        "phrase": "actions can be traced",
+        "order": 3,
+        "translation": "행동이 추적될 수 있도록",
+        "role": "목적어절"
+      },
+      {
+        "phrase": "to individuals",
+        "order": 4,
+        "translation": "개인에게",
+        "role": "전치사구"
+      }
+    ]
   },
   "nonrepudiation": {
     "meaning": "부인 방지",
@@ -37,7 +141,33 @@
   "encryption": {
     "meaning": "암호화",
     "pos": "noun",
-    "example": "Encryption converts data into a coded format."
+    "example": "Encryption converts data into a coded format.",
+    "example_parsed": [
+      {
+        "phrase": "Encryption",
+        "order": 1,
+        "translation": "암호화는",
+        "role": "주어"
+      },
+      {
+        "phrase": "converts",
+        "order": 2,
+        "translation": "변환한다",
+        "role": "동사"
+      },
+      {
+        "phrase": "data",
+        "order": 3,
+        "translation": "데이터를",
+        "role": "목적어"
+      },
+      {
+        "phrase": "into a coded format",
+        "order": 4,
+        "translation": "암호화된 형식으로",
+        "role": "전치사구"
+      }
+    ]
   },
   "decryption": {
     "meaning": "복호화",
@@ -47,7 +177,33 @@
   "vulnerability": {
     "meaning": "취약점",
     "pos": "noun",
-    "example": "A vulnerability is a weakness that can be exploited."
+    "example": "A vulnerability is a weakness that can be exploited.",
+    "example_parsed": [
+      {
+        "phrase": "A vulnerability",
+        "order": 1,
+        "translation": "취약점은",
+        "role": "주어"
+      },
+      {
+        "phrase": "is",
+        "order": 2,
+        "translation": "이다",
+        "role": "동사"
+      },
+      {
+        "phrase": "a weakness",
+        "order": 3,
+        "translation": "약점",
+        "role": "보어"
+      },
+      {
+        "phrase": "that can be exploited",
+        "order": 4,
+        "translation": "악용될 수 있는",
+        "role": "관계절"
+      }
+    ]
   },
   "threat": {
     "meaning": "위협",
@@ -57,7 +213,33 @@
   "risk": {
     "meaning": "위험",
     "pos": "noun",
-    "example": "Risk is the potential for loss or damage."
+    "example": "Risk is the potential for loss or damage.",
+    "example_parsed": [
+      {
+        "phrase": "Risk",
+        "order": 1,
+        "translation": "위험은",
+        "role": "주어"
+      },
+      {
+        "phrase": "is",
+        "order": 2,
+        "translation": "이다",
+        "role": "동사"
+      },
+      {
+        "phrase": "the potential",
+        "order": 3,
+        "translation": "잠재력",
+        "role": "보어"
+      },
+      {
+        "phrase": "for loss or damage",
+        "order": 4,
+        "translation": "손실이나 손상에 대한",
+        "role": "전치사구"
+      }
+    ]
   },
   "mitigation": {
     "meaning": "완화, 경감",
@@ -67,7 +249,33 @@
   "compliance": {
     "meaning": "준수, 컴플라이언스",
     "pos": "noun",
-    "example": "Compliance ensures adherence to laws and regulations."
+    "example": "Compliance ensures adherence to laws and regulations.",
+    "example_parsed": [
+      {
+        "phrase": "Compliance",
+        "order": 1,
+        "translation": "컴플라이언스는",
+        "role": "주어"
+      },
+      {
+        "phrase": "ensures",
+        "order": 2,
+        "translation": "보장한다",
+        "role": "동사"
+      },
+      {
+        "phrase": "adherence",
+        "order": 3,
+        "translation": "준수를",
+        "role": "목적어"
+      },
+      {
+        "phrase": "to laws and regulations",
+        "order": 4,
+        "translation": "법률과 규정에 대한",
+        "role": "전치사구"
+      }
+    ]
   },
   "audit": {
     "meaning": "감사",
@@ -77,7 +285,33 @@
   "policy": {
     "meaning": "정책",
     "pos": "noun",
-    "example": "A security policy defines rules for protecting information."
+    "example": "A security policy defines rules for protecting information.",
+    "example_parsed": [
+      {
+        "phrase": "A security policy",
+        "order": 1,
+        "translation": "보안 정책은",
+        "role": "주어"
+      },
+      {
+        "phrase": "defines",
+        "order": 2,
+        "translation": "정의한다",
+        "role": "동사"
+      },
+      {
+        "phrase": "rules",
+        "order": 3,
+        "translation": "규칙을",
+        "role": "목적어"
+      },
+      {
+        "phrase": "for protecting information",
+        "order": 4,
+        "translation": "정보 보호를 위한",
+        "role": "전치사구"
+      }
+    ]
   },
   "procedure": {
     "meaning": "절차",
@@ -3123,5 +3357,682 @@
     "meaning": "모델",
     "pos": "noun",
     "example": "The security model defines access."
+  },
+  "standards": {
+    "meaning": "표준들",
+    "pos": "noun",
+    "example": "Security standards define mandatory requirements."
+  },
+  "phase": {
+    "meaning": "단계",
+    "pos": "noun",
+    "example": "The implementation phase requires careful planning."
+  },
+  "language": {
+    "meaning": "언어",
+    "pos": "noun",
+    "example": "Programming languages must be secure by design."
+  },
+  "ip": {
+    "meaning": "IP (인터넷 프로토콜)",
+    "pos": "noun",
+    "example": "IP addresses identify network devices."
+  },
+  "vendor": {
+    "meaning": "벤더, 공급업체",
+    "pos": "noun",
+    "example": "Third-party vendors must be vetted for security."
+  },
+  "required": {
+    "meaning": "필요한, 필수적인",
+    "pos": "adjective",
+    "example": "Strong authentication is required for access."
+  },
+  "role": {
+    "meaning": "역할",
+    "pos": "noun",
+    "example": "User roles determine access permissions."
+  },
+  "number": {
+    "meaning": "숫자, 번호",
+    "pos": "noun",
+    "example": "The serial number identifies the device."
+  },
+  "prevent": {
+    "meaning": "방지하다",
+    "pos": "verb",
+    "example": "Firewalls prevent unauthorized access."
+  },
+  "host": {
+    "meaning": "호스트",
+    "pos": "noun",
+    "example": "Each host must be properly configured."
+  },
+  "such": {
+    "meaning": "그런, 그러한",
+    "pos": "adjective",
+    "example": "Such vulnerabilities must be patched immediately."
+  },
+  "implementation": {
+    "meaning": "구현",
+    "pos": "noun",
+    "example": "Secure implementation prevents vulnerabilities."
+  },
+  "session": {
+    "meaning": "세션",
+    "pos": "noun",
+    "example": "Session management is critical for security."
+  },
+  "personal": {
+    "meaning": "개인의",
+    "pos": "adjective",
+    "example": "Personal information must be protected."
+  },
+  "training": {
+    "meaning": "교육, 훈련",
+    "pos": "noun",
+    "example": "Security training raises awareness."
+  },
+  "implementing": {
+    "meaning": "구현하는",
+    "pos": "verb",
+    "example": "Implementing controls reduces risk."
+  },
+  "sensitive": {
+    "meaning": "민감한",
+    "pos": "adjective",
+    "example": "Sensitive data requires encryption."
+  },
+  "against": {
+    "meaning": "대항하여, 반대하여",
+    "pos": "preposition",
+    "example": "Protect systems against attacks."
+  },
+  "remote": {
+    "meaning": "원격의",
+    "pos": "adjective",
+    "example": "Remote access must be secured."
+  },
+  "support": {
+    "meaning": "지원하다, 지원",
+    "pos": "verb/noun",
+    "example": "Technical support helps resolve issues."
+  },
+  "set": {
+    "meaning": "설정하다, 세트",
+    "pos": "verb/noun",
+    "example": "Set appropriate access controls."
+  },
+  "administrator": {
+    "meaning": "관리자",
+    "pos": "noun",
+    "example": "The administrator configures security settings."
+  },
+  "way": {
+    "meaning": "방법, 방식",
+    "pos": "noun",
+    "example": "The best way to secure data is encryption."
+  },
+  "private": {
+    "meaning": "사적인, 비공개",
+    "pos": "adjective",
+    "example": "Private keys must be kept secret."
+  },
+  "operating": {
+    "meaning": "운영하는",
+    "pos": "verb",
+    "example": "Operating systems need regular updates."
+  },
+  "professional": {
+    "meaning": "전문가",
+    "pos": "noun",
+    "example": "Security professionals conduct audits."
+  },
+  "transport": {
+    "meaning": "전송",
+    "pos": "noun",
+    "example": "Transport layer security encrypts data."
+  },
+  "implemented": {
+    "meaning": "구현된",
+    "pos": "verb",
+    "example": "Controls must be properly implemented."
+  },
+  "client": {
+    "meaning": "클라이언트",
+    "pos": "noun",
+    "example": "The client authenticates to the server."
+  },
+  "organizations": {
+    "meaning": "조직들",
+    "pos": "noun",
+    "example": "Organizations must comply with regulations."
+  },
+  "likely": {
+    "meaning": "가능성이 높은",
+    "pos": "adjective",
+    "example": "Weak passwords are likely to be compromised."
+  },
+  "risks": {
+    "meaning": "위험들",
+    "pos": "noun",
+    "example": "Identify and mitigate security risks."
+  },
+  "project": {
+    "meaning": "프로젝트",
+    "pos": "noun",
+    "example": "The security project requires careful planning."
+  },
+  "computer": {
+    "meaning": "컴퓨터",
+    "pos": "noun",
+    "example": "Computer systems must be protected."
+  },
+  "external": {
+    "meaning": "외부의",
+    "pos": "adjective",
+    "example": "External threats require monitoring."
+  },
+  "mobile": {
+    "meaning": "모바일",
+    "pos": "adjective",
+    "example": "Mobile devices need device management."
+  },
+  "non": {
+    "meaning": "비-",
+    "pos": "prefix",
+    "example": "Non-repudiation prevents denial."
+  },
+  "hardware": {
+    "meaning": "하드웨어",
+    "pos": "noun",
+    "example": "Hardware security modules protect keys."
+  },
+  "protected": {
+    "meaning": "보호된",
+    "pos": "adjective",
+    "example": "Protected data is encrypted at rest."
+  },
+  "infrastructure": {
+    "meaning": "인프라",
+    "pos": "noun",
+    "example": "Infrastructure must be resilient."
+  },
+  "end": {
+    "meaning": "끝, 종료",
+    "pos": "noun/verb",
+    "example": "End-to-end encryption secures communication."
+  },
+  "procedures": {
+    "meaning": "절차들",
+    "pos": "noun",
+    "example": "Incident response procedures must be documented."
+  },
+  "officer": {
+    "meaning": "담당자",
+    "pos": "noun",
+    "example": "The security officer oversees compliance."
+  },
+  "changes": {
+    "meaning": "변경사항들",
+    "pos": "noun",
+    "example": "Configuration changes must be approved."
+  },
+  "message": {
+    "meaning": "메시지",
+    "pos": "noun",
+    "example": "The message is encrypted before transmission."
+  },
+  "need": {
+    "meaning": "필요하다",
+    "pos": "verb",
+    "example": "Systems need regular security updates."
+  },
+  "cost": {
+    "meaning": "비용",
+    "pos": "noun",
+    "example": "Security measures have associated costs."
+  },
+  "assets": {
+    "meaning": "자산들",
+    "pos": "noun",
+    "example": "Information assets must be classified."
+  },
+  "cycle": {
+    "meaning": "주기",
+    "pos": "noun",
+    "example": "The security lifecycle includes assessment."
+  },
+  "logs": {
+    "meaning": "로그들",
+    "pos": "noun",
+    "example": "Security logs must be reviewed regularly."
+  },
+  "steps": {
+    "meaning": "단계들",
+    "pos": "noun",
+    "example": "Follow the steps in the procedure."
+  },
+  "provisioning": {
+    "meaning": "프로비저닝",
+    "pos": "noun",
+    "example": "User provisioning must follow policies."
+  },
+  "specific": {
+    "meaning": "특정한",
+    "pos": "adjective",
+    "example": "Apply specific controls for each risk."
+  },
+  "multiple": {
+    "meaning": "다중의",
+    "pos": "adjective",
+    "example": "Multiple layers of security are needed."
+  },
+  "physical": {
+    "meaning": "물리적인",
+    "pos": "adjective",
+    "example": "Physical security protects facilities."
+  },
+  "application": {
+    "meaning": "애플리케이션",
+    "pos": "noun",
+    "example": "Application security prevents vulnerabilities."
+  },
+  "control": {
+    "meaning": "통제, 제어",
+    "pos": "noun",
+    "example": "Access control limits user permissions.",
+    "example_parsed": [
+      {
+        "phrase": "Access control",
+        "order": 1,
+        "translation": "접근 제어는",
+        "role": "주어"
+      },
+      {
+        "phrase": "limits",
+        "order": 2,
+        "translation": "제한한다",
+        "role": "동사"
+      },
+      {
+        "phrase": "user permissions",
+        "order": 3,
+        "translation": "사용자 권한을",
+        "role": "목적어"
+      }
+    ]
+  },
+  "network": {
+    "meaning": "네트워크",
+    "pos": "noun",
+    "example": "Network segmentation improves security.",
+    "example_parsed": [
+      {
+        "phrase": "Network segmentation",
+        "order": 1,
+        "translation": "네트워크 분할은",
+        "role": "주어"
+      },
+      {
+        "phrase": "improves",
+        "order": 2,
+        "translation": "개선한다",
+        "role": "동사"
+      },
+      {
+        "phrase": "security",
+        "order": 3,
+        "translation": "보안을",
+        "role": "목적어"
+      }
+    ]
+  },
+  "document": {
+    "meaning": "문서",
+    "pos": "noun",
+    "example": "Document all security procedures."
+  },
+  "mac": {
+    "meaning": "MAC (메시지 인증 코드)",
+    "pos": "noun",
+    "example": "MAC ensures message integrity."
+  },
+  "defined": {
+    "meaning": "정의된",
+    "pos": "adjective",
+    "example": "Defined security policies must be followed."
+  },
+  "area": {
+    "meaning": "영역",
+    "pos": "noun",
+    "example": "The security area requires access control."
+  },
+  "memory": {
+    "meaning": "메모리",
+    "pos": "noun",
+    "example": "Memory protection prevents buffer overflow."
+  },
+  "log": {
+    "meaning": "로그",
+    "pos": "noun",
+    "example": "Security logs must be reviewed regularly."
+  },
+  "ensures": {
+    "meaning": "보장한다",
+    "pos": "verb",
+    "example": "Encryption ensures data confidentiality."
+  },
+  "step": {
+    "meaning": "단계",
+    "pos": "noun",
+    "example": "The first step is risk assessment."
+  },
+  "create": {
+    "meaning": "생성하다",
+    "pos": "verb",
+    "example": "Create a backup before making changes."
+  },
+  "approach": {
+    "meaning": "접근법",
+    "pos": "noun",
+    "example": "A layered approach improves security."
+  },
+  "strategy": {
+    "meaning": "전략",
+    "pos": "noun",
+    "example": "Develop a security strategy for the organization."
+  },
+  "single": {
+    "meaning": "단일의",
+    "pos": "adjective",
+    "example": "A single point of failure is risky."
+  },
+  "types": {
+    "meaning": "유형들",
+    "pos": "noun",
+    "example": "Different types of attacks require different defenses."
+  },
+  "developing": {
+    "meaning": "개발하는",
+    "pos": "verb",
+    "example": "Developing secure code requires training."
+  },
+  "planning": {
+    "meaning": "계획하는",
+    "pos": "verb",
+    "example": "Disaster recovery planning is essential."
+  },
+  "dr": {
+    "meaning": "DR (재해 복구)",
+    "pos": "noun",
+    "example": "DR plans must be tested regularly."
+  },
+  "establish": {
+    "meaning": "설립하다",
+    "pos": "verb",
+    "example": "Establish security policies and procedures."
+  },
+  "verify": {
+    "meaning": "검증하다",
+    "pos": "verb",
+    "example": "Verify user identity before granting access."
+  },
+  "part": {
+    "meaning": "부분",
+    "pos": "noun",
+    "example": "Security is part of every system."
+  },
+  "describes": {
+    "meaning": "설명한다",
+    "pos": "verb",
+    "example": "The policy describes access requirements."
+  },
+  "product": {
+    "meaning": "제품",
+    "pos": "noun",
+    "example": "Security products must be evaluated."
+  },
+  "different": {
+    "meaning": "다른",
+    "pos": "adjective",
+    "example": "Different systems require different controls."
+  },
+  "responsible": {
+    "meaning": "책임 있는",
+    "pos": "adjective",
+    "example": "The data owner is responsible for classification."
+  },
+  "functions": {
+    "meaning": "함수들",
+    "pos": "noun",
+    "example": "Security functions must be integrated."
+  },
+  "order": {
+    "meaning": "순서, 주문",
+    "pos": "noun",
+    "example": "Follow the order of operations."
+  },
+  "files": {
+    "meaning": "파일들",
+    "pos": "noun",
+    "example": "Encrypt sensitive files at rest."
+  },
+  "malicious": {
+    "meaning": "악의적인",
+    "pos": "adjective",
+    "example": "Malicious code can damage systems."
+  },
+  "trusted": {
+    "meaning": "신뢰할 수 있는",
+    "pos": "adjective",
+    "example": "Only trusted sources should be used."
+  },
+  "identification": {
+    "meaning": "식별",
+    "pos": "noun",
+    "example": "User identification is the first step."
+  },
+  "account": {
+    "meaning": "계정",
+    "pos": "noun",
+    "example": "Disable unused accounts immediately."
+  },
+  "considered": {
+    "meaning": "고려된",
+    "pos": "verb",
+    "example": "All risks must be considered."
+  },
+  "take": {
+    "meaning": "취하다",
+    "pos": "verb",
+    "example": "Take appropriate security measures."
+  },
+  "related": {
+    "meaning": "관련된",
+    "pos": "adjective",
+    "example": "Security-related incidents must be reported."
+  },
+  "reduce": {
+    "meaning": "감소하다",
+    "pos": "verb",
+    "example": "Reduce attack surface by hardening systems."
+  },
+  "allow": {
+    "meaning": "허용하다",
+    "pos": "verb",
+    "example": "Firewall rules allow or deny traffic."
+  },
+  "stored": {
+    "meaning": "저장된",
+    "pos": "adjective",
+    "example": "Stored data must be encrypted."
+  },
+  "keys": {
+    "meaning": "키들",
+    "pos": "noun",
+    "example": "Encryption keys must be protected."
+  },
+  "following": {
+    "meaning": "다음의",
+    "pos": "adjective",
+    "example": "Which of the following is correct?",
+    "example_parsed": [
+      {
+        "phrase": "Which of the following",
+        "order": 1,
+        "translation": "다음 중 어느 것",
+        "role": "의문사구"
+      },
+      {
+        "phrase": "is",
+        "order": 2,
+        "translation": "이다",
+        "role": "동사"
+      },
+      {
+        "phrase": "correct",
+        "order": 3,
+        "translation": "올바른가",
+        "role": "보어"
+      }
+    ]
+  },
+  "primary": {
+    "meaning": "주요한, 1차의",
+    "pos": "adjective",
+    "example": "What is the PRIMARY goal of access control?",
+    "example_parsed": [
+      {
+        "phrase": "What",
+        "order": 1,
+        "translation": "무엇이",
+        "role": "의문사"
+      },
+      {
+        "phrase": "is",
+        "order": 2,
+        "translation": "인가",
+        "role": "동사"
+      },
+      {
+        "phrase": "the PRIMARY goal",
+        "order": 3,
+        "translation": "주요 목표",
+        "role": "보어"
+      },
+      {
+        "phrase": "of access control",
+        "order": 4,
+        "translation": "접근 통제의",
+        "role": "전치사구"
+      }
+    ]
+  },
+  "best": {
+    "meaning": "최선의",
+    "pos": "adjective",
+    "example": "Which is the BEST method for encryption?",
+    "example_parsed": [
+      {
+        "phrase": "Which",
+        "order": 1,
+        "translation": "어느 것이",
+        "role": "의문사"
+      },
+      {
+        "phrase": "is",
+        "order": 2,
+        "translation": "인가",
+        "role": "동사"
+      },
+      {
+        "phrase": "the BEST method",
+        "order": 3,
+        "translation": "최선의 방법",
+        "role": "보어"
+      },
+      {
+        "phrase": "for encryption",
+        "order": 4,
+        "translation": "암호화를 위한",
+        "role": "전치사구"
+      }
+    ]
+  },
+  "most": {
+    "meaning": "가장",
+    "pos": "adverb",
+    "example": "Which is MOST likely to be attacked?",
+    "example_parsed": [
+      {
+        "phrase": "Which",
+        "order": 1,
+        "translation": "어느 것이",
+        "role": "의문사"
+      },
+      {
+        "phrase": "is MOST likely",
+        "order": 2,
+        "translation": "가장 가능성이 높은가",
+        "role": "동사구"
+      },
+      {
+        "phrase": "to be attacked",
+        "order": 3,
+        "translation": "공격받을",
+        "role": "부정사구"
+      }
+    ]
+  },
+  "organization": {
+    "meaning": "조직",
+    "pos": "noun",
+    "example": "An organization must protect its data.",
+    "example_parsed": [
+      {
+        "phrase": "An organization",
+        "order": 1,
+        "translation": "조직은",
+        "role": "주어"
+      },
+      {
+        "phrase": "must protect",
+        "order": 2,
+        "translation": "보호해야 한다",
+        "role": "동사구"
+      },
+      {
+        "phrase": "its data",
+        "order": 3,
+        "translation": "자신의 데이터를",
+        "role": "목적어"
+      }
+    ]
+  },
+  "should": {
+    "meaning": "해야 한다",
+    "pos": "modal verb",
+    "example": "What should be implemented first?",
+    "example_parsed": [
+      {
+        "phrase": "What",
+        "order": 1,
+        "translation": "무엇이",
+        "role": "의문사"
+      },
+      {
+        "phrase": "should be implemented",
+        "order": 2,
+        "translation": "구현되어야 하는가",
+        "role": "동사구"
+      },
+      {
+        "phrase": "first",
+        "order": 3,
+        "translation": "먼저",
+        "role": "부사"
+      }
+    ]
   }
 }

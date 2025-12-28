@@ -39,3 +39,11 @@ extract.py
 parse_code_control_manual.py
 fix_*.py
 update_*.py
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
