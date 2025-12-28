@@ -3,6 +3,7 @@
   "buildCommand": null,
   "outputDirectory": ".",
   "installCommand": null,
+  "framework": null,
   "routes": [
     {
       "src": "/(.*)",
@@ -21,6 +22,15 @@
     },
     {
       "source": "/js/config.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -52,15 +62,6 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600"
-        }
-      ]
-    },
-    {
-      "source": "/js/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache, no-store, must-revalidate, max-age=0"
         }
       ]
     }
