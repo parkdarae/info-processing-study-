@@ -1510,483 +1510,483 @@
     "frequency": 37
   },
   "staff": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "직원, 스태프",
+    "pos": "noun",
     "frequency": 37
   },
   "typically": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "일반적으로, 전형적으로",
+    "pos": "adverb",
     "frequency": 37
   },
   "continuous": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "연속적인, 지속적인",
+    "pos": "adjective",
     "frequency": 37
   },
   "difficult": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "어려운",
+    "pos": "adjective",
     "frequency": 37
   },
   "resource": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "자원, 리소스",
+    "pos": "noun",
     "frequency": 37
   },
   "possible": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가능한",
+    "pos": "adjective",
     "frequency": 37
   },
   "local": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지역의, 로컬",
+    "pos": "adjective",
     "frequency": 37
   },
   "enterprise": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기업, 엔터프라이즈",
+    "pos": "noun",
     "frequency": 37
   },
   "evaluation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "평가",
+    "pos": "noun",
     "frequency": 37
   },
   "trust": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "신뢰, 신뢰하다",
+    "pos": "noun",
     "frequency": 37
   },
   "challenge": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "도전, 과제",
+    "pos": "noun",
     "frequency": 36
   },
   "work": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "작업, 일하다",
+    "pos": "noun",
     "frequency": 36
   },
   "installed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "설치된",
+    "pos": "verb",
     "frequency": 36
   },
   "card": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "카드",
+    "pos": "noun",
     "frequency": 36
   },
   "connection": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "연결",
+    "pos": "noun",
     "frequency": 36
   },
   "mandatory": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "의무적인, 필수적인",
+    "pos": "adjective",
     "frequency": 36
   },
   "senior": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "고위의, 선임의",
+    "pos": "adjective",
     "frequency": 36
   },
   "attackers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공격자",
+    "pos": "noun",
     "frequency": 36
   },
   "auditor": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "감사관, 감사자",
+    "pos": "noun",
     "frequency": 36
   },
   "block": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "블록, 차단하다",
+    "pos": "noun",
     "frequency": 36
   },
   "well": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "잘, 우물",
+    "pos": "adverb",
     "frequency": 35
   },
   "contract": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "계약",
+    "pos": "noun",
     "frequency": 35
   },
   "privileges": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "권한들",
+    "pos": "noun",
     "frequency": 35
   },
   "credentials": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "자격 증명",
+    "pos": "noun",
     "frequency": 35
   },
   "assess": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "평가하다",
+    "pos": "verb",
     "frequency": 35
   },
   "content": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "내용",
+    "pos": "noun",
     "frequency": 35
   },
   "define": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "정의하다",
+    "pos": "verb",
     "frequency": 35
   },
   "cannot": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "할 수 없다",
+    "pos": "verb",
     "frequency": 35
   },
   "making": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "만드는",
+    "pos": "verb",
     "frequency": 35
   },
   "identifying": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "식별하는",
+    "pos": "verb",
     "frequency": 35
   },
   "filtering": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "필터링하는",
+    "pos": "verb",
     "frequency": 35
   },
   "enable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "활성화하다",
+    "pos": "verb",
     "frequency": 34
   },
   "develop": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "개발하다",
+    "pos": "verb",
     "frequency": 34
   },
   "cause": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "원인, 야기하다",
+    "pos": "noun",
     "frequency": 34
   },
   "subject": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "주제, 대상",
+    "pos": "noun",
     "frequency": 34
   },
   "methods": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방법들",
+    "pos": "noun",
     "frequency": 34
   },
   "often": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "종종",
+    "pos": "adverb",
     "frequency": 34
   },
   "necessary": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "필요한",
+    "pos": "adjective",
     "frequency": 34
   },
   "issues": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "문제들",
+    "pos": "noun",
     "frequency": 34
   },
   "directory": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "디렉토리",
+    "pos": "noun",
     "frequency": 34
   },
   "addresses": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "주소들",
+    "pos": "noun",
     "frequency": 34
   },
   "multi": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "다중의",
+    "pos": "adjective",
     "frequency": 34
   },
   "apply": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "적용하다",
+    "pos": "verb",
     "frequency": 34
   },
   "building": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "건물, 구축",
+    "pos": "noun",
     "frequency": 34
   },
   "forensic": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "법의학의, 포렌식",
+    "pos": "adjective",
     "frequency": 34
   },
   "communication": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "통신",
+    "pos": "noun",
     "frequency": 34
   },
   "modeling": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "모델링",
+    "pos": "noun",
     "frequency": 33
   },
   "maintaining": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "유지하는",
+    "pos": "verb",
     "frequency": 33
   },
   "sql": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "SQL (Structured Query Language, 구조화 질의어)",
+    "pos": "noun",
     "frequency": 33
   },
   "responsibilities": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "책임들",
+    "pos": "noun",
     "frequency": 33
   },
   "wants": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "원하다",
+    "pos": "verb",
     "frequency": 32
   },
   "store": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "저장하다, 상점",
+    "pos": "verb",
     "frequency": 32
   },
   "sign": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "서명, 표시",
+    "pos": "noun",
     "frequency": 32
   },
   "issue": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "문제",
+    "pos": "noun",
     "frequency": 32
   },
   "relevant": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "관련된",
+    "pos": "adjective",
     "frequency": 32
   },
   "reviewing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "검토하는",
+    "pos": "verb",
     "frequency": 32
   },
   "cryptographic": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "암호화의",
+    "pos": "adjective",
     "frequency": 32
   },
   "behavior": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "행동",
+    "pos": "noun",
     "frequency": 32
   },
   "designed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "설계된",
+    "pos": "verb",
     "frequency": 32
   },
   "shared": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공유된",
+    "pos": "verb",
     "frequency": 32
   },
   "able": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "할 수 있는",
+    "pos": "adjective",
     "frequency": 32
   },
   "technique": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기법",
+    "pos": "noun",
     "frequency": 31
   },
   "rest": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "나머지, 휴식",
+    "pos": "noun",
     "frequency": 31
   },
   "facility": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시설",
+    "pos": "noun",
     "frequency": 31
   },
   "complete": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "완료하다, 완전한",
+    "pos": "verb",
     "frequency": 31
   },
   "contain": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "포함하다",
+    "pos": "verb",
     "frequency": 31
   },
   "determining": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "결정하는",
+    "pos": "verb",
     "frequency": 31
   },
   "requirement": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "요구사항",
+    "pos": "noun",
     "frequency": 31
   },
   "csp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "CSP (Cloud Service Provider, 클라우드 서비스 제공자)",
+    "pos": "noun",
     "frequency": 31
   },
   "machine": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기계",
+    "pos": "noun",
     "frequency": 31
   },
   "router": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "라우터",
+    "pos": "noun",
     "frequency": 31
   },
   "tcp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "TCP (Transmission Control Protocol, 전송 제어 프로토콜)",
+    "pos": "noun",
     "frequency": 31
   },
   "audits": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "감사들",
+    "pos": "noun",
     "frequency": 31
   },
   "ability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "능력",
+    "pos": "noun",
     "frequency": 31
   },
   "consideration": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "고려",
+    "pos": "noun",
     "frequency": 31
   },
   "collection": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수집",
+    "pos": "noun",
     "frequency": 31
   },
   "compromised": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "침해된",
+    "pos": "verb",
     "frequency": 31
   },
   "assessing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "평가하는",
+    "pos": "verb",
     "frequency": 30
   },
   "amount": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "양, 금액",
+    "pos": "noun",
     "frequency": 30
   },
   "additional": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "추가의",
+    "pos": "adjective",
     "frequency": 30
   },
   "activity": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "활동",
+    "pos": "noun",
     "frequency": 30
   },
   "encrypt": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "암호화하다",
+    "pos": "verb",
     "frequency": 30
   },
   "period": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기간",
+    "pos": "noun",
     "frequency": 30
   },
   "performing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수행하는",
+    "pos": "verb",
     "frequency": 30
   },
   "link": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "링크, 연결",
+    "pos": "noun",
     "frequency": 30
   },
   "validate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "검증하다",
+    "pos": "verb",
     "frequency": 30
   },
   "mail": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "메일",
+    "pos": "noun",
     "frequency": 30
   },
   "firewalls": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방화벽들",
+    "pos": "noun",
     "frequency": 30
   },
   "attributes": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "속성들",
+    "pos": "noun",
     "frequency": 30
   },
   "means": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수단, 의미하다",
+    "pos": "noun",
     "frequency": 30
   },
   "according": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "~에 따르면",
+    "pos": "preposition",
     "frequency": 30
   },
   "auditing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "감사",
+    "pos": "noun",
     "frequency": 30
   },
   "confidential": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기밀의",
+    "pos": "adjective",
     "frequency": 30
   },
   "conducting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수행하는",
+    "pos": "verb",
     "frequency": 30
   },
   "providing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "제공하는",
+    "pos": "verb",
     "frequency": 30
   },
   "helps": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "도와주다",
+    "pos": "verb",
     "frequency": 30
   },
   "steps": {
@@ -10975,7 +10975,7 @@
     "frequency": 4
   },
   "misconfigurations": {
-    "meaning": "",
+    "meaning": "설정 오류, 잘못된 구성",
     "pos": "unknown",
     "frequency": 4
   },
@@ -15405,7 +15405,7 @@
     "frequency": 2
   },
   "compartmentalization": {
-    "meaning": "",
+    "meaning": "구획화",
     "pos": "unknown",
     "frequency": 2
   },
@@ -19700,753 +19700,753 @@
     "frequency": 1
   },
   "msn": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "MSN (마이크로소프트 네트워크)",
+    "pos": "noun",
     "frequency": 1
   },
   "yahoo": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "야후 (회사명 또는 감탄사)",
+    "pos": "noun",
     "frequency": 1
   },
   "negotiated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "협상된, 협의된",
+    "pos": "verb",
     "frequency": 1
   },
   "delegates": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "위임하다, 대표",
+    "pos": "verb",
     "frequency": 1
   },
   "holding": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "보유, 유지",
+    "pos": "noun",
     "frequency": 1
   },
   "interconnectedness": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "상호연결성, 상호의존성",
+    "pos": "noun",
     "frequency": 1
   },
   "ultimate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "궁극적인, 최종의",
+    "pos": "adjective",
     "frequency": 1
   },
   "president": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "대통령, 회장",
+    "pos": "noun",
     "frequency": 1
   },
   "dont": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "하지 않다 (don't의 축약형)",
+    "pos": "verb",
     "frequency": 1
   },
   "meanwhile": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "한편, 그동안",
+    "pos": "adverb",
     "frequency": 1
   },
   "recognizes": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "인식하다, 인정하다",
+    "pos": "verb",
     "frequency": 1
   },
   "outweighed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "~보다 중요하다, ~보다 가치가 크다",
+    "pos": "verb",
     "frequency": 1
   },
   "xaas": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "XaaS (Everything as a Service, 모든 것을 서비스로)",
+    "pos": "noun",
     "frequency": 1
   },
   "zigbee": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지그비 (무선 통신 프로토콜)",
+    "pos": "noun",
     "frequency": 1
   },
   "checkers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "체커, 검사자",
+    "pos": "noun",
     "frequency": 1
   },
   "portable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "휴대용의, 이동 가능한",
+    "pos": "adjective",
     "frequency": 1
   },
   "modularity": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "모듈성, 모듈화",
+    "pos": "noun",
     "frequency": 1
   },
   "color": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "색상, 색깔",
+    "pos": "noun",
     "frequency": 1
   },
   "spider": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "스파이더, 크롤러",
+    "pos": "noun",
     "frequency": 1
   },
   "questionnaires": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "설문지, 질문지",
+    "pos": "noun",
     "frequency": 1
   },
   "geopolitical": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지정학적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "liabilities": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "부채, 책임",
+    "pos": "noun",
     "frequency": 1
   },
   "dbms": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "DBMS (데이터베이스 관리 시스템)",
+    "pos": "noun",
     "frequency": 1
   },
   "indexing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "인덱싱, 색인",
+    "pos": "noun",
     "frequency": 1
   },
   "views": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "뷰, 관점",
+    "pos": "noun",
     "frequency": 1
   },
   "referential": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "참조의, 참조적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "expectation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기대, 예상",
+    "pos": "noun",
     "frequency": 1
   },
   "substitution": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "대체, 치환",
+    "pos": "noun",
     "frequency": 1
   },
   "publishes": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "발행하다, 게시하다",
+    "pos": "verb",
     "frequency": 1
   },
   "routines": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "루틴, 일상 업무",
+    "pos": "noun",
     "frequency": 1
   },
   "editing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "편집, 수정",
+    "pos": "noun",
     "frequency": 1
   },
   "solicit": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "요청하다, 구하다",
+    "pos": "verb",
     "frequency": 1
   },
   "posing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "제시하다, 야기하다",
+    "pos": "verb",
     "frequency": 1
   },
   "peripheral": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "주변 장치, 주변의",
+    "pos": "adjective",
     "frequency": 1
   },
   "sicold": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "SICOLD (보안 관련 약어)",
+    "pos": "noun",
     "frequency": 1
   },
   "bounds": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "경계, 범위",
+    "pos": "noun",
     "frequency": 1
   },
   "formula": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공식, 수식",
+    "pos": "noun",
     "frequency": 1
   },
   "eml": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "EML (이메일 파일 형식)",
+    "pos": "noun",
     "frequency": 1
   },
   "violence": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "폭력",
+    "pos": "noun",
     "frequency": 1
   },
   "impeding": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방해하는, 저지하는",
+    "pos": "adjective",
     "frequency": 1
   },
   "phrases": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "구문, 문구",
+    "pos": "noun",
     "frequency": 1
   },
   "propriety": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "적절성, 예의",
+    "pos": "noun",
     "frequency": 1
   },
   "experiences": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "경험, 체험",
+    "pos": "noun",
     "frequency": 1
   },
   "leasing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "리스, 임대",
+    "pos": "noun",
     "frequency": 1
   },
   "technically": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기술적으로, 엄밀히 말하면",
+    "pos": "adverb",
     "frequency": 1
   },
   "rendered": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "렌더링된, 제공된",
+    "pos": "verb",
     "frequency": 1
   },
   "unreadable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "읽을 수 없는",
+    "pos": "adjective",
     "frequency": 1
   },
   "lc": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "LC (Lower Case, 소문자 또는 다른 약어)",
+    "pos": "noun",
     "frequency": 1
   },
   "panel": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "패널, 패널",
+    "pos": "noun",
     "frequency": 1
   },
   "connector": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "커넥터, 연결 장치",
+    "pos": "noun",
     "frequency": 1
   },
   "exercised": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "실행된, 행사된",
+    "pos": "verb",
     "frequency": 1
   },
   "broadest": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가장 넓은",
+    "pos": "adjective",
     "frequency": 1
   },
   "creators": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "창조자, 제작자",
+    "pos": "noun",
     "frequency": 1
   },
   "abilities": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "능력, 재능",
+    "pos": "noun",
     "frequency": 1
   },
   "readonly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "읽기 전용",
+    "pos": "adjective",
     "frequency": 1
   },
   "sharepoint": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "SharePoint (마이크로소프트 협업 플랫폼)",
+    "pos": "noun",
     "frequency": 1
   },
   "weekly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "주간의, 주간",
+    "pos": "adjective",
     "frequency": 1
   },
   "stewardship": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "관리, 책임",
+    "pos": "noun",
     "frequency": 1
   },
   "honey": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "꿀, 벌꿀",
+    "pos": "noun",
     "frequency": 1
   },
   "pot": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "냄비, 화분",
+    "pos": "noun",
     "frequency": 1
   },
   "motivations": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "동기, 동기부여",
+    "pos": "noun",
     "frequency": 1
   },
   "floodplain": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "범람원, 홍수 평원",
+    "pos": "noun",
     "frequency": 1
   },
   "lest": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "~하지 않도록, ~을 두려워하여",
+    "pos": "conjunction",
     "frequency": 1
   },
   "sra": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "SRA (Security Risk Assessment, 보안 위험 평가)",
+    "pos": "noun",
     "frequency": 1
   },
   "sx": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "SX (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "hypothesis": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가설, 추정",
+    "pos": "noun",
     "frequency": 1
   },
   "masquerader": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가장자, 사칭자",
+    "pos": "noun",
     "frequency": 1
   },
   "wanted": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "원하는, 원했던",
+    "pos": "adjective",
     "frequency": 1
   },
   "dramatically": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "극적으로, 급격히",
+    "pos": "adverb",
     "frequency": 1
   },
   "operated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "운영된, 작동된",
+    "pos": "verb",
     "frequency": 1
   },
   "interpreted": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "해석된, 번역된",
+    "pos": "verb",
     "frequency": 1
   },
   "sslvpn": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "SSL VPN (Secure Sockets Layer 가상 사설망)",
+    "pos": "noun",
     "frequency": 1
   },
   "risky": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "위험한",
+    "pos": "adjective",
     "frequency": 1
   },
   "repetitive": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "반복적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "widespread": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "광범위한, 널리 퍼진",
+    "pos": "adjective",
     "frequency": 1
   },
   "associations": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "연관, 협회",
+    "pos": "noun",
     "frequency": 1
   },
   "assurances": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "보장, 보증",
+    "pos": "noun",
     "frequency": 1
   },
   "remember": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기억하다, 상기하다",
+    "pos": "verb",
     "frequency": 1
   },
   "organiztion": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조직 (organization의 오타)",
+    "pos": "noun",
     "frequency": 1
   },
   "transient": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "일시적인, 임시의",
+    "pos": "adjective",
     "frequency": 1
   },
   "relaying": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "중계하는, 전달하는",
+    "pos": "verb",
     "frequency": 1
   },
   "pir": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "PIR (Passive Infrared, 수동 적외선)",
+    "pos": "noun",
     "frequency": 1
   },
   "compensate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "보상하다, 보완하다",
+    "pos": "verb",
     "frequency": 1
   },
   "metadata": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "메타데이터, 데이터에 대한 데이터",
+    "pos": "noun",
     "frequency": 1
   },
   "child": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "자식, 하위",
+    "pos": "noun",
     "frequency": 1
   },
   "opsf": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "OPSF (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "interior": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "내부의, 내부",
+    "pos": "adjective",
     "frequency": 1
   },
   "convergence": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수렴, 융합",
+    "pos": "noun",
     "frequency": 1
   },
   "rtt": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "RTT (Round Trip Time, 왕복 시간)",
+    "pos": "noun",
     "frequency": 1
   },
   "mitigations": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "완화, 경감",
+    "pos": "noun",
     "frequency": 1
   },
   "unecessary": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "불필요한 (unnecessary의 오타)",
+    "pos": "adjective",
     "frequency": 1
   },
   "arising": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "발생하는, 일어나는",
+    "pos": "verb",
     "frequency": 1
   },
   "ghjipklwengh": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "jh": {
-    "meaning": "",
+    "meaning": "약어 또는 오타",
     "pos": "unknown",
     "frequency": 1
   },
   "balanced": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "균형 잡힌",
+    "pos": "adjective",
     "frequency": 1
   },
   "apple": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사과, 애플",
+    "pos": "noun",
     "frequency": 1
   },
   "tagging": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "태깅, 태그 달기",
+    "pos": "noun",
     "frequency": 1
   },
   "unspecified": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "명시되지 않은",
+    "pos": "adjective",
     "frequency": 1
   },
   "constant": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "상수, 일정한",
+    "pos": "adjective",
     "frequency": 1
   },
   "reparability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수리 가능성",
+    "pos": "noun",
     "frequency": 1
   },
   "upgradability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "업그레이드 가능성",
+    "pos": "noun",
     "frequency": 1
   },
   "prematurely": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조기에, 성급하게",
+    "pos": "adverb",
     "frequency": 1
   },
   "companywide": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "회사 전체의",
+    "pos": "adjective",
     "frequency": 1
   },
   "naas": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "NaaS (Network as a Service, 네트워크 서비스)",
+    "pos": "noun",
     "frequency": 1
   },
   "worrying": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "걱정스러운, 우려되는",
+    "pos": "adjective",
     "frequency": 1
   },
   "horizontal": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수평의, 가로의",
+    "pos": "adjective",
     "frequency": 1
   },
   "tps": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "TPS (Transactions Per Second, 초당 트랜잭션 수)",
+    "pos": "noun",
     "frequency": 1
   },
   "deposits": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "예금, 보증금",
+    "pos": "noun",
     "frequency": 1
   },
   "coop": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "협동조합, 협력",
+    "pos": "noun",
     "frequency": 1
   },
   "designs": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "설계, 디자인",
+    "pos": "noun",
     "frequency": 1
   },
   "rec": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "REC (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "jarty": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "lowered": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "낮춘, 감소시킨",
+    "pos": "verb",
     "frequency": 1
   },
   "regiiartv": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "retaliation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "보복, 응징",
+    "pos": "noun",
     "frequency": 1
   },
   "adieman": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "seeking": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "찾는, 추구하는",
+    "pos": "verb",
     "frequency": 1
   },
   "clouds": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "클라우드들",
+    "pos": "noun",
     "frequency": 1
   },
   "mm": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "MM (밀리미터 또는 다른 약어)",
+    "pos": "noun",
     "frequency": 1
   },
   "conversely": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "반대로",
+    "pos": "adverb",
     "frequency": 1
   },
   "strictly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "엄격하게, 엄밀히",
+    "pos": "adverb",
     "frequency": 1
   },
   "regulated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "규제된",
+    "pos": "verb",
     "frequency": 1
   },
   "intermediaries": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "중개자, 중간자",
+    "pos": "noun",
     "frequency": 1
   },
   "edge": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가장자리, 엣지",
+    "pos": "noun",
     "frequency": 1
   },
   "subset": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "부분집합",
+    "pos": "noun",
     "frequency": 1
   },
   "obtains": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "얻다, 획득하다",
+    "pos": "verb",
     "frequency": 1
   },
   "ore": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "광석",
+    "pos": "noun",
     "frequency": 1
   },
   "embarks": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "착수하다, 시작하다",
+    "pos": "verb",
     "frequency": 1
   },
   "equally": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "동등하게, 똑같이",
+    "pos": "adverb",
     "frequency": 1
   },
   "shielded": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "보호된, 차폐된",
+    "pos": "verb",
     "frequency": 1
   },
   "ring": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "링, 고리",
+    "pos": "noun",
     "frequency": 1
   },
   "stealth": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "스텔스, 은밀함",
+    "pos": "noun",
     "frequency": 1
   },
   "nba": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "NBA (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "designers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "설계자, 디자이너",
+    "pos": "noun",
     "frequency": 1
   },
   "essence": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "본질, 핵심",
+    "pos": "noun",
     "frequency": 1
   },
   "lens": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "렌즈",
+    "pos": "noun",
     "frequency": 1
   },
   "barrier": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "장벽, 방어막",
+    "pos": "noun",
     "frequency": 1
   },
   "archives": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "아카이브, 기록 보관소",
+    "pos": "noun",
     "frequency": 1
   },
   "informing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "알리는, 통보하는",
+    "pos": "verb",
     "frequency": 1
   },
   "imminent": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "임박한, 곧 닥칠",
+    "pos": "adjective",
     "frequency": 1
   },
   "ransom": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "몸값, 랜섬",
+    "pos": "noun",
     "frequency": 1
   },
   "paid": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지불된, 유료의",
+    "pos": "verb",
     "frequency": 1
   },
   "balancers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "밸런서들",
+    "pos": "noun",
     "frequency": 1
   },
   "wafs": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "WAFs (Web Application Firewalls, 웹 애플리케이션 방화벽)",
+    "pos": "noun",
     "frequency": 1
   },
   "diminished": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "감소된, 축소된",
+    "pos": "verb",
     "frequency": 1
   },
   "expansion": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "확장",
+    "pos": "noun",
     "frequency": 1
   },
   "inability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "불가능, 무능력",
+    "pos": "noun",
     "frequency": 1
   },
   "impaired": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "손상된, 약화된",
+    "pos": "verb",
     "frequency": 1
   },
   "destabilize": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "불안정하게 만들다",
+    "pos": "verb",
     "frequency": 1
   },
   "expand": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "확장하다",
+    "pos": "verb",
     "frequency": 1
   },
   "modems": {
@@ -23900,7 +23900,7 @@
     "frequency": 1
   },
   "interconnectivity": {
-    "meaning": "",
+    "meaning": "상호 연결성",
     "pos": "unknown",
     "frequency": 1
   },
@@ -25500,103 +25500,103 @@
     "frequency": 1
   },
   "brain": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "뇌, 두뇌",
+    "pos": "noun",
     "frequency": 1
   },
   "film": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "필름, 영화",
+    "pos": "noun",
     "frequency": 1
   },
   "neural": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "신경의, 뉴럴",
+    "pos": "adjective",
     "frequency": 1
   },
   "outermost": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가장 바깥쪽의",
+    "pos": "adjective",
     "frequency": 1
   },
   "cell": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "셀, 세포",
+    "pos": "noun",
     "frequency": 1
   },
   "otdr": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "OTDR (Optical Time Domain Reflectometer, 광 시간 영역 반사계)",
+    "pos": "noun",
     "frequency": 1
   },
   "tone": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "톤, 음조",
+    "pos": "noun",
     "frequency": 1
   },
   "fusion": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "융합, 결합",
+    "pos": "noun",
     "frequency": 1
   },
   "splicer": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "스플라이서, 접속기",
+    "pos": "noun",
     "frequency": 1
   },
   "injector": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "주입기, 인젝터",
+    "pos": "noun",
     "frequency": 1
   },
   "lexical": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "어휘의, 사전의",
+    "pos": "adjective",
     "frequency": 1
   },
   "discouraged": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "낙담한, 좌절한",
+    "pos": "adjective",
     "frequency": 1
   },
   "informative": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "정보를 제공하는",
+    "pos": "adjective",
     "frequency": 1
   },
   "satisfaction": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "만족",
+    "pos": "noun",
     "frequency": 1
   },
   "rarp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "RARP (Reverse Address Resolution Protocol, 역 주소 결정 프로토콜)",
+    "pos": "noun",
     "frequency": 1
   },
   "gerver": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "deploys": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "배포하다",
+    "pos": "verb",
     "frequency": 1
   },
   "ciphering": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "암호화하는",
+    "pos": "verb",
     "frequency": 1
   },
   "adelman": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "Adelman (인명 또는 오타)",
+    "pos": "noun",
     "frequency": 1
   },
   "players": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "플레이어들, 참가자들",
+    "pos": "noun",
     "frequency": 1
   },
   "outputs": {
@@ -25700,433 +25700,433 @@
     "frequency": 1
   },
   "flowing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "흐르는, 유동적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "spammers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "스팸 발송자들",
+    "pos": "noun",
     "frequency": 1
   },
   "credentialing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "자격 증명 부여",
+    "pos": "noun",
     "frequency": 1
   },
   "ripper": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "리퍼, 추출 도구",
+    "pos": "noun",
     "frequency": 1
   },
   "dpa": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "DPA (Data Processing Agreement, 데이터 처리 계약)",
+    "pos": "noun",
     "frequency": 1
   },
   "formulated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공식화된, 정식화된",
+    "pos": "adjective",
     "frequency": 1
   },
   "fore": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "앞의, 전방의",
+    "pos": "adjective",
     "frequency": 1
   },
   "ball": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공, 볼",
+    "pos": "noun",
     "frequency": 1
   },
   "toper": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "상위자, 최고자",
+    "pos": "noun",
     "frequency": 1
   },
   "defensible": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방어 가능한, 정당화할 수 있는",
+    "pos": "adjective",
     "frequency": 1
   },
   "downloading": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "다운로드하는",
+    "pos": "verb",
     "frequency": 1
   },
   "imposed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "부과된, 강제된",
+    "pos": "adjective",
     "frequency": 1
   },
   "ducking": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "피하는, 회피하는",
+    "pos": "verb",
     "frequency": 1
   },
   "sideloading": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사이드로딩, 직접 설치",
+    "pos": "noun",
     "frequency": 1
   },
   "routes": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "경로들, 라우트들",
+    "pos": "noun",
     "frequency": 1
   },
   "osp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "OSP (Outsourced Service Provider, 아웃소싱 서비스 제공자)",
+    "pos": "noun",
     "frequency": 1
   },
   "achievable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "달성 가능한",
+    "pos": "adjective",
     "frequency": 1
   },
   "affordable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "감당할 수 있는, 저렴한",
+    "pos": "adjective",
     "frequency": 1
   },
   "emanations": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방출, 유출",
+    "pos": "noun",
     "frequency": 1
   },
   "encase": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "감싸다, 포장하다",
+    "pos": "verb",
     "frequency": 1
   },
   "voltage": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "전압",
+    "pos": "noun",
     "frequency": 1
   },
   "signals": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "신호들",
+    "pos": "noun",
     "frequency": 1
   },
   "lookup": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조회, 검색",
+    "pos": "noun",
     "frequency": 1
   },
   "deveoping": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "개발하는 (developing의 오타)",
+    "pos": "verb",
     "frequency": 1
   },
   "resioual": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "잔여의 (residual의 오타)",
+    "pos": "adjective",
     "frequency": 1
   },
   "lhat": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "debt": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "부채, 빚",
+    "pos": "noun",
     "frequency": 1
   },
   "degrade": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "저하시키다, 퇴화시키다",
+    "pos": "verb",
     "frequency": 1
   },
   "uplinks": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "업링크들, 상향 링크들",
+    "pos": "noun",
     "frequency": 1
   },
   "config": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "설정, 구성",
+    "pos": "noun",
     "frequency": 1
   },
   "finish": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "완료하다, 마무리하다",
+    "pos": "verb",
     "frequency": 1
   },
   "registrar": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "등록 기관, 등록자",
+    "pos": "noun",
     "frequency": 1
   },
   "adapter": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "어댑터, 적응기",
+    "pos": "noun",
     "frequency": 1
   },
   "reprioritizes": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "우선순위를 재조정하다",
+    "pos": "verb",
     "frequency": 1
   },
   "upcoming": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "다가오는, 예정된",
+    "pos": "adjective",
     "frequency": 1
   },
   "trend": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "추세, 경향",
+    "pos": "noun",
     "frequency": 1
   },
   "arranged": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "배열된, 정리된",
+    "pos": "adjective",
     "frequency": 1
   },
   "diffle": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "preprocess": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "전처리하다",
+    "pos": "verb",
     "frequency": 1
   },
   "inn": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "여관, 여인숙",
+    "pos": "noun",
     "frequency": 1
   },
   "superficially": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "표면적으로, 피상적으로",
+    "pos": "adverb",
     "frequency": 1
   },
   "rot": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "썩다, 부패하다",
+    "pos": "verb",
     "frequency": 1
   },
   "mentioned": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "언급된",
+    "pos": "adjective",
     "frequency": 1
   },
   "imply": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "암시하다, 함축하다",
+    "pos": "verb",
     "frequency": 1
   },
   "stuffing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "채우기, 스터핑",
+    "pos": "noun",
     "frequency": 1
   },
   "unqualified": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "자격 없는, 무조건의",
+    "pos": "adjective",
     "frequency": 1
   },
   "undisclosed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공개되지 않은",
+    "pos": "adjective",
     "frequency": 1
   },
   "inexperienced": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "경험이 없는",
+    "pos": "adjective",
     "frequency": 1
   },
   "merit": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "장점, 공로",
+    "pos": "noun",
     "frequency": 1
   },
   "qualifications": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "자격, 자격 요건",
+    "pos": "noun",
     "frequency": 1
   },
   "undermine": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "약화시키다, 훼손하다",
+    "pos": "verb",
     "frequency": 1
   },
   "poa": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "POA (Power of Attorney, 대리권)",
+    "pos": "noun",
     "frequency": 1
   },
   "practiced": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "연습한, 숙련된",
+    "pos": "adjective",
     "frequency": 1
   },
   "classifies": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "분류하다",
+    "pos": "verb",
     "frequency": 1
   },
   "arranges": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "배열하다, 정리하다",
+    "pos": "verb",
     "frequency": 1
   },
   "thirdparty": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "제3자, 서드파티",
+    "pos": "noun",
     "frequency": 1
   },
   "starting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시작하는",
+    "pos": "verb",
     "frequency": 1
   },
   "venture": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "벤처, 사업",
+    "pos": "noun",
     "frequency": 1
   },
   "seamed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "이음새가 있는",
+    "pos": "adjective",
     "frequency": 1
   },
   "profits": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "이익들",
+    "pos": "noun",
     "frequency": 1
   },
   "enrolls": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "등록하다",
+    "pos": "verb",
     "frequency": 1
   },
   "served": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "제공된, 서비스된",
+    "pos": "adjective",
     "frequency": 1
   },
   "wimax": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "WiMAX (Worldwide Interoperability for Microwave Access, 무선 광대역 통신 기술)",
+    "pos": "noun",
     "frequency": 1
   },
   "uploading": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "업로드하는",
+    "pos": "verb",
     "frequency": 1
   },
   "inefficient": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비효율적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "extradition": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "인도, 인도 요청",
+    "pos": "noun",
     "frequency": 1
   },
   "treaties": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조약들",
+    "pos": "noun",
     "frequency": 1
   },
   "understaffed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "인력 부족한",
+    "pos": "adjective",
     "frequency": 1
   },
   "courts": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "법원들",
+    "pos": "noun",
     "frequency": 1
   },
   "sgmp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "SGMP (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "orphan": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "고아, 고아의",
+    "pos": "noun",
     "frequency": 1
   },
   "jack": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "잭, 연결 장치",
+    "pos": "noun",
     "frequency": 1
   },
   "stopped": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "중지된, 멈춘",
+    "pos": "adjective",
     "frequency": 1
   },
   "deliberate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "의도적인, 신중한",
+    "pos": "adjective",
     "frequency": 1
   },
   "indicating": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "나타내는, 지시하는",
+    "pos": "verb",
     "frequency": 1
   },
   "worth": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가치, 가치 있는",
+    "pos": "noun",
     "frequency": 1
   },
   "positioning": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "위치 지정, 포지셔닝",
+    "pos": "noun",
     "frequency": 1
   },
   "gps": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "GPS (Global Positioning System, 위성 위치 확인 시스템)",
+    "pos": "noun",
     "frequency": 1
   },
   "geo": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지리적, 지리",
+    "pos": "adjective",
     "frequency": 1
   },
   "bulletins": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공지사항들, 게시판",
+    "pos": "noun",
     "frequency": 1
   },
   "incorporates": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "포함하다, 통합하다",
+    "pos": "verb",
     "frequency": 1
   },
   "refresh": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "새로고침하다, 갱신하다",
+    "pos": "verb",
     "frequency": 1
   },
   "schedules": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "일정들, 스케줄들",
+    "pos": "noun",
     "frequency": 1
   },
   "bfst": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "BFST (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "carriers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "운송업체들, 캐리어들",
+    "pos": "noun",
     "frequency": 1
   },
   "reassembly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재조립, 재구성",
+    "pos": "noun",
     "frequency": 1
   },
   "gramm": {
@@ -26150,138 +26150,138 @@
     "frequency": 1
   },
   "repairing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수리하는",
+    "pos": "verb",
     "frequency": 1
   },
   "investigated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조사된",
+    "pos": "adjective",
     "frequency": 1
   },
   "resuming": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재개하는",
+    "pos": "verb",
     "frequency": 1
   },
   "ions": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "이온들",
+    "pos": "noun",
     "frequency": 1
   },
   "relocate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재배치하다, 이전하다",
+    "pos": "verb",
     "frequency": 1
   },
   "revise": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수정하다, 개정하다",
+    "pos": "verb",
     "frequency": 1
   },
   "debating": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "토론하는",
+    "pos": "verb",
     "frequency": 1
   },
   "headcount": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "인원 수, 직원 수",
+    "pos": "noun",
     "frequency": 1
   },
   "capacity": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "용량, 능력",
+    "pos": "noun",
     "frequency": 1
   },
   "catalog": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "카탈로그, 목록",
+    "pos": "noun",
     "frequency": 1
   },
   "privately": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사적으로, 비공개로",
+    "pos": "adverb",
     "frequency": 1
   },
   "watching": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지켜보는, 감시하는",
+    "pos": "verb",
     "frequency": 1
   },
   "liked": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "좋아한",
+    "pos": "adjective",
     "frequency": 1
   },
   "google": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "구글",
+    "pos": "noun",
     "frequency": 1
   },
   "turned": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "돌린, 전환된",
+    "pos": "adjective",
     "frequency": 1
   },
   "clears": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지우다, 정리하다",
+    "pos": "verb",
     "frequency": 1
   },
   "escalating": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "에스컬레이션하는, 확대하는",
+    "pos": "verb",
     "frequency": 1
   },
   "attending": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "참석하는",
+    "pos": "verb",
     "frequency": 1
   },
   "lunch": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "점심",
+    "pos": "noun",
     "frequency": 1
   },
   "worker": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "근로자, 작업자",
+    "pos": "noun",
     "frequency": 1
   },
   "exchanged": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "교환된",
+    "pos": "adjective",
     "frequency": 1
   },
   "signatories": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "서명자들",
+    "pos": "noun",
     "frequency": 1
   },
   "palermo": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "팔레르모 (도시명)",
+    "pos": "noun",
     "frequency": 1
   },
   "wassenaar": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "바세나르 (도시명, Wassenaar Arrangement)",
+    "pos": "noun",
     "frequency": 1
   },
   "arms": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "무기들, 팔들",
+    "pos": "noun",
     "frequency": 1
   },
   "itar": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "ITAR (International Traffic in Arms Regulations, 무기 거래 규정)",
+    "pos": "noun",
     "frequency": 1
   },
   "simplifies": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "단순화하다",
+    "pos": "verb",
     "frequency": 1
   },
   "ptpp": {
@@ -26310,143 +26310,143 @@
     "frequency": 1
   },
   "timestamps": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "타임스탬프들",
+    "pos": "noun",
     "frequency": 1
   },
   "penetrating": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "침투하는, 관통하는",
+    "pos": "verb",
     "frequency": 1
   },
   "fjb": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "FJB (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "stress": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "스트레스, 압력",
+    "pos": "noun",
     "frequency": 1
   },
   "variation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "변화, 변형",
+    "pos": "noun",
     "frequency": 1
   },
   "hardwire": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "하드와이어, 고정 배선",
+    "pos": "noun",
     "frequency": 1
   },
   "wholesale": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "도매, 대량",
+    "pos": "noun",
     "frequency": 1
   },
   "ce": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "CE (Conformité Européenne, 유럽 적합성 마크)",
+    "pos": "noun",
     "frequency": 1
   },
   "investigating": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조사하는",
+    "pos": "verb",
     "frequency": 1
   },
   "tends": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "경향이 있다, ~하는 경향이 있다",
+    "pos": "verb",
     "frequency": 1
   },
   "externally": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "외부적으로",
+    "pos": "adverb",
     "frequency": 1
   },
   "bought": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "구매한",
+    "pos": "adjective",
     "frequency": 1
   },
   "prove": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "증명하다",
+    "pos": "verb",
     "frequency": 1
   },
   "belong": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "속하다, 소유하다",
+    "pos": "verb",
     "frequency": 1
   },
   "hat": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "모자",
+    "pos": "noun",
     "frequency": 1
   },
   "plotted": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "계획된, 도표화된",
+    "pos": "adjective",
     "frequency": 1
   },
   "inserting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "삽입하는",
+    "pos": "verb",
     "frequency": 1
   },
   "qualitative": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "질적인, 정성적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "ra": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "RA (Registration Authority, 등록 기관)",
+    "pos": "noun",
     "frequency": 1
   },
   "opening": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "개방, 시작",
+    "pos": "noun",
     "frequency": 1
   },
   "neighbor": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "이웃",
+    "pos": "noun",
     "frequency": 1
   },
   "peers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "동료들, 피어들",
+    "pos": "noun",
     "frequency": 1
   },
   "portscans": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "포트 스캔들",
+    "pos": "noun",
     "frequency": 1
   },
   "anomalous": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비정상적인, 이상한",
+    "pos": "adjective",
     "frequency": 1
   },
   "consensus": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "합의, 공감대",
+    "pos": "noun",
     "frequency": 1
   },
   "converged": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수렴된, 통합된",
+    "pos": "adjective",
     "frequency": 1
   },
   "lookups": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조회들, 검색들",
+    "pos": "noun",
     "frequency": 1
   },
   "congestion": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "혼잡, 포화",
+    "pos": "noun",
     "frequency": 1
   },
   "selects": {
@@ -26470,123 +26470,123 @@
     "frequency": 1
   },
   "accidentally": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "실수로, 우연히",
+    "pos": "adverb",
     "frequency": 1
   },
   "branded": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "브랜드화된, 상표가 붙은",
+    "pos": "adjective",
     "frequency": 1
   },
   "usable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사용 가능한",
+    "pos": "adjective",
     "frequency": 1
   },
   "specially": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "특별히",
+    "pos": "adverb",
     "frequency": 1
   },
   "magnitude": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "규모, 크기",
+    "pos": "noun",
     "frequency": 1
   },
   "deadly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "치명적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "hazard": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "위험, 위험 요소",
+    "pos": "noun",
     "frequency": 1
   },
   "interacts": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "상호작용하다",
+    "pos": "verb",
     "frequency": 1
   },
   "catastrophe": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재난, 대참사",
+    "pos": "noun",
     "frequency": 1
   },
   "evading": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "회피하는, 피하는",
+    "pos": "verb",
     "frequency": 1
   },
   "fragments": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조각들, 단편들",
+    "pos": "noun",
     "frequency": 1
   },
   "reassemble": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재조립하다",
+    "pos": "verb",
     "frequency": 1
   },
   "fragmented": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "분할된, 조각난",
+    "pos": "adjective",
     "frequency": 1
   },
   "triggering": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "트리거하는, 유발하는",
+    "pos": "verb",
     "frequency": 1
   },
   "holder": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "소유자, 보유자",
+    "pos": "noun",
     "frequency": 1
   },
   "tpsp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "TPSP (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "aoc": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "AOC (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "adopts": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "채택하다, 도입하다",
+    "pos": "verb",
     "frequency": 1
   },
   "dc": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "DC (Data Center, 데이터 센터 또는 Direct Current, 직류)",
+    "pos": "noun",
     "frequency": 1
   },
   "failovers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "페일오버들, 장애 조치들",
+    "pos": "noun",
     "frequency": 1
   },
   "actively": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "능동적으로, 적극적으로",
+    "pos": "adverb",
     "frequency": 1
   },
   "highert": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "더 높은 (higher의 오타)",
+    "pos": "adjective",
     "frequency": 1
   },
   "earthquake": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지진",
+    "pos": "noun",
     "frequency": 1
   },
   "windstorm": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "강풍, 폭풍",
+    "pos": "noun",
     "frequency": 1
   },
   "bprcm": {
@@ -26605,128 +26605,128 @@
     "frequency": 1
   },
   "improvements": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "개선사항들",
+    "pos": "noun",
     "frequency": 1
   },
   "ethic": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "윤리, 도덕",
+    "pos": "noun",
     "frequency": 1
   },
   "worst": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "최악의",
+    "pos": "adjective",
     "frequency": 1
   },
   "autonomy": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "자율성, 자치",
+    "pos": "noun",
     "frequency": 1
   },
   "chinese": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "중국의, 중국인",
+    "pos": "adjective",
     "frequency": 1
   },
   "wall": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "벽",
+    "pos": "noun",
     "frequency": 1
   },
   "salami": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "살라미 (공격 기법)",
+    "pos": "noun",
     "frequency": 1
   },
   "bomb": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "폭탄",
+    "pos": "noun",
     "frequency": 1
   },
   "untrustworthy": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "신뢰할 수 없는",
+    "pos": "adjective",
     "frequency": 1
   },
   "reacting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "반응하는",
+    "pos": "verb",
     "frequency": 1
   },
   "salted": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "소금에 절인, 솔트된",
+    "pos": "adjective",
     "frequency": 1
   },
   "embed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "삽입하다, 내장하다",
+    "pos": "verb",
     "frequency": 1
   },
   "inspecting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "검사하는",
+    "pos": "verb",
     "frequency": 1
   },
   "intention": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "의도, 목적",
+    "pos": "noun",
     "frequency": 1
   },
   "ought": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "~해야 한다",
+    "pos": "verb",
     "frequency": 1
   },
   "stake": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "이해관계, 지분",
+    "pos": "noun",
     "frequency": 1
   },
   "roi": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "ROI (Return on Investment, 투자 수익률)",
+    "pos": "noun",
     "frequency": 1
   },
   "representatives": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "대표자들",
+    "pos": "noun",
     "frequency": 1
   },
   "consenting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "동의하는",
+    "pos": "verb",
     "frequency": 1
   },
   "unavailability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사용 불가능, 가용성 부족",
+    "pos": "noun",
     "frequency": 1
   },
   "cater": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공급하다, 제공하다",
+    "pos": "verb",
     "frequency": 1
   },
   "replicate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "복제하다",
+    "pos": "verb",
     "frequency": 1
   },
   "informal": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비공식적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "assisting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지원하는, 도와주는",
+    "pos": "verb",
     "frequency": 1
   },
   "interviewing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "면접하는, 인터뷰하는",
+    "pos": "verb",
     "frequency": 1
   },
   "langue": {
@@ -26750,118 +26750,118 @@
     "frequency": 1
   },
   "constantly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지속적으로, 계속해서",
+    "pos": "adverb",
     "frequency": 1
   },
   "origins": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기원들, 출처들",
+    "pos": "noun",
     "frequency": 1
   },
   "abreast": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "나란히, 최신 상태로",
+    "pos": "adverb",
     "frequency": 1
   },
   "imagine": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "상상하다",
+    "pos": "verb",
     "frequency": 1
   },
   "vigilance": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "경계, 경각심",
+    "pos": "noun",
     "frequency": 1
   },
   "consolidation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "통합, 통폐합",
+    "pos": "noun",
     "frequency": 1
   },
   "attends": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "참석하다",
+    "pos": "verb",
     "frequency": 1
   },
   "seminar": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "세미나",
+    "pos": "noun",
     "frequency": 1
   },
   "honorable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "명예로운, 존경할 만한",
+    "pos": "adjective",
     "frequency": 1
   },
   "apis": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "API들 (Application Programming Interface, 응용 프로그래밍 인터페이스)",
+    "pos": "noun",
     "frequency": 1
   },
   "seal": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "봉인, 인장",
+    "pos": "noun",
     "frequency": 1
   },
   "expedite": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "촉진하다, 신속하게 처리하다",
+    "pos": "verb",
     "frequency": 1
   },
   "intermittent": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "간헐적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "reconnect": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재연결하다",
+    "pos": "verb",
     "frequency": 1
   },
   "captive": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "포로, 포획된",
+    "pos": "noun",
     "frequency": 1
   },
   "mismatch": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "불일치, 부적합",
+    "pos": "noun",
     "frequency": 1
   },
   "disassociation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "분리, 해제",
+    "pos": "noun",
     "frequency": 1
   },
   "evil": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "악의, 사악한",
+    "pos": "noun",
     "frequency": 1
   },
   "twin": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "쌍둥이, 쌍의",
+    "pos": "noun",
     "frequency": 1
   },
   "publically": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공개적으로 (publicly의 오타)",
+    "pos": "adverb",
     "frequency": 1
   },
   "announced": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "발표된, 공지된",
+    "pos": "adjective",
     "frequency": 1
   },
   "nonsensitive": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비민감한",
+    "pos": "adjective",
     "frequency": 1
   },
   "residuals": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "잔여물들, 잔차들",
+    "pos": "noun",
     "frequency": 1
   },
   "leaders": {
@@ -26925,128 +26925,128 @@
     "frequency": 1
   },
   "transmissions": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "전송들",
+    "pos": "noun",
     "frequency": 1
   },
   "grfatest": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가장 큰 (greatest의 오타)",
+    "pos": "adjective",
     "frequency": 1
   },
   "crafted": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "만든, 제작된",
+    "pos": "adjective",
     "frequency": 1
   },
   "realizing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "깨닫는, 실현하는",
+    "pos": "verb",
     "frequency": 1
   },
   "prevail": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "우세하다, 널리 퍼지다",
+    "pos": "verb",
     "frequency": 1
   },
   "proximate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "근접한, 직접적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "hardship": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "어려움, 고난",
+    "pos": "noun",
     "frequency": 1
   },
   "icfr": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "ICFR (Internal Control over Financial Reporting, 재무보고에 대한 내부통제)",
+    "pos": "noun",
     "frequency": 1
   },
   "systrust": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "SysTrust (시스템 신뢰 인증)",
+    "pos": "noun",
     "frequency": 1
   },
   "webtrust": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "WebTrust (웹 신뢰 인증)",
+    "pos": "noun",
     "frequency": 1
   },
   "gauge": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "측정하다, 게이지",
+    "pos": "verb",
     "frequency": 1
   },
   "patchers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "패처들, 패치 적용자들",
+    "pos": "noun",
     "frequency": 1
   },
   "thwart": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방해하다, 좌절시키다",
+    "pos": "verb",
     "frequency": 1
   },
   "treatment": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "처리, 치료",
+    "pos": "noun",
     "frequency": 1
   },
   "embeds": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "삽입하다, 내장하다",
+    "pos": "verb",
     "frequency": 1
   },
   "lowest": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가장 낮은",
+    "pos": "adjective",
     "frequency": 1
   },
   "tolerate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "참다, 허용하다",
+    "pos": "verb",
     "frequency": 1
   },
   "demonstration": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시연, 시위",
+    "pos": "noun",
     "frequency": 1
   },
   "morale": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사기, 의욕",
+    "pos": "noun",
     "frequency": 1
   },
   "feel": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "느끼다",
+    "pos": "verb",
     "frequency": 1
   },
   "approves": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "승인하다",
+    "pos": "verb",
     "frequency": 1
   },
   "entitlements": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "권한들, 자격들",
+    "pos": "noun",
     "frequency": 1
   },
   "situational": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "상황적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "university": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "대학교",
+    "pos": "noun",
     "frequency": 1
   },
   "clientless": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "클라이언트 없는",
+    "pos": "adjective",
     "frequency": 1
   },
   "invotves": {
@@ -27105,238 +27105,238 @@
     "frequency": 1
   },
   "redeploy": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재배포하다",
+    "pos": "verb",
     "frequency": 1
   },
   "rooter": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "루터, 루트 권한 획득 도구",
+    "pos": "noun",
     "frequency": 1
   },
   "fin": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "FIN (Finish, TCP 플래그)",
+    "pos": "noun",
     "frequency": 1
   },
   "repeatedly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "반복적으로",
+    "pos": "adverb",
     "frequency": 1
   },
   "displaying": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "표시하는",
+    "pos": "verb",
     "frequency": 1
   },
   "columns": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "열들, 컬럼들",
+    "pos": "noun",
     "frequency": 1
   },
   "rich": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "풍부한, 부유한",
+    "pos": "adjective",
     "frequency": 1
   },
   "histograms": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "히스토그램들",
+    "pos": "noun",
     "frequency": 1
   },
   "marginals": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "한계의, 주변의",
+    "pos": "adjective",
     "frequency": 1
   },
   "distributions": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "분포들, 배포들",
+    "pos": "noun",
     "frequency": 1
   },
   "ain": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "AIN (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "delays": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지연들",
+    "pos": "noun",
     "frequency": 1
   },
   "hinder": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방해하다",
+    "pos": "verb",
     "frequency": 1
   },
   "alteration": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "변경, 수정",
+    "pos": "noun",
     "frequency": 1
   },
   "actor": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "행위자, 액터",
+    "pos": "noun",
     "frequency": 1
   },
   "sample": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "샘플, 표본",
+    "pos": "noun",
     "frequency": 1
   },
   "commonality": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공통성, 공통점",
+    "pos": "noun",
     "frequency": 1
   },
   "foresight": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "선견지명, 예지",
+    "pos": "noun",
     "frequency": 1
   },
   "harder": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "더 어려운, 더 힘든",
+    "pos": "adjective",
     "frequency": 1
   },
   "seizes": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "압수하다, 잡다",
+    "pos": "verb",
     "frequency": 1
   },
   "airplane": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비행기",
+    "pos": "noun",
     "frequency": 1
   },
   "suspend": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "중단하다, 정지시키다",
+    "pos": "verb",
     "frequency": 1
   },
   "antispam": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "스팸 방지",
+    "pos": "noun",
     "frequency": 1
   },
   "decoy": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "미끼, 유인",
+    "pos": "noun",
     "frequency": 1
   },
   "attract": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "끌다, 유인하다",
+    "pos": "verb",
     "frequency": 1
   },
   "mimic": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "모방하다, 흉내내다",
+    "pos": "verb",
     "frequency": 1
   },
   "lure": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "유인하다, 미끼",
+    "pos": "verb",
     "frequency": 1
   },
   "grouped": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "그룹화된",
+    "pos": "adjective",
     "frequency": 1
   },
   "federate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "연합하다, 연방화하다",
+    "pos": "verb",
     "frequency": 1
   },
   "parameterised": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "매개변수화된 (parameterized의 영국식)",
+    "pos": "adjective",
     "frequency": 1
   },
   "corrupt": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "부패한, 손상된",
+    "pos": "adjective",
     "frequency": 1
   },
   "contaminated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "오염된",
+    "pos": "adjective",
     "frequency": 1
   },
   "librarian": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사서, 라이브러리 관리자",
+    "pos": "noun",
     "frequency": 1
   },
   "denies": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "거부하다, 부인하다",
+    "pos": "verb",
     "frequency": 1
   },
   "overwriting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "덮어쓰는",
+    "pos": "verb",
     "frequency": 1
   },
   "enamel": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "에나멜, 법랑",
+    "pos": "noun",
     "frequency": 1
   },
   "openid": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "OpenID (분산 인증 프로토콜)",
+    "pos": "noun",
     "frequency": 1
   },
   "oidc": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "OIDC (OpenID Connect, 인증 프로토콜)",
+    "pos": "noun",
     "frequency": 1
   },
   "bearer": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "소지자, 전달자",
+    "pos": "noun",
     "frequency": 1
   },
   "segregates": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "분리하다, 격리하다",
+    "pos": "verb",
     "frequency": 1
   },
   "preserving": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "보존하는",
+    "pos": "verb",
     "frequency": 1
   },
   "entrusted": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "위임된, 신뢰받은",
+    "pos": "adjective",
     "frequency": 1
   },
   "appearance": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "외관, 모습",
+    "pos": "noun",
     "frequency": 1
   },
   "thereof": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "그것의, 그에 관한",
+    "pos": "adverb",
     "frequency": 1
   },
   "digging": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "파는, 발굴하는",
+    "pos": "verb",
     "frequency": 1
   },
   "zremote": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "원격 (remote의 오타)",
+    "pos": "adjective",
     "frequency": 1
   },
   "trivial": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사소한, 하찮은",
+    "pos": "adjective",
     "frequency": 1
   },
   "tftp": {
@@ -27360,133 +27360,133 @@
     "frequency": 1
   },
   "enforceability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "집행 가능성",
+    "pos": "noun",
     "frequency": 1
   },
   "fingerprinting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "핑거프린팅, 지문 인식",
+    "pos": "noun",
     "frequency": 1
   },
   "retrieving": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "검색하는, 회수하는",
+    "pos": "verb",
     "frequency": 1
   },
   "believed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "믿어진, 생각된",
+    "pos": "adjective",
     "frequency": 1
   },
   "snapshots": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "스냅샷들",
+    "pos": "noun",
     "frequency": 1
   },
   "examiners": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "검사관들, 심사관들",
+    "pos": "noun",
     "frequency": 1
   },
   "resistance": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "저항, 저항력",
+    "pos": "noun",
     "frequency": 1
   },
   "preparation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "준비, 준비 과정",
+    "pos": "noun",
     "frequency": 1
   },
   "discuss": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "논의하다, 토론하다",
+    "pos": "verb",
     "frequency": 1
   },
   "alternatives": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "대안들",
+    "pos": "noun",
     "frequency": 1
   },
   "pop": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "팝, 튀어나오다",
+    "pos": "verb",
     "frequency": 1
   },
   "landscape": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "풍경, 환경",
+    "pos": "noun",
     "frequency": 1
   },
   "adjust": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조정하다, 조절하다",
+    "pos": "verb",
     "frequency": 1
   },
   "markets": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시장들",
+    "pos": "noun",
     "frequency": 1
   },
   "attacked": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공격받은",
+    "pos": "adjective",
     "frequency": 1
   },
   "contractor": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "계약자, 도급업자",
+    "pos": "noun",
     "frequency": 1
   },
   "candle": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "촛불",
+    "pos": "noun",
     "frequency": 1
   },
   "road": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "도로",
+    "pos": "noun",
     "frequency": 1
   },
   "oncoming": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "다가오는, 접근하는",
+    "pos": "adjective",
     "frequency": 1
   },
   "vehicles": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "차량들",
+    "pos": "noun",
     "frequency": 1
   },
   "corners": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "모서리들, 구석들",
+    "pos": "noun",
     "frequency": 1
   },
   "isolates": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "격리하다, 분리하다",
+    "pos": "verb",
     "frequency": 1
   },
   "seize": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "압수하다, 잡다",
+    "pos": "verb",
     "frequency": 1
   },
   "seizing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "압수하는, 잡는",
+    "pos": "verb",
     "frequency": 1
   },
   "filed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "제출된, 파일로 저장된",
+    "pos": "adjective",
     "frequency": 1
   },
   "histories": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "역사들, 기록들",
+    "pos": "noun",
     "frequency": 1
   },
   "cycles": {
@@ -27530,108 +27530,108 @@
     "frequency": 1
   },
   "coordinates": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "좌표들, 조정하다",
+    "pos": "noun",
     "frequency": 1
   },
   "contributors": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기여자들, 공헌자들",
+    "pos": "noun",
     "frequency": 1
   },
   "hesitant": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "망설이는, 주저하는",
+    "pos": "adjective",
     "frequency": 1
   },
   "expects": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기대하다, 예상하다",
+    "pos": "verb",
     "frequency": 1
   },
   "backgrounds": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "배경들",
+    "pos": "noun",
     "frequency": 1
   },
   "skeptical": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "회의적인, 의심하는",
+    "pos": "adjective",
     "frequency": 1
   },
   "endangering": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "위험에 빠뜨리는",
+    "pos": "verb",
     "frequency": 1
   },
   "unwilling": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "원하지 않는, 마지못해 하는",
+    "pos": "adjective",
     "frequency": 1
   },
   "realize": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "깨닫다, 실현하다",
+    "pos": "verb",
     "frequency": 1
   },
   "enjoy": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "즐기다",
+    "pos": "verb",
     "frequency": 1
   },
   "formulating": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "공식화하는, 정식화하는",
+    "pos": "verb",
     "frequency": 1
   },
   "jpm": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "JPM (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "subcontractors": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "하도급업자들",
+    "pos": "noun",
     "frequency": 1
   },
   "renegotiation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재협상",
+    "pos": "noun",
     "frequency": 1
   },
   "continuilty": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "연속성 (continuity의 오타)",
+    "pos": "noun",
     "frequency": 1
   },
   "folllowing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "다음의 (following의 오타)",
+    "pos": "adjective",
     "frequency": 1
   },
   "dp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "DP (Data Protection, 데이터 보호 또는 Data Processing, 데이터 처리)",
+    "pos": "noun",
     "frequency": 1
   },
   "restrid": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "제한된 (restricted의 오타)",
+    "pos": "adjective",
     "frequency": 1
   },
   "inoperative": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "작동하지 않는, 무효한",
+    "pos": "adjective",
     "frequency": 1
   },
   "traps": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "함정들, 트랩들",
+    "pos": "noun",
     "frequency": 1
   },
   "mobility": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "이동성, 유동성",
+    "pos": "noun",
     "frequency": 1
   },
   "wherein": {
@@ -27640,153 +27640,153 @@
     "frequency": 1
   },
   "obscuring": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "모호하게 만드는, 가리는",
+    "pos": "verb",
     "frequency": 1
   },
   "fips": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "FIPS (Federal Information Processing Standards, 연방 정보 처리 표준)",
+    "pos": "noun",
     "frequency": 1
   },
   "publication": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "출판, 발행",
+    "pos": "noun",
     "frequency": 1
   },
   "devise": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "고안하다, 설계하다",
+    "pos": "verb",
     "frequency": 1
   },
   "configurattons": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "구성들 (configurations의 오타)",
+    "pos": "noun",
     "frequency": 1
   },
   "unfiltered": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "필터링되지 않은",
+    "pos": "adjective",
     "frequency": 1
   },
   "compact": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "압축된, 컴팩트한",
+    "pos": "adjective",
     "frequency": 1
   },
   "businees": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비즈니스 (business의 오타)",
+    "pos": "noun",
     "frequency": 1
   },
   "interactive": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "대화형의, 상호작용하는",
+    "pos": "adjective",
     "frequency": 1
   },
   "omissions": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "누락들, 생략들",
+    "pos": "noun",
     "frequency": 1
   },
   "provenance": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "출처, 기원",
+    "pos": "noun",
     "frequency": 1
   },
   "bench": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "벤치, 벤치마크",
+    "pos": "noun",
     "frequency": 1
   },
   "warehouse": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "창고, 데이터 웨어하우스",
+    "pos": "noun",
     "frequency": 1
   },
   "routable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "라우팅 가능한",
+    "pos": "adjective",
     "frequency": 1
   },
   "staffing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "인력 배치, 채용",
+    "pos": "noun",
     "frequency": 1
   },
   "taps": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "탭들, 도청",
+    "pos": "noun",
     "frequency": 1
   },
   "baseiirte": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기준선 (baseline의 오타)",
+    "pos": "noun",
     "frequency": 1
   },
   "oscillator": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "발진기",
+    "pos": "noun",
     "frequency": 1
   },
   "slight": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "약간의, 경미한",
+    "pos": "adjective",
     "frequency": 1
   },
   "attenuation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "감쇠, 약화",
+    "pos": "noun",
     "frequency": 1
   },
   "disturbance": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방해, 교란",
+    "pos": "noun",
     "frequency": 1
   },
   "tapping": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "탭핑, 도청",
+    "pos": "noun",
     "frequency": 1
   },
   "distortions": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "왜곡들",
+    "pos": "noun",
     "frequency": 1
   },
   "traverses": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "횡단하다, 통과하다",
+    "pos": "verb",
     "frequency": 1
   },
   "subscribers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "구독자들, 가입자들",
+    "pos": "noun",
     "frequency": 1
   },
   "complaints": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "불만들, 민원들",
+    "pos": "noun",
     "frequency": 1
   },
   "appears": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "나타나다, 보이다",
+    "pos": "verb",
     "frequency": 1
   },
   "alleviate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "완화하다, 줄이다",
+    "pos": "verb",
     "frequency": 1
   },
   "redirecting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "리다이렉트하는, 재지향하는",
+    "pos": "verb",
     "frequency": 1
   },
   "snooping": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "도청하는, 엿보는",
+    "pos": "verb",
     "frequency": 1
   },
   "chat": {
@@ -27805,238 +27805,238 @@
     "frequency": 1
   },
   "fraudulent": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사기적인, 부정한",
+    "pos": "adjective",
     "frequency": 1
   },
   "rollout": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "롤아웃, 배포",
+    "pos": "noun",
     "frequency": 1
   },
   "pulse": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "펄스, 맥박",
+    "pos": "noun",
     "frequency": 1
   },
   "emp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "EMP (Electromagnetic Pulse, 전자기 펄스)",
+    "pos": "noun",
     "frequency": 1
   },
   "rf": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "RF (Radio Frequency, 무선 주파수)",
+    "pos": "noun",
     "frequency": 1
   },
   "exam": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시험, 검사",
+    "pos": "noun",
     "frequency": 1
   },
   "platter": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "플래터, 디스크",
+    "pos": "noun",
     "frequency": 1
   },
   "platters": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "플래터들",
+    "pos": "noun",
     "frequency": 1
   },
   "mechanically": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기계적으로",
+    "pos": "adverb",
     "frequency": 1
   },
   "shred": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "분쇄하다, 파쇄하다",
+    "pos": "verb",
     "frequency": 1
   },
   "hp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "HP (Hewlett-Packard 또는 Horsepower, 마력)",
+    "pos": "noun",
     "frequency": 1
   },
   "iprocess": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "프로세스 (process의 오타)",
+    "pos": "noun",
     "frequency": 1
   },
   "broadcasts": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방송하다, 브로드캐스트하다",
+    "pos": "verb",
     "frequency": 1
   },
   "piracy": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "해적질, 불법 복제",
+    "pos": "noun",
     "frequency": 1
   },
   "pirated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "불법 복제된",
+    "pos": "adjective",
     "frequency": 1
   },
   "returns": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "반환하다, 반환값",
+    "pos": "verb",
     "frequency": 1
   },
   "stipulated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "규정된, 명시된",
+    "pos": "adjective",
     "frequency": 1
   },
   "reusing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재사용하는",
+    "pos": "verb",
     "frequency": 1
   },
   "ff": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "FF (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "engineered": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "설계된, 엔지니어링된",
+    "pos": "adjective",
     "frequency": 1
   },
   "beginning": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시작, 초기",
+    "pos": "noun",
     "frequency": 1
   },
   "suggestion": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "제안, 제안사항",
+    "pos": "noun",
     "frequency": 1
   },
   "wearable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "착용 가능한, 웨어러블",
+    "pos": "adjective",
     "frequency": 1
   },
   "unfortunately": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "불행히도",
+    "pos": "adverb",
     "frequency": 1
   },
   "remedy": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "치료법, 구제책",
+    "pos": "noun",
     "frequency": 1
   },
   "meaning": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "의미, 뜻",
+    "pos": "noun",
     "frequency": 1
   },
   "convenience": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "편의, 편리함",
+    "pos": "noun",
     "frequency": 1
   },
   "noticeable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "눈에 띄는, 현저한",
+    "pos": "adjective",
     "frequency": 1
   },
   "concerning": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "~에 관한, 우려되는",
+    "pos": "preposition",
     "frequency": 1
   },
   "recorded": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기록된, 녹음된",
+    "pos": "adjective",
     "frequency": 1
   },
   "benchmark": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "벤치마크, 기준점",
+    "pos": "noun",
     "frequency": 1
   },
   "ipts": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "IPTS (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "disciplines": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "학문들, 규율들",
+    "pos": "noun",
     "frequency": 1
   },
   "viewpoints": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "관점들, 시점들",
+    "pos": "noun",
     "frequency": 1
   },
   "sal": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "SAL (Security Assurance Level, 보안 보증 수준)",
+    "pos": "noun",
     "frequency": 1
   },
   "comparison": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비교",
+    "pos": "noun",
     "frequency": 1
   },
   "specialize": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "전문화하다, 전문으로 하다",
+    "pos": "verb",
     "frequency": 1
   },
   "rewrite": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "다시 쓰다, 재작성하다",
+    "pos": "verb",
     "frequency": 1
   },
   "sandboxed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "샌드박스화된, 격리된",
+    "pos": "adjective",
     "frequency": 1
   },
   "distinguishes": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "구별하다, 구분하다",
+    "pos": "verb",
     "frequency": 1
   },
   "flags": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "플래그들, 깃발들",
+    "pos": "noun",
     "frequency": 1
   },
   "dropping": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "떨어뜨리는, 드롭하는",
+    "pos": "verb",
     "frequency": 1
   },
   "reusability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재사용 가능성",
+    "pos": "noun",
     "frequency": 1
   },
   "readability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가독성",
+    "pos": "noun",
     "frequency": 1
   },
   "recoverability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "복구 가능성",
+    "pos": "noun",
     "frequency": 1
   },
   "planner": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "계획자, 플래너",
+    "pos": "noun",
     "frequency": 1
   },
   "expenses": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비용들, 지출들",
+    "pos": "noun",
     "frequency": 1
   },
   "mgcp": {
@@ -28090,453 +28090,453 @@
     "frequency": 1
   },
   "invaluable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "매우 귀중한, 값어치를 매길 수 없는",
+    "pos": "adjective",
     "frequency": 1
   },
   "layering": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "레이어링, 계층화",
+    "pos": "noun",
     "frequency": 1
   },
   "unmitigated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "완전한, 완전무결한",
+    "pos": "adjective",
     "frequency": 1
   },
   "propose": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "제안하다",
+    "pos": "verb",
     "frequency": 1
   },
   "stripe": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "줄무늬, 스트라이프",
+    "pos": "noun",
     "frequency": 1
   },
   "humans": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "인간들",
+    "pos": "noun",
     "frequency": 1
   },
   "complexly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "복잡하게",
+    "pos": "adverb",
     "frequency": 1
   },
   "rt": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "RT (Real-Time, 실시간 또는 약어)",
+    "pos": "noun",
     "frequency": 1
   },
   "duplication": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "중복, 복제",
+    "pos": "noun",
     "frequency": 1
   },
   "pirimary": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "주요한 (primary의 오타)",
+    "pos": "adjective",
     "frequency": 1
   },
   "falsified": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "위조된, 허위로 만든",
+    "pos": "adjective",
     "frequency": 1
   },
   "broaden": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "넓히다, 확장하다",
+    "pos": "verb",
     "frequency": 1
   },
   "objectivity": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "객관성",
+    "pos": "noun",
     "frequency": 1
   },
   "timeliness": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시의적절함, 적시성",
+    "pos": "noun",
     "frequency": 1
   },
   "simplex": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "심플렉스, 단방향 통신",
+    "pos": "noun",
     "frequency": 1
   },
   "multiplex": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "멀티플렉스, 다중화",
+    "pos": "noun",
     "frequency": 1
   },
   "actives": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "활성 항목들",
+    "pos": "noun",
     "frequency": 1
   },
   "nonfunctional": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비기능적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "compensation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "보상, 보상금",
+    "pos": "noun",
     "frequency": 1
   },
   "penalty": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "벌금, 처벌",
+    "pos": "noun",
     "frequency": 1
   },
   "egress": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "출구, 이그레스",
+    "pos": "noun",
     "frequency": 1
   },
   "similarly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "유사하게, 비슷하게",
+    "pos": "adverb",
     "frequency": 1
   },
   "rfi": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "RFI (Request for Information, 정보 요청)",
+    "pos": "noun",
     "frequency": 1
   },
   "phenomenon": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "현상",
+    "pos": "noun",
     "frequency": 1
   },
   "bundled": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "묶인, 번들로 제공된",
+    "pos": "adjective",
     "frequency": 1
   },
   "bleeding": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "유출, 누출",
+    "pos": "noun",
     "frequency": 1
   },
   "absorb": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "흡수하다",
+    "pos": "verb",
     "frequency": 1
   },
   "reinstalled": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재설치된",
+    "pos": "adjective",
     "frequency": 1
   },
   "flawlessly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "완벽하게, 결함 없이",
+    "pos": "adverb",
     "frequency": 1
   },
   "sell": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "팔다",
+    "pos": "verb",
     "frequency": 1
   },
   "prospective": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "예상되는, 장래의",
+    "pos": "adjective",
     "frequency": 1
   },
   "selling": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "판매하는",
+    "pos": "verb",
     "frequency": 1
   },
   "credibility": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "신뢰성, 신용",
+    "pos": "noun",
     "frequency": 1
   },
   "csa": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "CSA (Cloud Security Alliance, 클라우드 보안 연합)",
+    "pos": "noun",
     "frequency": 1
   },
   "globally": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "전 세계적으로",
+    "pos": "adverb",
     "frequency": 1
   },
   "industries": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "산업들",
+    "pos": "noun",
     "frequency": 1
   },
   "turnover": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "이직률, 매출",
+    "pos": "noun",
     "frequency": 1
   },
   "pathway": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "경로, 통로",
+    "pos": "noun",
     "frequency": 1
   },
   "decode": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "디코딩하다, 해독하다",
+    "pos": "verb",
     "frequency": 1
   },
   "stacks": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "스택들",
+    "pos": "noun",
     "frequency": 1
   },
   "vacant": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비어 있는, 공석인",
+    "pos": "adjective",
     "frequency": 1
   },
   "completeness": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "완전성, 완성도",
+    "pos": "noun",
     "frequency": 1
   },
   "verifiable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "검증 가능한",
+    "pos": "adjective",
     "frequency": 1
   },
   "cryptanalysis": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "암호 분석",
+    "pos": "noun",
     "frequency": 1
   },
   "leak": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "누출, 유출",
+    "pos": "noun",
     "frequency": 1
   },
   "wilt": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시들다, 약해지다",
+    "pos": "verb",
     "frequency": 1
   },
   "overlooked": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "간과된, 놓친",
+    "pos": "adjective",
     "frequency": 1
   },
   "outages": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "중단들, 정전들",
+    "pos": "noun",
     "frequency": 1
   },
   "partnership": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "파트너십, 협력 관계",
+    "pos": "noun",
     "frequency": 1
   },
   "niap": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "NIAP (National Information Assurance Partnership, 국가 정보 보증 파트너십)",
+    "pos": "noun",
     "frequency": 1
   },
   "hands": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "손들",
+    "pos": "noun",
     "frequency": 1
   },
   "expressing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "표현하는",
+    "pos": "verb",
     "frequency": 1
   },
   "stand": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "서다, 견디다",
+    "pos": "verb",
     "frequency": 1
   },
   "maximize": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "최대화하다",
+    "pos": "verb",
     "frequency": 1
   },
   "bootable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "부팅 가능한",
+    "pos": "adjective",
     "frequency": 1
   },
   "booting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "부팅하는",
+    "pos": "verb",
     "frequency": 1
   },
   "setups": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "설정들, 셋업들",
+    "pos": "noun",
     "frequency": 1
   },
   "empolyee": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "직원 (employee의 오타)",
+    "pos": "noun",
     "frequency": 1
   },
   "waste": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "낭비하다, 폐기물",
+    "pos": "verb",
     "frequency": 1
   },
   "spending": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지출하는",
+    "pos": "verb",
     "frequency": 1
   },
   "redefine": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재정의하다",
+    "pos": "verb",
     "frequency": 1
   },
   "explore": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "탐구하다, 탐험하다",
+    "pos": "verb",
     "frequency": 1
   },
   "timeframe": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시간 프레임, 기간",
+    "pos": "noun",
     "frequency": 1
   },
   "elicit": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "끌어내다, 유도하다",
+    "pos": "verb",
     "frequency": 1
   },
   "issuance": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "발행, 발급",
+    "pos": "noun",
     "frequency": 1
   },
   "dene": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "DEN (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "criterion": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기준, 판단 기준",
+    "pos": "noun",
     "frequency": 1
   },
   "outlining": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "개요를 작성하는",
+    "pos": "verb",
     "frequency": 1
   },
   "slack": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "느슨한, 여유 있는",
+    "pos": "adjective",
     "frequency": 1
   },
   "steganographic": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "스테가노그래피의, 은닉 기술의",
+    "pos": "adjective",
     "frequency": 1
   },
   "appended": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "추가된, 첨부된",
+    "pos": "adjective",
     "frequency": 1
   },
   "blinds": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "블라인드, 가림막",
+    "pos": "noun",
     "frequency": 1
   },
   "digitalguardian": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "Digital Guardian (보안 솔루션)",
+    "pos": "noun",
     "frequency": 1
   },
   "polp": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "POLP (Principle of Least Privilege, 최소 권한 원칙)",
+    "pos": "noun",
     "frequency": 1
   },
   "accumulate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "축적하다, 누적하다",
+    "pos": "verb",
     "frequency": 1
   },
   "netwrix": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "Netwrix (보안 솔루션)",
+    "pos": "noun",
     "frequency": 1
   },
   "replaces": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "대체하다, 교체하다",
+    "pos": "verb",
     "frequency": 1
   },
   "backend": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "백엔드, 후단",
+    "pos": "noun",
     "frequency": 1
   },
   "rebuilding": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재구축하는",
+    "pos": "verb",
     "frequency": 1
   },
   "interpolation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "보간, 삽입",
+    "pos": "noun",
     "frequency": 1
   },
   "intermodulation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "상호 변조",
+    "pos": "noun",
     "frequency": 1
   },
   "outdoor": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "야외의",
+    "pos": "adjective",
     "frequency": 1
   },
   "prone": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "~하기 쉬운, 경향이 있는",
+    "pos": "adjective",
     "frequency": 1
   },
   "microwaves": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "마이크로웨이브들",
+    "pos": "noun",
     "frequency": 1
   },
   "outer": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "외부의, 바깥의",
+    "pos": "adjective",
     "frequency": 1
   },
   "alarmed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "경보가 울린, 놀란",
+    "pos": "adjective",
     "frequency": 1
   },
   "anyone": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "누구든지",
+    "pos": "pronoun",
     "frequency": 1
   },
   "dosed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "투여된, 복용된",
+    "pos": "adjective",
     "frequency": 1
   },
   "inner": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "내부의, 안쪽의",
+    "pos": "adjective",
     "frequency": 1
   },
   "interdependent": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "상호 의존적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "unlocking": {
@@ -29000,103 +29000,103 @@
     "frequency": 1
   },
   "signage": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "표지판, 사인",
+    "pos": "noun",
     "frequency": 1
   },
   "logos": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "로고들",
+    "pos": "noun",
     "frequency": 1
   },
   "breakdown": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "분해, 고장",
+    "pos": "noun",
     "frequency": 1
   },
   "allots": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "할당하다",
+    "pos": "verb",
     "frequency": 1
   },
   "reviewers": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "검토자들",
+    "pos": "noun",
     "frequency": 1
   },
   "greatly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "크게, 매우",
+    "pos": "adverb",
     "frequency": 1
   },
   "tabs": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "탭들",
+    "pos": "noun",
     "frequency": 1
   },
   "collisions": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "충돌들",
+    "pos": "noun",
     "frequency": 1
   },
   "comparisons": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비교들",
+    "pos": "noun",
     "frequency": 1
   },
   "toots": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "grounding": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "접지, 기초",
+    "pos": "noun",
     "frequency": 1
   },
   "warrants": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "영장, 보장하다",
+    "pos": "noun",
     "frequency": 1
   },
   "filled": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "채워진",
+    "pos": "verb",
     "frequency": 1
   },
   "contingent": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "조건부의, 우발적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "cyberattacks": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "사이버 공격들",
+    "pos": "noun",
     "frequency": 1
   },
   "placeholder": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "플레이스홀더, 자리표시자",
+    "pos": "noun",
     "frequency": 1
   },
   "archive": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "아카이브, 기록 보관소",
+    "pos": "noun",
     "frequency": 1
   },
   "subscribe": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "구독하다",
+    "pos": "verb",
     "frequency": 1
   },
   "birth": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "출생",
+    "pos": "noun",
     "frequency": 1
   },
   "qos": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "QoS (Quality of Service, 서비스 품질)",
+    "pos": "noun",
     "frequency": 1
   },
   "reversal": {
@@ -29300,308 +29300,308 @@
     "frequency": 1
   },
   "belongs": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "속하다, 소유하다",
+    "pos": "verb",
     "frequency": 1
   },
   "falsely": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "거짓으로, 잘못되게",
+    "pos": "adverb",
     "frequency": 1
   },
   "impersonation": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가장, 사칭",
+    "pos": "noun",
     "frequency": 1
   },
   "psychological": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "심리적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "acceptability": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "수용 가능성",
+    "pos": "noun",
     "frequency": 1
   },
   "overly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "과도하게, 너무",
+    "pos": "adverb",
     "frequency": 1
   },
   "simplifying": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "단순화하는",
+    "pos": "verb",
     "frequency": 1
   },
   "pivot": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "피벗, 중심축",
+    "pos": "noun",
     "frequency": 1
   },
   "frat": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "FRAT (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "adjacently": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "인접하게",
+    "pos": "adverb",
     "frequency": 1
   },
   "indications": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "징후들, 표시들",
+    "pos": "noun",
     "frequency": 1
   },
   "abnormal": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "비정상적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "arraignment": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "기소, 공판",
+    "pos": "noun",
     "frequency": 1
   },
   "trial": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재판, 시험",
+    "pos": "noun",
     "frequency": 1
   },
   "sentencing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "선고, 판결",
+    "pos": "noun",
     "frequency": 1
   },
   "spotting": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "발견하는, 식별하는",
+    "pos": "verb",
     "frequency": 1
   },
   "exhaustion": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "고갈, 소진",
+    "pos": "noun",
     "frequency": 1
   },
   "fileless": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "파일 없는, 파일리스",
+    "pos": "adjective",
     "frequency": 1
   },
   "simulate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "시뮬레이션하다, 모의하다",
+    "pos": "verb",
     "frequency": 1
   },
   "floors": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "바닥들, 층들",
+    "pos": "noun",
     "frequency": 1
   },
   "ducts": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "덕트들, 관들",
+    "pos": "noun",
     "frequency": 1
   },
   "elevate": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "승격시키다, 올리다",
+    "pos": "verb",
     "frequency": 1
   },
   "constructing": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "구축하는",
+    "pos": "verb",
     "frequency": 1
   },
   "plenum": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "플레넘, 공간",
+    "pos": "noun",
     "frequency": 1
   },
   "shaft": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "샤프트, 축",
+    "pos": "noun",
     "frequency": 1
   },
   "eval": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "평가하다 (evaluate의 약어)",
+    "pos": "verb",
     "frequency": 1
   },
   "rigidly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "엄격하게, 경직되게",
+    "pos": "adverb",
     "frequency": 1
   },
   "referenced": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "참조된",
+    "pos": "adjective",
     "frequency": 1
   },
   "sorts": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "종류들",
+    "pos": "noun",
     "frequency": 1
   },
   "sits": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "앉다, 위치하다",
+    "pos": "verb",
     "frequency": 1
   },
   "intercepts": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "가로채다, 차단하다",
+    "pos": "verb",
     "frequency": 1
   },
   "automates": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "자동화하다",
+    "pos": "verb",
     "frequency": 1
   },
   "obstacles": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "장애물들",
+    "pos": "noun",
     "frequency": 1
   },
   "desirable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "바람직한",
+    "pos": "adjective",
     "frequency": 1
   },
   "replicating": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "복제하는",
+    "pos": "verb",
     "frequency": 1
   },
   "reusable": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "재사용 가능한",
+    "pos": "adjective",
     "frequency": 1
   },
   "realistic": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "현실적인",
+    "pos": "adjective",
     "frequency": 1
   },
   "exfilltrated": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "유출된 (exfiltrated의 오타)",
+    "pos": "adjective",
     "frequency": 1
   },
   "asv": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "ASV (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "safeguarding": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "보호하는",
+    "pos": "verb",
     "frequency": 1
   },
   "argentations": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "visitors": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방문자들",
+    "pos": "noun",
     "frequency": 1
   },
   "wear": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "착용하다, 마모",
+    "pos": "verb",
     "frequency": 1
   },
   "visitor": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방문자",
+    "pos": "noun",
     "frequency": 1
   },
   "permanently": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "영구적으로",
+    "pos": "adverb",
     "frequency": 1
   },
   "branches": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "지점들, 가지들",
+    "pos": "noun",
     "frequency": 1
   },
   "drug": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "약물, 마약",
+    "pos": "noun",
     "frequency": 1
   },
   "distributes": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "배포하다",
+    "pos": "verb",
     "frequency": 1
   },
   "exactly": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "정확히",
+    "pos": "adverb",
     "frequency": 1
   },
   "adapted": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "적응된",
+    "pos": "verb",
     "frequency": 1
   },
   "respones": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "응답 (responses의 오타)",
+    "pos": "noun",
     "frequency": 1
   },
   "graphics": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "그래픽",
+    "pos": "noun",
     "frequency": 1
   },
   "simu": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "lation": {
-    "meaning": "",
+    "meaning": "오타 또는 무의미한 문자열",
     "pos": "unknown",
     "frequency": 1
   },
   "provisioned": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "프로비저닝된",
+    "pos": "verb",
     "frequency": 1
   },
   "tam": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "TAM (약어, 맥락에 따라 다름)",
+    "pos": "noun",
     "frequency": 1
   },
   "undisturbed": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "방해받지 않은",
+    "pos": "adjective",
     "frequency": 1
   },
   "circulates": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "순환하다",
+    "pos": "verb",
     "frequency": 1
   },
   "dust": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "먼지",
+    "pos": "noun",
     "frequency": 1
   },
   "pollutants": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "오염물질들",
+    "pos": "noun",
     "frequency": 1
   },
   "contaminants": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "오염물질들",
+    "pos": "noun",
     "frequency": 1
   },
   "entering": {
@@ -29795,13 +29795,13 @@
     "frequency": 1
   },
   "invite": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "초대하다",
+    "pos": "verb",
     "frequency": 1
   },
   "polymorphism": {
-    "meaning": "",
-    "pos": "unknown",
+    "meaning": "다형성",
+    "pos": "noun",
     "frequency": 1
   }
 }

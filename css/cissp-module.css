@@ -456,6 +456,17 @@
     word-break: break-word;
 }
 
+.word-difficulty-badge {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
 .word-pos {
     font-size: 1.1em;
     color: #666;
@@ -533,6 +544,363 @@
     border-radius: 12px;
     text-align: left;
     min-height: 100px;
+}
+
+/* 패턴 학습 스타일 */
+.sentence-learning-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.sentence-view-toggle {
+    display: flex;
+    gap: 10px;
+}
+
+.sentence-view-toggle .btn-sm {
+    padding: 8px 16px;
+    font-size: 0.9em;
+}
+
+.pattern-learning-card,
+.phrase-learning-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
+}
+
+.pattern-header,
+.phrase-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.pattern-name,
+.phrase-name {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.pattern-badge,
+.phrase-badge {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.pattern-name h3,
+.phrase-name h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+    font-weight: 600;
+}
+
+.pattern-info,
+.phrase-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pattern-frequency,
+.phrase-frequency {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.pattern-description {
+    font-size: 0.95em;
+    color: #666;
+    font-style: italic;
+}
+
+.pattern-examples-section,
+.phrase-examples-section {
+    margin-top: 30px;
+}
+
+.pattern-examples-section h4,
+.phrase-examples-section h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pattern-examples-list,
+.phrase-examples-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pattern-example-item,
+.phrase-example-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.pattern-example-item:hover,
+.phrase-example-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.pattern-example-source,
+.phrase-example-source {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.pattern-example-sentence,
+.phrase-example-sentence {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.pattern-example-translation,
+.phrase-example-translation {
+    margin-top: 15px;
+    padding: 15px;
+    background: #e8f5e9;
+    border-radius: 8px;
+    border-left: 3px solid #28a745;
+}
+
+.pattern-example-translation .translation-label,
+.phrase-example-translation .translation-label {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.pattern-example-translation .translation-text,
+.phrase-example-translation .translation-text {
+    font-size: 1em;
+    color: #1e7e34;
+    line-height: 1.6;
+}
+
+.phrase-badge {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.phrase-name h3 {
+    color: #c0392b;
+}
+
+.phrase-frequency {
+    color: #e74c3c;
+}
+
+.phrase-example-item {
+    border-left-color: #e74c3c;
+}
+
+/* 패턴/구문 상세 설명 스타일 */
+.pattern-detailed-description,
+.pattern-usage-examples,
+.pattern-grammar-note,
+.pattern-exam-frequency,
+.phrase-meaning,
+.phrase-detailed-meaning,
+.phrase-context,
+.phrase-grammar,
+.phrase-similar {
+    margin-top: 15px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid #667eea;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.pattern-detailed-description strong,
+.pattern-usage-examples strong,
+.pattern-grammar-note strong,
+.pattern-exam-frequency strong,
+.phrase-meaning strong,
+.phrase-detailed-meaning strong,
+.phrase-context strong,
+.phrase-grammar strong,
+.phrase-similar strong {
+    color: #667eea;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.pattern-usage-examples ul {
+    margin: 8px 0 0 20px;
+    padding: 0;
+}
+
+.pattern-usage-examples li {
+    margin: 5px 0;
+    color: #555;
+}
+
+.phrase-meaning,
+.phrase-detailed-meaning {
+    border-left-color: #e74c3c;
+}
+
+.phrase-meaning strong,
+.phrase-detailed-meaning strong,
+.phrase-context strong,
+.phrase-grammar strong,
+.phrase-similar strong {
+    color: #e74c3c;
+}
+
+/* 단락별 해석 스타일 */
+.phrase-translation-container {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f0f7ff;
+    border-radius: 8px;
+    border: 1px solid #b3d9ff;
+}
+
+.phrase-translation-header {
+    font-weight: 600;
+    color: #0066cc;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.phrase-translation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.phrase-item {
+    padding: 10px;
+    background: white;
+    border-radius: 6px;
+    border-left: 3px solid #0066cc;
+}
+
+.phrase-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.phrase-number {
+    background: #0066cc;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.85em;
+}
+
+.phrase-role {
+    background: #e6f2ff;
+    color: #0066cc;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.phrase-text {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.phrase-translation {
+    font-size: 0.95em;
+    color: #0066cc;
+    font-weight: 500;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .sentence-learning-header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .pattern-name,
+    .phrase-name {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .pattern-name h3,
+    .phrase-name h3 {
+        font-size: 1.2em;
+    }
+    
+    .pattern-example-item,
+    .phrase-example-item {
+        padding: 15px;
+    }
+    
+    .pattern-example-sentence,
+    .phrase-example-sentence {
+        font-size: 1em;
+    }
+    
+    .pattern-detailed-description,
+    .pattern-usage-examples,
+    .pattern-grammar-note,
+    .pattern-exam-frequency,
+    .phrase-meaning,
+    .phrase-detailed-meaning,
+    .phrase-context,
+    .phrase-grammar,
+    .phrase-similar {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+    
+    .phrase-translation-container {
+        padding: 12px;
+    }
+    
+    .phrase-item {
+        padding: 8px;
+    }
 }
 
 .sentence-source {
