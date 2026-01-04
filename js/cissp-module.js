@@ -39,7 +39,9 @@ class CISSPModule {
             bookmarkedItems: [],
             stats: { correct: 0, wrong: 0, total: 0 },
             lastStudyDate: null,
-            streak: 0
+            streak: 0,
+            memorizedWords: [], // 자주 나오는 단어 암기 완료 목록
+            memorizedDifficultWords: [] // 어려운 단어 암기 완료 목록
         };
     }
 
@@ -1069,9 +1071,15 @@ class CISSPModule {
             const problemVocabResponse = await fetch('data/cissp_problem_vocabulary.json');
             const problemVocab = await problemVocabResponse.json();
             
-            // 빈도 40 이상인 단어들 필터링 및 정렬
+            // 암기 완료된 단어 목록 가져오기
+            const memorizedWords = this.studyData.memorizedWords || [];
+            
+            // 빈도 40 이상인 단어들 필터링 및 정렬 (암기 완료된 단어 제외)
             const frequentWords = Object.entries(problemVocab)
-                .filter(([word, data]) => data.frequency >= 40)
+                .filter(([word, data]) => {
+                    // 빈도 40 이상이고 암기 완료되지 않은 단어만
+                    return data.frequency >= 40 && !memorizedWords.includes(word.toLowerCase());
+                })
                 .map(([word, data]) => ({
                     word: word,
                     meaning: data.meaning || '',
@@ -1083,7 +1091,7 @@ class CISSPModule {
                 .slice(0, 1000);
             
             if (frequentWords.length === 0) {
-                alert('학습할 단어가 없습니다.');
+                alert('학습할 단어가 없습니다. (모든 단어를 암기 완료했거나 조건에 맞는 단어가 없습니다.)');
                 return;
             }
             
@@ -1142,10 +1150,17 @@ class CISSPModule {
                                 <div class="word-example-display">
                                     <div class="example-label">예문:</div>
                                     <div class="example-text">"${currentWord.example}"</div>
-                                    ${this.vocabulary[currentWord.word] && this.vocabulary[currentWord.word].example_parsed ? `
-                                        <button class="btn btn-sm btn-secondary" onclick="cisspModule.toggleWordExampleParsed('${currentWord.word}')" style="margin-top: 10px;">
-                                            <i class="fas fa-list-ol"></i> 구문별 해석 보기
+                                    <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                                        <button class="btn btn-sm btn-info" onclick="cisspModule.speakSentence('${currentWord.example.replace(/'/g, "\\'").replace(/"/g, '&quot;')}')" title="예문 음성으로 읽기">
+                                            <i class="fas fa-volume-up"></i> 예문 읽어주기
                                         </button>
+                                        ${this.vocabulary[currentWord.word] && this.vocabulary[currentWord.word].example_parsed ? `
+                                            <button class="btn btn-sm btn-secondary" onclick="cisspModule.toggleWordExampleParsed('${currentWord.word}')">
+                                                <i class="fas fa-list-ol"></i> 구문별 해석 보기
+                                            </button>
+                                        ` : ''}
+                                    </div>
+                                    ${this.vocabulary[currentWord.word] && this.vocabulary[currentWord.word].example_parsed ? `
                                         <div class="word-example-parsed" id="word-example-parsed-${currentWord.word}" style="display: none; margin-top: 10px;">
                                             ${this.renderPhraseTranslation(this.vocabulary[currentWord.word].example_parsed)}
                                         </div>
@@ -1153,9 +1168,18 @@ class CISSPModule {
                                 </div>
                             ` : ''}
                         </div>
-                        <button class="btn btn-primary btn-show-meaning" onclick="cisspModule.toggleWordMeaning()">
-                            <i class="fas fa-eye"></i> 의미 보기
-                        </button>
+                        <div class="word-action-buttons" style="display: flex; gap: 10px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                            <button class="btn btn-primary btn-show-meaning" onclick="cisspModule.toggleWordMeaning()">
+                                <i class="fas fa-eye"></i> 의미 보기
+                            </button>
+                            <button class="btn btn-info" onclick="cisspModule.speakWord('${currentWord.word.replace(/'/g, "\\'").replace(/"/g, '&quot;')}')" title="음성으로 읽기">
+                                <i class="fas fa-volume-up"></i> 읽어주기
+                            </button>
+                            <label class="memorized-checkbox" style="display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none;">
+                                <input type="checkbox" id="word-memorized-checkbox" data-word="${currentWord.word.replace(/"/g, '&quot;')}" data-is-difficult="false" ${this.isWordMemorized(currentWord.word, false) ? 'checked' : ''} onchange="cisspModule.toggleWordMemorizedFromCheckbox(this)">
+                                <span><i class="fas fa-check-circle"></i> 암기 완료</span>
+                            </label>
+                        </div>
                     </div>
                     
                     <div class="word-learning-controls">
@@ -1222,15 +1246,20 @@ class CISSPModule {
             const problemVocabResponse = await fetch('data/cissp_problem_vocabulary.json');
             const problemVocab = await problemVocabResponse.json();
             
+            // 암기 완료된 어려운 단어 목록 가져오기
+            const memorizedDifficultWords = this.studyData.memorizedDifficultWords || [];
+            
             // 어려운 단어 필터링 기준:
             // 1. 빈도 1-15이고 길이 8 이상인 단어
             // 2. 또는 빈도 1-10인 단어
+            // 3. 암기 완료되지 않은 단어만
             const difficultWords = Object.entries(problemVocab)
                 .filter(([word, data]) => {
                     const freq = data.frequency || 0;
                     const wordLen = word.length;
-                    // 빈도 1-15, 길이 8 이상, 또는 빈도 1-10인 단어
-                    return (freq >= 1 && freq <= 15 && wordLen >= 8) || (freq >= 1 && freq <= 10);
+                    const isMemorized = memorizedDifficultWords.includes(word.toLowerCase());
+                    // 빈도 1-15, 길이 8 이상, 또는 빈도 1-10인 단어이고 암기 완료되지 않은 것만
+                    return !isMemorized && ((freq >= 1 && freq <= 15 && wordLen >= 8) || (freq >= 1 && freq <= 10));
                 })
                 .map(([word, data]) => ({
                     word: word,
@@ -1248,7 +1277,7 @@ class CISSPModule {
                 .slice(0, 500); // 최대 500개
             
             if (difficultWords.length === 0) {
-                alert('학습할 어려운 단어가 없습니다.');
+                alert('학습할 어려운 단어가 없습니다. (모든 단어를 암기 완료했거나 조건에 맞는 단어가 없습니다.)');
                 return;
             }
             
@@ -1344,10 +1373,17 @@ class CISSPModule {
                                 <div class="word-example-display">
                                     <div class="example-label">예문:</div>
                                     <div class="example-text">"${fullExample}"</div>
-                                    ${wordData.example_parsed ? `
-                                        <button class="btn btn-sm btn-secondary" onclick="cisspModule.toggleDifficultWordExampleParsed('${currentWord.word}')" style="margin-top: 10px;">
-                                            <i class="fas fa-list-ol"></i> 구문별 해석 보기
+                                    <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                                        <button class="btn btn-sm btn-info" onclick="cisspModule.speakSentence('${fullExample.replace(/'/g, "\\'").replace(/"/g, '&quot;')}')" title="예문 음성으로 읽기">
+                                            <i class="fas fa-volume-up"></i> 예문 읽어주기
                                         </button>
+                                        ${wordData.example_parsed ? `
+                                            <button class="btn btn-sm btn-secondary" onclick="cisspModule.toggleDifficultWordExampleParsed('${currentWord.word}')">
+                                                <i class="fas fa-list-ol"></i> 구문별 해석 보기
+                                            </button>
+                                        ` : ''}
+                                    </div>
+                                    ${wordData.example_parsed ? `
                                         <div class="word-example-parsed" id="difficult-word-example-parsed-${currentWord.word}" style="display: none; margin-top: 10px;">
                                             ${this.renderPhraseTranslation(wordData.example_parsed)}
                                         </div>
@@ -1355,9 +1391,18 @@ class CISSPModule {
                                 </div>
                             ` : ''}
                         </div>
-                        <button class="btn btn-primary btn-show-meaning" onclick="cisspModule.toggleDifficultWordMeaning()">
-                            <i class="fas fa-eye"></i> 의미 보기
-                        </button>
+                        <div class="word-action-buttons" style="display: flex; gap: 10px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                            <button class="btn btn-primary btn-show-meaning" onclick="cisspModule.toggleDifficultWordMeaning()">
+                                <i class="fas fa-eye"></i> 의미 보기
+                            </button>
+                            <button class="btn btn-info" onclick="cisspModule.speakWord('${currentWord.word.replace(/'/g, "\\'").replace(/"/g, '&quot;')}')" title="음성으로 읽기">
+                                <i class="fas fa-volume-up"></i> 읽어주기
+                            </button>
+                            <label class="memorized-checkbox" style="display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none;">
+                                <input type="checkbox" id="difficult-word-memorized-checkbox" data-word="${currentWord.word.replace(/"/g, '&quot;')}" data-is-difficult="true" ${this.isWordMemorized(currentWord.word, true) ? 'checked' : ''} onchange="cisspModule.toggleWordMemorizedFromCheckbox(this)">
+                                <span><i class="fas fa-check-circle"></i> 암기 완료</span>
+                            </label>
+                        </div>
                     </div>
                     
                     <div class="word-learning-controls">
@@ -1415,6 +1460,170 @@ class CISSPModule {
         if (this.difficultWordLearningIndex < this.difficultWordLearningList.length - 1) {
             this.difficultWordLearningIndex++;
             this.renderDifficultWordLearning();
+        }
+    }
+    
+    // TTS 음성 읽어주기 (공통 함수)
+    speakText(text, lang = 'en-US') {
+        // 기존 음성 중지
+        if (window.speechSynthesis) {
+            window.speechSynthesis.cancel();
+            
+            // HTML 엔티티 디코딩
+            const decodedText = text.replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
+            
+            const utterance = new SpeechSynthesisUtterance(decodedText);
+            utterance.lang = lang;
+            utterance.rate = 0.9; // 읽기 속도 (0.1 ~ 10)
+            utterance.pitch = 1.0; // 음성 높이 (0 ~ 2)
+            utterance.volume = 1.0; // 음량 (0 ~ 1)
+            
+            // 음성 목록이 로드되기를 기다림
+            const selectVoice = () => {
+                const voices = window.speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    // 영어 음성 선택 (가능한 경우)
+                    const englishVoice = voices.find(voice => 
+                        voice.lang.startsWith('en') && 
+                        (voice.name.includes('English') || voice.name.includes('US') || voice.name.includes('UK'))
+                    );
+                    if (englishVoice) {
+                        utterance.voice = englishVoice;
+                    }
+                    window.speechSynthesis.speak(utterance);
+                } else {
+                    // 음성 목록이 아직 로드되지 않았으면 잠시 후 재시도
+                    setTimeout(() => {
+                        const voices = window.speechSynthesis.getVoices();
+                        if (voices.length > 0) {
+                            const englishVoice = voices.find(voice => 
+                                voice.lang.startsWith('en') && 
+                                (voice.name.includes('English') || voice.name.includes('US') || voice.name.includes('UK'))
+                            );
+                            if (englishVoice) {
+                                utterance.voice = englishVoice;
+                            }
+                        }
+                        window.speechSynthesis.speak(utterance);
+                    }, 100);
+                }
+            };
+            
+            // 음성 목록 로드 이벤트 리스너 (한 번만)
+            if (!this.voicesLoaded) {
+                window.speechSynthesis.onvoiceschanged = () => {
+                    this.voicesLoaded = true;
+                };
+            }
+            
+            selectVoice();
+        } else {
+            console.warn('SpeechSynthesis API를 지원하지 않는 브라우저입니다.');
+            alert('이 브라우저는 음성 읽기 기능을 지원하지 않습니다.');
+        }
+    }
+    
+    // 단어 읽어주기
+    speakWord(word) {
+        this.speakText(word, 'en-US');
+    }
+    
+    // 문장 읽어주기
+    speakSentence(sentence) {
+        this.speakText(sentence, 'en-US');
+    }
+    
+    // TTS 중지
+    stopSpeaking() {
+        if (window.speechSynthesis) {
+            window.speechSynthesis.cancel();
+        }
+    }
+    
+    // 단어 암기 완료 여부 확인
+    isWordMemorized(word, isDifficult) {
+        const wordLower = word.toLowerCase();
+        if (isDifficult) {
+            return (this.studyData.memorizedDifficultWords || []).includes(wordLower);
+        } else {
+            return (this.studyData.memorizedWords || []).includes(wordLower);
+        }
+    }
+    
+    // 체크박스에서 호출되는 암기 완료 토글 (안전한 문자열 처리)
+    toggleWordMemorizedFromCheckbox(checkbox) {
+        const word = checkbox.getAttribute('data-word');
+        const isDifficult = checkbox.getAttribute('data-is-difficult') === 'true';
+        this.toggleWordMemorized(word, isDifficult);
+    }
+    
+    // 단어 암기 완료 토글
+    toggleWordMemorized(word, isDifficult) {
+        const wordLower = word.toLowerCase();
+        
+        if (isDifficult) {
+            // 어려운 단어 목록
+            if (!this.studyData.memorizedDifficultWords) {
+                this.studyData.memorizedDifficultWords = [];
+            }
+            
+            const index = this.studyData.memorizedDifficultWords.indexOf(wordLower);
+            if (index > -1) {
+                // 암기 완료 해제
+                this.studyData.memorizedDifficultWords.splice(index, 1);
+            } else {
+                // 암기 완료 추가
+                this.studyData.memorizedDifficultWords.push(wordLower);
+            }
+        } else {
+            // 자주 나오는 단어 목록
+            if (!this.studyData.memorizedWords) {
+                this.studyData.memorizedWords = [];
+            }
+            
+            const index = this.studyData.memorizedWords.indexOf(wordLower);
+            if (index > -1) {
+                // 암기 완료 해제
+                this.studyData.memorizedWords.splice(index, 1);
+            } else {
+                // 암기 완료 추가
+                this.studyData.memorizedWords.push(wordLower);
+            }
+        }
+        
+        // 저장
+        this.saveStudyData();
+        
+        // 현재 단어가 암기 완료되었으면 목록에서 제거하고 다음 단어로 이동
+        if (this.isWordMemorized(word, isDifficult)) {
+            // 목록에서 제거
+            if (isDifficult) {
+                this.difficultWordLearningList = this.difficultWordLearningList.filter(w => w.word.toLowerCase() !== wordLower);
+                // 인덱스 조정
+                if (this.difficultWordLearningIndex >= this.difficultWordLearningList.length) {
+                    this.difficultWordLearningIndex = Math.max(0, this.difficultWordLearningList.length - 1);
+                }
+                // 재렌더링
+                if (this.difficultWordLearningList.length > 0) {
+                    this.renderDifficultWordLearning();
+                } else {
+                    alert('모든 단어를 암기 완료했습니다!');
+                    this.renderDashboard();
+                }
+            } else {
+                this.wordLearningList = this.wordLearningList.filter(w => w.word.toLowerCase() !== wordLower);
+                // 인덱스 조정
+                if (this.wordLearningIndex >= this.wordLearningList.length) {
+                    this.wordLearningIndex = Math.max(0, this.wordLearningList.length - 1);
+                }
+                // 재렌더링
+                if (this.wordLearningList.length > 0) {
+                    this.renderWordLearning();
+                } else {
+                    alert('모든 단어를 암기 완료했습니다!');
+                    this.renderDashboard();
+                }
+            }
         }
     }
     
@@ -3141,15 +3350,24 @@ class CISSPModule {
             const phrases = this.parseSentenceIntoPhrases(example.sentence_en, example.sentence_ko);
             const phraseTranslationHtml = this.renderPhraseTranslation(phrases);
             
+            const sentenceEscaped = example.sentence_en.replace(/'/g, "\\'").replace(/"/g, '&quot;');
             return `
                 <div class="pattern-example-item">
                     <div class="pattern-example-source">${example.source}</div>
                     <div class="pattern-example-sentence">
                         ${interactiveSentence}
                     </div>
-                    <button class="btn btn-sm btn-secondary" onclick="cisspModule.togglePatternPhraseTranslation(${idx})" style="margin-top: 10px;">
-                        <i class="fas fa-list-ol"></i> 단락별 해석 보기
-                    </button>
+                    <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-sm btn-info" onclick="cisspModule.speakSentence('${sentenceEscaped}')" title="음성으로 읽기">
+                            <i class="fas fa-volume-up"></i> 읽어주기
+                        </button>
+                        <button class="btn btn-sm btn-secondary" onclick="cisspModule.togglePatternPhraseTranslation(${idx})">
+                            <i class="fas fa-list-ol"></i> 단락별 해석 보기
+                        </button>
+                        <button class="btn btn-sm btn-secondary" onclick="cisspModule.togglePatternExampleTranslation(${idx})">
+                            <i class="fas fa-language"></i> 전체 번역 보기
+                        </button>
+                    </div>
                     <div class="pattern-phrase-translation" id="pattern-phrase-translation-${idx}" style="display: none; margin-top: 15px;">
                         ${phraseTranslationHtml}
                     </div>
@@ -3157,9 +3375,6 @@ class CISSPModule {
                         <div class="translation-label">한국어 번역:</div>
                         <div class="translation-text">${example.sentence_ko || '번역 없음'}</div>
                     </div>
-                    <button class="btn btn-sm btn-secondary" onclick="cisspModule.togglePatternExampleTranslation(${idx})" style="margin-top: 10px;">
-                        <i class="fas fa-language"></i> 전체 번역 보기
-                    </button>
                 </div>
             `;
         }).join('');
@@ -3294,15 +3509,24 @@ class CISSPModule {
             const phrases = this.parseSentenceIntoPhrases(example.sentence_en, example.sentence_ko);
             const phraseTranslationHtml = this.renderPhraseTranslation(phrases);
             
+            const sentenceEscaped = example.sentence_en.replace(/'/g, "\\'").replace(/"/g, '&quot;');
             return `
                 <div class="phrase-example-item">
                     <div class="phrase-example-source">${example.source}</div>
                     <div class="phrase-example-sentence">
                         ${interactiveSentence}
                     </div>
-                    <button class="btn btn-sm btn-secondary" onclick="cisspModule.togglePhrasePhraseTranslation(${idx})" style="margin-top: 10px;">
-                        <i class="fas fa-list-ol"></i> 단락별 해석 보기
-                    </button>
+                    <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+                        <button class="btn btn-sm btn-info" onclick="cisspModule.speakSentence('${sentenceEscaped}')" title="음성으로 읽기">
+                            <i class="fas fa-volume-up"></i> 읽어주기
+                        </button>
+                        <button class="btn btn-sm btn-secondary" onclick="cisspModule.togglePhrasePhraseTranslation(${idx})">
+                            <i class="fas fa-list-ol"></i> 단락별 해석 보기
+                        </button>
+                        <button class="btn btn-sm btn-secondary" onclick="cisspModule.togglePhraseExampleTranslation(${idx})">
+                            <i class="fas fa-language"></i> 전체 번역 보기
+                        </button>
+                    </div>
                     <div class="phrase-phrase-translation" id="phrase-phrase-translation-${idx}" style="display: none; margin-top: 15px;">
                         ${phraseTranslationHtml}
                     </div>
@@ -3310,9 +3534,6 @@ class CISSPModule {
                         <div class="translation-label">한국어 번역:</div>
                         <div class="translation-text">${example.sentence_ko || '번역 없음'}</div>
                     </div>
-                    <button class="btn btn-sm btn-secondary" onclick="cisspModule.togglePhraseExampleTranslation(${idx})" style="margin-top: 10px;">
-                        <i class="fas fa-language"></i> 전체 번역 보기
-                    </button>
                 </div>
             `;
         }).join('');
