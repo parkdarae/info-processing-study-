@@ -110,16 +110,37 @@ class CISSPModule {
             await this.loadPhraseTranslations();
             
             const response = await fetch('data/items_cissp.jsonl');
-            const text = await response.text();
             
-            if (!text.trim()) {
-                console.log('CISSP 데이터 파일이 비어있습니다.');
+            if (!response.ok) {
+                console.error(`CISSP 데이터 파일 로드 실패: HTTP ${response.status} ${response.statusText}`);
                 this.items = [];
                 return [];
             }
             
-            this.items = text.trim().split('\n').map(line => JSON.parse(line));
+            const text = await response.text();
+            
+            if (!text.trim()) {
+                console.error('CISSP 데이터 파일이 비어있습니다.');
+                this.items = [];
+                return [];
+            }
+            
+            // JSONL 파싱 (빈 줄 제외)
+            const lines = text.trim().split('\n').filter(line => line.trim());
+            this.items = lines.map((line, index) => {
+                try {
+                    return JSON.parse(line);
+                } catch (parseError) {
+                    console.error(`라인 ${index + 1} 파싱 오류:`, parseError, line.substring(0, 100));
+                    return null;
+                }
+            }).filter(item => item !== null); // null 제거
+            
             console.log(`CISSP ${this.items.length}개 문제 로드 완료`);
+            
+            if (this.items.length === 0) {
+                console.error('CISSP 데이터가 없습니다. 파일을 확인해주세요.');
+            }
             
             // 단어 사전도 로드
             await this.loadVocabulary();
@@ -127,6 +148,8 @@ class CISSPModule {
             return this.items;
         } catch (error) {
             console.error('CISSP 데이터 로드 실패:', error);
+            console.error('에러 상세:', error.stack);
+            this.items = [];
             return [];
         }
     }
@@ -851,7 +874,9 @@ class CISSPModule {
 
     // 대시보드 렌더링
     async renderDashboard() {
+        // 데이터가 없으면 로드 시도
         if (this.items.length === 0) {
+            console.log('CISSP 데이터 로드 중...');
             await this.loadItems();
         }
         
@@ -859,6 +884,12 @@ class CISSPModule {
         const stats = this.calculateStats();
         
         const hasData = this.items.length > 0;
+        
+        // 데이터 로드 실패 시 상세 정보 로그
+        if (!hasData) {
+            console.error('CISSP 데이터가 없습니다. 파일 경로와 내용을 확인해주세요.');
+            console.error('예상 파일 경로: data/items_cissp.jsonl');
+        }
         
         container.innerHTML = `
             <div class="cissp-dashboard">
@@ -3740,5 +3771,22 @@ class CISSPModule {
 // 전역 인스턴스
 const cisspModule = new CISSPModule();
 window.cisspModule = cisspModule;
+
+// CISSP 모듈 초기화 시 데이터 미리 로드 (백그라운드)
+if (typeof window !== 'undefined') {
+    // 페이지 로드 후 데이터 미리 로드
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            cisspModule.loadItems().catch(err => {
+                console.error('CISSP 데이터 사전 로드 실패:', err);
+            });
+        });
+    } else {
+        // 이미 로드된 경우 즉시 로드
+        cisspModule.loadItems().catch(err => {
+            console.error('CISSP 데이터 사전 로드 실패:', err);
+        });
+    }
+}
 
 
