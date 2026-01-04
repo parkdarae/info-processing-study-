@@ -103,10 +103,30 @@ class CISSPModule {
         };
     }
 
+    // 구문별 번역 데이터 로드 (선택적)
+    async loadPhraseTranslations() {
+        try {
+            // 구문별 번역 파일이 있으면 로드 (없어도 동작 가능)
+            const response = await fetch('data/cissp_phrase_translations.json');
+            if (response.ok) {
+                this.phraseTranslations = await response.json();
+                console.log('구문별 번역 데이터 로드 완료');
+            } else {
+                // 파일이 없어도 계속 진행
+                this.phraseTranslations = null;
+                console.log('구문별 번역 파일이 없습니다. 계속 진행합니다.');
+            }
+        } catch (error) {
+            // 에러가 발생해도 계속 진행
+            this.phraseTranslations = null;
+            console.log('구문별 번역 데이터 로드 실패 (계속 진행):', error);
+        }
+    }
+
     // 데이터 로드
     async loadItems() {
         try {
-            // 구문별 번역 데이터 먼저 로드
+            // 구문별 번역 데이터 먼저 로드 (선택적)
             await this.loadPhraseTranslations();
             
             const response = await fetch('data/items_cissp.jsonl');
