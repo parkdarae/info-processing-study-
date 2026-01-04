@@ -3177,6 +3177,35 @@ class CISSPModule {
         return "기타";
     }
     
+    // 저장된 구문별 번역 데이터에서 번역 찾기
+    findPhraseTranslationInData(fullEnglish, englishPhrase) {
+        if (!this.phraseTranslations || !fullEnglish || !englishPhrase) {
+            return null;
+        }
+        
+        try {
+            const sentenceKey = fullEnglish.toLowerCase().trim();
+            const phraseKey = englishPhrase.toLowerCase().trim();
+            
+            // 전체 문장에 대한 구문별 번역 데이터가 있는지 확인
+            if (this.phraseTranslations[sentenceKey]) {
+                const savedPhrases = this.phraseTranslations[sentenceKey];
+                if (Array.isArray(savedPhrases)) {
+                    // 해당 구문 찾기
+                    for (const phraseData of savedPhrases) {
+                        if (phraseData.phrase && phraseData.phrase.toLowerCase().trim() === phraseKey) {
+                            return phraseData.translation || null;
+                        }
+                    }
+                }
+            }
+        } catch (error) {
+            console.error('구문 번역 데이터 검색 오류:', error);
+        }
+        
+        return null;
+    }
+
     // 구문에 해당하는 한국어 추출 (개선된 버전 - 저장된 데이터 우선)
     extractKoreanForPhrase(englishPhrase, fullEnglish, fullKorean, allEnglishWords, phraseStartIndex) {
         if (!fullKorean || !englishPhrase) return '';
