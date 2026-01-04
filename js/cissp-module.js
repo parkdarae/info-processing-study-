@@ -16,14 +16,17 @@ class CISSPModule {
         this.wordLearningMode = false;
         this.wordLearningIndex = 0;
         this.wordLearningList = [];
+        this.wordLearningModeType = 'sequential'; // 'sequential', 'random', 'range'
         this.difficultWordLearningMode = false; // 어려운 단어 학습 모드
         this.difficultWordLearningIndex = 0;
         this.difficultWordLearningList = [];
+        this.difficultWordLearningModeType = 'sequential'; // 'sequential', 'random', 'range'
         this.sentenceLearningMode = false;
         this.sentenceLearningIndex = 0;
         this.sentenceLearningList = [];
         this.sentencePhrases = []; // 숙어/구문 리스트
         this.sentenceLearningView = 'pattern'; // 'pattern' 또는 'phrase'
+        this.sentenceLearningModeType = 'sequential'; // 'sequential', 'random', 'range'
         this.phraseTranslations = null; // 구문별 번역 데이터 (JSON 파일에서 로드)
     }
 
@@ -1011,21 +1014,51 @@ class CISSPModule {
                 <div class="main-study-modes">
                     <h3 class="section-title"><i class="fas fa-book-reader"></i> 단어 & 문장 학습</h3>
                     <div class="main-mode-grid">
-                        <button class="main-mode-card accent" onclick="cisspModule.startWordLearning()">
-                            <div class="mode-icon"><i class="fas fa-spell-check"></i></div>
-                            <div class="mode-title">자주 나오는 단어 학습</div>
-                            <div class="mode-desc" id="word-learning-count">로딩 중...</div>
-                        </button>
-                        <button class="main-mode-card bookmarked" onclick="cisspModule.startDifficultWordLearning()">
-                            <div class="mode-icon"><i class="fas fa-graduation-cap"></i></div>
-                            <div class="mode-title">어려운 단어 학습</div>
-                            <div class="mode-desc" id="difficult-word-learning-count">로딩 중...</div>
-                        </button>
-                        <button class="main-mode-card secondary" onclick="cisspModule.startSentenceLearning()">
-                            <div class="mode-icon"><i class="fas fa-quote-left"></i></div>
-                            <div class="mode-title">자주 나오는 문장 학습</div>
-                            <div class="mode-desc" id="sentence-learning-count">로딩 중...</div>
-                        </button>
+                        <div class="learning-card-wrapper">
+                            <button class="main-mode-card accent" onclick="cisspModule.startWordLearning('sequential')">
+                                <div class="mode-icon"><i class="fas fa-spell-check"></i></div>
+                                <div class="mode-title">자주 나오는 단어 학습</div>
+                                <div class="mode-desc" id="word-learning-count">로딩 중...</div>
+                            </button>
+                            <div class="learning-mode-buttons">
+                                <button class="btn btn-sm btn-secondary" onclick="cisspModule.startWordLearning('random')" title="랜덤 순서">
+                                    <i class="fas fa-random"></i> 랜덤
+                                </button>
+                                <button class="btn btn-sm btn-secondary" onclick="cisspModule.showWordRangeModal()" title="범위 설정">
+                                    <i class="fas fa-list"></i> 범위
+                                </button>
+                            </div>
+                        </div>
+                        <div class="learning-card-wrapper">
+                            <button class="main-mode-card bookmarked" onclick="cisspModule.startDifficultWordLearning('sequential')">
+                                <div class="mode-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <div class="mode-title">어려운 단어 학습</div>
+                                <div class="mode-desc" id="difficult-word-learning-count">로딩 중...</div>
+                            </button>
+                            <div class="learning-mode-buttons">
+                                <button class="btn btn-sm btn-secondary" onclick="cisspModule.startDifficultWordLearning('random')" title="랜덤 순서">
+                                    <i class="fas fa-random"></i> 랜덤
+                                </button>
+                                <button class="btn btn-sm btn-secondary" onclick="cisspModule.showDifficultWordRangeModal()" title="범위 설정">
+                                    <i class="fas fa-list"></i> 범위
+                                </button>
+                            </div>
+                        </div>
+                        <div class="learning-card-wrapper">
+                            <button class="main-mode-card secondary" onclick="cisspModule.startSentenceLearning('sequential')">
+                                <div class="mode-icon"><i class="fas fa-quote-left"></i></div>
+                                <div class="mode-title">자주 나오는 문장 학습</div>
+                                <div class="mode-desc" id="sentence-learning-count">로딩 중...</div>
+                            </button>
+                            <div class="learning-mode-buttons">
+                                <button class="btn btn-sm btn-secondary" onclick="cisspModule.startSentenceLearning('random')" title="랜덤 순서">
+                                    <i class="fas fa-random"></i> 랜덤
+                                </button>
+                                <button class="btn btn-sm btn-secondary" onclick="cisspModule.showSentenceRangeModal()" title="범위 설정">
+                                    <i class="fas fa-list"></i> 범위
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -1116,7 +1149,7 @@ class CISSPModule {
     }
     
     // 자주 나오는 단어 학습 시작
-    async startWordLearning() {
+    async startWordLearning(mode = 'sequential', startIndex = null, endIndex = null) {
         try {
             // 빈도 40 이상인 단어들 로드
             const problemVocabResponse = await fetch('data/cissp_problem_vocabulary.json');
@@ -1126,7 +1159,7 @@ class CISSPModule {
             const memorizedWords = this.studyData.memorizedWords || [];
             
             // 빈도 40 이상인 단어들 필터링 및 정렬 (암기 완료된 단어 제외)
-            const frequentWords = Object.entries(problemVocab)
+            let frequentWords = Object.entries(problemVocab)
                 .filter(([word, data]) => {
                     // 빈도 40 이상이고 암기 완료되지 않은 단어만
                     return data.frequency >= 40 && !memorizedWords.includes(word.toLowerCase());
@@ -1146,17 +1179,158 @@ class CISSPModule {
                 return;
             }
             
+            // 범위 설정
+            if (mode === 'range' && startIndex !== null && endIndex !== null) {
+                startIndex = Math.max(0, Math.min(startIndex, frequentWords.length - 1));
+                endIndex = Math.max(startIndex, Math.min(endIndex, frequentWords.length - 1));
+                frequentWords = frequentWords.slice(startIndex, endIndex + 1);
+            }
+            
+            // 랜덤 모드
+            if (mode === 'random') {
+                frequentWords = this.shuffleArray(frequentWords);
+            }
+            
             // 단어 학습 모드로 전환
             this.wordLearningMode = true;
             this.difficultWordLearningMode = false; // 어려운 단어 학습 모드 비활성화
             this.wordLearningIndex = 0;
             this.wordLearningList = frequentWords;
+            this.wordLearningModeType = mode;
             
             this.renderWordLearning();
         } catch (error) {
             console.error('단어 학습 시작 실패:', error);
             alert('단어 학습 데이터를 불러올 수 없습니다.');
         }
+    }
+    
+    // 자주 나오는 단어 학습 범위 설정 모달
+    async showWordRangeModal() {
+        // 전체 단어 목록을 먼저 로드
+        const totalCount = await this.loadWordListForRange('word');
+        if (totalCount === 0) {
+            alert('학습할 단어가 없습니다.');
+            return;
+        }
+        
+        const startIndex = prompt(`시작 번호 (1~${totalCount}):`, '1');
+        if (!startIndex) return;
+        
+        const endIndex = prompt(`끝 번호 (${startIndex}~${totalCount}):`, String(totalCount));
+        if (!endIndex) return;
+        
+        const start = parseInt(startIndex) - 1;
+        const end = parseInt(endIndex) - 1;
+        
+        if (isNaN(start) || isNaN(end) || start < 0 || end < 0 || start > end) {
+            alert('올바른 범위를 입력해주세요.');
+            return;
+        }
+        
+        await this.startWordLearning('range', start, end);
+    }
+    
+    // 단어 목록 로드 (범위 설정용)
+    async loadWordListForRange(type = 'word') {
+        try {
+            const problemVocabResponse = await fetch('data/cissp_problem_vocabulary.json');
+            const problemVocab = await problemVocabResponse.json();
+            
+            const memorizedWords = this.studyData.memorizedWords || [];
+            const memorizedDifficultWords = this.studyData.memorizedDifficultWords || [];
+            
+            let words = [];
+            if (type === 'word') {
+                words = Object.entries(problemVocab)
+                    .filter(([word, data]) => data.frequency >= 40 && !memorizedWords.includes(word.toLowerCase()))
+                    .sort((a, b) => b[1].frequency - a[1].frequency)
+                    .slice(0, 1000);
+            } else if (type === 'difficult') {
+                words = Object.entries(problemVocab)
+                    .filter(([word, data]) => {
+                        const freq = data.frequency || 0;
+                        const wordLen = word.length;
+                        return ((freq >= 1 && freq <= 15 && wordLen >= 8) || (freq >= 1 && freq <= 10)) 
+                            && !memorizedDifficultWords.includes(word.toLowerCase());
+                    })
+                    .sort((a, b) => {
+                        const lenDiff = b[0].length - a[0].length;
+                        if (lenDiff !== 0) return lenDiff;
+                        return a[1].frequency - b[1].frequency;
+                    })
+                    .slice(0, 500);
+            }
+            
+            return words.length;
+        } catch (error) {
+            console.error('단어 목록 로드 실패:', error);
+            return 0;
+        }
+    }
+    
+    // 어려운 단어 학습 범위 설정 모달
+    async showDifficultWordRangeModal() {
+        const totalCount = await this.loadWordListForRange('difficult');
+        if (totalCount === 0) {
+            alert('학습할 어려운 단어가 없습니다.');
+            return;
+        }
+        
+        const startIndex = prompt(`시작 번호 (1~${totalCount}):`, '1');
+        if (!startIndex) return;
+        
+        const endIndex = prompt(`끝 번호 (${startIndex}~${totalCount}):`, String(totalCount));
+        if (!endIndex) return;
+        
+        const start = parseInt(startIndex) - 1;
+        const end = parseInt(endIndex) - 1;
+        
+        if (isNaN(start) || isNaN(end) || start < 0 || end < 0 || start > end) {
+            alert('올바른 범위를 입력해주세요.');
+            return;
+        }
+        
+        await this.startDifficultWordLearning('range', start, end);
+    }
+    
+    // 문장 학습 범위 설정 모달
+    showSentenceRangeModal() {
+        // 문장 패턴 개수 계산
+        const sentences = [];
+        for (const item of this.items) {
+            if (item.question_en) {
+                const questionSentences = item.question_en.split(/[.!?]\s+/).filter(s => s.trim().length > 10);
+                for (const sent of questionSentences) {
+                    if (sent.trim().length > 10) {
+                        sentences.push({
+                            sentence_en: sent.trim(),
+                            sentence_ko: item.question_ko ? item.question_ko.split(/[.!?]\s+/).find((s, idx) => idx < questionSentences.length && s.trim().length > 10) || '' : '',
+                            source: `문제 ${item.q_no}`
+                        });
+                    }
+                }
+            }
+        }
+        
+        const patternGroups = this.groupSentencesByPattern(sentences);
+        const totalCount = patternGroups.length;
+        
+        const startIndex = prompt(`시작 번호 (1~${totalCount}):`, '1');
+        if (!startIndex) return;
+        
+        const endIndex = prompt(`끝 번호 (${startIndex}~${totalCount}):`, String(totalCount));
+        if (!endIndex) return;
+        
+        const start = parseInt(startIndex) - 1;
+        const end = parseInt(endIndex) - 1;
+        
+        if (isNaN(start) || isNaN(end) || start < 0 || end < 0 || start > end) {
+            alert('올바른 범위를 입력해주세요.');
+            return;
+        }
+        
+        this.startSentenceLearning('range', start, end);
     }
     
     // 단어 학습 렌더링
@@ -1291,7 +1465,7 @@ class CISSPModule {
     }
     
     // 어려운 단어 학습 시작
-    async startDifficultWordLearning() {
+    async startDifficultWordLearning(mode = 'sequential', startIndex = null, endIndex = null) {
         try {
             // 빈도 낮은 어려운 단어들 로드
             const problemVocabResponse = await fetch('data/cissp_problem_vocabulary.json');
@@ -1332,11 +1506,24 @@ class CISSPModule {
                 return;
             }
             
+            // 범위 설정
+            if (mode === 'range' && startIndex !== null && endIndex !== null) {
+                startIndex = Math.max(0, Math.min(startIndex, difficultWords.length - 1));
+                endIndex = Math.max(startIndex, Math.min(endIndex, difficultWords.length - 1));
+                difficultWords = difficultWords.slice(startIndex, endIndex + 1);
+            }
+            
+            // 랜덤 모드
+            if (mode === 'random') {
+                difficultWords = this.shuffleArray(difficultWords);
+            }
+            
             // 어려운 단어 학습 모드로 전환
             this.difficultWordLearningMode = true;
             this.wordLearningMode = false; // 일반 단어 학습 모드 비활성화
             this.difficultWordLearningIndex = 0;
             this.difficultWordLearningList = difficultWords;
+            this.difficultWordLearningModeType = mode;
             
             this.renderDifficultWordLearning();
         } catch (error) {
@@ -2773,7 +2960,7 @@ class CISSPModule {
     }
     
     // 자주 나오는 문장 학습 시작
-    async startSentenceLearning() {
+    async startSentenceLearning(mode = 'sequential', startIndex = null, endIndex = null) {
         try {
             // 문제에서 문장 추출
             const sentences = [];
@@ -2805,7 +2992,19 @@ class CISSPModule {
             }
             
             // 패턴별로 그룹화
-            const patternGroups = this.groupSentencesByPattern(sentences);
+            let patternGroups = this.groupSentencesByPattern(sentences);
+            
+            // 범위 설정
+            if (mode === 'range' && startIndex !== null && endIndex !== null) {
+                startIndex = Math.max(0, Math.min(startIndex, patternGroups.length - 1));
+                endIndex = Math.max(startIndex, Math.min(endIndex, patternGroups.length - 1));
+                patternGroups = patternGroups.slice(startIndex, endIndex + 1);
+            }
+            
+            // 랜덤 모드
+            if (mode === 'random') {
+                patternGroups = this.shuffleArray(patternGroups);
+            }
             
             // 숙어/구문 추출
             const commonPhrases = this.extractCommonPhrases(sentences, 3);
@@ -2816,6 +3015,7 @@ class CISSPModule {
             this.sentenceLearningList = patternGroups; // 패턴 그룹 리스트
             this.sentencePhrases = commonPhrases; // 숙어/구문 리스트
             this.sentenceLearningView = 'pattern'; // 'pattern' 또는 'phrase'
+            this.sentenceLearningModeType = mode;
             
             this.renderSentenceLearning();
         } catch (error) {

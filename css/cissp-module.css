@@ -354,6 +354,26 @@
 }
 
 /* 단어/문장 학습 섹션 - main-mode-card 스타일 사용 (dashboard-common.css) */
+.learning-card-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.learning-mode-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.learning-mode-buttons .btn-sm {
+    padding: 6px 12px;
+    font-size: 0.85em;
+    border-radius: 6px;
+    white-space: nowrap;
+}
 
 /* 단어 학습 화면 */
 .word-learning-container,
