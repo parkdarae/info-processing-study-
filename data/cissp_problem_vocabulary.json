@@ -4205,7 +4205,7 @@
     "frequency": 15
   },
   "understanding": {
-    "meaning": "",
+    "meaning": "이해",
     "pos": "unknown",
     "frequency": 15
   },
@@ -4490,7 +4490,7 @@
     "frequency": 14
   },
   "authenticated": {
-    "meaning": "",
+    "meaning": "인증된",
     "pos": "unknown",
     "frequency": 14
   },
@@ -5535,7 +5535,7 @@
     "frequency": 11
   },
   "eavesdropping": {
-    "meaning": "",
+    "meaning": "도청",
     "pos": "unknown",
     "frequency": 11
   },
@@ -5640,7 +5640,7 @@
     "frequency": 11
   },
   "compatibility": {
-    "meaning": "",
+    "meaning": "호환성",
     "pos": "unknown",
     "frequency": 11
   },
@@ -6455,7 +6455,7 @@
     "frequency": 9
   },
   "characteristics": {
-    "meaning": "",
+    "meaning": "특성",
     "pos": "unknown",
     "frequency": 9
   },
@@ -6630,7 +6630,7 @@
     "frequency": 9
   },
   "professionals": {
-    "meaning": "",
+    "meaning": "전문가들",
     "pos": "unknown",
     "frequency": 9
   },
@@ -6705,7 +6705,7 @@
     "frequency": 9
   },
   "specifications": {
-    "meaning": "",
+    "meaning": "명세서, 설명서",
     "pos": "unknown",
     "frequency": 9
   },
@@ -6785,7 +6785,7 @@
     "frequency": 8
   },
   "corresponding": {
-    "meaning": "",
+    "meaning": "상응",
     "pos": "unknown",
     "frequency": 8
   },
@@ -6795,7 +6795,7 @@
     "frequency": 8
   },
   "encapsulation": {
-    "meaning": "",
+    "meaning": "캡슐화",
     "pos": "unknown",
     "frequency": 8
   },
@@ -6895,7 +6895,7 @@
     "frequency": 8
   },
   "manufacturing": {
-    "meaning": "",
+    "meaning": "제조",
     "pos": "unknown",
     "frequency": 8
   },
@@ -7015,7 +7015,7 @@
     "frequency": 8
   },
   "categorization": {
-    "meaning": "",
+    "meaning": "분류",
     "pos": "unknown",
     "frequency": 8
   },
@@ -7295,12 +7295,12 @@
     "frequency": 8
   },
   "significantly": {
-    "meaning": "",
+    "meaning": "현저히",
     "pos": "unknown",
     "frequency": 8
   },
   "authenticates": {
-    "meaning": "",
+    "meaning": "인증",
     "pos": "unknown",
     "frequency": 8
   },
@@ -7360,7 +7360,7 @@
     "frequency": 7
   },
   "countermeasures": {
-    "meaning": "",
+    "meaning": "대응책",
     "pos": "unknown",
     "frequency": 7
   },
@@ -7440,7 +7440,7 @@
     "frequency": 7
   },
   "automatically": {
-    "meaning": "",
+    "meaning": "자동으로",
     "pos": "unknown",
     "frequency": 7
   },
@@ -7530,7 +7530,7 @@
     "frequency": 7
   },
   "independently": {
-    "meaning": "",
+    "meaning": "독립적으로",
     "pos": "unknown",
     "frequency": 7
   },
@@ -7795,7 +7795,7 @@
     "frequency": 7
   },
   "specification": {
-    "meaning": "",
+    "meaning": "명세, 세부 사항",
     "pos": "unknown",
     "frequency": 7
   },
@@ -7935,7 +7935,7 @@
     "frequency": 7
   },
   "accessibility": {
-    "meaning": "",
+    "meaning": "접근성",
     "pos": "unknown",
     "frequency": 7
   },
@@ -8205,7 +8205,7 @@
     "frequency": 6
   },
   "recommendation": {
-    "meaning": "",
+    "meaning": "권고, 추천",
     "pos": "unknown",
     "frequency": 6
   },
@@ -8325,7 +8325,7 @@
     "frequency": 6
   },
   "circumstances": {
-    "meaning": "",
+    "meaning": "상황",
     "pos": "unknown",
     "frequency": 6
   },
@@ -8380,7 +8380,7 @@
     "frequency": 6
   },
   "decentralized": {
-    "meaning": "",
+    "meaning": "분산된",
     "pos": "unknown",
     "frequency": 6
   },
@@ -8600,7 +8600,7 @@
     "frequency": 6
   },
   "synchronization": {
-    "meaning": "",
+    "meaning": "동기화",
     "pos": "unknown",
     "frequency": 6
   },
@@ -8805,7 +8805,7 @@
     "frequency": 6
   },
   "randomization": {
-    "meaning": "",
+    "meaning": "무작위화",
     "pos": "unknown",
     "frequency": 6
   },
@@ -8920,7 +8920,7 @@
     "frequency": 6
   },
   "encapsulating": {
-    "meaning": "",
+    "meaning": "캡슐화",
     "pos": "unknown",
     "frequency": 6
   },
@@ -8990,7 +8990,7 @@
     "frequency": 6
   },
   "deprovisioning": {
-    "meaning": "",
+    "meaning": "계정 해지",
     "pos": "unknown",
     "frequency": 6
   },
@@ -9020,7 +9020,7 @@
     "frequency": 6
   },
   "appropriately": {
-    "meaning": "",
+    "meaning": "적절하게",
     "pos": "unknown",
     "frequency": 6
   },
@@ -9060,7 +9060,7 @@
     "frequency": 6
   },
   "initialization": {
-    "meaning": "",
+    "meaning": "초기화",
     "pos": "unknown",
     "frequency": 6
   },
@@ -9530,12 +9530,12 @@
     "frequency": 5
   },
   "modifications": {
-    "meaning": "",
+    "meaning": "수정",
     "pos": "unknown",
     "frequency": 5
   },
   "considerations": {
-    "meaning": "",
+    "meaning": "고려사항",
     "pos": "unknown",
     "frequency": 5
   },
@@ -9905,7 +9905,7 @@
     "frequency": 5
   },
   "simultaneously": {
-    "meaning": "",
+    "meaning": "동시에",
     "pos": "unknown",
     "frequency": 5
   },
@@ -9970,7 +9970,7 @@
     "frequency": 5
   },
   "characterized": {
-    "meaning": "",
+    "meaning": "특징",
     "pos": "unknown",
     "frequency": 5
   },
@@ -10015,7 +10015,7 @@
     "frequency": 5
   },
   "authoritative": {
-    "meaning": "",
+    "meaning": "권위 있는",
     "pos": "unknown",
     "frequency": 5
   },
@@ -10410,7 +10410,7 @@
     "frequency": 5
   },
   "confidentially": {
-    "meaning": "",
+    "meaning": "기밀적으로",
     "pos": "unknown",
     "frequency": 5
   },
@@ -10465,7 +10465,7 @@
     "frequency": 5
   },
   "methodologies": {
-    "meaning": "",
+    "meaning": "방법론들",
     "pos": "unknown",
     "frequency": 5
   },
@@ -10535,7 +10535,7 @@
     "frequency": 5
   },
   "authenticator": {
-    "meaning": "",
+    "meaning": "인증자",
     "pos": "unknown",
     "frequency": 4
   },
@@ -10730,7 +10730,7 @@
     "frequency": 4
   },
   "polyinstantiation": {
-    "meaning": "",
+    "meaning": "다중 인스턴스화",
     "pos": "unknown",
     "frequency": 4
   },
@@ -10820,7 +10820,7 @@
     "frequency": 4
   },
   "interoperability": {
-    "meaning": "",
+    "meaning": "상호운용성",
     "pos": "unknown",
     "frequency": 4
   },
@@ -10970,7 +10970,7 @@
     "frequency": 4
   },
   "misconfiguration": {
-    "meaning": "",
+    "meaning": "구성",
     "pos": "unknown",
     "frequency": 4
   },
@@ -11200,7 +11200,7 @@
     "frequency": 4
   },
   "communicating": {
-    "meaning": "",
+    "meaning": "통신",
     "pos": "unknown",
     "frequency": 4
   },
@@ -11385,7 +11385,7 @@
     "frequency": 4
   },
   "classifications": {
-    "meaning": "",
+    "meaning": "분류",
     "pos": "unknown",
     "frequency": 4
   },
@@ -11400,7 +11400,7 @@
     "frequency": 4
   },
   "geographically": {
-    "meaning": "",
+    "meaning": "지리적으로",
     "pos": "unknown",
     "frequency": 4
   },
@@ -11805,7 +11805,7 @@
     "frequency": 4
   },
   "steganography": {
-    "meaning": "",
+    "meaning": "스테가노그래피, 은닉술",
     "pos": "unknown",
     "frequency": 4
   },
@@ -12065,7 +12065,7 @@
     "frequency": 4
   },
   "recertification": {
-    "meaning": "",
+    "meaning": "재인증",
     "pos": "unknown",
     "frequency": 4
   },
@@ -12255,7 +12255,7 @@
     "frequency": 4
   },
   "deterministic": {
-    "meaning": "",
+    "meaning": "결정론적인",
     "pos": "unknown",
     "frequency": 4
   },
@@ -12320,7 +12320,7 @@
     "frequency": 4
   },
   "decomposition": {
-    "meaning": "",
+    "meaning": "분해",
     "pos": "unknown",
     "frequency": 4
   },
@@ -12765,7 +12765,7 @@
     "frequency": 3
   },
   "internationally": {
-    "meaning": "",
+    "meaning": "국제적으로",
     "pos": "unknown",
     "frequency": 3
   },
@@ -12805,7 +12805,7 @@
     "frequency": 3
   },
   "misconfigured": {
-    "meaning": "",
+    "meaning": "잘못 구성된",
     "pos": "unknown",
     "frequency": 3
   },
@@ -12835,7 +12835,7 @@
     "frequency": 3
   },
   "inappropriate": {
-    "meaning": "",
+    "meaning": "부적절한",
     "pos": "unknown",
     "frequency": 3
   },
@@ -12985,7 +12985,7 @@
     "frequency": 3
   },
   "certifications": {
-    "meaning": "",
+    "meaning": "인증서, 자격증 취득",
     "pos": "unknown",
     "frequency": 3
   },
@@ -13065,7 +13065,7 @@
     "frequency": 3
   },
   "architectures": {
-    "meaning": "",
+    "meaning": "아키텍처들, 구조들",
     "pos": "unknown",
     "frequency": 3
   },
@@ -13075,7 +13075,7 @@
     "frequency": 3
   },
   "troubleshooting": {
-    "meaning": "",
+    "meaning": "문제 해결",
     "pos": "unknown",
     "frequency": 3
   },
@@ -13175,7 +13175,7 @@
     "frequency": 3
   },
   "fundamentally": {
-    "meaning": "",
+    "meaning": "근본적으로",
     "pos": "unknown",
     "frequency": 3
   },
@@ -13600,7 +13600,7 @@
     "frequency": 3
   },
   "participating": {
-    "meaning": "",
+    "meaning": "참여",
     "pos": "unknown",
     "frequency": 3
   },
@@ -13645,7 +13645,7 @@
     "frequency": 3
   },
   "participation": {
-    "meaning": "",
+    "meaning": "참여",
     "pos": "unknown",
     "frequency": 3
   },
@@ -13975,12 +13975,12 @@
     "frequency": 3
   },
   "computational": {
-    "meaning": "",
+    "meaning": "계산상의",
     "pos": "unknown",
     "frequency": 3
   },
   "authenticating": {
-    "meaning": "",
+    "meaning": "인증",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14070,7 +14070,7 @@
     "frequency": 3
   },
   "predetermined": {
-    "meaning": "",
+    "meaning": "사전에 결정된",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14370,12 +14370,12 @@
     "frequency": 3
   },
   "approximately": {
-    "meaning": "",
+    "meaning": "대략",
     "pos": "unknown",
     "frequency": 3
   },
   "telecommunication": {
-    "meaning": "",
+    "meaning": "통신",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14405,7 +14405,7 @@
     "frequency": 3
   },
   "decommissioning": {
-    "meaning": "",
+    "meaning": "사용 종료",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14460,7 +14460,7 @@
     "frequency": 3
   },
   "implementations": {
-    "meaning": "",
+    "meaning": "구현",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14505,7 +14505,7 @@
     "frequency": 3
   },
   "multiprotocol": {
-    "meaning": "",
+    "meaning": "다중 프로토콜의",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14545,7 +14545,7 @@
     "frequency": 3
   },
   "circumvention": {
-    "meaning": "",
+    "meaning": "우회",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14555,7 +14555,7 @@
     "frequency": 3
   },
   "incorporating": {
-    "meaning": "",
+    "meaning": "통합",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14590,7 +14590,7 @@
     "frequency": 3
   },
   "representative": {
-    "meaning": "",
+    "meaning": "대표자",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14695,7 +14695,7 @@
     "frequency": 3
   },
   "electromagnetic": {
-    "meaning": "",
+    "meaning": "전자기",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14715,7 +14715,7 @@
     "frequency": 3
   },
   "fragmentation": {
-    "meaning": "",
+    "meaning": "분산, 분열",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14780,7 +14780,7 @@
     "frequency": 3
   },
   "parameterized": {
-    "meaning": "",
+    "meaning": "매개변수화된",
     "pos": "unknown",
     "frequency": 3
   },
@@ -14975,7 +14975,7 @@
     "frequency": 2
   },
   "reconnaissance": {
-    "meaning": "",
+    "meaning": "정찰, 사전조사",
     "pos": "unknown",
     "frequency": 2
   },
@@ -15135,7 +15135,7 @@
     "frequency": 2
   },
   "sophisticated": {
-    "meaning": "",
+    "meaning": "정교함",
     "pos": "unknown",
     "frequency": 2
   },
@@ -15230,7 +15230,7 @@
     "frequency": 2
   },
   "interconnected": {
-    "meaning": "",
+    "meaning": "상호 연결된",
     "pos": "unknown",
     "frequency": 2
   },
@@ -15430,7 +15430,7 @@
     "frequency": 2
   },
   "differentiated": {
-    "meaning": "",
+    "meaning": "차별화된",
     "pos": "unknown",
     "frequency": 2
   },
@@ -15680,7 +15680,7 @@
     "frequency": 2
   },
   "notifications": {
-    "meaning": "",
+    "meaning": "알림",
     "pos": "unknown",
     "frequency": 2
   },
@@ -15740,7 +15740,7 @@
     "frequency": 2
   },
   "representation": {
-    "meaning": "",
+    "meaning": "표현",
     "pos": "unknown",
     "frequency": 2
   },
@@ -15875,7 +15875,7 @@
     "frequency": 2
   },
   "malfunctioning": {
-    "meaning": "",
+    "meaning": "오작동",
     "pos": "unknown",
     "frequency": 2
   },
@@ -15945,7 +15945,7 @@
     "frequency": 2
   },
   "deduplication": {
-    "meaning": "",
+    "meaning": "중복 제거",
     "pos": "unknown",
     "frequency": 2
   },
@@ -16025,7 +16025,7 @@
     "frequency": 2
   },
   "differentiate": {
-    "meaning": "",
+    "meaning": "구별하다, 차별화하다",
     "pos": "unknown",
     "frequency": 2
   },
@@ -16115,7 +16115,7 @@
     "frequency": 2
   },
   "photoelectric": {
-    "meaning": "",
+    "meaning": "광전 효과",
     "pos": "unknown",
     "frequency": 2
   },
@@ -16125,7 +16125,7 @@
     "frequency": 2
   },
   "technological": {
-    "meaning": "",
+    "meaning": "기술의",
     "pos": "unknown",
     "frequency": 2
   },
@@ -16270,7 +16270,7 @@
     "frequency": 2
   },
   "organizationally": {
-    "meaning": "",
+    "meaning": "조직적으로",
     "pos": "unknown",
     "frequency": 2
   },
@@ -16470,7 +16470,7 @@
     "frequency": 2
   },
   "relationships": {
-    "meaning": "",
+    "meaning": "관계",
     "pos": "unknown",
     "frequency": 2
   },
@@ -16585,7 +16585,7 @@
     "frequency": 2
   },
   "programmability": {
-    "meaning": "",
+    "meaning": "프로그래밍 가능성",
     "pos": "unknown",
     "frequency": 2
   },
@@ -16840,7 +16840,7 @@
     "frequency": 2
   },
   "demonstrating": {
-    "meaning": "",
+    "meaning": "시연",
     "pos": "unknown",
     "frequency": 2
   },
@@ -16940,7 +16940,7 @@
     "frequency": 2
   },
   "transportation": {
-    "meaning": "",
+    "meaning": "운송, 수송",
     "pos": "unknown",
     "frequency": 2
   },
@@ -17020,7 +17020,7 @@
     "frequency": 2
   },
   "unrecoverable": {
-    "meaning": "",
+    "meaning": "복구 불능",
     "pos": "unknown",
     "frequency": 2
   },
@@ -17265,7 +17265,7 @@
     "frequency": 2
   },
   "collaboration": {
-    "meaning": "",
+    "meaning": "협업",
     "pos": "unknown",
     "frequency": 2
   },
@@ -17380,7 +17380,7 @@
     "frequency": 2
   },
   "investigations": {
-    "meaning": "",
+    "meaning": "조사",
     "pos": "unknown",
     "frequency": 2
   },
@@ -17540,17 +17540,17 @@
     "frequency": 2
   },
   "inadvertently": {
-    "meaning": "",
+    "meaning": "본의 아니게",
     "pos": "unknown",
     "frequency": 2
   },
   "nonconformities": {
-    "meaning": "",
+    "meaning": "비적합 사항",
     "pos": "unknown",
     "frequency": 2
   },
   "opportunities": {
-    "meaning": "",
+    "meaning": "기회",
     "pos": "unknown",
     "frequency": 2
   },
@@ -17685,7 +17685,7 @@
     "frequency": 2
   },
   "reconstructed": {
-    "meaning": "",
+    "meaning": "재구성",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18045,7 +18045,7 @@
     "frequency": 2
   },
   "determinations": {
-    "meaning": "",
+    "meaning": "결정, 판정",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18070,7 +18070,7 @@
     "frequency": 2
   },
   "environmentally": {
-    "meaning": "",
+    "meaning": "환경적으로",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18085,12 +18085,12 @@
     "frequency": 2
   },
   "inertgasfiresystems": {
-    "meaning": "",
+    "meaning": "불활성가스 소화시스템",
     "pos": "unknown",
     "frequency": 2
   },
   "authorizations": {
-    "meaning": "",
+    "meaning": "인가",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18115,7 +18115,7 @@
     "frequency": 2
   },
   "investigators": {
-    "meaning": "",
+    "meaning": "수사관들",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18160,7 +18160,7 @@
     "frequency": 2
   },
   "reconciliation": {
-    "meaning": "",
+    "meaning": "조정",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18280,7 +18280,7 @@
     "frequency": 2
   },
   "incompatibility": {
-    "meaning": "",
+    "meaning": "비호환성",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18395,12 +18395,12 @@
     "frequency": 2
   },
   "intentionally": {
-    "meaning": "",
+    "meaning": "의도적으로",
     "pos": "unknown",
     "frequency": 2
   },
   "infosecinstitute": {
-    "meaning": "",
+    "meaning": "정보보안 교육기관",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18410,7 +18410,7 @@
     "frequency": 2
   },
   "architectural": {
-    "meaning": "",
+    "meaning": "건축상의, 구조적인",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18790,7 +18790,7 @@
     "frequency": 2
   },
   "dissemination": {
-    "meaning": "",
+    "meaning": "전파, 보급",
     "pos": "unknown",
     "frequency": 2
   },
@@ -18955,7 +18955,7 @@
     "frequency": 2
   },
   "unpredictable": {
-    "meaning": "",
+    "meaning": "예측 불가",
     "pos": "unknown",
     "frequency": 2
   },
@@ -19075,7 +19075,7 @@
     "frequency": 2
   },
   "multifunction": {
-    "meaning": "",
+    "meaning": "다기능",
     "pos": "unknown",
     "frequency": 2
   },
@@ -19170,7 +19170,7 @@
     "frequency": 2
   },
   "presentations": {
-    "meaning": "",
+    "meaning": "발표, 프레젠테이션",
     "pos": "unknown",
     "frequency": 2
   },
@@ -19460,7 +19460,7 @@
     "frequency": 1
   },
   "correspondence": {
-    "meaning": "",
+    "meaning": "서신",
     "pos": "unknown",
     "frequency": 1
   },
@@ -19485,7 +19485,7 @@
     "frequency": 1
   },
   "jurisdictions": {
-    "meaning": "",
+    "meaning": "관할 구역들",
     "pos": "unknown",
     "frequency": 1
   },
@@ -19585,7 +19585,7 @@
     "frequency": 1
   },
   "apprehending": {
-    "meaning": "",
+    "meaning": "체포",
     "pos": "unknown",
     "frequency": 1
   },
@@ -19605,7 +19605,7 @@
     "frequency": 1
   },
   "unsatisfactory": {
-    "meaning": "",
+    "meaning": "불충분",
     "pos": "unknown",
     "frequency": 1
   },
@@ -19680,7 +19680,7 @@
     "frequency": 1
   },
   "interoperate": {
-    "meaning": "",
+    "meaning": "상호 운용하다",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20485,7 +20485,7 @@
     "frequency": 1
   },
   "accountants": {
-    "meaning": "",
+    "meaning": "회계사들",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20500,12 +20500,12 @@
     "frequency": 1
   },
   "fulfillment": {
-    "meaning": "",
+    "meaning": "이행",
     "pos": "unknown",
     "frequency": 1
   },
   "accommodation": {
-    "meaning": "",
+    "meaning": "수용, 숙박 시설",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20525,7 +20525,7 @@
     "frequency": 1
   },
   "prerequisite": {
-    "meaning": "",
+    "meaning": "선행 조건, 전제 조건",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20540,7 +20540,7 @@
     "frequency": 1
   },
   "videotaping": {
-    "meaning": "",
+    "meaning": "녹화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20570,7 +20570,7 @@
     "frequency": 1
   },
   "coordinated": {
-    "meaning": "",
+    "meaning": "조정된",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20615,12 +20615,12 @@
     "frequency": 1
   },
   "unimportant": {
-    "meaning": "",
+    "meaning": "사소한",
     "pos": "unknown",
     "frequency": 1
   },
   "demographical": {
-    "meaning": "",
+    "meaning": "인구 통계",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20630,7 +20630,7 @@
     "frequency": 1
   },
   "decomposing": {
-    "meaning": "",
+    "meaning": "분해",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20650,7 +20650,7 @@
     "frequency": 1
   },
   "comprehensively": {
-    "meaning": "",
+    "meaning": "포괄적으로",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20675,12 +20675,12 @@
     "frequency": 1
   },
   "disconnected": {
-    "meaning": "",
+    "meaning": "연결 끊김",
     "pos": "unknown",
     "frequency": 1
   },
   "reconnected": {
-    "meaning": "",
+    "meaning": "재연결",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20730,27 +20730,27 @@
     "frequency": 1
   },
   "correlating": {
-    "meaning": "",
+    "meaning": "상관 분석",
     "pos": "unknown",
     "frequency": 1
   },
   "facilitating": {
-    "meaning": "",
+    "meaning": "촉진",
     "pos": "unknown",
     "frequency": 1
   },
   "encompassing": {
-    "meaning": "",
+    "meaning": "포괄",
     "pos": "unknown",
     "frequency": 1
   },
   "unscheduled": {
-    "meaning": "",
+    "meaning": "예정되지 않은",
     "pos": "unknown",
     "frequency": 1
   },
   "impalements": {
-    "meaning": "",
+    "meaning": "꿰뚫기",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20835,7 +20835,7 @@
     "frequency": 1
   },
   "duplications": {
-    "meaning": "",
+    "meaning": "중복",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20910,7 +20910,7 @@
     "frequency": 1
   },
   "strengthened": {
-    "meaning": "",
+    "meaning": "강화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20930,7 +20930,7 @@
     "frequency": 1
   },
   "pharmaceutical": {
-    "meaning": "",
+    "meaning": "의약품 관련",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20970,7 +20970,7 @@
     "frequency": 1
   },
   "compensatory": {
-    "meaning": "",
+    "meaning": "보상적인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -20990,7 +20990,7 @@
     "frequency": 1
   },
   "retrievable": {
-    "meaning": "",
+    "meaning": "복구 가능성",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21010,7 +21010,7 @@
     "frequency": 1
   },
   "competitors": {
-    "meaning": "",
+    "meaning": "경쟁자들",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21020,7 +21020,7 @@
     "frequency": 1
   },
   "businesscatalyst": {
-    "meaning": "",
+    "meaning": "비즈니스 촉진 요인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21060,7 +21060,7 @@
     "frequency": 1
   },
   "questionnaire": {
-    "meaning": "",
+    "meaning": "설문지",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21115,7 +21115,7 @@
     "frequency": 1
   },
   "dimensional": {
-    "meaning": "",
+    "meaning": "차원의",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21170,7 +21170,7 @@
     "frequency": 1
   },
   "instruction": {
-    "meaning": "",
+    "meaning": "지시, 명령",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21230,7 +21230,7 @@
     "frequency": 1
   },
   "perpetrator": {
-    "meaning": "",
+    "meaning": "가해자",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21240,7 +21240,7 @@
     "frequency": 1
   },
   "collaborating": {
-    "meaning": "",
+    "meaning": "협업",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21305,7 +21305,7 @@
     "frequency": 1
   },
   "respectively": {
-    "meaning": "",
+    "meaning": "각각",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21355,7 +21355,7 @@
     "frequency": 1
   },
   "trustworthiness": {
-    "meaning": "",
+    "meaning": "신뢰성",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21370,7 +21370,7 @@
     "frequency": 1
   },
   "anticipating": {
-    "meaning": "",
+    "meaning": "예상",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21505,7 +21505,7 @@
     "frequency": 1
   },
   "unintentional": {
-    "meaning": "",
+    "meaning": "비의도적인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21570,7 +21570,7 @@
     "frequency": 1
   },
   "proceedings": {
-    "meaning": "",
+    "meaning": "절차",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21595,12 +21595,12 @@
     "frequency": 1
   },
   "correctable": {
-    "meaning": "",
+    "meaning": "교정 가능성",
     "pos": "unknown",
     "frequency": 1
   },
   "quantification": {
-    "meaning": "",
+    "meaning": "정량화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21640,7 +21640,7 @@
     "frequency": 1
   },
   "malfunctions": {
-    "meaning": "",
+    "meaning": "오작동",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21655,7 +21655,7 @@
     "frequency": 1
   },
   "competitive": {
-    "meaning": "",
+    "meaning": "경쟁적인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21695,7 +21695,7 @@
     "frequency": 1
   },
   "softwaretestinghelp": {
-    "meaning": "",
+    "meaning": "소프트웨어 테스트 지원 사이트",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21705,7 +21705,7 @@
     "frequency": 1
   },
   "disapproving": {
-    "meaning": "",
+    "meaning": "불승인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21725,7 +21725,7 @@
     "frequency": 1
   },
   "hibernation": {
-    "meaning": "",
+    "meaning": "동면, 휴면",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21740,12 +21740,12 @@
     "frequency": 1
   },
   "invulnerable": {
-    "meaning": "",
+    "meaning": "취약점 없음",
     "pos": "unknown",
     "frequency": 1
   },
   "opportunistic": {
-    "meaning": "",
+    "meaning": "기회주의적인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21755,12 +21755,12 @@
     "frequency": 1
   },
   "motherboard": {
-    "meaning": "",
+    "meaning": "마더보드",
     "pos": "unknown",
     "frequency": 1
   },
   "datacentres": {
-    "meaning": "",
+    "meaning": "데이터 센터",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21785,7 +21785,7 @@
     "frequency": 1
   },
   "involvement": {
-    "meaning": "",
+    "meaning": "관여",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21895,7 +21895,7 @@
     "frequency": 1
   },
   "unknowingly": {
-    "meaning": "",
+    "meaning": "모르는 사이에",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21920,12 +21920,12 @@
     "frequency": 1
   },
   "disassemble": {
-    "meaning": "",
+    "meaning": "분해",
     "pos": "unknown",
     "frequency": 1
   },
   "disassembling": {
-    "meaning": "",
+    "meaning": "분해",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21950,7 +21950,7 @@
     "frequency": 1
   },
   "reconfigurability": {
-    "meaning": "",
+    "meaning": "재구성 가능성",
     "pos": "unknown",
     "frequency": 1
   },
@@ -21995,12 +21995,12 @@
     "frequency": 1
   },
   "citizenship": {
-    "meaning": "",
+    "meaning": "시민권",
     "pos": "unknown",
     "frequency": 1
   },
   "redundancies": {
-    "meaning": "",
+    "meaning": "중복성, 과잉",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22010,7 +22010,7 @@
     "frequency": 1
   },
   "approximate": {
-    "meaning": "",
+    "meaning": "대략적인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22025,7 +22025,7 @@
     "frequency": 1
   },
   "deactivated": {
-    "meaning": "",
+    "meaning": "비활성화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22095,7 +22095,7 @@
     "frequency": 1
   },
   "cooperation": {
-    "meaning": "",
+    "meaning": "협력",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22135,12 +22135,12 @@
     "frequency": 1
   },
   "representations": {
-    "meaning": "",
+    "meaning": "표현",
     "pos": "unknown",
     "frequency": 1
   },
   "unsuspecting": {
-    "meaning": "",
+    "meaning": "의심하지 않음",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22175,7 +22175,7 @@
     "frequency": 1
   },
   "sustainable": {
-    "meaning": "",
+    "meaning": "지속 가능한 (중복 항목)",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22235,7 +22235,7 @@
     "frequency": 1
   },
   "uncontrolled": {
-    "meaning": "",
+    "meaning": "통제 불능",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22265,17 +22265,17 @@
     "frequency": 1
   },
   "interpretation": {
-    "meaning": "",
+    "meaning": "해석",
     "pos": "unknown",
     "frequency": 1
   },
   "uninstalling": {
-    "meaning": "",
+    "meaning": "제거",
     "pos": "unknown",
     "frequency": 1
   },
   "localization": {
-    "meaning": "",
+    "meaning": "현지화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22290,7 +22290,7 @@
     "frequency": 1
   },
   "switchboard": {
-    "meaning": "",
+    "meaning": "교환대 (중복 항목)",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22320,7 +22320,7 @@
     "frequency": 1
   },
   "extraordinary": {
-    "meaning": "",
+    "meaning": "이례성",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22335,7 +22335,7 @@
     "frequency": 1
   },
   "developments": {
-    "meaning": "",
+    "meaning": "개발, 발전",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22370,12 +22370,12 @@
     "frequency": 1
   },
   "disconnecting": {
-    "meaning": "",
+    "meaning": "연결 해제",
     "pos": "unknown",
     "frequency": 1
   },
   "responsiveness": {
-    "meaning": "",
+    "meaning": "대응 능력",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22420,7 +22420,7 @@
     "frequency": 1
   },
   "implementer": {
-    "meaning": "",
+    "meaning": "구현자 (중복 항목)",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22450,7 +22450,7 @@
     "frequency": 1
   },
   "professorial": {
-    "meaning": "",
+    "meaning": "교수의",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22505,7 +22505,7 @@
     "frequency": 1
   },
   "preservation": {
-    "meaning": "",
+    "meaning": "보존",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22525,7 +22525,7 @@
     "frequency": 1
   },
   "inadequately": {
-    "meaning": "",
+    "meaning": "불충분하게",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22535,12 +22535,12 @@
     "frequency": 1
   },
   "intelligent": {
-    "meaning": "",
+    "meaning": "지능적인 (중복 항목)",
     "pos": "unknown",
     "frequency": 1
   },
   "procurements": {
-    "meaning": "",
+    "meaning": "조달",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22565,7 +22565,7 @@
     "frequency": 1
   },
   "recommending": {
-    "meaning": "",
+    "meaning": "추천",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22580,7 +22580,7 @@
     "frequency": 1
   },
   "acknowledge": {
-    "meaning": "",
+    "meaning": "인정하다 (중복 항목)",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22600,7 +22600,7 @@
     "frequency": 1
   },
   "permissible": {
-    "meaning": "",
+    "meaning": "허용 가능 (중복 항목)",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22645,17 +22645,17 @@
     "frequency": 1
   },
   "evaluations": {
-    "meaning": "",
+    "meaning": "평가",
     "pos": "unknown",
     "frequency": 1
   },
   "modularization": {
-    "meaning": "",
+    "meaning": "모듈화",
     "pos": "unknown",
     "frequency": 1
   },
   "considerably": {
-    "meaning": "",
+    "meaning": "상당히",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22665,7 +22665,7 @@
     "frequency": 1
   },
   "modernization": {
-    "meaning": "",
+    "meaning": "현대화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22720,12 +22720,12 @@
     "frequency": 1
   },
   "infringement": {
-    "meaning": "",
+    "meaning": "위반, 침해",
     "pos": "unknown",
     "frequency": 1
   },
   "centerpiece": {
-    "meaning": "",
+    "meaning": "핵심",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22740,7 +22740,7 @@
     "frequency": 1
   },
   "settlements": {
-    "meaning": "",
+    "meaning": "합의",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22820,17 +22820,17 @@
     "frequency": 1
   },
   "functionally": {
-    "meaning": "",
+    "meaning": "기능적으로",
     "pos": "unknown",
     "frequency": 1
   },
   "structurally": {
-    "meaning": "",
+    "meaning": "구조적으로",
     "pos": "unknown",
     "frequency": 1
   },
   "methodically": {
-    "meaning": "",
+    "meaning": "체계적으로",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22840,17 +22840,17 @@
     "frequency": 1
   },
   "disadvantage": {
-    "meaning": "",
+    "meaning": "단점",
     "pos": "unknown",
     "frequency": 1
   },
   "cybersecurrty": {
-    "meaning": "",
+    "meaning": "사이버보안 (cybersecurity의 오타)",
     "pos": "unknown",
     "frequency": 1
   },
   "institutional": {
-    "meaning": "",
+    "meaning": "제도적인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22875,7 +22875,7 @@
     "frequency": 1
   },
   "infractions": {
-    "meaning": "",
+    "meaning": "위반",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22915,7 +22915,7 @@
     "frequency": 1
   },
   "advertisements": {
-    "meaning": "",
+    "meaning": "광고",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22940,7 +22940,7 @@
     "frequency": 1
   },
   "streamlines": {
-    "meaning": "",
+    "meaning": "간소화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22955,7 +22955,7 @@
     "frequency": 1
   },
   "characterizes": {
-    "meaning": "",
+    "meaning": "특징 규정",
     "pos": "unknown",
     "frequency": 1
   },
@@ -22990,7 +22990,7 @@
     "frequency": 1
   },
   "interestingly": {
-    "meaning": "",
+    "meaning": "흥미롭게도",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23025,7 +23025,7 @@
     "frequency": 1
   },
   "informational": {
-    "meaning": "",
+    "meaning": "정보의",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23065,7 +23065,7 @@
     "frequency": 1
   },
   "reconfiguration": {
-    "meaning": "",
+    "meaning": "구성",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23095,7 +23095,7 @@
     "frequency": 1
   },
   "incorporated": {
-    "meaning": "",
+    "meaning": "통합된",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23110,7 +23110,7 @@
     "frequency": 1
   },
   "construction": {
-    "meaning": "",
+    "meaning": "건설, 구성",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23120,7 +23120,7 @@
     "frequency": 1
   },
   "synchronizing": {
-    "meaning": "",
+    "meaning": "동기화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23150,7 +23150,7 @@
     "frequency": 1
   },
   "experiencing": {
-    "meaning": "",
+    "meaning": "경험",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23165,7 +23165,7 @@
     "frequency": 1
   },
   "troubleshoot": {
-    "meaning": "",
+    "meaning": "문제 해결",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23245,7 +23245,7 @@
     "frequency": 1
   },
   "maintainers": {
-    "meaning": "",
+    "meaning": "관리자들",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23265,7 +23265,7 @@
     "frequency": 1
   },
   "discrepancy": {
-    "meaning": "",
+    "meaning": "불일치",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23280,7 +23280,7 @@
     "frequency": 1
   },
   "nonconformity": {
-    "meaning": "",
+    "meaning": "부적합",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23295,7 +23295,7 @@
     "frequency": 1
   },
   "contractually": {
-    "meaning": "",
+    "meaning": "계약상",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23360,7 +23360,7 @@
     "frequency": 1
   },
   "conferencing": {
-    "meaning": "",
+    "meaning": "회의",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23395,7 +23395,7 @@
     "frequency": 1
   },
   "abbreviations": {
-    "meaning": "",
+    "meaning": "약어",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23420,7 +23420,7 @@
     "frequency": 1
   },
   "quantitatively": {
-    "meaning": "",
+    "meaning": "정량적으로",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23475,7 +23475,7 @@
     "frequency": 1
   },
   "conversation": {
-    "meaning": "",
+    "meaning": "대화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23510,17 +23510,17 @@
     "frequency": 1
   },
   "concurrency": {
-    "meaning": "",
+    "meaning": "동시성",
     "pos": "unknown",
     "frequency": 1
   },
   "determinism": {
-    "meaning": "",
+    "meaning": "결정론",
     "pos": "unknown",
     "frequency": 1
   },
   "maintainability": {
-    "meaning": "",
+    "meaning": "유지보수성",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23655,7 +23655,7 @@
     "frequency": 1
   },
   "representational": {
-    "meaning": "",
+    "meaning": "표현상의, 표현 관련",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23710,7 +23710,7 @@
     "frequency": 1
   },
   "multinational": {
-    "meaning": "",
+    "meaning": "다국적",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23850,7 +23850,7 @@
     "frequency": 1
   },
   "practitioners": {
-    "meaning": "",
+    "meaning": "실무자들",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23880,7 +23880,7 @@
     "frequency": 1
   },
   "misunderstood": {
-    "meaning": "",
+    "meaning": "오해",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23910,7 +23910,7 @@
     "frequency": 1
   },
   "discrimination": {
-    "meaning": "",
+    "meaning": "차별",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23925,7 +23925,7 @@
     "frequency": 1
   },
   "knowledgeable": {
-    "meaning": "",
+    "meaning": "박식함",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23940,7 +23940,7 @@
     "frequency": 1
   },
   "brainstorming": {
-    "meaning": "",
+    "meaning": "브레인스토밍",
     "pos": "unknown",
     "frequency": 1
   },
@@ -23965,7 +23965,7 @@
     "frequency": 1
   },
   "consolidate": {
-    "meaning": "",
+    "meaning": "통합하다",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24025,7 +24025,7 @@
     "frequency": 1
   },
   "constrained": {
-    "meaning": "",
+    "meaning": "제한된",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24035,7 +24035,7 @@
     "frequency": 1
   },
   "forensically": {
-    "meaning": "",
+    "meaning": "과학수사적으로",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24050,12 +24050,12 @@
     "frequency": 1
   },
   "promiscuous": {
-    "meaning": "",
+    "meaning": "무차별적인",
     "pos": "unknown",
     "frequency": 1
   },
   "transactional": {
-    "meaning": "",
+    "meaning": "트랜잭션의",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24070,7 +24070,7 @@
     "frequency": 1
   },
   "theoretically": {
-    "meaning": "",
+    "meaning": "이론적으로",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24115,7 +24115,7 @@
     "frequency": 1
   },
   "unauthorised": {
-    "meaning": "",
+    "meaning": "무허가의",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24170,7 +24170,7 @@
     "frequency": 1
   },
   "justification": {
-    "meaning": "",
+    "meaning": "정당화, 합리화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24185,12 +24185,12 @@
     "frequency": 1
   },
   "reconstitute": {
-    "meaning": "",
+    "meaning": "재구성",
     "pos": "unknown",
     "frequency": 1
   },
   "reconstitution": {
-    "meaning": "",
+    "meaning": "재구성",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24210,7 +24210,7 @@
     "frequency": 1
   },
   "fundamentals": {
-    "meaning": "",
+    "meaning": "기초, 근본",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24230,7 +24230,7 @@
     "frequency": 1
   },
   "authentications": {
-    "meaning": "",
+    "meaning": "인증",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24255,7 +24255,7 @@
     "frequency": 1
   },
   "screenshots": {
-    "meaning": "",
+    "meaning": "화면 캡처",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24345,7 +24345,7 @@
     "frequency": 1
   },
   "contaminating": {
-    "meaning": "",
+    "meaning": "오염",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24355,7 +24355,7 @@
     "frequency": 1
   },
   "accomplished": {
-    "meaning": "",
+    "meaning": "노련한",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24510,7 +24510,7 @@
     "frequency": 1
   },
   "diversification": {
-    "meaning": "",
+    "meaning": "다양화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24540,7 +24540,7 @@
     "frequency": 1
   },
   "demonstrated": {
-    "meaning": "",
+    "meaning": "입증된",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24680,7 +24680,7 @@
     "frequency": 1
   },
   "discrepancies": {
-    "meaning": "",
+    "meaning": "불일치, 차이",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24700,7 +24700,7 @@
     "frequency": 1
   },
   "reprezentative": {
-    "meaning": "",
+    "meaning": "대표적인 (representative의 오타)",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24800,7 +24800,7 @@
     "frequency": 1
   },
   "circumvented": {
-    "meaning": "",
+    "meaning": "우회된",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24815,7 +24815,7 @@
     "frequency": 1
   },
   "collaborative": {
-    "meaning": "",
+    "meaning": "협력적인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24845,7 +24845,7 @@
     "frequency": 1
   },
   "communicates": {
-    "meaning": "",
+    "meaning": "의사소통",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24915,12 +24915,12 @@
     "frequency": 1
   },
   "establishment": {
-    "meaning": "",
+    "meaning": "설립",
     "pos": "unknown",
     "frequency": 1
   },
   "unreservedly": {
-    "meaning": "",
+    "meaning": "거리낌없이",
     "pos": "unknown",
     "frequency": 1
   },
@@ -24975,7 +24975,7 @@
     "frequency": 1
   },
   "polyinstiation": {
-    "meaning": "",
+    "meaning": "다중 인스턴스화 (polyinstantiation의 오타)",
     "pos": "unknown",
     "frequency": 1
   },
@@ -25135,7 +25135,7 @@
     "frequency": 1
   },
   "introduction": {
-    "meaning": "",
+    "meaning": "소개, 도입",
     "pos": "unknown",
     "frequency": 1
   },
@@ -25215,7 +25215,7 @@
     "frequency": 1
   },
   "intervention": {
-    "meaning": "",
+    "meaning": "개입, 중재",
     "pos": "unknown",
     "frequency": 1
   },
@@ -25260,7 +25260,7 @@
     "frequency": 1
   },
   "descriptions": {
-    "meaning": "",
+    "meaning": "설명",
     "pos": "unknown",
     "frequency": 1
   },
@@ -25320,7 +25320,7 @@
     "frequency": 1
   },
   "accomplishment": {
-    "meaning": "",
+    "meaning": "성취",
     "pos": "unknown",
     "frequency": 1
   },
@@ -25395,7 +25395,7 @@
     "frequency": 1
   },
   "hierarchical": {
-    "meaning": "",
+    "meaning": "계층적인",
     "pos": "unknown",
     "frequency": 1
   },
@@ -25615,7 +25615,7 @@
     "frequency": 1
   },
   "decommissioned": {
-    "meaning": "",
+    "meaning": "사용 종료",
     "pos": "unknown",
     "frequency": 1
   },
@@ -25650,12 +25650,12 @@
     "frequency": 1
   },
   "coordinating": {
-    "meaning": "",
+    "meaning": "조정",
     "pos": "unknown",
     "frequency": 1
   },
   "exploitations": {
-    "meaning": "",
+    "meaning": "이용, 착취",
     "pos": "unknown",
     "frequency": 1
   },
@@ -25680,7 +25680,7 @@
     "frequency": 1
   },
   "cryptanalytic": {
-    "meaning": "",
+    "meaning": "암호 분석",
     "pos": "unknown",
     "frequency": 1
   },
@@ -26725,7 +26725,7 @@
     "frequency": 1
   },
   "interviewing": {
-    "meaning": "면접하는, 인터뷰하는",
+    "meaning": "면접, 인터뷰",
     "pos": "verb",
     "frequency": 1
   },
@@ -26870,7 +26870,7 @@
     "frequency": 1
   },
   "observations": {
-    "meaning": "",
+    "meaning": "관찰, 의견",
     "pos": "unknown",
     "frequency": 1
   },
@@ -28650,12 +28650,12 @@
     "frequency": 1
   },
   "chronological": {
-    "meaning": "",
+    "meaning": "연대순의",
     "pos": "unknown",
     "frequency": 1
   },
   "cryptographically": {
-    "meaning": "",
+    "meaning": "암호화",
     "pos": "unknown",
     "frequency": 1
   },
@@ -28670,7 +28670,7 @@
     "frequency": 1
   },
   "cryptocurrency": {
-    "meaning": "",
+    "meaning": "암호화폐",
     "pos": "unknown",
     "frequency": 1
   },
@@ -28700,7 +28700,7 @@
     "frequency": 1
   },
   "orchestration": {
-    "meaning": "",
+    "meaning": "오케스트레이션, 조율",
     "pos": "unknown",
     "frequency": 1
   },
@@ -28935,7 +28935,7 @@
     "frequency": 1
   },
   "whistleblower": {
-    "meaning": "",
+    "meaning": "내부고발자",
     "pos": "unknown",
     "frequency": 1
   },
@@ -28950,7 +28950,7 @@
     "frequency": 1
   },
   "unauthenticated": {
-    "meaning": "",
+    "meaning": "미인증 상태",
     "pos": "unknown",
     "frequency": 1
   },
@@ -29135,7 +29135,7 @@
     "frequency": 1
   },
   "polycarbonate": {
-    "meaning": "",
+    "meaning": "폴리카보네이트",
     "pos": "unknown",
     "frequency": 1
   },
@@ -29260,7 +29260,7 @@
     "frequency": 1
   },
   "transposition": {
-    "meaning": "",
+    "meaning": "치환, 전치",
     "pos": "unknown",
     "frequency": 1
   },
@@ -29730,7 +29730,7 @@
     "frequency": 1
   },
   "strengthening": {
-    "meaning": "",
+    "meaning": "강화",
     "pos": "unknown",
     "frequency": 1
   },
