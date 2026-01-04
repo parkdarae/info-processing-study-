@@ -61,6 +61,31 @@ function setMode(mode) {
         return;
     }
     
+    // PMP 모듈인 경우 PMP 모듈 함수 호출
+    if (App.state.currentModule === 'pmp' && typeof window.pmpModule !== 'undefined') {
+        switch(mode) {
+            case 'sequential':
+                pmpModule.startStudy('all', 'sequential');
+                break;
+            case 'random':
+                pmpModule.startStudy('all', 'random');
+                break;
+            case 'range':
+                pmpModule.showRangeModal();
+                break;
+            case 'wrong':
+                // PMP 모듈에 오답 기능이 없으면 일반 로드
+                loadQuestions(mode);
+                break;
+            case 'marked':
+                pmpModule.startBookmarkedStudy();
+                break;
+            default:
+                loadQuestions(mode);
+        }
+        return;
+    }
+    
     // 문제 로드
     loadQuestions(mode);
 }
