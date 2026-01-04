@@ -33,7 +33,33 @@ function setMode(mode) {
     document.querySelectorAll('.mode-btn').forEach(btn => {
         btn.classList.remove('active');
     });
-    event.target.classList.add('active');
+    if (event && event.target) {
+        event.target.classList.add('active');
+    }
+    
+    // CISSP 모듈인 경우 CISSP 모듈 함수 호출
+    if (App.state.currentModule === 'cissp' && typeof window.cisspModule !== 'undefined') {
+        switch(mode) {
+            case 'sequential':
+                cisspModule.startStudy('sequential');
+                break;
+            case 'random':
+                cisspModule.startStudy('random');
+                break;
+            case 'range':
+                cisspModule.showRangeModal();
+                break;
+            case 'wrong':
+                cisspModule.startStudy('wrong');
+                break;
+            case 'marked':
+                cisspModule.startStudy('bookmarked');
+                break;
+            default:
+                loadQuestions(mode);
+        }
+        return;
+    }
     
     // 문제 로드
     loadQuestions(mode);
